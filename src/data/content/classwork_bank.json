@@ -1,0 +1,2848 @@
+{
+ "1": [
+  {
+   "id": "cw01-dda29a",
+   "q": "A student notices puddles on the school track dry faster on sunny days than on cloudy days. What is the best next step in the scientific method?",
+   "choices": [
+    "Change several variables at once to save time",
+    "Announce that sunlight dries puddles faster, since everyone can see it happen",
+    "Write a testable hypothesis about sunlight and drying time",
+    "Repeat the observation on cloudy days only, so the results all match"
+   ]
+  },
+  {
+   "id": "cw01-0bef92",
+   "q": "Two groups test the same hypothesis and get very different results. What should a scientist do first?",
+   "choices": [
+    "Pick the result that agrees with the hypothesis, since it is probably the right one",
+    "Average the two results and call it final",
+    "Check whether both groups used the same procedure and repeat the test",
+    "Throw out the hypothesis right away"
+   ]
+  },
+  {
+   "id": "cw01-903cab",
+   "q": "Why is plate tectonics called a theory and not a law?",
+   "choices": [
+    "It explains why things happen and has lots of evidence",
+    "It only describes what happens, using an equation",
+    "It is a guess that has not been tested enough to become a fact or a law",
+    "It is just a guess scientists like"
+   ]
+  },
+  {
+   "id": "cw01-801d80",
+   "q": "In an experiment on how slope affects how fast sand slides, which is the independent variable?",
+   "choices": [
+    "The person timing the trials",
+    "The kind of sand used in every trial",
+    "How fast the sand slides",
+    "The angle of the slope"
+   ]
+  },
+  {
+   "id": "cw01-1ed3f6",
+   "q": "A scientist builds a model of a volcano. What is the biggest limit of the model?",
+   "choices": [
+    "It is simpler than the real thing, so it can't show every detail",
+    "It can never be used to make predictions",
+    "It has to be exactly the same size as the real volcano to be useful at all",
+    "It is always more accurate than the real volcano"
+   ]
+  },
+  {
+   "id": "cw01-9ff6d6",
+   "q": "Why do Earth scientists measure in metric units instead of inches and miles?",
+   "choices": [
+    "Metric units go by tens and scientists everywhere use the same system",
+    "Inches can't measure rocks",
+    "Metric units are always larger, so big things like mountains are easier to measure",
+    "Metric units never need tools"
+   ]
+  },
+  {
+   "id": "cw01-2cfd9a",
+   "q": "A hiker says, \"The river always floods in spring, so it will flood this year.\" What kind of reasoning is this?",
+   "choices": [
+    "A conclusion from a controlled experiment",
+    "A prediction based on a pattern of past observations",
+    "A scientific law, because it describes something that always happens without fail",
+    "A scientific law that can't be wrong"
+   ]
+  },
+  {
+   "id": "cw01-c9d661",
+   "q": "During a lab, a classmate wants to smell a chemical by putting their nose over the beaker. What is the safe advice?",
+   "choices": [
+    "Smell it only if the teacher is out of the room",
+    "Waft the air toward your nose with your hand",
+    "Sniff it directly so you can tell what it is",
+    "Taste a tiny drop instead"
+   ]
+  },
+  {
+   "id": "cw01-62e887",
+   "q": "Which question could an oceanographer and a meteorologist both work on?",
+   "choices": [
+    "What a mineral's crystal shape is",
+    "How old a mountain range is and how fast it wears down",
+    "How far away a galaxy is from our solar system",
+    "Warm water feeding hurricanes"
+   ]
+  },
+  {
+   "id": "cw01-b1a083",
+   "q": "Why do scientists repeat an experiment many times?",
+   "choices": [
+    "To make sure the result is reliable and not a fluke",
+    "Because one trial is never allowed",
+    "To make the experiment take longer",
+    "To change the result until it matches the hypothesis"
+   ]
+  }
+ ],
+ "2": [
+  {
+   "id": "cw02-8e31d6",
+   "q": "Boise is about 43° N, 116° W. Which direction would you travel from Boise to reach the equator?",
+   "choices": [
+    "North",
+    "East",
+    "West",
+    "South"
+   ]
+  },
+  {
+   "id": "cw02-3f60a2",
+   "q": "When it is noon in Idaho (Mountain Time), what time is it one time zone to the east (Central Time)?",
+   "choices": [
+    "Noon",
+    "2:00 p.m.",
+    "1:00 p.m.",
+    "11:00 a.m."
+   ]
+  },
+  {
+   "id": "cw02-d8c203",
+   "q": "Why do time zones come out about 15° wide?",
+   "choices": [
+    "The equator is 15,000 miles long",
+    "Lines of latitude are drawn 15° apart, and each one marks a zone",
+    "Earth turns 360° in 24 hours, which is 15° each hour",
+    "The equator is divided into 15 equal parts, one for each zone"
+   ]
+  },
+  {
+   "id": "cw02-f9e6a6",
+   "q": "On a topographic map, the contour lines on the east side of a hill are packed close together. What does that tell a hiker?",
+   "choices": [
+    "The east side is flat",
+    "The east side is steep",
+    "The east side has a river on it",
+    "The east side is underwater"
+   ]
+  },
+  {
+   "id": "cw02-cb8359",
+   "q": "A Mercator map makes Greenland look as big as Africa. Why?",
+   "choices": [
+    "Greenland really is that big",
+    "Flat maps stretch areas near the poles",
+    "Greenland is closer to the equator",
+    "The map uses the wrong scale for Africa"
+   ]
+  },
+  {
+   "id": "cw02-2f5268",
+   "q": "A map scale says 1 cm = 5 km. Two towns are 4 cm apart on the map. How far apart are they really?",
+   "choices": [
+    "45 km",
+    "9 km",
+    "1.25 km",
+    "20 km"
+   ]
+  },
+  {
+   "id": "cw02-d83b2e",
+   "q": "Contour lines on a map form circles inside circles, and the smallest circle has little tick marks pointing inward. What is it?",
+   "choices": [
+    "A lake, since tick marks show where water is",
+    "A mountain peak, since the circles get smaller toward the top",
+    "A straight river",
+    "A depression, like a crater or pit"
+   ]
+  },
+  {
+   "id": "cw02-a0dcab",
+   "q": "Why can't one flat map show Earth with no distortion at all?",
+   "choices": [
+    "Satellites can't see the whole planet",
+    "Mapmakers still don't agree on Earth's real shape, so every map guesses",
+    "You can't flatten a curved surface without stretching or tearing it",
+    "Maps are always drawn too small"
+   ]
+  },
+  {
+   "id": "cw02-d25453",
+   "q": "A farmer wants to compare soil type, water rights, and crop yields on the same map layers. Which tool fits best?",
+   "choices": [
+    "GIS",
+    "A paper road map",
+    "A globe",
+    "A compass"
+   ]
+  },
+  {
+   "id": "cw02-7f75ea",
+   "q": "Your phone's GPS finds your location by doing what?",
+   "choices": [
+    "Using one cell tower's name",
+    "Measuring the angle of the Sun above the horizon",
+    "Timing signals from several satellites",
+    "Reading the nearest cell tower's location"
+   ]
+  }
+ ],
+ "3": [
+  {
+   "id": "cw03-1ce235",
+   "q": "Salt (NaCl) is made of sodium and chlorine bonded together. What is salt?",
+   "choices": [
+    "A single atom",
+    "An element",
+    "A state of matter",
+    "A compound"
+   ]
+  },
+  {
+   "id": "cw03-0eade5",
+   "q": "Rain falls on a hillside, runs into a stream, and carries sand downhill. Which spheres are interacting?",
+   "choices": [
+    "Atmosphere and biosphere only",
+    "Hydrosphere and geosphere",
+    "Biosphere and geosphere only",
+    "None, it is all one sphere"
+   ]
+  },
+  {
+   "id": "cw03-f316e2",
+   "q": "A wildfire burns a forest in central Idaho. Which change shows the atmosphere is affected?",
+   "choices": [
+    "Smoky, CO₂-filled air",
+    "Deer and elk move to a new part of the forest",
+    "Ash settles into the soil and streams carry it away",
+    "Streams carry more mud"
+   ]
+  },
+  {
+   "id": "cw03-9d56b2",
+   "q": "Which element would you find most of if you could sort every atom in Earth's crust?",
+   "choices": [
+    "Iron",
+    "Carbon",
+    "Gold",
+    "Oxygen"
+   ]
+  },
+  {
+   "id": "cw03-ef4a43",
+   "q": "Water freezes in a crack in a rock and expands. What kind of change is the freezing?",
+   "choices": [
+    "A physical change of state",
+    "A change from an element to a compound",
+    "A nuclear change",
+    "A chemical change into a new substance"
+   ]
+  },
+  {
+   "id": "cw03-4c4a00",
+   "q": "What two energy sources power almost all of Earth's systems?",
+   "choices": [
+    "Wind and ocean tides",
+    "Fossil fuels and batteries",
+    "The Sun and Earth's inner heat",
+    "The Moon's light and the stars"
+   ]
+  },
+  {
+   "id": "cw03-ea985c",
+   "q": "A plant takes CO₂ from the air and stores carbon in its wood. Which spheres trade matter here?",
+   "choices": [
+    "Geosphere and atmosphere only",
+    "Hydrosphere and geosphere",
+    "Atmosphere and biosphere",
+    "Biosphere only"
+   ]
+  },
+  {
+   "id": "cw03-70547a",
+   "q": "Why is it fair to call Earth a mostly closed system for matter?",
+   "choices": [
+    "Earth gains tons of new water every day from comets and space dust",
+    "Matter and energy both stay the same forever",
+    "No energy ever reaches Earth",
+    "Very little matter enters or leaves, but energy flows in and out"
+   ]
+  },
+  {
+   "id": "cw03-2a30c8",
+   "q": "A balloon of air shrinks when you put it in a freezer. What happened to the air particles?",
+   "choices": [
+    "They slowed and crowded closer",
+    "They escaped through the rubber of the balloon",
+    "They got bigger",
+    "They turned into a new compound because of the cold"
+   ]
+  },
+  {
+   "id": "cw03-298386",
+   "q": "A volcano erupts gas, ash, and lava. Which spheres does it change?",
+   "choices": [
+    "Geosphere and atmosphere, and it can affect the others too",
+    "Only the atmosphere, because the gas and ash go up",
+    "None, eruptions stay in one sphere",
+    "Only the geosphere, because lava and ash are made of rock"
+   ]
+  }
+ ],
+ "4": [
+  {
+   "id": "cw04-2537e1",
+   "q": "A shiny gold-colored mineral leaves a greenish-black streak and scratches glass. Is it gold?",
+   "choices": [
+    "Yes, because it scratches glass",
+    "Yes. Anything shiny, gold-colored, and hard enough to scratch glass is gold",
+    "No. Gold leaves a gold streak and is soft, so it is probably pyrite",
+    "No, because real gold leaves a black streak and is very hard"
+   ]
+  },
+  {
+   "id": "cw04-682a59",
+   "q": "Why isn't coal a true mineral?",
+   "choices": [
+    "It is found underground",
+    "It comes from the remains of living things, so it is organic",
+    "It is black, and minerals must have a light color",
+    "It is too soft to scratch glass, so it can't be a mineral"
+   ]
+  },
+  {
+   "id": "cw04-26a823",
+   "q": "A mineral scratches a copper penny (3.5), but a steel nail (5.5) scratches it. What is its hardness likely to be?",
+   "choices": [
+    "Exactly 10",
+    "Greater than 7, harder than quartz",
+    "Between 3.5 and 5.5",
+    "Less than 2, softer than a fingernail"
+   ]
+  },
+  {
+   "id": "cw04-4ddeae",
+   "q": "Which property is the LEAST reliable for identifying a mineral?",
+   "choices": [
+    "Cleavage",
+    "Color",
+    "Streak",
+    "Hardness"
+   ]
+  },
+  {
+   "id": "cw04-153e71",
+   "q": "A mineral breaks into perfect flat sheets that peel apart. What property is that?",
+   "choices": [
+    "Density",
+    "Cleavage",
+    "Fracture",
+    "Luster"
+   ]
+  },
+  {
+   "id": "cw04-1137fb",
+   "q": "Why do silicate minerals make up most of Earth's crust?",
+   "choices": [
+    "Silicates are the hardest minerals, so they survive longer than others",
+    "Every rock in the crust is made almost entirely of quartz",
+    "Silicates form only in space",
+    "Oxygen and silicon are the two most common elements in the crust"
+   ]
+  },
+  {
+   "id": "cw04-45961e",
+   "q": "Ice in a glacier counts as a mineral, but water in a lake does not. Why?",
+   "choices": [
+    "Ice is a solid with a crystal structure; liquid water is not",
+    "Ice is organic because it forms from living snowflakes",
+    "Water has no chemical formula",
+    "Lake water isn't natural because it has been changed by people"
+   ]
+  },
+  {
+   "id": "cw04-91afb2",
+   "q": "Idaho's star garnets are valuable mainly because they are what?",
+   "choices": [
+    "Rare and attractive gems",
+    "Man-made in a lab",
+    "They are the hardest mineral on Earth, harder than diamond",
+    "They are mined as a major source of iron ore"
+   ]
+  },
+  {
+   "id": "cw04-718d94",
+   "q": "A rock is mined because it contains enough copper to sell at a profit. What is it called?",
+   "choices": [
+    "An ore",
+    "A gem",
+    "A cleavage plane",
+    "A fossil"
+   ]
+  },
+  {
+   "id": "cw04-aa124e",
+   "q": "Halite (rock salt) tastes salty and dissolves in water. Which kind of evidence is that?",
+   "choices": [
+    "Its luster, which is how it reflects light",
+    "Its streak, which is the color of its powder",
+    "A special property used to identify it",
+    "Its hardness"
+   ]
+  }
+ ],
+ "5": [
+  {
+   "id": "cw05-c4e922",
+   "q": "Granite has large crystals you can see easily. What does that tell you about how it formed?",
+   "choices": [
+    "It cooled in seconds on the surface",
+    "It cooled slowly underground",
+    "It formed from layers of sand",
+    "It was squeezed without melting"
+   ]
+  },
+  {
+   "id": "cw05-ae79a3",
+   "q": "Obsidian has no crystals at all and looks like glass. How did it form?",
+   "choices": [
+    "Lava cooled so fast that crystals had no time to grow",
+    "Sediment was pressed into glass",
+    "Magma cooled very slowly deep underground",
+    "Heat and pressure changed a sandstone into glass deep underground"
+   ]
+  },
+  {
+   "id": "cw05-12e589",
+   "q": "Pumice is full of holes and can float. What made the holes?",
+   "choices": [
+    "Wind sandblasted tiny pits into the surface over time",
+    "Water dissolving minerals later",
+    "Trapped gas bubbles",
+    "Water dissolved minerals out of it long after it cooled"
+   ]
+  },
+  {
+   "id": "cw05-777361",
+   "q": "A dark, fine-grained rock covers much of the Snake River Plain. What is it most likely to be?",
+   "choices": [
+    "Sandstone",
+    "Marble",
+    "Basalt",
+    "Granite"
+   ]
+  },
+  {
+   "id": "cw05-043f93",
+   "q": "How are basalt and gabbro alike, and how are they different?",
+   "choices": [
+    "Same crystal size, but basalt formed from sediment instead",
+    "Both are felsic and light-colored, but basalt cooled underground",
+    "Both are sedimentary, but gabbro is older",
+    "Same mafic makeup, but gabbro cooled slowly and has bigger crystals"
+   ]
+  },
+  {
+   "id": "cw05-0e29d8",
+   "q": "Which rock would most likely be light-colored and rich in silica?",
+   "choices": [
+    "Granite (felsic)",
+    "Peridotite (ultramafic)",
+    "Basalt (mafic)",
+    "Gabbro (mafic)"
+   ]
+  },
+  {
+   "id": "cw05-9df37c",
+   "q": "A rock has a few big crystals floating in a fine-grained background. What does that texture suggest?",
+   "choices": [
+    "It never melted",
+    "It cooled slowly at first, then quickly",
+    "It cooled at one steady rate the whole time",
+    "It is a sedimentary rock with pebbles glued in it"
+   ]
+  },
+  {
+   "id": "cw05-085938",
+   "q": "The Sawtooth Mountains are made of rock from the Idaho Batholith. Why can we see it at the surface now?",
+   "choices": [
+    "Glaciers carried it from Canada and dropped it there",
+    "Uplift and erosion removed the rock that once covered it",
+    "It erupted out of a volcano as lava and cooled on top",
+    "It formed on the surface"
+   ]
+  },
+  {
+   "id": "cw05-2b84db",
+   "q": "Lava flows at Craters of the Moon are extrusive. What does extrusive mean?",
+   "choices": [
+    "It came from space",
+    "It cooled slowly deep underground",
+    "It cooled on Earth's surface",
+    "It was squeezed into layers by pressure"
+   ]
+  },
+  {
+   "id": "cw05-ec1896",
+   "q": "Why is granite a popular choice for countertops and buildings?",
+   "choices": [
+    "It is light and soft, so it is easy to cut and carry",
+    "It is made of fossils pressed together tightly",
+    "It dissolves slowly in water",
+    "It is hard and made of interlocking crystals, so it lasts"
+   ]
+  }
+ ],
+ "6": [
+  {
+   "id": "cw06-146d0b",
+   "q": "A canyon wall shows layers of sandstone, shale, and limestone. If no layers are flipped, which layer is the oldest?",
+   "choices": [
+    "They are all the same age",
+    "The middle layer",
+    "The top layer",
+    "The bottom layer"
+   ]
+  },
+  {
+   "id": "cw06-b0c444",
+   "q": "A rock is made of rounded pebbles cemented together. What does that tell you about where the pebbles traveled?",
+   "choices": [
+    "They cooled from blobs of lava that landed on the ground",
+    "They grew as round crystals in place and were never moved",
+    "Wind blew them into a pile and baked them",
+    "Water tumbled them a long way"
+   ]
+  },
+  {
+   "id": "cw06-37e939",
+   "q": "Rock salt forms when a shallow sea dries up. What kind of sedimentary rock is it?",
+   "choices": [
+    "Foliated",
+    "Organic",
+    "Clastic",
+    "Chemical"
+   ]
+  },
+  {
+   "id": "cw06-76f430",
+   "q": "Why do almost all fossils show up in sedimentary rock and not igneous rock?",
+   "choices": [
+    "Igneous rock is too young to have any fossils in it yet",
+    "Fossils only form in the deep ocean, where there is no lava",
+    "Sediment buries remains gently, but molten rock destroys them",
+    "Igneous rock is see-through"
+   ]
+  },
+  {
+   "id": "cw06-756175",
+   "q": "Shale is buried deep and squeezed into slate. What changed?",
+   "choices": [
+    "Fossils inside it hardened and turned it darker",
+    "It weathered into sand that was glued back together",
+    "It melted completely and cooled again into a new igneous rock",
+    "The minerals and texture changed from heat and pressure, without melting"
+   ]
+  },
+  {
+   "id": "cw06-b23743",
+   "q": "Marble fizzes with acid like limestone does. Why?",
+   "choices": [
+    "All rocks fizz in acid, so it doesn't tell you anything",
+    "Marble contains fossils of bubbles",
+    "Marble is an igneous rock that formed from carbonate lava",
+    "Marble is metamorphosed limestone, so it's still made of calcite"
+   ]
+  },
+  {
+   "id": "cw06-b8f651",
+   "q": "Gneiss has bands of light and dark minerals. What does that banding tell you?",
+   "choices": [
+    "It was laid down in layers by wind in a desert",
+    "It cooled quickly from lava on Earth's surface",
+    "It formed at Earth's surface",
+    "It formed under intense heat and directed pressure"
+   ]
+  },
+  {
+   "id": "cw06-d0bb01",
+   "q": "Hot magma pushes into limestone and bakes the rock right around it. What process is this?",
+   "choices": [
+    "Contact metamorphism",
+    "Regional metamorphism",
+    "Deposition",
+    "Cementation"
+   ]
+  },
+  {
+   "id": "cw06-a456f6",
+   "q": "Ripple marks and mud cracks in a sedimentary rock suggest what about where it formed?",
+   "choices": [
+    "It formed in outer space",
+    "It formed deep inside a volcano from cooling lava",
+    "It formed under a glacier that was miles thick",
+    "It formed near shallow water that sometimes dried out"
+   ]
+  },
+  {
+   "id": "cw06-7a7638",
+   "q": "Sandstone becomes quartzite. Which property would you expect to change the most?",
+   "choices": [
+    "It turns back into loose sand grains",
+    "It becomes soft and crumbly, like chalk",
+    "It turns into lava",
+    "It gets harder as its grains fuse"
+   ]
+  }
+ ],
+ "7": [
+  {
+   "id": "cw07-90eb90",
+   "q": "A basalt boulder sits in a stream for thousands of years. What is the most likely next step for it in the rock cycle?",
+   "choices": [
+    "Becoming a fossil",
+    "Turning straight into granite",
+    "Weathering into sediment",
+    "Melting in the stream"
+   ]
+  },
+  {
+   "id": "cw07-84bc4c",
+   "q": "Can a metamorphic rock become a sedimentary rock without melting first?",
+   "choices": [
+    "Yes, if it is uplifted, weathered, eroded, and the sediment is compacted",
+    "Only if it becomes a mineral first",
+    "No. Every rock must melt and become igneous before it can change again",
+    "Only if it is struck by lightning, which turns it into sediment"
+   ]
+  },
+  {
+   "id": "cw07-91faca",
+   "q": "Which energy source drives weathering and erosion at the surface?",
+   "choices": [
+    "Earth's inner core, which heats the surface",
+    "The Sun (through weather and the water cycle)",
+    "The Moon's light",
+    "Radioactive decay in the crust and mantle"
+   ]
+  },
+  {
+   "id": "cw07-65488c",
+   "q": "Which energy source drives melting and metamorphism deep underground?",
+   "choices": [
+    "Earth's internal heat",
+    "Sunlight that soaks deep into the ground",
+    "Wind",
+    "Ocean tides pulling on the rock"
+   ]
+  },
+  {
+   "id": "cw07-db2079",
+   "q": "Why does the rock cycle have no set order?",
+   "choices": [
+    "Scientists haven't decided on the order yet",
+    "Rocks never change",
+    "Rocks can take many different paths depending on what happens to them",
+    "Every rock always goes igneous, then sedimentary, then metamorphic, in that order"
+   ]
+  },
+  {
+   "id": "cw07-007728",
+   "q": "Which step of the rock cycle can happen in a single day?",
+   "choices": [
+    "Granite forming slowly inside a batholith",
+    "A volcanic eruption that makes new igneous rock",
+    "Mountains wearing down to plains",
+    "Sandstone turning into quartzite deep underground"
+   ]
+  },
+  {
+   "id": "cw07-ff0c5c",
+   "q": "Uplift is important in the rock cycle because it does what?",
+   "choices": [
+    "Melts rock at the surface to make new lava",
+    "It lifts deep rock up where it can weather",
+    "Turns sediment straight into igneous rock",
+    "Stops the rock cycle"
+   ]
+  },
+  {
+   "id": "cw07-42c223",
+   "q": "A sedimentary rock is pushed deep into a subduction zone. Which two outcomes are possible?",
+   "choices": [
+    "It can only weather into soil at the surface",
+    "It may become metamorphic, or melt into magma",
+    "It must stay sedimentary because it already formed",
+    "It will float back up unchanged"
+   ]
+  },
+  {
+   "id": "cw07-704f24",
+   "q": "How does the rock cycle connect to plate tectonics?",
+   "choices": [
+    "They have nothing to do with each other, because one is about rocks and one is about plates",
+    "Plate tectonics only affects the ocean floor, not rocks on land",
+    "The rock cycle stops at plate boundaries",
+    "Plate movement causes uplift, subduction, melting, and metamorphism"
+   ]
+  }
+ ],
+ "8": [
+  {
+   "id": "cw08-84440c",
+   "q": "Water seeps into a crack in a granite boulder, freezes overnight, and thaws by noon. After many winters, the boulder splits. What happened?",
+   "choices": [
+    "Oxidation, a kind of chemical weathering from water",
+    "Cementation of sediment",
+    "Frost wedging, a kind of mechanical weathering",
+    "Deposition of sediment by a glacier"
+   ]
+  },
+  {
+   "id": "cw08-3a907a",
+   "q": "An old iron bridge railing turns reddish-brown and flaky. What kind of weathering is that?",
+   "choices": [
+    "Deflation",
+    "Abrasion (mechanical weathering)",
+    "Oxidation (chemical weathering)",
+    "Frost wedging"
+   ]
+  },
+  {
+   "id": "cw08-3c45b7",
+   "q": "Why does chemical weathering happen faster in a warm, wet place than in a cold desert?",
+   "choices": [
+    "Cold makes rocks dissolve faster, so deserts weather quickest",
+    "Deserts have more acid rain because the air is dry",
+    "Heat and water speed up chemical reactions",
+    "Wet places have no rocks"
+   ]
+  },
+  {
+   "id": "cw08-dcbeaa",
+   "q": "A crushed sugar cube dissolves faster than a whole one. How does that connect to weathering?",
+   "choices": [
+    "Surface area doesn't matter in weathering, only temperature does",
+    "Crushed rocks can't weather chemically because they are too small",
+    "Sugar is a mineral, so it never weathers",
+    "Mechanical weathering adds surface area, which speeds chemical weathering"
+   ]
+  },
+  {
+   "id": "cw08-397fe5",
+   "q": "What is the difference between weathering and erosion?",
+   "choices": [
+    "Weathering breaks rock down; erosion carries the pieces away",
+    "Erosion only happens in oceans",
+    "They mean the same thing: rock wearing away",
+    "Weathering moves rock away; erosion breaks it into pieces"
+   ]
+  },
+  {
+   "id": "cw08-ac8615",
+   "q": "A farmer leaves a field bare after harvest, and a windstorm blows away the topsoil. What would have protected it best?",
+   "choices": [
+    "Leaving crop stubble or planting cover crops to hold the soil",
+    "Plowing the field more often so the soil stays loose",
+    "Watering the field less",
+    "Removing the trees around the field so wind can't swirl"
+   ]
+  },
+  {
+   "id": "cw08-fbddde",
+   "q": "Which soil horizon would you expect to be darkest and richest in humus?",
+   "choices": [
+    "A horizon (topsoil)",
+    "C horizon (weathered rock)",
+    "Bedrock",
+    "B horizon (subsoil)"
+   ]
+  },
+  {
+   "id": "cw08-d0ffe7",
+   "q": "Why does it matter that soil takes hundreds of years to form?",
+   "choices": [
+    "Lost topsoil can't be replaced on a human time scale",
+    "It means soil is a renewable resource we can replace every year",
+    "Soil forms so fast it never runs out",
+    "Soil forms so fast that a field can rebuild its topsoil in one season"
+   ]
+  },
+  {
+   "id": "cw08-3074f1",
+   "q": "Tree roots grow into cracks in a sidewalk and lift the slabs. Which kind of weathering is this?",
+   "choices": [
+    "Deposition by water",
+    "Erosion by wind carrying the slabs away",
+    "Mechanical weathering by plant roots",
+    "Chemical weathering by oxidation of the concrete"
+   ]
+  },
+  {
+   "id": "cw08-e0df8e",
+   "q": "Limestone statues in a city lose their carved details faster than granite statues. Why?",
+   "choices": [
+    "Limestone has more fossils, which wash out first",
+    "Limestone is magnetic",
+    "Granite is softer than limestone, so it should wear faster",
+    "Acid rain dissolves calcite in limestone more easily"
+   ]
+  }
+ ],
+ "9": [
+  {
+   "id": "cw09-684a76",
+   "q": "After days of heavy rain, a steep hillside above a road slides down all at once. Why did the rain matter?",
+   "choices": [
+    "Rain froze the soil in place until it suddenly cracked",
+    "Water added weight and made the soil slippery, so friction couldn't hold it",
+    "Rain made the slope less steep, so the soil slid down to level it",
+    "Rain has nothing to do with landslides"
+   ]
+  },
+  {
+   "id": "cw09-b67bee",
+   "q": "Fence posts and old tree trunks on a hillside are slowly tilting downhill. What is happening?",
+   "choices": [
+    "Deflation",
+    "Creep, slow downhill soil movement",
+    "A rockfall, where rocks drop off a cliff",
+    "A mudflow, where wet soil rushes downhill"
+   ]
+  },
+  {
+   "id": "cw09-368e62",
+   "q": "After a wildfire burns the trees on a slope, why are mudflows more likely the next spring?",
+   "choices": [
+    "No roots are left to hold the soil, and rain soaks it quickly",
+    "Fire makes the slope less steep, so mud slides more easily",
+    "Wildfires stop rain from falling",
+    "Ash turns into solid rock that sheds water"
+   ]
+  },
+  {
+   "id": "cw09-3e6f45",
+   "q": "A valley high in the Sawtooths is shaped like a U instead of a V. What carved it?",
+   "choices": [
+    "An earthquake",
+    "Wind",
+    "A young river",
+    "A glacier"
+   ]
+  },
+  {
+   "id": "cw09-ebf6ee",
+   "q": "A big boulder sits alone in a flat field, made of a rock that doesn't match anything nearby. How did it most likely get there?",
+   "choices": [
+    "A glacier carried it and left it behind (an erratic)",
+    "Wind rolled it there across the flat field over many years",
+    "It fell from the sky",
+    "It grew in place from minerals in the soil"
+   ]
+  },
+  {
+   "id": "cw09-15382c",
+   "q": "Why are sand dunes usually found in dry places with few plants?",
+   "choices": [
+    "Dunes only form where plants grow, because roots trap the sand",
+    "Dunes only form underwater",
+    "Wet sand blows farther because it's heavier and keeps moving",
+    "Without plants or moisture, wind can easily pick up and move loose sand"
+   ]
+  },
+  {
+   "id": "cw09-ffea66",
+   "q": "Fine, yellowish wind-blown dust built thick layers of fertile soil on the Palouse. What is this deposit called?",
+   "choices": [
+    "Talus",
+    "Loess",
+    "Till",
+    "A moraine"
+   ]
+  },
+  {
+   "id": "cw09-7d397c",
+   "q": "What made the Ice Age Missoula Floods so powerful in shaping the land?",
+   "choices": [
+    "Heavy rain fell on the whole region for a full year",
+    "Rivers slowly rose over thousands of years",
+    "A volcano melted the snow on the mountains all at once",
+    "An ice dam broke and released a huge lake all at once"
+   ]
+  },
+  {
+   "id": "cw09-c4ffd2",
+   "q": "A highway crew cuts into a hillside to widen a road. What hazard does that create?",
+   "choices": [
+    "It stops creep forever because the road holds the hill",
+    "It steepens the slope and removes support",
+    "It makes the slope safer by removing loose soil",
+    "It causes glaciers to form"
+   ]
+  },
+  {
+   "id": "cw09-6c2f1f",
+   "q": "A ridge of mixed rocks and sand sits across the bottom of a mountain valley. What does it mark?",
+   "choices": [
+    "A fault line",
+    "How far a glacier once reached",
+    "An old sand dune left from a desert",
+    "Where a river began, at the top of the valley"
+   ]
+  }
+ ],
+ "10": [
+  {
+   "id": "cw10-51bf44",
+   "q": "Why does a river slow down and drop its sand when it reaches a lake?",
+   "choices": [
+    "Rivers speed up in lakes, so the sand sinks",
+    "Lake water pushes the sediment back uphill into the river",
+    "Slower water drops sediment",
+    "Sand floats in lakes"
+   ]
+  },
+  {
+   "id": "cw10-490a2e",
+   "q": "A river in the mountains is fast and straight in a V-shaped valley. A river on a flat plain loops back and forth. Why?",
+   "choices": [
+    "Loops only form in mountains",
+    "Mountain rivers carry no sediment, so they can't make loops",
+    "Steep slopes cut down; gentle slopes meander",
+    "Plains rivers are always younger, so they haven't straightened yet"
+   ]
+  },
+  {
+   "id": "cw10-c79845",
+   "q": "Rain falls on a hill just east of a watershed divide. Where does the water go?",
+   "choices": [
+    "Into both watersheds equally, split down the middle",
+    "Straight into the ocean",
+    "It stays on the divide and soaks in",
+    "Into the watershed on the east side of the divide"
+   ]
+  },
+  {
+   "id": "cw10-f8be10",
+   "q": "A city paves over a large field. What happens to runoff and flooding downstream?",
+   "choices": [
+    "Runoff increases",
+    "Nothing changes, because the same amount of rain falls",
+    "The river dries up for good",
+    "Runoff decreases because pavement soaks up the rain"
+   ]
+  },
+  {
+   "id": "cw10-171314",
+   "q": "Why does Earth's water never run out, even though we use it every day?",
+   "choices": [
+    "New water forms from rocks every day deep underground",
+    "Comets drop fresh water on Earth every week",
+    "The water cycle keeps moving and recycling the same water",
+    "We only use ocean water"
+   ]
+  },
+  {
+   "id": "cw10-0bea21",
+   "q": "Less than 1% of Earth's water is usable fresh liquid water. Where is most of the rest?",
+   "choices": [
+    "In rivers and lakes all over the world",
+    "In living things",
+    "Salty oceans and frozen ice",
+    "In clouds and water vapor in the air"
+   ]
+  },
+  {
+   "id": "cw10-74f2f2",
+   "q": "An oxbow lake forms when what happens?",
+   "choices": [
+    "Groundwater fills a cave",
+    "A dam breaks and leaves a lake behind",
+    "A meander gets cut off from the main river",
+    "A glacier melts and fills an old crater"
+   ]
+  },
+  {
+   "id": "cw10-6875f9",
+   "q": "What made the 1976 Teton Dam failure so destructive?",
+   "choices": [
+    "It made the river freeze",
+    "It only affected the reservoir behind the dam",
+    "It caused a long drought because the river dried up",
+    "It flooded towns below"
+   ]
+  },
+  {
+   "id": "cw10-9a2ca0",
+   "q": "Plants release water vapor from their leaves. Which part of the water cycle is that?",
+   "choices": [
+    "Runoff",
+    "Infiltration",
+    "Transpiration",
+    "Precipitation"
+   ]
+  },
+  {
+   "id": "cw10-6b384a",
+   "q": "Why are floodplains good for farming but risky for homes?",
+   "choices": [
+    "Floodplains never flood, so the land is safe and flat",
+    "Floodplains are always dry and rocky",
+    "Floodplain soil has no nutrients, so it is rocky",
+    "Floods leave fertile silt but return"
+   ]
+  }
+ ],
+ "11": [
+  {
+   "id": "cw11-67b663",
+   "q": "Gravel holds a lot of water, and water flows through it easily. How would you describe gravel?",
+   "choices": [
+    "Low porosity and low permeability",
+    "High porosity but no permeability at all",
+    "High porosity and high permeability",
+    "Impermeable"
+   ]
+  },
+  {
+   "id": "cw11-1868f7",
+   "q": "Clay can hold lots of water, but water barely moves through it. Why?",
+   "choices": [
+    "Its tiny pores are poorly connected",
+    "Clay has no pore space, so it can't hold any water",
+    "Clay is always frozen",
+    "Water reacts with clay and disappears into it"
+   ]
+  },
+  {
+   "id": "cw11-4d09c1",
+   "q": "During a long drought, a family's well goes dry. What most likely happened?",
+   "choices": [
+    "The aquifer turned into solid rock during the drought",
+    "The water table dropped below the bottom of the well",
+    "The well filled with salt water from the ocean",
+    "The water table rose too high"
+   ]
+  },
+  {
+   "id": "cw11-228ba7",
+   "q": "Why is it a problem when a town pumps groundwater faster than rain and snow can recharge it?",
+   "choices": [
+    "The aquifer overflows and floods the town",
+    "It makes more rain fall",
+    "Wells go dry as the water table drops",
+    "Groundwater turns salty right away"
+   ]
+  },
+  {
+   "id": "cw11-e66e46",
+   "q": "Leaking fuel tanks at a gas station are a danger to nearby wells. Why?",
+   "choices": [
+    "Wells only get water from rain",
+    "Fuel can seep into the aquifer",
+    "Fuel makes the water table rise and flood the well",
+    "Fuel can't move through soil, so wells are safe"
+   ]
+  },
+  {
+   "id": "cw11-25891a",
+   "q": "Thousand Springs pours water out of the Snake River Canyon wall. Where does that water come from?",
+   "choices": [
+    "The Eastern Snake River Plain Aquifer",
+    "Ocean water pushed inland under the desert",
+    "A glacier on the canyon rim that melts all year",
+    "A broken water main"
+   ]
+  },
+  {
+   "id": "cw11-573300",
+   "q": "How do caves form in limestone?",
+   "choices": [
+    "Acidic water dissolves it",
+    "Lava tunnels melted the limestone from below",
+    "Wind carved them out over thousands of years",
+    "Earthquakes crack them open overnight"
+   ]
+  },
+  {
+   "id": "cw11-03b63a",
+   "q": "The ground over a cave suddenly collapses into a round hole. What is it?",
+   "choices": [
+    "A sinkhole",
+    "An aquifer",
+    "A spring",
+    "A geyser"
+   ]
+  },
+  {
+   "id": "cw11-7fc76d",
+   "q": "What makes a geyser erupt?",
+   "choices": [
+    "Groundwater heated by hot rock builds pressure and bursts out",
+    "Tides from the Moon push water up through the crack",
+    "Wind blows down into the ground and forces water out",
+    "Rain falls into a hole"
+   ]
+  },
+  {
+   "id": "cw11-233c87",
+   "q": "Why is the zone of saturation called saturated?",
+   "choices": [
+    "It is made of salt left behind by old seas",
+    "It is always above the water table, in the soil",
+    "Every pore space is full of water",
+    "It has no water"
+   ]
+  }
+ ],
+ "12": [
+  {
+   "id": "cw12-f9b083",
+   "q": "Scientists can't drill to the core. What do they mainly use to learn what's inside Earth?",
+   "choices": [
+    "How seismic waves travel through it",
+    "Photos from satellites",
+    "Samples of the core brought up by volcanoes",
+    "Digging deeper mines"
+   ]
+  },
+  {
+   "id": "cw12-a3ac9a",
+   "q": "S waves don't show up on the far side of Earth from an earthquake. What does that tell us?",
+   "choices": [
+    "The mantle is made of air",
+    "The core is hollow, so the waves have nothing to travel through",
+    "S waves are too slow to travel that far before fading",
+    "Part of the core is liquid, because S waves can't pass through liquid"
+   ]
+  },
+  {
+   "id": "cw12-434dba",
+   "q": "Why is the inner core solid even though it is hotter than the outer core?",
+   "choices": [
+    "The enormous pressure keeps the iron packed as a solid",
+    "Solid metals can't melt",
+    "It is actually cooler than the crust above it",
+    "It is made of a special kind of ice that doesn't melt"
+   ]
+  },
+  {
+   "id": "cw12-e2e865",
+   "q": "Which layer is the rigid lithosphere made of?",
+   "choices": [
+    "The asthenosphere and the lower mantle",
+    "Only the inner core and outer core",
+    "Only the crust under the oceans",
+    "The crust and the top of the mantle"
+   ]
+  },
+  {
+   "id": "cw12-b32992",
+   "q": "A pot of soup heated from below rolls up in the middle and sinks at the sides. How does that model the mantle?",
+   "choices": [
+    "The core moves the soup",
+    "The mantle is a liquid soup that boils all the time",
+    "Mantle rock rises, cools and sinks slowly",
+    "The crust boils and sinks into the core"
+   ]
+  },
+  {
+   "id": "cw12-b9be66",
+   "q": "What creates Earth's magnetic field?",
+   "choices": [
+    "Moving liquid iron in the outer core",
+    "The Moon's gravity pulling on the oceans",
+    "Huge magnets buried in the crust",
+    "Heat from the Sun"
+   ]
+  },
+  {
+   "id": "cw12-eb4e3c",
+   "q": "Why is Earth's magnetic field important for life on the surface?",
+   "choices": [
+    "It holds the atmosphere's oxygen inside rocks",
+    "It keeps the oceans warm by trapping heat",
+    "It blocks many charged particles from the Sun",
+    "It makes plants grow"
+   ]
+  },
+  {
+   "id": "cw12-d47de1",
+   "q": "The asthenosphere is described as soft and flowing. Why does that matter for plates?",
+   "choices": [
+    "It is where all earthquakes start",
+    "It is the source of Earth's magnetic field",
+    "Plates slide on top of it",
+    "It stops the plates from ever moving at all"
+   ]
+  },
+  {
+   "id": "cw12-fb259b",
+   "q": "Seismic waves suddenly speed up at the Moho. What does that boundary separate?",
+   "choices": [
+    "The atmosphere from the crust",
+    "The mantle from the outer core",
+    "The crust from the mantle",
+    "The inner core from the outer core"
+   ]
+  },
+  {
+   "id": "cw12-7658f4",
+   "q": "Why is the ocean crust thinner but denser than continental crust?",
+   "choices": [
+    "They are exactly the same",
+    "Continental crust is mostly iron, so it's heavier",
+    "It is basalt; continents are thicker, lighter rock",
+    "Ocean crust is made of water and soft sediment, so it's thin"
+   ]
+  }
+ ],
+ "13": [
+  {
+   "id": "cw13-a3199a",
+   "q": "Matching fossils of the same land reptile are found in South America and Africa. What did Wegener say this showed?",
+   "choices": [
+    "The reptile could swim across the ocean",
+    "The continents were once joined",
+    "The oceans used to be dry land everywhere",
+    "The fossils were moved by people"
+   ]
+  },
+  {
+   "id": "cw13-ed9b32",
+   "q": "Why did many scientists reject Wegener's idea at first?",
+   "choices": [
+    "He couldn't explain what force moved the continents",
+    "He had no fossil evidence to support his idea",
+    "He said the Earth was flat",
+    "He didn't look at any maps of the coastlines"
+   ]
+  },
+  {
+   "id": "cw13-60f933",
+   "q": "Rocks get older the farther you go from the Mid-Atlantic Ridge on either side. What does that show?",
+   "choices": [
+    "New crust forms at the ridge and moves away",
+    "Rocks age faster near water",
+    "The ridge is the oldest part of the ocean floor",
+    "The ocean floor is sinking slowly into the mantle"
+   ]
+  },
+  {
+   "id": "cw13-0e2508",
+   "q": "Magnetic stripes on the sea floor match on both sides of a mid-ocean ridge. Why?",
+   "choices": [
+    "Ocean currents lined up iron grains into stripes on the bottom",
+    "The stripes were painted by currents",
+    "Crust formed at the ridge recorded Earth's field, then spread both ways",
+    "Ships dropped magnets along the ridge for navigation long ago"
+   ]
+  },
+  {
+   "id": "cw13-6cb5fa",
+   "q": "An ocean plate meets a continental plate. Which one sinks, and why?",
+   "choices": [
+    "The continental plate, because it is thicker",
+    "Both melt at the surface",
+    "The ocean plate, because it is denser",
+    "Neither ever sinks"
+   ]
+  },
+  {
+   "id": "cw13-20fa49",
+   "q": "Two plates slide past each other sideways, like along the San Andreas Fault. What boundary is it?",
+   "choices": [
+    "Transform",
+    "Convergent",
+    "Subduction",
+    "Divergent"
+   ]
+  },
+  {
+   "id": "cw13-051b00",
+   "q": "Iceland is splitting apart along a rift. What kind of boundary runs through it?",
+   "choices": [
+    "Convergent",
+    "Transform",
+    "Divergent",
+    "There is no boundary"
+   ]
+  },
+  {
+   "id": "cw13-12aae1",
+   "q": "The Snake River Plain gets younger toward Yellowstone. What explains this?",
+   "choices": [
+    "North America moved southwest over a fixed hotspot",
+    "Glaciers dropped the rocks in order",
+    "The hotspot moved east on its own, about an inch each year",
+    "A river carved the plain from west to east"
+   ]
+  },
+  {
+   "id": "cw13-66dbcc",
+   "q": "Which force is thought to be one of the strongest drivers of plate motion?",
+   "choices": [
+    "The Moon's tides",
+    "Slab pull, where a sinking plate drags the rest along",
+    "Wind blowing on tall mountains",
+    "Ocean currents pushing against the edges of continents"
+   ]
+  },
+  {
+   "id": "cw13-5a5109",
+   "q": "Plates move about as fast as your fingernails grow. Why can that still build huge mountains?",
+   "choices": [
+    "Fingernails grow very fast",
+    "Plates speed up a lot whenever mountains form",
+    "Mountains are built in a single day during big earthquakes",
+    "Small moves add up over time"
+   ]
+  }
+ ],
+ "14": [
+  {
+   "id": "cw14-8e5727",
+   "q": "Rocks along a locked fault bend for years, then snap back and release energy. What is this idea called?",
+   "choices": [
+    "Thermal expansion",
+    "Deflation",
+    "Convection",
+    "Elastic rebound"
+   ]
+  },
+  {
+   "id": "cw14-3a1601",
+   "q": "In a normal fault, the block above the fault slides down. What kind of stress caused it?",
+   "choices": [
+    "Compression, squeezing the crust",
+    "Tension, pulling the crust apart",
+    "No stress at all",
+    "Shear only"
+   ]
+  },
+  {
+   "id": "cw14-1cc11e",
+   "q": "The 1983 Borah Peak earthquake in Idaho happened on a normal fault. What does that tell you about the crust there?",
+   "choices": [
+    "It is being pushed together",
+    "It is being stretched apart",
+    "It is sliding sideways",
+    "It isn't moving"
+   ]
+  },
+  {
+   "id": "cw14-32cdd2",
+   "q": "Why do you need at least three seismograph stations to find an epicenter?",
+   "choices": [
+    "Three stations make the quake bigger",
+    "Three distance circles meet",
+    "One station is enough as long as it is close to the quake",
+    "Two stations always agree, so a third is just a backup"
+   ]
+  },
+  {
+   "id": "cw14-2d8723",
+   "q": "The S wave arrives much later than the P wave at a seismograph. What does that mean?",
+   "choices": [
+    "The station is far from the epicenter",
+    "The station is right on top of the epicenter",
+    "The earthquake was small",
+    "The waves passed through the core"
+   ]
+  },
+  {
+   "id": "cw14-5182a2",
+   "q": "One earthquake has a magnitude of 6 and another a magnitude of 7. How do they compare?",
+   "choices": [
+    "The 7 is exactly 1 more unit, so almost the same",
+    "They release the same energy",
+    "The 7 releases about 32 times more energy",
+    "The 6 is stronger"
+   ]
+  },
+  {
+   "id": "cw14-cd095f",
+   "q": "Two towns feel the same earthquake. One reports broken windows; the other barely feels it. What is different?",
+   "choices": [
+    "The epicenter",
+    "Magnitude, because each town had a different earthquake",
+    "The fault type changed between the two towns",
+    "Intensity (local shaking), not magnitude"
+   ]
+  },
+  {
+   "id": "cw14-c9716b",
+   "q": "Why can buildings on loose, wet sand be damaged more than buildings on solid rock?",
+   "choices": [
+    "Rock shakes more than sand, so it's safer on sand",
+    "Wet ground can't shake",
+    "Shaking can make the sand act like a liquid (liquefaction)",
+    "Sand stops seismic waves, so it shakes less than rock"
+   ]
+  },
+  {
+   "id": "cw14-8f8bf5",
+   "q": "During an earthquake inside a classroom, what should you do?",
+   "choices": [
+    "Stand in front of a window",
+    "Run outside right away, even while the ground is shaking",
+    "Drop, cover under a sturdy desk, and hold on",
+    "Stand in a doorway near the windows to watch"
+   ]
+  },
+  {
+   "id": "cw14-c1e401",
+   "q": "Why do scientists talk about earthquake probability instead of exact predictions?",
+   "choices": [
+    "They can find risky faults but can't yet tell the exact day one will slip",
+    "Faults never move twice, so once one slips it is safe forever",
+    "Seismographs can see the future",
+    "Earthquakes are rarely dangerous, so exact predictions aren't needed"
+   ]
+  }
+ ],
+ "15": [
+  {
+   "id": "cw15-3819c5",
+   "q": "Kilauea in Hawaii oozes runny lava, but Mount St. Helens exploded in 1980. What is the main reason?",
+   "choices": [
+    "Mount St. Helens' lava was runnier, so it shot out faster",
+    "Hawaii has no magma",
+    "Kilauea's magma has more silica and gas, so it should have exploded",
+    "Mount St. Helens' magma was thick, high-silica, and full of trapped gas"
+   ]
+  },
+  {
+   "id": "cw15-0d6724",
+   "q": "A volcano is wide, has gentle slopes, and is built of many thin basalt flows. What type is it?",
+   "choices": [
+    "Composite volcano",
+    "Cinder cone",
+    "Shield volcano",
+    "Caldera only"
+   ]
+  },
+  {
+   "id": "cw15-b08bc1",
+   "q": "Why are composite volcanoes along subduction zones often the most dangerous?",
+   "choices": [
+    "They only erupt slow, runny lava that people can walk away from",
+    "They never erupt",
+    "Their thick, gassy magma can explode",
+    "They form only underwater, so tsunamis are the only danger"
+   ]
+  },
+  {
+   "id": "cw15-4f3856",
+   "q": "A volcano's snowy peak melts during an eruption, and a fast mudflow races down the valley. What is it?",
+   "choices": [
+    "A lahar",
+    "A pyroclastic flow",
+    "A lava tube",
+    "A geyser"
+   ]
+  },
+  {
+   "id": "cw15-0800a8",
+   "q": "Why is a pyroclastic flow so deadly?",
+   "choices": [
+    "It is a fast, superhot cloud of gas and rock that can't be outrun",
+    "It only happens underwater",
+    "It moves as slowly as honey, so it only destroys buildings",
+    "It is just steam, so it only causes small burns"
+   ]
+  },
+  {
+   "id": "cw15-5a075f",
+   "q": "Scientists notice more small earthquakes and the ground bulging near a volcano. What might it mean?",
+   "choices": [
+    "The volcano is going extinct and settling down for good",
+    "Magma may be rising",
+    "Nothing; small earthquakes near volcanoes never matter",
+    "It's about to snow"
+   ]
+  },
+  {
+   "id": "cw15-f4b067",
+   "q": "Craters of the Moon has cinder cones and basalt flows. What is the source of its volcanism?",
+   "choices": [
+    "A subduction zone right underneath southern Idaho",
+    "A giant meteor impact that cracked the crust",
+    "The Yellowstone hotspot track",
+    "A glacier"
+   ]
+  },
+  {
+   "id": "cw15-1b321b",
+   "q": "Why do volcanoes form at divergent boundaries like mid-ocean ridges?",
+   "choices": [
+    "Wind carves holes in the crust",
+    "The ocean water boils the rock until it melts",
+    "Pressure drops; mantle melts",
+    "Plates crash together and pile up into tall volcanoes"
+   ]
+  },
+  {
+   "id": "cw15-942dee",
+   "q": "A huge eruption empties a magma chamber and the top of the volcano collapses. What forms?",
+   "choices": [
+    "A delta",
+    "A dike",
+    "A cinder cone",
+    "A caldera"
+   ]
+  },
+  {
+   "id": "cw15-80dd27",
+   "q": "How can volcanic ash affect people far from the eruption?",
+   "choices": [
+    "It makes the air cleaner by soaking up pollution",
+    "It only falls on the slopes of the volcano itself",
+    "It can ground planes and harm crops and lungs",
+    "It turns into gold"
+   ]
+  }
+ ],
+ "16": [
+  {
+   "id": "cw16-2d701f",
+   "q": "Rock layers deep underground are bent into an arch instead of breaking. Why did they fold?",
+   "choices": [
+    "They were cold and brittle, so they bent instead of breaking",
+    "They were pulled apart quickly, which stretched them into an arch",
+    "They were hot and squeezed",
+    "They were never under stress"
+   ]
+  },
+  {
+   "id": "cw16-9cd910",
+   "q": "The Lost River Range rose as a block of crust tilted up along a normal fault. What kind of mountain is it?",
+   "choices": [
+    "Dome mountain",
+    "Fault-block mountain",
+    "Volcanic mountain",
+    "Folded mountain"
+   ]
+  },
+  {
+   "id": "cw16-b0a6c9",
+   "q": "The Himalayas are still rising. What is building them?",
+   "choices": [
+    "Two colliding continental plates",
+    "A divergent boundary pulling Asia apart",
+    "Glaciers piling up ice",
+    "A hotspot under India pushing the crust up"
+   ]
+  },
+  {
+   "id": "cw16-a112ac",
+   "q": "The Sawtooth Mountains are carved from granite of the Idaho Batholith. What does that tell you about their rock's past?",
+   "choices": [
+    "It cooled from magma deep underground",
+    "It erupted as lava from a volcano that wore away",
+    "It formed in a shallow sea",
+    "It formed from ancient sand dunes that hardened"
+   ]
+  },
+  {
+   "id": "cw16-cfdafe",
+   "q": "Why do mountains rise a little as they erode?",
+   "choices": [
+    "The core pulls the mountain up as it cools",
+    "Erosion adds rock to the top of the mountain",
+    "Isostasy: lighter crust floats higher",
+    "Glaciers push them up"
+   ]
+  },
+  {
+   "id": "cw16-a8d56f",
+   "q": "Which type of stress pulls rock apart and makes the crust thinner?",
+   "choices": [
+    "Tension",
+    "Compression",
+    "Isostasy",
+    "Shear"
+   ]
+  },
+  {
+   "id": "cw16-1d61f9",
+   "q": "A downward, U-shaped fold in rock layers is called what?",
+   "choices": [
+    "A horst",
+    "A monocline",
+    "A syncline",
+    "An anticline"
+   ]
+  },
+  {
+   "id": "cw16-ba22d3",
+   "q": "Why are the Appalachians lower and rounder than the Rockies?",
+   "choices": [
+    "They are still rising faster than the Rockies",
+    "They are made of softer rock that was never squeezed",
+    "They're far older",
+    "They were built by wind"
+   ]
+  },
+  {
+   "id": "cw16-e29bf2",
+   "q": "Magma pushes up layers of rock into a rounded bulge but doesn't erupt. What kind of mountain can this make?",
+   "choices": [
+    "A fault-block mountain",
+    "A folded mountain",
+    "A volcanic island",
+    "A dome mountain"
+   ]
+  },
+  {
+   "id": "cw16-0259df",
+   "q": "What would happen to a mountain range if all uplift stopped?",
+   "choices": [
+    "It would keep growing anyway from its own weight",
+    "It would turn into a volcano",
+    "Nothing would change; mountains last forever once built",
+    "Erosion would slowly wear it down over millions of years"
+   ]
+  }
+ ],
+ "17": [
+  {
+   "id": "cw17-10fdcd",
+   "q": "Why does cold, salty water sink below warmer, fresher water?",
+   "choices": [
+    "It has more air in it",
+    "It is lighter",
+    "It is denser",
+    "It is moving faster"
+   ]
+  },
+  {
+   "id": "cw17-83cad6",
+   "q": "Surface currents in the Northern Hemisphere bend to the right and form big loops. What causes the bending?",
+   "choices": [
+    "The Moon's gravity pulling the water sideways",
+    "Underwater volcanoes pushing water in circles",
+    "The Coriolis effect from Earth's rotation",
+    "Fish swimming in circles"
+   ]
+  },
+  {
+   "id": "cw17-5d682f",
+   "q": "Sea ice forms near Antarctica and leaves extra salt in the water below. How does that help drive the global conveyor belt?",
+   "choices": [
+    "The salty, cold water sinks and starts deep currents",
+    "It warms the ocean floor and melts more ice",
+    "The fresh, warm water rises and stops deep currents",
+    "It makes the water float"
+   ]
+  },
+  {
+   "id": "cw17-46786f",
+   "q": "Why is the Pacific coast near Peru so rich in fish?",
+   "choices": [
+    "Rivers dump fish into the ocean there",
+    "There are no currents there",
+    "The water there is the warmest on Earth, so fish grow fast",
+    "Upwelling brings cold, nutrient-rich water to the surface"
+   ]
+  },
+  {
+   "id": "cw17-88e8ee",
+   "q": "During El Niño, warm water spreads east across the Pacific. What happens to upwelling off South America?",
+   "choices": [
+    "It gets much stronger, and fishing gets better",
+    "It moves to the Atlantic",
+    "It stays the same, but the fish move to Asia",
+    "Fishing gets worse"
+   ]
+  },
+  {
+   "id": "cw17-0b2e42",
+   "q": "Why does the ocean get saltier where lots of water evaporates in hot, dry areas?",
+   "choices": [
+    "Fish release salt",
+    "Evaporation adds salt from the air to the water",
+    "Water evaporates but the salt stays behind",
+    "Rain there is salty because it comes from the sea"
+   ]
+  },
+  {
+   "id": "cw17-77789e",
+   "q": "Where does most of the salt in the ocean come from?",
+   "choices": [
+    "Sea creatures making salt and releasing it as waste",
+    "Rocks dissolved by rivers",
+    "Salt mines on the sea floor that people dug long ago",
+    "Rain that falls from salty clouds"
+   ]
+  },
+  {
+   "id": "cw17-12b02c",
+   "q": "Why does the deep ocean stay cold and dark, even near the equator?",
+   "choices": [
+    "It is heated from below by the core but cooled by ice",
+    "Sunlight and warm water can't reach it",
+    "Ice covers the deep ocean and blocks the light",
+    "Currents never reach it"
+   ]
+  },
+  {
+   "id": "cw17-a2a0dc",
+   "q": "The Gulf Stream carries warm water northeast. How does it affect Western Europe?",
+   "choices": [
+    "Milder winters",
+    "It makes Europe colder by pulling warm air away",
+    "It has no effect on land, only on ships",
+    "It causes all of Europe's earthquakes"
+   ]
+  },
+  {
+   "id": "cw17-f92310",
+   "q": "Why do people say there is really just one world ocean?",
+   "choices": [
+    "They are all connected and mix",
+    "There is only one ocean drawn on most maps",
+    "The oceans never mix, but they share one name",
+    "Only the Pacific counts"
+   ]
+  }
+ ],
+ "18": [
+  {
+   "id": "cw18-ae3f5d",
+   "q": "A ship sends a sound pulse down and hears the echo 4 seconds later. If sound travels about 1,500 m/s in water, how deep is the sea floor?",
+   "choices": [
+    "About 6,000 m",
+    "About 3,000 m",
+    "About 1,500 m",
+    "About 375 m"
+   ]
+  },
+  {
+   "id": "cw18-d61a18",
+   "q": "Why are ocean trenches the deepest parts of the sea floor?",
+   "choices": [
+    "They are where new crust forms and spreads apart",
+    "Rivers carved them before the oceans filled up",
+    "Glaciers dug them",
+    "One plate is sinking under another there"
+   ]
+  },
+  {
+   "id": "cw18-4be117",
+   "q": "A surfer floats in place while a wave passes under her. What does that show about waves?",
+   "choices": [
+    "Waves move energy, not the water itself",
+    "The surfer is too heavy to move",
+    "Waves only move sand",
+    "Waves move all the water to shore"
+   ]
+  },
+  {
+   "id": "cw18-489cb5",
+   "q": "Why does a wave break as it reaches the beach?",
+   "choices": [
+    "The water gets saltier",
+    "The Moon pulls the top of the wave down",
+    "The wind stops pushing it, so it falls over",
+    "Its base drags on the shallow bottom"
+   ]
+  },
+  {
+   "id": "cw18-da4de8",
+   "q": "Why are tides highest during new moon and full moon?",
+   "choices": [
+    "Earth spins faster at those times",
+    "The Sun and Moon line up and add pulls",
+    "The Sun's gravity turns off during those phases",
+    "The Moon is closest to Earth every new and full moon"
+   ]
+  },
+  {
+   "id": "cw18-2df0fd",
+   "q": "Hot, mineral-rich water pours from vents on a mid-ocean ridge, and animals live there with no sunlight. What powers their food chain?",
+   "choices": [
+    "Vent chemicals and bacteria",
+    "Food that sinks down from ships on the surface",
+    "Food dropped by ships",
+    "Sunlight that reaches the bottom through clear water"
+   ]
+  },
+  {
+   "id": "cw18-a2b7cf",
+   "q": "Waves keep hitting a rocky headland. Over time, what might form?",
+   "choices": [
+    "A delta made of sand from the cliffs",
+    "A U-shaped valley carved by the waves",
+    "A sand dune field",
+    "Sea caves, then arches, then sea stacks"
+   ]
+  },
+  {
+   "id": "cw18-5f32e6",
+   "q": "Sand slowly moves along a beach in a zigzag. What causes this?",
+   "choices": [
+    "Rivers flow along the beach",
+    "Waves hitting at an angle create a longshore current",
+    "Wind carries the sand inland and drops it back",
+    "The tide only moves sand straight up and down the beach"
+   ]
+  },
+  {
+   "id": "cw18-a46af5",
+   "q": "Why is the continental shelf important to people?",
+   "choices": [
+    "It is made of lava, so it has valuable minerals",
+    "It is the deepest part of the ocean, so it holds the most water",
+    "It is shallow and full of fish, oil, and gas",
+    "It has no life"
+   ]
+  },
+  {
+   "id": "cw18-f8a2ce",
+   "q": "A town builds a seawall to stop erosion. What is a common trade-off?",
+   "choices": [
+    "It makes all erosion stop everywhere along the coast",
+    "It has no effect on anything",
+    "Nearby beaches can lose sand",
+    "It creates new beaches every year in front of the wall"
+   ]
+  }
+ ],
+ "19": [
+  {
+   "id": "cw19-53e39a",
+   "q": "Why do your ears pop when you drive up a mountain like the road to Bogus Basin?",
+   "choices": [
+    "Air pressure rises as you go higher",
+    "The air gets heavier",
+    "The air has more oxygen up there",
+    "Air pressure drops as you go higher"
+   ]
+  },
+  {
+   "id": "cw19-3f2e34",
+   "q": "Which layer of the atmosphere has almost all of our weather?",
+   "choices": [
+    "Troposphere",
+    "Mesosphere",
+    "Stratosphere",
+    "Thermosphere"
+   ]
+  },
+  {
+   "id": "cw19-92c9f4",
+   "q": "Why is the ozone layer so important for life?",
+   "choices": [
+    "It holds most of the oxygen we breathe",
+    "It holds all our oxygen",
+    "It makes the sky blue by reflecting the ocean",
+    "It absorbs most of the Sun's harmful UV radiation"
+   ]
+  },
+  {
+   "id": "cw19-d7b9d6",
+   "q": "You touch a metal slide in the sun and burn your hand. How did heat move into your hand?",
+   "choices": [
+    "Conduction",
+    "Radiation only",
+    "Evaporation",
+    "Convection"
+   ]
+  },
+  {
+   "id": "cw19-c06aaf",
+   "q": "Warm air rises over a sunny parking lot and cooler air moves in to replace it. What heat transfer is this?",
+   "choices": [
+    "Reflection",
+    "Conduction",
+    "Radiation",
+    "Convection"
+   ]
+  },
+  {
+   "id": "cw19-901433",
+   "q": "Without the greenhouse effect, what would Earth be like?",
+   "choices": [
+    "Exactly the same",
+    "Much hotter than it is now",
+    "Much too cold for most life",
+    "Covered in ozone"
+   ]
+  },
+  {
+   "id": "cw19-3733ff",
+   "q": "Why does wind blow from high pressure toward low pressure?",
+   "choices": [
+    "High pressure is always warmer, and wind follows heat",
+    "Air moves to even out pressure differences",
+    "Wind is caused by the Moon",
+    "Low pressure pushes the air away from it"
+   ]
+  },
+  {
+   "id": "cw19-851cd5",
+   "q": "On a summer afternoon at the beach, the breeze blows from the water onto the land. Why?",
+   "choices": [
+    "The water is warmer than the land, so air rises over the water",
+    "The ocean waves push the air toward the beach",
+    "Land heats faster, so air over land rises and cooler sea air moves in",
+    "Wind only blows at night"
+   ]
+  },
+  {
+   "id": "cw19-82ab50",
+   "q": "Nitrogen is about 78% of the air, but people mostly talk about CO₂. Why does such a small gas matter so much?",
+   "choices": [
+    "CO₂ is the gas we breathe in, so we need more of it",
+    "CO₂ traps heat strongly, so small changes affect climate",
+    "CO₂ makes up most of the air, more than nitrogen",
+    "Nitrogen is poisonous, so we ignore it"
+   ]
+  },
+  {
+   "id": "cw19-64b276",
+   "q": "Why are auroras seen in the thermosphere and mostly near the poles?",
+   "choices": [
+    "The Moon reflects light there",
+    "Volcanoes near the poles light up the sky at night",
+    "Earth's magnetic field steers solar particles there",
+    "Clouds in the thermosphere glow when the Sun sets near the poles"
+   ]
+  }
+ ],
+ "20": [
+  {
+   "id": "cw20-e9984a",
+   "q": "The air feels sticky on a hot day with a relative humidity of 90%. What does that number mean?",
+   "choices": [
+    "It will rain 90% of the day",
+    "90% of the air is water, so it is almost raining",
+    "The air holds 90% of the vapor it can",
+    "There is a 90% chance it will rain today"
+   ]
+  },
+  {
+   "id": "cw20-7d2fc6",
+   "q": "Dew forms on grass on a clear, cool morning. What happened?",
+   "choices": [
+    "Rain fell overnight and stayed on the grass",
+    "Groundwater rose up through the roots",
+    "Plants sweated water",
+    "Air cooled to its dew point"
+   ]
+  },
+  {
+   "id": "cw20-921514",
+   "q": "Why do clouds form when air rises?",
+   "choices": [
+    "Clouds are made of smoke",
+    "Rising air gets warmer and squeezes out water",
+    "Air sinks and piles up into clouds",
+    "Rising air cools until vapor condenses"
+   ]
+  },
+  {
+   "id": "cw20-a57d50",
+   "q": "Tall, puffy clouds with dark, flat bottoms are building on a summer afternoon. What weather might come?",
+   "choices": [
+    "Thunderstorms",
+    "A clear, calm evening",
+    "Steady drizzle for days",
+    "Snow in July"
+   ]
+  },
+  {
+   "id": "cw20-93f286",
+   "q": "A cold front passes through Boise. What weather change is most likely?",
+   "choices": [
+    "Weeks of warm, still weather with no clouds",
+    "No change",
+    "A quick burst of storms, then cooler, clearer air",
+    "Slow, steady warming and light drizzle for days"
+   ]
+  },
+  {
+   "id": "cw20-d1538f",
+   "q": "An air mass forms over the Gulf of Mexico. What is it likely to be like?",
+   "choices": [
+    "Warm and humid",
+    "Cold and dry (continental polar)",
+    "Hot and dry",
+    "Cold and humid"
+   ]
+  },
+  {
+   "id": "cw20-0f94be",
+   "q": "A low-pressure system is moving toward your town. What should you expect?",
+   "choices": [
+    "Freezing fog only",
+    "Clear, sunny skies",
+    "Clouds and storms",
+    "Calm, dry air for a week"
+   ]
+  },
+  {
+   "id": "cw20-e3c80b",
+   "q": "What is the difference between weather and climate?",
+   "choices": [
+    "Weather is today's conditions; climate is the long-term average",
+    "They mean the same thing, just over different places",
+    "Weather only means rain",
+    "Climate changes every hour, but weather stays the same"
+   ]
+  },
+  {
+   "id": "cw20-85ccc1",
+   "q": "Why are forecasts for 2 days out more accurate than forecasts for 10 days out?",
+   "choices": [
+    "Forecasters only work 2 days ahead",
+    "Small errors grow over time",
+    "Weather never changes in 2 days, so it's easy to guess",
+    "Computers forget the older data after a week"
+   ]
+  },
+  {
+   "id": "cw20-d1839a",
+   "q": "Why does snow fall instead of rain in winter?",
+   "choices": [
+    "Snow comes from different clouds that only exist in winter",
+    "The air stays below freezing all the way down",
+    "Rain freezes on the ground",
+    "There's no water vapor in summer"
+   ]
+  }
+ ],
+ "21": [
+  {
+   "id": "cw21-3c99d3",
+   "q": "You see lightning and count 9 seconds until thunder. About how far away is the storm?",
+   "choices": [
+    "About 3 kilometers",
+    "About 27 kilometers",
+    "About 9 kilometers",
+    "Right overhead"
+   ]
+  },
+  {
+   "id": "cw21-9ab057",
+   "q": "What three things does a thunderstorm need to form?",
+   "choices": [
+    "Snow, strong wind, and bright sunshine",
+    "Ocean water, ice, and fog",
+    "Moisture, unstable air and lift",
+    "Dry air, cold ground, and calm wind"
+   ]
+  },
+  {
+   "id": "cw21-abddf4",
+   "q": "The weather service issues a tornado WATCH. What should you do?",
+   "choices": [
+    "Be ready and know where you would take shelter",
+    "Go outside to look",
+    "Hide in the basement right now and stay there all day",
+    "Ignore it until you actually see the tornado"
+   ]
+  },
+  {
+   "id": "cw21-8620fa",
+   "q": "The weather service issues a tornado WARNING for your area. What should you do?",
+   "choices": [
+    "Open the windows to let the pressure out of the house",
+    "Shelter in an inner room now",
+    "Wait for a watch first",
+    "Drive toward it so you can see which way it's going"
+   ]
+  },
+  {
+   "id": "cw21-996354",
+   "q": "Why do hurricanes weaken after they move over land?",
+   "choices": [
+    "They lose their supply of warm ocean water and moisture",
+    "They turn into tornadoes",
+    "Land makes them spin faster until they break apart",
+    "Mountains add energy that turns them into tornadoes"
+   ]
+  },
+  {
+   "id": "cw21-f058bb",
+   "q": "What usually causes the most deaths in a hurricane?",
+   "choices": [
+    "Hail and strong gusts of wind",
+    "Lightning strikes during the storm",
+    "Snow",
+    "Storm surge flooding along the coast"
+   ]
+  },
+  {
+   "id": "cw21-1f530b",
+   "q": "Why can a thunderstorm be dangerous even when it isn't raining where you are?",
+   "choices": [
+    "Storms are safe until it rains",
+    "Thunder can knock you down even from far away",
+    "Lightning reaches far",
+    "Rain is the only danger, so a dry spot is safe"
+   ]
+  },
+  {
+   "id": "cw21-6da7cd",
+   "q": "How does an EF5 tornado compare to an EF1?",
+   "choices": [
+    "It is smaller and weaker, because 5 means fifth place",
+    "It lasts less than a second",
+    "It is the same, but it lasts longer",
+    "It has far stronger winds and damage"
+   ]
+  },
+  {
+   "id": "cw21-03238b",
+   "q": "During a flash flood, why shouldn't you drive through water on a road?",
+   "choices": [
+    "Water makes cars float, so they drive faster",
+    "Roads are always shallow, but the water is too cold for engines",
+    "Cars are waterproof, so only the tires get wet",
+    "Moving water can float a car away"
+   ]
+  },
+  {
+   "id": "cw21-3ec7fc",
+   "q": "How can a long drought make wildfires worse in Idaho?",
+   "choices": [
+    "Droughts add moisture to forests",
+    "Dry plants burn easily",
+    "Droughts stop lightning",
+    "Wildfires need rain to start"
+   ]
+  }
+ ],
+ "22": [
+  {
+   "id": "cw22-36fe16",
+   "q": "Why is Idaho warmer in July than in January, even though Earth is closer to the Sun in January?",
+   "choices": [
+    "Earth is closer to the Sun in July, so the sunlight is stronger",
+    "Northern tilt toward the Sun",
+    "Clouds block the Sun in winter",
+    "The Sun burns hotter in July because of sunspots"
+   ]
+  },
+  {
+   "id": "cw22-e5edf2",
+   "q": "Two towns are at the same latitude. One is at the coast and one is far inland. Which likely has milder winters?",
+   "choices": [
+    "They are always the same",
+    "The inland town, because land holds heat longer than water",
+    "Whichever town is higher in the mountains",
+    "The coastal town, because water warms and cools slowly"
+   ]
+  },
+  {
+   "id": "cw22-ee4085",
+   "q": "Why is it colder at the top of the Sawtooths than in the valley below?",
+   "choices": [
+    "Mountains are closer to the Moon",
+    "Valleys get more sunlight",
+    "Snow makes its own cold",
+    "Air cools as elevation rises"
+   ]
+  },
+  {
+   "id": "cw22-2c3c84",
+   "q": "Ice cores from Antarctica trap tiny bubbles of old air. What can scientists learn from them?",
+   "choices": [
+    "Where the Moon was",
+    "How deep the ocean was when the ice formed",
+    "How old the penguins were that lived on the ice",
+    "Past CO₂ levels"
+   ]
+  },
+  {
+   "id": "cw22-5236f3",
+   "q": "CO₂ has gone from about 280 ppm before industry to about 427 ppm in 2025. What is the main cause?",
+   "choices": [
+    "Volcanoes erupting much more often than before",
+    "Plants releasing more oxygen",
+    "The Sun getting closer to Earth each year",
+    "Burning fossil fuels like coal, oil, and gas"
+   ]
+  },
+  {
+   "id": "cw22-652a85",
+   "q": "As Arctic ice melts, darker ocean water absorbs more sunlight and warms more, melting more ice. What is this?",
+   "choices": [
+    "A cold front",
+    "A negative feedback loop",
+    "A positive feedback loop",
+    "A Milankovitch cycle"
+   ]
+  },
+  {
+   "id": "cw22-96cd06",
+   "q": "Climate has changed naturally in the past. Why are scientists still concerned about today's change?",
+   "choices": [
+    "It is happening much faster and is linked to human activity",
+    "Climate has never changed before, so any change is new",
+    "Natural changes never mattered",
+    "It only affects the oceans, not where people live"
+   ]
+  },
+  {
+   "id": "cw22-176e29",
+   "q": "Idaho gets more winter precipitation as rain instead of snow. Why does that matter for summer water?",
+   "choices": [
+    "Less snowpack means less summer water",
+    "It has no effect",
+    "Rain is saltier than snow, so it harms the crops",
+    "Rain stays frozen longer in the mountains than snow"
+   ]
+  },
+  {
+   "id": "cw22-ad6e74",
+   "q": "A town plants trees, builds cooling centers, and saves water for hotter summers. Is this mitigation or adaptation?",
+   "choices": [
+    "Mitigation: lowering greenhouse gas emissions",
+    "Neither",
+    "A feedback loop that speeds up warming",
+    "Adaptation"
+   ]
+  },
+  {
+   "id": "cw22-dd1e49",
+   "q": "Wide tree rings in an old tree mean what about those years?",
+   "choices": [
+    "Good growing years",
+    "Years with a forest fire that burned the bark",
+    "Years when the tree died",
+    "Years with very little sunlight or rain"
+   ]
+  }
+ ],
+ "23": [
+  {
+   "id": "cw23-8270a0",
+   "q": "In a canyon wall, a layer of basalt cuts straight across three sandstone layers. Which is younger, the basalt or the sandstone?",
+   "choices": [
+    "You can't ever tell",
+    "They are the same age, since they touch each other",
+    "The basalt; cutting rock is younger",
+    "The sandstone, because it is lower in the canyon wall"
+   ]
+  },
+  {
+   "id": "cw23-f7a3fe",
+   "q": "Pieces of granite are found inside a sandstone layer. What does the principle of inclusions say?",
+   "choices": [
+    "The granite is older than the sandstone",
+    "The granite fell in later",
+    "The sandstone is older than the granite",
+    "They formed at the same time"
+   ]
+  },
+  {
+   "id": "cw23-0e8618",
+   "q": "A rock layer is tilted steeply. What does original horizontality tell you?",
+   "choices": [
+    "It is the youngest layer because it is on top",
+    "It was laid down flat and was tilted later",
+    "It was pushed sideways by a river",
+    "It was always tilted, because it formed on a steep slope"
+   ]
+  },
+  {
+   "id": "cw23-a04648",
+   "q": "A carbon-14 sample has gone through two half-lives. What fraction of the original carbon-14 is left?",
+   "choices": [
+    "Three-quarters",
+    "One-quarter",
+    "None",
+    "One-half"
+   ]
+  },
+  {
+   "id": "cw23-e369a3",
+   "q": "Why is carbon-14 useful for dating a mammoth bone, but not a 300-million-year-old fossil?",
+   "choices": [
+    "Old fossils have too much carbon-14, which jams the test",
+    "Carbon-14 only works on rocks, not on bones",
+    "Mammoths are made of different carbon",
+    "Its short half-life leaves almost none after ~50,000 years"
+   ]
+  },
+  {
+   "id": "cw23-865374",
+   "q": "Why is a good index fossil a species that lived for a short time but spread worldwide?",
+   "choices": [
+    "It is always large",
+    "It pins layers to a narrow time in many places",
+    "It is easy to dig up because it's always near the surface",
+    "It lived in only one valley, so it marks that place"
+   ]
+  },
+  {
+   "id": "cw23-c29573",
+   "q": "A dinosaur footprint is preserved in mudstone. What kind of fossil is it?",
+   "choices": [
+    "A carbon film",
+    "A trace fossil",
+    "A petrified fossil",
+    "A preserved remain in amber"
+   ]
+  },
+  {
+   "id": "cw23-3f46e6",
+   "q": "The Hagerman Horse Quarry has many complete horse fossils in old river and lake sediments. Why did so many survive?",
+   "choices": [
+    "Lava flows covered and preserved them",
+    "Horses don't decay as fast as other animals",
+    "Quick burial",
+    "They were frozen in ice"
+   ]
+  },
+  {
+   "id": "cw23-24cfbd",
+   "q": "Why is it rare for a living thing to become a fossil?",
+   "choices": [
+    "Only animals with shells existed for most of Earth's history",
+    "Fossils form from every living thing",
+    "It usually decays or is eaten before it can be buried and preserved",
+    "Fossils only form in volcanoes, which are rare"
+   ]
+  },
+  {
+   "id": "cw23-f1abab",
+   "q": "Earth is about 4.6 billion years old. If that were squeezed into one day, when would humans show up?",
+   "choices": [
+    "At breakfast time",
+    "Around noon",
+    "Right after the start of the day",
+    "In the last few seconds"
+   ]
+  }
+ ],
+ "24": [
+  {
+   "id": "cw24-fa3f6d",
+   "q": "Where did most of Earth's early oxygen come from?",
+   "choices": [
+    "Cyanobacteria (photosynthesis)",
+    "Comets that crashed into the oceans",
+    "Volcanoes erupting pure oxygen gas",
+    "Lightning"
+   ]
+  },
+  {
+   "id": "cw24-3ebb3a",
+   "q": "Why is the Great Oxygenation Event an example of life and Earth changing together?",
+   "choices": [
+    "Earth made oxygen without any life",
+    "Life only changed the rocks, not the air",
+    "Life changed the air, and the air changed life",
+    "It had nothing to do with life; volcanoes made the oxygen"
+   ]
+  },
+  {
+   "id": "cw24-18cdb8",
+   "q": "Why did Earth separate into a dense iron core and lighter crust early on?",
+   "choices": [
+    "Ice pushed the iron down",
+    "Heavy iron sank",
+    "The crust formed first and then sank to the middle",
+    "The Moon's gravity pulled the iron down to the center"
+   ]
+  },
+  {
+   "id": "cw24-40fe0d",
+   "q": "What evidence supports an asteroid causing the K-Pg extinction about 66 million years ago?",
+   "choices": [
+    "An iridium layer and the Chicxulub crater",
+    "Ice cores from that time with ash in them",
+    "Fossils of dinosaurs found on the Moon",
+    "No evidence exists"
+   ]
+  },
+  {
+   "id": "cw24-a33577",
+   "q": "Why did mammals spread out and diversify in the Cenozoic Era?",
+   "choices": [
+    "Mammals first appeared on Earth at that time",
+    "Humans helped mammals spread to new places",
+    "Dinosaurs left habitats open",
+    "The climate became too hot for reptiles"
+   ]
+  },
+  {
+   "id": "cw24-742889",
+   "q": "Which order of eras goes from oldest to youngest?",
+   "choices": [
+    "Cenozoic, Mesozoic, Paleozoic",
+    "Paleozoic, Mesozoic, Cenozoic",
+    "Mesozoic, Paleozoic, Cenozoic",
+    "Paleozoic, Cenozoic, Mesozoic"
+   ]
+  },
+  {
+   "id": "cw24-632ad3",
+   "q": "Precambrian time makes up most of Earth's history. Why are there so few fossils from it?",
+   "choices": [
+    "Precambrian rocks are all underwater, so no one can reach them",
+    "No life existed at all during Precambrian time",
+    "Fossils from then are too big to find",
+    "Tiny soft life; altered rocks"
+   ]
+  },
+  {
+   "id": "cw24-a40b13",
+   "q": "How do scientists think the Moon formed?",
+   "choices": [
+    "It was captured from another solar system as it passed by",
+    "It formed from a comet",
+    "It split off from Earth's ocean as a giant drop of water",
+    "A Mars-sized object hit early Earth and the debris came together"
+   ]
+  },
+  {
+   "id": "cw24-a46db7",
+   "q": "What caused the Permian extinction, the largest in Earth's history, according to the leading idea?",
+   "choices": [
+    "A solar eclipse",
+    "Early humans hunting most animals to extinction",
+    "Huge volcanic eruptions",
+    "An ice age that lasted only one year"
+   ]
+  },
+  {
+   "id": "cw24-3bd7bd",
+   "q": "Where did Earth's early oceans come from?",
+   "choices": [
+    "Volcanic steam became rain",
+    "Ice from the Moon melted and fell to Earth",
+    "Oceans have always been there, since the day Earth formed",
+    "Rivers flowed in from space"
+   ]
+  }
+ ],
+ "25": [
+  {
+   "id": "cw25-5faf01",
+   "q": "Why is coal considered nonrenewable even though new plant material is buried every day?",
+   "choices": [
+    "Coal is a renewable resource",
+    "Millions of years to form",
+    "Plants no longer exist in swamps to make new coal",
+    "Coal can't be burned twice, so we can't reuse it"
+   ]
+  },
+  {
+   "id": "cw25-6ee647",
+   "q": "Idaho gets most of its electricity from dams on its rivers. What is a trade-off of hydroelectric power?",
+   "choices": [
+    "It can block salmon from migrating",
+    "It uses up the water",
+    "It only works at night when demand is low",
+    "It releases lots of CO₂ from the water"
+   ]
+  },
+  {
+   "id": "cw25-c69e06",
+   "q": "What is the main drawback of nuclear fission power?",
+   "choices": [
+    "It only works when the wind blows",
+    "It releases a lot of CO₂ into the air every day",
+    "Radioactive waste that lasts a long time",
+    "It needs coal to start up every morning"
+   ]
+  },
+  {
+   "id": "cw25-68029d",
+   "q": "Why does solar power need batteries or other backup?",
+   "choices": [
+    "Batteries make the panels brighter and more efficient",
+    "There's no sunlight at night",
+    "Solar power makes too much CO₂",
+    "Solar panels stop working in summer when it's too hot"
+   ]
+  },
+  {
+   "id": "cw25-93afe9",
+   "q": "Why is geothermal energy a good fit for parts of Idaho?",
+   "choices": [
+    "Hot rock and hot water are close to the surface",
+    "It snows in Idaho",
+    "Idaho has the most coal near the surface",
+    "Idaho is close to the ocean and its warm currents"
+   ]
+  },
+  {
+   "id": "cw25-86287f",
+   "q": "Turning off lights and buying an efficient fridge are examples of what?",
+   "choices": [
+    "Burning more natural gas",
+    "Fracking and drilling",
+    "Conservation and efficiency",
+    "Mining and nuclear fission"
+   ]
+  },
+  {
+   "id": "cw25-ca4650",
+   "q": "Why is burning natural gas called cleaner than burning coal, but still a problem?",
+   "choices": [
+    "It releases more CO₂ than coal but less smoke",
+    "It isn't a fossil fuel",
+    "It releases no CO₂ at all when it burns",
+    "Less CO₂, but some"
+   ]
+  },
+  {
+   "id": "cw25-666e0a",
+   "q": "Which choice describes a sustainable way to use a resource?",
+   "choices": [
+    "Using it until it runs out, then switching",
+    "Never using it",
+    "Using it no faster than it can be replaced",
+    "Using it as fast as possible before prices rise"
+   ]
+  },
+  {
+   "id": "cw25-ab3ba8",
+   "q": "Idaho National Laboratory is famous for what?",
+   "choices": [
+    "Running the largest coal mine in the United States",
+    "Building the first offshore wind farm in America",
+    "Inventing solar panels",
+    "Pioneering nuclear power"
+   ]
+  },
+  {
+   "id": "cw25-3a5359",
+   "q": "Why does every energy source have trade-offs?",
+   "choices": [
+    "Trade-offs only apply to fossil fuels",
+    "Each has costs, like pollution or waste",
+    "Energy is always free",
+    "Some sources have no costs at all, like wind and solar"
+   ]
+  }
+ ],
+ "26": [
+  {
+   "id": "cw26-0ea8d9",
+   "q": "Extra fertilizer washes off farms into a lake, algae grow out of control, then die and use up the oxygen. What is this?",
+   "choices": [
+    "Ozone depletion",
+    "Eutrophication",
+    "Acid rain",
+    "Smog"
+   ]
+  },
+  {
+   "id": "cw26-042923",
+   "q": "Oil drips from thousands of cars and washes into a river after rain. What kind of pollution is that?",
+   "choices": [
+    "Noise",
+    "Thermal pollution",
+    "Point-source",
+    "Nonpoint-source"
+   ]
+  },
+  {
+   "id": "cw26-513e3c",
+   "q": "A factory pipe dumps waste straight into a river. What kind of pollution is that?",
+   "choices": [
+    "Acid rain",
+    "Point-source",
+    "Natural pollution",
+    "Nonpoint-source"
+   ]
+  },
+  {
+   "id": "cw26-a9fbf0",
+   "q": "How does burning coal lead to acid rain?",
+   "choices": [
+    "It makes the rain saltier, like ocean water",
+    "It blocks sunlight",
+    "Coal smoke freezes into hail high in the clouds",
+    "Sulfur and nitrogen gases form acids"
+   ]
+  },
+  {
+   "id": "cw26-fae55a",
+   "q": "The Clean Air Act cut many air pollutants in the U.S. What does that show?",
+   "choices": [
+    "Laws and tech can help",
+    "Only individuals can fix pollution, not laws",
+    "Air pollution was never a problem",
+    "Pollution can never be reduced once it starts"
+   ]
+  },
+  {
+   "id": "cw26-ff03da",
+   "q": "An invasive species like zebra mussels arrives in a lake. Why is that a problem?",
+   "choices": [
+    "It has no effect",
+    "It always helps native fish by giving them food",
+    "It cleans all the pollution out of the lake",
+    "It can crowd out native species and clog water pipes"
+   ]
+  },
+  {
+   "id": "cw26-461fc4",
+   "q": "Why does building on a floodplain increase risk for people?",
+   "choices": [
+    "It makes floods smaller because houses block the water",
+    "It lowers insurance costs",
+    "Homes in flood zones",
+    "Floodplains never flood once homes are built"
+   ]
+  },
+  {
+   "id": "cw26-6ae6ad",
+   "q": "Why do scientists say humans are now a geologic force?",
+   "choices": [
+    "Humans have no effect on Earth",
+    "We reshape the planet",
+    "Humans created the oceans by building dams",
+    "Humans cause all earthquakes and volcanoes now"
+   ]
+  },
+  {
+   "id": "cw26-dbbb2b",
+   "q": "Recycling aluminum cans saves a lot of energy. Why?",
+   "choices": [
+    "Recycling uses more energy, but saves trees",
+    "Aluminum grows on trees",
+    "Making aluminum from ore takes more energy",
+    "Cans are really made of plastic, which is cheap to melt"
+   ]
+  },
+  {
+   "id": "cw26-f060f7",
+   "q": "A town restores a wetland along a river. What is one benefit?",
+   "choices": [
+    "It removes all wildlife",
+    "It increases erosion along the banks",
+    "It makes the river saltier and warmer",
+    "Wetlands filter water and soak floods"
+   ]
+  }
+ ],
+ "27": [
+  {
+   "id": "cw27-9b9784",
+   "q": "Why does the Sun seem to rise in the east and set in the west?",
+   "choices": [
+    "Earth revolves once a day",
+    "The Sun orbits Earth each day",
+    "The Moon pushes the Sun",
+    "Earth rotates from west to east"
+   ]
+  },
+  {
+   "id": "cw27-a1563b",
+   "q": "Why doesn't the Moon fly off into space or crash into Earth?",
+   "choices": [
+    "Gravity plus its forward motion",
+    "It is glued in place",
+    "It is too light to fall, since it has almost no mass",
+    "Earth's magnetic field holds it in place like a magnet"
+   ]
+  },
+  {
+   "id": "cw27-69cadf",
+   "q": "Kepler found planets move faster when closer to the Sun. When does Earth move fastest in its orbit?",
+   "choices": [
+    "Early January",
+    "Only during eclipses",
+    "It always moves at the same speed all year long",
+    "Around early July, when it is farthest from the Sun"
+   ]
+  },
+  {
+   "id": "cw27-b02d1e",
+   "q": "Why do we always see the same side of the Moon?",
+   "choices": [
+    "The far side has no light ever",
+    "It spins once per orbit",
+    "Earth's shadow always covers the other side",
+    "It doesn't rotate at all as it orbits Earth"
+   ]
+  },
+  {
+   "id": "cw27-31ebff",
+   "q": "Why don't we get a solar eclipse every new moon?",
+   "choices": [
+    "Eclipses only happen in summer",
+    "The Moon's orbit is tilted",
+    "There is no new moon most months, only every half year",
+    "The Sun is too bright to see eclipses most of the time"
+   ]
+  },
+  {
+   "id": "cw27-4a0db2",
+   "q": "During a lunar eclipse, why does the Moon often look red?",
+   "choices": [
+    "The Moon reflects the red light of Mars",
+    "Clouds turn red",
+    "Air bends red light",
+    "The Moon catches fire from the heat of the Sun"
+   ]
+  },
+  {
+   "id": "cw27-e4a264",
+   "q": "A full moon rises at sunset. Where are the Sun, Earth, and Moon?",
+   "choices": [
+    "All three are at right angles",
+    "The Moon is between the Sun and Earth",
+    "Earth is between the Sun and Moon",
+    "The Sun is between Earth and Moon"
+   ]
+  },
+  {
+   "id": "cw27-a7c128",
+   "q": "Moon phases are caused by what?",
+   "choices": [
+    "Earth's shadow covering a different part of the Moon each night",
+    "Clouds blocking part of the Moon",
+    "Seeing more or less of its sunlit half",
+    "The Moon changing shape"
+   ]
+  },
+  {
+   "id": "cw27-c3bbf0",
+   "q": "What powers the Sun?",
+   "choices": [
+    "Burning coal and gas in its core",
+    "Lightning",
+    "Nuclear fission of uranium atoms",
+    "Nuclear fusion of hydrogen"
+   ]
+  },
+  {
+   "id": "cw27-316174",
+   "q": "Why is it never safe to look straight at the Sun, even during a partial eclipse?",
+   "choices": [
+    "It's only unsafe at noon when the Sun is highest",
+    "Eclipses dim it to safe levels for a few minutes",
+    "Its intense light can permanently damage your eyes",
+    "Sunlight can't hurt eyes"
+   ]
+  }
+ ],
+ "28": [
+  {
+   "id": "cw28-c3a425",
+   "q": "The light from a star 50 light-years away reaches you tonight. What are you seeing?",
+   "choices": [
+    "The star as it is right now",
+    "A star 50 miles away",
+    "The star 50 years ago",
+    "The star 50 years in the future"
+   ]
+  },
+  {
+   "id": "cw28-06f109",
+   "q": "A star glows blue-white. Another glows red. Which one is hotter?",
+   "choices": [
+    "The blue-white star",
+    "They are the same",
+    "The red star",
+    "Color has nothing to do with temperature"
+   ]
+  },
+  {
+   "id": "cw28-184585",
+   "q": "Why are the inner planets rocky while the outer planets are huge and gassy?",
+   "choices": [
+    "Rocky planets came from other stars",
+    "The outer planets are made of rock too, just covered by clouds",
+    "It was too hot for ices",
+    "Gas planets formed first near the Sun and drifted outward later"
+   ]
+  },
+  {
+   "id": "cw28-9a3c1b",
+   "q": "What will happen to our Sun at the end of its life?",
+   "choices": [
+    "It will shrink into a planet",
+    "It will last forever because it has plenty of fuel",
+    "It will explode as a supernova and leave a black hole",
+    "Red giant, then white dwarf"
+   ]
+  },
+  {
+   "id": "cw28-33e94a",
+   "q": "Where did the iron in your blood originally come from?",
+   "choices": [
+    "Inside stars that exploded",
+    "It came from the Big Bang only, with nothing added since",
+    "Plants made it",
+    "It formed in Earth's oceans from dissolved rock"
+   ]
+  },
+  {
+   "id": "cw28-ecb8ce",
+   "q": "Light from distant galaxies is stretched toward red (redshift). What does that tell us?",
+   "choices": [
+    "Dust between galaxies paints their light red",
+    "Galaxies are on fire, which turns their light red",
+    "Galaxies are moving away, so the universe is expanding",
+    "Galaxies are moving toward us, so the universe is shrinking"
+   ]
+  },
+  {
+   "id": "cw28-e084c8",
+   "q": "Which piece of evidence supports the Big Bang theory?",
+   "choices": [
+    "Moon phases",
+    "The cosmic microwave background",
+    "The rings of Saturn, made of leftover dust",
+    "Earth's magnetic field and the auroras it makes"
+   ]
+  },
+  {
+   "id": "cw28-56fd77",
+   "q": "Why is a comet's tail always pointed away from the Sun?",
+   "choices": [
+    "Solar wind and light push the gas and dust away",
+    "The comet moves backward, so its tail trails behind",
+    "The Moon pulls its tail toward Earth",
+    "Comets are always behind the Sun"
+   ]
+  },
+  {
+   "id": "cw28-b578d7",
+   "q": "Why was Pluto reclassified as a dwarf planet?",
+   "choices": [
+    "It doesn't orbit the Sun, it orbits Neptune",
+    "It hasn't cleared other objects out of its orbit",
+    "It is made of gas",
+    "It is not round enough to be a planet"
+   ]
+  },
+  {
+   "id": "cw28-9ffba9",
+   "q": "A high-mass star explodes as a supernova. What might it leave behind?",
+   "choices": [
+    "A new planet made of iron",
+    "A neutron star or a black hole",
+    "Nothing at all, ever",
+    "A white dwarf, just like our Sun will"
+   ]
+  }
+ ]
+}

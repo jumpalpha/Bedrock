@@ -2,10 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 import questions from "@/data/content/questions.json";
+import cwBank from "@/data/content/classwork_bank.json"; // wave-learnB
 import sideQuests from "@/data/content/side_quests.json";
 import { chapterById, chapters, computeStats, realms, tlsKeyId } from "@/data/site";
 import { dbReady, teacherApprove, teacherCheck, teacherHash, teacherKeys, teacherResetPin, teacherRoster, type RosterRow } from "@/lib/db";
 import { Eyebrow, Md, PageHead } from "@/components/ui";
+// ── wave-learnB: Classwork + Reflection Coach teacher views ──
+import { ClassworkTeacher, ReflectionsTeacher } from "./learn-teacher";
+type LearnTab = "classwork" | "reflections";
+const LEARN_TABS: [LearnTab, string][] = [["classwork", "Classwork"], ["reflections", "Reflections"]];
+// ── end wave-learnB ──
 
 type Q = { id: string; q: string; choices: string[] };
 const SKEY = "bedrock_teacher";
@@ -14,7 +20,7 @@ export default function Teacher() {
   const [hash, setHash] = useState<string | null>(null);
   const [pass, setPass] = useState("");
   const [err, setErr] = useState<string | null>(null);
-  const [tab, setTab] = useState<"roster" | "keys" | "quests">("roster");
+  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab>("roster");
 
   useEffect(() => { try { const h = sessionStorage.getItem(SKEY); if (h) setHash(h); } catch {} }, []);
 
@@ -49,11 +55,17 @@ export default function Teacher() {
           {(["roster", "keys", "quests"] as const).map((t) => (
             <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{t === "roster" ? "Roster & scores" : t === "keys" ? "Answer keys" : "Side quests"}</button>
           ))}
+          {/* ── wave-learnB ── */}
+          {LEARN_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
+          {/* ── end wave-learnB ── */}
           <button onClick={() => { try { sessionStorage.removeItem(SKEY); } catch {} setHash(null); }} className="btn-block !text-sm">Lock</button>
         </div>
       </PageHead>
       <div className="mx-auto max-w-7xl px-6 pt-10">
-        {tab === "keys" ? <Keys hash={hash} /> : <Roster hash={hash} questsOnly={tab === "quests"} />}
+        {/* ── wave-learnB ── */}
+        {tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
+        /* ── end wave-learnB ── */
+        tab === "keys" ? <Keys hash={hash} /> : <Roster hash={hash} questsOnly={tab === "quests"} />}
       </div>
     </>
   );
@@ -66,7 +78,7 @@ function Keys({ hash }: { hash: string }) {
   useEffect(() => { teacherKeys(hash).then(setKeys).catch((e) => setErr(e.message)); }, [hash]);
   const kind = sel[0] === "c" ? "chapter" : sel[0] === "u" ? "unit" : "tls";
   const n = sel.slice(1);
-  const qs = kind === "tls" ? [] : (questions[kind] as Record<string, Q[]>)[n] ?? [];
+  const qs = sel[0] === "w" ? (cwBank as Record<string, Q[]>)[n] ?? [] /* wave-learnB */ : kind === "tls" ? [] : (questions[kind] as Record<string, Q[]>)[n] ?? [];
   if (err) return <p className="font-bold text-crimson">{err}</p>;
   if (!keys) return <p className="font-bold text-muted">Loading keys…</p>;
   return (
@@ -75,8 +87,11 @@ function Keys({ hash }: { hash: string }) {
         <optgroup label="Chapter quizzes">{chapters.map((c) => <option key={c.id} value={`c${c.id}`}>Chapter {c.label} quiz</option>)}</optgroup>
         <optgroup label="Unit tests">{realms.map((r) => <option key={r.n} value={`u${r.n}`}>{r.testTitle}</option>)}</optgroup>
         <optgroup label="Think Like a Scientist">{chapters.map((c) => <option key={c.id} value={`t${c.id}`}>Chapter {c.label}: Think Like a Scientist</option>)}</optgroup>
+        {/* ── wave-learnB ── */}
+        <optgroup label="Classwork think-it-through">{chapters.map((c) => <option key={c.id} value={`w${c.id}`}>Chapter {c.label}: Classwork questions</option>)}</optgroup>
+        {/* ── end wave-learnB ── */}
       </select>
-      {kind === "tls" ? (
+      {kind === "tls" && sel[0] !== "w" ? (
         <div className="block-panel p-5"><Md text={keys[chapterById(n) ? tlsKeyId(chapterById(n)!) : ""] ?? "No key loaded."} /></div>
       ) : (
         <ol className="space-y-3">
