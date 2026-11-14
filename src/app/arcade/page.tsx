@@ -149,7 +149,7 @@ export default function ArcadePage() {
               {games.map((g) => (
                 <Link
                   key={g.slug}
-                  href={`/arcade/play/${g.slug}/`}
+                  href={g.href ?? `/arcade/play/${g.slug}/` /* wave-live: href */}
                   style={{ "--accent": g.color } as CSSProperties}
                   className="accent-card group relative flex items-center gap-4 overflow-hidden rounded-3xl p-5"
                 >
@@ -182,7 +182,7 @@ const SHELVES_A = [
 const SHELVES_B = [
   { id: "classic", anchor: "classics", eyebrow: "Rebuilt classics", title: "Earth Science Classics", blurb: "Invaders, brick breakers, 2048 and more, rebuilt around rocks, quakes, meteors and minerals." },
   { id: "team", anchor: "team", eyebrow: "Whole class", title: "Team Games", blurb: "One screen, the whole class. Great for a projector." },
-  { id: "partner", anchor: "partner", eyebrow: "Two players", title: "Partner Games", blurb: "Play the computer or a friend on the same device." },
+  { id: "partner", anchor: "partner", eyebrow: "Two players", title: "Partner Games", blurb: "Play the computer, a friend on the same device, or a classmate on two devices with a game code." /* wave-live */ },
   { id: "classroom", anchor: "classroom", eyebrow: "Class starters", title: "Classroom Games", blurb: "Quick warm-ups and closers for the whole room." },
 ] as const;
 // ── end wave-arcadeB ──

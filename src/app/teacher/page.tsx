@@ -12,6 +12,11 @@ import { ClassworkTeacher, ReflectionsTeacher } from "./learn-teacher";
 type LearnTab = "classwork" | "reflections";
 const LEARN_TABS: [LearnTab, string][] = [["classwork", "Classwork"], ["reflections", "Reflections"]];
 // ── end wave-learnB ──
+// ── wave-live ── Ask Mr. Dopp inbox + Live games (hosting links, sub codes)
+import { AskTeacher, LiveTeacher } from "./live-teacher";
+type LiveTab = "ask" | "live";
+const LIVE_TABS: [LiveTab, string][] = [["ask", "Ask Mr. Dopp"], ["live", "Live games"]];
+// ── end wave-live ──
 
 type Q = { id: string; q: string; choices: string[] };
 const SKEY = "bedrock_teacher";
@@ -20,7 +25,7 @@ export default function Teacher() {
   const [hash, setHash] = useState<string | null>(null);
   const [pass, setPass] = useState("");
   const [err, setErr] = useState<string | null>(null);
-  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab>("roster");
+  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab>("roster");
 
   useEffect(() => { try { const h = sessionStorage.getItem(SKEY); if (h) setHash(h); } catch {} }, []);
 
@@ -58,12 +63,16 @@ export default function Teacher() {
           {/* ── wave-learnB ── */}
           {LEARN_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
           {/* ── end wave-learnB ── */}
+          {/* ── wave-live ── */}
+          {LIVE_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
+          {/* ── end wave-live ── */}
           <button onClick={() => { try { sessionStorage.removeItem(SKEY); } catch {} setHash(null); }} className="btn-block !text-sm">Lock</button>
         </div>
       </PageHead>
       <div className="mx-auto max-w-7xl px-6 pt-10">
         {/* ── wave-learnB ── */}
-        {tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
+        {/* ── wave-live ── */ tab === "ask" ? <AskTeacher hash={hash} /> : tab === "live" ? <LiveTeacher hash={hash} /> : /* ── end wave-live ── */
+        tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
         /* ── end wave-learnB ── */
         tab === "keys" ? <Keys hash={hash} /> : <Roster hash={hash} questsOnly={tab === "quests"} />}
       </div>

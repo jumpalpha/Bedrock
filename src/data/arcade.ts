@@ -5,6 +5,7 @@ export type ArcadeGame = {
   // ── wave-arcadeA ── which arcade-page shelf the card sits on; no group = the Sprite Arcade posters
   group?: "classics" | "brain";
   section?: "classic" | "team" | "partner" | "classroom"; // wave-arcadeB: which arcade shelf (none = Sprite Arcade)
+  href?: string; // ── wave-live ── the card opens this page instead of /arcade/play/<slug>/
 };
 
 export const arcadeGames: ArcadeGame[] = [
@@ -60,6 +61,14 @@ export const arcadeGames: ArcadeGame[] = [
   { slug: "shark-tank", title: "Bedrock Shark Tank", subtitle: "Pitch a hazard, resource or energy solution. 5-part rubric.", emoji: "🦈", color: "#0EA5E9", goal: "Capstone", section: "classroom" },
   { slug: "myth-busters", title: "Myth Busters", subtitle: "18 Earth science myths, true or false, streak bonuses.", emoji: "💥", color: "#F59E0B", goal: "Timed mode", section: "classroom" },
   // ── end wave-classroom ──
+  // ── wave-live ── two-device partner games (/partner/) and live class games (/live/)
+  { slug: "partner-tic-tac-toe", title: "Tic-Tac-Toe", subtitle: "Star Garnet vs. Sapphire. Computer, same device, or two devices with a code.", emoji: "💎", color: "#e0475e", goal: "3 in a row", section: "partner", href: "/partner/tic-tac-toe/" },
+  { slug: "partner-connect-4", title: "Connect 4", subtitle: "Magma vs. Sulfur. Drop four in a row before your partner does.", emoji: "🌋", color: "#f2542d", goal: "4 in a row", section: "partner", href: "/partner/connect-4/" },
+  { slug: "partner-core-sample-hunt", title: "Core Sample Hunt", subtitle: "Battleship for prospectors: hide 5 ore deposits, drill to find theirs.", emoji: "⛏️", color: "#f6c453", goal: "Find 5 deposits", section: "partner", href: "/partner/core-sample-hunt/" },
+  { slug: "partner-dots-and-boxes", title: "Dots & Boxes", subtitle: "Stake survey claims. Close a box to claim it and go again.", emoji: "🗺️", color: "#3b8fe8", goal: "Most claims", section: "partner", href: "/partner/dots-and-boxes/" },
+  { slug: "live-games", title: "Live Class Games", subtitle: "Join with the code on the projector: votes, Showdown and Realm Raid.", emoji: "⚔️", color: "#a78bfa", goal: "6-digit code", section: "team", href: "/live/" },
+  { slug: "gold-rush-live", title: "Gold Rush Live", subtitle: "The whole class digs gold at once. Answer, buy mining gear, top the board.", emoji: "⛏️", color: "#f6c453", goal: "Most gold wins", section: "team", href: "/live/" },
+  // ── end wave-live ──
 ];
 
 export const arcadeGame = (slug: string) => arcadeGames.find((g) => g.slug === slug);

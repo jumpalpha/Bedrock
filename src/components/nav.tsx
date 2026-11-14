@@ -25,6 +25,10 @@ export const learnLinks = [
   { label: "Review Deck", href: "/review/" },
   { label: "Mastery Checks", href: "/mastery/" },
   { label: "Search", href: "/search/" },
+  // ── wave-live ──
+  { label: "Join a Live Game", href: "/live/" },
+  { label: "Ask Mr. Dopp", href: "/ask/" },
+  // ── end wave-live ──
 ];
 // ── end wave-learnA ──
 
