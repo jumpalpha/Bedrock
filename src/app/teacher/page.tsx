@@ -12,7 +12,7 @@ import { ClassworkTeacher, ReflectionsTeacher } from "./learn-teacher";
 type LearnTab = "classwork" | "reflections";
 const LEARN_TABS: [LearnTab, string][] = [["classwork", "Classwork"], ["reflections", "Reflections"]];
 // ── end wave-learnB ──
-// ── wave-live ── Ask Mr. Dopp inbox + Live games (hosting links, sub codes)
+// ── wave-live ── Ask Mr. Dopp inbox + Live games (hosting links)
 import { AskTeacher, LiveTeacher } from "./live-teacher";
 type LiveTab = "ask" | "live";
 const LIVE_TABS: [LiveTab, string][] = [["ask", "Ask Mr. Dopp"], ["live", "Live games"]];
@@ -73,7 +73,7 @@ export default function Teacher() {
       </PageHead>
       <div className="mx-auto max-w-7xl px-6 pt-10">
         {/* ── wave-learnB ── */}
-        {/* ── wave-live ── */ tab === "ask" ? <AskTeacher hash={hash} /> : tab === "live" ? <LiveTeacher hash={hash} /> : /* ── end wave-live ── */
+        {/* ── wave-live ── */ tab === "ask" ? <AskTeacher hash={hash} /> : tab === "live" ? <LiveTeacher /> : /* ── end wave-live ── */
         /* ── wave-pet ── */ tab === "aliens" ? <AliensTeacher hash={hash} /> :
         tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
         /* ── end wave-learnB ── */
@@ -163,7 +163,7 @@ function Roster({ hash, questsOnly }: { hash: string; questsOnly: boolean }) {
           </tr></thead>
           <tbody>
             {list.map((s) => {
-              const st = computeStats({ tasks: s.tasks, days: Array(s.days).fill(""), sideQuests: s.sideQuests, cleared: s.cleared });
+              const st = computeStats({ tasks: s.tasks, days: Array(s.days).fill(""), sideQuests: s.sideQuests, cleared: s.cleared, gameXp: s.gameXp /* wave-live */ });
               return (
                 <tr key={s.id} className="border-t-2 border-line">
                   <td className="p-2 font-extrabold">{s.name}</td><td className="p-2">{s.period}</td>

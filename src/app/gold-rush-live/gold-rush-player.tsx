@@ -148,6 +148,7 @@ export function GoldRushPlayer() {
             {me.team && me.teams && <TeamRow teams={me.teams} mine={me.team} />}
             <div className="mt-4 flex flex-wrap justify-center gap-3 font-bold text-muted">
               <span>✅ {me.correct} / {me.answered} right ({pct}%)</span><span>💰 {money(me.earned)} dug</span>
+              {me.signed_in && me.correct > 0 && <span className="text-emerald">⭐ +{Math.min(15, me.correct) * 5} XP</span>}
             </div>
             <p className="mt-3 text-muted">Check the big screen for the final leaderboard.</p>
             <div className="mt-5 flex flex-wrap justify-center gap-3">

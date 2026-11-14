@@ -57,7 +57,7 @@ export function LiveHost() {
 
   const start = async () => {
     setErr(""); setMsg("");
-    if (!pass) return setErr("Enter the teacher code or a sub code.");
+    if (!pass) return setErr("Enter the teacher code.");
     setBusy(true);
     try {
       let a = from, b = to; if (a > b) [a, b] = [b, a];
@@ -84,7 +84,7 @@ export function LiveHost() {
       save({ S, game, sd, vote: null, rounds: {}, used: [] });
     } catch (e) {
       const m = (e as Error).message;
-      setErr(/passcode|sub code/i.test(m) ? "That teacher code or sub code isn't right. (Sub codes stop working after their last day.)" : "Could not start: " + m);
+      setErr(/passcode/i.test(m) ? "That isn't the Dopps Class teacher code." : "Could not start: " + m);
     } finally { setBusy(false); }
   };
 
@@ -166,11 +166,11 @@ export function LiveHost() {
           )}
           <label className="flex items-center gap-2 text-sm font-bold text-muted">
             <input type="checkbox" checked={needLogin} onChange={(e) => setNeedLogin(e.target.checked)} className="size-5 accent-[var(--color-gold)]" />
-            Students must use their Bedrock login (scores show real names)
+            Students must use their Bedrock login (real names, and they earn XP)
           </label>
           <div>
-            <label className={label} htmlFor="pass">Teacher code or sub code</label>
-            <input id="pass" type="password" className={input} value={pass} onChange={(e) => setPass(e.target.value)} onKeyDown={(e) => e.key === "Enter" && start()} placeholder="The Dopps Class teacher code, or a sub code" autoComplete="off" />
+            <label className={label} htmlFor="pass">Teacher code</label>
+            <input id="pass" type="password" className={input} value={pass} onChange={(e) => setPass(e.target.value)} onKeyDown={(e) => e.key === "Enter" && start()} placeholder="The Dopps Class teacher code" autoComplete="off" />
           </div>
           <button className={btnGold} disabled={busy || !dbReady} onClick={start}>Start game</button>
           {(err || msg) && <p className={`text-sm font-bold ${err ? "text-crimson" : "text-emerald"}`}>{err || msg}</p>}
@@ -186,7 +186,6 @@ export function LiveHost() {
         <div className="text-right">
           <div className="text-xl font-extrabold"><b className="font-display text-3xl text-emerald" data-testid="player-count">{st?.player_count ?? 0}</b> joined</div>
           {st?.phase === "question" && <div className="text-xl font-extrabold"><b className="font-display text-3xl text-emerald">{st.answer_count}</b> {saved.game === "pick_a_side" ? "voted" : "answered"}</div>}
-          {S.role === "sub" && <div className="mt-1 text-xs font-bold text-muted">Started with a sub code</div>}
         </div>
       </JoinBanner>
       {saved.game === "pick_a_side"
@@ -527,6 +526,7 @@ function ShowdownHost({ saved, save, st, res, setRes, act, busy, end, endArmed }
           </div>
         </>
       )}
+      {final && <p className="mt-4 text-center text-sm text-muted">Press <b className="text-fg">End game</b> to pay the bonus: +25 XP {sd.raid ? "for everyone on the team with the most hits, if the boss fell" : "for the top 3"} (logged-in students). Every right answer already earned +5 XP.</p>}
       <div className="mt-5 flex flex-wrap gap-3">
         {!final && <button className={btnGold} disabled={busy} onClick={() => (sd.idx + 1 >= sd.questions.length ? upd({ stage: "final" }) : ask())}>{sd.idx + 1 >= sd.questions.length ? "Final results 🏆" : "Next question ▶"}</button>}
         <span className="flex-1" /><EndBtn end={end} armed={endArmed} />

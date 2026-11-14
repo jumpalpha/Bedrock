@@ -7,6 +7,7 @@ import { champions, dbReady, type Champion } from "@/lib/db";
 import { ranks } from "@/data/site";
 import { PageHead } from "@/components/ui";
 import { ChampionsStrip } from "@/components/champions-strip";
+import { DuelBoard } from "@/components/live/duel-board"; // wave-live
 
 export default function Hall() {
   const [rows, setRows] = useState<Champion[] | null>(null);
@@ -26,7 +27,7 @@ export default function Hall() {
   return (
     <>
       <PageHead eyebrow="Hall of Champions" title={<>The greatest <span className="text-gradient">miners</span> of Bedrock</>}
-        sub="Ranked by Verified XP: tasks the class database graded itself (chapter quizzes, unit tests and Classwork, 25 XP each). Quest XP adds reading, Think Like a Scientist, login days and side quests." />
+        sub="Ranked by Verified XP: tasks the class database graded itself (chapter quizzes, unit tests and Classwork, 25 XP each). Quest XP adds reading, Think Like a Scientist, login days and side quests. XP from live class games counts in both." />
       <div className="mx-auto max-w-7xl space-y-8 px-4 pb-10 sm:px-6">
         {!dbReady && <p className="block-panel p-4 font-bold">Preview: champions appear once the class database is connected.</p>}
         {err && <p className="block-panel p-4 font-bold text-crimson">Could not load the Hall: {err}</p>}
@@ -76,6 +77,7 @@ export default function Hall() {
             </tbody>
           </table>
         </div>
+        {/* ── wave-live ── */}<DuelBoard />
         {at && <p className="text-center text-xs text-muted">Updated {at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · refreshes every 5 minutes</p>}
 
         <section>

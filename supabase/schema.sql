@@ -1468,70 +1468,30 @@ create or replace function public._b_sha(p text) returns text
 language sql immutable set search_path = public, extensions as $$
   select encode(extensions.digest(coalesce(p, ''), 'sha256'), 'hex') $$;
 
--- Sub codes: day-pass codes that can start live games only (never the dashboard). Stored scrambled (bcrypt).
-create table if not exists public.b_live_sub_codes (
+-- ════════════════════════════════════════════════════════════════════
+-- Game XP log: server-written XP from live games, one row per event (ref is unique per student).
+-- ════════════════════════════════════════════════════════════════════
+create table if not exists public.b_xp_log (
   id         bigserial primary key,
-  code_hash  text not null,
-  label      text,
-  expires_at timestamptz not null,
-  revoked    boolean not null default false,
-  created_at timestamptz not null default now()
+  student_id uuid not null references public.b_students on delete cascade,
+  term       text not null,
+  source     text not null,                -- 'live' | 'live_bonus'
+  ref        text not null,                -- e.g. live:<session>:<q>, live:<session>:c3, live_bonus:<session>
+  xp         int  not null check (xp > 0 and xp <= 500),
+  created_at timestamptz not null default now(),
+  unique (student_id, ref)
 );
-alter table public.b_live_sub_codes enable row level security;
-revoke all on public.b_live_sub_codes from anon, authenticated;
+alter table public.b_xp_log enable row level security;
+revoke all on public.b_xp_log from anon, authenticated;
 
--- Who is starting a game? 'teacher' (teacher code), 'sub' (valid, unexpired sub code) or null.
-create or replace function public._b_host_auth(p_pass text) returns text
-language plpgsql stable security definer set search_path = public, extensions as $$
-begin
-  if coalesce(p_pass, '') = '' then return null; end if;
-  if public._b_teacher(p_pass) then return 'teacher'; end if;
-  if exists (select 1 from public.b_live_sub_codes c
-              where not c.revoked and c.expires_at > now()
-                and c.code_hash = extensions.crypt(upper(btrim(p_pass)), c.code_hash)) then return 'sub'; end if;
-  return null;
-end $$;
-
--- Teacher: make a sub code good through the end of p_until (Idaho time). Returns the code once; only its hash is kept.
-create or replace function public.b_live_sub_create(p_pass_hash text, p_until date, p_label text default null) returns jsonb
-language plpgsql security definer set search_path = public, extensions as $$
-declare
-  words text[] := array['BASALT','GARNET','QUARTZ','GEYSER','CANYON','MAGMA','GLACIER','FOSSIL','DELTA','MESA',
-                        'OBSIDIAN','PUMICE','GRANITE','AQUIFER','SUMMIT','CRATER','TIMBER','COBALT','JASPER','PRAIRIE'];
-  v_code text; v_exp timestamptz; today date := public._b_today();
-begin
-  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  if p_until is null or p_until < today then raise exception 'Pick today or a later date'; end if;
-  if p_until > today + 14 then raise exception 'Sub codes can last at most 14 days'; end if;
-  delete from public.b_live_sub_codes c where c.expires_at < now() - interval '30 days';
-  if (select count(*) from public.b_live_sub_codes c where not c.revoked and c.expires_at > now()) >= 20 then
-    raise exception 'Too many active sub codes. Cancel one first.';
-  end if;
-  v_code := words[1 + floor(random() * array_length(words, 1))::int] || '-' || lpad(floor(random() * 1000)::int::text, 3, '0');
-  v_exp := ((p_until + 1)::timestamp at time zone 'America/Denver');
-  insert into public.b_live_sub_codes (code_hash, label, expires_at)
-  values (extensions.crypt(v_code, extensions.gen_salt('bf')), left(btrim(coalesce(p_label, '')), 60), v_exp);
-  return jsonb_build_object('code', v_code, 'expires_at', v_exp);
-end $$;
-
--- Teacher: list sub codes (never the codes themselves).
-create or replace function public.b_live_sub_list(p_pass_hash text) returns jsonb
-language plpgsql stable security definer set search_path = public as $$
-begin
-  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  return (select coalesce(jsonb_agg(jsonb_build_object('id', c.id, 'label', c.label, 'expires_at', c.expires_at,
-            'created_at', c.created_at, 'active', not c.revoked and c.expires_at > now(), 'revoked', c.revoked)
-          order by c.created_at desc), '[]') from public.b_live_sub_codes c where c.expires_at > now() - interval '7 days');
-end $$;
-
--- Teacher: cancel a sub code early.
-create or replace function public.b_live_sub_revoke(p_pass_hash text, p_sub bigint) returns boolean
-language plpgsql security definer set search_path = public as $$
-begin
-  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  update public.b_live_sub_codes set revoked = true where id = p_sub;
-  return found;
-end $$;
+create or replace function public._b_xp_add(p_student uuid, p_source text, p_ref text, p_xp int) returns void
+language sql security definer set search_path = public as $$
+  insert into public.b_xp_log (student_id, term, source, ref, xp)
+  select p_student, public._b_set('term'), p_source, p_ref, p_xp where p_student is not null
+  on conflict (student_id, ref) do nothing $$;
+create or replace function public._b_xp_total(p_student uuid) returns int
+language sql stable security definer set search_path = public as $$
+  select coalesce(sum(xp), 0)::int from public.b_xp_log where student_id = p_student $$;
 
 -- ════════════════════════════════════════════════════════════════════
 -- 1. Live class games
@@ -1548,7 +1508,6 @@ create table if not exists public.b_live_sessions (
   q_seconds       int,
   q_started_at    timestamptz,
   settings        jsonb not null default '{}',   -- require_login ('true'/'false'), teams ('2'-'4'), hp (raid)
-  started_by      text not null default 'teacher',
   created_at      timestamptz not null default now(),
   ended_at        timestamptz
 );
@@ -1588,13 +1547,12 @@ create or replace function public._b_live_host(p_session_id uuid, p_host_token t
 language sql stable security definer set search_path = public as $$
   select s.* from public.b_live_sessions s where s.id = p_session_id and s.host_token_hash = public._b_sha(p_host_token) $$;
 
--- Host: start a game. Needs the teacher code or a sub code. Returns {session_id, join_code, host_token}.
+-- Host: start a game. Needs the teacher code. Returns {session_id, join_code, host_token}.
 create or replace function public.b_live_create(p_pass_hash text, p_game_type text, p_settings jsonb default '{}') returns jsonb
 language plpgsql security definer set search_path = public as $$
-declare v_role text; v_token text := gen_random_uuid()::text || gen_random_uuid()::text; v_code text; v_id uuid; v_set jsonb;
+declare v_token text := gen_random_uuid()::text || gen_random_uuid()::text; v_code text; v_id uuid; v_set jsonb;
 begin
-  v_role := public._b_host_auth(p_pass_hash);
-  if v_role is null then raise exception 'Wrong teacher passcode or sub code'; end if;
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
   if p_game_type not in ('pick_a_side', 'showdown', 'raid', 'coins') then raise exception 'Unknown game'; end if;
   -- tidy: games left open 12 hours end; ended games are deleted after 7 days
   update public.b_live_sessions s set phase = 'ended', ended_at = now() where s.phase <> 'ended' and s.created_at < now() - interval '12 hours';
@@ -1612,9 +1570,9 @@ begin
     v_code := lpad(floor(random() * 1000000)::int::text, 6, '0');
     exit when not exists (select 1 from public.b_live_sessions s where s.join_code = v_code and s.phase <> 'ended');
   end loop;
-  insert into public.b_live_sessions (join_code, game_type, host_token_hash, settings, started_by)
-  values (v_code, p_game_type, public._b_sha(v_token), v_set, v_role) returning id into v_id;
-  return jsonb_build_object('session_id', v_id, 'join_code', v_code, 'host_token', v_token, 'role', v_role);
+  insert into public.b_live_sessions (join_code, game_type, host_token_hash, settings)
+  values (v_code, p_game_type, public._b_sha(v_token), v_set) returning id into v_id;
+  return jsonb_build_object('session_id', v_id, 'join_code', v_code, 'host_token', v_token);
 end $$;
 
 -- Host: show a question. p_answer_key = the correct letter (null for a vote).
@@ -1645,7 +1603,47 @@ begin
   return true;
 end $$;
 
--- Host: move to lobby / reveal / leaderboard / ended.
+-- End-of-game bonuses (once per game, +25, logged-in students only), same as Dopps Class:
+--   Showdown: the top 3 scores. Realm Raid: if the boss fell, everyone on the team with the most hits.
+--   Gold Rush Live: the top 3 by gold, or with teams, everyone on the richest team.
+create or replace function public._b_live_award_bonus(p_session_id uuid) returns void
+language plpgsql security definer set search_path = public as $$
+declare s public.b_live_sessions; v_hp int; v_total int; v_team int; r record; v_ref text := 'live_bonus:' || p_session_id;
+begin
+  select * into s from public.b_live_sessions where id = p_session_id;
+  if s.game_type = 'showdown' then
+    for r in select p.student_id from public.b_live_players p join public.b_live_answers a on a.player_id = p.id
+              where p.session_id = s.id and p.student_id is not null
+              group by p.student_id having sum(a.points) > 0 order by sum(a.points) desc limit 3 loop
+      perform public._b_xp_add(r.student_id, 'live_bonus', v_ref, 25);
+    end loop;
+  elsif s.game_type = 'raid' then
+    v_hp := nullif(s.settings ->> 'hp', '')::int;
+    select count(*) into v_total from public.b_live_answers a where a.session_id = s.id and a.is_correct;
+    if v_hp is not null and v_total >= v_hp then
+      select p.team into v_team from public.b_live_players p join public.b_live_answers a on a.player_id = p.id
+       where p.session_id = s.id and a.is_correct and p.team is not null group by p.team order by count(*) desc limit 1;
+      for r in select p.student_id from public.b_live_players p where p.session_id = s.id and p.team = v_team and p.student_id is not null loop
+        perform public._b_xp_add(r.student_id, 'live_bonus', v_ref, 25);
+      end loop;
+    end if;
+  elsif s.game_type = 'coins' then
+    if nullif(s.settings ->> 'teams', '') is not null then
+      select p.team into v_team from public.b_live_players p join public.b_coin_players c on c.player_id = p.id
+       where p.session_id = s.id and p.team is not null group by p.team having sum(c.cash) > 0 order by sum(c.cash) desc limit 1;
+      for r in select p.student_id from public.b_live_players p where p.session_id = s.id and p.team = v_team and p.student_id is not null loop
+        perform public._b_xp_add(r.student_id, 'live_bonus', v_ref, 25);
+      end loop;
+    else
+      for r in select p.student_id from public.b_live_players p join public.b_coin_players c on c.player_id = p.id
+                where p.session_id = s.id and p.student_id is not null and c.cash > 0 order by c.cash desc limit 3 loop
+        perform public._b_xp_add(r.student_id, 'live_bonus', v_ref, 25);
+      end loop;
+    end if;
+  end if;
+end $$;
+
+-- Host: move to lobby / reveal / leaderboard / ended. Ending pays the bonuses.
 create or replace function public.b_live_set_phase(p_session_id uuid, p_host_token text, p_phase text) returns boolean
 language plpgsql security definer set search_path = public as $$
 declare s public.b_live_sessions := public._b_live_host(p_session_id, p_host_token);
@@ -1653,6 +1651,7 @@ begin
   if p_phase not in ('lobby', 'reveal', 'leaderboard', 'ended') then raise exception 'Bad phase'; end if;
   if s.id is null or s.phase = 'ended' then return false; end if;
   update public.b_live_sessions x set phase = p_phase, ended_at = case when p_phase = 'ended' then now() else x.ended_at end where x.id = s.id;
+  if p_phase = 'ended' then perform public._b_live_award_bonus(s.id); end if;
   return true;
 end $$;
 
@@ -1738,7 +1737,10 @@ begin
   values (s.id, p.id, p_q_index, p_answer, v_ok, v_pts)
   on conflict (player_id, q_index) do update set answer = excluded.answer, answered_at = now()
    where public.b_live_answers.is_correct is null;      -- votes only
-  return found;
+  if not found then return false; end if;
+  -- +5 XP per right answer for logged-in students (Showdown, Realm Raid)
+  if v_ok then perform public._b_xp_add(p.student_id, 'live', 'live:' || s.id || ':' || p_q_index, 5); end if;
+  return true;
 end $$;
 
 -- Everyone (projector + phones): the public state. The answer key only after the reveal.
@@ -1952,6 +1954,8 @@ begin
     update public.b_coin_players c set cash = c.cash + v_d, earned = c.earned + v_d, streak = c.streak + 1,
            answered = c.answered + 1, correct = c.correct + 1, last_at = now(), cur_q = public._b_coin_pick(v_s.id, p_idx)
      where c.player_id = v_p.id returning * into v_c;
+    -- +5 XP for each of the first 15 right answers per game (logged-in students)
+    if v_c.correct <= 15 then perform public._b_xp_add(v_p.student_id, 'live', 'live:' || v_s.id || ':c' || v_c.correct, 5); end if;
   else
     v_d := - least(v_c.cash, round(public._b_coin_val('mpq', v_c.l_mpq) * 0.5 * (1 - public._b_coin_val('ins', v_c.l_ins)))::bigint);
     update public.b_coin_players c set cash = c.cash + v_d, streak = 0, answered = c.answered + 1, last_at = now(),
@@ -2021,12 +2025,27 @@ create table if not exists public.b_duel_games (
   p2_seen     timestamptz,
   rematch1    boolean not null default false,
   rematch2    boolean not null default false,
+  recorded    boolean not null default false,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()
 );
 create unique index if not exists b_duel_games_open_code on public.b_duel_games (code) where status <> 'done';
 alter table public.b_duel_games enable row level security;
 revoke all on public.b_duel_games from anon, authenticated;
+
+-- Partner leaderboard: one row per student per game per term. Only rounds where BOTH players are
+-- logged in (and are different students) count, so nobody can farm wins against themselves.
+create table if not exists public.b_duel_scores (
+  student_id uuid not null references public.b_students on delete cascade,
+  term       text not null,
+  game       text not null,
+  wins       int  not null default 0,
+  plays      int  not null default 0,
+  updated_at timestamptz not null default now(),
+  primary key (student_id, term, game)
+);
+alter table public.b_duel_scores enable row level security;
+revoke all on public.b_duel_scores from anon, authenticated;
 
 -- 0 = nobody yet, 1 / 2 = that player has a line, 3 = board full (draw). Tic-Tac-Toe and Connect 4.
 create or replace function public._b_duel_result(p_game text, b text) returns int
@@ -2101,10 +2120,20 @@ language sql stable set search_path = public as $$
   select case when g.p1_tok = public._b_sha(p_token) then 1 when g.p2_tok = public._b_sha(p_token) then 2 end $$;
 
 create or replace function public._b_duel_finish(p_id uuid, p_winner int, p_reason text) returns void
-language sql security definer set search_path = public as $$
+language plpgsql security definer set search_path = public as $$
+declare g public.b_duel_games; v_s uuid;
+begin
   update public.b_duel_games set status = 'done', winner = p_winner, reason = p_reason, updated_at = now(),
          score1 = score1 + (case when p_winner = 1 then 1 else 0 end), score2 = score2 + (case when p_winner = 2 then 1 else 0 end)
-   where id = p_id and status = 'playing' $$;
+   where id = p_id and status = 'playing' returning * into g;
+  if g.id is null or g.recorded or g.p1_student is null or g.p2_student is null or g.p1_student = g.p2_student then return; end if;
+  foreach v_s in array array[g.p1_student, g.p2_student] loop
+    insert into public.b_duel_scores (student_id, term, game, wins, plays)
+    values (v_s, public._b_set('term'), g.game, case when (p_winner = 1 and v_s = g.p1_student) or (p_winner = 2 and v_s = g.p2_student) then 1 else 0 end, 1)
+    on conflict (student_id, term, game) do update set wins = b_duel_scores.wins + excluded.wins, plays = b_duel_scores.plays + 1, updated_at = now();
+  end loop;
+  update public.b_duel_games set recorded = true where id = p_id;
+end $$;
 
 -- What each player may see.
 create or replace function public._b_duel_view(g public.b_duel_games, me int) returns jsonb
@@ -2372,7 +2401,7 @@ begin
     update public.b_duel_games set board = repeat('0', length(board)), status = 'playing', winner = null, reason = null,
            last_move = null, moves = 0, round = round + 1, starter = 3 - starter, turn = 3 - starter,
            secret = public._b_duel_secret(game), flip1 = null, peek = null, peek_until = null, ready1 = false, ready2 = false,
-           rematch1 = false, rematch2 = false, updated_at = now(), p1_seen = now(), p2_seen = now()
+           rematch1 = false, rematch2 = false, recorded = false, updated_at = now(), p1_seen = now(), p2_seen = now()
      where id = p_game_id returning * into g;
   end if;
   return public._b_duel_view(g, me);
@@ -2526,24 +2555,102 @@ begin
   return found;
 end $$;
 
+-- Partner leaderboard (this term): wins per game and overall. Names are shortened like the Hall of Champions.
+create or replace function public.b_duel_board() returns jsonb
+language sql stable security definer set search_path = public as $$
+  select coalesce(jsonb_agg(jsonb_build_object('id', md5(x.student_id::text), 'name', public._b_pub_name(st.name), 'period', st.period,
+           'wins', x.wins, 'plays', x.plays, 'games', x.games) order by x.wins desc, x.plays, st.name), '[]')
+    from (select student_id, sum(wins)::int wins, sum(plays)::int plays,
+                 jsonb_object_agg(game, jsonb_build_object('wins', wins, 'plays', plays)) games
+            from public.b_duel_scores where term = public._b_set('term') group by student_id) x
+    join public.b_students st on st.id = x.student_id
+   where x.plays > 0 $$;
+
+-- ════════════════════════════════════════════════════════════════════
+-- 6. Game XP in the Quest page, the teacher roster and the Hall of Champions.
+--    These replace the versions in schema.sql / 005_pet.sql; the only change is the added game XP.
+-- ════════════════════════════════════════════════════════════════════
+create or replace function public.b_state(p_id uuid, p_pin_hash text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
+  insert into public.b_days values (p_id, public._b_today()) on conflict do nothing;
+  return jsonb_build_object(
+    'tasks', coalesce((select jsonb_agg(task_key) from public.b_tasks where student_id = p_id), '[]'),
+    'days', coalesce((select jsonb_agg(day order by day) from public.b_days where student_id = p_id), '[]'),
+    'best', coalesce((select jsonb_object_agg(kind || ref, best) from (
+               select kind, ref, max(round(100.0 * score / total))::int best from public.b_attempts
+               where student_id = p_id group by kind, ref) b), '{}'),
+    'firstTry', coalesce((select jsonb_object_agg(ref, pct) from (
+               select distinct on (ref) ref, round(100.0 * score / total)::int pct from public.b_attempts
+               where student_id = p_id and kind = 'chapter' order by ref, created_at) f), '{}'),
+    'unitTries', coalesce((select jsonb_object_agg(ref, n) from (
+               select ref, count(*) n from public.b_attempts where student_id = p_id and kind = 'unit' group by ref) u), '{}'),
+    'sideQuests', coalesce((select jsonb_agg(jsonb_build_object('id', quest_id, 'term', term, 'approved', approved))
+               from public.b_side_quests where student_id = p_id), '[]'),
+    'votes', (select count(*) from public.b_votes where student_id = p_id and kind = 'survey'),
+    'cleared', coalesce((select jsonb_agg(realm order by realm) from public.b_cleared where student_id = p_id), '[]'),
+    'term', public._b_set('term'),
+    'unitAttempts', public._b_set('unit_attempts')::int,
+    'gameXp', public._b_xp_total(p_id)
+  );
+end $$;
+
+create or replace function public.b_teacher_roster(p_pass_hash text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
+  return coalesce((select jsonb_agg(jsonb_build_object(
+      'id', s.id, 'name', s.name, 'period', s.period,
+      'tasks', (select coalesce(jsonb_agg(task_key), '[]') from public.b_tasks t where t.student_id = s.id),
+      'days', (select count(*) from public.b_days d where d.student_id = s.id),
+      'best', (select coalesce(jsonb_object_agg(kind || ref, best), '{}') from (
+                 select kind, ref, max(round(100.0 * score / total))::int best from public.b_attempts a
+                 where a.student_id = s.id group by kind, ref) b),
+      'sideQuests', (select coalesce(jsonb_agg(jsonb_build_object('id', quest_id, 'term', term, 'note', note, 'approved', approved)), '[]')
+                 from public.b_side_quests q where q.student_id = s.id),
+      'cleared', (select coalesce(jsonb_agg(realm order by realm), '[]') from public.b_cleared c where c.student_id = s.id),
+      'gameXp', public._b_xp_total(s.id)
+    ) order by s.period, s.name) from public.b_students s), '[]');
+end $$;
+
+-- Hall of Champions (005_pet.sql) plus game XP: it is server-written, so it counts toward both Quest XP and Verified XP.
+create or replace function public.b_champions() returns jsonb
+language sql stable security definer set search_path = public as $$
+  with t as (
+    select s.id, s.name, s.period,
+      (select count(*) from public.b_tasks x where x.student_id = s.id and x.task_key ~ '^(ch\d+[a-z]?_(read|quiz|tls)|unit\d+|cw\d+)$') tasks,
+      (select count(*) from public.b_tasks x where x.student_id = s.id and x.task_key ~ '^(ch\d+[a-z]?_quiz|unit\d+|cw\d+)$') graded,
+      (select count(*) from public.b_days d where d.student_id = s.id) days,
+      (select count(*) from public.b_side_quests q where q.student_id = s.id and q.approved) quests,
+      (select count(*) from public.b_cleared c where c.student_id = s.id) cleared,
+      (select count(*) from public.b_tasks x where x.student_id = s.id and x.task_key ~ '^unit\d+$') units,
+      public._b_xp_total(s.id) game_xp,
+      public._b_streak(s.id) streak
+    from public.b_students s)
+  select coalesce(jsonb_agg(jsonb_build_object('id', md5(id::text), 'name', public._b_pub_name(name), 'period', period,
+           'xp', tasks * 25 + days * 5 + quests * 50 + game_xp, 'verified_xp', graded * 25 + game_xp, 'game_xp', game_xp,
+           'tasks', tasks, 'days', days, 'cleared', cleared, 'units', units, 'streak', streak)
+         order by graded * 25 + game_xp desc, tasks * 25 + days * 5 + quests * 50 + game_xp desc, streak desc, days desc), '[]')
+    from t $$;
+
 -- ---------- grants: only the public functions are callable from the website ----------
-revoke execute on function public._b_sha, public._b_host_auth, public._b_live_host, public._b_coin_val, public._b_coin_cost,
+revoke execute on function public._b_sha, public._b_xp_add, public._b_xp_total, public._b_live_award_bonus, public._b_live_host, public._b_coin_val, public._b_coin_cost,
   public._b_coin_player, public._b_coin_running, public._b_coin_pick, public._b_coin_view,
   public._b_duel_result, public._b_duel_bs_fleet, public._b_duel_memory_deck, public._b_duel_size, public._b_duel_secret,
   public._b_duel_seat, public._b_duel_finish, public._b_duel_view, public._b_duel_name, public._b_snipes_cap,
-  public.b_live_sub_create, public.b_live_sub_list, public.b_live_sub_revoke,
   public.b_live_create, public.b_live_set_question, public.b_live_set_hp, public.b_live_set_phase, public.b_live_results,
   public.b_live_join, public.b_live_answer, public.b_live_state,
   public.b_coin_setup, public.b_coin_start, public.b_coin_board, public.b_coin_me, public.b_coin_answer, public.b_coin_buy,
   public.b_duel_create, public.b_duel_join, public.b_duel_state, public.b_duel_move, public.b_duel_setup, public.b_duel_leave, public.b_duel_rematch,
   public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_delete,
-  public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end
+  public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end, public.b_duel_board
   from public, anon, authenticated;
-grant execute on function public.b_live_sub_create, public.b_live_sub_list, public.b_live_sub_revoke,
-  public.b_live_create, public.b_live_set_question, public.b_live_set_hp, public.b_live_set_phase, public.b_live_results,
+grant execute on function public.b_live_create, public.b_live_set_question, public.b_live_set_hp, public.b_live_set_phase, public.b_live_results,
   public.b_live_join, public.b_live_answer, public.b_live_state,
   public.b_coin_setup, public.b_coin_start, public.b_coin_board, public.b_coin_me, public.b_coin_answer, public.b_coin_buy,
   public.b_duel_create, public.b_duel_join, public.b_duel_state, public.b_duel_move, public.b_duel_setup, public.b_duel_leave, public.b_duel_rematch,
   public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_delete,
-  public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end to anon;
+  public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end, public.b_duel_board,
+  public.b_state, public.b_teacher_roster, public.b_champions to anon;
 -- ── end wave-live ──

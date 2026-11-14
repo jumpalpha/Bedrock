@@ -98,6 +98,8 @@ export type Progress = {
   sideQuests?: { id: string; term: string; approved: boolean }[]; term?: string;
   /** Realms the server has recorded as cleared (b_cleared). Earned stays earned, even if tasks are added later. */
   cleared?: number[];
+  /** ── wave-live ── XP the server logged from live games (b_xp_log via b_state.gameXp). */
+  gameXp?: number;
 };
 export function computeStats(p: Progress) {
   const done = new Set(p.tasks);
@@ -108,7 +110,8 @@ export function computeStats(p: Progress) {
   const clearedNow = realms.filter((r) => requiredTasks(r).every((t) => done.has(t.key)));
   const cleared = realms.filter((r) => recorded.has(r.n) || clearedNow.includes(r));
   const approved = (p.sideQuests ?? []).filter((q) => q.approved);
-  const xp = taskXp + p.days.length * XP_PER_DAY + approved.length * XP_PER_SIDE_QUEST;
+  const gameXp = p.gameXp ?? 0; // wave-live
+  const xp = taskXp + p.days.length * XP_PER_DAY + approved.length * XP_PER_SIDE_QUEST + gameXp;
   const rankIndex = Math.min(cleared.length, ranks.length - 1);
   const tlsDone = chapters.filter((c) => done.has(`ch${c.id}_tls`)).length;
   const bonus: Record<string, boolean> = {
@@ -119,7 +122,7 @@ export function computeStats(p: Progress) {
   };
   const termApproved = approved.filter((q) => q.term === p.term).length;
   const maxXp = allTasks.length * XP_PER_TASK;
-  return { xp, maxXp, cleared, clearedNow, rank: ranks[rankIndex], next: ranks[rankIndex + 1] ?? null, rankIndex, bonus, termApproved, tlsDone, done };
+  return { xp, gameXp, maxXp, cleared, clearedNow, rank: ranks[rankIndex], next: ranks[rankIndex + 1] ?? null, rankIndex, bonus, termApproved, tlsDone, done };
 }
 
 export const daysOfYear = (d = new Date()) => Math.floor((+d - +new Date(d.getFullYear(), 0, 0)) / 864e5);

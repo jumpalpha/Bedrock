@@ -151,7 +151,8 @@ export function GoldRushHost() {
             </div>
             {b.teams_n ? <div className="mt-5">{teamsHTML(t, b.teams_n)}</div> : null}
             {board(ps, 10)}
-            <p className="mt-4 text-center text-muted"><b className="text-fg">{b.answered}</b> questions answered · <b className="text-fg">{b.answered ? Math.round((b.correct / b.answered) * 100) : 0}%</b> right</p>
+            <p className="mt-4 text-center text-muted"><b className="text-fg">{b.answered}</b> questions answered · <b className="text-fg">{b.answered ? Math.round((b.correct / b.answered) * 100) : 0}%</b> right
+              <br />⭐ Logged-in students earned +5 XP per right answer (up to 15). {b.teams_n ? "Everyone on the winning team" : "The top 3"} gets a +25 XP bonus.</p>
             <div className="mt-4 text-center"><Link className={btnGold} href="/live/host/" onClick={() => store.set(GR_HKEY, null, true)}>New game</Link></div>
           </div>
         );

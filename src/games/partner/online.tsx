@@ -253,7 +253,7 @@ export function OnlineDuel({ fixed, onBack }: { fixed?: DuelGame; onBack?: () =>
             : <button className={btn} onClick={() => setConfirmLeave(true)}>Leave game</button>}
         </div>
       )}
-      <p className="mt-3 text-center text-xs text-muted">{S.both_signed_in ? "Both players are logged in." : "Just for fun: wins aren't saved anywhere."} Round {S.round}.</p>
+      <p className="mt-3 text-center text-xs text-muted">{S.both_signed_in ? "🏆 Both players are logged in: wins count on the Partner leaderboard." : "Practice game: wins only count when both players are logged in."} Round {S.round}.</p>
     </div>
   );
 }
