@@ -1,5 +1,6 @@
 -- 006: Live & multiplayer (wave-live). Run once in Supabase → SQL Editor (project gmeyamrlqfrabtslsweu). Safe to re-run.
--- Adds new b_ tables and functions only. Nothing existing is changed or deleted. schema.sql has the same block.
+-- Adds new b_ tables and functions only. Nothing existing is changed or removed. schema.sql has the same block.
+-- No hard removals anywhere: finished games just stay ended, and teacher "remove" actions are soft (hidden_at).
 --
 --   1. Live class games (/live/ for students, /live/host/ for the projector): Pick a Side Live (class vote),
 --      Rock Showdown (speed quiz with points) and Realm Raid (teams vs. a boss). Same rules as Dopps Class live_games.sql.
@@ -24,8 +25,8 @@
 --   * Starting a live game needs the teacher code (Dopps Class _teacher_ok, through _b_teacher). No sub codes.
 --   * Ask Mr. Dopp questions are saved with NO student and only the day, so a question can't be traced to a name.
 --   * Caps: 200 players per live game, 60 open live games, 400 open partner games, 600 ms between Gold Rush answers,
---     3 Ask questions per student per day. Stale games close themselves (live 12 h, partner 2 h idle) and finished
---     ones are deleted after 7 days (live) or 1 day (partner).
+--     3 Ask questions per student per day. Stale games close themselves (live 12 h, partner 2 h idle) and stay
+--     ended (no purge; a future purge job could clear old ended rows).
 -- Needs pgcrypto in the "extensions" schema (Supabase has it by default).
 
 -- ════════════════════════════════════════════════════════════════════
@@ -121,9 +122,8 @@ declare v_token text := gen_random_uuid()::text || gen_random_uuid()::text; v_co
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
   if p_game_type not in ('pick_a_side', 'showdown', 'raid', 'coins') then raise exception 'Unknown game'; end if;
-  -- tidy: games left open 12 hours end; ended games are deleted after 7 days
+  -- tidy: games left open 12 hours end (ended games are kept; a future purge job could clear old ones)
   update public.b_live_sessions s set phase = 'ended', ended_at = now() where s.phase <> 'ended' and s.created_at < now() - interval '12 hours';
-  delete from public.b_live_sessions s where s.phase = 'ended' and coalesce(s.ended_at, s.created_at) < now() - interval '7 days';
   if (select count(*) from public.b_live_sessions s where s.phase <> 'ended') >= 60 then
     raise exception 'Too many live games are open right now. End an old one and try again.';
   end if;
@@ -354,8 +354,10 @@ create table if not exists public.b_coin_bank (
   choices    jsonb not null,             -- 4 strings
   answer     text not null,
   why        text,
+  hidden_at  timestamptz,                -- set = replaced by a later b_coin_setup (soft); null = in this game's bank
   primary key (session_id, idx)
 );
+alter table public.b_coin_bank add column if not exists hidden_at timestamptz;
 create table if not exists public.b_coin_players (
   player_id  uuid primary key references public.b_live_players on delete cascade,
   session_id uuid not null references public.b_live_sessions on delete cascade,
@@ -399,13 +401,16 @@ begin
   if p_questions is null or jsonb_typeof(p_questions) <> 'array' or jsonb_array_length(p_questions) not between 4 and 800 then
     raise exception 'Need 4 to 800 questions';
   end if;
-  delete from public.b_coin_bank b where b.session_id = s.id;
+  -- loading again replaces the bank: old rows are hidden, the new ones written over them (soft, no removal)
+  update public.b_coin_bank b set hidden_at = now() where b.session_id = s.id and b.hidden_at is null;
   insert into public.b_coin_bank (session_id, idx, ch, prompt, choices, answer, why)
   select s.id, (q.ord - 1)::int, case when q.v ->> 'ch' ~ '^\d{1,4}$' then (q.v ->> 'ch')::int end, left(q.v ->> 'prompt', 400),
          q.v -> 'choices', left(q.v ->> 'answer', 200), left(q.v ->> 'why', 600)
     from jsonb_array_elements(p_questions) with ordinality q(v, ord)
    where jsonb_typeof(q.v -> 'choices') = 'array' and jsonb_array_length(q.v -> 'choices') between 2 and 6
-     and coalesce(q.v ->> 'prompt', '') <> '' and coalesce(q.v ->> 'answer', '') <> '';
+     and coalesce(q.v ->> 'prompt', '') <> '' and coalesce(q.v ->> 'answer', '') <> ''
+  on conflict (session_id, idx) do update set ch = excluded.ch, prompt = excluded.prompt, choices = excluded.choices,
+    answer = excluded.answer, why = excluded.why, hidden_at = null;
   get diagnostics v_n = row_count;
   return v_n;
 end $$;
@@ -416,7 +421,7 @@ language plpgsql security definer set search_path = public as $$
 declare s public.b_live_sessions := public._b_live_host(p_session_id, p_host_token);
 begin
   if s.id is null or s.game_type <> 'coins' or s.phase <> 'lobby' then return false; end if;
-  if not exists (select 1 from public.b_coin_bank b where b.session_id = s.id) then raise exception 'No questions loaded'; end if;
+  if not exists (select 1 from public.b_coin_bank b where b.session_id = s.id and b.hidden_at is null) then raise exception 'No questions loaded'; end if;
   update public.b_live_sessions x set phase = 'question', q_index = 0, q_started_at = now(),
          q_seconds = greatest(60, least(coalesce(p_seconds, 420), 1800)) where x.id = s.id;
   return true;
@@ -432,7 +437,7 @@ begin
     'phase', s.phase, 'q_seconds', s.q_seconds,
     'seconds_left', case when s.phase = 'question' then greatest(0, s.q_seconds - extract(epoch from now() - s.q_started_at))::int end,
     'teams_n', nullif(s.settings ->> 'teams', '')::int,
-    'bank', (select count(*) from public.b_coin_bank b where b.session_id = s.id),
+    'bank', (select count(*) from public.b_coin_bank b where b.session_id = s.id and b.hidden_at is null),
     'players', (select coalesce(jsonb_agg(jsonb_build_object('nickname', p.nickname, 'team', p.team, 'signed_in', p.student_id is not null,
                   'cash', coalesce(c.cash, 0), 'correct', coalesce(c.correct, 0), 'answered', coalesce(c.answered, 0))
                   order by coalesce(c.cash, 0) desc, p.joined_at), '[]')
@@ -465,7 +470,7 @@ language sql stable as $$
 -- A random question for this player (never the one they just had).
 create or replace function public._b_coin_pick(p_session_id uuid, p_not int) returns int
 language sql volatile security definer set search_path = public as $$
-  select b.idx from public.b_coin_bank b where b.session_id = p_session_id and b.idx is distinct from p_not order by random() limit 1 $$;
+  select b.idx from public.b_coin_bank b where b.session_id = p_session_id and b.hidden_at is null and b.idx is distinct from p_not order by random() limit 1 $$;
 
 -- What my phone shows.
 create or replace function public._b_coin_view(p public.b_live_players, s public.b_live_sessions, c public.b_coin_players) returns jsonb
@@ -485,7 +490,7 @@ language sql stable security definer set search_path = public as $$
                 where p3.session_id = s.id and p3.team is not null group by p3.team) t) end,
     'question', case when public._b_coin_running(s) and c.cur_q is not null then (
        select jsonb_build_object('idx', b.idx, 'ch', b.ch, 'prompt', b.prompt, 'choices', b.choices)
-         from public.b_coin_bank b where b.session_id = s.id and b.idx = c.cur_q) end) $$;
+         from public.b_coin_bank b where b.session_id = s.id and b.idx = c.cur_q and b.hidden_at is null) end) $$;
 
 create or replace function public.b_coin_me(p_player_id uuid, p_player_token text) returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -513,7 +518,7 @@ begin
     return jsonb_build_object('stale', true, 'me', public._b_coin_view(v_p, v_s, v_c));
   end if;
   if v_c.last_at is not null and now() - v_c.last_at < interval '600 milliseconds' then raise exception 'Too fast'; end if;
-  select * into b from public.b_coin_bank x where x.session_id = v_s.id and x.idx = p_idx;
+  select * into b from public.b_coin_bank x where x.session_id = v_s.id and x.idx = p_idx and x.hidden_at is null;
   v_ok := btrim(coalesce(p_answer, '')) = btrim(b.answer);
   if v_ok then
     v_d := round((public._b_coin_val('mpq', v_c.l_mpq) + public._b_coin_val('streak', v_c.l_streak) * least(v_c.streak, 10))
@@ -749,9 +754,8 @@ declare n record; c text; g public.b_duel_games; tries int := 0;
 begin
   if p_game not in ('tictactoe', 'connect4', 'battleship', 'dots', 'memory') then raise exception 'Unknown game'; end if;
   if length(coalesce(p_token, '')) < 16 then raise exception 'Bad token'; end if;
-  -- tidy: open games idle 2 hours close; finished games are deleted after a day
+  -- tidy: open games idle 2 hours close (finished games are kept as 'done'; a future purge job could clear old ones)
   update public.b_duel_games set status = 'done', reason = coalesce(reason, 'expired') where status <> 'done' and updated_at < now() - interval '2 hours';
-  delete from public.b_duel_games where status = 'done' and updated_at < now() - interval '1 day';
   if (select count(*) from public.b_duel_games where status <> 'done') >= 400 then raise exception 'Too many partner games are open right now. Try again in a minute.'; end if;
   select * into n from public._b_duel_name(p_name, p_id, p_pin_hash);
   loop
@@ -988,8 +992,10 @@ create table if not exists public.b_ask_questions (
   body        text not null check (char_length(body) between 3 and 1000),
   answer      text,
   status      text not null default 'new' check (status in ('new', 'posted', 'in_class', 'skipped')),
-  answered_on date
+  answered_on date,
+  hidden_at   timestamptz             -- set = the teacher removed it (soft); hidden from every list
 );
+alter table public.b_ask_questions add column if not exists hidden_at timestamptz;
 create index if not exists b_ask_questions_term on public.b_ask_questions (term, status);
 create table if not exists public.b_ask_limits (
   student_id uuid not null references public.b_students on delete cascade,
@@ -1008,7 +1014,7 @@ begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   if char_length(v_body) < 3 then raise exception 'Please type your question'; end if;
   if char_length(v_body) > 1000 then raise exception 'Please keep it under 1000 characters'; end if;
-  delete from public.b_ask_limits where day < d - 7;
+  -- (old b_ask_limits days are simply ignored; a future purge job could clear them)
   select n into used from public.b_ask_limits where student_id = p_id and day = d;
   if coalesce(used, 0) >= 3 then raise exception 'You can ask 3 questions a day. Try again tomorrow!'; end if;
   insert into public.b_ask_limits (student_id, day, n) values (p_id, d, 1)
@@ -1025,7 +1031,7 @@ begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   return coalesce((select jsonb_agg(jsonb_build_object('topic', q.topic, 'body', q.body, 'answer', q.answer, 'answered_on', q.answered_on)
                      order by q.answered_on desc nulls last, q.day desc)
-                     from public.b_ask_questions q where q.term = public._b_set('term') and q.status = 'posted'), '[]');
+                     from public.b_ask_questions q where q.term = public._b_set('term') and q.status = 'posted' and q.hidden_at is null), '[]');
 end $$;
 
 create or replace function public.b_ask_teacher_list(p_pass_hash text) returns jsonb
@@ -1034,7 +1040,7 @@ begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
   return coalesce((select jsonb_agg(jsonb_build_object('id', q.id, 'day', q.day, 'topic', q.topic, 'body', q.body,
                      'answer', q.answer, 'status', q.status, 'answered_on', q.answered_on) order by (q.status = 'new') desc, q.day desc)
-                     from public.b_ask_questions q where q.term = public._b_set('term')), '[]');
+                     from public.b_ask_questions q where q.term = public._b_set('term') and q.hidden_at is null), '[]');
 end $$;
 
 -- p_status: 'posted' (class board), 'in_class' (answered out loud), 'skipped', or 'new'.
@@ -1050,15 +1056,16 @@ begin
     body = case when char_length(btrim(coalesce(p_body, ''))) >= 3 then left(btrim(p_body), 1000) else body end,
     status = p_status,
     answered_on = case when p_status in ('posted', 'in_class') then coalesce(answered_on, public._b_today()) end
-  where id = p_question;
+  where id = p_question and hidden_at is null;
   return public.b_ask_teacher_list(p_pass_hash);
 end $$;
 
-create or replace function public.b_ask_teacher_delete(p_pass_hash text, p_question uuid) returns jsonb
+-- Remove = soft: hidden_at is set and the question leaves every list (a future purge job could clear old ones).
+create or replace function public.b_ask_teacher_hide(p_pass_hash text, p_question uuid) returns jsonb
 language plpgsql security definer set search_path = public as $$
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  delete from public.b_ask_questions where id = p_question;
+  update public.b_ask_questions set hidden_at = now() where id = p_question and hidden_at is null;
   return public.b_ask_teacher_list(p_pass_hash);
 end $$;
 
@@ -1068,7 +1075,8 @@ end $$;
 --   Realtime's free-plan budget (~100 messages/second) is shared with Dopps Class's Germ Snipes in this project,
 --   so Bedrock keeps its own small cap (b_settings 'snipes_cap', default 6 players across all Bedrock games).
 --   Hosts reserve a seat with b_snipes_host, check in with b_snipes_beat every 10 s (and before letting someone
---   join), and free it with b_snipes_end. A game silent for 25 s frees its seats.
+--   join), and free it with b_snipes_end. A game silent for 25 s frees its seats. Ended or silent games are just
+--   ignored (b_snipes_end marks players = 0 and an old beat_at); the code can be hosted again.
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.b_snipes_games (
   code       text primary key check (code ~ '^[A-Z0-9]{4}$'),
@@ -1089,12 +1097,13 @@ language plpgsql security definer set search_path = public as $$
 declare v_used int; v_games int; v_cap int := public._b_snipes_cap();
 begin
   if coalesce(p_code, '') !~ '^[A-Z0-9]{4}$' or length(coalesce(p_token, '')) < 16 then raise exception 'Bad game code'; end if;
-  delete from public.b_snipes_games where beat_at < now() - interval '25 seconds';
-  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games where code <> p_code;
+  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games
+   where code <> p_code and beat_at >= now() - interval '25 seconds';
   if v_used + 1 > v_cap then return jsonb_build_object('ok', false, 'players', v_used, 'games', v_games, 'cap', v_cap); end if;
   insert into public.b_snipes_games (code, token_hash) values (p_code, public._b_sha(p_token))
-    on conflict (code) do update set token_hash = excluded.token_hash, players = 1, beat_at = now()
-    where public.b_snipes_games.token_hash = excluded.token_hash;
+    on conflict (code) do update set token_hash = excluded.token_hash, players = 1, beat_at = now(),
+      created_at = case when public.b_snipes_games.beat_at < now() - interval '25 seconds' then now() else public.b_snipes_games.created_at end
+    where public.b_snipes_games.token_hash = excluded.token_hash or public.b_snipes_games.beat_at < now() - interval '25 seconds';
   if not found then return jsonb_build_object('ok', false, 'taken', true, 'players', v_used, 'games', v_games, 'cap', v_cap); end if;
   return jsonb_build_object('ok', true, 'players', v_used + 1, 'games', v_games + 1, 'cap', v_cap);
 end $$;
@@ -1104,13 +1113,15 @@ create or replace function public.b_snipes_beat(p_code text, p_token text, p_pla
 language plpgsql security definer set search_path = public as $$
 declare v_used int; v_games int; v_cap int := public._b_snipes_cap(); v_n int := greatest(1, least(coalesce(p_players, 1), 8));
 begin
-  delete from public.b_snipes_games where beat_at < now() - interval '25 seconds';
-  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games where code <> p_code;
+  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games
+   where code <> p_code and beat_at >= now() - interval '25 seconds';
   if v_used + v_n > v_cap then
-    update public.b_snipes_games set beat_at = now() where code = p_code and token_hash = public._b_sha(p_token);
+    update public.b_snipes_games set beat_at = now()
+     where code = p_code and token_hash = public._b_sha(p_token) and beat_at >= now() - interval '25 seconds';
     return jsonb_build_object('ok', false, 'players', v_used, 'games', v_games, 'cap', v_cap, 'room', greatest(0, v_cap - v_used));
   end if;
-  update public.b_snipes_games set players = v_n, beat_at = now() where code = p_code and token_hash = public._b_sha(p_token);
+  update public.b_snipes_games set players = v_n, beat_at = now()
+   where code = p_code and token_hash = public._b_sha(p_token) and beat_at >= now() - interval '25 seconds';
   if not found then raise exception 'Game not found'; end if;
   return jsonb_build_object('ok', true, 'players', v_used + v_n, 'games', v_games + 1, 'cap', v_cap, 'room', v_cap - v_used);
 end $$;
@@ -1118,7 +1129,8 @@ end $$;
 create or replace function public.b_snipes_end(p_code text, p_token text) returns boolean
 language plpgsql security definer set search_path = public as $$
 begin
-  delete from public.b_snipes_games where code = p_code and token_hash = public._b_sha(p_token);
+  update public.b_snipes_games set players = 0, beat_at = now() - interval '1 day'
+   where code = p_code and token_hash = public._b_sha(p_token) and beat_at >= now() - interval '25 seconds';
   return found;
 end $$;
 
@@ -1210,13 +1222,13 @@ revoke execute on function public._b_sha, public._b_xp_add, public._b_xp_total, 
   public.b_live_join, public.b_live_answer, public.b_live_state,
   public.b_coin_setup, public.b_coin_start, public.b_coin_board, public.b_coin_me, public.b_coin_answer, public.b_coin_buy,
   public.b_duel_create, public.b_duel_join, public.b_duel_state, public.b_duel_move, public.b_duel_setup, public.b_duel_leave, public.b_duel_rematch,
-  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_delete,
+  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_hide,
   public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end, public.b_duel_board
   from public, anon, authenticated;
 grant execute on function public.b_live_create, public.b_live_set_question, public.b_live_set_hp, public.b_live_set_phase, public.b_live_results,
   public.b_live_join, public.b_live_answer, public.b_live_state,
   public.b_coin_setup, public.b_coin_start, public.b_coin_board, public.b_coin_me, public.b_coin_answer, public.b_coin_buy,
   public.b_duel_create, public.b_duel_join, public.b_duel_state, public.b_duel_move, public.b_duel_setup, public.b_duel_leave, public.b_duel_rematch,
-  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_delete,
+  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_hide,
   public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end, public.b_duel_board,
   public.b_state, public.b_teacher_roster, public.b_champions to anon;

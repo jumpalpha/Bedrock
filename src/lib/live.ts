@@ -126,5 +126,5 @@ export const askBoard = () => rpc<AskPosted[]>("b_ask_board", me());
 export const askTeacherList = (h: string) => rpc<AskRow[]>("b_ask_teacher_list", { p_pass_hash: h });
 export const askTeacherSet = (h: string, id: string, answer: string, status: AskStatus, body: string | null) =>
   rpc<AskRow[]>("b_ask_teacher_set", { p_pass_hash: h, p_question: id, p_answer: answer, p_status: status, p_body: body });
-export const askTeacherDelete = (h: string, id: string) => rpc<AskRow[]>("b_ask_teacher_delete", { p_pass_hash: h, p_question: id });
+export const askTeacherDelete = (h: string, id: string) => rpc<AskRow[]>("b_ask_teacher_hide", { p_pass_hash: h, p_question: id });
 // ── end wave-live ──

@@ -926,8 +926,10 @@ create table if not exists public.b_pets (
   words           jsonb not null default '[]',          -- words it learned (right answers), newest last, max 80
   renamed_at      timestamptz,
   last_tick       timestamptz not null default now(),
-  updated_at      timestamptz not null default now()
+  updated_at      timestamptz not null default now(),
+  removed_at      timestamptz                           -- set = the teacher removed it (soft); null = active
 );
+alter table public.b_pets add column if not exists removed_at timestamptz;
 -- One row per counted graded event, so crystals are awarded exactly once.
 create table if not exists public.b_pet_awards (
   student_id uuid not null references public.b_students on delete cascade,
@@ -1047,7 +1049,7 @@ create or replace function public._b_pet_tick(p_id uuid) returns public.b_pets
 language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; h int; i int; avg_need double precision; min_need double precision;
 begin
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if not found then return null; end if;
   h := floor(extract(epoch from now() - r.last_tick) / 3600)::int;
   if h <= 0 then return r; end if;
@@ -1129,7 +1131,7 @@ language sql security definer set search_path = public as $$
     junk_total = r.junk_total, streak = r.streak, best_streak = r.best_streak, streak_date = r.streak_date,
     day_date = r.day_date, day_counts = r.day_counts, quiz_key = r.quiz_key, quiz_crystals = r.quiz_crystals,
     words = r.words, updated_at = now()
-  where student_id = r.student_id $$;
+  where student_id = r.student_id and removed_at is null $$;
 
 -- One counted action: needs, caps, streak, revive. Returns the row and a result word.
 create or replace function public._b_pet_apply(r public.b_pets, p_action text, out o public.b_pets, out msg text)
@@ -1200,9 +1202,23 @@ declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   n := public._b_pet_clean_name(p_name);
-  if exists (select 1 from public.b_pets where student_id = p_id) then raise exception 'You already have an alien'; end if;
-  insert into public.b_pets (student_id, name, approved_name, name_ok, color)
-  values (p_id, n, case when ok then n end, ok, coalesce(p_color, 'amethyst')) returning * into r;
+  if exists (select 1 from public.b_pets where student_id = p_id and removed_at is null) then raise exception 'You already have an alien'; end if;
+  -- A removed alien's row is reused: every column goes back to its default, as if it were a new row
+  -- (spent and quiz crystals reset; crystals from graded work in b_pet_awards carry over).
+  insert into public.b_pets as b (student_id, name, approved_name, name_ok, color)
+  values (p_id, n, case when ok then n end, ok, coalesce(p_color, 'amethyst'))
+  on conflict (student_id) do update set name = excluded.name, approved_name = excluded.approved_name,
+    name_ok = excluded.name_ok, color = excluded.color, born_at = excluded.born_at, minerals = excluded.minerals,
+    heat = excluded.heat, mood = excluded.mood, shine = excluded.shine, health = excluded.health, alive = excluded.alive,
+    died_at = excluded.died_at, deaths = excluded.deaths, revive_progress = excluded.revive_progress,
+    care_points = excluded.care_points, junk_total = excluded.junk_total, streak = excluded.streak,
+    best_streak = excluded.best_streak, streak_date = excluded.streak_date, day_date = excluded.day_date,
+    day_counts = excluded.day_counts, quiz_key = excluded.quiz_key, quiz_crystals = excluded.quiz_crystals,
+    spent = excluded.spent, owned = excluded.owned, equipped = excluded.equipped, words = excluded.words,
+    renamed_at = excluded.renamed_at, last_tick = excluded.last_tick, updated_at = excluded.updated_at, removed_at = null
+    where b.removed_at is not null
+  returning * into r;
+  if r.student_id is null then raise exception 'You already have an alien'; end if;
   perform public._b_pet_sync(p_id);
   return public._b_pet_view(r, true);
 end $$;
@@ -1228,7 +1244,7 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; v_ref int := p_ref; t public.b_cw_terms; opts jsonb; v_def text;
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   if v_ref is null then
     select ref into v_ref from (select ref from public.b_cw_terms group by ref having count(*) >= 4) c order by random() limit 1;
@@ -1280,7 +1296,7 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names_need_ok'), 'false') <> 'true';
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   n := public._b_pet_clean_name(p_name);
   if n = r.name then raise exception 'That is already your alien''s name'; end if;
@@ -1305,7 +1321,7 @@ begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   select * into it from public.b_pet_items where key = p_item;
   if it.key is null then raise exception 'That item doesn''t exist'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   if it.key = any(r.owned) then raise exception 'You already own that'; end if;
   perform public._b_pet_sync(p_id);
@@ -1324,7 +1340,7 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; it public.b_pet_items;
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   if p_item is null then
     update public.b_pets set equipped = equipped - p_slot, updated_at = now() where student_id = p_id returning * into r;
@@ -1345,17 +1361,17 @@ create or replace function public.b_pet_gallery() returns jsonb
 language plpgsql security definer set search_path = public as $$
 declare sid uuid;
 begin
-  for sid in select student_id from public.b_pets loop perform public._b_pet_tick(sid); end loop;
+  for sid in select student_id from public.b_pets where removed_at is null loop perform public._b_pet_tick(sid); end loop;
   return (select coalesce(jsonb_agg(public._b_pet_view(p, false) || jsonb_build_object('owner', public._b_pub_name(s.name), 'period', s.period)
             order by p.alive desc, p.health desc, p.streak desc, p.care_points desc), '[]')
-            from public.b_pets p join public.b_students s on s.id = p.student_id);
+            from public.b_pets p join public.b_students s on s.id = p.student_id where p.removed_at is null);
 end $$;
 
 create or replace function public.b_pet_fallen(p_days int default 14) returns jsonb
 language plpgsql security definer set search_path = public as $$
 declare sid uuid;
 begin
-  for sid in select student_id from public.b_pets where alive loop perform public._b_pet_tick(sid); end loop;
+  for sid in select student_id from public.b_pets where alive and removed_at is null loop perform public._b_pet_tick(sid); end loop;
   return (select coalesce(jsonb_agg(jsonb_build_object('name', d.pet_name, 'color', d.color, 'owner', public._b_pub_name(s.name),
                     'died_at', d.died_at, 'revived', d.revived_at is not null) order by d.died_at desc), '[]')
             from (select * from public.b_pet_dormant
@@ -1402,13 +1418,13 @@ language plpgsql security definer set search_path = public as $$
 declare sid uuid;
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  for sid in select student_id from public.b_pets loop perform public._b_pet_tick(sid); end loop;
+  for sid in select student_id from public.b_pets where removed_at is null loop perform public._b_pet_tick(sid); end loop;
   return (select coalesce(jsonb_agg(jsonb_build_object('student', p.student_id, 'student_name', s.name, 'period', s.period,
             'name', p.name, 'approved_name', p.approved_name, 'name_ok', p.name_ok, 'color', p.color, 'alive', p.alive,
             'stage', public._b_pet_stage(public._b_pet_cleared(p.student_id), p.care_points), 'health', round(p.health::numeric),
             'care_points', p.care_points, 'deaths', p.deaths, 'upgrades', cardinality(p.owned), 'born', p.born_at, 'last_care', p.updated_at)
           order by p.name_ok, s.period, s.name), '[]')
-          from public.b_pets p join public.b_students s on s.id = p.student_id);
+          from public.b_pets p join public.b_students s on s.id = p.student_id where p.removed_at is null);
 end $$;
 
 -- p_action: 'approve' (the name the student picked), 'deny' (back to the last approved name, or "Geode"), 'rename' (p_name).
@@ -1417,20 +1433,23 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; n text;
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  select * into r from public.b_pets where student_id = p_student for update;
+  select * into r from public.b_pets where student_id = p_student and removed_at is null for update;
   if r.student_id is null then raise exception 'That alien no longer exists'; end if;
   n := case p_action when 'approve' then r.name when 'deny' then coalesce(r.approved_name, 'Geode')
                      when 'rename' then public._b_pet_clean_name(p_name) end;
   if n is null then raise exception 'Unknown action'; end if;
-  update public.b_pets set name = n, approved_name = n, name_ok = true, updated_at = now() where student_id = p_student;
+  update public.b_pets set name = n, approved_name = n, name_ok = true, updated_at = now() where student_id = p_student and removed_at is null;
   return jsonb_build_object('ok', true, 'name', n);
 end $$;
 
-create or replace function public.b_pet_teacher_delete(p_pass_hash text, p_student uuid) returns jsonb
+-- Remove = soft: the alien disappears everywhere and the student can adopt a new one.
+-- (A future purge job could clear rows removed long ago.)
+create or replace function public.b_pet_teacher_remove(p_pass_hash text, p_student uuid) returns jsonb
 language plpgsql security definer set search_path = public as $$
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  delete from public.b_pets where student_id = p_student;
+  update public.b_pets set removed_at = now(), quiz_key = null, updated_at = now()
+   where student_id = p_student and removed_at is null;
   if not found then raise exception 'That alien no longer exists'; end if;
   return jsonb_build_object('ok', true);
 end $$;
@@ -1453,11 +1472,11 @@ revoke execute on function public._b_pet_caps, public._b_pet_habits, public._b_p
   public._b_pet_apply, public._b_streak,
   public.b_pet_get, public.b_pet_create, public.b_pet_action, public.b_pet_quiz_start, public.b_pet_quiz_answer, public.b_pet_rename,
   public.b_pet_shop_items, public.b_pet_shop_buy, public.b_pet_equip, public.b_pet_gallery, public.b_pet_fallen, public.b_champions,
-  public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_delete, public.b_pet_teacher_names_ok
+  public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_remove, public.b_pet_teacher_names_ok
   from public, anon, authenticated;
 grant execute on function public.b_pet_get, public.b_pet_create, public.b_pet_action, public.b_pet_quiz_start, public.b_pet_quiz_answer,
   public.b_pet_rename, public.b_pet_shop_items, public.b_pet_shop_buy, public.b_pet_equip, public.b_pet_gallery, public.b_pet_fallen,
-  public.b_champions, public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_delete, public.b_pet_teacher_names_ok to anon;
+  public.b_champions, public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_remove, public.b_pet_teacher_names_ok to anon;
 -- ── end wave-pet ──
 
 -- ── wave-live: Live & multiplayer (same as supabase/migrations/006_live.sql) ──
@@ -1554,9 +1573,8 @@ declare v_token text := gen_random_uuid()::text || gen_random_uuid()::text; v_co
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
   if p_game_type not in ('pick_a_side', 'showdown', 'raid', 'coins') then raise exception 'Unknown game'; end if;
-  -- tidy: games left open 12 hours end; ended games are deleted after 7 days
+  -- tidy: games left open 12 hours end (ended games are kept; a future purge job could clear old ones)
   update public.b_live_sessions s set phase = 'ended', ended_at = now() where s.phase <> 'ended' and s.created_at < now() - interval '12 hours';
-  delete from public.b_live_sessions s where s.phase = 'ended' and coalesce(s.ended_at, s.created_at) < now() - interval '7 days';
   if (select count(*) from public.b_live_sessions s where s.phase <> 'ended') >= 60 then
     raise exception 'Too many live games are open right now. End an old one and try again.';
   end if;
@@ -1787,8 +1805,10 @@ create table if not exists public.b_coin_bank (
   choices    jsonb not null,             -- 4 strings
   answer     text not null,
   why        text,
+  hidden_at  timestamptz,                -- set = replaced by a later b_coin_setup (soft); null = in this game's bank
   primary key (session_id, idx)
 );
+alter table public.b_coin_bank add column if not exists hidden_at timestamptz;
 create table if not exists public.b_coin_players (
   player_id  uuid primary key references public.b_live_players on delete cascade,
   session_id uuid not null references public.b_live_sessions on delete cascade,
@@ -1832,13 +1852,16 @@ begin
   if p_questions is null or jsonb_typeof(p_questions) <> 'array' or jsonb_array_length(p_questions) not between 4 and 800 then
     raise exception 'Need 4 to 800 questions';
   end if;
-  delete from public.b_coin_bank b where b.session_id = s.id;
+  -- loading again replaces the bank: old rows are hidden, the new ones written over them (soft, no removal)
+  update public.b_coin_bank b set hidden_at = now() where b.session_id = s.id and b.hidden_at is null;
   insert into public.b_coin_bank (session_id, idx, ch, prompt, choices, answer, why)
   select s.id, (q.ord - 1)::int, case when q.v ->> 'ch' ~ '^\d{1,4}$' then (q.v ->> 'ch')::int end, left(q.v ->> 'prompt', 400),
          q.v -> 'choices', left(q.v ->> 'answer', 200), left(q.v ->> 'why', 600)
     from jsonb_array_elements(p_questions) with ordinality q(v, ord)
    where jsonb_typeof(q.v -> 'choices') = 'array' and jsonb_array_length(q.v -> 'choices') between 2 and 6
-     and coalesce(q.v ->> 'prompt', '') <> '' and coalesce(q.v ->> 'answer', '') <> '';
+     and coalesce(q.v ->> 'prompt', '') <> '' and coalesce(q.v ->> 'answer', '') <> ''
+  on conflict (session_id, idx) do update set ch = excluded.ch, prompt = excluded.prompt, choices = excluded.choices,
+    answer = excluded.answer, why = excluded.why, hidden_at = null;
   get diagnostics v_n = row_count;
   return v_n;
 end $$;
@@ -1849,7 +1872,7 @@ language plpgsql security definer set search_path = public as $$
 declare s public.b_live_sessions := public._b_live_host(p_session_id, p_host_token);
 begin
   if s.id is null or s.game_type <> 'coins' or s.phase <> 'lobby' then return false; end if;
-  if not exists (select 1 from public.b_coin_bank b where b.session_id = s.id) then raise exception 'No questions loaded'; end if;
+  if not exists (select 1 from public.b_coin_bank b where b.session_id = s.id and b.hidden_at is null) then raise exception 'No questions loaded'; end if;
   update public.b_live_sessions x set phase = 'question', q_index = 0, q_started_at = now(),
          q_seconds = greatest(60, least(coalesce(p_seconds, 420), 1800)) where x.id = s.id;
   return true;
@@ -1865,7 +1888,7 @@ begin
     'phase', s.phase, 'q_seconds', s.q_seconds,
     'seconds_left', case when s.phase = 'question' then greatest(0, s.q_seconds - extract(epoch from now() - s.q_started_at))::int end,
     'teams_n', nullif(s.settings ->> 'teams', '')::int,
-    'bank', (select count(*) from public.b_coin_bank b where b.session_id = s.id),
+    'bank', (select count(*) from public.b_coin_bank b where b.session_id = s.id and b.hidden_at is null),
     'players', (select coalesce(jsonb_agg(jsonb_build_object('nickname', p.nickname, 'team', p.team, 'signed_in', p.student_id is not null,
                   'cash', coalesce(c.cash, 0), 'correct', coalesce(c.correct, 0), 'answered', coalesce(c.answered, 0))
                   order by coalesce(c.cash, 0) desc, p.joined_at), '[]')
@@ -1898,7 +1921,7 @@ language sql stable as $$
 -- A random question for this player (never the one they just had).
 create or replace function public._b_coin_pick(p_session_id uuid, p_not int) returns int
 language sql volatile security definer set search_path = public as $$
-  select b.idx from public.b_coin_bank b where b.session_id = p_session_id and b.idx is distinct from p_not order by random() limit 1 $$;
+  select b.idx from public.b_coin_bank b where b.session_id = p_session_id and b.hidden_at is null and b.idx is distinct from p_not order by random() limit 1 $$;
 
 -- What my phone shows.
 create or replace function public._b_coin_view(p public.b_live_players, s public.b_live_sessions, c public.b_coin_players) returns jsonb
@@ -1918,7 +1941,7 @@ language sql stable security definer set search_path = public as $$
                 where p3.session_id = s.id and p3.team is not null group by p3.team) t) end,
     'question', case when public._b_coin_running(s) and c.cur_q is not null then (
        select jsonb_build_object('idx', b.idx, 'ch', b.ch, 'prompt', b.prompt, 'choices', b.choices)
-         from public.b_coin_bank b where b.session_id = s.id and b.idx = c.cur_q) end) $$;
+         from public.b_coin_bank b where b.session_id = s.id and b.idx = c.cur_q and b.hidden_at is null) end) $$;
 
 create or replace function public.b_coin_me(p_player_id uuid, p_player_token text) returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -1946,7 +1969,7 @@ begin
     return jsonb_build_object('stale', true, 'me', public._b_coin_view(v_p, v_s, v_c));
   end if;
   if v_c.last_at is not null and now() - v_c.last_at < interval '600 milliseconds' then raise exception 'Too fast'; end if;
-  select * into b from public.b_coin_bank x where x.session_id = v_s.id and x.idx = p_idx;
+  select * into b from public.b_coin_bank x where x.session_id = v_s.id and x.idx = p_idx and x.hidden_at is null;
   v_ok := btrim(coalesce(p_answer, '')) = btrim(b.answer);
   if v_ok then
     v_d := round((public._b_coin_val('mpq', v_c.l_mpq) + public._b_coin_val('streak', v_c.l_streak) * least(v_c.streak, 10))
@@ -2182,9 +2205,8 @@ declare n record; c text; g public.b_duel_games; tries int := 0;
 begin
   if p_game not in ('tictactoe', 'connect4', 'battleship', 'dots', 'memory') then raise exception 'Unknown game'; end if;
   if length(coalesce(p_token, '')) < 16 then raise exception 'Bad token'; end if;
-  -- tidy: open games idle 2 hours close; finished games are deleted after a day
+  -- tidy: open games idle 2 hours close (finished games are kept as 'done'; a future purge job could clear old ones)
   update public.b_duel_games set status = 'done', reason = coalesce(reason, 'expired') where status <> 'done' and updated_at < now() - interval '2 hours';
-  delete from public.b_duel_games where status = 'done' and updated_at < now() - interval '1 day';
   if (select count(*) from public.b_duel_games where status <> 'done') >= 400 then raise exception 'Too many partner games are open right now. Try again in a minute.'; end if;
   select * into n from public._b_duel_name(p_name, p_id, p_pin_hash);
   loop
@@ -2421,8 +2443,10 @@ create table if not exists public.b_ask_questions (
   body        text not null check (char_length(body) between 3 and 1000),
   answer      text,
   status      text not null default 'new' check (status in ('new', 'posted', 'in_class', 'skipped')),
-  answered_on date
+  answered_on date,
+  hidden_at   timestamptz             -- set = the teacher removed it (soft); hidden from every list
 );
+alter table public.b_ask_questions add column if not exists hidden_at timestamptz;
 create index if not exists b_ask_questions_term on public.b_ask_questions (term, status);
 create table if not exists public.b_ask_limits (
   student_id uuid not null references public.b_students on delete cascade,
@@ -2441,7 +2465,7 @@ begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   if char_length(v_body) < 3 then raise exception 'Please type your question'; end if;
   if char_length(v_body) > 1000 then raise exception 'Please keep it under 1000 characters'; end if;
-  delete from public.b_ask_limits where day < d - 7;
+  -- (old b_ask_limits days are simply ignored; a future purge job could clear them)
   select n into used from public.b_ask_limits where student_id = p_id and day = d;
   if coalesce(used, 0) >= 3 then raise exception 'You can ask 3 questions a day. Try again tomorrow!'; end if;
   insert into public.b_ask_limits (student_id, day, n) values (p_id, d, 1)
@@ -2458,7 +2482,7 @@ begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   return coalesce((select jsonb_agg(jsonb_build_object('topic', q.topic, 'body', q.body, 'answer', q.answer, 'answered_on', q.answered_on)
                      order by q.answered_on desc nulls last, q.day desc)
-                     from public.b_ask_questions q where q.term = public._b_set('term') and q.status = 'posted'), '[]');
+                     from public.b_ask_questions q where q.term = public._b_set('term') and q.status = 'posted' and q.hidden_at is null), '[]');
 end $$;
 
 create or replace function public.b_ask_teacher_list(p_pass_hash text) returns jsonb
@@ -2467,7 +2491,7 @@ begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
   return coalesce((select jsonb_agg(jsonb_build_object('id', q.id, 'day', q.day, 'topic', q.topic, 'body', q.body,
                      'answer', q.answer, 'status', q.status, 'answered_on', q.answered_on) order by (q.status = 'new') desc, q.day desc)
-                     from public.b_ask_questions q where q.term = public._b_set('term')), '[]');
+                     from public.b_ask_questions q where q.term = public._b_set('term') and q.hidden_at is null), '[]');
 end $$;
 
 -- p_status: 'posted' (class board), 'in_class' (answered out loud), 'skipped', or 'new'.
@@ -2483,15 +2507,16 @@ begin
     body = case when char_length(btrim(coalesce(p_body, ''))) >= 3 then left(btrim(p_body), 1000) else body end,
     status = p_status,
     answered_on = case when p_status in ('posted', 'in_class') then coalesce(answered_on, public._b_today()) end
-  where id = p_question;
+  where id = p_question and hidden_at is null;
   return public.b_ask_teacher_list(p_pass_hash);
 end $$;
 
-create or replace function public.b_ask_teacher_delete(p_pass_hash text, p_question uuid) returns jsonb
+-- Remove = soft: hidden_at is set and the question leaves every list (a future purge job could clear old ones).
+create or replace function public.b_ask_teacher_hide(p_pass_hash text, p_question uuid) returns jsonb
 language plpgsql security definer set search_path = public as $$
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  delete from public.b_ask_questions where id = p_question;
+  update public.b_ask_questions set hidden_at = now() where id = p_question and hidden_at is null;
   return public.b_ask_teacher_list(p_pass_hash);
 end $$;
 
@@ -2501,7 +2526,8 @@ end $$;
 --   Realtime's free-plan budget (~100 messages/second) is shared with Dopps Class's Germ Snipes in this project,
 --   so Bedrock keeps its own small cap (b_settings 'snipes_cap', default 6 players across all Bedrock games).
 --   Hosts reserve a seat with b_snipes_host, check in with b_snipes_beat every 10 s (and before letting someone
---   join), and free it with b_snipes_end. A game silent for 25 s frees its seats.
+--   join), and free it with b_snipes_end. A game silent for 25 s frees its seats. Ended or silent games are just
+--   ignored (b_snipes_end marks players = 0 and an old beat_at); the code can be hosted again.
 -- ════════════════════════════════════════════════════════════════════
 create table if not exists public.b_snipes_games (
   code       text primary key check (code ~ '^[A-Z0-9]{4}$'),
@@ -2522,12 +2548,13 @@ language plpgsql security definer set search_path = public as $$
 declare v_used int; v_games int; v_cap int := public._b_snipes_cap();
 begin
   if coalesce(p_code, '') !~ '^[A-Z0-9]{4}$' or length(coalesce(p_token, '')) < 16 then raise exception 'Bad game code'; end if;
-  delete from public.b_snipes_games where beat_at < now() - interval '25 seconds';
-  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games where code <> p_code;
+  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games
+   where code <> p_code and beat_at >= now() - interval '25 seconds';
   if v_used + 1 > v_cap then return jsonb_build_object('ok', false, 'players', v_used, 'games', v_games, 'cap', v_cap); end if;
   insert into public.b_snipes_games (code, token_hash) values (p_code, public._b_sha(p_token))
-    on conflict (code) do update set token_hash = excluded.token_hash, players = 1, beat_at = now()
-    where public.b_snipes_games.token_hash = excluded.token_hash;
+    on conflict (code) do update set token_hash = excluded.token_hash, players = 1, beat_at = now(),
+      created_at = case when public.b_snipes_games.beat_at < now() - interval '25 seconds' then now() else public.b_snipes_games.created_at end
+    where public.b_snipes_games.token_hash = excluded.token_hash or public.b_snipes_games.beat_at < now() - interval '25 seconds';
   if not found then return jsonb_build_object('ok', false, 'taken', true, 'players', v_used, 'games', v_games, 'cap', v_cap); end if;
   return jsonb_build_object('ok', true, 'players', v_used + 1, 'games', v_games + 1, 'cap', v_cap);
 end $$;
@@ -2537,13 +2564,15 @@ create or replace function public.b_snipes_beat(p_code text, p_token text, p_pla
 language plpgsql security definer set search_path = public as $$
 declare v_used int; v_games int; v_cap int := public._b_snipes_cap(); v_n int := greatest(1, least(coalesce(p_players, 1), 8));
 begin
-  delete from public.b_snipes_games where beat_at < now() - interval '25 seconds';
-  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games where code <> p_code;
+  select coalesce(sum(players), 0), count(*) into v_used, v_games from public.b_snipes_games
+   where code <> p_code and beat_at >= now() - interval '25 seconds';
   if v_used + v_n > v_cap then
-    update public.b_snipes_games set beat_at = now() where code = p_code and token_hash = public._b_sha(p_token);
+    update public.b_snipes_games set beat_at = now()
+     where code = p_code and token_hash = public._b_sha(p_token) and beat_at >= now() - interval '25 seconds';
     return jsonb_build_object('ok', false, 'players', v_used, 'games', v_games, 'cap', v_cap, 'room', greatest(0, v_cap - v_used));
   end if;
-  update public.b_snipes_games set players = v_n, beat_at = now() where code = p_code and token_hash = public._b_sha(p_token);
+  update public.b_snipes_games set players = v_n, beat_at = now()
+   where code = p_code and token_hash = public._b_sha(p_token) and beat_at >= now() - interval '25 seconds';
   if not found then raise exception 'Game not found'; end if;
   return jsonb_build_object('ok', true, 'players', v_used + v_n, 'games', v_games + 1, 'cap', v_cap, 'room', v_cap - v_used);
 end $$;
@@ -2551,7 +2580,8 @@ end $$;
 create or replace function public.b_snipes_end(p_code text, p_token text) returns boolean
 language plpgsql security definer set search_path = public as $$
 begin
-  delete from public.b_snipes_games where code = p_code and token_hash = public._b_sha(p_token);
+  update public.b_snipes_games set players = 0, beat_at = now() - interval '1 day'
+   where code = p_code and token_hash = public._b_sha(p_token) and beat_at >= now() - interval '25 seconds';
   return found;
 end $$;
 
@@ -2643,14 +2673,14 @@ revoke execute on function public._b_sha, public._b_xp_add, public._b_xp_total, 
   public.b_live_join, public.b_live_answer, public.b_live_state,
   public.b_coin_setup, public.b_coin_start, public.b_coin_board, public.b_coin_me, public.b_coin_answer, public.b_coin_buy,
   public.b_duel_create, public.b_duel_join, public.b_duel_state, public.b_duel_move, public.b_duel_setup, public.b_duel_leave, public.b_duel_rematch,
-  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_delete,
+  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_hide,
   public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end, public.b_duel_board
   from public, anon, authenticated;
 grant execute on function public.b_live_create, public.b_live_set_question, public.b_live_set_hp, public.b_live_set_phase, public.b_live_results,
   public.b_live_join, public.b_live_answer, public.b_live_state,
   public.b_coin_setup, public.b_coin_start, public.b_coin_board, public.b_coin_me, public.b_coin_answer, public.b_coin_buy,
   public.b_duel_create, public.b_duel_join, public.b_duel_state, public.b_duel_move, public.b_duel_setup, public.b_duel_leave, public.b_duel_rematch,
-  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_delete,
+  public.b_ask_submit, public.b_ask_board, public.b_ask_teacher_list, public.b_ask_teacher_set, public.b_ask_teacher_hide,
   public.b_snipes_host, public.b_snipes_beat, public.b_snipes_end, public.b_duel_board,
   public.b_state, public.b_teacher_roster, public.b_champions to anon;
 -- ── end wave-live ──
@@ -3369,3 +3399,264 @@ grant execute on function
   public.b_trail_load, public.b_trail_start, public.b_trail_save, public.b_trail_board, public.b_trail_teacher_list
   to anon;
 -- ── end wave-twinB ──
+
+-- ── wave-x7b: Daily Briefing, Suggestions, Visitors, site visits (same as supabase/migrations/010_x7b.sql) ──
+-- ════════════════════════════════════════════════════════════════════
+-- 1. Daily Briefing
+-- ════════════════════════════════════════════════════════════════════
+create table if not exists public.b_briefing (
+  id           int primary key default 1 check (id = 1),
+  announcement text not null default '',
+  updated_at   timestamptz not null default now()
+);
+alter table public.b_briefing enable row level security;
+revoke all on public.b_briefing from anon, authenticated;
+insert into public.b_briefing (id) values (1) on conflict (id) do nothing;
+
+-- Public read: the announcement is for the whole class (no student data in it).
+create or replace function public.b_briefing_get() returns jsonb
+language sql stable security definer set search_path = public as $$
+  select jsonb_build_object('announcement', announcement, 'updated_at', updated_at) from public.b_briefing where id = 1 $$;
+
+create or replace function public.b_teacher_briefing_set(p_pass_hash text, p_announcement text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
+  insert into public.b_briefing (id, announcement, updated_at) values (1, left(btrim(coalesce(p_announcement, '')), 2000), now())
+  on conflict (id) do update set announcement = excluded.announcement, updated_at = now();
+  return public.b_briefing_get();
+end $$;
+
+-- ════════════════════════════════════════════════════════════════════
+-- 2. Suggest an Improvement
+-- ════════════════════════════════════════════════════════════════════
+create table if not exists public.b_suggestions (
+  id          bigserial primary key,
+  student_id  uuid references public.b_students on delete set null,  -- null when sent without logging in
+  name        text,                                                  -- optional, typed by the sender
+  category    text not null check (category in ('bug', 'game', 'content', 'design', 'other')),
+  message     text not null check (char_length(message) between 5 and 2000),
+  page        text,                                                  -- which page they were on (optional)
+  status      text not null default 'new' check (status in ('new', 'done', 'archived')),
+  created_at  timestamptz not null default now(),
+  updated_at  timestamptz not null default now()
+);
+alter table public.b_suggestions enable row level security;
+revoke all on public.b_suggestions from anon, authenticated;
+
+-- p_id / p_pin_hash are optional: a logged-in student's suggestion is linked to them.
+-- Limits: 5 a day per logged-in student; 40 an hour for everyone who isn't logged in.
+create or replace function public.b_suggest(p_id uuid, p_pin_hash text, p_name text, p_category text, p_message text, p_page text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+declare v_sid uuid := null; v_msg text := btrim(coalesce(p_message, ''));
+begin
+  if p_id is not null then
+    if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
+    v_sid := p_id;
+    if (select count(*) from public.b_suggestions where student_id = v_sid and created_at > now() - interval '1 day') >= 5 then
+      raise exception 'You have sent 5 suggestions today. Thank you! Try again tomorrow.'; end if;
+  elsif (select count(*) from public.b_suggestions where student_id is null and created_at > now() - interval '1 hour') >= 40 then
+    raise exception 'Lots of suggestions right now. Please try again in an hour.';
+  end if;
+  if char_length(v_msg) < 5 then raise exception 'Please write a little more.'; end if;
+  if p_category not in ('bug', 'game', 'content', 'design', 'other') then raise exception 'Pick what it is about.'; end if;
+  insert into public.b_suggestions (student_id, name, category, message, page)
+  values (v_sid, nullif(left(btrim(coalesce(p_name, '')), 60), ''), p_category, left(v_msg, 2000), nullif(left(btrim(coalesce(p_page, '')), 200), ''));
+  return jsonb_build_object('ok', true);
+end $$;
+
+create or replace function public.b_teacher_suggestions(p_pass_hash text, p_archived boolean) returns jsonb
+language plpgsql stable security definer set search_path = public as $$
+begin
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
+  return coalesce((select jsonb_agg(jsonb_build_object('id', g.id, 'name', g.name, 'student', s.name, 'period', s.period,
+      'category', g.category, 'message', g.message, 'page', g.page, 'status', g.status, 'created_at', g.created_at)
+      order by (g.status = 'new') desc, g.created_at desc)
+    from public.b_suggestions g left join public.b_students s on s.id = g.student_id
+    where coalesce(p_archived, false) or g.status <> 'archived'), '[]'::jsonb);
+end $$;
+
+-- "Remove" = archive (soft). Archived ones are hidden unless the teacher asks for them.
+create or replace function public.b_teacher_suggestion_set(p_pass_hash text, p_suggestion bigint, p_status text) returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
+  if p_status not in ('new', 'done', 'archived') then raise exception 'Unknown status'; end if;
+  update public.b_suggestions set status = p_status, updated_at = now() where id = p_suggestion;
+end $$;
+
+-- ════════════════════════════════════════════════════════════════════
+-- 3. Visitors (past students and guests)
+-- ════════════════════════════════════════════════════════════════════
+create table if not exists public.b_visitors (
+  student_id  uuid primary key references public.b_students on delete cascade,
+  first_name  text not null,
+  last_name   text not null,
+  last_seen   timestamptz not null default now(),
+  removed     boolean not null default false,
+  removed_at  timestamptz,
+  removed_why text,                                  -- 'expired' | 'teacher'
+  created_at  timestamptz not null default now()
+);
+alter table public.b_visitors enable row level security;
+revoke all on public.b_visitors from anon, authenticated;
+
+create or replace function public._b_visitor_clean(p text) returns boolean language sql immutable set search_path = public as $$
+  select lower(coalesce(p, '')) !~ '(fuck|shit|bitch|cunt|dick|cock|pussy|nigg|fag|slut|whore|porn|sex|nazi|hitler|kill)' $$;
+
+-- Switch off (soft) every visitor not seen for 90 days. Their PIN is scrambled so the old login stops working everywhere.
+create or replace function public._b_visitor_expire() returns void
+language sql security definer set search_path = public as $$
+  with gone as (
+    update public.b_visitors set removed = true, removed_at = now(), removed_why = 'expired'
+     where not removed and last_seen < now() - interval '90 days' returning student_id)
+  update public.b_students s set pin_hash = 'off:' || gen_random_uuid()::text from gone where s.id = gone.student_id $$;
+
+create or replace function public._b_visitor_view(v public.b_visitors, s public.b_students) returns jsonb
+language sql stable security definer set search_path = public as $$
+  select jsonb_build_object('id', s.id, 'name', s.name, 'period', s.period, 'visitor', true,
+    'first', v.first_name, 'expires', (v.last_seen + interval '90 days')::date) $$;
+
+create or replace function public.b_visitor_register(p_first text, p_last text, p_pin_hash text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+declare v_first text := btrim(regexp_replace(coalesce(p_first, ''), '\s+', ' ', 'g'));
+        v_last text := btrim(regexp_replace(coalesce(p_last, ''), '\s+', ' ', 'g'));
+        v_name text; v_id uuid; v public.b_visitors; s public.b_students;
+begin
+  perform public._b_visitor_expire();
+  if v_first !~ '^[A-Za-zÀ-ÿ'' -]{2,16}$' then raise exception 'First name: 2 to 16 letters.'; end if;
+  if v_last !~ '^[A-Za-zÀ-ÿ'' -]{2,30}$' then raise exception 'Please enter your last name.'; end if;
+  if not public._b_visitor_clean(v_first) or not public._b_visitor_clean(v_last) then raise exception 'Please use your real name.'; end if;
+  if coalesce(p_pin_hash, '') !~ '^[0-9a-f]{64}$' then raise exception 'Bad PIN'; end if;
+  v_name := v_first || ' ' || upper(left(v_last, 1)) || '.';
+  if exists (select 1 from public.b_students st join public.b_visitors x on x.student_id = st.id
+             where st.period = 'Visitor' and lower(st.name) = lower(v_name) and not x.removed) then
+    raise exception 'A visitor with that name already exists. Try signing in instead.';
+  end if;
+  -- an old switched-off account holding the same board name is renamed ("Ana L. (off 3f2a9c)") so the new one can use it
+  update public.b_students st set name = st.name || ' (off ' || left(st.id::text, 6) || ')'
+    from public.b_visitors x where x.student_id = st.id and x.removed and st.period = 'Visitor' and lower(st.name) = lower(v_name);
+  insert into public.b_students (name, period, pin_hash) values (v_name, 'Visitor', p_pin_hash) returning id into v_id;
+  insert into public.b_visitors (student_id, first_name, last_name) values (v_id, v_first, v_last);
+  select * into v from public.b_visitors where student_id = v_id;
+  select * into s from public.b_students where id = v_id;
+  return public._b_visitor_view(v, s);
+end $$;
+
+-- Returning visitor: first name + last name + PIN.
+create or replace function public.b_visitor_login(p_first text, p_last text, p_pin_hash text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+declare v public.b_visitors; s public.b_students;
+begin
+  perform public._b_visitor_expire();
+  select x.* into v from public.b_visitors x join public.b_students st on st.id = x.student_id
+   where lower(x.first_name) = lower(btrim(coalesce(p_first, ''))) and lower(x.last_name) = lower(btrim(coalesce(p_last, '')))
+     and not x.removed and st.pin_hash = p_pin_hash
+   limit 1;
+  if v.student_id is null then
+    raise exception 'No visitor account with that name and PIN. (Accounts switch off after 90 days without a visit.)';
+  end if;
+  update public.b_visitors set last_seen = now() where student_id = v.student_id returning * into v;
+  select * into s from public.b_students where id = v.student_id;
+  return public._b_visitor_view(v, s);
+end $$;
+
+-- Every visit to /visitors/ while signed in: keeps the account alive and counts the day.
+-- Returns {visitor:false} for a class student, {removed:true} for a switched-off visitor.
+create or replace function public.b_visitor_touch(p_id uuid, p_pin_hash text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+declare v public.b_visitors; s public.b_students;
+begin
+  perform public._b_visitor_expire();
+  if not public._b_ok(p_id, p_pin_hash) then
+    if exists (select 1 from public.b_visitors where student_id = p_id and removed) then return jsonb_build_object('removed', true); end if;
+    raise exception 'Please log in again';
+  end if;
+  select * into v from public.b_visitors where student_id = p_id;
+  if v.student_id is null then return jsonb_build_object('visitor', false); end if;
+  update public.b_visitors set last_seen = now() where student_id = p_id returning * into v;
+  insert into public.b_days values (p_id, public._b_today()) on conflict do nothing;
+  select * into s from public.b_students where id = p_id;
+  return public._b_visitor_view(v, s);
+end $$;
+
+-- Top visitors: same XP rules as the Hall of Champions. Names are "First L." only.
+create or replace function public.b_visitor_board() returns jsonb
+language sql stable security definer set search_path = public as $$
+  with t as (
+    select s.id, s.name,
+      (select count(*) from public.b_tasks x where x.student_id = s.id) tasks,
+      (select count(*) from public.b_days d where d.student_id = s.id) days,
+      (select count(*) from public.b_side_quests q where q.student_id = s.id and q.approved) quests,
+      public._b_xp_total(s.id) game_xp,
+      exists (select 1 from public.b_pets p where p.student_id = s.id and p.removed_at is null) pet
+    from public.b_students s join public.b_visitors v on v.student_id = s.id
+    where not v.removed and v.last_seen > now() - interval '90 days')
+  select coalesce(jsonb_agg(jsonb_build_object('name', public._b_pub_name(name), 'xp', tasks * 25 + days * 5 + quests * 50 + game_xp,
+           'days', days, 'game_xp', game_xp, 'pet', pet) order by tasks * 25 + days * 5 + quests * 50 + game_xp desc, days desc), '[]'::jsonb)
+    from (select * from t order by tasks * 25 + days * 5 + quests * 50 + game_xp desc, days desc limit 10) top $$;
+
+create or replace function public.b_teacher_visitors(p_pass_hash text) returns jsonb
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
+  perform public._b_visitor_expire();
+  return coalesce((select jsonb_agg(jsonb_build_object('id', s.id, 'name', v.first_name || ' ' || v.last_name, 'board_name', s.name,
+      'joined', v.created_at, 'last_seen', v.last_seen, 'expires', (v.last_seen + interval '90 days')::date,
+      'days', (select count(*) from public.b_days d where d.student_id = s.id),
+      'game_xp', public._b_xp_total(s.id),
+      'pet', exists (select 1 from public.b_pets p where p.student_id = s.id and p.removed_at is null),
+      'removed', v.removed, 'removed_why', v.removed_why) order by v.removed, v.last_seen desc)
+    from public.b_visitors v join public.b_students s on s.id = v.student_id), '[]'::jsonb);
+end $$;
+
+-- Remove (soft) ONE visitor. Refuses class students. To bring a visitor back, the teacher un-removes
+-- them here and sets a new PIN with Reset PIN on the roster.
+create or replace function public.b_teacher_visitor_remove(p_pass_hash text, p_student uuid, p_removed boolean) returns void
+language plpgsql security definer set search_path = public as $$
+begin
+  if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
+  if not exists (select 1 from public.b_visitors where student_id = p_student) then raise exception 'Only visitor accounts can be removed here'; end if;
+  if p_removed then
+    update public.b_visitors set removed = true, removed_at = now(), removed_why = 'teacher' where student_id = p_student;
+    update public.b_students set pin_hash = 'off:' || gen_random_uuid()::text where id = p_student;
+  else
+    update public.b_visitors set removed = false, removed_at = null, removed_why = null, last_seen = now() where student_id = p_student;
+  end if;
+end $$;
+
+-- ════════════════════════════════════════════════════════════════════
+-- 4. Site visit counter
+-- ════════════════════════════════════════════════════════════════════
+create table if not exists public.b_site_visits (
+  id         int primary key default 1 check (id = 1),
+  total      bigint not null default 0,
+  started_at timestamptz not null default now()
+);
+alter table public.b_site_visits enable row level security;
+revoke all on public.b_site_visits from anon, authenticated;
+insert into public.b_site_visits (id) values (1) on conflict (id) do nothing;
+
+create or replace function public.b_site_visit_hit() returns jsonb
+language sql security definer set search_path = public as $$
+  update public.b_site_visits set total = total + 1 where id = 1 returning jsonb_build_object('total', total, 'since', started_at) $$;
+create or replace function public.b_site_visit_count() returns jsonb
+language sql stable security definer set search_path = public as $$
+  select jsonb_build_object('total', total, 'since', started_at) from public.b_site_visits where id = 1 $$;
+
+-- ---------- grants: only the public functions are callable from the website ----------
+revoke execute on function public._b_visitor_clean, public._b_visitor_expire, public._b_visitor_view,
+  public.b_briefing_get, public.b_teacher_briefing_set,
+  public.b_suggest, public.b_teacher_suggestions, public.b_teacher_suggestion_set,
+  public.b_visitor_register, public.b_visitor_login, public.b_visitor_touch, public.b_visitor_board,
+  public.b_teacher_visitors, public.b_teacher_visitor_remove,
+  public.b_site_visit_hit, public.b_site_visit_count
+  from public, anon, authenticated;
+grant execute on function
+  public.b_briefing_get, public.b_teacher_briefing_set,
+  public.b_suggest, public.b_teacher_suggestions, public.b_teacher_suggestion_set,
+  public.b_visitor_register, public.b_visitor_login, public.b_visitor_touch, public.b_visitor_board,
+  public.b_teacher_visitors, public.b_teacher_visitor_remove,
+  public.b_site_visit_hit, public.b_site_visit_count
+  to anon;
+-- ── end wave-x7b ──

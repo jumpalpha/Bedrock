@@ -5,8 +5,10 @@
 -- sprite_admin.sql + the sprite part of name_changes.sql). Same rules, Earth science theme:
 --   * Each student adopts ONE rock alien (it crash-landed at Craters of the Moon) and names it.
 --     Names show right away. The teacher can turn on name approval (b_settings pet_names_need_ok = 'true'), and can
---     always rename or delete an alien.
---     Students can rename once every 7 days; the teacher can approve, deny, rename or delete.
+--     always rename or remove an alien.
+--     Students can rename once every 7 days; the teacher can approve, deny, rename or remove.
+--   * Removing an alien is soft: b_pets.removed_at is set and every function treats that row as no alien.
+--     The student can adopt again (the row is reused and reset). A future purge job could clear old removed rows.
 --   * Needs decay every hour (minerals 1.625, heat 1.375, mood 1.25, shine 1.0). Health falls when needs are low;
 --     a healthy alien left alone goes dormant after ~4 days. 10 correct vocab answers wake it up again.
 --   * Field habits (honor system, like Dopps' healthy habits), a space-junk snack and play: daily caps.
@@ -54,8 +56,10 @@ create table if not exists public.b_pets (
   words           jsonb not null default '[]',          -- words it learned (right answers), newest last, max 80
   renamed_at      timestamptz,
   last_tick       timestamptz not null default now(),
-  updated_at      timestamptz not null default now()
+  updated_at      timestamptz not null default now(),
+  removed_at      timestamptz                           -- set = the teacher removed it (soft); null = active
 );
+alter table public.b_pets add column if not exists removed_at timestamptz;
 -- One row per counted graded event, so crystals are awarded exactly once.
 create table if not exists public.b_pet_awards (
   student_id uuid not null references public.b_students on delete cascade,
@@ -175,7 +179,7 @@ create or replace function public._b_pet_tick(p_id uuid) returns public.b_pets
 language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; h int; i int; avg_need double precision; min_need double precision;
 begin
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if not found then return null; end if;
   h := floor(extract(epoch from now() - r.last_tick) / 3600)::int;
   if h <= 0 then return r; end if;
@@ -257,7 +261,7 @@ language sql security definer set search_path = public as $$
     junk_total = r.junk_total, streak = r.streak, best_streak = r.best_streak, streak_date = r.streak_date,
     day_date = r.day_date, day_counts = r.day_counts, quiz_key = r.quiz_key, quiz_crystals = r.quiz_crystals,
     words = r.words, updated_at = now()
-  where student_id = r.student_id $$;
+  where student_id = r.student_id and removed_at is null $$;
 
 -- One counted action: needs, caps, streak, revive. Returns the row and a result word.
 create or replace function public._b_pet_apply(r public.b_pets, p_action text, out o public.b_pets, out msg text)
@@ -328,9 +332,23 @@ declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   n := public._b_pet_clean_name(p_name);
-  if exists (select 1 from public.b_pets where student_id = p_id) then raise exception 'You already have an alien'; end if;
-  insert into public.b_pets (student_id, name, approved_name, name_ok, color)
-  values (p_id, n, case when ok then n end, ok, coalesce(p_color, 'amethyst')) returning * into r;
+  if exists (select 1 from public.b_pets where student_id = p_id and removed_at is null) then raise exception 'You already have an alien'; end if;
+  -- A removed alien's row is reused: every column goes back to its default, as if it were a new row
+  -- (spent and quiz crystals reset; crystals from graded work in b_pet_awards carry over).
+  insert into public.b_pets as b (student_id, name, approved_name, name_ok, color)
+  values (p_id, n, case when ok then n end, ok, coalesce(p_color, 'amethyst'))
+  on conflict (student_id) do update set name = excluded.name, approved_name = excluded.approved_name,
+    name_ok = excluded.name_ok, color = excluded.color, born_at = excluded.born_at, minerals = excluded.minerals,
+    heat = excluded.heat, mood = excluded.mood, shine = excluded.shine, health = excluded.health, alive = excluded.alive,
+    died_at = excluded.died_at, deaths = excluded.deaths, revive_progress = excluded.revive_progress,
+    care_points = excluded.care_points, junk_total = excluded.junk_total, streak = excluded.streak,
+    best_streak = excluded.best_streak, streak_date = excluded.streak_date, day_date = excluded.day_date,
+    day_counts = excluded.day_counts, quiz_key = excluded.quiz_key, quiz_crystals = excluded.quiz_crystals,
+    spent = excluded.spent, owned = excluded.owned, equipped = excluded.equipped, words = excluded.words,
+    renamed_at = excluded.renamed_at, last_tick = excluded.last_tick, updated_at = excluded.updated_at, removed_at = null
+    where b.removed_at is not null
+  returning * into r;
+  if r.student_id is null then raise exception 'You already have an alien'; end if;
   perform public._b_pet_sync(p_id);
   return public._b_pet_view(r, true);
 end $$;
@@ -356,7 +374,7 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; v_ref int := p_ref; t public.b_cw_terms; opts jsonb; v_def text;
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   if v_ref is null then
     select ref into v_ref from (select ref from public.b_cw_terms group by ref having count(*) >= 4) c order by random() limit 1;
@@ -408,7 +426,7 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names_need_ok'), 'false') <> 'true';
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   n := public._b_pet_clean_name(p_name);
   if n = r.name then raise exception 'That is already your alien''s name'; end if;
@@ -433,7 +451,7 @@ begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   select * into it from public.b_pet_items where key = p_item;
   if it.key is null then raise exception 'That item doesn''t exist'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   if it.key = any(r.owned) then raise exception 'You already own that'; end if;
   perform public._b_pet_sync(p_id);
@@ -452,7 +470,7 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; it public.b_pet_items;
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  select * into r from public.b_pets where student_id = p_id for update;
+  select * into r from public.b_pets where student_id = p_id and removed_at is null for update;
   if r.student_id is null then raise exception 'Adopt your alien first'; end if;
   if p_item is null then
     update public.b_pets set equipped = equipped - p_slot, updated_at = now() where student_id = p_id returning * into r;
@@ -473,17 +491,17 @@ create or replace function public.b_pet_gallery() returns jsonb
 language plpgsql security definer set search_path = public as $$
 declare sid uuid;
 begin
-  for sid in select student_id from public.b_pets loop perform public._b_pet_tick(sid); end loop;
+  for sid in select student_id from public.b_pets where removed_at is null loop perform public._b_pet_tick(sid); end loop;
   return (select coalesce(jsonb_agg(public._b_pet_view(p, false) || jsonb_build_object('owner', public._b_pub_name(s.name), 'period', s.period)
             order by p.alive desc, p.health desc, p.streak desc, p.care_points desc), '[]')
-            from public.b_pets p join public.b_students s on s.id = p.student_id);
+            from public.b_pets p join public.b_students s on s.id = p.student_id where p.removed_at is null);
 end $$;
 
 create or replace function public.b_pet_fallen(p_days int default 14) returns jsonb
 language plpgsql security definer set search_path = public as $$
 declare sid uuid;
 begin
-  for sid in select student_id from public.b_pets where alive loop perform public._b_pet_tick(sid); end loop;
+  for sid in select student_id from public.b_pets where alive and removed_at is null loop perform public._b_pet_tick(sid); end loop;
   return (select coalesce(jsonb_agg(jsonb_build_object('name', d.pet_name, 'color', d.color, 'owner', public._b_pub_name(s.name),
                     'died_at', d.died_at, 'revived', d.revived_at is not null) order by d.died_at desc), '[]')
             from (select * from public.b_pet_dormant
@@ -530,13 +548,13 @@ language plpgsql security definer set search_path = public as $$
 declare sid uuid;
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  for sid in select student_id from public.b_pets loop perform public._b_pet_tick(sid); end loop;
+  for sid in select student_id from public.b_pets where removed_at is null loop perform public._b_pet_tick(sid); end loop;
   return (select coalesce(jsonb_agg(jsonb_build_object('student', p.student_id, 'student_name', s.name, 'period', s.period,
             'name', p.name, 'approved_name', p.approved_name, 'name_ok', p.name_ok, 'color', p.color, 'alive', p.alive,
             'stage', public._b_pet_stage(public._b_pet_cleared(p.student_id), p.care_points), 'health', round(p.health::numeric),
             'care_points', p.care_points, 'deaths', p.deaths, 'upgrades', cardinality(p.owned), 'born', p.born_at, 'last_care', p.updated_at)
           order by p.name_ok, s.period, s.name), '[]')
-          from public.b_pets p join public.b_students s on s.id = p.student_id);
+          from public.b_pets p join public.b_students s on s.id = p.student_id where p.removed_at is null);
 end $$;
 
 -- p_action: 'approve' (the name the student picked), 'deny' (back to the last approved name, or "Geode"), 'rename' (p_name).
@@ -545,20 +563,23 @@ language plpgsql security definer set search_path = public as $$
 declare r public.b_pets; n text;
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  select * into r from public.b_pets where student_id = p_student for update;
+  select * into r from public.b_pets where student_id = p_student and removed_at is null for update;
   if r.student_id is null then raise exception 'That alien no longer exists'; end if;
   n := case p_action when 'approve' then r.name when 'deny' then coalesce(r.approved_name, 'Geode')
                      when 'rename' then public._b_pet_clean_name(p_name) end;
   if n is null then raise exception 'Unknown action'; end if;
-  update public.b_pets set name = n, approved_name = n, name_ok = true, updated_at = now() where student_id = p_student;
+  update public.b_pets set name = n, approved_name = n, name_ok = true, updated_at = now() where student_id = p_student and removed_at is null;
   return jsonb_build_object('ok', true, 'name', n);
 end $$;
 
-create or replace function public.b_pet_teacher_delete(p_pass_hash text, p_student uuid) returns jsonb
+-- Remove = soft: the alien disappears everywhere and the student can adopt a new one.
+-- (A future purge job could clear rows removed long ago.)
+create or replace function public.b_pet_teacher_remove(p_pass_hash text, p_student uuid) returns jsonb
 language plpgsql security definer set search_path = public as $$
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  delete from public.b_pets where student_id = p_student;
+  update public.b_pets set removed_at = now(), quiz_key = null, updated_at = now()
+   where student_id = p_student and removed_at is null;
   if not found then raise exception 'That alien no longer exists'; end if;
   return jsonb_build_object('ok', true);
 end $$;
@@ -581,8 +602,8 @@ revoke execute on function public._b_pet_caps, public._b_pet_habits, public._b_p
   public._b_pet_apply, public._b_streak,
   public.b_pet_get, public.b_pet_create, public.b_pet_action, public.b_pet_quiz_start, public.b_pet_quiz_answer, public.b_pet_rename,
   public.b_pet_shop_items, public.b_pet_shop_buy, public.b_pet_equip, public.b_pet_gallery, public.b_pet_fallen, public.b_champions,
-  public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_delete, public.b_pet_teacher_names_ok
+  public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_remove, public.b_pet_teacher_names_ok
   from public, anon, authenticated;
 grant execute on function public.b_pet_get, public.b_pet_create, public.b_pet_action, public.b_pet_quiz_start, public.b_pet_quiz_answer,
   public.b_pet_rename, public.b_pet_shop_items, public.b_pet_shop_buy, public.b_pet_equip, public.b_pet_gallery, public.b_pet_fallen,
-  public.b_champions, public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_delete, public.b_pet_teacher_names_ok to anon;
+  public.b_champions, public.b_pet_teacher_list, public.b_pet_teacher_name, public.b_pet_teacher_remove, public.b_pet_teacher_names_ok to anon;

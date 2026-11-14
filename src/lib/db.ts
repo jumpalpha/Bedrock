@@ -207,7 +207,7 @@ export const champions = () => rpc<Champion[]>("b_champions", {});
 export const petTeacherList = (h: string) => rpc<PetTeacherRow[]>("b_pet_teacher_list", { p_pass_hash: h });
 export const petTeacherName = (h: string, student: string, action: "approve" | "deny" | "rename", name?: string) =>
   rpc<{ ok: boolean; name: string }>("b_pet_teacher_name", { p_pass_hash: h, p_student: student, p_action: action, p_name: name ?? null });
-export const petTeacherDelete = (h: string, student: string) => rpc<{ ok: boolean }>("b_pet_teacher_delete", { p_pass_hash: h, p_student: student });
+export const petTeacherDelete = (h: string, student: string) => rpc<{ ok: boolean }>("b_pet_teacher_remove", { p_pass_hash: h, p_student: student });
 /** need = null reads the setting; true/false turns name approval on/off. Returns whether names need approval. */
 export const petTeacherNamesOk = (h: string, need: boolean | null) => rpc<boolean>("b_pet_teacher_names_ok", { p_pass_hash: h, p_need: need });
 // ── end wave-pet ──

@@ -1,6 +1,6 @@
 -- 010: wave-x7b. Run once in Supabase → SQL Editor. Safe to re-run. NOT applied yet.
--- Adds new b_ tables and functions only. Nothing existing is changed, dropped or deleted
--- (no DELETE anywhere: removals are soft flags).
+-- Adds new b_ tables and functions only. Nothing existing is changed or removed
+-- (no hard removals anywhere: removals are soft flags).
 --
 --   1. Daily Briefing (/welcome/ + Teacher → Briefing): twin of Dopps Class daily_briefing.sql.
 --      One announcement the teacher writes; students see it on the Welcome screen.
@@ -93,7 +93,7 @@ begin
     where coalesce(p_archived, false) or g.status <> 'archived'), '[]'::jsonb);
 end $$;
 
--- "Delete" = archive (soft). Archived ones are hidden unless the teacher asks for them.
+-- "Remove" = archive (soft). Archived ones are hidden unless the teacher asks for them.
 create or replace function public.b_teacher_suggestion_set(p_pass_hash text, p_suggestion bigint, p_status text) returns void
 language plpgsql security definer set search_path = public as $$
 begin
@@ -206,7 +206,7 @@ language sql stable security definer set search_path = public as $$
       (select count(*) from public.b_days d where d.student_id = s.id) days,
       (select count(*) from public.b_side_quests q where q.student_id = s.id and q.approved) quests,
       public._b_xp_total(s.id) game_xp,
-      exists (select 1 from public.b_pets p where p.student_id = s.id) pet
+      exists (select 1 from public.b_pets p where p.student_id = s.id and p.removed_at is null) pet
     from public.b_students s join public.b_visitors v on v.student_id = s.id
     where not v.removed and v.last_seen > now() - interval '90 days')
   select coalesce(jsonb_agg(jsonb_build_object('name', public._b_pub_name(name), 'xp', tasks * 25 + days * 5 + quests * 50 + game_xp,
@@ -222,7 +222,7 @@ begin
       'joined', v.created_at, 'last_seen', v.last_seen, 'expires', (v.last_seen + interval '90 days')::date,
       'days', (select count(*) from public.b_days d where d.student_id = s.id),
       'game_xp', public._b_xp_total(s.id),
-      'pet', exists (select 1 from public.b_pets p where p.student_id = s.id),
+      'pet', exists (select 1 from public.b_pets p where p.student_id = s.id and p.removed_at is null),
       'removed', v.removed, 'removed_why', v.removed_why) order by v.removed, v.last_seen desc)
     from public.b_visitors v join public.b_students s on s.id = v.student_id), '[]'::jsonb);
 end $$;
