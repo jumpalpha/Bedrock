@@ -7,6 +7,7 @@ import { ClipboardList, Menu, Search, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginChip } from "@/components/login";
 import { ArtIcon } from "@/components/art-icon";
+import { SiteLink, x7aLinks } from "@/components/x7a-link"; // ── wave-x7a ──
 
 export const navLinks = [
   { label: "Chapters", href: "/chapters/" },
@@ -92,8 +93,8 @@ export function Nav() {
       </nav>
       {open && (
         <div className="glass mx-auto mt-2 max-w-7xl animate-rise rounded-2xl bg-ink/90 p-2 xl:hidden">
-          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, ...petLinks /* wave-pet */, ...twinLinks /* wave-twinB */, { label: "My Quest", href: "/quest/" }].map((l) => (
-            <Link key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</Link>
+          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, ...petLinks /* wave-pet */, ...twinLinks /* wave-twinB */, ...x7aLinks /* ── wave-x7a ── */, { label: "My Quest", href: "/quest/" }].map((l) => (
+            <SiteLink key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</SiteLink>
           ))}
         </div>
       )}

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>try{if(localStorage.getItem("bedrock_theme")==="light")document.documentElement.classList.add("light")}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Studio · Bedrock</title>
+<meta name="description" content="Make line art: the studio draws random overlapping curves, then you decorate every space with 120 designs (strata, crystals, contour lines, volcanoes and more) and your own colors.">
+<link rel="icon" type="image/png" href="/art/realm-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f6c453;--goldInk:#f6c453;--emerald:#34d399;--sky:#38bdf8;--crimson:#f25c45;--card:rgba(255,255,255,.045);--border:rgba(236,244,228,.11);--dim:#a7b2a2;
+  --bg:#090d0b;--bgTop:#1d2a1f;--fg:#eef3ea;--soft:rgba(255,255,255,.08);--field:rgba(0,0,0,.35);--fieldSolid:#141c16;--btn:rgba(255,255,255,.07);--btnH:rgba(255,255,255,.13);
+  --seg:rgba(0,0,0,.3);--chipOn:rgba(52,211,153,.2);--chipOnInk:#a7f3d0;--chipOnLine:#34d399;--toast:#141c16;--calmInk:#c8efdc;--shadow:rgba(0,0,0,.9);color-scheme:dark}
+html.light{--goldInk:#8a5a00;--card:rgba(255,255,255,.85);--border:rgba(40,48,32,.14);--dim:#5c6754;--bg:#f5f1e6;--bgTop:#fffdf7;--fg:#1d2419;--soft:rgba(40,48,32,.1);
+  --field:#fffdf7;--fieldSolid:#fffdf7;--btn:rgba(40,48,32,.05);--btnH:rgba(40,48,32,.1);--seg:rgba(40,48,32,.07);--chipOn:rgba(15,138,95,.14);--chipOnInk:#0b6b49;--chipOnLine:#0f8a5f;
+  --toast:#fffdf7;--calmInk:#1d5b44;--shadow:rgba(40,48,32,.35);color-scheme:light}
+html.light .top h1{text-shadow:none}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:radial-gradient(ellipse at top,var(--bgTop) 0%,var(--bg) 70%) fixed;color:var(--fg);font-family:Geist,system-ui,sans-serif;overflow-x:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:10px 16px}
+.top a{color:var(--goldInk);font-weight:800;text-decoration:none}
+.top h1{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;color:var(--goldInk);text-shadow:0 2px 0 #000}
+.wrap{max-width:1240px;margin:0 auto;padding:6px 14px 40px}
+.intro{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:6px 0 14px}
+.intro h2{font-family:'Bricolage Grotesque','Bricolage Grotesque',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-.01em;line-height:1}
+.intro h2 span{background:linear-gradient(90deg,#f28c28,#f6c453,#34d399,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro p{color:var(--dim);font-size:15px;max-width:640px;margin-top:6px;line-height:1.45}
+.calm{font-size:13px;color:var(--calmInk);background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.3);border-radius:12px;padding:8px 12px;max-width:380px;line-height:1.4}
+.studio{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:18px;align-items:start}
+@media (max-width:900px){.studio{grid-template-columns:1fr}}
+.paperCol{position:sticky;top:84px}
+@media (max-width:900px){.paperCol{position:static}}
+.paper{position:relative;width:100%;max-width:calc((100vh - 150px) * 0.773);margin:0 auto;aspect-ratio:1020/1320;background:#fff;border-radius:6px;box-shadow:0 20px 60px -20px var(--shadow),0 0 0 1px var(--border)}
+@media (max-width:900px){.paper{max-width:100%}}
+.paper canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:6px;touch-action:manipulation}
+#ov{pointer-events:none;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.9}50%{opacity:.35}}
+#cv{cursor:pointer}
+body.erase #cv{cursor:cell}
+body.copy #cv{cursor:copy}
+.stat{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--dim);font-size:13px;font-weight:700;margin:10px auto 0;max-width:calc((100vh - 150px) * 0.773)}
+.stat b{color:var(--fg)}
+.bar{height:8px;border-radius:9px;background:var(--soft);overflow:hidden;flex:1 1 120px;align-self:center}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f28c28,#f6c453,#34d399);transition:width .3s}
+.panel{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px}
+.card h3{font-family:'Bricolage Grotesque','Bricolage Grotesque',sans-serif;font-size:17px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3 .n{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--gold);color:#10140e;font-size:13px;font-family:Geist,sans-serif;font-weight:900}
+.row{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.row label{font-weight:800;font-size:13px;color:var(--fg);min-width:110px}
+.row input[type=range]{flex:1;min-width:120px;accent-color:#f6c453}
+.num{width:64px;padding:5px 6px;border-radius:9px;border:1px solid var(--border);background:var(--field);color:var(--fg);font:800 14px Geist,sans-serif;text-align:center}
+select{padding:6px 8px;border-radius:9px;border:1px solid var(--border);background:var(--fieldSolid);color:var(--fg);font:700 13px Geist,sans-serif;flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 13px;border-radius:12px;border:1px solid var(--border);background:var(--btn);color:var(--fg);font:800 14px Geist,sans-serif;cursor:pointer;transition:transform .1s,background .2s}
+.btn:hover{background:var(--btnH)}
+.btn:active{transform:translateY(1px)}
+.btn.gold{background:linear-gradient(90deg,#f6c453,#f28c28);color:#10140e;border-color:transparent}
+.btn.pink{background:linear-gradient(90deg,#34d399,#38bdf8);color:#06221a;border-color:transparent}
+.btn.on{background:rgba(246,196,83,.22);border-color:#f6c453;color:var(--goldInk)}
+.btn:disabled{opacity:.4;cursor:default}
+.btns{display:flex;gap:6px;flex-wrap:wrap}
+.btns .btn{flex:1 1 auto}
+.seg{display:flex;background:var(--seg);border:1px solid var(--border);border-radius:12px;padding:3px;gap:3px}
+.seg button{flex:1;padding:7px 8px;border:0;border-radius:9px;background:transparent;color:var(--dim);font:800 13px Geist,sans-serif;cursor:pointer}
+.seg button.on{background:#f6c453;color:#10140e}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.chips button{padding:5px 9px;border-radius:99px;border:1px solid var(--border);background:var(--btn);color:var(--dim);font:800 12px Geist,sans-serif;cursor:pointer}
+.chips button.on{background:var(--chipOn);border-color:var(--chipOnLine);color:var(--chipOnInk)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:6px;max-height:300px;overflow-y:auto;padding:2px 4px 2px 2px}
+.pgrid button{position:relative;aspect-ratio:1;border-radius:10px;border:2px solid transparent;padding:0;background:#fff;cursor:pointer;overflow:hidden}
+.pgrid button canvas{width:100%;height:100%;display:block}
+.pgrid button.on{border-color:#f6c453;box-shadow:0 0 0 2px rgba(246,196,83,.45)}
+.pgrid button .k{position:absolute;left:2px;top:1px;font:900 9px Geist,sans-serif;color:#555;background:rgba(255,255,255,.8);border-radius:4px;padding:0 3px}
+.pname{font-weight:800;font-size:14px;margin:8px 0 2px;color:var(--goldInk);min-height:20px}
+.sw{display:flex;flex-wrap:wrap;gap:5px}
+.sw button{width:28px;height:28px;border-radius:8px;border:2px solid var(--border);cursor:pointer;padding:0}
+.sw button.on{outline:3px solid #f6c453;outline-offset:1px}
+.sw input[type=color]{width:34px;height:28px;border:0;padding:0;background:none;cursor:pointer}
+.sub{font-size:12px;font-weight:800;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 5px}
+.prev{display:flex;align-items:center;gap:10px;margin-top:10px}
+.prev canvas{width:64px;height:64px;border-radius:12px;background:#fff;border:1px solid var(--border)}
+.prev small{color:var(--dim);font-size:12.5px;line-height:1.35}
+.check{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;cursor:pointer;user-select:none}
+.check input{width:18px;height:18px;accent-color:#f6c453}
+.hint{color:var(--dim);font-size:12.5px;line-height:1.4;margin-top:6px}
+.hidden{display:none!important}
+body.drawing #cv{touch-action:none;cursor:crosshair}
+#dv{pointer-events:none}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:5px;max-height:210px;overflow-y:auto;padding:2px}
+.sgrid button{aspect-ratio:1;border-radius:10px;border:2px solid transparent;background:#fff;padding:0;cursor:pointer}
+.sgrid button canvas{width:100%;height:100%;display:block}
+.sgrid button.on{border-color:#f6c453;box-shadow:0 0 0 2px rgba(246,196,83,.45)}
+.big-seg button{padding:10px 8px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(140%);background:var(--toast);border:1px solid rgba(246,196,83,.5);color:var(--fg);padding:14px 18px;border-radius:16px;font-weight:800;box-shadow:0 20px 50px -10px var(--shadow);z-index:10000;transition:transform .35s;max-width:92vw;text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.busy{position:absolute;inset:0;display:none;place-items:center;background:rgba(255,255,255,.6);color:#333;font:900 18px Geist,sans-serif;border-radius:6px}
+.busy.show{display:grid}
+@media print{body *{visibility:hidden}}
+.top .tbtn{border:1px solid var(--border);background:var(--btn);color:var(--fg);border-radius:10px;padding:6px 10px;font:800 13px Geist,sans-serif;cursor:pointer}
+.idea{font-size:14px;line-height:1.45;font-weight:700;margin:2px 0 6px}
+.idea small{display:block;color:var(--dim);font-weight:700;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="top"><a href="/">← Bedrock</a><h1>Art Studio</h1><button class="tbtn" id="themeBtn" type="button" aria-label="Switch light or dark mode">◐ Theme</button></div>
+
+<div class="wrap">
+  <div class="intro">
+    <div>
+      <h2><span>Art Studio</span></h2>
+      <p>The studio draws random curvy lines that cross over each other. Every space the lines make is yours to decorate. Pick a design, pick your colors, and tap a space.</p>
+    </div>
+    <div class="calm">🪨 <b>Field-sketch skills:</b> geologists draw what they see — rock layers, crystals, contour maps. Open the <b>Earth science</b> designs, or try an idea card below.</div>
+  </div>
+
+  <div class="studio">
+    <div class="paperCol">
+      <div class="paper" id="paper">
+        <canvas id="cv" width="1020" height="1320" aria-label="Your drawing. Tap a space to decorate it."></canvas>
+        <canvas id="ov" width="1020" height="1320"></canvas>
+        <canvas id="dv" width="1020" height="1320"></canvas>
+        <div class="busy" id="busy">Drawing lines…</div>
+      </div>
+      <div class="stat"><span id="stA"></span><span class="bar"><i id="stBar"></i></span><span id="stB"></span></div>
+    </div>
+
+    <div class="panel">
+      <div class="card" id="ideaCard">
+        <h3><span class="n">💡</span> Need an idea?</h3>
+        <p class="idea" id="ideaTxt"></p>
+        <div class="btns"><button class="btn" id="ideaUse">🪨 Use these designs</button><button class="btn" id="ideaNext">🎲 Another idea</button></div>
+      </div>
+      <div class="card">
+        <h3><span class="n">1</span> Draw the lines</h3>
+        <div class="row"><label for="start">Start with</label>
+          <select id="start"><option value="random">Random lines (the studio draws them)</option><option value="blank">A blank page (I'll draw my own)</option></select></div>
+        <div class="row" id="crossRow"><label for="cross">Crossing points</label><input type="range" id="cross" min="6" max="150" step="2" value="40"><input class="num" id="crossN" type="number" min="6" max="150" step="2" value="40"></div>
+        <div class="row" id="styleRow"><label for="style">Line style</label>
+          <select id="style"><option value="one">One continuous line (ends where it starts)</option><option value="mix">Separate shapes: blobs and bands</option><option value="blobs">Separate shapes: round blobs</option><option value="bands">Separate shapes: curvy bands</option></select></div>
+        <div class="row"><label for="lw">Line thickness</label><input type="range" id="lw" min="2" max="12" value="5"></div>
+        <div class="row"><label for="outline">Outline color</label>
+          <select id="outline"><option value="#1c1c1c">Black</option><option value="colorful">Colorful (like crayons)</option><option value="#8a8a8a">Gray</option><option value="#2f4fc4">Blue</option><option value="#7b4bc8">Purple</option></select></div>
+        <div class="btns" style="margin-top:10px"><button class="btn gold" id="newBtn">✨ New drawing</button></div>
+        <div class="btns" style="margin-top:6px"><button class="btn" id="lineTool">✏️ Draw my own lines</button><button class="btn" id="unlineTool">🧽 Remove a line</button></div>
+        <p class="hint" id="lineHint">More crossing points = more, smaller spaces to decorate. Try 20 for a quick one, 80+ for a challenge. You can add your own lines any time.</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="n">2</span> How do you want to decorate?</h3>
+        <div class="seg big-seg" id="decoSeg"><button data-d="quick" class="on">⚡ Quick fill</button><button data-d="hands">✋ Do it myself</button></div>
+        <p class="hint" id="decoHint">Quick fill: tap a space and a whole design fills it.</p>
+        <div id="quickPane" style="margin-top:10px">
+        <div class="chips" id="chips"></div>
+        <div class="pgrid" id="pgrid"></div>
+        <div class="pname" id="pname"></div>
+        <div class="row"><label for="size">Design size</label><input type="range" id="size" min="0.5" max="2.2" step="0.05" value="1"></div>
+        <div class="row"><label for="rot">Turn design</label><input type="range" id="rot" min="0" max="180" step="5" value="0"></div>
+        <div class="btns"><button class="btn" id="randPat">🎲 Random design</button><button class="btn" id="plainPat">⬜ Color only</button></div>
+        </div>
+        <div id="handPane" class="hidden" style="margin-top:10px">
+          <div class="seg" id="handSeg"><button data-t="brush" class="on">🖍️ Color</button><button data-t="pen">✒️ Pen</button><button data-t="stamp">⭐ Stamp</button><button data-t="bucket">🪣 Fill</button></div>
+          <p class="hint" id="handHint"></p>
+          <div id="brushOpts">
+            <div class="row"><label>Brush type</label><div class="seg" id="kindSeg" style="flex:1"><button data-k="c" class="on">🖍️ Crayon</button><button data-k="m">🖊️ Marker</button></div></div>
+          </div>
+          <div class="row" id="hsizeRow"><label for="hsize" id="hsizeLbl">Brush size</label><input type="range" id="hsize" min="2" max="70" value="18"></div>
+          <div id="stampOpts" class="hidden">
+            <div class="sgrid" id="sgrid"></div>
+            <div class="pname" id="sname"></div>
+            <label class="check"><input type="checkbox" id="sturn" checked> Turn each stamp a little (looks hand-placed)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="n">3</span> Pick colors</h3>
+        <div class="seg" id="modeSeg"><button data-m="color" class="on">🎨 Color</button><button data-m="bw">⚫⚪ Black &amp; white</button></div>
+        <div class="sub">Space color (background)</div>
+        <div class="sw" id="fillSw"></div>
+        <div class="sub">Design color (designs, brush, pen, stamps)</div>
+        <div class="sw" id="inkSw"></div>
+        <div class="btns" style="margin-top:10px"><button class="btn" id="matchBtn">🔗 Match space to design color</button></div>
+        <label class="check" style="margin-top:10px"><input type="checkbox" id="crayon" checked> Crayon look (grainy shading)</label>
+        <div class="prev" id="prevBox"><canvas id="prevCv" width="128" height="128"></canvas><small>This is what a space will look like. Tap a space on the paper to use it.</small></div>
+      </div>
+
+      <div class="card">
+        <h3><span class="n">4</span> Decorate</h3>
+        <div class="seg" id="toolSeg"><button data-t="paint" class="on">🖌️ Decorate</button><button data-t="copy" class="qonly">💧 Copy a space</button><button data-t="erase">🧽 Erase a space</button></div>
+        <p class="hint" id="toolHint">Tap any space. Change the design or colors and the space you just tapped (the blinking one) updates too.</p>
+        <div class="btns" style="margin-top:10px"><button class="btn" id="undoBtn">↶ Undo</button><button class="btn" id="redoBtn">↷ Redo</button><button class="btn qonly" id="emptyBtn">🎲 Fill the empty spaces</button></div>
+        <div class="btns" style="margin-top:6px"><button class="btn pink qonly" id="surpriseBtn">🌈 Surprise me (decorate all)</button><button class="btn" id="clearBtn">🗑️ Clear decorations</button></div>
+      </div>
+
+      <div class="card">
+        <h3><span class="n">5</span> Save it</h3>
+        <div class="btns"><button class="btn gold" id="dlBtn">⬇️ Download picture</button><button class="btn" id="printBtn">🖨️ Print</button></div>
+        <div class="btns" style="margin-top:6px"><button class="btn" id="colorPageBtn">✏️ Download blank coloring page</button></div>
+        <p class="hint">The blank coloring page has just the lines, ready to print and color by hand. Your drawing is saved on this device, so you can come back to it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="art_patterns.js"></script>
+<script>
+(function () {
+  'use strict';
+  var W = 1020, H = 1320, M = 46, TAU = Math.PI * 2;
+  var PATS = window.ART_PATTERNS;
+  var $ = function (id) { return document.getElementById(id); };
+  var cv = $('cv'), ctx = cv.getContext('2d'), ov = $('ov'), octx = ov.getContext('2d'), dv = $('dv'), dctx = dv.getContext('2d');
+  var STAMPS = window.ART_STAMPS;
+  var KEY = 'bedrock_artStudio_v1';
+
+  // ---------- colors ----------
+  var BOLD = ['#E53950', '#F28C38', '#F7D84A', '#8CC63F', '#2E9E5B', '#2BB5A3', '#4FA3E0', '#2F4FC4', '#7B4BC8', '#E66BB0', '#C22E7A', '#8B5A3C', '#1C1C1C', '#8A8A8A'];
+  var GRAYS = ['#000000', '#333333', '#555555', '#777777', '#999999', '#BBBBBB', '#DDDDDD', '#FFFFFF'];
+  function hex(c) { c = c.replace('#', ''); return [parseInt(c.substr(0, 2), 16), parseInt(c.substr(2, 2), 16), parseInt(c.substr(4, 2), 16)]; }
+  function toHex(a) { return '#' + a.map(function (v) { v = Math.max(0, Math.min(255, Math.round(v))); return (v < 16 ? '0' : '') + v.toString(16); }).join(''); }
+  function tint(c, k) { return toHex(hex(c).map(function (v) { return v + (255 - v) * k; })); }
+  var LIGHT = BOLD.slice(0, 12).map(function (c) { return tint(c, .72); }).concat(['#FFFFFF', '#F2EEE6']);
+  function gray(c) { var a = hex(c), l = .299 * a[0] + .587 * a[1] + .114 * a[2]; return toHex([l, l, l]); }
+
+  // ---------- state ----------
+  var S = { shapes: [], colors: [], lines: [], marks: [], gv: 0, lw: 5, outline: '#1c1c1c', deco: {}, bw: false, crayon: true, cross: 40, style: 'one', start: 'random', mode: 'quick' };
+  var BRUSH0 = { p: 1, fill: LIGHT[0], ink: BOLD[0], s: 1, rot: 0, bw: 18, pw: 4, kind: 'c', st: 0, sz: 40, turn: true };
+  var brush = Object.assign({}, BRUSH0);
+  var tool = 'paint', handTool = 'brush', selected = 0, cat = 'earth';
+  var regions = [], lab = null, bgId = 0, linesCv = null, tinyCv = null, counted = 0, celebrated = false;
+  var hist = [], fut = [], lastPush = { id: -1, t: 0 };
+
+  function mk(w, h) { var c = document.createElement('canvas'); c.width = Math.max(1, w); c.height = Math.max(1, h); return c; }
+  function rng(seed) { var a = seed >>> 0; return function () { a = (a + 0x6D2B79F5) >>> 0; var t = a; t = Math.imul(t ^ t >>> 15, t | 1); t ^= t + Math.imul(t ^ t >>> 7, t | 61); return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  var R = Math.random;
+  function rr(a, b) { return a + R() * (b - a); }
+  function col(c, role) {
+    if (!S.bw) return c;
+    var a = hex(c); if (a[0] === a[1] && a[1] === a[2]) return c;          // already a gray: keep what they picked
+    var l = .299 * a[0] + .587 * a[1] + .114 * a[2];
+    l = role === 'ink' ? l * .35 : role === 'fill' ? 200 + l * .2 : l;    // colored work -> dark lines on light spaces
+    return toHex([l, l, l]);
+  }
+
+  // ---------- shape generation ----------
+  function catmull(pts, closed, per) {
+    var out = [], n = pts.length, segs = closed ? n : n - 1;
+    for (var i = 0; i < segs; i++) {
+      var p0 = pts[closed ? (i - 1 + n) % n : Math.max(0, i - 1)], p1 = pts[i], p2 = pts[(i + 1) % n], p3 = pts[closed ? (i + 2) % n : Math.min(n - 1, i + 2)];
+      for (var k = 0; k < per; k++) {
+        var t = k / per, t2 = t * t, t3 = t2 * t;
+        out.push([.5 * (2 * p1[0] + (-p0[0] + p2[0]) * t + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * t2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * t3),
+                  .5 * (2 * p1[1] + (-p0[1] + p2[1]) * t + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * t2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * t3)]);
+      }
+    }
+    if (!closed) out.push(pts[n - 1].slice());
+    return out;
+  }
+  function fit(pts) {   // shrink/shift a shape so it stays inside the page margins (keeps curves round)
+    var x0 = W, y0 = H, x1 = 0, y1 = 0;
+    pts.forEach(function (p) { x0 = Math.min(x0, p[0]); y0 = Math.min(y0, p[1]); x1 = Math.max(x1, p[0]); y1 = Math.max(y1, p[1]); });
+    var k = Math.min(1, (W - 2 * M) / (x1 - x0 || 1), (H - 2 * M) / (y1 - y0 || 1)), cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    var nx0 = cx - (cx - x0) * k, nx1 = cx + (x1 - cx) * k, ny0 = cy - (cy - y0) * k, ny1 = cy + (y1 - cy) * k;
+    var dx = nx0 < M ? M - nx0 : nx1 > W - M ? W - M - nx1 : 0, dy = ny0 < M ? M - ny0 : ny1 > H - M ? H - M - ny1 : 0;
+    return pts.map(function (p) { return clamp([cx + (p[0] - cx) * k + dx, cy + (p[1] - cy) * k + dy]); });
+  }
+  function clamp(p) { return [Math.max(M, Math.min(W - M, p[0])), Math.max(M, Math.min(H - M, p[1]))]; }
+  var SZ = 1;   // shape size factor: fewer crossings -> bigger shapes
+  function blob(big, at) {
+    var rx = (big ? rr(240, 340) : rr(110, 260)) * SZ, ry = (big ? rr(260, 380) : rr(110, 260)) * SZ;
+    var cx = at ? at[0] : rr(M + 60, W - M - 60), cy = at ? at[1] : rr(M + 60, H - M - 60);
+    var n = 5 + Math.floor(R() * 4), th = R() * TAU, pts = [];
+    for (var i = 0; i < n; i++) {
+      var a = i / n * TAU + rr(-.25, .25), f = rr(.7, 1.2), x = Math.cos(a) * rx * f, y = Math.sin(a) * ry * f;
+      pts.push([cx + x * Math.cos(th) - y * Math.sin(th), cy + x * Math.sin(th) + y * Math.cos(th)]);
+    }
+    return fit(catmull(pts, true, 18));
+  }
+  function folded(s) {   // true if the outline doubles back on itself (a band bent tighter than it is thick)
+    for (var i = 0, n = s.length; i < n; i++) {
+      var a = s[(i - 1 + n) % n], b = s[i], c = s[(i + 1) % n], ux = b[0] - a[0], uy = b[1] - a[1], vx = c[0] - b[0], vy = c[1] - b[1], d = Math.hypot(ux, uy) * Math.hypot(vx, vy);
+      if (d > 0 && (ux * vx + uy * vy) / d < -.3) return true;
+    }
+    return false;
+  }
+  function band(at) {
+    for (var k = 0; k < 12; k++) { var b = band1(at); if (!folded(b)) return b; }
+    return blob(false, at);
+  }
+  function band1(at) {
+    var n = 3 + Math.floor(R() * 2), x = at ? at[0] : rr(M + 80, W - M - 80), y = at ? at[1] : rr(M + 80, H - M - 80), a = R() * TAU;
+    x = Math.max(M + 70, Math.min(W - M - 70, x)); y = Math.max(M + 70, Math.min(H - M - 70, y));
+    var pts = [[x, y]];
+    for (var i = 1; i < n; i++) {
+      var ok = false;
+      for (var tries = 0; tries < 8 && !ok; tries++) {   // gentle turns; never squash against the page edge
+        var aa = a + rr(-1, 1) * (tries < 4 ? 1 : 2.2), L = rr(200, 340) * Math.min(1.2, SZ), nx1 = x + Math.cos(aa) * L, ny1 = y + Math.sin(aa) * L;
+        if (nx1 > M + 70 && nx1 < W - M - 70 && ny1 > M + 70 && ny1 < H - M - 70) { ok = true; a = aa; x = nx1; y = ny1; pts.push([x, y]); }
+      }
+      if (!ok) break;
+    }
+    if (pts.length < 2) { a = Math.atan2(H / 2 - y, W / 2 - x); pts.push([x + Math.cos(a) * 220, y + Math.sin(a) * 220]); }
+    var cl = catmull(pts, false, 22), t = rr(55, 110) * Math.min(1.3, SZ) / 2, L2 = [], R2 = [], nx = 0, ny = 1;
+    for (i = 0; i < cl.length; i++) {
+      var p = cl[Math.max(0, i - 2)], q = cl[Math.min(cl.length - 1, i + 2)], dx = q[0] - p[0], dy = q[1] - p[1], d = Math.hypot(dx, dy);
+      if (d > .001) { nx = -dy / d; ny = dx / d; } L2.push([cl[i][0] + nx * t, cl[i][1] + ny * t]); R2.push([cl[i][0] - nx * t, cl[i][1] - ny * t]);
+    }
+    // round end: half circle from one side of the band to the other, bulging outward along the band's direction
+    function cap(c, from, dir) {
+      var a0 = Math.atan2(from[1] - c[1], from[0] - c[0]), mid = Math.atan2(dir[1], dir[0]);
+      var sg = Math.cos(a0 + Math.PI / 2 - mid) > 0 ? 1 : -1, out = [];
+      for (var k = 1; k < 10; k++) { var aa = a0 + sg * k / 10 * Math.PI; out.push([c[0] + Math.cos(aa) * t, c[1] + Math.sin(aa) * t]); }
+      return out;
+    }
+    var e = cl[cl.length - 1], s = cl[0], e2 = cl[Math.max(0, cl.length - 4)], s2 = cl[Math.min(cl.length - 1, 3)];
+    var endCap = cap(e, L2[L2.length - 1], [e[0] - e2[0], e[1] - e2[1]]);
+    var startCap = cap(s, R2[0], [s[0] - s2[0], s[1] - s2[1]]);
+    return fit(L2.concat(endCap, R2.reverse(), startCap));
+  }
+  // crossing counter with a spatial grid
+  function crossTool() {
+    var CELL = 40, cells = {}, segs = [], stamp = [];
+    function each(x1, y1, x2, y2, fn) {
+      var a = Math.floor(Math.min(x1, x2) / CELL), b = Math.floor(Math.max(x1, x2) / CELL), c = Math.floor(Math.min(y1, y2) / CELL), d = Math.floor(Math.max(y1, y2) / CELL);
+      for (var i = a; i <= b; i++) for (var j = c; j <= d; j++) fn(i + ',' + j);
+    }
+    function hit(p, q, r, s) {
+      var d = (q[0] - p[0]) * (s[1] - r[1]) - (q[1] - p[1]) * (s[0] - r[0]); if (!d) return false;
+      var t = ((r[0] - p[0]) * (s[1] - r[1]) - (r[1] - p[1]) * (s[0] - r[0])) / d, u = ((r[0] - p[0]) * (q[1] - p[1]) - (r[1] - p[1]) * (q[0] - p[0])) / d;
+      return t >= 0 && t < 1 && u >= 0 && u < 1;
+    }
+    return {
+      count: function (pts, open) {
+        var n = 0, tag = Math.random();
+        for (var i = 0; i < pts.length - (open ? 1 : 0); i++) {
+          var p = pts[i], q = pts[(i + 1) % pts.length];
+          each(p[0], p[1], q[0], q[1], function (k) {
+            var L = cells[k]; if (!L) return;
+            for (var m = 0; m < L.length; m++) { var si = L[m]; if (stamp[si] === tag + i) continue; stamp[si] = tag + i; var sg = segs[si]; if (hit(p, q, sg[0], sg[1])) n++; }
+          });
+        }
+        return n;
+      },
+      add: function (pts, open) {
+        for (var i = 0; i < pts.length - (open ? 1 : 0); i++) {
+          var p = pts[i], q = pts[(i + 1) % pts.length], id = segs.length; segs.push([p, q]);
+          each(p[0], p[1], q[0], q[1], function (k) { (cells[k] = cells[k] || []).push(id); });
+        }
+      }
+    };
+  }
+  // coverage grid: which parts of the page are inside some shape
+  var GC = 60, GX = Math.ceil(W / GC), GY = Math.ceil(H / GC);
+  function inside(pts, x, y) {
+    var c = false;
+    for (var i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+      var a = pts[i], b = pts[j];
+      if ((a[1] > y) !== (b[1] > y) && x < (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1]) + a[0]) c = !c;
+    }
+    return c;
+  }
+  function cover(pts, cov) {   // number of still-empty cells this shape would fill
+    var x0 = W, y0 = H, x1 = 0, y1 = 0, n = 0;
+    pts.forEach(function (p) { x0 = Math.min(x0, p[0]); y0 = Math.min(y0, p[1]); x1 = Math.max(x1, p[0]); y1 = Math.max(y1, p[1]); });
+    for (var gx = Math.floor(x0 / GC); gx <= Math.min(GX - 1, Math.floor(x1 / GC)); gx++)
+      for (var gy = Math.floor(y0 / GC); gy <= Math.min(GY - 1, Math.floor(y1 / GC)); gy++)
+        if (!cov[gy * GX + gx] && inside(pts, gx * GC + GC / 2, gy * GC + GC / 2)) n++;
+    return n;
+  }
+  function mark(pts, cov) {
+    for (var gx = 0; gx < GX; gx++) for (var gy = 0; gy < GY; gy++)
+      if (!cov[gy * GX + gx] && inside(pts, gx * GC + GC / 2, gy * GC + GC / 2)) cov[gy * GX + gx] = 1;
+  }
+  function emptySpot(cov) {   // a random empty cell that's inside the margins
+    var list = [];
+    for (var gx = 1; gx < GX - 1; gx++) for (var gy = 1; gy < GY - 1; gy++) if (!cov[gy * GX + gx]) list.push([gx * GC + GC / 2, gy * GC + GC / 2]);
+    return list.length ? list[Math.floor(R() * list.length)] : null;
+  }
+  // ONE continuous line: a smooth closed scribble that wanders the page, crosses itself, and ends where it began
+  function selfCrossings(pts) {
+    var CELL = 50, cells = {}, n = pts.length, cnt = 0;
+    function keys(i) {
+      var p = pts[i], q = pts[(i + 1) % n], out = [];
+      for (var a = Math.floor(Math.min(p[0], q[0]) / CELL); a <= Math.floor(Math.max(p[0], q[0]) / CELL); a++)
+        for (var b = Math.floor(Math.min(p[1], q[1]) / CELL); b <= Math.floor(Math.max(p[1], q[1]) / CELL); b++) out.push(a + ',' + b);
+      return out;
+    }
+    function hit(i, j) {
+      var p = pts[i], q = pts[(i + 1) % n], r = pts[j], s2 = pts[(j + 1) % n];
+      var d = (q[0] - p[0]) * (s2[1] - r[1]) - (q[1] - p[1]) * (s2[0] - r[0]); if (!d) return false;
+      var t = ((r[0] - p[0]) * (s2[1] - r[1]) - (r[1] - p[1]) * (s2[0] - r[0])) / d, u = ((r[0] - p[0]) * (q[1] - p[1]) - (r[1] - p[1]) * (q[0] - p[0])) / d;
+      return t > 0 && t < 1 && u > 0 && u < 1;
+    }
+    for (var i = 0; i < n; i++) {
+      var seen = {}, ks = keys(i);
+      ks.forEach(function (k) {
+        (cells[k] || []).forEach(function (j) {
+          if (seen[j]) return; seen[j] = 1;
+          if (Math.abs(i - j) < 2 || (i === n - 1 && j === 0)) return;   // neighbors share an end point
+          if (hit(i, j)) cnt++;
+        });
+      });
+      ks.forEach(function (k) { (cells[k] = cells[k] || []).push(i); });
+    }
+    return cnt;
+  }
+  function turn(a, b, c) {   // how sharply the path bends at b (0 = straight, PI = reverses)
+    var a1 = Math.atan2(b[1] - a[1], b[0] - a[0]), a2 = Math.atan2(c[1] - b[1], c[0] - b[0]), d = Math.abs(a2 - a1) % TAU;
+    return d > Math.PI ? TAU - d : d;
+  }
+  function generateOne(target) {
+    var IN = M + 70, best = null;
+    for (var attempt = 0; attempt < 8; attempt++) {
+      var cov = new Uint8Array(GX * GY), way = [[rr(W * .3, W * .7), rr(H * .3, H * .7)]], dir = R() * TAU, curve = null, c = 0;
+      for (var step = 0; step < 70; step++) {
+        var cand = null, candScore = Infinity, candCurve = null, candC = 0;
+        for (var k = 0; k < 14; k++) {
+          var last = way[way.length - 1], spot = R() < .5 ? emptySpot(cov) : null, a, L;
+          if (spot) { a = Math.atan2(spot[1] - last[1], spot[0] - last[0]); L = Math.min(460, Math.hypot(spot[0] - last[0], spot[1] - last[1])); }
+          else { a = dir + rr(-1.1, 1.1); L = rr(240, 440); }
+          var dd = Math.abs(((a - dir) % TAU + TAU + Math.PI) % TAU - Math.PI);
+          if (way.length > 1 && dd > 1.15) continue;                     // no hairpin turns (they make sharp points)
+          var p = [last[0] + Math.cos(a) * L, last[1] + Math.sin(a) * L];
+          if (p[0] < IN || p[0] > W - IN || p[1] < IN || p[1] > H - IN || L < 160) continue;
+          var w2 = way.concat([p]);
+          if (w2.length < 4) { cand = p; candCurve = null; candScore = 0; break; }
+          // the line must also come home smoothly
+          var closeBend = turn(w2[w2.length - 2], p, w2[0]) + turn(p, w2[0], w2[1]);
+          var cv2 = catmull(w2, true, 16), cc = selfCrossings(cv2);
+          var score = (cc > target ? (cc - target) * 4 : (target - cc) * .5) + closeBend * 6;
+          var gi = Math.floor(p[1] / GC) * GX + Math.floor(p[0] / GC);
+          if (!cov[gi]) score -= 8;                                       // head for empty parts of the page
+          if (score < candScore) { candScore = score; cand = p; candCurve = cv2; candC = cc; }
+        }
+        if (!cand) { dir += Math.PI / 2; continue; }
+        dir = Math.atan2(cand[1] - way[way.length - 1][1], cand[0] - way[way.length - 1][0]);
+        way.push(cand); mark([[cand[0] - 90, cand[1] - 90], [cand[0] + 90, cand[1] - 90], [cand[0] + 90, cand[1] + 90], [cand[0] - 90, cand[1] + 90]], cov);
+        if (candCurve) { curve = candCurve; c = candC; }
+        if (curve && c >= target) break;
+      }
+      if (!curve) curve = catmull(way, true, 16);
+      var bendOK = turn(way[way.length - 2], way[way.length - 1], way[0]) < 1.5 && turn(way[way.length - 1], way[0], way[1]) < 1.5;
+      var score2 = Math.abs(c - target) + (bendOK ? 0 : 1000);
+      if (!best || score2 < best.score) best = { curve: curve, c: c, score: score2 };
+      if (bendOK && Math.abs(c - target) <= Math.max(3, target * .15)) break;
+    }
+    var pts = best.curve.map(function (p) { return [Math.round(Math.max(M, Math.min(W - M, p[0])) * 10) / 10, Math.round(Math.max(M, Math.min(H - M, p[1])) * 10) / 10]; });
+    return { shapes: [pts], colors: [BOLD[Math.floor(R() * 11)]], crossings: selfCrossings(pts) };
+  }
+  function generate(target, style) {
+    if (style === 'one') return generateOne(target);
+    SZ = Math.max(.75, Math.min(1.35, 1.4 - target / 160));
+    var ct = crossTool(), shapes = [], total = 0, guard = 0, cov = new Uint8Array(GX * GY), cells = (GX - 2) * (GY - 2);
+    function make(at) {
+      var b = style === 'blobs' ? false : style === 'bands' ? true : R() < .3;
+      if (at && !b) at = [at[0] + rr(-60, 60), at[1] + rr(-60, 60)];
+      return b ? band(at) : blob(false, at);
+    }
+    var first = style === 'bands' ? band([W / 2, H / 2]) : blob(true, [rr(W * .35, W * .65), rr(H * .35, H * .65)]);
+    shapes.push(first); ct.add(first); mark(first, cov);
+    while (total < target && shapes.length < 80 && guard++ < 240) {
+      var filled = 0; for (var i = 0; i < cov.length; i++) filled += cov[i];
+      var needCover = filled / cells < .8;
+      var best = null, bestC = 0, bestScore = Infinity;
+      for (var k = 0; k < 16; k++) {
+        var spot = needCover && R() < .75 ? emptySpot(cov) : null, s = make(spot), c = ct.count(s);
+        if (c < 2) continue;
+        var after = total + c, score = after > target ? (after - target) * 4 : (target - after) * .6;
+        if (needCover) score -= cover(s, cov) * 1.2;
+        if (score < bestScore) { bestScore = score; best = s; bestC = c; }
+      }
+      if (!best) continue;
+      if (total + bestC - target > Math.max(6, target * .3) && total >= target * .8) break;
+      shapes.push(best); ct.add(best); mark(best, cov); total += bestC;
+    }
+    var colors = shapes.map(function () { return BOLD[Math.floor(R() * 11)]; });
+    return { shapes: shapes.map(function (s) { return s.map(function (p) { return [Math.round(p[0] * 10) / 10, Math.round(p[1] * 10) / 10]; }); }), colors: colors, crossings: total };
+  }
+
+  // ---------- regions ----------
+  function strokeShapes(c, w, colorFn) {
+    c.lineJoin = 'round'; c.lineCap = 'round'; c.lineWidth = w;
+    S.shapes.forEach(function (s, i) {
+      c.strokeStyle = colorFn(i); c.beginPath();
+      for (var k = 0; k < s.length; k++) k ? c.lineTo(s[k][0], s[k][1]) : c.moveTo(s[k][0], s[k][1]);
+      c.closePath(); c.stroke();
+    });
+    S.lines.forEach(function (L) {
+      var p = L.p; c.strokeStyle = colorFn(-1, L); c.beginPath();
+      for (var k = 0; k < p.length; k++) k ? c.lineTo(p[k][0], p[k][1]) : c.moveTo(p[k][0], p[k][1]);
+      if (L.c) c.closePath(); c.stroke();
+    });
+  }
+  function recount() {
+    var ct = crossTool(), n = 0;
+    S.shapes.forEach(function (p) { n += ct.count(p) + selfCrossings(p); ct.add(p); });
+    S.lines.forEach(function (L) { n += ct.count(L.p, !L.c); ct.add(L.p, !L.c); });
+    S.crossings = n;
+  }
+  function buildRegions() {
+    var dc = mk(W, H), d = dc.getContext('2d');
+    strokeShapes(d, S.lw, function () { return '#000'; });
+    var a = d.getImageData(0, 0, W, H).data, N = W * H, i;
+    lab = new Int32Array(N);
+    for (i = 0; i < N; i++) if (a[i * 4 + 3] > 70) lab[i] = -1;
+    regions = [];
+    var stack = new Int32Array(N), id = 0;
+    for (var p = 0; p < N; p++) {
+      if (lab[p] !== 0) continue;
+      id++; var sp = 0; stack[sp++] = p; lab[p] = id;
+      var x0 = W, y0 = H, x1 = 0, y1 = 0, sx = 0, sy = 0, cnt = 0;
+      while (sp) {
+        var q = stack[--sp], x = q % W, y = (q - x) / W;
+        if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; sx += x; sy += y; cnt++;
+        if (x > 0 && lab[q - 1] === 0) { lab[q - 1] = id; stack[sp++] = q - 1; }
+        if (x < W - 1 && lab[q + 1] === 0) { lab[q + 1] = id; stack[sp++] = q + 1; }
+        if (y > 0 && lab[q - W] === 0) { lab[q - W] = id; stack[sp++] = q - W; }
+        if (y < H - 1 && lab[q + W] === 0) { lab[q + W] = id; stack[sp++] = q + W; }
+      }
+      var ccx = Math.round(sx / cnt), ccy = Math.round(sy / cnt), inC = lab[ccy * W + ccx] === id;
+      regions.push({ id: id, x0: x0, y0: y0, x1: x1, y1: y1, w: x1 - x0 + 1, h: y1 - y0 + 1, area: cnt, cx: sx / cnt, cy: sy / cnt, tiny: cnt < 140,
+                     ax: inC ? ccx : p % W, ay: inC ? ccy : (p - p % W) / W });
+    }
+    bgId = lab[0] > 0 ? lab[0] : 0;
+    // masks (one pass) + tiny slivers drawn as outline
+    var imgs = regions.map(function (r) { return r.tiny ? null : new ImageData(r.w, r.h); });
+    var tinyImg = new ImageData(W, H);
+    for (p = 0; p < N; p++) {
+      var L = lab[p]; if (L <= 0) continue;
+      var r = regions[L - 1], x2 = p % W, y2 = (p - x2) / W;
+      if (r.tiny) { tinyImg.data[p * 4 + 3] = 255; continue; }
+      imgs[L - 1].data[((y2 - r.y0) * r.w + (x2 - r.x0)) * 4 + 3] = 255;
+    }
+    regions.forEach(function (r, k) {
+      r.cache = null;
+      if (r.tiny) return;
+      r.mask = mk(r.w, r.h); r.mask.getContext('2d').putImageData(imgs[k], 0, 0);
+      var far = 0;[[r.x0, r.y0], [r.x1, r.y0], [r.x0, r.y1], [r.x1, r.y1]].forEach(function (c) { far = Math.max(far, Math.hypot(c[0] - r.cx, c[1] - r.cy)); });
+      r.R = far;
+    });
+    tinyCv = mk(W, H); tinyCv.getContext('2d').putImageData(tinyImg, 0, 0);
+    counted = regions.filter(function (r) { return !r.tiny && r.id !== bgId; }).length;
+    remap();
+  }
+  // decorations remember a point inside their space, so they follow it when lines are added or removed
+  function labAt(a) {
+    if (!a || !lab) return 0;
+    for (var rad = 0; rad <= 8; rad += 2) for (var k = 0; k < (rad ? 12 : 1); k++) {
+      var x = Math.round(a[0] + Math.cos(k / 12 * TAU) * rad), y = Math.round(a[1] + Math.sin(k / 12 * TAU) * rad);
+      if (x < 0 || y < 0 || x >= W || y >= H) continue;
+      var L = lab[y * W + x]; if (L > 0 && !regions[L - 1].tiny) return L;
+    }
+    return 0;
+  }
+  function remap() {
+    var nd = {};
+    Object.keys(S.deco).forEach(function (k) {
+      var d = S.deco[k];
+      if (!d.a) { var r0 = regions[k - 1]; d.a = r0 ? [r0.ax, r0.ay] : null; }   // drawings saved before anchors existed
+      var id = labAt(d.a); if (id && !nd[id]) nd[id] = d;
+    });
+    S.deco = nd;
+    S.marks.forEach(function (m) { m.r = labAt(m.a); });
+  }
+  function marksOf(id) { return S.marks.filter(function (m) { return m.r === id; }); }
+  function geometryChanged() { S.gv = (S.gv || 0) + 1; recount(); buildRegions(); renderAll(); save(); }
+  function buildLines() {
+    linesCv = mk(W, H); var c = linesCv.getContext('2d');
+    strokeShapes(c, S.lw + 2.2, function (i, L) { return S.bw ? '#1c1c1c' : (S.outline === 'colorful' ? ((L ? L.col : S.colors[i]) || '#1c1c1c') : S.outline); });
+    var t = tinyCv.getContext('2d'); t.globalCompositeOperation = 'source-in';
+    t.fillStyle = S.bw || S.outline === 'colorful' ? '#1c1c1c' : S.outline; t.fillRect(0, 0, W, H); t.globalCompositeOperation = 'source-over';
+  }
+
+  // ---------- rendering ----------
+  var grain = (function () {
+    var g = mk(180, 180), c = g.getContext('2d'), r = rng(7);
+    c.lineCap = 'round';
+    for (var i = 0; i < 1500; i++) {
+      var x = r() * 180, y = r() * 180, L = 3 + r() * 7, a = -.9 + (r() - .5) * .5;
+      c.strokeStyle = 'rgba(255,255,255,' + (.18 + r() * .45).toFixed(2) + ')'; c.lineWidth = .8 + r() * 1.4;
+      c.beginPath(); c.moveTo(x, y); c.lineTo(x + Math.cos(a) * L, y + Math.sin(a) * L); c.stroke();
+    }
+    return g;
+  })();
+  function drawDesign(c, d, box, seed) {
+    // box: {x0,y0,w,h,cx,cy,R} in the context's current coordinates; c is already clipped/masked later
+    c.save();
+    c.fillStyle = col(d.fill, 'fill'); c.fillRect(box.x0, box.y0, box.w, box.h);
+    if (S.crayon) { c.fillStyle = c.createPattern(grain, 'repeat'); c.fillRect(box.x0, box.y0, box.w, box.h); }
+    if (d.p > 0 && PATS[d.p - 1]) {
+      var P = PATS[d.p - 1], bcx = box.x0 + box.w / 2, bcy = box.y0 + box.h / 2, RR = Math.hypot(box.w, box.h) / 2 + 6;
+      var a = ((d.rot || 0) + P.ang) * Math.PI / 180, ca = Math.cos(a), sa = Math.sin(a), dx = box.cx - bcx, dy = box.cy - bcy;
+      c.translate(bcx, bcy); c.rotate(a);
+      var ink = col(d.ink, 'ink'), u = (box.u || 26) * d.s;
+      c.strokeStyle = ink; c.fillStyle = ink; c.lineWidth = box.lw || Math.max(1.6, 2.6 * Math.sqrt(d.s)); c.lineCap = 'round'; c.lineJoin = 'round';
+      P.fn(c, { X0: -RR, Y0: -RR, X1: RR, Y1: RR, cx: dx * ca + dy * sa, cy: -dx * sa + dy * ca, R: box.R + u * .5, u: u, lw: c.lineWidth,
+                ink: ink, fill: col(d.fill, 'fill'), rnd: rng(seed), bw: box.w, bh: box.h });
+    }
+    c.restore();
+  }
+  function drawMark(c, m, paper) {
+    c.save(); c.lineCap = 'round'; c.lineJoin = 'round';
+    var colr = col(m.c, 'ink'); c.strokeStyle = colr; c.fillStyle = colr;
+    if (m.t === 's') {
+      var st = STAMPS[m.n] || STAMPS[0];
+      c.translate(m.x, m.y); c.rotate(m.o || 0); c.lineWidth = Math.max(2, m.z * .12);
+      st.draw(c, m.z, col(paper, 'fill'));
+    } else {
+      var p = m.p; c.lineWidth = m.w;
+      c.beginPath(); c.moveTo(p[0], p[1]);
+      if (p.length === 2) c.lineTo(p[0] + .1, p[1]);
+      for (var i = 2; i < p.length; i += 2) c.lineTo(p[i], p[i + 1]);
+      if (m.t === 'b' && m.k === 'c') { c.globalAlpha = .85; c.stroke(); c.globalAlpha = 1; c.strokeStyle = c.createPattern(grain, 'repeat'); c.stroke(); }
+      else c.stroke();
+    }
+    c.restore();
+  }
+  function renderRegion(r) {
+    var d = S.deco[r.id], ms = r.tiny ? [] : marksOf(r.id);
+    if ((!d && !ms.length) || r.tiny) { r.cache = null; return; }
+    var cvs = r.cache || (r.cache = mk(r.w, r.h)), c = cvs.getContext('2d');
+    c.clearRect(0, 0, r.w, r.h);
+    c.save(); c.translate(-r.x0, -r.y0);
+    if (d) drawDesign(c, d, { x0: r.x0, y0: r.y0, w: r.w, h: r.h, cx: r.cx, cy: r.cy, R: r.R }, r.id * 977 + d.p * 31);
+    ms.forEach(function (m) { drawMark(c, m, d ? d.fill : '#ffffff'); });
+    c.restore();
+    c.globalCompositeOperation = 'destination-in'; c.drawImage(r.mask, 0, 0); c.globalCompositeOperation = 'source-over';
+  }
+  function compose() {
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H);
+    regions.forEach(function (r) { if (r.cache) ctx.drawImage(r.cache, r.x0, r.y0); });
+    ctx.drawImage(tinyCv, 0, 0); ctx.drawImage(linesCv, 0, 0);
+    drawSel(); stats();
+  }
+  function renderAll() { buildLines(); regions.forEach(renderRegion); compose(); }
+  function drawSel() {
+    octx.clearRect(0, 0, W, H);
+    var r = regions[selected - 1]; if (!r || r.tiny || tool !== 'paint' || S.mode !== 'quick') return;
+    var t = mk(r.w, r.h), c = t.getContext('2d');
+    c.fillStyle = 'rgba(255,209,102,.55)'; c.fillRect(0, 0, r.w, r.h);
+    c.strokeStyle = 'rgba(255,255,255,.7)'; c.lineWidth = 6;
+    for (var k = -r.h; k < r.w; k += 22) { c.beginPath(); c.moveTo(k, 0); c.lineTo(k + r.h, r.h); c.stroke(); }
+    c.globalCompositeOperation = 'destination-in'; c.drawImage(r.mask, 0, 0);
+    octx.drawImage(t, r.x0, r.y0);
+  }
+  function stats() {
+    var has = {}; S.marks.forEach(function (m) { has[m.r] = 1; });
+    var done = regions.filter(function (r) { return !r.tiny && r.id !== bgId && (S.deco[r.id] || has[r.id]); }).length;
+    $('stA').innerHTML = '<b>' + done + '</b> of <b>' + counted + '</b> spaces decorated';
+    $('stB').innerHTML = '<b>' + (S.crossings || 0) + '</b> crossing points';
+    $('stBar').style.width = (counted ? done / counted * 100 : 0) + '%';
+    if (counted > 1 && done === counted && !celebrated) { celebrated = true; toast('🎉 Masterpiece! Every space is decorated. Download it or print it.'); save(); }
+    if (done < counted) celebrated = false;
+  }
+
+  // ---------- history & saving ----------
+  function snap() { return JSON.stringify({ d: S.deco, m: S.marks, l: S.lines, s: S.shapes, c: S.colors, g: S.gv }); }
+  function push(id) {
+    var now = Date.now();
+    if (id != null && id === lastPush.id && now - lastPush.t < 900) { lastPush.t = now; return; }
+    hist.push(snap()); if (hist.length > 40) hist.shift(); fut = []; lastPush = { id: id, t: now }; undoBtns();
+  }
+  function restore(str) {
+    var o = JSON.parse(str), geo = o.g !== S.gv;
+    S.deco = o.d; S.marks = o.m; S.lines = o.l; S.shapes = o.s; S.colors = o.c; S.gv = o.g;
+    if (geo) { recount(); buildRegions(); renderAll(); } else { regions.forEach(renderRegion); compose(); }
+    save();
+  }
+  function undoBtns() { $('undoBtn').disabled = !hist.length; $('redoBtn').disabled = !fut.length; }
+  var saveT = 0;
+  function save() {
+    clearTimeout(saveT);
+    saveT = setTimeout(function () {
+      try { localStorage.setItem(KEY, JSON.stringify({ shapes: S.shapes, colors: S.colors, lines: S.lines, marks: S.marks, gv: S.gv, crossings: S.crossings, lw: S.lw, outline: S.outline, deco: S.deco, bw: S.bw, crayon: S.crayon, cross: S.cross, style: S.style, styleV: 2, start: S.start, mode: S.mode, brush: brush })); } catch (e) { toast('This drawing is too big to save on this device. Download it so you don\'t lose it.'); }
+    }, 300);
+  }
+  function load() { try { var v = JSON.parse(localStorage.getItem(KEY) || 'null'); return v && v.shapes ? v : null; } catch (e) { return null; } }
+
+  // ---------- actions ----------
+  function newDrawing() {
+    $('busy').classList.add('show');
+    setTimeout(function () {
+      var g = S.start === 'blank' ? { shapes: [], colors: [], crossings: 0 } : generate(S.cross, S.style);
+      S.shapes = g.shapes; S.colors = g.colors; S.crossings = g.crossings; S.lines = []; S.marks = []; S.deco = {}; S.gv = (S.gv || 0) + 1;
+      selected = 0; hist = []; fut = []; celebrated = false;
+      buildRegions(); renderAll(); undoBtns(); save();
+      if (S.start === 'blank') { setTool('line'); toast('Blank page! Drag on the paper to draw your lines.'); }
+      $('busy').classList.remove('show');
+    }, 30);
+  }
+  function applyTo(id, a) {
+    var r = regions[id - 1]; if (!r || r.tiny) return;
+    push(id);
+    var old = S.deco[id];
+    S.deco[id] = { p: brush.p, fill: brush.fill, ink: brush.ink, s: brush.s, rot: brush.rot, a: a || (old && old.a) || [r.ax, r.ay] };
+    renderRegion(r); compose(); save();
+  }
+  function pt(e) { var b = cv.getBoundingClientRect(); return [Math.round((e.clientX - b.left) * W / b.width), Math.round((e.clientY - b.top) * H / b.height)]; }
+  function hitAt(p) {   // -> {id, a:[x,y] a point inside that space} or null
+    var x = p[0], y = p[1];
+    for (var rad = 0; rad <= 10; rad += 2) {
+      for (var a = 0; a < (rad ? 12 : 1); a++) {
+        var xx = Math.round(x + Math.cos(a / 12 * TAU) * rad), yy = Math.round(y + Math.sin(a / 12 * TAU) * rad);
+        if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue;
+        var L = lab[yy * W + xx]; if (L > 0 && !regions[L - 1].tiny) return { id: L, a: [xx, yy] };
+      }
+    }
+    return null;
+  }
+  // ---------- tapping & drawing on the paper ----------
+  var drag = null, raf = 0;
+  function tap(p) {
+    if (tool === 'unline') { removeLineAt(p); return; }
+    var h = hitAt(p); if (!h) return;
+    var id = h.id, r = regions[id - 1];
+    if (tool === 'paint') { selected = id; applyTo(id, h.a); }
+    else if (tool === 'erase') {
+      if (S.deco[id] || marksOf(id).length) { push(null); delete S.deco[id]; S.marks = S.marks.filter(function (m) { return m.r !== id; }); renderRegion(r); compose(); save(); }
+    } else if (tool === 'copy') {
+      var d = S.deco[id];
+      if (!d) { toast('That space is empty. Pick a decorated space to copy.'); return; }
+      Object.assign(brush, { p: d.p, fill: d.fill, ink: d.ink, s: d.s, rot: d.rot || 0 }); syncUI(); setTool('paint');
+      toast('Copied! Tap any space to paint it the same way.');
+    } else if (tool === 'bucket') {
+      push(null);
+      if (S.deco[id]) S.deco[id].fill = brush.fill; else S.deco[id] = { p: 0, fill: brush.fill, ink: brush.ink, s: 1, rot: 0, a: h.a };
+      renderRegion(r); compose(); save();
+    } else if (tool === 'stamp') {
+      push(null);
+      S.marks.push({ t: 's', r: id, a: h.a, c: brush.ink, n: brush.st, x: p[0], y: p[1], z: brush.sz, o: brush.turn ? Math.round((Math.random() - .5) * 70) / 100 : 0 });
+      renderRegion(r); compose(); save();
+    }
+  }
+  function redrawSoon(r) {
+    if (raf) return;
+    raf = requestAnimationFrame(function () { raf = 0; if (r) renderRegion(r); compose(); });
+  }
+  cv.addEventListener('pointerdown', function (e) {
+    if (e.button > 0) return;
+    var p = pt(e);
+    if (tool === 'line') {
+      drag = { t: 'line', pts: [p] }; cv.setPointerCapture(e.pointerId); e.preventDefault(); return;
+    }
+    if (tool === 'brush' || tool === 'pen') {
+      var h = hitAt(p); if (!h) return;
+      push(null);
+      var m = { t: tool === 'brush' ? 'b' : 'p', r: h.id, a: h.a, c: brush.ink, w: tool === 'brush' ? brush.bw : brush.pw, k: brush.kind, p: [p[0], p[1]] };
+      S.marks.push(m); drag = { t: 'mark', m: m, r: regions[h.id - 1], last: p };
+      cv.setPointerCapture(e.pointerId); e.preventDefault(); redrawSoon(drag.r); return;
+    }
+    drag = { t: 'tap', x: e.clientX, y: e.clientY, p: p };
+  });
+  cv.addEventListener('pointermove', function (e) {
+    if (!drag) return;
+    var p = pt(e);
+    if (drag.t === 'line') {
+      var q = drag.pts[drag.pts.length - 1]; if (Math.hypot(p[0] - q[0], p[1] - q[1]) < 4) return;
+      drag.pts.push(p);
+      dctx.clearRect(0, 0, W, H); dctx.lineCap = dctx.lineJoin = 'round'; dctx.lineWidth = S.lw + 2.2; dctx.strokeStyle = 'rgba(40,40,40,.85)';
+      dctx.beginPath(); drag.pts.forEach(function (a, i) { i ? dctx.lineTo(a[0], a[1]) : dctx.moveTo(a[0], a[1]); }); dctx.stroke();
+      var s0 = drag.pts[0];
+      if (drag.pts.length > 12 && Math.hypot(p[0] - s0[0], p[1] - s0[1]) < 45) { dctx.fillStyle = 'rgba(0,229,160,.5)'; dctx.beginPath(); dctx.arc(s0[0], s0[1], 26, 0, TAU); dctx.fill(); }
+    } else if (drag.t === 'mark') {
+      if (Math.hypot(p[0] - drag.last[0], p[1] - drag.last[1]) < 2) return;
+      drag.m.p.push(p[0], p[1]); drag.last = p; redrawSoon(drag.r);
+    }
+  });
+  function endDrag(e) {
+    if (!drag) return;
+    var d = drag; drag = null;
+    if (d.t === 'line') { dctx.clearRect(0, 0, W, H); finishLine(d.pts); }
+    else if (d.t === 'mark') { renderRegion(d.r); compose(); save(); }
+    else if (d.t === 'tap' && e.type === 'pointerup' && Math.hypot(e.clientX - d.x, e.clientY - d.y) < 12) tap(d.p);
+  }
+  cv.addEventListener('pointerup', endDrag);
+  cv.addEventListener('pointercancel', endDrag);
+
+  function finishLine(raw) {
+    var len = 0; for (var i = 1; i < raw.length; i++) len += Math.hypot(raw[i][0] - raw[i - 1][0], raw[i][1] - raw[i - 1][1]);
+    if (len < 40) return;
+    var s0 = raw[0], e0 = raw[raw.length - 1], closed = len > 150 && Math.hypot(e0[0] - s0[0], e0[1] - s0[1]) < 45;
+    // resample every ~14px, then smooth with the same curve maker the studio uses
+    var res = [raw[0]], acc = 0;
+    for (i = 1; i < raw.length; i++) { acc += Math.hypot(raw[i][0] - raw[i - 1][0], raw[i][1] - raw[i - 1][1]); if (acc >= 14) { res.push(raw[i]); acc = 0; } }
+    if (closed) { if (res.length > 3) res.pop(); } else res.push(e0);
+    if (res.length < 2) return;
+    var pts = res.length < 3 ? res : catmull(res, closed, 4);
+    pts = pts.map(function (q) { return [Math.round(Math.max(4, Math.min(W - 4, q[0])) * 10) / 10, Math.round(Math.max(4, Math.min(H - 4, q[1])) * 10) / 10]; });
+    push(null);
+    S.lines.push({ p: pts, c: closed, col: BOLD[Math.floor(Math.random() * 11)] });
+    geometryChanged();
+    if (closed) toast('Loop closed! That made a new space.');
+  }
+  function segDist(p, a, b) {
+    var dx = b[0] - a[0], dy = b[1] - a[1], L = dx * dx + dy * dy, t = L ? Math.max(0, Math.min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / L)) : 0;
+    return Math.hypot(p[0] - a[0] - t * dx, p[1] - a[1] - t * dy);
+  }
+  function removeLineAt(p) {
+    var best = 18, which = null;
+    function check(pts, closed, ref) {
+      for (var i = 0; i < pts.length - (closed ? 0 : 1); i++) { var d = segDist(p, pts[i], pts[(i + 1) % pts.length]); if (d < best) { best = d; which = ref; } }
+    }
+    S.shapes.forEach(function (sh, i) { check(sh, true, ['s', i]); });
+    S.lines.forEach(function (L, i) { check(L.p, L.c, ['l', i]); });
+    if (!which) { toast('Tap right on a line to remove it.'); return; }
+    push(null);
+    if (which[0] === 's') { S.shapes.splice(which[1], 1); S.colors.splice(which[1], 1); } else S.lines.splice(which[1], 1);
+    geometryChanged(); toast('Line removed. Undo brings it back.');
+  }
+  function liveUpdate() {
+    drawPreview(); save();
+    if (S.mode === 'quick' && tool === 'paint' && selected && regions[selected - 1]) applyTo(selected);
+  }
+  function randomDeco(lightFill) {
+    var ink = BOLD[Math.floor(R() * 12)], fc = BOLD[Math.floor(R() * 12)];
+    return { p: 1 + Math.floor(R() * PATS.length), ink: ink, fill: R() < .15 ? '#FFFFFF' : tint(R() < .6 ? ink : fc, lightFill ? rr(.6, .8) : rr(.55, .8)), s: Math.round(rr(.75, 1.35) * 20) / 20, rot: R() < .7 ? 0 : Math.round(rr(0, 180) / 15) * 15 };
+  }
+  function fillRandom(onlyEmpty) {
+    push(null);
+    regions.forEach(function (r) { if (r.tiny || r.id === bgId) return; if (onlyEmpty && (S.deco[r.id] || marksOf(r.id).length)) return; var dd = randomDeco(true); dd.a = [r.ax, r.ay]; S.deco[r.id] = dd; renderRegion(r); });
+    compose(); save();
+  }
+
+  // ---------- UI ----------
+  function toast(msg) { var t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove('show'); }, 3200); }
+  var HINTS = {
+    paint: 'Tap any space. Change the design or colors and the space you just tapped (the blinking one) updates too.',
+    copy: 'Tap a decorated space to copy its design and colors.',
+    erase: 'Tap a space to wipe it clean (designs, coloring and stamps).',
+    line: 'Drag on the paper to draw a line. End it near where you started (a green circle shows) to close a loop. Lines that cross make new spaces.',
+    unline: 'Tap right on a line to remove it.',
+    brush: 'Color by hand: drag inside a space. Your coloring stays inside the space you start in.',
+    pen: 'Draw your own designs: lines, swirls, dots. The pen stays inside the space you start in.',
+    stamp: 'Pick an item below, then tap inside a space to place it. Tap again for more.',
+    bucket: 'Tap a space to fill it with the space color. Your coloring and stamps stay on top.'
+  };
+  function setTool(t) {
+    tool = t;
+    if (['brush', 'pen', 'stamp', 'bucket'].indexOf(t) > -1) handTool = t;
+    document.body.classList.toggle('erase', t === 'erase' || t === 'unline'); document.body.classList.toggle('copy', t === 'copy');
+    document.body.classList.toggle('drawing', ['line', 'brush', 'pen'].indexOf(t) > -1);
+    Array.prototype.forEach.call($('toolSeg').children, function (b) {
+      var bt = b.dataset.t === 'paint' && S.mode === 'hands' ? handTool : b.dataset.t;
+      b.classList.toggle('on', bt === t || (b.dataset.t === 'paint' && S.mode === 'hands' && ['brush', 'pen', 'stamp', 'bucket'].indexOf(t) > -1));
+    });
+    Array.prototype.forEach.call($('handSeg').children, function (b) { b.classList.toggle('on', b.dataset.t === t); });
+    $('lineTool').classList.toggle('on', t === 'line'); $('unlineTool').classList.toggle('on', t === 'unline');
+    $('lineTool').textContent = t === 'line' ? '✅ Done drawing lines' : '✏️ Draw my own lines';
+    $('toolHint').textContent = HINTS[t] || '';
+    $('handHint').textContent = HINTS[handTool];
+    $('lineHint').textContent = t === 'line' || t === 'unline' ? HINTS[t] : 'More crossing points = more, smaller spaces to decorate. Try 20 for a quick one, 80+ for a challenge. You can add your own lines any time.';
+    $('brushOpts').classList.toggle('hidden', handTool !== 'brush');
+    $('stampOpts').classList.toggle('hidden', handTool !== 'stamp');
+    $('hsizeRow').classList.toggle('hidden', handTool === 'bucket');
+    $('hsizeLbl').textContent = handTool === 'stamp' ? 'Stamp size' : handTool === 'pen' ? 'Pen size' : 'Brush size';
+    var hs = $('hsize');
+    if (handTool === 'stamp') { hs.min = 10; hs.max = 120; hs.value = brush.sz; }
+    else if (handTool === 'pen') { hs.min = 2; hs.max = 14; hs.value = brush.pw; }
+    else { hs.min = 4; hs.max = 70; hs.value = brush.bw; }
+    drawSel();
+  }
+  function setMode(m) {
+    S.mode = m;
+    Array.prototype.forEach.call($('decoSeg').children, function (b) { b.classList.toggle('on', b.dataset.d === m); });
+    $('quickPane').classList.toggle('hidden', m !== 'quick'); $('handPane').classList.toggle('hidden', m !== 'hands');
+    $('prevBox').classList.toggle('hidden', m !== 'quick');
+    Array.prototype.forEach.call(document.querySelectorAll('.qonly'), function (el) { el.classList.toggle('hidden', m !== 'quick'); });
+    $('toolSeg').children[0].textContent = m === 'quick' ? '🖌️ Decorate' : '✋ Use my tool';
+    $('decoHint').textContent = m === 'quick' ? 'Quick fill: tap a space and a whole design fills it.' : 'Do it myself: color, draw and place stamps by hand. Pick a tool:';
+    setTool(m === 'quick' ? 'paint' : handTool); save();
+  }
+  $('decoSeg').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) setMode(b.dataset.d); });
+  $('handSeg').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) setTool(b.dataset.t); });
+  $('kindSeg').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; brush.kind = b.dataset.k;
+    Array.prototype.forEach.call($('kindSeg').children, function (x) { x.classList.toggle('on', x === b); }); save();
+  });
+  $('hsize').oninput = function () { var v = +this.value; if (handTool === 'stamp') brush.sz = v; else if (handTool === 'pen') brush.pw = v; else brush.bw = v; save(); };
+  $('sturn').onchange = function () { brush.turn = this.checked; save(); };
+  $('lineTool').onclick = function () { setTool(tool === 'line' ? (S.mode === 'quick' ? 'paint' : handTool) : 'line'); };
+  $('unlineTool').onclick = function () { setTool(tool === 'unline' ? (S.mode === 'quick' ? 'paint' : handTool) : 'unline'); };
+  $('start').onchange = function () {
+    S.start = this.value; $('crossRow').classList.toggle('hidden', S.start === 'blank'); $('styleRow').classList.toggle('hidden', S.start === 'blank'); save();
+    toast(S.start === 'blank' ? 'Tap "New drawing" for a blank page.' : 'Tap "New drawing" for new random lines.');
+  };
+  // stamp picker
+  var sthumbs = [];
+  function buildStamps() {
+    var g = $('sgrid'); g.innerHTML = ''; sthumbs = [];
+    STAMPS.forEach(function (st, i) {
+      var b = document.createElement('button'), c = mk(92, 92); b.title = st.name; b.setAttribute('aria-label', st.name); b.appendChild(c);
+      b.onclick = function () { brush.st = i; markStamps(); if (tool !== 'stamp') setTool('stamp'); save(); };
+      g.appendChild(b); sthumbs.push(c);
+    });
+    drawStampThumbs(); markStamps();
+  }
+  function drawStampThumbs() {
+    sthumbs.forEach(function (c, i) {
+      var x = c.getContext('2d'); x.clearRect(0, 0, 92, 92); x.save(); x.translate(46, 46);
+      x.fillStyle = x.strokeStyle = col(brush.ink, 'ink'); x.lineWidth = 3.5; x.lineCap = x.lineJoin = 'round';
+      STAMPS[i].draw(x, 30, '#ffffff'); x.restore();
+    });
+  }
+  function markStamps() {
+    Array.prototype.forEach.call($('sgrid').children, function (b, i) { b.classList.toggle('on', i === brush.st); });
+    $('sname').textContent = (STAMPS[brush.st] || STAMPS[0]).name;
+  }
+  $('toolSeg').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; var t = b.dataset.t; setTool(t === 'paint' && S.mode === 'hands' ? handTool : t); });
+
+  // design picker
+  var thumbs = [];
+  function buildChips() {
+    $('chips').innerHTML = '';
+    window.ART_CATS.forEach(function (c) {
+      var b = document.createElement('button'); b.textContent = c[1]; b.className = c[0] === cat ? 'on' : '';
+      b.onclick = function () { cat = c[0]; buildChips(); filterGrid(); }; $('chips').appendChild(b);
+    });
+  }
+  function buildGrid() {
+    var g = $('pgrid'); g.innerHTML = ''; thumbs = [];
+    PATS.forEach(function (p, i) {
+      var b = document.createElement('button'), c = mk(112, 112); b.title = (i + 1) + '. ' + p.name; b.setAttribute('aria-label', p.name);
+      b.appendChild(c); var k = document.createElement('span'); k.className = 'k'; k.textContent = i + 1; b.appendChild(k);
+      b.onclick = function () { brush.p = i + 1; markGrid(); liveUpdate(); };
+      g.appendChild(b); thumbs.push({ b: b, c: c, cat: p.cat });
+    });
+    drawThumbs(); markGrid(); filterGrid();
+  }
+  function drawThumbs() {
+    thumbs.forEach(function (t, i) {
+      var c = t.c.getContext('2d'); c.clearRect(0, 0, 112, 112);
+      drawDesign(c, { p: i + 1, fill: brush.fill, ink: brush.ink, s: 1, rot: 0 }, { x0: 0, y0: 0, w: 112, h: 112, cx: 56, cy: 56, R: 76, u: 15, lw: 2.2 }, 99 + i);
+    });
+  }
+  function filterGrid() { thumbs.forEach(function (t) { t.b.style.display = cat === 'all' || t.cat === cat ? '' : 'none'; }); }
+  function markGrid() {
+    thumbs.forEach(function (t, i) { t.b.classList.toggle('on', brush.p === i + 1); });
+    $('pname').textContent = brush.p ? '#' + brush.p + ' · ' + PATS[brush.p - 1].name : 'Color only (no design)';
+    $('plainPat').classList.toggle('on', !brush.p);
+  }
+  function drawPreview() {
+    var c = $('prevCv').getContext('2d'); c.clearRect(0, 0, 128, 128);
+    drawDesign(c, brush, { x0: 0, y0: 0, w: 128, h: 128, cx: 64, cy: 64, R: 90, u: 18 * 1, lw: 2.4 }, 5);
+  }
+  // swatches
+  function swatches(el, list, key) {
+    el.innerHTML = '';
+    list.forEach(function (c) {
+      var b = document.createElement('button'); b.style.background = c; b.title = c; b.dataset.c = c;
+      b.onclick = function () { brush[key] = c; markSw(); drawThumbs(); drawStampThumbs(); liveUpdate(); }; el.appendChild(b);
+    });
+    var inp = document.createElement('input'); inp.type = 'color'; inp.title = 'Pick any color'; inp.value = brush[key].length === 7 ? brush[key] : '#ff0000';
+    inp.oninput = function () { brush[key] = inp.value; markSw(); drawThumbs(); drawStampThumbs(); liveUpdate(); }; el.appendChild(inp);
+  }
+  function buildSw() {
+    swatches($('fillSw'), S.bw ? GRAYS.slice().reverse() : LIGHT.concat(BOLD.slice(0, 12)), 'fill');
+    swatches($('inkSw'), S.bw ? GRAYS : BOLD.concat(['#FFFFFF']), 'ink');
+    markSw();
+  }
+  function markSw() {
+    [['fillSw', 'fill'], ['inkSw', 'ink']].forEach(function (p) {
+      Array.prototype.forEach.call($(p[0]).querySelectorAll('button'), function (b) { b.classList.toggle('on', b.dataset.c.toLowerCase() === String(brush[p[1]]).toLowerCase()); });
+    });
+  }
+  function setBW(bw) {
+    S.bw = bw;
+    Array.prototype.forEach.call($('modeSeg').children, function (b) { b.classList.toggle('on', (b.dataset.m === 'bw') === bw); });
+    if (bw) { brush.ink = col(brush.ink, 'ink'); brush.fill = col(brush.fill, 'fill'); }
+    buildSw(); drawThumbs(); drawStampThumbs(); drawPreview(); renderAll(); save();
+  }
+  $('modeSeg').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) setBW(b.dataset.m === 'bw'); });
+  function syncUI() {
+    $('size').value = brush.s; $('rot').value = brush.rot; markGrid(); buildSw(); drawThumbs(); drawPreview();
+  }
+
+  // controls
+  function syncCross(v) { v = Math.max(6, Math.min(150, Math.round(+v || 40))); S.cross = v; $('cross').value = v; $('crossN').value = v; save(); }
+  $('cross').oninput = function () { syncCross(this.value); };
+  $('crossN').onchange = function () { syncCross(this.value); };
+  $('style').onchange = function () { S.style = this.value; save(); };
+  $('newBtn').onclick = function () {
+    var n = Object.keys(S.deco).length + S.marks.length + S.lines.length;
+    if (n > 3 && !confirmNew()) return;
+    newDrawing();
+  };
+  var armed = 0;
+  function confirmNew() { if (Date.now() - armed < 4000) return true; armed = Date.now(); toast('This replaces your drawing. Tap "New drawing" again to start over.'); return false; }
+  $('lw').oninput = function () { S.lw = +this.value; };
+  $('lw').onchange = function () { buildRegions(); renderAll(); save(); toast('Line thickness changed. Thicker lines can make tiny spaces disappear.'); };
+  $('outline').onchange = function () { S.outline = this.value; renderAll(); save(); };
+  $('size').oninput = function () { brush.s = +this.value; liveUpdate(); };
+  $('rot').oninput = function () { brush.rot = +this.value; liveUpdate(); };
+  $('randPat').onclick = function () { brush.p = 1 + Math.floor(R() * PATS.length); markGrid(); liveUpdate(); var b = thumbs[brush.p - 1].b; if (b.style.display !== 'none') b.scrollIntoView({ block: 'nearest' }); };
+  $('plainPat').onclick = function () { brush.p = 0; markGrid(); liveUpdate(); };
+  $('matchBtn').onclick = function () { brush.fill = S.bw ? tint(gray(brush.ink), .7) : tint(brush.ink, .72); markSw(); drawThumbs(); liveUpdate(); };
+  $('crayon').onchange = function () { S.crayon = this.checked; drawThumbs(); drawPreview(); renderAll(); save(); };
+  $('undoBtn').onclick = function () { if (!hist.length) return; fut.push(snap()); restore(hist.pop()); lastPush = { id: -1, t: 0 }; undoBtns(); };
+  $('redoBtn').onclick = function () { if (!fut.length) return; hist.push(snap()); restore(fut.pop()); undoBtns(); };
+  $('emptyBtn').onclick = function () { fillRandom(true); };
+  $('surpriseBtn').onclick = function () { fillRandom(false); };
+  $('clearBtn').onclick = function () { if (!Object.keys(S.deco).length && !S.marks.length) return; push(null); S.deco = {}; S.marks = []; regions.forEach(renderRegion); compose(); save(); toast('Cleared. Undo brings it back.'); };
+
+  // saving / printing
+  function finalImage(blank) {
+    var c = mk(W, H), x = c.getContext('2d');
+    if (blank) {
+      x.fillStyle = '#fff'; x.fillRect(0, 0, W, H);
+      strokeShapes(x, S.lw + 2.2, function () { return '#1c1c1c'; });
+      var t = mk(W, H), tc = t.getContext('2d'); tc.drawImage(tinyCv, 0, 0); tc.globalCompositeOperation = 'source-in'; tc.fillStyle = '#1c1c1c'; tc.fillRect(0, 0, W, H);
+      x.drawImage(t, 0, 0);
+    } else x.drawImage(cv, 0, 0);
+    return c;
+  }
+  function download(c, name) {
+    c.toBlob(function (b) {
+      var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+    }, 'image/png');
+  }
+  $('dlBtn').onclick = function () { download(finalImage(false), 'my-bedrock-art.png'); toast('Saved to your downloads.'); };
+  $('colorPageBtn').onclick = function () { download(finalImage(true), 'coloring-page.png'); toast('Blank coloring page saved. Print it and color by hand!'); };
+  $('printBtn').onclick = function () {
+    var url = finalImage(false).toDataURL('image/png'), w = window.open('', '_blank');
+    if (!w) { toast('Your browser blocked the print window. Use Download, then print the picture.'); return; }
+    w.document.write('<!doctype html><title>My Bedrock Art Studio drawing</title><style>@page{margin:.4in}body{margin:0;display:grid;place-items:center}img{max-width:100%;max-height:100vh}</style><img src="' + url + '" onload="setTimeout(function(){print()},200)">');
+    w.document.close();
+  };
+
+  // ---------- start ----------
+  var saved = load();
+  if (saved) {
+    S.shapes = saved.shapes; S.colors = saved.colors || []; S.crossings = saved.crossings || 0; S.lw = saved.lw || 5; S.outline = saved.outline || '#1c1c1c';
+    S.deco = saved.deco || {}; S.bw = !!saved.bw; S.crayon = saved.crayon !== false; S.cross = saved.cross || 40; S.style = saved.styleV === 2 ? (saved.style || 'one') : 'one';
+    S.lines = saved.lines || []; S.marks = saved.marks || []; S.gv = saved.gv || 0; S.start = saved.start || 'random'; S.mode = saved.mode || 'quick';
+    if (saved.brush) brush = Object.assign({}, BRUSH0, saved.brush);
+  }
+  $('lw').value = S.lw; $('outline').value = S.outline; $('style').value = S.style; $('crayon').checked = S.crayon; syncCross(S.cross);
+  Array.prototype.forEach.call($('modeSeg').children, function (b) { b.classList.toggle('on', (b.dataset.m === 'bw') === S.bw); });
+  $('start').value = S.start; $('crossRow').classList.toggle('hidden', S.start === 'blank'); $('styleRow').classList.toggle('hidden', S.start === 'blank');
+  $('sturn').checked = brush.turn; Array.prototype.forEach.call($('kindSeg').children, function (x) { x.classList.toggle('on', x.dataset.k === brush.kind); });
+  buildChips(); buildSw(); buildGrid(); buildStamps(); $('size').value = brush.s; $('rot').value = brush.rot; drawPreview(); undoBtns();
+  if (saved) { buildRegions(); renderAll(); } else newDrawing();
+  setMode(S.mode);
+  // ---------- Earth science idea cards (Bedrock) ----------
+  var IDEAS = [
+    ['Make a cross-section of the ground under Idaho. Fill the spaces near the bottom with the oldest-looking layers: the law of superposition says the bottom layers formed first.', ['Rock strata', 'Sandstone grains', 'Conglomerate']],
+    ['Draw rocks that got squeezed. Folded layers form when plates push rock sideways for millions of years.', ['Folded layers', 'Faulted layers']],
+    ['Make a topographic map. Close contour lines mean a steep slope; far-apart lines mean gentle ground. Every fifth line is a darker index contour.', ['Contour lines', 'Contour hills']],
+    ['Show a volcano from the inside: magma chamber, the conduit, and a cone built from layers of ash and lava.', ['Volcano cross-section', 'Lava ropes']],
+    ['Grow a crystal garden. Quartz grows six-sided points; halite (rock salt) and pyrite grow cubes.', ['Quartz crystals', 'Cubic crystals']],
+    ['Draw the basalt cliffs of the Snake River Canyon. Cooling lava cracks into tall columns, often six-sided.', ['Columnar basalt', 'Basalt hexagons']],
+    ['Design a riverbed. Ripple marks, mud cracks and cross-bedding all get frozen into sedimentary rock.', ['Ripple marks', 'Mud cracks', 'Cross-bedding']],
+    ['Make a fossil bed. Ammonites were ocean animals with coiled shells; their fossils help date rock layers.', ['Ammonite fossils', 'Conglomerate']],
+    ['Picture an earthquake. A seismograph line stays calm, then jumps when the waves arrive.', ['Seismograph', 'Faulted layers']],
+    ['Fill the sky: cumulus clouds, a ringed planet, and constellations people have used to find their way.', ['Cumulus clouds', 'Ringed planet', 'Constellations']]
+  ];
+  var ideaI = Math.floor(Math.random() * IDEAS.length);
+  function showIdea() { var d = IDEAS[ideaI]; $('ideaTxt').innerHTML = ''; $('ideaTxt').appendChild(document.createTextNode(d[0])); var s = document.createElement('small'); s.textContent = 'Try: ' + d[1].join(', '); $('ideaTxt').appendChild(s); }
+  $('ideaNext').onclick = function () { ideaI = (ideaI + 1) % IDEAS.length; showIdea(); };
+  $('ideaUse').onclick = function () {
+    var names = IDEAS[ideaI][1], i = -1;
+    for (var k = 0; k < PATS.length; k++) if (PATS[k].name === names[0]) { i = k; break; }
+    if (S.mode !== 'quick') setMode('quick');
+    cat = 'earth'; buildChips(); filterGrid();
+    if (i > -1) { brush.p = i + 1; markGrid(); liveUpdate(); thumbs[i].b.scrollIntoView({ block: 'nearest' }); }
+    toast('Earth science designs are up. Tap a space to fill it with ' + names[0] + '.');
+  };
+  showIdea();
+  $('themeBtn').onclick = function () {
+    var light = !document.documentElement.classList.contains('light');
+    document.documentElement.classList.toggle('light', light);
+    try { localStorage.setItem('bedrock_theme', light ? 'light' : 'dark'); } catch (e) {}
+  };
+
+  window.ArtStudio = { band: band, S: S, setMode: setMode, setTool: setTool, regions: function () { return regions; }, generate: generate, newDrawing: newDrawing, applyTo: applyTo, brush: function () { return brush; } };
+})();
+</script>
+</body>
+</html>

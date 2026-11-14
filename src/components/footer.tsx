@@ -1,8 +1,11 @@
-import Link from "next/link";
 import { chapters, realms } from "@/data/site";
+import { SiteLink, x7aLinks } from "@/components/x7a-link"; // ── wave-x7a ──
 
 // ── wave-learnA ── learning tools column
 const learn = { title: "Learn", links: [["Vocab Games", "/vocab/"], ["Review Deck", "/review/"], ["Mastery Checks", "/mastery/"], ["Search", "/search/"]] };
+// ── wave-x7a ── listening, reading and making tools join the Learn column
+learn.links.push(...x7aLinks.map((l) => [l.label, l.href]));
+// ── end wave-x7a ──
 // ── end wave-learnA ──
 const cols = [
   { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Sprite Arcade", "/arcade/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
@@ -29,7 +32,7 @@ export function Footer() {
             <div className="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-gold/80">{c.title}</div>
             <ul className="space-y-2.5">
               {c.links.map(([label, href]) => (
-                <li key={label}><Link href={href} className="text-sm text-muted transition hover:text-fg">{label}</Link></li>
+                <li key={label}><SiteLink href={href} className="text-sm text-muted transition hover:text-fg">{label}</SiteLink></li>
               ))}
             </ul>
           </div>

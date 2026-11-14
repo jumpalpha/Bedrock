@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("bedrock_theme")==="light")document.documentElement.classList.add("light")}catch(e){}</script>
+<title>Book Studio · Bedrock</title>
+<meta name="description" content="Write, read aloud, comment on and revise your own book. Proposals, word-by-word review, version history and dated snapshots, all saved on your device.">
+<link rel="icon" type="image/png" href="/art/realm-1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Geist:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="studio.css?v=x7a1">
+</head>
+<body>
+<!--
+  Bedrock Book Studio (ported from the Dopps Class Book Studio).
+  The Dopps version keeps one private manuscript on a locked-down Supabase backend.
+  This version runs entirely in the browser: the book lives in this device's localStorage
+  (key bedrock_bookstudio_v1) and never leaves it unless you export it.
+-->
+
+<!-- ============ Start screen (shown when there is no book yet) ============ -->
+<main id="gate" class="gate" aria-live="polite" hidden>
+  <div class="gate-card">
+    <div class="mark" aria-hidden="true"><span></span></div>
+    <h1>Book Studio</h1>
+    <p class="sub">Write your own book: a field guide, a lab journal, a story set in deep time.</p>
+    <div class="notice">Everything you write stays on <b>this device</b> (it isn't uploaded anywhere). Use <b>Export</b> or a dated <b>snapshot</b> to keep a copy.</div>
+    <div class="choices">
+      <button type="button" class="primary" data-action="start-sample"><b>Open the sample book</b><small>“A Field Guide to Idaho Rocks”: 3 short chapters to try every tool on</small></button>
+      <button type="button" data-action="start-blank"><b>Start a new book</b><small>Name it, then write chapter by chapter</small></button>
+      <button type="button" data-action="import-docx"><b>Import a file…</b><small>Word (.docx), Markdown (.md) or text (.txt)</small></button>
+    </div>
+    <p id="gateMsg" class="msg" role="status"></p>
+    <a class="home" href="/">← Back to Bedrock</a>
+  </div>
+</main>
+
+<!-- ============ Studio ============ -->
+<div id="app" class="app" hidden>
+  <header class="topbar">
+    <button class="icon" data-action="toggle-nav" aria-label="Chapters">☰</button>
+    <a class="home" href="/" aria-label="Back to Bedrock">← Bedrock</a>
+    <div class="brand"><span class="mark sm" aria-hidden="true"><span></span></span><span id="bookTitle">Book Studio</span></div>
+    <div class="spacer"></div>
+    <button data-action="research" aria-label="Research notes">📚 Research</button>
+    <button class="icon" data-action="theme" aria-label="Toggle dark or light mode">◐</button>
+    <details class="menu">
+      <summary class="icon" aria-label="More">⋯</summary>
+      <div class="menu-body">
+        <button data-action="rename-book">Rename book…</button>
+        <button data-action="new-chapter">New chapter…</button>
+        <button data-action="delete-chapter">Delete this chapter…</button>
+        <hr>
+        <button data-action="export-md">Export current text (.md)</button>
+        <button data-action="export-txt">Export current text (.txt)</button>
+        <button data-action="print">Print / save as PDF</button>
+        <button data-action="snapshot">Save a dated snapshot…</button>
+        <button data-action="show-masters">Dated snapshots…</button>
+        <button data-action="import-docx">Import Word / Markdown / text file…</button>
+        <button data-action="show-audit">Edit log…</button>
+        <hr>
+        <button data-action="close-book">Close book (erase from this device)…</button>
+      </div>
+    </details>
+  </header>
+
+  <nav id="nav" class="nav" aria-label="Chapters">
+    <div class="nav-head">Chapters</div>
+    <ol id="chapterList"></ol>
+    <div class="nav-actions"><button data-action="new-chapter">+ New chapter</button></div>
+    <div class="nav-head">Bookmarks</div>
+    <ul id="bookmarkList" class="small"></ul>
+  </nav>
+
+  <main class="reader-wrap">
+    <div class="toolbar">
+      <div class="tts" role="group" aria-label="Listen">
+        <button data-action="tts-prev" aria-label="Previous paragraph">⏮</button>
+        <button data-action="tts-play" id="ttsPlay" aria-label="Play">▶</button>
+        <button data-action="tts-stop" aria-label="Stop">■</button>
+        <button data-action="tts-next" aria-label="Next paragraph">⏭</button>
+        <select id="ttsVoice" aria-label="Voice"></select>
+        <label class="rate">Speed <input id="ttsRate" type="range" min="0.6" max="1.8" step="0.1" value="1"></label>
+      </div>
+      <div class="actions">
+        <button data-action="bookmark">🔖 Bookmark</button>
+        <button data-action="propose">✎ Propose edit</button>
+        <button data-action="history">History</button>
+        <button data-action="proposals" id="proposalsBtn">Proposals</button>
+      </div>
+    </div>
+    <article id="reader" class="reader" tabindex="0"></article>
+    <div class="chapter-pager">
+      <button data-action="prev-chapter">← Previous</button>
+      <span id="progressLabel" class="small muted"></span>
+      <button data-action="next-chapter">Next →</button>
+    </div>
+  </main>
+
+  <aside id="side" class="side" aria-label="Comments">
+    <div class="side-head">Comments <span class="small muted">— select text to comment</span></div>
+    <ul id="commentList"></ul>
+  </aside>
+
+  <button id="commentFab" class="fab" hidden>💬 Comment</button>
+</div>
+
+<!-- ============ Shared dialog ============ -->
+<dialog id="dlg">
+  <form method="dialog" class="dlg-inner">
+    <header><h2 id="dlgTitle"></h2><button value="close" class="icon" aria-label="Close">✕</button></header>
+    <div id="dlgBody" class="dlg-body"></div>
+    <footer id="dlgFoot"></footer>
+  </form>
+</dialog>
+
+<input id="fileInput" type="file" accept=".docx,.md,.markdown,.txt,text/plain,text/markdown,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+
+<script src="diff.js?v=x7a1"></script>
+<script src="studio.js?v=x7a1"></script>
+</body>
+</html>

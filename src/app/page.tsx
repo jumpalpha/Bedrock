@@ -13,6 +13,8 @@ import { ChampionsStrip } from "@/components/champions-strip"; // ── wave-pe
 import { Trophy } from "lucide-react"; // ── wave-pet ──
 import { Activity, Clapperboard, House } from "lucide-react"; // ── wave-twinA ──
 import { Footprints, Mountain, Lightbulb, Zap } from "lucide-react"; // ── wave-twinB ──
+import { BookMarked, Headphones, Palette, ScrollText } from "lucide-react"; // ── wave-x7a ──
+import { SiteLink } from "@/components/x7a-link"; // ── wave-x7a ──
 
 const heroChips = [
   { n: String(chapters.length), label: "Chapters", color: "#84cc16", icon: BookOpen },
@@ -56,6 +58,12 @@ const quickLinks = [
   { label: "The Idaho Trail", desc: "Wagon trek across Idaho geology", href: "/arcade/play/idaho-trail/", icon: Mountain, color: "#d9a75a" },
   { label: "What If?", desc: "Earth science thought experiments", href: "/what-if/", icon: Lightbulb, color: "#38bdf8" },
   // ── end wave-twinB ──
+  // ── wave-x7a ──
+  { label: "Listen", desc: "Every chapter, read aloud", href: "/listen/", icon: Headphones, color: "#a78bfa" },
+  { label: "Text Reader", desc: "Paste text, a file or a link", href: "/textreader/", icon: ScrollText, color: "#f6c453" },
+  { label: "Art Studio", desc: "Strata, crystals, contour art", href: "/art-studio/", icon: Palette, color: "#f28c28" },
+  { label: "Book Studio", desc: "Write your own book", href: "/book-studio/", icon: BookMarked, color: "#34d399" },
+  // ── end wave-x7a ──
 ];
 
 export default function Home() {
@@ -142,7 +150,7 @@ export default function Home() {
         <SectionHeading eyebrow="Your toolkit" title="Everything in one tap" />
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
           {quickLinks.map((q) => (
-            <Link key={q.label} href={q.href} style={{ "--accent": q.color } as CSSProperties} className="accent-card group flex min-w-0 flex-col items-start gap-2 rounded-2xl p-4 sm:flex-row sm:items-center sm:gap-4">
+            <SiteLink key={q.label} href={q.href} style={{ "--accent": q.color } as CSSProperties} className="accent-card group flex min-w-0 flex-col items-start gap-2 rounded-2xl p-4 sm:flex-row sm:items-center sm:gap-4">
               <span className="grid size-12 shrink-0 place-items-center rounded-2xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 sm:size-14" style={{ background: `color-mix(in srgb, ${q.color} 16%, transparent)`, color: q.color }}>
                 <q.icon className="size-6 sm:size-7" />
               </span>
@@ -150,7 +158,7 @@ export default function Home() {
                 <span className="block font-bold leading-tight">{q.label}</span>
                 <span className="mt-0.5 block truncate text-xs text-muted">{q.desc}</span>
               </span>
-            </Link>
+            </SiteLink>
           ))}
         </div>
       </section>
