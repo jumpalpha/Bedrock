@@ -219,3 +219,17 @@ html:not(.light) .prose-block strong { color: #fff; }
   .hero-rotator > span:first-child { opacity: 1; }
   .hero-swash path { stroke-dashoffset: 0; }
 }
+
+/* ── wave-pet: rock alien motion ── */
+@keyframes alien-bob { 0%, 100% { transform: translateY(0) scale(1, 1); } 45% { transform: translateY(-5%) scale(0.98, 1.02); } 55% { transform: translateY(-5%) scale(0.98, 1.02); } 90% { transform: translateY(0) scale(1.03, 0.97); } }
+@keyframes alien-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+@keyframes alien-wobble { 0%, 70%, 100% { transform: rotate(0); } 75% { transform: rotate(-6deg); } 80% { transform: rotate(6deg); } 85% { transform: rotate(-4deg); } 90% { transform: rotate(3deg); } }
+@keyframes alien-evolve { 0% { transform: scale(1); filter: brightness(1); } 35% { transform: scale(0.6) rotate(-8deg); filter: brightness(3) saturate(0); } 60% { transform: scale(1.18) rotate(4deg); filter: brightness(2); } 100% { transform: scale(1); filter: brightness(1); } }
+@keyframes alien-burst { from { transform: scale(0.2); opacity: 1; } to { transform: scale(2.4); opacity: 0; } }
+.alien-bob { animation: alien-bob 2.6s ease-in-out infinite; transform-origin: 50% 95%; }
+.alien-sway { animation: alien-sway 3.4s ease-in-out infinite; transform-origin: 50% 95%; }
+.alien-wobble { animation: alien-wobble 3s ease-in-out infinite; transform-origin: 50% 95%; }
+.alien-evolve { animation: alien-evolve 1.6s cubic-bezier(.3,1.4,.5,1) both; }
+.alien-burst { animation: alien-burst 1.2s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .alien-bob, .alien-sway, .alien-wobble, .alien-evolve, .alien-burst { animation: none; } }
+/* ── end wave-pet ── */

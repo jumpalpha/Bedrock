@@ -17,6 +17,7 @@ import { AskTeacher, LiveTeacher } from "./live-teacher";
 type LiveTab = "ask" | "live";
 const LIVE_TABS: [LiveTab, string][] = [["ask", "Ask Mr. Dopp"], ["live", "Live games"]];
 // ── end wave-live ──
+import { AliensTeacher } from "./pet-teacher"; // ── wave-pet ──
 
 type Q = { id: string; q: string; choices: string[] };
 const SKEY = "bedrock_teacher";
@@ -25,7 +26,7 @@ export default function Teacher() {
   const [hash, setHash] = useState<string | null>(null);
   const [pass, setPass] = useState("");
   const [err, setErr] = useState<string | null>(null);
-  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab>("roster");
+  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab | "aliens">("roster");
 
   useEffect(() => { try { const h = sessionStorage.getItem(SKEY); if (h) setHash(h); } catch {} }, []);
 
@@ -66,12 +67,14 @@ export default function Teacher() {
           {/* ── wave-live ── */}
           {LIVE_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
           {/* ── end wave-live ── */}
+          {/* ── wave-pet ── */}<button onClick={() => setTab("aliens")} className={`btn-block !text-sm ${tab === "aliens" ? "btn-grass" : ""}`}>Aliens</button>
           <button onClick={() => { try { sessionStorage.removeItem(SKEY); } catch {} setHash(null); }} className="btn-block !text-sm">Lock</button>
         </div>
       </PageHead>
       <div className="mx-auto max-w-7xl px-6 pt-10">
         {/* ── wave-learnB ── */}
         {/* ── wave-live ── */ tab === "ask" ? <AskTeacher hash={hash} /> : tab === "live" ? <LiveTeacher hash={hash} /> : /* ── end wave-live ── */
+        /* ── wave-pet ── */ tab === "aliens" ? <AliensTeacher hash={hash} /> :
         tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
         /* ── end wave-learnB ── */
         tab === "keys" ? <Keys hash={hash} /> : <Roster hash={hash} questsOnly={tab === "quests"} />}

@@ -9,6 +9,8 @@ import { PlayerCard } from "@/components/player-card";
 import { WorldMap } from "@/components/world-map";
 import { ArtIcon } from "@/components/art-icon";
 import { ArcadeArt } from "@/components/arcade-art";
+import { ChampionsStrip } from "@/components/champions-strip"; // ── wave-pet ──
+import { Trophy } from "lucide-react"; // ── wave-pet ──
 
 const heroChips = [
   { n: String(chapters.length), label: "Chapters", color: "#84cc16", icon: BookOpen },
@@ -37,6 +39,10 @@ const quickLinks = [
   { label: "Mastery Checks", desc: "Warm up before the quiz", href: "/mastery/", icon: GraduationCap, color: "#34d399" },
   { label: "Search", desc: "Chapters, words, games", href: "/search/", icon: Search, color: "#a78bfa" },
   // ── end wave-learnA ──
+  // ── wave-pet ──
+  { label: "My Rock Alien", desc: "Name it, teach it, evolve it", href: "/pet/", icon: Gem, color: "#a78bfa" },
+  { label: "Hall of Champions", desc: "Top miners and aliens", href: "/champions/", icon: Trophy, color: "#f6c453" },
+  // ── end wave-pet ──
 ];
 
 export default function Home() {
@@ -134,6 +140,14 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* ── wave-pet: champions (Dopps Class home_champions.js) ── */}
+      <section className="mx-auto max-w-7xl px-6 pt-24">
+        <SectionHeading eyebrow="This week" title={<>Champions of <span className="text-gradient">Bedrock</span></>}>
+          <Btn href="/champions/" variant="ghost">Hall of Champions <ArrowRight className="size-4" /></Btn>
+        </SectionHeading>
+        <ChampionsStrip checkIn />
       </section>
 
       {/* WORLD MAP */}
