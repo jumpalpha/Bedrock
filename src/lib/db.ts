@@ -3,10 +3,11 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 
-// Bedrock's own Supabase project (separate from Dopps Class). The anon key is public by design:
+// The publishable key is public by design:
 // every table is locked, and the site can only call the functions in supabase/schema.sql.
-export const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-const SUPABASE_ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+// Bedrock's b_ tables live in the dopp-health-class project (Supabase free plan = 2 projects), with their own logins.
+export const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gmeyamrlqfrabtslsweu.supabase.co";
+const SUPABASE_ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_zClDCZZQEfC9DILpesPiHg_IcyRqW-c";
 export const dbReady = Boolean(SUPABASE_URL && SUPABASE_ANON);
 
 let client: SupabaseClient | null = null;

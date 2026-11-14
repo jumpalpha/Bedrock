@@ -13,7 +13,7 @@ badges and light/dark modes.
 Each chapter has 3 tasks (read, quiz at 80%+, Think Like a Scientist) and each realm a unit test (70%+).
 
 ## Answer keys stay private
-This repo is public, so it holds **no answer keys**. Keys live only in the Supabase table `b_keys`, which
+This repo is public, so it holds **no answer keys**. Keys live only in the Supabase table `b_keys` (Bedrock's `b_` tables share the dopp-health-class project because the free plan allows 2 projects; logins and data stay separate), which
 the website can't read. Quizzes are graded by the database function `b_grade`, which returns right/wrong
 per question and never the correct answer. Answer choices are stored in a scrambled order and shuffled
 again in the browser on every attempt. Only the Teacher page (passcode) can show keys.

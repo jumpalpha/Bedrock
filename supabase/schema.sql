@@ -1,4 +1,5 @@
--- Bedrock database (its own Supabase project, separate from Dopps Class).
+-- Bedrock database: its own b_ tables and logins, living in the dopp-health-class Supabase project
+-- (the free plan allows only 2 projects). Nothing here touches Dopps Class tables or functions.
 -- Paste into Supabase → SQL Editor → Run. Safe to re-run.
 --
 -- Privacy model:
@@ -9,7 +10,6 @@
 --     Only b_teacher_keys (teacher passcode) returns keys.
 --   * Student PINs arrive as a SHA-256 hash made in the browser (same scheme as Dopps Class).
 
-create extension if not exists pgcrypto;
 
 create table if not exists public.b_students (
   id uuid primary key default gen_random_uuid(),
@@ -99,7 +99,7 @@ create or replace function public._b_teacher(p_pass_hash text) returns boolean
 language sql stable security definer set search_path = public as $$
   select exists (select 1 from public.b_settings where k = 'teacher_pass_hash' and v = p_pass_hash) $$;
 
-create or replace function public._b_today() returns date language sql stable as $$
+create or replace function public._b_today() returns date language sql stable set search_path = public as $$
   select (now() at time zone 'America/Denver')::date $$;
 
 -- ── Students ──
