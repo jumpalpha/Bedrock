@@ -8,6 +8,7 @@ import { dbReady } from "@/lib/db";
 import { Eyebrow, PageHead } from "@/components/ui";
 import { PlayerCard } from "@/components/player-card";
 import { TaskList } from "@/components/task-list";
+import { AlienCard } from "@/components/alien-card"; // ── wave-pet ──
 
 export default function Quest() {
   const { stats, state } = useProgress();
@@ -17,6 +18,7 @@ export default function Quest() {
       <PageHead eyebrow="My Quest" title="Mine your way to Diamond"
         sub={`${XP_PER_TASK} XP per task, ${XP_PER_DAY} XP for every day you log in, ${XP_PER_SIDE_QUEST} XP per approved side quest. Clear a realm to rank up.`}>
         <div className="mt-8"><PlayerCard /></div>
+        {/* ── wave-pet ── */}<div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]"><AlienCard cleared={stats.cleared.length} /><Link href="/champions/" className="accent-card flex items-center justify-center gap-2 rounded-2xl p-4 font-extrabold" style={{ "--accent": "#f6c453" } as React.CSSProperties}>🏆 Hall of Champions</Link></div>
       </PageHead>
       <div className="mx-auto max-w-7xl space-y-14 px-6 pt-12">
         {!dbReady && <p className="block-panel p-4 font-bold">Preview: saving progress turns on once the class database is connected.</p>}

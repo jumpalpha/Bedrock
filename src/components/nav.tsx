@@ -27,6 +27,12 @@ export const learnLinks = [
   { label: "Search", href: "/search/" },
 ];
 // ── end wave-learnA ──
+// ── wave-pet ── class pet + Hall of Champions: in the phone/tablet menu; (the desktop bar is full; desktop reaches them from Home and My Quest)
+export const petLinks = [
+  { label: "My Alien", href: "/pet/" },
+  { label: "Alien Gallery", href: "/pets/" },
+  { label: "Hall of Champions", href: "/champions/" },
+];
 
 export function Nav() {
   const pathname = usePathname();
@@ -74,7 +80,7 @@ export function Nav() {
       </nav>
       {open && (
         <div className="glass mx-auto mt-2 max-w-7xl animate-rise rounded-2xl bg-ink/90 p-2 xl:hidden">
-          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, { label: "My Quest", href: "/quest/" }].map((l) => (
+          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, ...petLinks /* wave-pet */, { label: "My Quest", href: "/quest/" }].map((l) => (
             <Link key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</Link>
           ))}
         </div>

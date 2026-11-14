@@ -1,11 +1,12 @@
 "use client";
 
+// ── wave-pet: hues re-tuned for the rock-alien hero (gray body, purple amethyst belly = hue 0 is violet) ──
 export const HERO_COLORS = [
-  { id: "emerald", label: "Emerald", hue: 0, swatch: "#3ddc84" },
-  { id: "sky", label: "Sky", hue: 85, swatch: "#38bfff" },
-  { id: "violet", label: "Violet", hue: 150, swatch: "#a855f7" },
-  { id: "rose", label: "Rose", hue: 210, swatch: "#ff5c8a" },
-  { id: "gold", label: "Gold", hue: -65, swatch: "#ffc93c" },
+  { id: "emerald", label: "Emerald", hue: -120, swatch: "#3ddc84" },
+  { id: "sky", label: "Sky", hue: -65, swatch: "#38bfff" },
+  { id: "violet", label: "Violet", hue: 0, swatch: "#a855f7" },
+  { id: "rose", label: "Rose", hue: 70, swatch: "#ff5c8a" },
+  { id: "gold", label: "Gold", hue: 140, swatch: "#ffc93c" },
 ] as const;
 
 export type HeroColor = (typeof HERO_COLORS)[number]["id"];

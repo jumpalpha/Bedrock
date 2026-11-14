@@ -164,3 +164,45 @@ export function shuffle<T>(a: T[]): T[] {
   }
   return r;
 }
+
+// ── wave-pet: rock-alien class pet, Crystal Shop, gallery, Hall of Champions (supabase/migrations/005_pet.sql) ──
+export type PetStage = "geode" | "pebble" | "sandstone" | "quartzite" | "magma" | "granite" | "titan";
+export type PetMood = "happy" | "hungry" | "cold" | "dusty" | "sad" | "sick" | "rusty" | "dormant";
+/** Public view of an alien (gallery). name = the teacher-approved name, null while pending. */
+export type PetPublic = {
+  name: string | null; color: string; stage: PetStage; cleared: number; form: string | null; mood_label: PetMood; alive: boolean;
+  health: number; streak: number; age_days: number; gear: Record<string, string>; upgrades: number; words: number;
+  owner?: string; period?: string;
+};
+/** The owner's view. */
+export type Pet = PetPublic & {
+  name: string; approved_name: string | null; name_ok: boolean; minerals: number; heat: number; mood: number; shine: number;
+  best_streak: number; care_points: number; deaths: number; revive_progress: number; revive_needed: number;
+  today: Record<string, number>; caps: Record<string, number>; crystals: number; crystals_total: number; owned: string[];
+  learned: string[]; next_rename: string | null; result?: string; right?: boolean; answer?: string; action?: string | null;
+};
+export type PetItem = { key: string; slot: string; name: string; cost: number; unlock: number };
+export type PetQuestion = { ref: number; def: string; opts: string[] };
+export type PetFallen = { name: string | null; color: string; owner: string; died_at: string; revived: boolean };
+export type Champion = { id: string; name: string; period: string; xp: number; verified_xp: number; tasks: number; days: number; cleared: number; units: number; streak: number };
+export type PetTeacherRow = {
+  student: string; student_name: string; period: string; name: string; approved_name: string | null; name_ok: boolean; color: string;
+  alive: boolean; stage: PetStage; health: number; care_points: number; deaths: number; upgrades: number; born: string; last_care: string;
+};
+export const petGet = () => rpc<Pet | null>("b_pet_get", me());
+export const petCreate = (name: string, color: string) => rpc<Pet>("b_pet_create", { ...me(), p_name: name, p_color: color });
+export const petAction = (action: string) => rpc<Pet>("b_pet_action", { ...me(), p_action: action });
+export const petQuizStart = (ref: number | null) => rpc<PetQuestion>("b_pet_quiz_start", { ...me(), p_ref: ref });
+export const petQuizAnswer = (choice: string) => rpc<Pet>("b_pet_quiz_answer", { ...me(), p_choice: choice });
+export const petRename = (name: string) => rpc<Pet>("b_pet_rename", { ...me(), p_name: name });
+export const petShopItems = () => rpc<PetItem[]>("b_pet_shop_items", {});
+export const petShopBuy = (item: string) => rpc<Pet>("b_pet_shop_buy", { ...me(), p_item: item });
+export const petEquip = (slot: string, item: string | null) => rpc<Pet>("b_pet_equip", { ...me(), p_slot: slot, p_item: item });
+export const petGallery = () => rpc<PetPublic[]>("b_pet_gallery", {});
+export const petFallen = (days = 14) => rpc<PetFallen[]>("b_pet_fallen", { p_days: days });
+export const champions = () => rpc<Champion[]>("b_champions", {});
+export const petTeacherList = (h: string) => rpc<PetTeacherRow[]>("b_pet_teacher_list", { p_pass_hash: h });
+export const petTeacherName = (h: string, student: string, action: "approve" | "deny" | "rename", name?: string) =>
+  rpc<{ ok: boolean; name: string }>("b_pet_teacher_name", { p_pass_hash: h, p_student: student, p_action: action, p_name: name ?? null });
+export const petTeacherDelete = (h: string, student: string) => rpc<{ ok: boolean }>("b_pet_teacher_delete", { p_pass_hash: h, p_student: student });
+// ── end wave-pet ──
