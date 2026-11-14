@@ -182,7 +182,7 @@ export function ArcadeGame({ game }: { game: GameModule }) {
         if (img) {
           ctx.drawImage(img, -sz / 2, -sz / 2, sz, sz);
         } else {
-          ctx.fillStyle = HERO_COLORS.find((c) => c.id === heroColor)!.swatch;
+          ctx.fillStyle = "#b8b0a6"; // ── wave-pet2 ── stone-gray blob while the alien sprite loads
           ctx.beginPath();
           ctx.arc(0, 0, sz * 0.36, 0, 7);
           ctx.fill();

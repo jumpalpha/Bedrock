@@ -44,8 +44,9 @@ export function spriteOrFallback(name: string): HTMLImageElement | HTMLCanvasEle
 
 // Hero recolor: bake a hue-rotated copy once per color so drawing stays cheap.
 export function tintedSprite(name: string, color: HeroColor, size = 256): HTMLImageElement | HTMLCanvasElement | null {
-  const img = loadSprite(name);
-  if (!ready(img)) return null;
+  // ── wave-pet2: a missing hero PNG falls back to the drawn rock alien ──
+  const img = spriteOrFallback(name);
+  if (!img) return null;
   const hue = HERO_COLORS.find((c) => c.id === color)?.hue ?? 0;
   if (!hue) return img;
   const key = `${name}|${color}`;

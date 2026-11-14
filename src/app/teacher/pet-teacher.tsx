@@ -1,14 +1,15 @@
 "use client";
 // ── wave-pet: Teacher → Aliens (Dopps Class sprite_admin + name approvals) ──
 import { useEffect, useState } from "react";
-import { petTeacherDelete, petTeacherList, petTeacherName, type PetTeacherRow } from "@/lib/db";
+import { petTeacherDelete, petTeacherList, petTeacherName, petTeacherNamesOk, type PetTeacherRow } from "@/lib/db";
 import { stageInfo } from "@/data/pet";
 import { Alien } from "@/components/alien";
 
 export function AliensTeacher({ hash }: { hash: string }) {
   const [rows, setRows] = useState<PetTeacherRow[] | null>(null);
   const [err, setErr] = useState<string | null>(null);
-  const load = () => petTeacherList(hash).then(setRows).catch((e) => setErr(e.message));
+  const [need, setNeed] = useState<boolean | null>(null);
+  const load = () => Promise.all([petTeacherList(hash).then(setRows), petTeacherNamesOk(hash, null).then(setNeed)]).catch((e) => setErr(e.message));
   useEffect(() => { load(); }, [hash]); // eslint-disable-line react-hooks/exhaustive-deps
   const act = async (fn: () => Promise<unknown>) => { try { await fn(); await load(); } catch (e) { alert((e as Error).message); } };
   if (err) return <p className="font-bold text-crimson">{err}</p>;
@@ -16,9 +17,18 @@ export function AliensTeacher({ hash }: { hash: string }) {
   const pending = rows.filter((r) => !r.name_ok);
   return (
     <div className="space-y-6">
+      <section className="block-panel flex flex-wrap items-center gap-3 p-4">
+        <div className="min-w-0 flex-1">
+          <div className="font-extrabold">Name approval is {need ? "ON" : "OFF"}</div>
+          <div className="text-sm text-muted">{need ? "New names and renames wait for you before classmates see them." : "Alien names show to the class right away. You can still rename or delete any alien below."}</div>
+        </div>
+        <button disabled={need === null} onClick={() => act(() => petTeacherNamesOk(hash, !need))} className={`btn-block !text-sm ${need ? "" : "btn-grass"}`}>
+          {need ? "Turn approval off" : "Turn approval on"}
+        </button>
+      </section>
       <section>
         <h2 className="pixel-title mb-2 text-2xl">Names waiting for you ({pending.length})</h2>
-        <p className="mb-3 text-sm text-muted">Classmates see an alien&apos;s name only after you approve it. Deny puts back the last approved name (or “Geode”).</p>
+        <p className="mb-3 text-sm text-muted">Only used while name approval is on. Deny puts back the last approved name (or “Geode”).</p>
         {pending.length === 0 ? <p className="font-bold text-muted">Nothing waiting.</p> : (
           <div className="space-y-2">
             {pending.map((r) => (

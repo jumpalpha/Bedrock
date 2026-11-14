@@ -4,7 +4,8 @@
 -- Bedrock's version of the Dopps Class Wellness Sprite (wellness_pet.sql + sprite_shop.sql + pet_quiz_cap.sql +
 -- sprite_admin.sql + the sprite part of name_changes.sql). Same rules, Earth science theme:
 --   * Each student adopts ONE rock alien (it crash-landed at Craters of the Moon) and names it.
---     Names are public only after the teacher approves them (b_settings pet_names_need_ok = 'true').
+--     Names show right away. The teacher can turn on name approval (b_settings pet_names_need_ok = 'true'), and can
+--     always rename or delete an alien.
 --     Students can rename once every 7 days; the teacher can approve, deny, rename or delete.
 --   * Needs decay every hour (minerals 1.625, heat 1.375, mood 1.25, shine 1.0). Health falls when needs are low;
 --     a healthy alien left alone goes dormant after ~4 days. 10 correct vocab answers wake it up again.
@@ -88,7 +89,7 @@ alter table public.b_pet_dormant enable row level security;
 alter table public.b_pet_items enable row level security;
 revoke all on public.b_pets, public.b_pet_awards, public.b_pet_dormant, public.b_pet_items from anon, authenticated;
 
-insert into public.b_settings (k, v) values ('pet_names_need_ok', 'true') on conflict (k) do nothing;
+insert into public.b_settings (k, v) values ('pet_names_need_ok', 'false') on conflict (k) do nothing;
 
 insert into public.b_pet_items (key, slot, name, cost, unlock, sort) values
   ('hardhat',   'hat',   'Hard Hat',            10,   0,  1),
@@ -323,7 +324,7 @@ end $$;
 
 create or replace function public.b_pet_create(p_id uuid, p_pin_hash text, p_name text, p_color text) returns jsonb
 language plpgsql security definer set search_path = public as $$
-declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names_need_ok'), 'true') <> 'true';
+declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names_need_ok'), 'false') <> 'true';
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   n := public._b_pet_clean_name(p_name);
@@ -404,7 +405,7 @@ end $$;
 -- Rename: once every 7 days. With pet_names_need_ok on, the new name waits for the teacher (the old approved name stays public).
 create or replace function public.b_pet_rename(p_id uuid, p_pin_hash text, p_name text) returns jsonb
 language plpgsql security definer set search_path = public as $$
-declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names_need_ok'), 'true') <> 'true';
+declare r public.b_pets; n text; ok boolean := coalesce(public._b_set('pet_names_need_ok'), 'false') <> 'true';
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
   select * into r from public.b_pets where student_id = p_id for update;
@@ -562,13 +563,16 @@ begin
   return jsonb_build_object('ok', true);
 end $$;
 
-create or replace function public.b_pet_teacher_names_ok(p_pass_hash text, p_need boolean) returns boolean
+-- p_need = null only reads the setting; true/false turns name approval on/off. Returns the current setting.
+create or replace function public.b_pet_teacher_names_ok(p_pass_hash text, p_need boolean default null) returns boolean
 language plpgsql security definer set search_path = public as $$
 begin
   if not public._b_teacher(p_pass_hash) then raise exception 'Wrong teacher passcode'; end if;
-  insert into public.b_settings (k, v) values ('pet_names_need_ok', case when coalesce(p_need, true) then 'true' else 'false' end)
-    on conflict (k) do update set v = excluded.v;
-  return coalesce(p_need, true);
+  if p_need is not null then
+    insert into public.b_settings (k, v) values ('pet_names_need_ok', case when p_need then 'true' else 'false' end)
+      on conflict (k) do update set v = excluded.v;
+  end if;
+  return coalesce(public._b_set('pet_names_need_ok'), 'false') = 'true';
 end $$;
 
 -- ---------- grants: only the public functions are callable from the website ----------

@@ -134,7 +134,7 @@ function Adopt({ onDone }: { onDone: (p: Pet) => void }) {
         <input value={name} maxLength={16} onChange={(e) => setName(e.target.value)} onKeyDown={(e) => e.key === "Enter" && go()} placeholder="e.g. Pumice"
           className="mt-1 w-full rounded-xl border border-line bg-ink px-3 py-2 font-semibold" />
       </label>
-      <p className="mt-1 text-xs text-muted">Classmates see the name once Mr. Dopp approves it. Keep it school-friendly.</p>
+      <p className="mt-1 text-xs text-muted">The whole class sees this name in the Alien Gallery, so keep it school-friendly.</p>
       <button disabled={busy} onClick={go} className="btn-block btn-grass mt-4 disabled:opacity-50">🪨 Adopt my alien</button>
       {err && <p className="mt-2 text-sm font-bold text-crimson">{err}</p>}
     </section>
