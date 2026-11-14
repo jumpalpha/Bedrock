@@ -1,9 +1,9 @@
 // Word/definition questions for the wave-B arcade games (Planet Defense quiz breaks, Team Hangman words).
-// Built from the public glossary. HOOK: when src/data/content/review.json lands, add review-question support
-// here (prefer it for reviewQuestion) — the games only call the functions below.
+// Built from the public review bank (src/data/review.ts) and the glossary. The games only call the functions below.
 // Never import src/data/content/questions.json here: graded answer keys must stay out of the site.
 import glossary from "@/data/content/glossary.json";
 import { chapters } from "@/data/site";
+import { review, asChoices } from "@/data/review";
 
 type Entry = { term: string; definition: string; chapter: number };
 const GLOSSARY = glossary as Entry[];
@@ -13,7 +13,7 @@ export const chapterTitle = (n: number) => chapters.find((c) => c.n === n)?.titl
 const byChapter = new Map<number, Entry[]>();
 GLOSSARY.forEach((e) => { if (!byChapter.has(e.chapter)) byChapter.set(e.chapter, []); byChapter.get(e.chapter)!.push(e); });
 
-export type Quest = { ch: number; title: string; term: string; prompt: string; opts: string[] };
+export type Quest = { ch: number; title: string; term: string; prompt: string; opts: string[]; why?: string };
 
 const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
 const shuffle = <T,>(a: T[]) => { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
@@ -29,6 +29,16 @@ export function glossaryQuestion(focus: number[] = []): Quest | null {
   const re = new RegExp(right.term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "ig");
   const def = right.definition.replace(re, "_____");
   return { ch, title: chapterTitle(ch), term: right.term, prompt: def.charAt(0).toUpperCase() + def.slice(1), opts: shuffle([right, ...others]).map((t) => t.term) };
+}
+
+/** A multiple-choice review question (review.json). Half the time from `focus` chapters. Falls back to the glossary. */
+export function reviewQuestion(focus: number[] = []): Quest {
+  const all = Object.keys(review).map(Number).filter((n) => review[n]?.length);
+  const f = focus.filter((c) => all.includes(c));
+  if (!all.length) return glossaryQuestion(focus)!;
+  const ch = Math.random() < 0.5 && f.length ? pick(f) : pick(all);
+  const q = pick(review[ch]);
+  return { ch, title: chapterTitle(ch), term: q.a, prompt: q.q, opts: asChoices(q), why: q.why };
 }
 
 /** Glossary words grouped by chapter, for word games: { "4": { title, terms: [[term, definition], ...] } }. */

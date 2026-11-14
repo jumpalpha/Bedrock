@@ -4,6 +4,9 @@ import Link from "next/link";
 import { Play } from "lucide-react";
 import { arcadeGames } from "@/data/arcade";
 import { ArcadeArt } from "@/components/arcade-art";
+// ── wave-arcadeC ──
+import { classicGames } from "@/data/arcade-classic";
+// ── /wave-arcadeC ──
 
 export const metadata: Metadata = { title: "Arcade" };
 
@@ -58,13 +61,43 @@ export default function ArcadePage() {
           ))}
         </div>
       </section>
+      {/* ── wave-arcadeC ── */}
+      <section id="classic" className="scroll-mt-36 pt-24">
+        <div className="mb-10 max-w-2xl">
+          <div className="mb-3 inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-6 bg-gold" />
+            Old-school favorites
+          </div>
+          <h2 className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">Classic Arcade</h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted">The original classics. Best scores save on this device.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {classicGames.map((g) => (
+            <a
+              key={g.slug}
+              href={g.href}
+              style={{ "--accent": g.color } as CSSProperties}
+              className="accent-card group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6"
+            >
+              <span className="grid size-16 shrink-0 place-items-center rounded-2xl text-4xl transition-transform duration-300 group-hover:scale-110" style={{ background: `color-mix(in srgb, ${g.color} 22%, transparent)` }}>
+                {g.emoji}
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-display text-xl font-extrabold">{g.title}</h3>
+                <p className="mt-1 text-sm text-muted">{g.subtitle}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+      {/* ── /wave-arcadeC ── */}
 
       {/* ── wave-arcadeB ── */}
       {SHELVES.map((sh) => {
         const games = arcadeGames.filter((g) => g.section === sh.id);
         if (!games.length) return null;
         return (
-          <section key={sh.id} id={sh.id} className="scroll-mt-36 pt-20">
+          <section key={sh.id} id={sh.anchor} className="scroll-mt-36 pt-20">
             <div className="mb-8 max-w-2xl">
               <div className="mb-3 inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
                 <span className="h-px w-6 bg-gold" />
@@ -102,9 +135,9 @@ export default function ArcadePage() {
 
 // ── wave-arcadeB ──
 const SHELVES = [
-  { id: "classic", eyebrow: "Arcade classics", title: "Classic Games", blurb: "Invaders, brick breakers, 2048 and more, rebuilt around rocks, quakes, meteors and minerals." },
-  { id: "team", eyebrow: "Whole class", title: "Team Games", blurb: "One screen, the whole class. Great for a projector." },
-  { id: "partner", eyebrow: "Two players", title: "Partner Games", blurb: "Play the computer or a friend on the same device." },
-  { id: "classroom", eyebrow: "Class starters", title: "Classroom Games", blurb: "Quick warm-ups and closers for the whole room." },
+  { id: "classic", anchor: "classics", eyebrow: "Rebuilt classics", title: "Earth Science Classics", blurb: "Invaders, brick breakers, 2048 and more, rebuilt around rocks, quakes, meteors and minerals." },
+  { id: "team", anchor: "team", eyebrow: "Whole class", title: "Team Games", blurb: "One screen, the whole class. Great for a projector." },
+  { id: "partner", anchor: "partner", eyebrow: "Two players", title: "Partner Games", blurb: "Play the computer or a friend on the same device." },
+  { id: "classroom", anchor: "classroom", eyebrow: "Class starters", title: "Classroom Games", blurb: "Quick warm-ups and closers for the whole room." },
 ] as const;
 // ── end wave-arcadeB ──

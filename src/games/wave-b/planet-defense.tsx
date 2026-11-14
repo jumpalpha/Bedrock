@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArcadeGame } from "../engine/arcade-game";
 import type { Api, GameModule } from "../engine/types";
-import { glossaryQuestion, type Quest } from "./review-bank";
+import { reviewQuestion, type Quest } from "./review-bank";
 
 // Twin of Dopps Class "Immune Defense": the same tower defense, but Earth's atmosphere and magnetic field
 // defend the planet from meteoroids and the solar wind. Quiz answers only award in-game coins.
@@ -50,7 +50,7 @@ const RESIST_PER_RUBBLE = 70;
 // Atmosphere, space and solar system chapters get asked half the time.
 const SPACE_CH = [19, 27, 28];
 type Q = Quest;
-const makeQ = (): Q | null => glossaryQuestion(SPACE_CH);
+const makeQ = (): Q | null => reviewQuestion(SPACE_CH);
 type Quiz = { wave: number; qs: Q[]; onRight: () => void; done: (right: number) => void };
 let showQuiz: ((q: Quiz | null) => void) | null = null;
 
@@ -400,6 +400,7 @@ function QuizCard({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
         {picked !== null && (
           <>
             <p className="mt-3 text-sm text-fg">{ok ? <>✅ <b>Nice!</b> +{Q_COINS} coins</> : <>❌ The answer is <b>{q.term}</b> (in green).</>}</p>
+            {q.why && <p className="mt-1 text-sm text-muted">💡 {q.why}</p>}
             <button disabled={wait > 0}
               onClick={() => { if (last) { quiz.done(right); onClose(); } else { setN(n + 1); setPicked(null); } }}
               className="mt-4 w-full rounded-xl bg-sky-400 px-4 py-2 font-bold text-[#05061a] disabled:opacity-50">
