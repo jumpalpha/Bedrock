@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ClipboardList, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginChip } from "@/components/login";
+import { ArtIcon } from "@/components/art-icon";
 
 export const navLinks = [
   { label: "Chapters", href: "/chapters/" },
@@ -37,7 +37,7 @@ export function Nav() {
         scrolled || open ? "border border-line bg-ink/80 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)] backdrop-blur-xl" : "border border-transparent"}`}>
         <Link href="/" className="group flex items-center gap-2.5">
           <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-emerald via-gold to-amber shadow-[0_0_24px_-4px_rgba(246,196,83,0.7)] transition-transform group-hover:rotate-[-8deg]">
-            <Image src="/art/realm-1.png" alt="" width={30} height={30} className="size-[30px] object-contain" unoptimized />
+            <ArtIcon slug="realm-1" fallback="🧭" size={30} />
           </span>
           <span className="font-display text-[19px] font-extrabold leading-none tracking-tight">Bedrock</span>
         </Link>
