@@ -1,0 +1,76 @@
+{
+ "STATEMENTS": [
+  {
+   "speaker": 0,
+   "wrong": true,
+   "text": "Earth is hottest in summer because that's when we're closest to the Sun.",
+   "fact": "Earth is actually closest to the Sun in early January. Seasons come from the tilt of Earth's axis, which changes how directly sunlight hits each hemisphere."
+  },
+  {
+   "speaker": 0,
+   "wrong": false,
+   "text": "The Mariana Trench is so deep that Mount Everest would fit inside with more than 2 km of water above its peak.",
+   "fact": "The trench is almost 11,000 m deep and Everest is about 8,849 m tall."
+  },
+  {
+   "speaker": 1,
+   "wrong": true,
+   "text": "During an earthquake, the safest place to be is standing in a doorway.",
+   "fact": "In modern buildings, doorways are no stronger than the rest of the house, and a swinging door can hurt you. Drop, Cover, and Hold On under a sturdy table instead."
+  },
+  {
+   "speaker": 1,
+   "wrong": false,
+   "text": "Earth's magnetic field comes from moving liquid iron in the outer core.",
+   "fact": "As the liquid iron and nickel churn, they act like a giant electromagnet. That's what your compass lines up with."
+  },
+  {
+   "speaker": 2,
+   "wrong": true,
+   "text": "Diamonds are just coal that got squeezed really hard.",
+   "fact": "Most diamonds form from carbon deep in the mantle, roughly 150 km down or more. Coal forms near the surface from plant remains, and most diamonds are older than land plants."
+  },
+  {
+   "speaker": 2,
+   "wrong": false,
+   "text": "Idaho's 1983 Borah Peak earthquake was magnitude 6.9, the largest recorded in the state.",
+   "fact": "It hit near Challis and Mackay and left a fault scarp you can still visit."
+  },
+  {
+   "speaker": 3,
+   "wrong": true,
+   "text": "Lightning never strikes the same place twice.",
+   "fact": "Lightning often hits the same tall object again and again. The Empire State Building is struck about 20 to 25 times a year."
+  },
+  {
+   "speaker": 3,
+   "wrong": false,
+   "text": "P waves travel faster than S waves, so a seismograph always records P waves first.",
+   "fact": "P waves are the fastest seismic waves. The gap between P and S arrivals tells scientists how far away the quake was."
+  },
+  {
+   "speaker": 4,
+   "wrong": true,
+   "text": "The inner core is liquid because it's the hottest part of Earth.",
+   "fact": "The inner core is about 5,200 °C, but enormous pressure keeps its iron and nickel solid. It's the outer core that's liquid."
+  },
+  {
+   "speaker": 4,
+   "wrong": false,
+   "text": "Shield volcanoes are built from runny basalt lava, which is why their slopes are so gentle.",
+   "fact": "Low-viscosity basalt flows a long way before it hardens, building broad volcanoes like Mauna Loa."
+  },
+  {
+   "speaker": 5,
+   "wrong": true,
+   "text": "Pumice always sinks, because volcanic rock is heavy.",
+   "fact": "Pumice is full of gas bubbles (it's vesicular), so it is often light enough to float on water."
+  },
+  {
+   "speaker": 5,
+   "wrong": false,
+   "text": "During the last ice age, giant floods from Glacial Lake Missoula roared across northern Idaho again and again.",
+   "fact": "An ice dam kept breaking and re-forming, and each flood carved the land across northern Idaho and Washington."
+  }
+ ]
+}

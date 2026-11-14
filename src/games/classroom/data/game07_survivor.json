@@ -1,0 +1,124 @@
+{
+ "QUESTIONS": [
+  {
+   "q": "Which energy source produces the most electricity made in Idaho?",
+   "opts": [
+    "Coal",
+    "Hydroelectric power",
+    "Nuclear",
+    "Natural gas"
+   ],
+   "ans": 1,
+   "pts": 300,
+   "debate": "Should Idaho remove some dams on the Snake River to help salmon, even if it means less hydroelectric power? Argue your side."
+  },
+  {
+   "q": "Where should you go if a tsunami warning is issued while you're at the beach?",
+   "opts": [
+    "Stay on the beach to watch",
+    "Go to high ground or far inland",
+    "Go into the water",
+    "Hide in a car near the shore"
+   ],
+   "ans": 1,
+   "pts": 300,
+   "debate": "Should towns be allowed to build new homes in known tsunami or flood zones? Debate."
+  },
+  {
+   "q": "What does a tornado WARNING mean?",
+   "opts": [
+    "Conditions could produce a tornado later",
+    "A tornado has been spotted or shown on radar",
+    "Tornado season has started",
+    "A tornado ended nearby"
+   ],
+   "ans": 1,
+   "pts": 400,
+   "debate": "Should every new school in Tornado Alley be required to have a tornado safe room? Defend your position."
+  },
+  {
+   "q": "Which magma makes the most explosive eruptions?",
+   "opts": [
+    "Low-silica, runny basalt",
+    "High-silica, sticky, gas-rich magma",
+    "Magma with no gas",
+    "Lava that cooled underground"
+   ],
+   "ans": 1,
+   "pts": 400,
+   "debate": "Should people be allowed to live near an active volcano like Mount Rainier? What should the rules be?"
+  },
+  {
+   "q": "Wildfire smoke is mostly which type of air pollution?",
+   "opts": [
+    "Particulate matter",
+    "Ozone layer gas",
+    "Pure carbon dioxide",
+    "Water vapor"
+   ],
+   "ans": 0,
+   "pts": 400,
+   "debate": "Should schools cancel outdoor sports when the Air Quality Index is unhealthy from wildfire smoke? Argue your side."
+  },
+  {
+   "q": "What is the main cause of the rise in atmospheric CO₂ since the Industrial Revolution?",
+   "opts": [
+    "Volcanic eruptions",
+    "Burning fossil fuels",
+    "Ocean waves",
+    "Changes in the Sun"
+   ],
+   "ans": 1,
+   "pts": 500,
+   "debate": "Should the U.S. require all new cars to be electric by a certain year? Debate the costs and benefits."
+  },
+  {
+   "q": "Most of Idaho's water supply starts as...",
+   "opts": [
+    "Ocean evaporation that falls as summer rain",
+    "Mountain snowpack that melts in spring",
+    "Water piped in from Canada",
+    "Desalinated water"
+   ],
+   "ans": 1,
+   "pts": 400,
+   "debate": "During a drought, who should get Snake River water first: farms, cities, or fish? Defend your answer."
+  },
+  {
+   "q": "What is liquefaction?",
+   "opts": [
+    "Lava melting rock",
+    "Wet, loose soil acting like a liquid during an earthquake",
+    "Ice melting on a glacier",
+    "Rock dissolving in acid rain"
+   ],
+   "ans": 1,
+   "pts": 500,
+   "debate": "Should builders be banned from putting buildings on soil that can liquefy in an earthquake? Debate."
+  },
+  {
+   "q": "Which of these is a nonrenewable resource?",
+   "opts": [
+    "Sunlight",
+    "Wind",
+    "Uranium",
+    "Flowing river water"
+   ],
+   "ans": 2,
+   "pts": 300,
+   "debate": "Should Idaho build more nuclear power plants? Weigh clean energy against radioactive waste."
+  },
+  {
+   "q": "Cheatgrass is a problem in southern Idaho mainly because it...",
+   "opts": [
+    "Is poisonous to people",
+    "Dries out early and fuels fast-spreading range fires",
+    "Causes earthquakes",
+    "Blocks rivers"
+   ],
+   "ans": 1,
+   "pts": 500,
+   "debate": "Should the state pay to remove invasive species like cheatgrass, or let nature take its course? Argue your side."
+  }
+ ]
+}

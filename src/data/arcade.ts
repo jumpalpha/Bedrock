@@ -43,6 +43,23 @@ export const arcadeGames: ArcadeGame[] = [
   { slug: "fossil-memory", title: "Fossil Memory", subtitle: "Match pairs of fossils, from trilobites to the Hagerman Horse.", emoji: "🦴", color: "#E9DCC2", goal: "Most pairs wins", section: "partner" },
   { slug: "bedrock-spin", title: "Bedrock Spin", subtitle: "Spin for a quick Earth science challenge to kick off or close class.", emoji: "🌀", color: "#F28C28", goal: "8 spins", section: "classroom" },
   // ── end wave-arcadeB ──
+  // ── wave-classroom ── Dopps Class classroom (projector) games, game for game
+  { slug: "bedrock-jeopardy", title: "Bedrock Jeopardy", subtitle: "Pick 5 realms × 5 values, hidden Daily Doubles, Final Jeopardy with wagers.", emoji: "📋", color: "#F6C453", goal: "2–4 teams", section: "classroom" },
+  { slug: "deal-or-no-deal", title: "Deal or No Deal", subtitle: "25 briefcases hide points, Earth hazard estimations and bonus challenges.", emoji: "💼", color: "#C2703D", goal: "Beat the Banker", section: "classroom" },
+  { slug: "wheel-of-fortune", title: "Wheel of Fortune", subtitle: "Spin, dodge Bankrupt, and solve Earth science key-term phrases.", emoji: "🎡", color: "#38BDF8", goal: "2–4 teams", section: "classroom" },
+  { slug: "millionaire", title: "Who Wants to Be a Millionaire", subtitle: "15-step money ladder, three lifelines, safe havens at Q5 and Q10.", emoji: "💰", color: "#34D399", goal: "Reach $1,000,000", section: "classroom" },
+  { slug: "hot-takes", title: "Hot Takes Buzzer Battle", subtitle: "4-player buzzers with Hot Take, Rapid Fire and Blitz rounds.", emoji: "⚡", color: "#FF8C42", goal: "4 players", section: "classroom" },
+  { slug: "escape-room", title: "Earth Escape Room", subtitle: "Volcano Lab, Flood Zone, Quake City: puzzle chains on a 5-minute timer.", emoji: "🔐", color: "#5EEAD4", goal: "Escape 3 rooms", section: "classroom" },
+  { slug: "bedrock-survivor", title: "Bedrock Survivor", subtitle: "Earn immunity, debate Earth issues, vote someone out at Tribal Council.", emoji: "🔥", color: "#F25C45", goal: "Up to 6 players", section: "classroom" },
+  { slug: "guess-the-number", title: "Guess the Number", subtitle: "Real Earth science numbers: core depth, Mohs values, Borah Peak and more.", emoji: "🎰", color: "#FCD34D", goal: "4 mini-games", section: "classroom" },
+  { slug: "earth-feud", title: "Earth Science Feud", subtitle: "Top answers (teacher's estimate), strikes, steals and Fast Money.", emoji: "📺", color: "#F28C28", goal: "2 teams", section: "classroom" },
+  { slug: "earth-imposter", title: "Earth Imposter", subtitle: "A secret imposter spreads fake facts. Fact-check and vote them out.", emoji: "🚨", color: "#A78BFA", goal: "6 players", section: "classroom" },
+  { slug: "earth-taboo", title: "Earth Science Taboo", subtitle: "Describe the key word without the 5 forbidden words.", emoji: "🤐", color: "#E879F9", goal: "60s turns", section: "classroom" },
+  { slug: "would-you-rather", title: "Would You Rather", subtitle: "10 Earth science dilemmas with class voting and debate prompts.", emoji: "🤔", color: "#84CC16", goal: "Class vote", section: "classroom" },
+  { slug: "pictionary", title: "Earth Science Pictionary", subtitle: "Full drawing canvas with 24 drawable Earth science terms.", emoji: "🎨", color: "#22D3EE", goal: "Multi-team", section: "classroom" },
+  { slug: "shark-tank", title: "Bedrock Shark Tank", subtitle: "Pitch a hazard, resource or energy solution. 5-part rubric.", emoji: "🦈", color: "#0EA5E9", goal: "Capstone", section: "classroom" },
+  { slug: "myth-busters", title: "Myth Busters", subtitle: "18 Earth science myths, true or false, streak bonuses.", emoji: "💥", color: "#F59E0B", goal: "Timed mode", section: "classroom" },
+  // ── end wave-classroom ──
 ];
 
 export const arcadeGame = (slug: string) => arcadeGames.find((g) => g.slug === slug);

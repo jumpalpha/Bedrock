@@ -1,0 +1,265 @@
+{
+ "_GD9": {
+  "QUESTIONS": [
+   {
+    "survey": "Name something you'd pack in an earthquake emergency kit.",
+    "answers": [
+     {
+      "text": "Water",
+      "pts": 34
+     },
+     {
+      "text": "Flashlight",
+      "pts": 22
+     },
+     {
+      "text": "Non-perishable food",
+      "pts": 16
+     },
+     {
+      "text": "First-aid kit",
+      "pts": 12
+     },
+     {
+      "text": "Batteries / radio",
+      "pts": 10
+     },
+     {
+      "text": "Whistle",
+      "pts": 6
+     }
+    ]
+   },
+   {
+    "survey": "Name a natural hazard that can happen in Idaho.",
+    "answers": [
+     {
+      "text": "Earthquake",
+      "pts": 30
+     },
+     {
+      "text": "Wildfire",
+      "pts": 26
+     },
+     {
+      "text": "Flood",
+      "pts": 16
+     },
+     {
+      "text": "Avalanche",
+      "pts": 12
+     },
+     {
+      "text": "Landslide",
+      "pts": 9
+     },
+     {
+      "text": "Blizzard",
+      "pts": 7
+     }
+    ]
+   },
+   {
+    "survey": "Name a rock or mineral you can find in Idaho.",
+    "answers": [
+     {
+      "text": "Star garnet",
+      "pts": 28
+     },
+     {
+      "text": "Basalt",
+      "pts": 24
+     },
+     {
+      "text": "Granite",
+      "pts": 18
+     },
+     {
+      "text": "Obsidian",
+      "pts": 12
+     },
+     {
+      "text": "Opal",
+      "pts": 10
+     },
+     {
+      "text": "Silver",
+      "pts": 8
+     }
+    ]
+   },
+   {
+    "survey": "Name something that weathers or erodes rock.",
+    "answers": [
+     {
+      "text": "Water",
+      "pts": 36
+     },
+     {
+      "text": "Wind",
+      "pts": 24
+     },
+     {
+      "text": "Ice",
+      "pts": 18
+     },
+     {
+      "text": "Gravity",
+      "pts": 10
+     },
+     {
+      "text": "Plant roots",
+      "pts": 7
+     },
+     {
+      "text": "Acid rain",
+      "pts": 5
+     }
+    ]
+   },
+   {
+    "survey": "Name a renewable energy source.",
+    "answers": [
+     {
+      "text": "Solar",
+      "pts": 34
+     },
+     {
+      "text": "Wind",
+      "pts": 28
+     },
+     {
+      "text": "Hydroelectric",
+      "pts": 20
+     },
+     {
+      "text": "Geothermal",
+      "pts": 10
+     },
+     {
+      "text": "Biomass",
+      "pts": 6
+     },
+     {
+      "text": "Tidal",
+      "pts": 2
+     }
+    ]
+   },
+   {
+    "survey": "Name a type of cloud.",
+    "answers": [
+     {
+      "text": "Cumulus",
+      "pts": 32
+     },
+     {
+      "text": "Cirrus",
+      "pts": 24
+     },
+     {
+      "text": "Stratus",
+      "pts": 20
+     },
+     {
+      "text": "Cumulonimbus",
+      "pts": 12
+     },
+     {
+      "text": "Nimbostratus",
+      "pts": 8
+     },
+     {
+      "text": "Fog (a cloud on the ground)",
+      "pts": 4
+     }
+    ]
+   },
+   {
+    "survey": "Name a planet you can see in the night sky without a telescope.",
+    "answers": [
+     {
+      "text": "Mars",
+      "pts": 30
+     },
+     {
+      "text": "Venus",
+      "pts": 28
+     },
+     {
+      "text": "Jupiter",
+      "pts": 22
+     },
+     {
+      "text": "Saturn",
+      "pts": 12
+     },
+     {
+      "text": "Mercury",
+      "pts": 8
+     },
+     {
+      "text": "",
+      "pts": 0
+     }
+    ]
+   },
+   {
+    "survey": "Name something a geologist carries into the field.",
+    "answers": [
+     {
+      "text": "Rock hammer",
+      "pts": 32
+     },
+     {
+      "text": "Hand lens",
+      "pts": 20
+     },
+     {
+      "text": "Compass",
+      "pts": 16
+     },
+     {
+      "text": "Field notebook",
+      "pts": 14
+     },
+     {
+      "text": "Map",
+      "pts": 10
+     },
+     {
+      "text": "GPS / phone",
+      "pts": 8
+     }
+    ]
+   }
+  ],
+  "FAST_MONEY_Q": [
+   {
+    "q": "Name the innermost layer of Earth.",
+    "a": "The inner core",
+    "pts": 100
+   },
+   {
+    "q": "Name the scale geologists use to rank mineral hardness.",
+    "a": "The Mohs scale",
+    "pts": 80
+   },
+   {
+    "q": "Name Idaho's tallest mountain.",
+    "a": "Borah Peak (12,662 ft)",
+    "pts": 80
+   },
+   {
+    "q": "Name the gas plants take in from the air to make food.",
+    "a": "Carbon dioxide (CO₂)",
+    "pts": 60
+   },
+   {
+    "q": "Name the star closest to Earth.",
+    "a": "The Sun",
+    "pts": 100
+   }
+  ]
+ }
+}

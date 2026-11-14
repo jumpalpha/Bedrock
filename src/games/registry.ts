@@ -35,6 +35,23 @@ import { FossilMemory } from "./wave-b/fossil-memory";
 import { BedrockSpin } from "./wave-b/bedrock-spin";
 import { TeamHangman } from "./wave-b/team-hangman";
 // ── end wave-arcadeB ──
+// ── wave-classroom ──
+import { Game01Jeopardy } from "./classroom/game01_jeopardy";
+import { Game02DealOrNoDeal } from "./classroom/game02_deal_or_no_deal";
+import { Game03WheelOfFortune } from "./classroom/game03_wheel_of_fortune";
+import { Game04Millionaire } from "./classroom/game04_millionaire";
+import { Game05HotTakes } from "./classroom/game05_hot_takes";
+import { Game06EscapeRoom } from "./classroom/game06_escape_room";
+import { Game07Survivor } from "./classroom/game07_survivor";
+import { Game08PriceIsRight } from "./classroom/game08_price_is_right";
+import { Game09FamilyFeud } from "./classroom/game09_family_feud";
+import { Game10Imposter } from "./classroom/game10_imposter";
+import { Game11Taboo } from "./classroom/game11_taboo";
+import { Game12WouldYouRather } from "./classroom/game12_would_you_rather";
+import { Game13Pictionary } from "./classroom/game13_pictionary";
+import { Game14SharkTank } from "./classroom/game14_shark_tank";
+import { Game15MythBusters } from "./classroom/game15_myth_busters";
+// ── end wave-classroom ──
 
 // slug (see src/data/arcade.ts) -> canvas game
 export const arcadeRegistry: Record<string, GameModule> = {
@@ -80,4 +97,21 @@ export const arcadeComponents: Record<string, ComponentType> = {
   "fossil-memory": FossilMemory,
   "bedrock-spin": BedrockSpin,
   "team-hangman": TeamHangman,
+  // ── wave-classroom ── (Dopps Class classroom / projector games, Earth science content)
+  "bedrock-jeopardy": Game01Jeopardy,
+  "deal-or-no-deal": Game02DealOrNoDeal,
+  "wheel-of-fortune": Game03WheelOfFortune,
+  "millionaire": Game04Millionaire,
+  "hot-takes": Game05HotTakes,
+  "escape-room": Game06EscapeRoom,
+  "bedrock-survivor": Game07Survivor,
+  "guess-the-number": Game08PriceIsRight,
+  "earth-feud": Game09FamilyFeud,
+  "earth-imposter": Game10Imposter,
+  "earth-taboo": Game11Taboo,
+  "would-you-rather": Game12WouldYouRather,
+  "pictionary": Game13Pictionary,
+  "shark-tank": Game14SharkTank,
+  "myth-busters": Game15MythBusters,
+  // ── end wave-classroom ──
 };

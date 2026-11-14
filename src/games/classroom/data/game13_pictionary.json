@@ -1,0 +1,124 @@
+{
+ "WORDS": [
+  {
+   "word": "VOLCANO",
+   "cat": "Volcanoes",
+   "hint": "A mountain that erupts lava, ash, and gas"
+  },
+  {
+   "word": "TORNADO",
+   "cat": "Storms",
+   "hint": "A spinning column of air reaching from a thunderstorm to the ground"
+  },
+  {
+   "word": "GLACIER",
+   "cat": "Ice",
+   "hint": "A huge, slow-moving river of ice"
+  },
+  {
+   "word": "RAINBOW",
+   "cat": "Weather",
+   "hint": "Sunlight split into colors by raindrops"
+  },
+  {
+   "word": "LIGHTNING",
+   "cat": "Storms",
+   "hint": "A giant electric spark in a thunderstorm"
+  },
+  {
+   "word": "GEYSER",
+   "cat": "Groundwater",
+   "hint": "Hot water and steam that shoot out of the ground, like Old Faithful"
+  },
+  {
+   "word": "FOSSIL",
+   "cat": "Ancient Layers",
+   "hint": "Remains or traces of an ancient living thing preserved in rock"
+  },
+  {
+   "word": "TRILOBITE",
+   "cat": "Ancient Layers",
+   "hint": "An extinct sea creature with a three-lobed body"
+  },
+  {
+   "word": "CRYSTAL",
+   "cat": "Minerals",
+   "hint": "A solid whose atoms line up in a repeating pattern"
+  },
+  {
+   "word": "COMPASS",
+   "cat": "Maps",
+   "hint": "Its needle points toward magnetic north"
+  },
+  {
+   "word": "SAND DUNE",
+   "cat": "Wind",
+   "hint": "A hill of sand piled up by the wind, like at Bruneau Dunes"
+  },
+  {
+   "word": "CAVE",
+   "cat": "Groundwater",
+   "hint": "A hollow underground space carved by water dissolving limestone"
+  },
+  {
+   "word": "STALACTITE",
+   "cat": "Groundwater",
+   "hint": "Hangs from a cave ceiling (it holds on 'tight')"
+  },
+  {
+   "word": "RIVER DELTA",
+   "cat": "Rivers",
+   "hint": "A fan of sediment where a river meets the ocean or a lake"
+  },
+  {
+   "word": "WATER CYCLE",
+   "cat": "The Sky",
+   "hint": "Evaporation, condensation, precipitation, and back again"
+  },
+  {
+   "word": "EARTHQUAKE",
+   "cat": "Earthquakes",
+   "hint": "Sudden shaking when rocks slip along a fault"
+  },
+  {
+   "word": "TSUNAMI",
+   "cat": "Oceans",
+   "hint": "A giant wave usually set off by an undersea earthquake"
+  },
+  {
+   "word": "THUNDERSTORM",
+   "cat": "Storms",
+   "hint": "Tall cumulonimbus clouds with rain, lightning, and thunder"
+  },
+  {
+   "word": "SOLAR ECLIPSE",
+   "cat": "Space",
+   "hint": "The Moon blocks the Sun"
+  },
+  {
+   "word": "MOON PHASES",
+   "cat": "Space",
+   "hint": "New, crescent, quarter, gibbous, full"
+  },
+  {
+   "word": "WIND TURBINE",
+   "cat": "Energy",
+   "hint": "A tall tower with blades that turns wind into electricity"
+  },
+  {
+   "word": "SEISMOGRAPH",
+   "cat": "Earthquakes",
+   "hint": "A machine that records earthquake waves as zigzag lines"
+  },
+  {
+   "word": "LAYERS OF EARTH",
+   "cat": "The Deep",
+   "hint": "Crust, mantle, outer core, inner core"
+  },
+  {
+   "word": "COMET",
+   "cat": "Space",
+   "hint": "An icy body with a glowing tail that points away from the Sun"
+  }
+ ]
+}
