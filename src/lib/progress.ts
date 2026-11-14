@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { claimRealm, completeTask, dbReady, loadState, useStudent, type ServerState } from "@/lib/db";
-import { computeStats, realmTasks } from "@/data/site";
+import { computeStats, requiredTasks } from "@/data/site";
 
 /** Realm claims already sent from this page (shared by every component using the hook). */
 const claimedOnce = new Set<string>();
@@ -36,7 +36,7 @@ export function useProgress() {
     (async () => {
       let rec: number[] | null = null;
       for (const r of toClaim) {
-        try { rec = await claimRealm(r.n, realmTasks(r).map((t) => t.key)); } catch { /* not deployed yet or not eligible: computed clears still show */ }
+        try { rec = await claimRealm(r.n, requiredTasks(r).map((t) => t.key)); } catch { /* not deployed yet or not eligible: computed clears still show */ }
       }
       if (rec) setState((s) => (s ? { ...s, cleared: rec! } : s));
     })();

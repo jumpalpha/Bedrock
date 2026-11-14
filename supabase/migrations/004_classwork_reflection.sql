@@ -74,7 +74,7 @@ alter table public.b_cw_work enable row level security;
 revoke all on public.b_cw_terms, public.b_cw_work from anon, authenticated;
 
 -- 'true' = every student can use Classwork. 'false' = hidden ("Coming soon"); the teacher dashboard flips it.
-insert into public.b_settings (k, v) values ('classwork_live', 'true') on conflict (k) do nothing;
+insert into public.b_settings (k, v) values ('classwork_live', 'false') on conflict (k) do nothing;
 
 -- ---------- rules (the page uses the same numbers) ----------
 create or replace function public._b_cw_rule(k text) returns int language sql immutable set search_path = public as $$
@@ -87,7 +87,7 @@ create or replace function public._b_cw_ord(p_ref int) returns numeric language 
   select case when p_ref >= 100 then (p_ref / 100) + (p_ref % 100) / 100.0 else p_ref end $$;
 
 create or replace function public._b_cw_live() returns boolean language sql stable security definer set search_path = public as $$
-  select coalesce(public._b_set('classwork_live'), 'true') = 'true' $$;
+  select coalesce(public._b_set('classwork_live'), 'false') = 'true' $$;
 
 create or replace function public._b_cw_check(p_id uuid, p_pin_hash text) returns void
 language plpgsql stable security definer set search_path = public as $$
@@ -468,6 +468,8 @@ begin
   end if;
   update public.b_cw_work set status = 'submitted', submitted_at = now(), story_avg = avg_s, learn_avg = avg_l, final_score = fin, updated_at = now()
    where student_id = p_id and realm = p_realm returning * into r;
+  -- bonus Quest task (+25 XP); kept even if the teacher later returns the work
+  insert into public.b_tasks (student_id, task_key) values (p_id, 'cw' || p_realm) on conflict do nothing;
   return jsonb_build_object('ok', true, 'work', public._b_cw_view(r));
 end $$;
 

@@ -69,7 +69,8 @@ export const XP_PER_SIDE_QUEST = 50;
 export const SIDE_QUESTS_PER_TERM = 3;
 
 /** Every realm's task list. A realm's badge (and the next mining rank) unlocks when all are done. */
-export type Task = { key: string; label: string; auto: boolean; href: string };
+/** bonus: earns XP and shows on the checklist, but is not needed to clear the realm (e.g. Classwork, which can be hidden). */
+export type Task = { key: string; label: string; auto: boolean; href: string; bonus?: boolean };
 export function realmTasks(r: Realm): Task[] {
   const t: Task[] = [];
   for (const c of chaptersIn(r)) {
@@ -78,9 +79,12 @@ export function realmTasks(r: Realm): Task[] {
     t.push({ key: `ch${c.id}_tls`, label: `Think Like a Scientist: Chapter ${c.label}`, auto: false, href: `/chapters/${c.id}/#think` });
   }
   t.push({ key: `unit${r.n}`, label: `${r.testTitle} (70%+)`, auto: true, href: `/tests/${r.n}/` });
+  t.push({ key: `cw${r.n}`, label: `Turn in Realm ${r.n} Classwork (bonus)`, auto: true, href: `/classwork/${r.n}/`, bonus: true });
   return t;
 }
 export const allTasks = realms.flatMap(realmTasks);
+/** The tasks that must all be done to clear a realm (bonus tasks excluded). */
+export const requiredTasks = (r: Realm) => realmTasks(r).filter((t) => !t.bonus);
 
 export type Rank = { order: number; name: string; flavor: string };
 /** 10 ranks: Dirt Digger at spawn, then one step per realm cleared, Diamond for all nine (the Dopps Class model). */
@@ -101,7 +105,7 @@ export function computeStats(p: Progress) {
   // ── wave-sync: earned stays earned ──
   const recorded = new Set(p.cleared ?? []);
   /** Realms whose current task list is all done (the client claims these on the server, see lib/progress.ts). */
-  const clearedNow = realms.filter((r) => realmTasks(r).every((t) => done.has(t.key)));
+  const clearedNow = realms.filter((r) => requiredTasks(r).every((t) => done.has(t.key)));
   const cleared = realms.filter((r) => recorded.has(r.n) || clearedNow.includes(r));
   const approved = (p.sideQuests ?? []).filter((q) => q.approved);
   const xp = taskXp + p.days.length * XP_PER_DAY + approved.length * XP_PER_SIDE_QUEST;
