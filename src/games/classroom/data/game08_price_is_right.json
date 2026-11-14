@@ -1,0 +1,179 @@
+{
+ "MINI_GAMES": [
+  {
+   "name": "How Deep? How High?",
+   "icon": "⛏️",
+   "desc": "Guess the real depth or height — closest wins!",
+   "items": [
+    {
+     "name": "Depth to Earth's core",
+     "desc": "How far below your feet does the liquid outer core begin?",
+     "price": 2900,
+     "unit": "km",
+     "note": "The core–mantle boundary is about 2,900 km down. The mantle is the thickest layer of Earth."
+    },
+    {
+     "name": "Distance to the center of Earth",
+     "desc": "From the surface straight down to the very middle of the inner core",
+     "price": 6371,
+     "unit": "km",
+     "note": "Earth's average radius is about 6,371 km. The deepest hole people ever drilled reached only about 12 km."
+    },
+    {
+     "name": "Depth of the Mariana Trench",
+     "desc": "Challenger Deep, the deepest point in the ocean",
+     "price": 10935,
+     "unit": "meters",
+     "note": "Challenger Deep is about 10,900 to 11,000 m deep (measurements vary a little). Drop Mount Everest in and its peak would still be about 2 km underwater."
+    },
+    {
+     "name": "Height of Borah Peak",
+     "desc": "Idaho's tallest mountain, in the Lost River Range",
+     "price": 12662,
+     "unit": "feet",
+     "note": "Borah Peak is 12,662 ft tall. The 1983 magnitude 6.9 earthquake raised it about a foot."
+    },
+    {
+     "name": "Height of Mount Everest",
+     "desc": "Earth's highest point above sea level",
+     "price": 8849,
+     "unit": "meters",
+     "note": "A 2020 survey by China and Nepal measured Everest at 8,849 m, and it's still rising a few millimeters a year."
+    }
+   ]
+  },
+  {
+   "name": "Mohs Hardness Test",
+   "icon": "💎",
+   "desc": "Guess each mineral's hardness on the Mohs scale (1–10)!",
+   "items": [
+    {
+     "name": "Quartz",
+     "desc": "The most common mineral in sand. It scratches glass easily.",
+     "price": 7,
+     "unit": "on the Mohs scale",
+     "note": "Quartz is a 7. That's why sandy grit scratches glass (about 5.5) and steel."
+    },
+    {
+     "name": "Calcite",
+     "desc": "The mineral that makes up limestone and marble. It fizzes in acid.",
+     "price": 3,
+     "unit": "on the Mohs scale",
+     "note": "Calcite is a 3. A copper penny (about 3) is about as hard, and a steel nail scratches it."
+    },
+    {
+     "name": "Talc",
+     "desc": "Soft, soapy-feeling mineral used in baby powder",
+     "price": 1,
+     "unit": "on the Mohs scale",
+     "note": "Talc is a 1, the softest mineral on the scale. Your fingernail (about 2.5) scratches it."
+    },
+    {
+     "name": "Topaz",
+     "desc": "A gemstone mineral, Utah's state gem",
+     "price": 8,
+     "unit": "on the Mohs scale",
+     "note": "Topaz is an 8. Only corundum (9) and diamond (10) are harder on the scale."
+    },
+    {
+     "name": "Fluorite",
+     "desc": "Colorful cubic crystals; many glow under UV light",
+     "price": 4,
+     "unit": "on the Mohs scale",
+     "note": "Fluorite is a 4. The word 'fluorescent' comes from this mineral."
+    }
+   ]
+  },
+  {
+   "name": "Idaho by the Numbers",
+   "icon": "🗻",
+   "desc": "Real Idaho Earth science numbers — how close can you get?",
+   "items": [
+    {
+     "name": "Bruneau Dunes",
+     "desc": "Height of the tallest single-structured sand dune in North America",
+     "price": 470,
+     "unit": "feet",
+     "note": "The big dune at Bruneau Dunes State Park is about 470 ft tall."
+    },
+    {
+     "name": "Shoshone Falls",
+     "desc": "How far the Snake River drops at the 'Niagara of the West' near Twin Falls",
+     "price": 212,
+     "unit": "feet",
+     "note": "Shoshone Falls drops about 212 ft. That's taller than Niagara Falls (about 167 ft)."
+    },
+    {
+     "name": "Snake River Plain Aquifer",
+     "desc": "How much of southern Idaho this groundwater reservoir stretches under",
+     "price": 10800,
+     "unit": "square miles",
+     "note": "The aquifer stretches under about 10,800 square miles and supplies drinking water and irrigation for much of southern Idaho."
+    },
+    {
+     "name": "Old Faithful",
+     "desc": "Average time between eruptions of Yellowstone's famous geyser, just next door",
+     "price": 90,
+     "unit": "minutes",
+     "note": "Old Faithful erupts about every 90 minutes on average. Groundwater heated by the Yellowstone hotspot builds pressure until it blasts out."
+    },
+    {
+     "name": "Craters of the Moon",
+     "desc": "How long ago its most recent lava eruptions happened",
+     "price": 2000,
+     "unit": "years ago",
+     "note": "Craters of the Moon last erupted only about 2,000 years ago — and the area could erupt again."
+    }
+   ]
+  },
+  {
+   "name": "Bigger or Smaller?",
+   "icon": "⚖️",
+   "desc": "Compare two Earth science giants — pick the right answer!",
+   "items": [
+    {
+     "q": "Measured from its base to its peak, which mountain is taller?",
+     "opts": [
+      "Mauna Kea (from its base on the sea floor)",
+      "Mount Everest"
+     ],
+     "ans": 0,
+     "fact": "Mauna Kea rises over 10,000 m from its base on the sea floor, taller than Everest. Everest still wins for height above sea level."
+    },
+    {
+     "q": "Which seismic wave travels faster through Earth?",
+     "opts": [
+      "P waves",
+      "S waves",
+      "Surface waves",
+      "They all travel at the same speed"
+     ],
+     "ans": 0,
+     "fact": "P waves are fastest, so they always reach a seismograph first. S waves are next, then surface waves."
+    },
+    {
+     "q": "Carbon dioxide in the air was about 280 ppm before the Industrial Revolution and about 427 ppm in 2025. That's about...",
+     "opts": [
+      "The same",
+      "1.5 times higher",
+      "10 times higher",
+      "100 times higher"
+     ],
+     "ans": 1,
+     "fact": "427 ÷ 280 ≈ 1.5. That's about a 50% increase, mostly from burning fossil fuels."
+    },
+    {
+     "q": "About how many Earths could fit inside the Sun?",
+     "opts": [
+      "About 100",
+      "About 1,300",
+      "About 1.3 million",
+      "About 1 billion"
+     ],
+     "ans": 2,
+     "fact": "The Sun's volume could hold about 1.3 million Earths. Its diameter is about 109 times Earth's."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "PITCHES": [
+  {
+   "company": "QuakeSafe Rooms",
+   "tagline": "Earthquake-proofing Idaho classrooms, one bookshelf at a time",
+   "ask": "$40,000 for 15% equity",
+   "problem": "Idaho has active faults. The 1983 Borah Peak quake (magnitude 6.9) and the 2020 Stanley quake (magnitude 6.5) both shook the state. In U.S. earthquakes, many injuries come from falling furniture and objects, not collapsing buildings, and most classrooms have never been checked.",
+   "solution": "Student teams survey each classroom, strap tall shelves and TVs to the walls, mark the safest Drop, Cover, Hold On spots, and run a drill. A simple app tracks which rooms are done.",
+   "metrics": {
+    "cost": "$35 / room",
+    "pilot": "6 schools",
+    "time": "1 hr / room"
+   },
+   "reviewNotes": "Strong hazard focus and backed by real Idaho quakes. Needs a plan to keep strapping inspected over time."
+  },
+  {
+   "company": "SmokeSignal",
+   "tagline": "Neighborhood wildfire and smoke alerts",
+   "ask": "$60,000 for 20% equity",
+   "problem": "Invasive cheatgrass dries out early and fuels fast-spreading range fires in southern Idaho. On bad days, wildfire smoke makes Idaho's air some of the worst in the country, and the fine particles get deep into your lungs.",
+   "solution": "Low-cost air sensors on school roofs feed a live Air Quality Index map. Families get a text when the AQI turns unhealthy, plus a defensible-space checklist for homes in the wildland-urban interface.",
+   "metrics": {
+    "cost": "$250 / sensor",
+    "coverage": "3 km radius",
+    "alerts": "< 5 min"
+   },
+   "reviewNotes": "Uses real AQI science and local data. Sensor accuracy and upkeep need a plan."
+  },
+  {
+   "company": "AquaCount",
+   "tagline": "Smart irrigation that saves the aquifer",
+   "ask": "$75,000 for 25% equity",
+   "problem": "Much of southern Idaho is semi-arid high desert. Farms and towns depend on the Snake River Plain aquifer, and when people pump groundwater faster than snowmelt and rain recharge it, the water table drops.",
+   "solution": "Soil-moisture probes tell farmers exactly when a field needs water, so sprinklers only run when crops need it. A dashboard shows how much water each farm saved.",
+   "metrics": {
+    "cost": "$400 / field",
+    "water saved": "Goal: 20%",
+    "payback": "2 seasons"
+   },
+   "reviewNotes": "Targets a real Idaho resource problem. Savings goal must be tested in a real pilot before anyone believes it."
+  },
+  {
+   "company": "SunSchool",
+   "tagline": "Solar roofs that teach and power the school",
+   "ask": "$100,000 for 30% equity",
+   "problem": "Burning fossil fuels releases carbon dioxide. CO₂ in the air has climbed from about 280 ppm before the Industrial Revolution to about 427 ppm in 2025, trapping more heat. Southern Idaho gets plenty of sunshine that schools aren't using.",
+   "solution": "Photovoltaic panels on the school roof with a live display in the hallway. Students track kilowatt-hours and CO₂ avoided in science class, and the school pays less for electricity.",
+   "metrics": {
+    "cost": "$95K install",
+    "energy": "Goal: 30% of use",
+    "payback": "~10 years"
+   },
+   "reviewNotes": "Clear science and a lasting benefit. Big upfront cost; needs grants or a utility partner."
+  }
+ ]
+}

@@ -1,0 +1,204 @@
+{
+ "CARDS": [
+  {
+   "word": "VOLCANO",
+   "forbidden": [
+    "lava",
+    "magma",
+    "erupt",
+    "mountain",
+    "ash"
+   ]
+  },
+  {
+   "word": "EARTHQUAKE",
+   "forbidden": [
+    "shake",
+    "fault",
+    "ground",
+    "seismic",
+    "Richter"
+   ]
+  },
+  {
+   "word": "GLACIER",
+   "forbidden": [
+    "ice",
+    "snow",
+    "frozen",
+    "valley",
+    "melt"
+   ]
+  },
+  {
+   "word": "TORNADO",
+   "forbidden": [
+    "wind",
+    "funnel",
+    "storm",
+    "spin",
+    "twister"
+   ]
+  },
+  {
+   "word": "FOSSIL",
+   "forbidden": [
+    "bone",
+    "dinosaur",
+    "rock",
+    "ancient",
+    "remains"
+   ]
+  },
+  {
+   "word": "MINERAL",
+   "forbidden": [
+    "crystal",
+    "rock",
+    "gem",
+    "Mohs",
+    "natural"
+   ]
+  },
+  {
+   "word": "AQUIFER",
+   "forbidden": [
+    "water",
+    "underground",
+    "well",
+    "groundwater",
+    "rock"
+   ]
+  },
+  {
+   "word": "EROSION",
+   "forbidden": [
+    "wear",
+    "wind",
+    "water",
+    "move",
+    "weathering"
+   ]
+  },
+  {
+   "word": "TSUNAMI",
+   "forbidden": [
+    "wave",
+    "ocean",
+    "earthquake",
+    "flood",
+    "Japan"
+   ]
+  },
+  {
+   "word": "HURRICANE",
+   "forbidden": [
+    "storm",
+    "wind",
+    "ocean",
+    "eye",
+    "tropical"
+   ]
+  },
+  {
+   "word": "PANGAEA",
+   "forbidden": [
+    "continent",
+    "super",
+    "Wegener",
+    "drift",
+    "together"
+   ]
+  },
+  {
+   "word": "GEYSER",
+   "forbidden": [
+    "hot",
+    "water",
+    "Old Faithful",
+    "Yellowstone",
+    "erupt"
+   ]
+  },
+  {
+   "word": "ATMOSPHERE",
+   "forbidden": [
+    "air",
+    "layer",
+    "gas",
+    "sky",
+    "oxygen"
+   ]
+  },
+  {
+   "word": "COMPASS",
+   "forbidden": [
+    "north",
+    "needle",
+    "magnet",
+    "direction",
+    "map"
+   ]
+  },
+  {
+   "word": "ECLIPSE",
+   "forbidden": [
+    "Moon",
+    "Sun",
+    "shadow",
+    "block",
+    "dark"
+   ]
+  },
+  {
+   "word": "SEDIMENT",
+   "forbidden": [
+    "sand",
+    "mud",
+    "deposit",
+    "rock",
+    "bits"
+   ]
+  },
+  {
+   "word": "HALF-LIFE",
+   "forbidden": [
+    "decay",
+    "radioactive",
+    "isotope",
+    "half",
+    "date"
+   ]
+  },
+  {
+   "word": "CONTOUR LINE",
+   "forbidden": [
+    "map",
+    "elevation",
+    "topographic",
+    "height",
+    "line"
+   ]
+  },
+  {
+   "word": "WATERSHED",
+   "forbidden": [
+    "river",
+    "drain",
+    "basin",
+    "rain",
+    "land"
+   ]
+  },
+  {
+   "word": "SUPERNOVA",
+   "forbidden": [
+    "star",
+    "explode",
+    "bright",
+    "death",
+    "space"
+   ]
+  }
+ ]
+}

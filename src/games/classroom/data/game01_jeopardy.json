@@ -1,0 +1,295 @@
+{
+ "VALS": [
+  200,
+  400,
+  600,
+  800,
+  1000
+ ],
+ "REALMS": [
+  {
+   "name": "Spawn Point",
+   "realm": 1,
+   "clues": [
+    {
+     "q": "A testable explanation a scientist proposes before running an experiment.",
+     "a": "What is a hypothesis?",
+     "dd": false
+    },
+    {
+     "q": "These imaginary lines measure how far north or south of the equator you are, in degrees.",
+     "a": "What is latitude?",
+     "dd": false
+    },
+    {
+     "q": "On a topographic map, these lines connect points that have the same elevation.",
+     "a": "What are contour lines?",
+     "dd": true
+    },
+    {
+     "q": "Earth's four spheres are the geosphere, hydrosphere, atmosphere, and this one, made of every living thing.",
+     "a": "What is the biosphere?",
+     "dd": false
+    },
+    {
+     "q": "Oxygen is the most common element in Earth's crust. This element, the backbone of silicate minerals, is second.",
+     "a": "What is silicon?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "The Mine",
+   "realm": 2,
+   "clues": [
+    {
+     "q": "This mineral sits at the top of the Mohs scale with a hardness of 10.",
+     "a": "What is diamond?",
+     "dd": false
+    },
+    {
+     "q": "The color of a mineral's powder when you rub it across an unglazed porcelain plate.",
+     "a": "What is streak?",
+     "dd": false
+    },
+    {
+     "q": "This shiny black volcanic glass cools so fast that no crystals have time to form.",
+     "a": "What is obsidian?",
+     "dd": true
+    },
+    {
+     "q": "Heat and pressure turn limestone into this metamorphic rock, a favorite for statues.",
+     "a": "What is marble?",
+     "dd": false
+    },
+    {
+     "q": "Sediments become rock by compaction and this process, where dissolved minerals glue the grains together.",
+     "a": "What is cementation?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "The Surface",
+   "realm": 3,
+   "clues": [
+    {
+     "q": "Water seeps into a crack, freezes, expands, and pries the rock apart. It's why Idaho gets potholes every spring.",
+     "a": "What is frost wedging?",
+     "dd": false
+    },
+    {
+     "q": "Bruneau Dunes State Park has the tallest single-structured one of these in North America, about 470 feet high.",
+     "a": "What is a sand dune?",
+     "dd": false
+    },
+    {
+     "q": "When a river cuts off one of its own loops, it leaves behind this curved lake.",
+     "a": "What is an oxbow lake?",
+     "dd": true
+    },
+    {
+     "q": "An underground layer of rock or sediment that stores and moves groundwater, like the one under the Snake River Plain.",
+     "a": "What is an aquifer?",
+     "dd": false
+    },
+    {
+     "q": "A valley glacier grinds a V-shaped river valley into this shape.",
+     "a": "What is a U shape (a U-shaped valley)?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "The Deep",
+   "realm": 4,
+   "clues": [
+    {
+     "q": "This liquid layer of iron and nickel creates Earth's magnetic field as it churns.",
+     "a": "What is the outer core?",
+     "dd": false
+    },
+    {
+     "q": "The point on Earth's surface directly above the spot where an earthquake starts.",
+     "a": "What is the epicenter?",
+     "dd": false
+    },
+    {
+     "q": "Idaho's largest recorded earthquake, magnitude 6.9 in 1983, is named for this peak, the tallest in Idaho.",
+     "a": "What is Borah Peak?",
+     "dd": true
+    },
+    {
+     "q": "Broad, gently sloping volcanoes built from layer after layer of runny basalt lava, like Mauna Loa.",
+     "a": "What are shield volcanoes?",
+     "dd": false
+    },
+    {
+     "q": "This type of seismic wave cannot travel through liquid, which is how scientists figured out the outer core is liquid.",
+     "a": "What is an S wave?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "The Ocean",
+   "realm": 5,
+   "clues": [
+    {
+     "q": "The measure of how much dissolved salt is in seawater.",
+     "a": "What is salinity?",
+     "dd": false
+    },
+    {
+     "q": "Because Earth spins, winds and ocean currents curve. In the Northern Hemisphere this effect bends them to the right.",
+     "a": "What is the Coriolis effect?",
+     "dd": false
+    },
+    {
+     "q": "The deepest spot on Earth, almost 11,000 meters down in the western Pacific.",
+     "a": "What is the Mariana Trench?",
+     "dd": true
+    },
+    {
+     "q": "Extra-large tides that happen when the Sun, Moon, and Earth line up at new moon and full moon.",
+     "a": "What are spring tides?",
+     "dd": false
+    },
+    {
+     "q": "Cold, nutrient-rich water rising from the deep to the surface, feeding plankton and some of the world's best fisheries.",
+     "a": "What is upwelling?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "The Sky",
+   "realm": 6,
+   "clues": [
+    {
+     "q": "The lowest layer of the atmosphere, where almost all weather happens.",
+     "a": "What is the troposphere?",
+     "dd": false
+    },
+    {
+     "q": "This layer inside the stratosphere absorbs most of the Sun's harmful ultraviolet radiation.",
+     "a": "What is the ozone layer?",
+     "dd": false
+    },
+    {
+     "q": "This towering cloud type brings thunderstorms, lightning, and hail.",
+     "a": "What is a cumulonimbus cloud?",
+     "dd": true
+    },
+    {
+     "q": "This scale rates tornadoes from EF0 to EF5 based on the damage they leave behind.",
+     "a": "What is the Enhanced Fujita scale?",
+     "dd": false
+    },
+    {
+     "q": "This famous graph of carbon dioxide measured at Mauna Loa since the late 1950s shows CO₂ rising every year.",
+     "a": "What is the Keeling Curve?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "Ancient Layers",
+   "realm": 7,
+   "clues": [
+    {
+     "q": "In undisturbed rock layers, the oldest layer is on the bottom. This is the law of...",
+     "a": "What is superposition?",
+     "dd": false
+    },
+    {
+     "q": "Idaho's official state fossil, a zebra-like animal dug up near the Snake River.",
+     "a": "What is the Hagerman Horse?",
+     "dd": false
+    },
+    {
+     "q": "The time it takes for half of the parent isotopes in a sample to decay.",
+     "a": "What is a half-life?",
+     "dd": true
+    },
+    {
+     "q": "The asteroid that helped wipe out the dinosaurs 66 million years ago left this crater in Mexico's Yucatán.",
+     "a": "What is the Chicxulub crater?",
+     "dd": false
+    },
+    {
+     "q": "Layered mounds built by cyanobacteria, among the oldest fossils on Earth.",
+     "a": "What are stromatolites?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "Resources",
+   "realm": 8,
+   "clues": [
+    {
+     "q": "A resource that nature replaces within a human lifetime, like sunlight or wind.",
+     "a": "What is a renewable resource?",
+     "dd": false
+    },
+    {
+     "q": "Splitting uranium atoms to release energy, the specialty of Idaho National Laboratory.",
+     "a": "What is nuclear fission?",
+     "dd": false
+    },
+    {
+     "q": "Coal, oil, and natural gas formed from the remains of ancient living things, so they're called this.",
+     "a": "What are fossil fuels?",
+     "dd": true
+    },
+    {
+     "q": "Fertilizer runoff feeds huge algae blooms that use up a lake's oxygen. This process is called...",
+     "a": "What is eutrophication?",
+     "dd": false
+    },
+    {
+     "q": "Pollution that comes from many scattered places, like lawns, farms, and streets, instead of one pipe.",
+     "a": "What is nonpoint-source pollution?",
+     "dd": false
+    }
+   ]
+  },
+  {
+   "name": "Beyond Bedrock",
+   "realm": 9,
+   "clues": [
+    {
+     "q": "Earth's tilted axis, not its distance from the Sun, is the reason we have these.",
+     "a": "What are seasons?",
+     "dd": false
+    },
+    {
+     "q": "When the Moon passes directly between the Sun and Earth and blocks the Sun, you see this.",
+     "a": "What is a solar eclipse?",
+     "dd": false
+    },
+    {
+     "q": "The average distance from Earth to the Sun, about 150 million kilometers.",
+     "a": "What is an astronomical unit (AU)?",
+     "dd": true
+    },
+    {
+     "q": "The process that powers the Sun: hydrogen nuclei smash together to form helium.",
+     "a": "What is nuclear fusion?",
+     "dd": false
+    },
+    {
+     "q": "The gigantic explosion of a massive star at the end of its life.",
+     "a": "What is a supernova?",
+     "dd": false
+    }
+   ]
+  }
+ ],
+ "FJ": {
+  "cat": "The Big Picture (All Realms)",
+  "q": "This one theory explains why Idaho gets earthquakes like the 1983 Borah Peak quake, why the Himalayas are still rising a few millimeters a year, and why the Mariana Trench exists.",
+  "a": "What is plate tectonics?"
+ }
+}

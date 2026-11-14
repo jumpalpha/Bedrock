@@ -1,0 +1,74 @@
+{
+ "QS": [
+  {
+   "a": "Live next to an active volcano with rich, fertile soil",
+   "b": "Live on a quiet fault line with poor, rocky soil",
+   "cat": "Natural Hazards",
+   "debate": "Why do millions of people choose to live near volcanoes? Is the risk worth it?",
+   "fact": "Volcanic ash weathers into some of the most fertile soil on Earth. Idaho's potatoes grow in volcanic soil on the Snake River Plain."
+  },
+  {
+   "a": "Get a 10-second warning before every earthquake",
+   "b": "Get a 10-day warning before every volcanic eruption",
+   "cat": "Natural Hazards",
+   "debate": "Which warning would save more lives, and why is one easier for scientists to give than the other?",
+   "fact": "Earthquakes can't be predicted, but early-warning systems detect fast P waves and send alerts seconds before the slower, stronger shaking arrives. Volcanoes often give days to weeks of warning signs like quake swarms, gas, and swelling."
+  },
+  {
+   "a": "Explore the bottom of the Mariana Trench",
+   "b": "Walk on the surface of Mars",
+   "cat": "Exploration",
+   "debate": "Should we spend more money exploring our own oceans or exploring space?",
+   "fact": "Only a few dozen people have ever reached Challenger Deep, the deepest point in the ocean, and most of the sea floor has still never been mapped in high detail."
+  },
+  {
+   "a": "Power your town with a hydroelectric dam that blocks salmon runs",
+   "b": "Power your town with a wind farm that changes the view of the hills",
+   "cat": "Energy & Resources",
+   "debate": "Every energy source has trade-offs. Which trade-off is easier to live with?",
+   "fact": "Hydroelectric power is the biggest source of electricity made in Idaho. Dams also block salmon that once swam over 900 miles from the Pacific to reach Idaho."
+  },
+  {
+   "a": "Live through a whiteout blizzard",
+   "b": "Live through a summer heat wave",
+   "cat": "Weather & Climate",
+   "debate": "Which is more dangerous, and how would you prepare for each?",
+   "fact": "Extreme heat is the deadliest weather hazard in the United States in most years, even though storms get more attention."
+  },
+  {
+   "a": "Find a perfect dinosaur fossil",
+   "b": "Find a fist-sized natural diamond",
+   "cat": "Ancient Layers",
+   "debate": "Should fossils found on public land belong to the finder, a museum, or everyone?",
+   "fact": "On federal public land in the U.S., vertebrate fossils like dinosaur bones are protected and can only be collected with a permit. They belong in public collections for science."
+  },
+  {
+   "a": "Know the exact date of the next big Idaho earthquake",
+   "b": "Never know, but have a home built to survive it",
+   "cat": "Earthquakes",
+   "debate": "Is it better to predict disasters or to prepare for them?",
+   "fact": "Scientists can estimate how likely a quake is in an area over many years, but no one can predict the exact day. Building codes and Drop, Cover, Hold On save lives either way."
+  },
+  {
+   "a": "Drink water from a deep aquifer that took 10,000 years to fill",
+   "b": "Drink treated water from a river",
+   "cat": "Water",
+   "debate": "Who should decide how much groundwater farms and cities can pump?",
+   "fact": "Groundwater can be thousands of years old. If people pump it faster than rain and snowmelt recharge it, the water table drops."
+  },
+  {
+   "a": "Watch a total solar eclipse",
+   "b": "Watch the northern lights",
+   "cat": "Space",
+   "debate": "Which event would you travel farther to see, and what causes each one?",
+   "fact": "A total solar eclipse happens when the Moon fully blocks the Sun. Auroras form when particles from the solar wind hit gases high in our atmosphere. The 2017 eclipse's path of totality crossed eastern Idaho."
+  },
+  {
+   "a": "Live in a city with no air pollution but no cars allowed",
+   "b": "Live in a city with cars but frequent smoggy, high-AQI days",
+   "cat": "Human Impact",
+   "debate": "Should cities limit cars on bad air days?",
+   "fact": "Ground-level ozone and particulate matter from vehicles are major parts of smog. Winter inversions in Idaho's valleys can trap pollution near the ground for days."
+  }
+ ]
+}

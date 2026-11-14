@@ -1,0 +1,112 @@
+{
+ "MYTHS": [
+  {
+   "myth": "Summer is hot because Earth is closest to the Sun in summer.",
+   "answer": false,
+   "cat": "Seasons",
+   "explanation": "BUSTED! Earth is closest to the Sun in early January. Seasons happen because Earth's axis is tilted about 23.5°, so each hemisphere takes turns getting more direct sunlight."
+  },
+  {
+   "myth": "Lightning never strikes the same place twice.",
+   "answer": false,
+   "cat": "Storms",
+   "explanation": "BUSTED! Tall objects get hit over and over. The Empire State Building is struck about 20 to 25 times a year."
+  },
+  {
+   "myth": "The safest place in an earthquake is a doorway.",
+   "answer": false,
+   "cat": "Earthquakes",
+   "explanation": "BUSTED! In modern homes doorways are no stronger than other parts of the house, and the door can swing into you. Drop, Cover, and Hold On under a sturdy table instead."
+  },
+  {
+   "myth": "Diamonds form when coal is squeezed under pressure.",
+   "answer": false,
+   "cat": "Minerals",
+   "explanation": "BUSTED! Most diamonds form from carbon deep in the mantle, roughly 150 km down or more, and most are older than land plants. Coal forms much closer to the surface from buried plants."
+  },
+  {
+   "myth": "Earth's inner core is solid, even though it's about as hot as the surface of the Sun.",
+   "answer": true,
+   "cat": "The Deep",
+   "explanation": "CONFIRMED! The inner core is about 5,200 °C, but crushing pressure keeps its iron and nickel solid. The outer core is the liquid layer."
+  },
+  {
+   "myth": "Some rocks can float on water.",
+   "answer": true,
+   "cat": "Volcanoes",
+   "explanation": "CONFIRMED! Pumice forms when gas-filled lava cools fast. It's full of bubbles, so it's often light enough to float."
+  },
+  {
+   "myth": "A magnitude 7 earthquake releases about twice as much energy as a magnitude 6.",
+   "answer": false,
+   "cat": "Earthquakes",
+   "explanation": "BUSTED! Each whole step on the magnitude scale releases about 32 times more energy. A magnitude 7 releases about 32 times more energy than a 6."
+  },
+  {
+   "myth": "Mount Everest is the tallest mountain on Earth from base to peak.",
+   "answer": false,
+   "cat": "Mountains",
+   "explanation": "BUSTED! Everest has the highest peak above sea level, but Mauna Kea in Hawaii is over 10,000 m tall from its base on the sea floor."
+  },
+  {
+   "myth": "The continents are still moving today.",
+   "answer": true,
+   "cat": "Plate Tectonics",
+   "explanation": "CONFIRMED! Plates move a few centimeters a year, about as fast as your fingernails grow. The Himalayas are still rising a few millimeters a year."
+  },
+  {
+   "myth": "You can see the Great Wall of China from the Moon with your naked eye.",
+   "answer": false,
+   "cat": "Space",
+   "explanation": "BUSTED! The wall is long but only several meters wide. From the Moon, about 384,000 km away, no individual human structure can be seen with the naked eye."
+  },
+  {
+   "myth": "Pluto is still officially a planet.",
+   "answer": false,
+   "cat": "Space",
+   "explanation": "BUSTED! In 2006 the International Astronomical Union reclassified Pluto as a dwarf planet, because it hasn't cleared its orbit of other objects in the Kuiper Belt."
+  },
+  {
+   "myth": "Most of the water on Earth is salt water.",
+   "answer": true,
+   "cat": "Oceans",
+   "explanation": "CONFIRMED! About 97% of Earth's water is in the salty ocean. Most fresh water is locked up in ice and groundwater."
+  },
+  {
+   "myth": "Idaho has had earthquakes stronger than magnitude 6.",
+   "answer": true,
+   "cat": "Idaho",
+   "explanation": "CONFIRMED! The 1983 Borah Peak earthquake was magnitude 6.9, and the 2020 Stanley earthquake was magnitude 6.5."
+  },
+  {
+   "myth": "The ozone hole is the main cause of global warming.",
+   "answer": false,
+   "cat": "Climate",
+   "explanation": "BUSTED! They're different problems. The ozone hole lets in more UV radiation. Global warming is caused mainly by greenhouse gases like CO₂ from burning fossil fuels."
+  },
+  {
+   "myth": "Heat lightning is a special kind of lightning that happens on hot nights with no storm.",
+   "answer": false,
+   "cat": "Storms",
+   "explanation": "BUSTED! 'Heat lightning' is just lightning from a thunderstorm too far away for you to hear the thunder."
+  },
+  {
+   "myth": "The Moon has a 'dark side' that never gets sunlight.",
+   "answer": false,
+   "cat": "Space",
+   "explanation": "BUSTED! The far side gets just as much sunlight as the near side. We never see it from Earth because the Moon's rotation is synchronous: it spins once for every trip around Earth."
+  },
+  {
+   "myth": "Water drains the opposite way in the Southern Hemisphere because of the Coriolis effect.",
+   "answer": false,
+   "cat": "Oceans",
+   "explanation": "BUSTED! The Coriolis effect steers huge things like hurricanes and ocean currents, but it's far too weak to control a sink or toilet. The basin's shape and the way water enters decide the swirl."
+  },
+  {
+   "myth": "Fossils are usually found in sedimentary rock.",
+   "answer": true,
+   "cat": "Ancient Layers",
+   "explanation": "CONFIRMED! Living things get buried in mud and sand, which harden into sedimentary rock. The heat of igneous and metamorphic rock usually destroys fossils."
+  }
+ ]
+}

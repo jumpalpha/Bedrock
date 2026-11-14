@@ -1,0 +1,170 @@
+{
+ "ROOMS": [
+  {
+   "title": "The Volcano Lab",
+   "icon": "🌋",
+   "scenario": "The monitoring lab on a restless volcano just lost power and the vault door slammed shut. The gas sensors are spiking. Every answer is part of the door code. Solve all 5 clues before the evacuation siren sounds.",
+   "clues": [
+    {
+     "label": "Clue 1",
+     "q": "The seismometers show swarms of small earthquakes that keep getting shallower. Molten rock is rising under the volcano. While it is still underground, what is that molten rock called?",
+     "ans": [
+      "magma"
+     ],
+     "hint": "Once it erupts onto the surface, it gets a different name: lava.",
+     "exp": "Magma is molten rock underground. Rising magma cracks rock as it moves, which causes swarms of small quakes."
+    },
+    {
+     "label": "Clue 2",
+     "q": "The gas sample shows the magma is rich in silica, so it's thick and sticky. What property measures how much a liquid resists flowing?",
+     "ans": [
+      "viscosity",
+      "viscous"
+     ],
+     "hint": "Honey has more of it than water. Starts with V.",
+     "exp": "High-silica magma has high viscosity. It traps gas bubbles until the pressure blasts them out."
+    },
+    {
+     "label": "Clue 3",
+     "q": "Use clue 2: thick, gas-rich magma, and a steep cone built from layers of ash and lava. What type of volcano is the lab sitting on?",
+     "ans": [
+      "composite",
+      "stratovolcano",
+      "strato"
+     ],
+     "hint": "Mount St. Helens is one. It has two names: one starts with C, the other with S.",
+     "exp": "Composite volcanoes (stratovolcanoes) erupt explosively because their sticky magma traps gas."
+    },
+    {
+     "label": "Clue 4",
+     "q": "The warning screen says the deadliest danger here is a fast-moving avalanche of hot gas, ash, and rock racing down the slope. What is it called?",
+     "ans": [
+      "pyroclastic flow",
+      "pyroclastic"
+     ],
+     "hint": "Two words. The first means 'fire-broken' in Greek. The second is what water does in a river.",
+     "exp": "Pyroclastic flows can move over 100 km/h and are hundreds of degrees hot. Nobody can outrun one, so evacuating early is the only defense."
+    },
+    {
+     "label": "Clue 5",
+     "q": "Vault code: type the FIRST LETTER of each answer from clues 1 to 4, in order (4 letters).",
+     "ans": [
+      "mvcp",
+      "mvsp"
+     ],
+     "hint": "Magma, Viscosity, Composite (or Stratovolcano), Pyroclastic...",
+     "exp": "Door open! Magma + high Viscosity = a Composite volcano that can send Pyroclastic flows. Evacuate to high ground away from valleys, which channel pyroclastic flows and lahars."
+    }
+   ]
+  },
+  {
+   "title": "The Flood Zone",
+   "icon": "🌊",
+   "scenario": "Spring snowmelt and heavy rain are pushing the river toward flood stage above a small Idaho town. Your team is locked in the county emergency center. Build the 5-part flood plan to open the door and warn the town.",
+   "clues": [
+    {
+     "label": "Clue 1",
+     "q": "Rain and snowmelt that can't soak into the frozen ground flow across the surface into streams. What is this water called?",
+     "ans": [
+      "runoff",
+      "run off"
+     ],
+     "hint": "It runs off the land. One word.",
+     "exp": "Frozen or paved ground can't soak up water, so more of it becomes runoff and rivers rise fast."
+    },
+    {
+     "label": "Clue 2",
+     "q": "All the land that drains into this one river is its drainage basin. What is another name for a drainage basin?",
+     "ans": [
+      "watershed"
+     ],
+     "hint": "Water + a small backyard building.",
+     "exp": "A watershed collects every drop that falls inside its divides. The Snake River's watershed covers most of southern Idaho."
+    },
+    {
+     "label": "Clue 3",
+     "q": "The flat, low land along the river that gets covered with water when the river overflows its banks. Great farmland, risky place for houses. What is it?",
+     "ans": [
+      "floodplain",
+      "flood plain"
+     ],
+     "hint": "Flood + a flat, open area of land.",
+     "exp": "Floodplains are built from sediment the river drops during floods, which is why they're so fertile and so flood-prone."
+    },
+    {
+     "label": "Clue 4",
+     "q": "In 1976, an earthen dam in eastern Idaho failed while it was being filled for the very first time, sending a wall of water toward Rexburg. What was the dam's name?",
+     "ans": [
+      "teton"
+     ],
+     "hint": "Same name as the jagged mountain range near Jackson Hole.",
+     "exp": "The Teton Dam failed on June 5, 1976. Its flood swept through towns along the river, including Rexburg."
+    },
+    {
+     "label": "Clue 5",
+     "q": "Final lock: the National Weather Service says 6 inches of fast-moving water can knock an adult down, and 12 inches of rushing water can carry away most cars. Add 6 + 12 to the YEAR the dam in clue 4 failed. What is the code?",
+     "ans": [
+      "1994"
+     ],
+     "hint": "6 + 12 = 18. Add that to 1976.",
+     "exp": "Door open! Code 1994. Never walk or drive into flood water. The National Weather Service slogan is 'Turn Around, Don't Drown.'"
+    }
+   ]
+  },
+  {
+   "title": "Quake City",
+   "icon": "🏚️",
+   "scenario": "A strong earthquake just shook Quake City and the seismology lab is on lockdown. To unlock the door, protect yourselves, read the seismograph, find the epicenter, and enter the keypad code.",
+   "clues": [
+    {
+     "label": "Clue 1",
+     "q": "The shaking starts! What 3-part action should everyone in the lab do right now? (Type all three actions.)",
+     "ans": [
+      "drop cover hold"
+     ],
+     "hint": "Get low, get under something sturdy, and hang on...",
+     "exp": "Drop, Cover, and Hold On. Get down before the shaking knocks you down, protect your head and neck, and hold on until it stops."
+    },
+    {
+     "label": "Clue 2",
+     "q": "The seismograph caught two kinds of body waves. The fastest one arrives first and pushes and pulls the rock like a spring. What is it called?",
+     "ans": [
+      "p wave",
+      "p-wave",
+      "primary"
+     ],
+     "hint": "It's named for being first, or primary. One letter + 'wave'.",
+     "exp": "P waves (primary waves) are the fastest seismic waves and travel through solids, liquids, and gases. S waves arrive second."
+    },
+    {
+     "label": "Clue 3",
+     "q": "The S wave arrived 20 seconds after the P wave. The lab's rule of thumb: every 1 second of gap means the quake is about 8 km away. How many km away was the quake?",
+     "ans": [
+      "160"
+     ],
+     "hint": "Multiply the gap in seconds by 8.",
+     "exp": "20 s × 8 km/s = 160 km. The longer the gap between P and S waves, the farther away the earthquake."
+    },
+    {
+     "label": "Clue 4",
+     "q": "Three stations each draw a circle showing their distance. The point on the map where all three circles cross is directly above where the quake started. What is that point called?",
+     "ans": [
+      "epicenter",
+      "epicentre"
+     ],
+     "hint": "'Epi' means 'above.' The point underground where the quake starts is the focus.",
+     "exp": "Using three stations is called triangulation. The circles cross at the epicenter, right above the focus."
+    },
+    {
+     "label": "Clue 5",
+     "q": "Keypad: take your distance from clue 3 and add Idaho's biggest recorded earthquake magnitude, the 1983 Borah Peak quake (6.9), written without the decimal point (69). What is the code?",
+     "ans": [
+      "229"
+     ],
+     "hint": "160 + 69.",
+     "exp": "Door open! Code 229. Idaho's 1983 Borah Peak earthquake was magnitude 6.9, the largest in the state's recorded history."
+    }
+   ]
+  }
+ ]
+}

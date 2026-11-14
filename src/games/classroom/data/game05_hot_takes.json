@@ -1,0 +1,109 @@
+{
+ "QUESTIONS": [
+  {
+   "type": "hot",
+   "q": "HOT TAKE: TRUE or FALSE — Summer happens because Earth is closest to the Sun.",
+   "a": "FALSE — seasons come from Earth's tilted axis",
+   "fact": "Earth is actually closest to the Sun in early January, during the Northern Hemisphere's winter.",
+   "pts": 200
+  },
+  {
+   "type": "rapid",
+   "q": "How tall is Borah Peak, Idaho's highest mountain, in feet?",
+   "a": "About 12,662 feet",
+   "fact": "Borah Peak is in the Lost River Range. The 1983 earthquake lifted it about a foot higher.",
+   "pts": 300
+  },
+  {
+   "type": "hot",
+   "q": "HOT TAKE: Which is more dangerous to people near a volcano: lava flows or pyroclastic flows?",
+   "a": "Pyroclastic flows",
+   "fact": "Pyroclastic flows are avalanches of hot gas, ash, and rock that race downhill far faster than anyone can run. Most lava flows move slowly enough to walk away from.",
+   "pts": 400
+  },
+  {
+   "type": "blitz",
+   "q": "BLITZ: Name Earth's 4 main layers from the center out. GO!",
+   "a": "Inner core, outer core, mantle, crust",
+   "fact": "The crust is so thin compared to the whole planet that it's like the skin on an apple.",
+   "pts": 300
+  },
+  {
+   "type": "rapid",
+   "q": "What is the hardest mineral on the Mohs scale, and what number is it?",
+   "a": "Diamond, 10",
+   "fact": "The Mohs scale runs from talc (1) to diamond (10). Each mineral scratches the ones below it.",
+   "pts": 200
+  },
+  {
+   "type": "hot",
+   "q": "HOT TAKE: TRUE or FALSE — Lightning never strikes the same place twice.",
+   "a": "FALSE",
+   "fact": "Lightning often hits the same tall object again and again. The Empire State Building is struck about 20 to 25 times a year.",
+   "pts": 400
+  },
+  {
+   "type": "rapid",
+   "q": "About how much of Earth's surface is covered by ocean?",
+   "a": "About 71%",
+   "fact": "The world ocean holds about 97% of all of Earth's water.",
+   "pts": 300
+  },
+  {
+   "type": "blitz",
+   "q": "BLITZ: Name the 3 types of plate boundaries. GO!",
+   "a": "Divergent, convergent, transform",
+   "fact": "Plates pull apart at divergent boundaries, collide at convergent boundaries, and slide past each other at transform boundaries like the San Andreas Fault.",
+   "pts": 400
+  },
+  {
+   "type": "hot",
+   "q": "HOT TAKE: Which formed first in Idaho: the granite of the Idaho Batholith or the basalt of Craters of the Moon?",
+   "a": "The Idaho Batholith granite",
+   "fact": "The batholith granite is tens of millions of years old. Craters of the Moon's last eruptions were only about 2,000 years ago.",
+   "pts": 500
+  },
+  {
+   "type": "rapid",
+   "q": "What gas makes up about 78% of the air you breathe?",
+   "a": "Nitrogen",
+   "fact": "Oxygen is about 21%. Argon, carbon dioxide, and other gases make up the last 1%.",
+   "pts": 200
+  },
+  {
+   "type": "blitz",
+   "q": "BLITZ: Name the 3 main rock types AND one example of each. GO!",
+   "a": "Igneous (granite, basalt), sedimentary (sandstone, limestone), metamorphic (marble, slate)",
+   "fact": "The rock cycle turns any one of these rock types into the others over time.",
+   "pts": 500
+  },
+  {
+   "type": "hot",
+   "q": "HOT TAKE: Is Pluto a planet?",
+   "a": "No — it's a dwarf planet",
+   "fact": "In 2006 astronomers reclassified Pluto as a dwarf planet because it hasn't cleared its orbit of other Kuiper Belt objects.",
+   "pts": 400
+  },
+  {
+   "type": "rapid",
+   "q": "About how old is Earth?",
+   "a": "About 4.6 billion years",
+   "fact": "Scientists dated meteorites and Moon rocks to find Earth's age.",
+   "pts": 300
+  },
+  {
+   "type": "hot",
+   "q": "HOT TAKE: TRUE or FALSE — The Sun is a star.",
+   "a": "TRUE",
+   "fact": "The Sun is a medium-sized, middle-aged main-sequence star powered by nuclear fusion.",
+   "pts": 500
+  },
+  {
+   "type": "blitz",
+   "q": "BLITZ: Name the 4 Earth spheres. GO!",
+   "a": "Geosphere, hydrosphere, atmosphere, biosphere",
+   "fact": "Every Earth event, like a volcanic eruption, touches all four spheres.",
+   "pts": 200
+  }
+ ]
+}

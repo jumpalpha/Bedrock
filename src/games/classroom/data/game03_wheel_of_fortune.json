@@ -1,0 +1,68 @@
+{
+ "PUZZLES": [
+  {
+   "phrase": "PLATE TECTONICS",
+   "cat": "The Deep"
+  },
+  {
+   "phrase": "MOHS HARDNESS SCALE",
+   "cat": "Minerals"
+  },
+  {
+   "phrase": "IGNEOUS SEDIMENTARY METAMORPHIC",
+   "cat": "Three Rock Types"
+  },
+  {
+   "phrase": "LAW OF SUPERPOSITION",
+   "cat": "Ancient Layers"
+  },
+  {
+   "phrase": "SNAKE RIVER PLAIN AQUIFER",
+   "cat": "Idaho Groundwater"
+  },
+  {
+   "phrase": "CRATERS OF THE MOON",
+   "cat": "Idaho Landmark"
+  },
+  {
+   "phrase": "RING OF FIRE",
+   "cat": "Volcanoes"
+  },
+  {
+   "phrase": "GREENHOUSE EFFECT",
+   "cat": "The Atmosphere"
+  },
+  {
+   "phrase": "CORIOLIS EFFECT",
+   "cat": "Ocean Currents"
+  },
+  {
+   "phrase": "THERMOHALINE CIRCULATION",
+   "cat": "Deep Ocean"
+  },
+  {
+   "phrase": "DROP COVER AND HOLD ON",
+   "cat": "Earthquake Safety"
+  },
+  {
+   "phrase": "ENHANCED FUJITA SCALE",
+   "cat": "Storms"
+  },
+  {
+   "phrase": "GREAT OXYGENATION EVENT",
+   "cat": "Earth's History"
+  },
+  {
+   "phrase": "RENEWABLE RESOURCE",
+   "cat": "Resources"
+  },
+  {
+   "phrase": "NUCLEAR FUSION",
+   "cat": "The Sun"
+  },
+  {
+   "phrase": "CONTINENTAL DIVIDE",
+   "cat": "Rivers"
+  }
+ ]
+}

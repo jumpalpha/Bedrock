@@ -1,0 +1,147 @@
+{
+ "CASES_DATA": [
+  {
+   "val": 100,
+   "type": "pts",
+   "label": "100 pts"
+  },
+  {
+   "val": 200,
+   "type": "pts",
+   "label": "200 pts"
+  },
+  {
+   "val": 300,
+   "type": "pts",
+   "label": "300 pts"
+  },
+  {
+   "val": 400,
+   "type": "pts",
+   "label": "400 pts"
+  },
+  {
+   "val": 500,
+   "type": "pts",
+   "label": "500 pts"
+  },
+  {
+   "val": 750,
+   "type": "pts",
+   "label": "750 pts"
+  },
+  {
+   "val": 1000,
+   "type": "pts",
+   "label": "1,000 pts"
+  },
+  {
+   "val": 1500,
+   "type": "pts",
+   "label": "1,500 pts"
+  },
+  {
+   "val": 2000,
+   "type": "pts",
+   "label": "2,000 pts"
+  },
+  {
+   "val": 3000,
+   "type": "pts",
+   "label": "3,000 pts"
+  },
+  {
+   "val": 5000,
+   "type": "pts",
+   "label": "5,000 pts"
+  },
+  {
+   "val": 10000,
+   "type": "pts",
+   "label": "10,000 pts"
+  },
+  {
+   "val": 25000,
+   "type": "pts",
+   "label": "25,000 pts"
+  },
+  {
+   "val": 1000,
+   "type": "pts",
+   "label": "1,000 pts"
+  },
+  {
+   "val": 2500,
+   "type": "pts",
+   "label": "2,500 pts"
+  },
+  {
+   "val": 500,
+   "type": "pts",
+   "label": "500 pts"
+  },
+  {
+   "val": -500,
+   "type": "hazard",
+   "label": "HAZARD",
+   "desc": "Quake hazard! Estimate the magnitude of Idaho's 1983 Borah Peak earthquake. (6.9) Miss by more than 0.5 and lose 500 pts.",
+   "fact": "The Borah Peak quake was Idaho's largest recorded earthquake. It lifted Borah Peak, Idaho's tallest mountain, about a foot higher."
+  },
+  {
+   "val": -500,
+   "type": "hazard",
+   "label": "HAZARD",
+   "desc": "Trench hazard! Estimate how many kilometers deep the Mariana Trench goes. (about 11 km) More than 2 km off = -500 pts.",
+   "fact": "The Mariana Trench is almost 11,000 m deep. Drop Mount Everest in and its peak would still be more than 2 km underwater."
+  },
+  {
+   "val": -1000,
+   "type": "hazard",
+   "label": "HAZARD",
+   "desc": "Core meltdown! Estimate the temperature of Earth's inner core in °C. (about 5,200 °C) Not within 1,000 °C = -1,000 pts.",
+   "fact": "The inner core is a solid ball of iron and nickel about as hot as the surface of the Sun. Huge pressure keeps it solid."
+  },
+  {
+   "val": -1000,
+   "type": "hazard",
+   "label": "HAZARD",
+   "desc": "Greenhouse hazard! Estimate the amount of CO₂ in the air in 2025, in parts per million. (about 427 ppm) Not within 25 ppm = -1,000 pts.",
+   "fact": "NOAA data show CO₂ has risen every year since 1959. Before the Industrial Revolution it was about 280 ppm."
+  },
+  {
+   "val": -2000,
+   "type": "hazard",
+   "label": "HAZARD",
+   "desc": "Supervolcano hazard! Estimate how long ago Earth formed. (about 4.6 billion years) Not within half a billion years = -2,000 pts.",
+   "fact": "Meteorites and Moon rocks show Earth formed about 4.6 billion years ago from a spinning cloud of gas and dust."
+  },
+  {
+   "val": 0,
+   "type": "bonus",
+   "label": "BONUS",
+   "desc": "Rock Hound! Name the 3 main types of rock. (+500 pts)",
+   "fact": "Igneous (cooled from magma or lava), sedimentary (cemented sediment), and metamorphic (changed by heat and pressure)."
+  },
+  {
+   "val": 0,
+   "type": "bonus",
+   "label": "BONUS",
+   "desc": "Storm Spotter! What is the difference between a tornado WATCH and a tornado WARNING? (+500 pts)",
+   "fact": "A watch means conditions are right for tornadoes, so be ready. A warning means a tornado has been spotted or shown on radar, so take shelter now."
+  },
+  {
+   "val": 0,
+   "type": "bonus",
+   "label": "BONUS",
+   "desc": "Quake Ready! What 3 actions protect you when the shaking starts? (+500 pts)",
+   "fact": "Drop, Cover, and Hold On. Get low, get under something sturdy, and hang on until the shaking stops."
+  },
+  {
+   "val": 0,
+   "type": "bonus",
+   "label": "BONUS",
+   "desc": "Star Gazer! Name the 4 rocky inner planets in order from the Sun. (+500 pts)",
+   "fact": "Mercury, Venus, Earth, Mars. These terrestrial planets are small and rocky; the outer four are gas and ice giants."
+  }
+ ]
+}
