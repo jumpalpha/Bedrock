@@ -4,6 +4,10 @@
 // /sprites/<name>.png is missing, so every game looks intentional before the real art exists.
 // Each is drawn once on a 256px canvas (same square framing as the PNGs) and cached.
 
+// ── wave-arcadeA ──
+import { ARCADE_A_DRAW } from "./fallback-sprites-arcadeA";
+// ── end wave-arcadeA ──
+
 const S = 256;
 const cache = new Map<string, HTMLCanvasElement | null>();
 
@@ -347,6 +351,10 @@ const DRAW: Record<string, (x: Ctx) => void> = {
     x.fill();
   },
 };
+
+// ── wave-arcadeA ──
+Object.assign(DRAW, ARCADE_A_DRAW);
+// ── end wave-arcadeA ──
 
 export function hasFallback(name: string) {
   return name in DRAW;

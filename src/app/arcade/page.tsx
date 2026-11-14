@@ -35,7 +35,8 @@ export default function ArcadePage() {
           <p className="mt-4 text-lg leading-relaxed text-muted">Bronze, Silver, Gold, and Legend medals for every game. Your best scores save on this device.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {arcadeGames.map((g) => (
+          {/* ── wave-arcadeA ── grouped games get their own shelves below */}
+          {arcadeGames.filter((g) => !g.group).map((g) => (
             <Link
               key={g.slug}
               href={`/arcade/play/${g.slug}/`}
@@ -58,6 +59,51 @@ export default function ArcadePage() {
           ))}
         </div>
       </section>
+
+      {/* ── wave-arcadeA ── */}
+      {SHELVES.map((sh) => (
+        <section key={sh.id} id={sh.id} className="scroll-mt-36 pt-24">
+          <div className="mb-10 max-w-2xl">
+            <div className="mb-3 inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              <span className="h-px w-6 bg-gold" />
+              {sh.eyebrow}
+            </div>
+            <h2 className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">{sh.title}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">{sh.sub}</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {arcadeGames.filter((g) => g.group === sh.id).map((g) => (
+              <Link
+                key={g.slug}
+                href={`/arcade/play/${g.slug}/`}
+                style={{ "--accent": g.color } as CSSProperties}
+                className="accent-card group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl p-6"
+              >
+                <div className="absolute inset-0" style={{ background: `radial-gradient(80% 60% at 50% 30%, color-mix(in srgb, ${g.color} 35%, transparent), transparent 70%)` }} />
+                <span className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 transition-transform duration-500 group-hover:-translate-y-[58%] group-hover:scale-110">
+                  <ArcadeArt slug={g.slug} emoji={g.emoji} size={120} />
+                </span>
+                <div className="relative">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.18em]" style={{ color: g.color }}>🎯 {g.goal}</div>
+                  <h3 className="mt-1 font-display text-xl font-extrabold">{g.title}</h3>
+                  <p className="mt-1 text-sm text-muted">{g.subtitle}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-[#10140e]" style={{ background: g.color }}>
+                    <Play className="size-3.5 fill-current" /> Play now
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
+      {/* ── end wave-arcadeA ── */}
     </div>
   );
 }
+
+// ── wave-arcadeA ──
+const SHELVES = [
+  { id: "classics", eyebrow: "Rebuilt with your sprite", title: "Arcade Classics", sub: "Old-school favorites, reimagined with rocks, storms and the Magma King." },
+  { id: "brain", eyebrow: "Learn while you play", title: "Brain Games", sub: "Quiz yourself on the vocab and ideas from every chapter." },
+] as const;
+// ── end wave-arcadeA ──
