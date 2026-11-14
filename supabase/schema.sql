@@ -256,7 +256,11 @@ begin
 end $$;
 
 -- Only the functions are callable from the website. Internal helpers stay locked.
-revoke execute on all functions in schema public from public, anon, authenticated;
+-- Scoped to Bedrock's own functions, so this file is also safe to run in a database shared with Dopps Class.
+revoke execute on function public._b_set, public._b_ok, public._b_teacher, public._b_today,
+  public.b_register, public.b_login, public.b_state, public.b_complete_task, public.b_grade, public.b_vote,
+  public.b_results, public.b_side_quest_submit, public.b_teacher_check, public.b_teacher_keys,
+  public.b_teacher_roster, public.b_teacher_approve, public.b_teacher_reset_pin from public, anon, authenticated;
 grant execute on function public.b_register, public.b_login, public.b_state, public.b_complete_task, public.b_grade,
   public.b_vote, public.b_results, public.b_side_quest_submit, public.b_teacher_check,
   public.b_teacher_keys, public.b_teacher_roster, public.b_teacher_approve, public.b_teacher_reset_pin to anon;
