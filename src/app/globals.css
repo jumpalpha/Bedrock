@@ -171,7 +171,7 @@ html.light .glass { box-shadow: 0 10px 30px -18px rgb(29 36 25 / 0.35); }
   background: radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--accent, #34d399) 22%, transparent), transparent 60%);
   opacity: 0.55; transition: opacity 0.25s ease;
 }
-.accent-card > * { position: relative; }
+.accent-card > :not(.absolute):not(.fixed) { position: relative; }
 .accent-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent, #34d399) 55%, transparent); box-shadow: 0 18px 50px -18px color-mix(in srgb, var(--accent, #34d399) 60%, transparent); }
 .accent-card:hover::before { opacity: 1; }
 html.light .accent-card { box-shadow: 0 10px 30px -20px rgb(29 36 25 / 0.4); }

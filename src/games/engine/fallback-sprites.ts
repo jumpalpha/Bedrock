@@ -7,6 +7,9 @@
 // ── wave-arcadeA ──
 import { ARCADE_A_DRAW } from "./fallback-sprites-arcadeA";
 // ── end wave-arcadeA ──
+// ── wave-arcadeB ──
+import { DRAW_B } from "./fallback-sprites-b";
+// ── end wave-arcadeB ──
 
 const S = 256;
 const cache = new Map<string, HTMLCanvasElement | null>();
@@ -357,12 +360,12 @@ Object.assign(DRAW, ARCADE_A_DRAW);
 // ── end wave-arcadeA ──
 
 export function hasFallback(name: string) {
-  return name in DRAW;
+  return name in DRAW || name in DRAW_B; // wave-arcadeB
 }
 
 export function fallbackSprite(name: string): HTMLCanvasElement | null {
   if (cache.has(name)) return cache.get(name)!;
-  const draw = DRAW[name];
+  const draw = DRAW[name] ?? DRAW_B[name]; // wave-arcadeB: ?? DRAW_B
   let c: HTMLCanvasElement | null = null;
   if (draw && typeof document !== "undefined") {
     c = document.createElement("canvas");

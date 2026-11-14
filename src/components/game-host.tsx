@@ -1,10 +1,7 @@
 "use client";
 
 import { ArcadeGame } from "@/games/engine/arcade-game";
-import { arcadeRegistry } from "@/games/registry";
-// ── wave-arcadeA ──
-import { arcadeComponents } from "@/games/registry";
-// ── end wave-arcadeA ──
+import { arcadeRegistry, arcadeComponents } from "@/games/registry";
 
 export function GameHost({ slug }: { slug: string }) {
   // ── wave-arcadeA ──
@@ -12,6 +9,10 @@ export function GameHost({ slug }: { slug: string }) {
   if (Custom) return <Custom />;
   // ── end wave-arcadeA ──
   const game = arcadeRegistry[slug];
+  // ── wave-arcadeB ──
+  const Comp = arcadeComponents[slug];
+  if (!game && Comp) return <Comp />;
+  // ── end wave-arcadeB ──
   if (!game) return null;
   return <ArcadeGame game={game} />;
 }
