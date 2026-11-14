@@ -10,6 +10,7 @@ import { PlayerCard } from "@/components/player-card";
 import { TaskList } from "@/components/task-list";
 import { AlienCard } from "@/components/alien-card"; // ── wave-pet ──
 import { BeReadyCard } from "@/components/twinA/ready-card"; // ── wave-twinA ──
+import { QuestUpNext } from "@/components/x7b/up-next"; // ── wave-x7b ──
 
 export default function Quest() {
   const { stats, state } = useProgress();
@@ -19,7 +20,7 @@ export default function Quest() {
       <PageHead eyebrow="My Quest" title="Mine your way to Diamond"
         sub={`${XP_PER_TASK} XP per task, ${XP_PER_DAY} XP for every day you log in, ${XP_PER_SIDE_QUEST} XP per approved side quest, plus XP from live class games. Clear a realm to rank up.`}>
         <div className="mt-8"><PlayerCard /></div>
-        {/* ── wave-pet ── */}<div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]"><AlienCard cleared={stats.cleared.length} /><Link href="/champions/" className="accent-card flex items-center justify-center gap-2 rounded-2xl p-4 font-extrabold" style={{ "--accent": "#f6c453" } as React.CSSProperties}>🏆 Hall of Champions</Link></div>
+        {/* ── wave-pet ── */}<div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1fr)_auto] [&>*]:min-w-0"><AlienCard cleared={stats.cleared.length} /><Link href="/champions/" className="accent-card flex items-center justify-center gap-2 rounded-2xl p-4 font-extrabold" style={{ "--accent": "#f6c453" } as React.CSSProperties}>🏆 Hall of Champions</Link></div>
       </PageHead>
       <div className="mx-auto max-w-7xl space-y-14 px-6 pt-12">
         {!dbReady && <p className="block-panel p-4 font-bold">Preview: saving progress turns on once the class database is connected.</p>}
@@ -84,6 +85,7 @@ export default function Quest() {
           {/* ── wave-twinA ── */}<BeReadyCard />
         </section>
 
+        {/* ── wave-x7b ── "Do these next" + Print my progress (from Dopps Class checklist.html) */}<QuestUpNext />
         <section>
           <Eyebrow>Checklist</Eyebrow>
           <h2 className="pixel-title mb-5 text-3xl">Every task, every realm</h2>

@@ -15,6 +15,8 @@ import { Activity, Clapperboard, House } from "lucide-react"; // ── wave-twi
 import { Footprints, Mountain, Lightbulb, Zap } from "lucide-react"; // ── wave-twinB ──
 import { BookMarked, Headphones, Palette, ScrollText } from "lucide-react"; // ── wave-x7a ──
 import { SiteLink } from "@/components/x7a-link"; // ── wave-x7a ──
+import { Hand, Printer, Timer, Users } from "lucide-react"; // ── wave-x7b ──
+import { InstallButton } from "@/components/x7b/pwa"; // ── wave-x7b ──
 
 const heroChips = [
   { n: String(chapters.length), label: "Chapters", color: "#84cc16", icon: BookOpen },
@@ -64,6 +66,12 @@ const quickLinks = [
   { label: "Art Studio", desc: "Strata, crystals, contour art", href: "/art-studio/", icon: Palette, color: "#f28c28" },
   { label: "Book Studio", desc: "Write your own book", href: "/book-studio/", icon: BookMarked, color: "#34d399" },
   // ── end wave-x7a ──
+  // ── wave-x7b ──
+  { label: "Welcome Back", desc: "Check in, briefing, what's next", href: "/welcome/", icon: Hand, color: "#f6c453" },
+  { label: "Print Quest Sheet", desc: "Every task on paper", href: "/print-quest/", icon: Printer, color: "#94a3a0" },
+  { label: "Station Timer", desc: "Projector timer for labs", href: "/timer/", icon: Timer, color: "#38bdf8" },
+  { label: "Parents & Visitors", desc: "For families and past students", href: "/parents/", icon: Users, color: "#c084fc" },
+  // ── end wave-x7b ──
 ];
 
 export default function Home() {
@@ -126,6 +134,7 @@ export default function Home() {
             <Btn href="/chapters/"><BookOpen className="size-5" /> Start reading</Btn>
             <Btn href="/arcade/" variant="ghost"><Gamepad2 className="size-5" /> Sprite Arcade</Btn>
           </div>
+          {/* ── wave-x7b ── */}<div className="mt-4 animate-rise [animation-delay:640ms]"><InstallButton className="glass inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-bold text-muted transition hover:text-fg" /></div>
         </div>
         <HeroOrbit />
       </section>

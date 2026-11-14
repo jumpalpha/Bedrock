@@ -1,5 +1,7 @@
 import { chapters, realms } from "@/data/site";
 import { SiteLink, x7aLinks } from "@/components/x7a-link"; // ── wave-x7a ──
+import { VisitCount } from "@/components/x7b/visit-count"; // ── wave-x7b ──
+import { InstallButton } from "@/components/x7b/pwa"; // ── wave-x7b ──
 
 // ── wave-learnA ── learning tools column
 const learn = { title: "Learn", links: [["Vocab Games", "/vocab/"], ["Review Deck", "/review/"], ["Mastery Checks", "/mastery/"], ["Search", "/search/"]] };
@@ -11,9 +13,14 @@ const cols = [
   { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Sprite Arcade", "/arcade/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
   { title: "Students", links: [["My Quest", "/quest/"], ["Unit Tests", "/tests/"], ["Pick a Side", "/pick-a-side/"], ["Survey of the Day", "/survey/"],
     // ── wave-twinA ──
-    ["Quake Ready", "/quake-ready/"], ["Family Disaster Plan", "/disaster-plan/"], ["Hazard PSA", "/hazard-psa/"]] },
+    ["Quake Ready", "/quake-ready/"], ["Family Disaster Plan", "/disaster-plan/"], ["Hazard PSA", "/hazard-psa/"],
+    // ── wave-x7b ──
+    ["Welcome Back", "/welcome/"], ["Print Quest Sheet", "/print-quest/"], ["Visitors (past students)", "/visitors/"], ["Suggest an Improvement", "/suggest/"]] },
   learn, // wave-learnA
-  { title: "Adults", links: [["Teacher Dashboard", "/teacher/"], ["Dopps Class (Health)", "https://doppsclass.com"]] },
+  { title: "Adults", links: [["Teacher Dashboard", "/teacher/"],
+    // ── wave-x7b ──
+    ["Parents & Guardians", "/parents/"], ["Sub Guide", "/sub-guide/"], ["Station Timer", "/timer/"],
+    ["Dopps Class (Health)", "https://doppsclass.com"]] },
 ];
 
 export function Footer() {
@@ -26,6 +33,7 @@ export function Footer() {
             Mr. Dopp&apos;s Earth science class as a survival planet. {chapters.length} chapters, {realms.length} realms, one world to figure out.
           </p>
           <p className="mt-5 font-mono text-xs tracking-wider text-muted/70">#Doppitup · Dig down, then look up</p>
+          {/* ── wave-x7b ── */}<div className="mt-5"><InstallButton /></div>
         </div>
         {cols.map((c) => (
           <div key={c.title}>
@@ -38,7 +46,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="border-t border-line px-6 py-6 text-center text-xs text-muted/60">Bedrock · bedrock.doppsclass.com</div>
+      <div className="border-t border-line px-6 py-6 text-center text-xs text-muted/60">Bedrock · bedrock.doppsclass.com{/* ── wave-x7b ── */}<VisitCount /></div>
     </footer>
   );
 }
