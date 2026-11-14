@@ -5,8 +5,9 @@ import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import glossary from "@/data/content/glossary.json";
 import { PageHead } from "@/components/ui";
+import { chapters } from "@/data/site";
 
-type Term = { term: string; definition: string; chapter?: number };
+type Term = { term: string; definition: string; chapter?: number | string };
 const all = (glossary as Term[]).slice().sort((a, b) => a.term.localeCompare(b.term));
 
 export default function Glossary() {
@@ -18,7 +19,7 @@ export default function Glossary() {
   }, [q]);
   return (
     <>
-      <PageHead eyebrow="Glossary" title="Every key word" sub={`${all.length} terms from all 28 chapters.`} />
+      <PageHead eyebrow="Glossary" title="Every key word" sub={`${all.length} terms from all ${chapters.length} chapters.`} />
       <div className="mx-auto max-w-4xl px-6 pt-10">
         <label className="sticky top-20 z-10 flex items-center gap-3 rounded-xl border border-line bg-ink px-4 py-3">
           <Search className="size-5 text-muted" />
@@ -27,7 +28,7 @@ export default function Glossary() {
         <dl className="mt-6 divide-y-2 divide-line">
           {list.map((t, i) => (
             <div key={t.term + i} className="py-3">
-              <dt className="font-extrabold">{t.term} {t.chapter && <Link href={`/chapters/${t.chapter}/`} className="ml-2 font-pixel text-[9px] text-grass">CH {t.chapter}</Link>}</dt>
+              <dt className="font-extrabold">{t.term} {t.chapter && <Link href={`/chapters/${t.chapter}/`} className="ml-2 font-pixel text-[9px] text-grass">CH {String(t.chapter).toUpperCase()}</Link>}</dt>
               <dd className="text-muted">{t.definition}</dd>
             </div>
           ))}

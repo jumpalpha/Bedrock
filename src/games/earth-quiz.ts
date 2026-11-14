@@ -18,7 +18,7 @@ export type ReviewQ = { id: string; ch: number; q: string; right: string; wrong:
 
 let termsP: Promise<Term[]> | null = null;
 let reviewP: Promise<ReviewQ[] | null> | null = null;
-let metaP: Promise<{ titles: Record<number, string>; realmOf: (ch: number) => string }> | null = null;
+let metaP: Promise<{ titles: Record<string, string>; realmOf: (ch: number) => string }> | null = null;
 
 /** Glossary terms (lazy chunk, cached). */
 export function loadTerms(): Promise<Term[]> {
@@ -43,7 +43,7 @@ export function loadReview(): Promise<ReviewQ[] | null> {
 /** Chapter titles and realm names. */
 export function loadMeta() {
   metaP ??= import("@/data/site").then(({ chapters, realmForChapter }) => ({
-    titles: Object.fromEntries(chapters.map((c) => [c.n, c.title])) as Record<number, string>,
+    titles: Object.fromEntries(chapters.map((c) => [c.id, c.title])) as Record<string, string>,
     realmOf: (ch: number) => realmForChapter(ch)?.name ?? "",
   }));
   return metaP;

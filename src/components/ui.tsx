@@ -49,11 +49,11 @@ export function PageHead({ eyebrow, title, sub, art, children }: { eyebrow: stri
 }
 
 export function ChapterCard({ ch, done }: { ch: Chapter; done?: boolean }) {
-  const realm = realmForChapter(ch.n);
+  const realm = realmForChapter(ch.id);
   return (
-    <Link href={`/chapters/${ch.n}/`} style={{ "--accent": realm.color } as CSSProperties} className="accent-card group flex flex-col rounded-2xl p-5">
+    <Link href={`/chapters/${ch.id}/`} style={{ "--accent": realm.color } as CSSProperties} className="accent-card group flex flex-col rounded-2xl p-5">
       <div className="flex items-start justify-between">
-        <span className="font-display text-5xl font-extrabold leading-none tracking-tighter" style={{ color: realm.color }}>{String(ch.n).padStart(2, "0")}</span>
+        <span className="font-display text-5xl font-extrabold leading-none tracking-tighter" style={{ color: realm.color }}>{ch.label.padStart(2, "0")}</span>
         {done ? <span className="rounded-full bg-emerald/15 px-2.5 py-1 text-[11px] font-bold text-emerald">✓ Read</span>
           : <ArrowUpRight className="size-5 text-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-fg" />}
       </div>

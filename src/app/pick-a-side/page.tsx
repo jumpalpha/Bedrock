@@ -6,13 +6,13 @@ import { chapters, realmForChapter } from "@/data/site";
 import { Eyebrow, PageHead } from "@/components/ui";
 import { VoteBox } from "@/components/vote-box";
 
-type D = { id: string; chapter: number; question: string; sideA: string; sideB: string; rating: "Green" | "Yellow" | "Red" };
+type D = { id: string; chapter: number | string; question: string; sideA: string; sideB: string; rating: "Green" | "Yellow" | "Red" };
 const debates = data.debates as D[];
 const ratingColor = { Green: "#22c55e", Yellow: "#eab308", Red: "#ef4444" };
 
 export default function PickASide() {
-  const [ch, setCh] = useState<number | null>(null);
-  const list = ch ? debates.filter((d) => d.chapter === ch) : debates;
+  const [ch, setCh] = useState<string | null>(null);
+  const list = ch ? debates.filter((d) => String(d.chapter) === ch) : debates;
   return (
     <>
       <PageHead eyebrow="Pick a Side" title="Two sides. Back yours up." sub={data.intro.replace(/ Rating key:$/, "")}>
@@ -23,14 +23,14 @@ export default function PickASide() {
         </div>
       </PageHead>
       <div className="mx-auto max-w-4xl px-6 pt-10">
-        <select value={ch ?? ""} onChange={(e) => setCh(e.target.value ? Number(e.target.value) : null)} className="mb-6 w-full rounded-xl border border-line bg-ink px-3 py-2 font-bold">
+        <select value={ch ?? ""} onChange={(e) => setCh(e.target.value || null)} className="mb-6 w-full rounded-xl border border-line bg-ink px-3 py-2 font-bold">
           <option value="">All chapters ({debates.length} debates)</option>
-          {chapters.map((c) => <option key={c.n} value={c.n}>Chapter {c.n}: {c.title}</option>)}
+          {chapters.map((c) => <option key={c.id} value={c.id}>Chapter {c.label}: {c.title}</option>)}
         </select>
         <div className="space-y-5">
           {list.map((d) => (
             <div key={d.id} className="block-panel p-5" style={{ borderLeftWidth: 10, borderLeftColor: ratingColor[d.rating] }}>
-              <Eyebrow color={realmForChapter(d.chapter).color}>Chapter {d.chapter} · {d.rating}</Eyebrow>
+              <Eyebrow color={realmForChapter(d.chapter).color}>Chapter {String(d.chapter).toUpperCase()} · {d.rating}</Eyebrow>
               <h2 className="pixel-title mb-4 text-xl sm:text-2xl">{d.question}</h2>
               <VoteBox kind="debate" item={d.id} options={[d.sideA, d.sideB]} reasonLabel="Your evidence from the chapter…" />
             </div>

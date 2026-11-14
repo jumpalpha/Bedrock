@@ -22,3 +22,15 @@ again in the browser on every attempt. Only the Teacher page (passcode) can show
 - Content: `src/data/content/*.json` (from the Bedrock doc). Database: `supabase/schema.sql`.
 - `npm run dev` to preview, `npm run build` to build the static site into `out/`.
 - Pushing to `main` deploys through `.github/workflows/pages.yml`.
+
+## Adding curriculum mid-term
+The Bedrock Claude Doc is the master copy. To add something you left out:
+1. Add it to the doc, in the same style as what's there. A missing chapter that belongs between two others is
+   "Chapter 12A: Title", placed after Chapter 12 (inside its realm), with its own quiz questions, glossary words and
+   Think Like a Scientist answer key in those sections of the doc. New questions go anywhere in a chapter's list.
+2. Tell Claude: **"sync Bedrock from the doc"**.
+3. Claude shows you a short list of what changed. Say OK, and it updates the site and the answer keys.
+
+Nothing else moves: chapter numbers and links stay the same, students keep their progress and scores, and anyone who
+already cleared a realm keeps the badge and rank. New chapters just add new tasks (and XP) to that realm.
+Details for Claude: `.claude/skills/sync-from-doc/SKILL.md` and `scripts/sync/`.

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Check, Lock, MapPin } from "lucide-react";
-import { realms, realmTasks } from "@/data/site";
+import { realmChapterLabel, realms, realmTasks } from "@/data/site";
 import { useProgress } from "@/lib/progress";
 import { ArtIcon } from "@/components/art-icon";
 
@@ -41,7 +41,7 @@ export function WorldMap() {
             </div>
             <div className="mt-5 flex-1">
               <h3 className="font-display text-2xl font-extrabold tracking-tight">{r.name}</h3>
-              <div className="mt-1.5 text-sm text-muted">Ch {r.chapters[0]}–{r.chapters[1]} · {r.biome}</div>
+              <div className="mt-1.5 text-sm text-muted">Ch {realmChapterLabel(r)} · {r.biome}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted/90">{r.description}</p>
             </div>
             <div className="mt-6">

@@ -13,7 +13,7 @@ export function PlayerCard() {
   const { student, ready, stats, error } = useProgress();
   const [login, setLogin] = useState(false);
   const next = allTasks.find((t) => !stats.done.has(t.key));
-  const chN = next ? Number(next.key.match(/^ch(\d+)/)?.[1] ?? 0) : 0;
+  const chN = next ? next.key.match(/^ch(\d+[a-z]?)_/)?.[1] ?? "" : "";
   const here = chN ? realmForChapter(chN) : realms.find((r) => !stats.cleared.some((c) => c.n === r.n)) ?? realms[8];
   const pct = Math.round((stats.xp / Math.max(stats.maxXp, 1)) * 100);
 

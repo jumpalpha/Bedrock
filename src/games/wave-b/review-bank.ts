@@ -8,7 +8,7 @@ import { review, asChoices } from "@/data/review";
 type Entry = { term: string; definition: string; chapter: number };
 const GLOSSARY = glossary as Entry[];
 
-export const chapterTitle = (n: number) => chapters.find((c) => c.n === n)?.title ?? `Chapter ${n}`;
+export const chapterTitle = (n: number | string) => chapters.find((c) => c.id === String(n))?.title ?? `Chapter ${n}`;
 
 const byChapter = new Map<number, Entry[]>();
 GLOSSARY.forEach((e) => { if (!byChapter.has(e.chapter)) byChapter.set(e.chapter, []); byChapter.get(e.chapter)!.push(e); });

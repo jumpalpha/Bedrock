@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import questions from "@/data/content/questions.json";
-import { realms } from "@/data/site";
+import { realmChapterLabel, realms } from "@/data/site";
 import { PageHead } from "@/components/ui";
 import { Quiz, type Q } from "@/components/quiz";
 
@@ -16,7 +16,7 @@ export default async function UnitTest({ params }: PageProps<"/tests/[n]">) {
   const qs = (questions.unit as Record<string, Q[]>)[String(n)];
   return (
     <>
-      <PageHead eyebrow={`Realm ${n} boss fight`} title={r.testTitle} sub={`Covers chapters ${r.chapters[0]} to ${r.chapters[1]}.`} />
+      <PageHead eyebrow={`Realm ${n} boss fight`} title={r.testTitle} sub={`Covers chapters ${realmChapterLabel(r)}.`} />
       <div className="px-4 pt-10"><Quiz kind="unit" refN={n} questions={qs} title={r.testTitle} passPct={70} backHref={`/realms/${n}/`} /></div>
     </>
   );

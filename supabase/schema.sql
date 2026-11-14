@@ -31,9 +31,9 @@ create table if not exists public.b_days (
   primary key (student_id, day)
 );
 create table if not exists public.b_keys (
-  id text primary key,                -- c01-01 (chapter bank), u1-01 (unit test), tls-01 (Think Like a Scientist)
+  id text primary key,                -- c01-<hash> (chapter bank), u1-<hash> (unit test), tls-01 / tls-12a (Think Like a Scientist)
   kind text not null check (kind in ('chapter', 'unit', 'tls')),
-  ref int not null,                   -- chapter number or realm number
+  ref int not null,                   -- chapter number or realm number; bonus chapters: 1201 = 12a, 1202 = 12b
   answer text not null                -- the exact correct choice text (tls: the model answer)
 );
 create table if not exists public.b_attempts (
@@ -64,6 +64,13 @@ create table if not exists public.b_side_quests (
   submitted_at timestamptz not null default now(),
   primary key (student_id, quest_id)
 );
+-- Realm clears, recorded once and kept even if the realm gets new chapters later (see b_claim_realm).
+create table if not exists public.b_cleared (
+  student_id uuid references public.b_students on delete cascade,
+  realm int not null,
+  cleared_at timestamptz not null default now(),
+  primary key (student_id, realm)
+);
 create table if not exists public.b_settings (
   k text primary key,
   v text not null
@@ -77,8 +84,9 @@ alter table public.b_attempts enable row level security;
 alter table public.b_votes enable row level security;
 alter table public.b_side_quests enable row level security;
 alter table public.b_settings enable row level security;
+alter table public.b_cleared enable row level security;
 revoke all on public.b_students, public.b_tasks, public.b_days, public.b_keys, public.b_attempts,
-  public.b_votes, public.b_side_quests, public.b_settings from anon, authenticated;
+  public.b_votes, public.b_side_quests, public.b_settings, public.b_cleared from anon, authenticated;
 
 -- Rules the teacher can change later: update public.b_settings set v = '…' where k = '…';
 insert into public.b_settings (k, v) values
@@ -145,6 +153,7 @@ begin
     'sideQuests', coalesce((select jsonb_agg(jsonb_build_object('id', quest_id, 'term', term, 'approved', approved))
                from public.b_side_quests where student_id = p_id), '[]'),
     'votes', (select count(*) from public.b_votes where student_id = p_id and kind = 'survey'),
+    'cleared', coalesce((select jsonb_agg(realm order by realm) from public.b_cleared where student_id = p_id), '[]'),
     'term', public._b_set('term'),
     'unitAttempts', public._b_set('unit_attempts')::int
   );
@@ -155,7 +164,7 @@ create or replace function public.b_complete_task(p_id uuid, p_pin_hash text, p_
 language plpgsql security definer set search_path = public as $$
 begin
   if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
-  if p_task_key !~ '^ch\d+_(read|tls)$' then raise exception 'That task is checked off by passing its quiz or test'; end if;
+  if p_task_key !~ '^ch\d+[a-z]?_(read|tls)$' then raise exception 'That task is checked off by passing its quiz or test'; end if;
   insert into public.b_tasks (student_id, task_key) values (p_id, p_task_key) on conflict do nothing;
 end $$;
 
@@ -182,10 +191,33 @@ begin
   passed := pct >= public._b_set(case p_kind when 'chapter' then 'chapter_pass_pct' else 'unit_pass_pct' end)::int;
   if passed then
     insert into public.b_tasks (student_id, task_key)
-      values (p_id, case p_kind when 'chapter' then 'ch' || p_ref || '_quiz' else 'unit' || p_ref end)
+      values (p_id, case p_kind when 'chapter' then public._b_ch(p_ref) || '_quiz' else 'unit' || p_ref end)
       on conflict do nothing;
   end if;
   return jsonb_build_object('score', right_n, 'total', total, 'pct', pct, 'passed', passed, 'results', results);
+end $$;
+
+-- ── Realm clears: earned stays earned ──
+-- Chapter ref (12, 1201) → task key prefix (ch12, ch12a).
+create or replace function public._b_ch(p_ref int) returns text language sql immutable set search_path = public as $$
+  select 'ch' || case when p_ref >= 100 then (p_ref / 100)::text || chr(96 + p_ref % 100) else p_ref::text end $$;
+
+create or replace function public.b_claim_realm(p_id uuid, p_pin_hash text, p_realm int, p_task_keys text[]) returns jsonb
+language plpgsql security definer set search_path = public as $$
+declare k text; unit_key text := 'unit' || p_realm;
+begin
+  if not public._b_ok(p_id, p_pin_hash) then raise exception 'Please log in again'; end if;
+  if p_realm is null or p_realm < 1 or p_realm > 99 then raise exception 'Unknown realm'; end if;
+  if p_task_keys is null or not (unit_key = any(p_task_keys)) then raise exception 'The task list must include the unit test'; end if;
+  if not exists (select 1 from unnest(p_task_keys) t where t ~ '^ch\d+[a-z]?_quiz$') then raise exception 'The task list must include chapter quizzes'; end if;
+  foreach k in array p_task_keys loop
+    if k !~ '^(ch\d+[a-z]?_(read|quiz|tls)|unit\d+)$' then raise exception 'Unknown task %', k; end if;
+    if not exists (select 1 from public.b_tasks where student_id = p_id and task_key = k) then
+      raise exception 'Not cleared yet: % is not done', k;
+    end if;
+  end loop;
+  insert into public.b_cleared (student_id, realm) values (p_id, p_realm) on conflict do nothing;
+  return coalesce((select jsonb_agg(realm order by realm) from public.b_cleared where student_id = p_id), '[]');
 end $$;
 
 -- ── Survey of the Day and Pick a Side ──
@@ -236,7 +268,8 @@ begin
                  select kind, ref, max(round(100.0 * score / total))::int best from public.b_attempts a
                  where a.student_id = s.id group by kind, ref) b),
       'sideQuests', (select coalesce(jsonb_agg(jsonb_build_object('id', quest_id, 'term', term, 'note', note, 'approved', approved)), '[]')
-                 from public.b_side_quests q where q.student_id = s.id)
+                 from public.b_side_quests q where q.student_id = s.id),
+      'cleared', (select coalesce(jsonb_agg(realm order by realm), '[]') from public.b_cleared c where c.student_id = s.id)
     ) order by s.period, s.name) from public.b_students s), '[]');
 end $$;
 
@@ -256,10 +289,10 @@ end $$;
 
 -- Only the functions are callable from the website. Internal helpers stay locked.
 -- Scoped to Bedrock's own functions, so this file is also safe to run in a database shared with Dopps Class.
-revoke execute on function public._b_set, public._b_ok, public._b_teacher, public._b_today,
+revoke execute on function public._b_set, public._b_ok, public._b_teacher, public._b_today, public._b_ch, public.b_claim_realm,
   public.b_register, public.b_login, public.b_state, public.b_complete_task, public.b_grade, public.b_vote,
   public.b_results, public.b_side_quest_submit, public.b_teacher_check, public.b_teacher_keys,
   public.b_teacher_roster, public.b_teacher_approve, public.b_teacher_reset_pin from public, anon, authenticated;
-grant execute on function public.b_register, public.b_login, public.b_state, public.b_complete_task, public.b_grade,
+grant execute on function public.b_register, public.b_login, public.b_state, public.b_complete_task, public.b_grade, public.b_claim_realm,
   public.b_vote, public.b_results, public.b_side_quest_submit, public.b_teacher_check,
   public.b_teacher_keys, public.b_teacher_roster, public.b_teacher_approve, public.b_teacher_reset_pin to anon;

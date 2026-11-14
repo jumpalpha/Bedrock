@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import questions from "@/data/content/questions.json";
 import sideQuests from "@/data/content/side_quests.json";
-import { chapters, computeStats, realms } from "@/data/site";
+import { chapterById, chapters, computeStats, realms, tlsKeyId } from "@/data/site";
 import { dbReady, teacherApprove, teacherCheck, teacherHash, teacherKeys, teacherResetPin, teacherRoster, type RosterRow } from "@/lib/db";
 import { Eyebrow, Md, PageHead } from "@/components/ui";
 
@@ -65,19 +65,19 @@ function Keys({ hash }: { hash: string }) {
   const [err, setErr] = useState<string | null>(null);
   useEffect(() => { teacherKeys(hash).then(setKeys).catch((e) => setErr(e.message)); }, [hash]);
   const kind = sel[0] === "c" ? "chapter" : sel[0] === "u" ? "unit" : "tls";
-  const n = Number(sel.slice(1));
-  const qs = kind === "tls" ? [] : (questions[kind] as Record<string, Q[]>)[String(n)];
+  const n = sel.slice(1);
+  const qs = kind === "tls" ? [] : (questions[kind] as Record<string, Q[]>)[n] ?? [];
   if (err) return <p className="font-bold text-crimson">{err}</p>;
   if (!keys) return <p className="font-bold text-muted">Loading keys…</p>;
   return (
     <div>
       <select value={sel} onChange={(e) => setSel(e.target.value)} className="mb-6 w-full max-w-lg rounded-xl border border-line bg-ink px-3 py-2 font-bold">
-        <optgroup label="Chapter quizzes">{chapters.map((c) => <option key={c.n} value={`c${c.n}`}>Chapter {c.n} quiz</option>)}</optgroup>
+        <optgroup label="Chapter quizzes">{chapters.map((c) => <option key={c.id} value={`c${c.id}`}>Chapter {c.label} quiz</option>)}</optgroup>
         <optgroup label="Unit tests">{realms.map((r) => <option key={r.n} value={`u${r.n}`}>{r.testTitle}</option>)}</optgroup>
-        <optgroup label="Think Like a Scientist">{chapters.map((c) => <option key={c.n} value={`t${c.n}`}>Chapter {c.n}: Think Like a Scientist</option>)}</optgroup>
+        <optgroup label="Think Like a Scientist">{chapters.map((c) => <option key={c.id} value={`t${c.id}`}>Chapter {c.label}: Think Like a Scientist</option>)}</optgroup>
       </select>
       {kind === "tls" ? (
-        <div className="block-panel p-5"><Md text={keys[`tls-${String(n).padStart(2, "0")}`] ?? "No key loaded."} /></div>
+        <div className="block-panel p-5"><Md text={keys[chapterById(n) ? tlsKeyId(chapterById(n)!) : ""] ?? "No key loaded."} /></div>
       ) : (
         <ol className="space-y-3">
           {qs.map((q, i) => (
@@ -136,7 +136,7 @@ function Roster({ hash, questsOnly }: { hash: string; questsOnly: boolean }) {
           </tr></thead>
           <tbody>
             {list.map((s) => {
-              const st = computeStats({ tasks: s.tasks, days: Array(s.days).fill(""), sideQuests: s.sideQuests });
+              const st = computeStats({ tasks: s.tasks, days: Array(s.days).fill(""), sideQuests: s.sideQuests, cleared: s.cleared });
               return (
                 <tr key={s.id} className="border-t-2 border-line">
                   <td className="p-2 font-extrabold">{s.name}</td><td className="p-2">{s.period}</td>

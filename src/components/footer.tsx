@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { chapters, realms } from "@/data/site";
 
 const cols = [
   { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Sprite Arcade", "/arcade/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
@@ -13,7 +14,7 @@ export function Footer() {
         <div>
           <div className="font-display text-2xl font-extrabold"><span className="text-gradient">Bedrock</span></div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
-            Mr. Dopp&apos;s Earth science class as a survival planet. 28 chapters, 9 realms, one world to figure out.
+            Mr. Dopp&apos;s Earth science class as a survival planet. {chapters.length} chapters, {realms.length} realms, one world to figure out.
           </p>
           <p className="mt-5 font-mono text-xs tracking-wider text-muted/70">#Doppitup · Dig down, then look up</p>
         </div>

@@ -142,10 +142,10 @@ export default function Home() {
           <Btn href="/chapters/" variant="ghost">Browse chapters <ArrowRight className="size-4" /></Btn>
         </SectionHeading>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {chapters.slice(0, 8).map((ch) => <ChapterCard key={ch.n} ch={ch} />)}
+          {chapters.slice(0, 8).map((ch) => <ChapterCard key={ch.id} ch={ch} />)}
         </div>
         <div className="mt-6 text-center">
-          <Link href="/chapters/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition hover:text-fg">See all 28 chapters <ArrowRight className="size-4" /></Link>
+          <Link href="/chapters/" className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition hover:text-fg">See all {chapters.length} chapters <ArrowRight className="size-4" /></Link>
         </div>
       </section>
 

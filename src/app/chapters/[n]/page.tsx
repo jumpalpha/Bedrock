@@ -2,29 +2,31 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, FlaskConical, Pickaxe } from "lucide-react";
-import { chapters, realmForChapter } from "@/data/site";
+import { chapterById, chapters, realmForChapter, sectionAnchors } from "@/data/site";
 import { Eyebrow, Md, PageHead } from "@/components/ui";
 import { TaskCheck } from "@/components/task-check";
 
 export const dynamicParams = false;
-export function generateStaticParams() { return chapters.map((c) => ({ n: String(c.n) })); }
+export function generateStaticParams() { return chapters.map((c) => ({ n: c.id })); }
 export async function generateMetadata({ params }: PageProps<"/chapters/[n]">): Promise<Metadata> {
   const { n } = await params;
-  const c = chapters.find((x) => x.n === Number(n));
-  return { title: c ? `Chapter ${c.n}: ${c.title}` : "Chapter" };
+  const c = chapterById(n);
+  return { title: c ? `Chapter ${c.label}: ${c.title}` : "Chapter" };
 }
 
 export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">) {
-  const n = Number((await params).n);
-  const c = chapters.find((x) => x.n === n);
+  const c = chapterById((await params).n);
   if (!c) notFound();
+  const n = c.id;
   const r = realmForChapter(n);
-  const prev = chapters.find((x) => x.n === n - 1), next = chapters.find((x) => x.n === n + 1);
+  const at = chapters.indexOf(c);
+  const prev = chapters[at - 1], next = chapters[at + 1];
+  const anchors = sectionAnchors(c);
   let part = "";
 
   return (
     <>
-      <PageHead eyebrow={`Realm ${r.n}: ${r.name} · Chapter ${n}`} title={c.title}>
+      <PageHead eyebrow={`Realm ${r.n}: ${r.name} · Chapter ${c.label}`} title={c.title}>
         <div className="mt-6 flex flex-wrap gap-3">
           <a href="#think" className="btn-block"><FlaskConical className="size-5" /> Think Like a Scientist</a>
           <Link href={`/chapters/${n}/quiz/`} className="btn-block btn-grass"><Pickaxe className="size-5" /> Chapter quiz</Link>
@@ -36,7 +38,7 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
           const showPart = s.part && s.part !== part;
           if (s.part) part = s.part;
           return (
-            <section key={i} className="mb-8">
+            <section key={i} id={anchors[i]} className="mb-8 scroll-mt-24">
               {showPart && <div className="mb-6 border-y border-line py-2 text-center font-pixel text-xs uppercase">{s.part}</div>}
               <h2 className="pixel-title text-2xl sm:text-3xl">{s.heading}</h2>
               <Md text={s.markdown} />
@@ -66,9 +68,9 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
         </section>
 
         <div className="flex justify-between gap-3 border-t border-line pt-6">
-          {prev ? <Link href={`/chapters/${prev.n}/`} className="btn-block !text-sm"><ArrowLeft className="size-4" /> Ch {prev.n}</Link> : <span />}
+          {prev ? <Link href={`/chapters/${prev.id}/`} className="btn-block !text-sm"><ArrowLeft className="size-4" /> Ch {prev.label}</Link> : <span />}
           <Link href={`/chapters/${n}/quiz/`} className="btn-block btn-grass !text-sm">Take the quiz</Link>
-          {next ? <Link href={`/chapters/${next.n}/`} className="btn-block !text-sm">Ch {next.n} <ArrowRight className="size-4" /></Link> : <span />}
+          {next ? <Link href={`/chapters/${next.id}/`} className="btn-block !text-sm">Ch {next.label} <ArrowRight className="size-4" /></Link> : <span />}
         </div>
       </article>
     </>

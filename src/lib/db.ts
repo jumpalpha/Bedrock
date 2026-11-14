@@ -69,9 +69,16 @@ function me() {
 export type ServerState = {
   tasks: string[]; days: string[]; best: Record<string, number>; firstTry: Record<string, number>; unitTries: Record<string, number>;
   sideQuests: { id: string; term: string; approved: boolean }[]; votes: number; term: string; unitAttempts: number;
+  /** Realms recorded as cleared on the server (b_cleared). Missing until supabase/migrations/002 is applied. */
+  cleared?: number[];
 };
 export const loadState = () => rpc<ServerState>("b_state", me());
 export const completeTask = (key: string) => rpc<void>("b_complete_task", { ...me(), p_task_key: key });
+// ── wave-sync: earned stays earned ──
+/** Records a realm clear on the server. The server checks the unit test task plus every key sent (the realm's current task list).
+ *  Returns the student's recorded clears. */
+export const claimRealm = (realm: number, taskKeys: string[]) =>
+  rpc<number[]>("b_claim_realm", { ...me(), p_realm: realm, p_task_keys: taskKeys });
 export type Graded = { score: number; total: number; pct: number; passed: boolean; results: Record<string, boolean> };
 export const grade = (kind: "chapter" | "unit", ref: number, answers: Record<string, string>) =>
   rpc<Graded>("b_grade", { ...me(), p_kind: kind, p_ref: ref, p_answers: answers });
@@ -90,7 +97,7 @@ export const teacherApprove = (h: string, student: string, quest: string, ok: bo
 export const teacherResetPin = async (h: string, student: string, pin: string) =>
   rpc<void>("b_teacher_reset_pin", { p_pass_hash: h, p_student: student, p_pin_hash: await hashSecret(pin) });
 export type RosterRow = {
-  id: string; name: string; period: string; tasks: string[]; days: number; best: Record<string, number>;
+  id: string; name: string; period: string; tasks: string[]; days: number; best: Record<string, number>; cleared?: number[];
   sideQuests: { id: string; term: string; note: string; approved: boolean }[];
 };
 
