@@ -211,3 +211,29 @@ export const petTeacherDelete = (h: string, student: string) => rpc<{ ok: boolea
 /** need = null reads the setting; true/false turns name approval on/off. Returns whether names need approval. */
 export const petTeacherNamesOk = (h: string, need: boolean | null) => rpc<boolean>("b_pet_teacher_names_ok", { p_pass_hash: h, p_need: need });
 // ── end wave-pet ──
+
+// ── wave-twinA: Be Ready twins (supabase/migrations/007_twinsA.sql) ──
+/** One saved project per student (Dopps Class student-save.js). drill_ok = Mr. Dopp checked off the in-class drill. */
+export type ProjectKey = "quake_ready" | "hazard_psa";
+export type ProjectRow = { data: Record<string, unknown>; done_at: string | null; drill_ok: boolean; drill_at: string | null; updated_at: string };
+export const projectGet = (key: ProjectKey) => rpc<ProjectRow | null>("b_project_get", { ...me(), p_key: key });
+export const projectSave = (key: ProjectKey, data: Record<string, unknown>, done = false) =>
+  rpc<ProjectRow>("b_project_save", { ...me(), p_key: key, p_data: data, p_done: done });
+export type PsaScores = { plan: number; team: number; message: number; creative: number; production: number; rules: number };
+export type Psa = {
+  id: string; term: string; group_name: string; title: string; hazard: string; link: string; length_sec: number | null; roster: string;
+  ai_tools: string | null; contributions: string | null; on_camera: boolean; source: string | null;
+  scores: PsaScores | null; total: number | null; note: string | null; graded_at: string | null; created_at: string; updated_at: string;
+};
+export type PsaInput = Pick<Psa, "group_name" | "title" | "hazard" | "link" | "roster" | "on_camera"> &
+  { length_sec: string; ai_tools: string; contributions: string; source: string };
+export const psaMine = () => rpc<Psa | null>("b_psa_mine", me());
+export const psaSubmit = (p: PsaInput) => rpc<Psa>("b_psa_submit", { ...me(), p_psa: p });
+export type ProjectTeacherRow = { student: string; name: string; period: string; data: Record<string, unknown> | null; done_at: string | null; drill_ok: boolean; drill_at: string | null; updated_at: string | null };
+export const teacherProjects = (h: string, key: ProjectKey) => rpc<ProjectTeacherRow[]>("b_teacher_projects", { p_pass_hash: h, p_key: key });
+export const teacherProjectDrill = (h: string, student: string, ok: boolean) =>
+  rpc<ProjectRow>("b_teacher_project_drill", { p_pass_hash: h, p_student: student, p_key: "quake_ready", p_ok: ok });
+export const teacherPsaList = (h: string, term?: string) => rpc<(Psa & { student: string; name: string; period: string })[]>("b_teacher_psa_list", { p_pass_hash: h, p_term: term ?? null });
+export const teacherPsaGrade = (h: string, id: string, scores: PsaScores | null, note: string) =>
+  rpc<Psa>("b_teacher_psa_grade", { p_pass_hash: h, p_psa: id, p_scores: scores, p_note: note });
+// ── end wave-twinA ──

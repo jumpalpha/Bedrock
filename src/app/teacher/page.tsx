@@ -18,6 +18,7 @@ type LiveTab = "ask" | "live";
 const LIVE_TABS: [LiveTab, string][] = [["ask", "Ask Mr. Dopp"], ["live", "Live games"]];
 // ── end wave-live ──
 import { AliensTeacher } from "./pet-teacher"; // ── wave-pet ──
+import { BeReadyTeacher } from "./twinA-teacher"; // ── wave-twinA ──
 
 type Q = { id: string; q: string; choices: string[] };
 const SKEY = "bedrock_teacher";
@@ -26,7 +27,7 @@ export default function Teacher() {
   const [hash, setHash] = useState<string | null>(null);
   const [pass, setPass] = useState("");
   const [err, setErr] = useState<string | null>(null);
-  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab | "aliens">("roster");
+  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab | "aliens" | "ready" /* wave-twinA */>("roster");
 
   useEffect(() => { try { const h = sessionStorage.getItem(SKEY); if (h) setHash(h); } catch {} }, []);
 
@@ -68,6 +69,7 @@ export default function Teacher() {
           {LIVE_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
           {/* ── end wave-live ── */}
           {/* ── wave-pet ── */}<button onClick={() => setTab("aliens")} className={`btn-block !text-sm ${tab === "aliens" ? "btn-grass" : ""}`}>Aliens</button>
+          {/* ── wave-twinA ── */}<button onClick={() => setTab("ready")} className={`btn-block !text-sm ${tab === "ready" ? "btn-grass" : ""}`}>Be Ready</button>
           <button onClick={() => { try { sessionStorage.removeItem(SKEY); } catch {} setHash(null); }} className="btn-block !text-sm">Lock</button>
         </div>
       </PageHead>
@@ -75,6 +77,7 @@ export default function Teacher() {
         {/* ── wave-learnB ── */}
         {/* ── wave-live ── */ tab === "ask" ? <AskTeacher hash={hash} /> : tab === "live" ? <LiveTeacher /> : /* ── end wave-live ── */
         /* ── wave-pet ── */ tab === "aliens" ? <AliensTeacher hash={hash} /> :
+        /* ── wave-twinA ── */ tab === "ready" ? <BeReadyTeacher hash={hash} /> :
         tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
         /* ── end wave-learnB ── */
         tab === "keys" ? <Keys hash={hash} /> : <Roster hash={hash} questsOnly={tab === "quests"} />}

@@ -11,6 +11,7 @@ import { ArtIcon } from "@/components/art-icon";
 import { ArcadeArt } from "@/components/arcade-art";
 import { ChampionsStrip } from "@/components/champions-strip"; // ── wave-pet ──
 import { Trophy } from "lucide-react"; // ── wave-pet ──
+import { Activity, Clapperboard, House } from "lucide-react"; // ── wave-twinA ──
 
 const heroChips = [
   { n: String(chapters.length), label: "Chapters", color: "#84cc16", icon: BookOpen },
@@ -43,6 +44,11 @@ const quickLinks = [
   { label: "My Rock Alien", desc: "Name it, teach it, evolve it", href: "/pet/", icon: Gem, color: "#a78bfa" },
   { label: "Hall of Champions", desc: "Top miners and aliens", href: "/champions/", icon: Trophy, color: "#f6c453" },
   // ── end wave-pet ──
+  // ── wave-twinA ──
+  { label: "Quake Ready", desc: "Drop, Cover, Hold On side quest", href: "/quake-ready/", icon: Activity, color: "#f28c28" },
+  { label: "Family Disaster Plan", desc: "Map your home, make a plan", href: "/disaster-plan/", icon: House, color: "#34d399" },
+  { label: "Hazard PSA", desc: "Film a hazard safety video", href: "/hazard-psa/", icon: Clapperboard, color: "#f25c45" },
+  // ── end wave-twinA ──
 ];
 
 export default function Home() {
