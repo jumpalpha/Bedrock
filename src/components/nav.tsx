@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ClipboardList, Menu, X } from "lucide-react";
+import { ClipboardList, Menu, Search, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginChip } from "@/components/login";
 import { ArtIcon } from "@/components/art-icon";
@@ -17,6 +17,15 @@ export const navLinks = [
   { label: "Side Quests", href: "/side-quests/" },
   { label: "Glossary", href: "/glossary/" },
 ];
+
+// ── wave-learnA ── learning tools: in the phone/tablet menu (the desktop bar has the search button)
+export const learnLinks = [
+  { label: "Vocab Games", href: "/vocab/" },
+  { label: "Review Deck", href: "/review/" },
+  { label: "Mastery Checks", href: "/mastery/" },
+  { label: "Search", href: "/search/" },
+];
+// ── end wave-learnA ──
 
 export function Nav() {
   const pathname = usePathname();
@@ -50,6 +59,8 @@ export function Nav() {
           ))}
         </div>
         <div className="flex items-center gap-1.5">
+          {/* ── wave-learnA ── */}
+          <Link href="/search/" aria-label="Search" title="Search" className={`hidden size-9 place-items-center rounded-xl transition hover:bg-white/5 sm:grid ${isActive("/search/") ? "text-fg" : "text-muted hover:text-fg"}`}><Search className="size-[18px]" /></Link>
           <ThemeToggle />
           <LoginChip />
           <Link href="/quest/" className="hidden items-center gap-1.5 rounded-xl bg-gold px-3.5 py-2 text-sm font-bold text-[#10140e] shadow-[0_6px_24px_-8px_rgba(246,196,83,0.9)] transition hover:brightness-110 sm:flex">
@@ -62,7 +73,7 @@ export function Nav() {
       </nav>
       {open && (
         <div className="glass mx-auto mt-2 max-w-7xl animate-rise rounded-2xl bg-ink/90 p-2 xl:hidden">
-          {[{ label: "World Map", href: "/" }, ...navLinks, { label: "My Quest", href: "/quest/" }].map((l) => (
+          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, { label: "My Quest", href: "/quest/" }].map((l) => (
             <Link key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</Link>
           ))}
         </div>
