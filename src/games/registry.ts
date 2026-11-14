@@ -52,6 +52,9 @@ import { Game13Pictionary } from "./classroom/game13_pictionary";
 import { Game14SharkTank } from "./classroom/game14_shark_tank";
 import { Game15MythBusters } from "./classroom/game15_myth_busters";
 // ── end wave-classroom ──
+// ── wave-live ──
+import { liveArcadeComponents } from "./partner/arcade-entries";
+// ── end wave-live ──
 
 // slug (see src/data/arcade.ts) -> canvas game
 export const arcadeRegistry: Record<string, GameModule> = {
@@ -114,4 +117,5 @@ export const arcadeComponents: Record<string, ComponentType> = {
   "shark-tank": Game14SharkTank,
   "myth-busters": Game15MythBusters,
   // ── end wave-classroom ──
+  ...liveArcadeComponents, // ── wave-live ──
 };
