@@ -4,18 +4,18 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
-  const [dark, setDark] = useState(false);
-  useEffect(() => setDark(document.documentElement.classList.contains("dark")), []);
+  const [light, setLight] = useState(false);
+  useEffect(() => setLight(document.documentElement.classList.contains("light")), []);
   const flip = () => {
-    const next = !dark;
-    document.documentElement.classList.toggle("dark", next);
-    try { localStorage.setItem("bedrock_theme", next ? "dark" : "light"); } catch {}
-    setDark(next);
+    const next = !light;
+    document.documentElement.classList.toggle("light", next);
+    try { localStorage.setItem("bedrock_theme", next ? "light" : "dark"); } catch {}
+    setLight(next);
   };
   return (
-    <button onClick={flip} aria-label={dark ? "Switch to day (light mode)" : "Switch to night (dark mode)"} title={dark ? "Day mode" : "Night mode"}
-      className="grid size-10 place-items-center border-[3px] border-black bg-[var(--panel)] text-fg hover:brightness-110">
-      {dark ? <Sun className="size-5 text-gold" /> : <Moon className="size-5" />}
+    <button onClick={flip} aria-label={light ? "Switch to dark mode" : "Switch to light mode"} title={light ? "Dark mode" : "Light mode"}
+      className="grid size-9 place-items-center rounded-xl text-muted transition hover:bg-white/5 hover:text-fg">
+      {light ? <Moon className="size-[18px]" /> : <Sun className="size-[18px]" />}
     </button>
   );
 }

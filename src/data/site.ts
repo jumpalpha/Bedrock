@@ -11,15 +11,15 @@ export const chapters = chaptersJson as unknown as Chapter[];
 
 // Biome look per realm: the doc gives names and badges, the block texture and color are the reskin.
 const biome: Record<number, { tex: string; color: string; icon: string; biome: string }> = {
-  1: { tex: "grass_top", color: "#5fa83a", icon: "🧭", biome: "Grassland" },
-  2: { tex: "cobble", color: "#9ca3af", icon: "⛏️", biome: "Mine" },
-  3: { tex: "sand", color: "#d4b25a", icon: "🪏", biome: "Badlands" },
-  4: { tex: "lava", color: "#f97316", icon: "🌋", biome: "Magma Caves" },
-  5: { tex: "water", color: "#3b82f6", icon: "🔱", biome: "Ocean" },
-  6: { tex: "sky", color: "#38bdf8", icon: "⚡", biome: "Sky" },
-  7: { tex: "dirt", color: "#b0793f", icon: "🦴", biome: "Fossil Cliffs" },
-  8: { tex: "emerald_ore", color: "#10b981", icon: "💎", biome: "Ore Fields" },
-  9: { tex: "obsidian", color: "#a78bfa", icon: "⭐", biome: "The Stars" },
+  1: { tex: "grass_top", color: "#84cc16", icon: "🧭", biome: "Grassland" },
+  2: { tex: "cobble", color: "#a78bfa", icon: "⛏️", biome: "Mine" },
+  3: { tex: "sand", color: "#f59e0b", icon: "🪏", biome: "Badlands" },
+  4: { tex: "lava", color: "#f25c45", icon: "🌋", biome: "Magma Caves" },
+  5: { tex: "water", color: "#22d3ee", icon: "🔱", biome: "Ocean" },
+  6: { tex: "sky", color: "#60a5fa", icon: "⚡", biome: "Sky" },
+  7: { tex: "dirt", color: "#d4a373", icon: "🦴", biome: "Fossil Cliffs" },
+  8: { tex: "emerald_ore", color: "#34d399", icon: "💎", biome: "Ore Fields" },
+  9: { tex: "obsidian", color: "#c084fc", icon: "⭐", biome: "The Stars" },
 };
 
 export type Realm = {

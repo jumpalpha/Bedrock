@@ -51,16 +51,16 @@ export function VoteBox({ kind, item, options, reasonLabel, openEnded }: {
   return (
     <div>
       {openEnded ? (
-        <textarea value={pick ?? ""} onChange={(e) => setPick(e.target.value)} rows={3} placeholder="Your answer…" className="w-full border-[3px] border-black bg-[var(--bg-2)] p-3 font-semibold" />
+        <textarea value={pick ?? ""} onChange={(e) => setPick(e.target.value)} rows={3} placeholder="Your answer…" className="w-full rounded-xl border border-line bg-ink p-3 font-semibold" />
       ) : (
         <div className="grid gap-2 sm:grid-cols-2">
           {options.map((o) => (
-            <button key={o} onClick={() => setPick(o)} className={`border-[3px] px-4 py-3 text-left font-extrabold ${pick === o ? "border-black bg-grass/30" : "border-line hover:border-black"}`}>{o}</button>
+            <button key={o} onClick={() => setPick(o)} className={`rounded-xl border px-4 py-3 text-left font-extrabold ${pick === o ? "border-emerald bg-emerald/15" : "border-line hover:border-fg/40"}`}>{o}</button>
           ))}
         </div>
       )}
       {reasonLabel && pick && (
-        <textarea value={reason} onChange={(e) => setReason(e.target.value)} rows={3} placeholder={reasonLabel} className="mt-3 w-full border-[3px] border-black bg-[var(--bg-2)] p-3 font-semibold" />
+        <textarea value={reason} onChange={(e) => setReason(e.target.value)} rows={3} placeholder={reasonLabel} className="mt-3 w-full rounded-xl border border-line bg-ink p-3 font-semibold" />
       )}
       {err && <p className="mt-2 text-sm font-bold text-crimson">{err}</p>}
       <div className="mt-3">

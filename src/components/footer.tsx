@@ -1,40 +1,34 @@
 import Link from "next/link";
 
 const cols = [
-  { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
+  { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Sprite Arcade", "/arcade/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
   { title: "Students", links: [["My Quest", "/quest/"], ["Unit Tests", "/tests/"], ["Pick a Side", "/pick-a-side/"], ["Survey of the Day", "/survey/"]] },
-  { title: "Teacher", links: [["Teacher Dashboard", "/teacher/"], ["Dopps Class (Health)", "https://doppsclass.com"]] },
+  { title: "Adults", links: [["Teacher Dashboard", "/teacher/"], ["Dopps Class (Health)", "https://doppsclass.com"]] },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative z-10 mt-24">
-      <div className="ground" />
-      <div className="tex tex-dirt">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 text-white md:grid-cols-[1.4fr_repeat(3,1fr)]">
-          <div>
-            <div className="pixel-title pixel-shadow text-3xl">Bedrock</div>
-            <p className="mt-3 max-w-xs text-sm font-semibold leading-relaxed text-white/90 [text-shadow:1px_1px_0_#000]">
-              Mr. Dopp&apos;s Earth science class as a survival planet. 28 chapters, 9 realms, one world to figure out.
-            </p>
+    <footer className="relative z-10 mt-24 border-t border-line bg-ink-2/60 backdrop-blur">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+        <div>
+          <div className="font-display text-2xl font-extrabold"><span className="text-gradient">Bedrock</span></div>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">
+            Mr. Dopp&apos;s Earth science class as a survival planet. 28 chapters, 9 realms, one world to figure out.
+          </p>
+          <p className="mt-5 font-mono text-xs tracking-wider text-muted/70">#Doppitup · Dig down, then look up</p>
+        </div>
+        {cols.map((c) => (
+          <div key={c.title}>
+            <div className="mb-4 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-gold/80">{c.title}</div>
+            <ul className="space-y-2.5">
+              {c.links.map(([label, href]) => (
+                <li key={label}><Link href={href} className="text-sm text-muted transition hover:text-fg">{label}</Link></li>
+              ))}
+            </ul>
           </div>
-          {cols.map((c) => (
-            <div key={c.title}>
-              <div className="mb-4 font-pixel text-[10px] uppercase tracking-wider text-gold [text-shadow:2px_2px_0_#000]">{c.title}</div>
-              <ul className="space-y-2.5">
-                {c.links.map(([label, href]) => (
-                  <li key={label}>
-                    <Link href={href} className="text-sm font-bold text-white/90 [text-shadow:1px_1px_0_#000] hover:text-white hover:underline">{label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="tex tex-bedrock border-t-[3px] border-black px-6 py-4 text-center font-pixel text-[9px] leading-relaxed text-white/80">
-          You hit bedrock. Nothing below here but the core.
-        </div>
+        ))}
       </div>
+      <div className="border-t border-line px-6 py-6 text-center text-xs text-muted/60">Bedrock · bedrock.doppsclass.com</div>
     </footer>
   );
 }

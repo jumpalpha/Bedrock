@@ -20,7 +20,7 @@ export default function Glossary() {
     <>
       <PageHead eyebrow="Glossary" title="Every key word" sub={`${all.length} terms from all 28 chapters.`} />
       <div className="mx-auto max-w-4xl px-6 pt-10">
-        <label className="sticky top-20 z-10 flex items-center gap-3 border-[3px] border-black bg-[var(--bg-2)] px-4 py-3">
+        <label className="sticky top-20 z-10 flex items-center gap-3 rounded-xl border border-line bg-ink px-4 py-3">
           <Search className="size-5 text-muted" />
           <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a word…" className="w-full bg-transparent font-bold outline-none" />
         </label>

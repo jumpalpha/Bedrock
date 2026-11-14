@@ -37,7 +37,7 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
           if (s.part) part = s.part;
           return (
             <section key={i} className="mb-8">
-              {showPart && <div className="mb-6 border-y-[3px] border-black py-2 text-center font-pixel text-xs uppercase">{s.part}</div>}
+              {showPart && <div className="mb-6 border-y border-line py-2 text-center font-pixel text-xs uppercase">{s.part}</div>}
               <h2 className="pixel-title text-2xl sm:text-3xl">{s.heading}</h2>
               <Md text={s.markdown} />
             </section>
@@ -61,11 +61,11 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
         <section className="mb-8">
           <Eyebrow>Key words</Eyebrow>
           <div className="flex flex-wrap gap-2">
-            {c.keyWords.map((w) => <Link key={w} href={`/glossary/?q=${encodeURIComponent(w)}`} className="border-2 border-black bg-[var(--panel)] px-2.5 py-1 text-sm font-bold hover:bg-grass/25">{w}</Link>)}
+            {c.keyWords.map((w) => <Link key={w} href={`/glossary/?q=${encodeURIComponent(w)}`} className="rounded-lg border border-line bg-white/[0.04] px-2.5 py-1 text-sm font-bold hover:bg-grass/25">{w}</Link>)}
           </div>
         </section>
 
-        <div className="flex justify-between gap-3 border-t-[3px] border-black pt-6">
+        <div className="flex justify-between gap-3 border-t border-line pt-6">
           {prev ? <Link href={`/chapters/${prev.n}/`} className="btn-block !text-sm"><ArrowLeft className="size-4" /> Ch {prev.n}</Link> : <span />}
           <Link href={`/chapters/${n}/quiz/`} className="btn-block btn-grass !text-sm">Take the quiz</Link>
           {next ? <Link href={`/chapters/${next.n}/`} className="btn-block !text-sm">Ch {next.n} <ArrowRight className="size-4" /></Link> : <span />}

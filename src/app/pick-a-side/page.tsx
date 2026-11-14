@@ -18,12 +18,12 @@ export default function PickASide() {
       <PageHead eyebrow="Pick a Side" title="Two sides. Back yours up." sub={data.intro.replace(/ Rating key:$/, "")}>
         <div className="mt-5 flex flex-wrap gap-3 text-sm font-bold">
           {Object.entries(data.ratingKey).map(([k, v]) => (
-            <span key={k} className="border-2 border-black bg-[var(--panel)] px-2.5 py-1"><span style={{ color: ratingColor[k as D["rating"]] }}>■</span> {k}: {v}</span>
+            <span key={k} className="rounded-lg border border-line bg-white/[0.04] px-2.5 py-1"><span style={{ color: ratingColor[k as D["rating"]] }}>■</span> {k}: {v}</span>
           ))}
         </div>
       </PageHead>
       <div className="mx-auto max-w-4xl px-6 pt-10">
-        <select value={ch ?? ""} onChange={(e) => setCh(e.target.value ? Number(e.target.value) : null)} className="mb-6 w-full border-[3px] border-black bg-[var(--bg-2)] px-3 py-2 font-bold">
+        <select value={ch ?? ""} onChange={(e) => setCh(e.target.value ? Number(e.target.value) : null)} className="mb-6 w-full rounded-xl border border-line bg-ink px-3 py-2 font-bold">
           <option value="">All chapters ({debates.length} debates)</option>
           {chapters.map((c) => <option key={c.n} value={c.n}>Chapter {c.n}: {c.title}</option>)}
         </select>

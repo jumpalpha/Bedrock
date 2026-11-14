@@ -29,7 +29,7 @@ export default function Quest() {
               const got = i <= stats.rankIndex;
               return (
                 <div key={r.name} className={`block-panel p-3 text-center ${got ? "" : "opacity-55"}`}>
-                  <div className="tex mx-auto size-14 border-[3px] border-black" style={{ backgroundImage: `url(/tex/${rankTexture(i)}.svg)`, backgroundSize: "28px 28px" }} />
+                  <div className="tex mx-auto size-14 rounded-xl border border-line" style={{ backgroundImage: `url(/tex/${rankTexture(i)}.svg)`, backgroundSize: "28px 28px" }} />
                   <div className="pixel-title mt-2 text-lg leading-tight">{r.name}</div>
                   <div className="mt-1 text-[11px] font-bold text-muted">{i === 0 ? "Start" : `${i} realm${i > 1 ? "s" : ""} cleared`}</div>
                   <div className="mt-1 text-[11px] italic text-muted">{r.flavor}</div>

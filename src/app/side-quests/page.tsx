@@ -31,7 +31,7 @@ export default function SideQuests() {
                 <p className="mt-2 font-semibold">{q.task}</p>
                 <p className="mt-2 text-sm text-muted"><b>Proof:</b> {q.proof}</p>
                 <div className="mt-auto pt-4">
-                  {s ? <span className={`inline-block border-2 border-black px-2 py-1 text-sm font-extrabold ${s.approved ? "bg-emerald text-black" : "bg-gold text-black"}`}>{s.approved ? `Approved · +${XP_PER_SIDE_QUEST} XP` : "Turned in, waiting for Mr. Dopp"}</span>
+                  {s ? <span className={`inline-block rounded-lg border border-line px-2 py-1 text-sm font-extrabold ${s.approved ? "bg-emerald text-black" : "bg-gold text-black"}`}>{s.approved ? `Approved · +${XP_PER_SIDE_QUEST} XP` : "Turned in, waiting for Mr. Dopp"}</span>
                     : <Submit id={`sq${q.n}`} disabled={!dbReady || !signedIn} onDone={refresh} />}
                 </div>
               </div>
@@ -51,7 +51,7 @@ function Submit({ id, disabled, onDone }: { id: string; disabled: boolean; onDon
   if (!open) return <button onClick={() => setOpen(true)} className="btn-block btn-grass !text-sm">I finished this</button>;
   return (
     <div>
-      <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={3} placeholder="Where did you share your write-up or slideshow? (Classroom post, link, or 'handed in on paper')" className="w-full border-[3px] border-black bg-[var(--bg-2)] p-2 text-sm font-semibold" />
+      <textarea value={note} onChange={(e) => setNote(e.target.value)} rows={3} placeholder="Where did you share your write-up or slideshow? (Classroom post, link, or 'handed in on paper')" className="w-full rounded-xl border border-line bg-ink p-2 text-sm font-semibold" />
       {err && <p className="text-sm font-bold text-crimson">{err}</p>}
       <button onClick={async () => { try { await submitSideQuest(id, note); onDone(); } catch (e) { setErr((e as Error).message); } }} disabled={note.trim().length < 3} className="btn-block btn-grass mt-2 !text-sm disabled:opacity-50">Turn it in</button>
     </div>

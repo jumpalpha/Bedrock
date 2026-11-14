@@ -34,7 +34,7 @@ export default function Teacher() {
         <form onSubmit={enter} className="block-panel mx-auto mt-10 max-w-sm p-6">
           {!dbReady && <p className="mb-3 text-sm font-bold text-amber">Preview: the class database isn&apos;t connected yet.</p>}
           <label className="block text-sm font-extrabold">Dopps Class teacher code
-            <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} className="mt-1 w-full border-[3px] border-black bg-[var(--bg-2)] px-3 py-2" />
+            <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} className="mt-1 w-full rounded-xl border border-line bg-ink px-3 py-2" />
           </label>
           {err && <p className="mt-2 text-sm font-bold text-crimson">{err}</p>}
           <button disabled={!dbReady} className="btn-block btn-grass mt-4 w-full justify-center disabled:opacity-50">Enter</button>
@@ -71,7 +71,7 @@ function Keys({ hash }: { hash: string }) {
   if (!keys) return <p className="font-bold text-muted">Loading keys…</p>;
   return (
     <div>
-      <select value={sel} onChange={(e) => setSel(e.target.value)} className="mb-6 w-full max-w-lg border-[3px] border-black bg-[var(--bg-2)] px-3 py-2 font-bold">
+      <select value={sel} onChange={(e) => setSel(e.target.value)} className="mb-6 w-full max-w-lg rounded-xl border border-line bg-ink px-3 py-2 font-bold">
         <optgroup label="Chapter quizzes">{chapters.map((c) => <option key={c.n} value={`c${c.n}`}>Chapter {c.n} quiz</option>)}</optgroup>
         <optgroup label="Unit tests">{realms.map((r) => <option key={r.n} value={`u${r.n}`}>{r.testTitle}</option>)}</optgroup>
         <optgroup label="Think Like a Scientist">{chapters.map((c) => <option key={c.n} value={`t${c.n}`}>Chapter {c.n}: Think Like a Scientist</option>)}</optgroup>
@@ -122,15 +122,15 @@ function Roster({ hash, questsOnly }: { hash: string; questsOnly: boolean }) {
   return (
     <div>
       <div className="mb-4 flex flex-wrap items-center gap-3">
-        <select value={period} onChange={(e) => setPeriod(e.target.value)} className="border-[3px] border-black bg-[var(--bg-2)] px-3 py-2 font-bold">
+        <select value={period} onChange={(e) => setPeriod(e.target.value)} className="rounded-xl border border-line bg-ink px-3 py-2 font-bold">
           <option value="all">All periods ({rows.length})</option>
           {periods.map((p) => <option key={p}>{p}</option>)}
         </select>
         <button onClick={load} className="btn-block !text-sm">Refresh</button>
       </div>
-      <div className="overflow-x-auto border-[3px] border-black">
+      <div className="overflow-x-auto rounded-xl border border-line">
         <table className="w-full min-w-[900px] text-sm">
-          <thead className="bg-[var(--panel)] text-left"><tr>
+          <thead className="bg-white/[0.04] text-left"><tr>
             <th className="p-2">Student</th><th className="p-2">Period</th><th className="p-2">XP</th><th className="p-2">Rank</th>
             {realms.map((r) => <th key={r.n} className="p-2" title={r.testTitle}>U{r.n}</th>)}<th className="p-2">PIN</th>
           </tr></thead>

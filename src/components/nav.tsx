@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ClipboardList, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginChip } from "@/components/login";
 
 export const navLinks = [
-  { label: "World Map", href: "/" },
   { label: "Chapters", href: "/chapters/" },
-  { label: "My Quest", href: "/quest/" },
+  { label: "Arcade", href: "/arcade/" },
   { label: "Unit Tests", href: "/tests/" },
   { label: "Pick a Side", href: "/pick-a-side/" },
   { label: "Survey", href: "/survey/" },
@@ -21,37 +21,49 @@ export const navLinks = [
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   useEffect(() => setOpen(false), [pathname]);
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-50 border-b-[3px] border-black bg-[var(--bg-2)]/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
+      <nav className={`mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-2xl px-3 py-2.5 transition-all duration-300 sm:px-4 ${
+        scrolled || open ? "border border-line bg-ink/80 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)] backdrop-blur-xl" : "border border-transparent"}`}>
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="tex tex-grass-side size-9 border-[3px] border-black transition-transform group-hover:-rotate-6" style={{ backgroundSize: "30px 30px" }} />
-          <span className="pixel-title text-2xl leading-none">Bedrock</span>
+          <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-emerald via-gold to-amber shadow-[0_0_24px_-4px_rgba(246,196,83,0.7)] transition-transform group-hover:rotate-[-8deg]">
+            <Image src="/art/realm-1.png" alt="" width={30} height={30} className="size-[30px] object-contain" unoptimized />
+          </span>
+          <span className="font-display text-[19px] font-extrabold leading-none tracking-tight">Bedrock</span>
         </Link>
         <div className="hidden items-center gap-0.5 xl:flex">
           {navLinks.map((l) => (
-            <Link key={l.href} href={l.href}
-              className={`px-2.5 py-2 text-sm font-extrabold transition-colors ${isActive(l.href) ? "text-fg underline decoration-grass decoration-[3px] underline-offset-[6px]" : "text-muted hover:text-fg"}`}>
+            <Link key={l.href} href={l.href} className={`relative rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${isActive(l.href) ? "text-fg" : "text-muted hover:text-fg"}`}>
               {l.label}
+              {isActive(l.href) && <span className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-gold to-amber" />}
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          <LoginChip />
+        <div className="flex items-center gap-1.5">
           <ThemeToggle />
-          <button onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}
-            className="grid size-10 place-items-center border-[3px] border-black bg-[var(--panel)] xl:hidden">
+          <LoginChip />
+          <Link href="/quest/" className="hidden items-center gap-1.5 rounded-xl bg-gold px-3.5 py-2 text-sm font-bold text-[#10140e] shadow-[0_6px_24px_-8px_rgba(246,196,83,0.9)] transition hover:brightness-110 sm:flex">
+            <ClipboardList className="size-4" /> My Quest
+          </Link>
+          <button onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open} className="grid size-9 place-items-center rounded-xl text-fg transition hover:bg-white/5 xl:hidden">
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
       </nav>
       {open && (
-        <div className="border-t-[3px] border-black bg-[var(--bg-2)] p-2 xl:hidden">
-          {navLinks.map((l) => (
-            <Link key={l.href} href={l.href} className={`block px-4 py-3 font-extrabold ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</Link>
+        <div className="glass mx-auto mt-2 max-w-7xl animate-rise rounded-2xl bg-ink/90 p-2 xl:hidden">
+          {[{ label: "World Map", href: "/" }, ...navLinks, { label: "My Quest", href: "/quest/" }].map((l) => (
+            <Link key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</Link>
           ))}
         </div>
       )}

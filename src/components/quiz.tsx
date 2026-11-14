@@ -52,7 +52,7 @@ export function Quiz({ kind, refN, questions, title, passPct, backHref }: {
         {dbReady && !student && <button onClick={() => setLogin(true)} className="btn-block btn-grass mt-3 !text-sm">Log in to get graded</button>}
         {kind === "unit" && student && <p className="mt-2 text-sm font-bold">Tries used: {tries} of {maxTries}</p>}
         {result && (
-          <div className={`mt-4 border-[3px] border-black p-4 ${result.passed ? "bg-emerald/25" : "bg-crimson/15"}`}>
+          <div className={`mt-4 rounded-xl border border-line p-4 ${result.passed ? "bg-emerald/25" : "bg-crimson/15"}`}>
             <div className="pixel-title text-3xl">{result.score} / {result.total} ({result.pct}%)</div>
             <p className="mt-1 font-bold">{result.passed ? "Passed! The task is checked off on your Quest. +25 XP" : `Not yet. You need ${passPct}%.`} Wrong answers are marked below. Go back to the chapter to find the right ones.</p>
             {kind === "chapter" && <button onClick={deal} className="btn-block mt-3 !text-sm"><RotateCcw className="size-4" /> Reshuffle and try again</button>}
@@ -78,8 +78,8 @@ export function Quiz({ kind, refN, questions, title, passPct, backHref }: {
                     const on = picks[q.id] === c;
                     return (
                       <button key={c} disabled={!!result} onClick={() => setPicks((p) => ({ ...p, [q.id]: c }))}
-                        className={`flex items-start gap-3 border-[3px] px-3 py-2.5 text-left font-semibold transition ${on ? "border-black bg-grass/30" : "border-line hover:border-black"}`}>
-                        <span className={`grid size-6 shrink-0 place-items-center border-2 border-black font-pixel text-[9px] ${on ? "bg-grass text-white" : ""}`}>{"ABCD"[j]}</span>
+                        className={`flex items-start gap-3 rounded-xl border px-3 py-2.5 text-left font-semibold transition ${on ? "border-emerald bg-emerald/15" : "border-line hover:border-fg/40"}`}>
+                        <span className={`grid size-6 shrink-0 place-items-center rounded-lg border border-line font-pixel text-[9px] ${on ? "bg-grass text-white" : ""}`}>{"ABCD"[j]}</span>
                         <span>{c}</span>
                       </button>
                     );
@@ -92,7 +92,7 @@ export function Quiz({ kind, refN, questions, title, passPct, backHref }: {
       )}
 
       {!result && !outOfTries && (
-        <div className="sticky bottom-3 mt-6 flex items-center justify-between gap-3 border-[3px] border-black bg-[var(--bg-2)] p-3">
+        <div className="sticky bottom-3 mt-6 flex items-center justify-between gap-3 rounded-xl border border-line bg-ink p-3">
           <span className="text-sm font-extrabold">{answered} / {questions.length} answered</span>
           {err && <span className="text-sm font-bold text-crimson">{err}</span>}
           <button onClick={submit} disabled={busy || !dbReady || !student} className="btn-block btn-grass disabled:opacity-50">{busy ? "Grading…" : "Turn it in"}</button>
