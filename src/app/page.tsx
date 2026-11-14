@@ -26,7 +26,7 @@ const quickLinks = [
   { label: "Survey of the Day", desc: "Vote, then see the class", href: "/survey/", icon: BarChart3, color: "#22d3ee" },
   { label: "Pick a Side", desc: "56 debates, bring evidence", href: "/pick-a-side/", icon: Swords, color: "#f25c45" },
   { label: "Unit Tests", desc: "One boss fight per realm", href: "/tests/", icon: Medal, color: "#a78bfa" },
-  { label: "Sprite Arcade", desc: "5 Earth science games", href: "/arcade/", icon: Gamepad2, color: "#84cc16" },
+  { label: "Sprite Arcade", desc: `${arcadeGames.length} Earth science games`, href: "/arcade/", icon: Gamepad2, color: "#84cc16" },
   { label: "Glossary", desc: "661 key words", href: "/glossary/", icon: BookOpen, color: "#60a5fa" },
   { label: "Side Quests", desc: "Real science, outside", href: "/side-quests/", icon: Telescope, color: "#34d399" },
   { label: "Badges", desc: "9 realm + 6 bonus", href: "/quest/#badges", icon: Gem, color: "#c084fc" },
