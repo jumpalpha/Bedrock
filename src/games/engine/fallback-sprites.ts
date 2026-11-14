@@ -4,6 +4,10 @@
 // /sprites/<name>.png is missing, so every game looks intentional before the real art exists.
 // Each is drawn once on a 256px canvas (same square framing as the PNGs) and cached.
 
+// ── wave-arcadeB ──
+import { DRAW_B } from "./fallback-sprites-b";
+// ── end wave-arcadeB ──
+
 const S = 256;
 const cache = new Map<string, HTMLCanvasElement | null>();
 
@@ -349,12 +353,12 @@ const DRAW: Record<string, (x: Ctx) => void> = {
 };
 
 export function hasFallback(name: string) {
-  return name in DRAW;
+  return name in DRAW || name in DRAW_B; // wave-arcadeB
 }
 
 export function fallbackSprite(name: string): HTMLCanvasElement | null {
   if (cache.has(name)) return cache.get(name)!;
-  const draw = DRAW[name];
+  const draw = DRAW[name] ?? DRAW_B[name]; // wave-arcadeB: ?? DRAW_B
   let c: HTMLCanvasElement | null = null;
   if (draw && typeof document !== "undefined") {
     c = document.createElement("canvas");
