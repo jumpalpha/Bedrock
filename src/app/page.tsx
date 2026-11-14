@@ -11,6 +11,7 @@ import { ArtIcon } from "@/components/art-icon";
 import { ArcadeArt } from "@/components/arcade-art";
 import { ChampionsStrip } from "@/components/champions-strip"; // ── wave-pet ──
 import { Trophy } from "lucide-react"; // ── wave-pet ──
+import { Footprints, Mountain, Lightbulb, Zap } from "lucide-react"; // ── wave-twinB ──
 
 const heroChips = [
   { n: String(chapters.length), label: "Chapters", color: "#84cc16", icon: BookOpen },
@@ -43,6 +44,12 @@ const quickLinks = [
   { label: "My Rock Alien", desc: "Name it, teach it, evolve it", href: "/pet/", icon: Gem, color: "#a78bfa" },
   { label: "Hall of Champions", desc: "Top miners and aliens", href: "/champions/", icon: Trophy, color: "#f6c453" },
   // ── end wave-pet ──
+  // ── wave-twinB ──
+  { label: "Footprint Quest", desc: "Your water & carbon footprint", href: "/footprint/", icon: Footprints, color: "#34d399" },
+  { label: "Home Energy Budget", desc: "Bills, hydro, solar, payback", href: "/energy-budget/", icon: Zap, color: "#f6c453" },
+  { label: "The Idaho Trail", desc: "Wagon trek across Idaho geology", href: "/arcade/play/idaho-trail/", icon: Mountain, color: "#d9a75a" },
+  { label: "What If?", desc: "Earth science thought experiments", href: "/what-if/", icon: Lightbulb, color: "#38bdf8" },
+  // ── end wave-twinB ──
 ];
 
 export default function Home() {

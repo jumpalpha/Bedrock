@@ -37,6 +37,14 @@ export const petLinks = [
   { label: "Alien Gallery", href: "/pets/" },
   { label: "Hall of Champions", href: "/champions/" },
 ];
+// ── wave-twinB ── Earth science twins of the Dopps Class quests (phone/tablet menu; desktop reaches them from Home)
+export const twinLinks = [
+  { label: "Footprint Quest", href: "/footprint/" },
+  { label: "Home Energy Budget", href: "/energy-budget/" },
+  { label: "The Idaho Trail", href: "/arcade/play/idaho-trail/" },
+  { label: "What If?", href: "/what-if/" },
+];
+// ── end wave-twinB ──
 
 export function Nav() {
   const pathname = usePathname();
@@ -84,7 +92,7 @@ export function Nav() {
       </nav>
       {open && (
         <div className="glass mx-auto mt-2 max-w-7xl animate-rise rounded-2xl bg-ink/90 p-2 xl:hidden">
-          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, ...petLinks /* wave-pet */, { label: "My Quest", href: "/quest/" }].map((l) => (
+          {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, ...petLinks /* wave-pet */, ...twinLinks /* wave-twinB */, { label: "My Quest", href: "/quest/" }].map((l) => (
             <Link key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</Link>
           ))}
         </div>
