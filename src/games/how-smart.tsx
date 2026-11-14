@@ -171,7 +171,7 @@ export function HowSmart() {
         <p className="mt-3 text-muted">
           Climb the Tower of Knowledge with Earth science questions! They get <b className="text-fg">harder when you&apos;re right</b> and easier when you miss. After 20–30 questions, see how your Brain Level compares with 3rd graders all the way up to grad students.
         </p>
-        <p className="mt-2 text-xs text-muted">{reviewEnabled() ? "Questions come from the chapter review bank." : "Questions come from the class glossary, all 28 chapters."}</p>
+        <p className="mt-2 text-xs text-muted">{reviewEnabled() ? "Questions come from the chapter review bank, all 28 chapters." : "Questions come from the class glossary, all 28 chapters."}</p>
         {best && <p className="mt-4 text-sm text-muted">Your best: <b className="text-gold">Brain Level {best.lvl.toFixed(1)}</b> · {best.head}</p>}
         <button disabled={!bank} onClick={start} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-gold via-amber to-[#ff6b3d] py-3.5 text-lg font-bold text-[#10140e] shadow-[0_12px_34px_-10px_rgba(255,159,28,.85)] transition hover:-translate-y-0.5 disabled:opacity-50">
           <Brain className="size-5" /> {bank ? "Start climbing" : "Loading questions…"}

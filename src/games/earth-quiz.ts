@@ -1,19 +1,15 @@
 // Question sources for the wave-arcadeA question games (How Smart, Sprite Siege, Vocab Slice, Word Quest).
 //
 // ── SWITCH: review bank ─────────────────────────────────────────────────────────────────────────────
-// src/data/content/review.json is the public review bank ({ "1": [{ id, q, a, wrong[3], why }], ... }).
-// It isn't in the repo yet, so REVIEW_SOURCE is null and multiple-choice games build questions from
-// glossary.json instead. When review.json lands, replace the null below with:
-//
-//   () => import("@/data/content/review.json").then((m) => m.default as unknown as ReviewBank)
-//
-// and nothing else changes: How Smart and Sprite Siege pick it up automatically. Word/definition games
-// (Vocab Slice, Word Quest) always use the glossary. NEVER point any of this at questions.json: graded
-// answer keys must not reach the site.
+// The public review bank (src/data/review.ts over content/review.json: 12 questions per chapter) drives the
+// multiple-choice games: How Smart, Sprite Siege's diamond questions and Vocab Slice's "review" mode.
+// Set REVIEW_SOURCE to null to fall back to glossary-built questions everywhere. Pure word/definition
+// modes (Vocab Slice's vocab mode, Word Quest) always use the glossary. NEVER point any of this at
+// questions.json: graded answer keys must not reach the site.
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────
 type ReviewItem = { id: string; q: string; a: string; wrong: string[]; why?: string };
-type ReviewBank = Record<string, ReviewItem[]>;
-const REVIEW_SOURCE: (() => Promise<ReviewBank>) | null = null;
+type ReviewBank = Record<string | number, ReviewItem[]>;
+const REVIEW_SOURCE: (() => Promise<ReviewBank>) | null = () => import("@/data/review").then((m) => m.review);
 
 export const reviewEnabled = () => REVIEW_SOURCE !== null;
 
@@ -107,8 +103,15 @@ export async function loadSmartBank(): Promise<SmartQ[]> {
   });
 }
 
-// ── Vocab Slice: terms grouped by chapter ──
+// ── Vocab Slice: terms grouped by chapter (glossary), plus the review bank's questions per chapter ──
 export type Vocab = Record<string, { title: string; terms: [string, string][] }>;
+export type ReviewDeck = Record<string, { title: string; qs: ReviewQ[] }>;
+export async function loadReviewDeck(): Promise<ReviewDeck> {
+  const [review, meta] = await Promise.all([loadReview(), loadMeta()]);
+  const d: ReviewDeck = {};
+  (review ?? []).forEach((r) => (d[r.ch] ??= { title: meta.titles[r.ch] ?? `Chapter ${r.ch}`, qs: [] }).qs.push(r));
+  return d;
+}
 export async function loadVocab(): Promise<Vocab> {
   const [terms, meta] = await Promise.all([loadTerms(), loadMeta()]);
   const v: Vocab = {};

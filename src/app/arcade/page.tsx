@@ -4,6 +4,9 @@ import Link from "next/link";
 import { Play } from "lucide-react";
 import { arcadeGames } from "@/data/arcade";
 import { ArcadeArt } from "@/components/arcade-art";
+// ── wave-arcadeC ──
+import { classicGames } from "@/data/arcade-classic";
+// ── /wave-arcadeC ──
 
 export const metadata: Metadata = { title: "Arcade" };
 
@@ -97,13 +100,43 @@ export default function ArcadePage() {
         </section>
       ))}
       {/* ── end wave-arcadeA ── */}
+      {/* ── wave-arcadeC ── */}
+      <section id="classic" className="scroll-mt-36 pt-24">
+        <div className="mb-10 max-w-2xl">
+          <div className="mb-3 inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+            <span className="h-px w-6 bg-gold" />
+            Old-school favorites
+          </div>
+          <h2 className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">Classic Arcade</h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted">The original classics. Best scores save on this device.</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {classicGames.map((g) => (
+            <a
+              key={g.slug}
+              href={g.href}
+              style={{ "--accent": g.color } as CSSProperties}
+              className="accent-card group relative flex items-center gap-5 overflow-hidden rounded-3xl p-6"
+            >
+              <span className="grid size-16 shrink-0 place-items-center rounded-2xl text-4xl transition-transform duration-300 group-hover:scale-110" style={{ background: `color-mix(in srgb, ${g.color} 22%, transparent)` }}>
+                {g.emoji}
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-display text-xl font-extrabold">{g.title}</h3>
+                <p className="mt-1 text-sm text-muted">{g.subtitle}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+      {/* ── /wave-arcadeC ── */}
     </div>
   );
 }
 
 // ── wave-arcadeA ──
 const SHELVES = [
-  { id: "classics", eyebrow: "Rebuilt with your sprite", title: "Arcade Classics", sub: "Old-school favorites, reimagined with rocks, storms and the Magma King." },
+  { id: "classics", eyebrow: "Rebuilt with your sprite", title: "Sprite Classics", sub: "Arcade favorites, reimagined with rocks, storms and the Magma King." },
   { id: "brain", eyebrow: "Learn while you play", title: "Brain Games", sub: "Quiz yourself on the vocab and ideas from every chapter." },
 ] as const;
 // ── end wave-arcadeA ──

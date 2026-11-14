@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { ArcadeGame } from "./engine/arcade-game";
 import type { Api, GameModule } from "./engine/types";
-import { capFirst, loadVocab, maskTerm, shuffle, type Vocab } from "./earth-quiz";
+import { capFirst, loadReviewDeck, loadVocab, maskTerm, shuffle, type ReviewDeck, type Vocab } from "./earth-quiz";
 
-// Word/definition game: terms come from the class glossary (glossary.json) via earth-quiz.ts.
-let VOCAB: Vocab = {};
+// Two modes, picked in the chapter menu: vocab (glossary term ↔ definition, value "1".."28"/"all") and
+// review (the chapter review bank's questions with their own 4 choices, value "r:1".."r:28"/"r:all").
+let VOCAB: Vocab = {}, REVIEW: ReviewDeck = {};
+const valid = (v: string) => (v.startsWith("r:") ? v === "r:all" || !!REVIEW[v.slice(2)] : v === "all" || !!VOCAB[v]);
 const vocab = () => VOCAB;
 let chosenChapter = "1";
 
@@ -30,7 +32,7 @@ const vocabSliceGame: GameModule = {
       { at: 2200, name: "Gold", icon: "🥇" },
       { at: 3500, name: "Legend", icon: "💎" },
     ],
-    howTo: `Read the <b>definition</b> at the top, then <b>swipe (or tap)</b> the rock carrying the matching <b>vocab term</b>. Wrong term or letting the right one drop costs a heart. 5 in a row = extra heart. <b>Match ${WIN_TERMS} terms</b> to win!`,
+    howTo: `Read the <b>definition</b> (or review question) at the top, then <b>swipe (or tap)</b> the rock carrying the matching <b>term</b> (or answer). Wrong term or letting the right one drop costs a heart. 5 in a row = extra heart. <b>Match ${WIN_TERMS} terms</b> to win!`,
     controls: "Pick a chapter above · swipe or tap to slice · P pause",
     sprites: [...ROCKS, "heart"],
     facts: [
@@ -42,7 +44,7 @@ const vocabSliceGame: GameModule = {
     ],
   },
   create() {
-    type Card = { term: string; def: string; ch: string };
+    type Card = { term: string; def: string; ch: string; wrong?: string[] };
     type Item = { x: number; y: number; vx: number; vy: number; kind: string; term: string; correct?: boolean; lines: string[]; lw: number; rot: number; spin: number; r: number };
     let items: Item[] = [], halves: { x: number; y: number; vx: number; vy: number; rot: number; spin: number; kind: string; side: number; life: number }[] = [];
     let splats: { x: number; y: number; c: string; r: number; life: number }[] = [], trail: { x: number; y: number; a: number }[] = [];
@@ -65,6 +67,10 @@ const vocabSliceGame: GameModule = {
       return { lines, w: Math.max(...lines.map((l) => mctx!.measureText(l).width)) };
     }
     const pool = (ch: string): Card[] => {
+      if (ch.startsWith("r:")) {
+        const k = ch.slice(2), keys = k === "all" ? Object.keys(REVIEW) : [k];
+        return keys.flatMap((c) => (REVIEW[c]?.qs ?? []).map((r) => ({ term: r.right, def: r.q, ch: c, wrong: r.wrong })));
+      }
       const V = vocab();
       return ch === "all" ? Object.keys(V).flatMap((k) => V[k].terms.map((x) => ({ term: x[0], def: x[1], ch: k }))) : (V[ch]?.terms ?? []).map((x) => ({ term: x[0], def: x[1], ch }));
     };
@@ -85,13 +91,13 @@ const vocabSliceGame: GameModule = {
     function nextTarget() {
       if (!deck.length) deck = shuffle(pool(chUsed));
       target = deck.shift()!;
-      const w = wrap(capFirst(maskTerm(target.def, target.term)), fontDef, W - 56);
+      const w = wrap(target.wrong ? target.def : capFirst(maskTerm(target.def, target.term)), fontDef, W - 56);
       defBox = { lines: w.lines, h: 34 + w.lines.length * 20 + 12, ok: 0 };
     }
     function newVolley() {
       nextTarget();
       const n = correct < 4 ? 3 : correct < 9 ? 4 : 5;
-      const decoys = shuffle((vocab()[target!.ch]?.terms ?? []).map((x) => x[0]).filter((x) => x !== target!.term)).slice(0, n - 1);
+      const decoys = target!.wrong ? target!.wrong.slice() : shuffle((vocab()[target!.ch]?.terms ?? []).map((x) => x[0]).filter((x) => x !== target!.term)).slice(0, n - 1);
       const terms = shuffle([target!.term, ...decoys]), rocks = shuffle(ROCKS);
       const xs = shuffle(terms.map((_, i) => 62 + (i * (W - 124)) / Math.max(1, terms.length - 1)));
       terms.forEach((term, i) => queue.push({ delay: i * 0.28, term, kind: rocks[i % rocks.length], x: xs[i] }));
@@ -209,7 +215,7 @@ const vocabSliceGame: GameModule = {
           ctx.fillStyle = defBox.ok ? `rgba(0,229,160,${0.25 + defBox.ok * 0.5})` : "rgba(7,7,26,.85)"; ctx.fill();
           ctx.lineWidth = 1.5; ctx.strokeStyle = defBox.ok ? "#00E5A0" : "rgba(255,209,102,.7)"; ctx.stroke();
           ctx.textAlign = "left"; ctx.font = A.font(11, 700); ctx.fillStyle = "#FFD166";
-          ctx.fillText("SLICE THE TERM THAT MEANS…", bx + 14, by + 22);
+          ctx.fillText(target.wrong ? "SLICE THE RIGHT ANSWER…" : "SLICE THE TERM THAT MEANS…", bx + 14, by + 22);
           ctx.textAlign = "right"; ctx.fillStyle = correct >= WIN_TERMS ? "#00E5A0" : "#d9dbf3";
           ctx.fillText(`Ch ${target.ch} · ${Math.min(correct, WIN_TERMS)}/${WIN_TERMS}${correct > WIN_TERMS ? " +" + (correct - WIN_TERMS) : ""}`, bx + bw - 14, by + 22);
           ctx.textAlign = "left"; ctx.font = fontDef; ctx.fillStyle = "#fff";
@@ -272,13 +278,12 @@ export function VocabSlice() {
     let alive = true;
     const init = () => {
       if (!alive) return;
-      const V = vocab();
-      const pick = fromUrl && (V[fromUrl] || fromUrl === "all") ? fromUrl : V[saved] || saved === "all" ? saved : "1";
+      const pick = fromUrl && valid(fromUrl) ? fromUrl : valid(saved) ? saved : "1";
       chosenChapter = pick;
       setCh(pick);
       setReady(true);
     };
-    loadVocab().then((v) => { VOCAB = v; init(); });
+    Promise.all([loadVocab(), loadReviewDeck()]).then(([v, r]) => { VOCAB = v; REVIEW = r; init(); });
     return () => { alive = false; };
   }, []);
   if (!ready) return <div className="mx-auto aspect-[5/8] max-h-[70vh] animate-pulse rounded-3xl bg-fg/5" />;
@@ -286,15 +291,23 @@ export function VocabSlice() {
   return (
     <div>
       <div className="mx-auto mb-4 flex max-w-md items-center gap-3">
-        <label htmlFor="vs-ch" className="shrink-0 text-sm font-semibold text-muted">Chapter</label>
+        <label htmlFor="vs-ch" className="shrink-0 text-sm font-semibold text-muted">Deck</label>
         <select
           id="vs-ch"
           value={ch}
           onChange={(e) => { setCh(e.target.value); chosenChapter = e.target.value; try { localStorage.setItem("bedrock_vocab_slice_ch", JSON.stringify(e.target.value)); } catch {} e.target.blur(); }}
           className="glass w-full rounded-xl px-3 py-2 text-sm font-semibold text-fg outline-none"
         >
-          <option value="all">🎲 All chapters (mix)</option>
-          {Object.keys(V).sort((a, b) => +a - +b).map((k) => <option key={k} value={k}>Ch {k} · {V[k].title}</option>)}
+          <optgroup label="Vocab: slice the term">
+            <option value="all">🎲 All chapters (mix)</option>
+            {Object.keys(V).sort((a, b) => +a - +b).map((k) => <option key={k} value={k}>Ch {k} · {V[k].title}</option>)}
+          </optgroup>
+          {Object.keys(REVIEW).length > 0 && (
+            <optgroup label="Review: slice the answer">
+              <option value="r:all">📝 All chapters (review mix)</option>
+              {Object.keys(REVIEW).sort((a, b) => +a - +b).map((k) => <option key={k} value={"r:" + k}>📝 Ch {k} review · {REVIEW[k].title}</option>)}
+            </optgroup>
+          )}
         </select>
       </div>
       <ArcadeGame game={vocabSliceGame} />
