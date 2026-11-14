@@ -9,6 +9,7 @@ import { Eyebrow, PageHead } from "@/components/ui";
 import { PlayerCard } from "@/components/player-card";
 import { TaskList } from "@/components/task-list";
 import { AlienCard } from "@/components/alien-card"; // ── wave-pet ──
+import { BeReadyCard } from "@/components/twinA/ready-card"; // ── wave-twinA ──
 
 export default function Quest() {
   const { stats, state } = useProgress();
@@ -70,6 +71,7 @@ export default function Quest() {
         <section>
           <Eyebrow>Side quests this term</Eyebrow>
           <p className="font-bold">{stats.termApproved} of {SIDE_QUESTS_PER_TERM} required side quests approved{state?.term ? ` for ${state.term}` : ""}. <Link href="/side-quests/" className="underline">Pick one</Link></p>
+          {/* ── wave-twinA ── */}<BeReadyCard />
         </section>
 
         <section>

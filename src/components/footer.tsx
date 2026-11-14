@@ -6,7 +6,9 @@ const learn = { title: "Learn", links: [["Vocab Games", "/vocab/"], ["Review Dec
 // ── end wave-learnA ──
 const cols = [
   { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Sprite Arcade", "/arcade/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
-  { title: "Students", links: [["My Quest", "/quest/"], ["Unit Tests", "/tests/"], ["Pick a Side", "/pick-a-side/"], ["Survey of the Day", "/survey/"]] },
+  { title: "Students", links: [["My Quest", "/quest/"], ["Unit Tests", "/tests/"], ["Pick a Side", "/pick-a-side/"], ["Survey of the Day", "/survey/"],
+    // ── wave-twinA ──
+    ["Quake Ready", "/quake-ready/"], ["Family Disaster Plan", "/disaster-plan/"], ["Hazard PSA", "/hazard-psa/"]] },
   learn, // wave-learnA
   { title: "Adults", links: [["Teacher Dashboard", "/teacher/"], ["Dopps Class (Health)", "https://doppsclass.com"]] },
 ];
