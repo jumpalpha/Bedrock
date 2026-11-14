@@ -101,6 +101,60 @@ export type RosterRow = {
   sideQuests: { id: string; term: string; note: string; approved: boolean }[];
 };
 
+// ── wave-learnB: Classwork + Reflection Coach ──
+// Classwork (supabase/migrations/004): graded in the database. Tests return right/wrong per question, never answers.
+/** Chapter keys in these objects are chapter refs as text ("12", or "1201" for 12A). */
+export type StoryScore = { words: number; sentences: number; has_a: boolean; has_b: boolean; cue: boolean; length: number; used: number; detail: number; total: number };
+export type CwStory = { a: string; b: string; text: string; score: StoryScore; saved_at: string };
+export type CwSwap = { term: string; ref: number; reason: string; at: string };
+export type CwWork = {
+  realm: number; status: "draft" | "submitted"; submitted_at: string | null; returned_at: string | null;
+  learn_best: Record<string, number>; learn_tries: Record<string, number>; learn_grade: Record<string, number>;
+  ch_test: Record<string, { best: number; tries: number }>; ch_stories: Record<string, (CwStory | null)[]>;
+  swapped: CwSwap[]; story_open: Record<string, string>; unit_best: number; unit_tries: number;
+  learn_avg: number | null; story_avg: number | null; final_score: number | null;
+  chapters: number[]; need: Record<string, number>; swap_max: Record<string, number>;
+  last_try: Record<string, string>; cooldown: number; now: string; learn_open: string | null; test_open: string | null;
+};
+export type CwLearn = { ref: number; words: string[]; defs: string[] };
+export type CwLearnResult = { ref: number; score: number; right: number; total: number; best: number; tries: number; grade: number;
+  passed: boolean; reveal: boolean; misses: { i: number; term: string; def?: string }[]; work: CwWork };
+export type CwTestResult = { kind: "ch" | "unit"; ref: number | null; score: number; right: number; total: number; best: number; tries: number;
+  passed: boolean; results: Record<string, boolean>; work: CwWork };
+export const cwStatus = () => rpc<{ open: boolean; realms?: CwWork[] }>("b_cw_status", me());
+export const cwGet = (realm: number) => rpc<CwWork>("b_cw_get", { ...me(), p_realm: realm });
+export const cwLearnStart = (realm: number, ref: number) => rpc<CwLearn>("b_cw_learn_start", { ...me(), p_realm: realm, p_ref: ref });
+export const cwLearnSubmit = (realm: number, answers: number[]) => rpc<CwLearnResult>("b_cw_learn_submit", { ...me(), p_realm: realm, p_answers: answers });
+/** ref = chapter ref for a Chapter Test, null for the realm's Review Test. */
+export const cwTestStart = (realm: number, ref: number | null) => rpc<{ kind: "ch" | "unit"; ref: number | null; ids: string[] }>("b_cw_test_start", { ...me(), p_realm: realm, p_ref: ref });
+export const cwTestSubmit = (realm: number, answers: Record<string, string>) => rpc<CwTestResult>("b_cw_test_submit", { ...me(), p_realm: realm, p_answers: answers });
+export const cwStoryOpen = (realm: number, ref: number, slot: number) => rpc<{ ok: boolean }>("b_cw_story_open", { ...me(), p_realm: realm, p_ref: ref, p_slot: slot });
+export const cwStorySave = (realm: number, ref: number, slot: number, a: string, b: string, text: string) =>
+  rpc<{ ok: boolean; score: StoryScore; work: CwWork }>("b_cw_story_save", { ...me(), p_realm: realm, p_ref: ref, p_slot: slot, p_a: a, p_b: b, p_text: text });
+export const cwSwap = (realm: number, ref: number, term: string, reason: string) =>
+  rpc<{ ok: boolean; work: CwWork }>("b_cw_swap", { ...me(), p_realm: realm, p_ref: ref, p_term: term, p_reason: reason });
+export const cwSubmit = (realm: number) => rpc<{ ok: boolean; work: CwWork }>("b_cw_submit", { ...me(), p_realm: realm });
+export type CwTeacherRow = {
+  id: string; name: string; period: string; status: "not_started" | "draft" | "submitted";
+  learn_best: Record<string, number>; learn_grade: Record<string, number>; learn_tries: Record<string, number>; learn_avg: number | null;
+  ch_test: Record<string, { best: number; tries: number }>; ch_stories: Record<string, (CwStory | null)[]>; swapped: CwSwap[];
+  story_avg: number | null; unit_best: number; unit_tries: number; final_score: number | null; submitted_at: string | null; updated_at: string | null;
+};
+export const cwTeacherList = (h: string, realm: number) =>
+  rpc<{ live: boolean; chapters: number[]; need: Record<string, number>; rows: CwTeacherRow[] }>("b_cw_teacher_list", { p_pass_hash: h, p_realm: realm });
+export const cwTeacherReturn = (h: string, student: string, realm: number) => rpc<void>("b_cw_teacher_return", { p_pass_hash: h, p_student: student, p_realm: realm });
+export const cwTeacherLive = (h: string, live: boolean) => rpc<boolean>("b_cw_teacher_live", { p_pass_hash: h, p_live: live });
+
+// Reflection Coach: one saved draft per student per chapter (logged-out students keep it in their browser).
+export type ReflectionRow = { ref: number; words: number; done: boolean; updated_at: string };
+export const reflectionGet = (ref: number) =>
+  rpc<{ data: unknown; words: number; done: boolean; updated_at: string } | null>("b_reflection_get", { ...me(), p_ref: ref });
+export const reflectionSave = (ref: number, data: unknown) => rpc<{ words: number; done: boolean; updated_at: string }>("b_reflection_save", { ...me(), p_ref: ref, p_data: data });
+export const reflectionList = () => rpc<ReflectionRow[]>("b_reflection_list", me());
+export const teacherReflections = (h: string, ref?: number) =>
+  rpc<(ReflectionRow & { student: string; name: string; period: string; data: unknown })[]>("b_teacher_reflections", { p_pass_hash: h, p_ref: ref ?? null });
+// ── end wave-learnB ──
+
 /** Fisher–Yates. Every quiz and test shuffles its choices on every attempt. */
 export function shuffle<T>(a: T[]): T[] {
   const r = [...a];

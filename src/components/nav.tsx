@@ -12,6 +12,7 @@ export const navLinks = [
   { label: "Chapters", href: "/chapters/" },
   { label: "Arcade", href: "/arcade/" },
   { label: "Unit Tests", href: "/tests/" },
+  { label: "Classwork", href: "/classwork/" }, // ── wave-learnB ──
   { label: "Pick a Side", href: "/pick-a-side/" },
   { label: "Survey", href: "/survey/" },
   { label: "Side Quests", href: "/side-quests/" },
