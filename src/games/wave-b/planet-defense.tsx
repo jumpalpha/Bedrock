@@ -349,7 +349,8 @@ const planetGame: GameModule = {
             ctx.strokeStyle = can ? T.color + "aa" : "rgba(255,255,255,.08)"; ctx.lineWidth = 1.5; ctx.stroke();
             drawTowerIcon(ctx, A, k, x + 39, y + 28, 16, 0);
             ctx.textAlign = "center"; ctx.fillStyle = can ? "#f4efff" : "#8d86a3"; ctx.font = A.font(11, 900);
-            ctx.fillText(T.name.replace(" Impactor", ""), x + 39, y + 62);
+            const nm = T.name.replace(" Impactor", ""); let fs = 11; ctx.font = A.font(fs, 900); while (fs > 8 && ctx.measureText(nm).width > 72) ctx.font = A.font(--fs, 900);
+            ctx.fillText(nm, x + 39, y + 62);
             ctx.font = A.font(13, 900); const tw = ctx.measureText(String(T.cost)).width;
             coin(ctx, x + 39 - tw / 2 - 4, y + 76, 5, !can);
             ctx.fillStyle = can ? "#FFD700" : "#8d86a3"; ctx.fillText(String(T.cost), x + 39 + 5, y + 80);
@@ -382,7 +383,7 @@ function QuizCard({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
   return (
     <div data-ui className="absolute inset-0 z-30 flex items-center justify-center rounded-3xl bg-[#05061a]/80 p-4 backdrop-blur-sm">
       <div className="glass w-full max-w-sm rounded-3xl p-5">
-        <div className="text-xs font-bold uppercase tracking-wider text-sky-300">🧠 Wave {quiz.wave} cleared · Question {n + 1} of {quiz.qs.length}</div>
+        <div className="text-xs font-bold uppercase tracking-wider text-sky">🧠 Wave {quiz.wave} cleared · Question {n + 1} of {quiz.qs.length}</div>
         <div className="mt-1 text-xs text-muted">Right answer = +{Q_COINS} coins for more shield layers · Ch {q.ch} {q.title}</div>
         <p className="mt-3 text-base font-semibold text-fg">{q.prompt}</p>
         <div className="mt-3 grid gap-2">
@@ -391,7 +392,7 @@ function QuizCard({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
             return (
               <button key={i} disabled={picked !== null}
                 onClick={() => { setPicked(i); if (o === q.term) { setRight(right + 1); quiz.onRight(); } else setWait(2); }}
-                className={`rounded-xl border px-3 py-2 text-left text-sm font-semibold transition ${isRight ? "border-emerald-400 bg-emerald-500/20 text-emerald-100" : wrong ? "border-rose-400 bg-rose-500/20 text-rose-100" : "border-line bg-white/5 text-fg hover:bg-white/10"}`}>
+                className={`rounded-xl border px-3 py-2 text-left text-sm font-semibold transition ${isRight ? "border-emerald-400 bg-emerald-500/20 text-fg" : wrong ? "border-rose-400 bg-rose-500/20 text-fg" : "border-line bg-white/5 text-fg hover:bg-white/10"}`}>
                 {o}
               </button>
             );

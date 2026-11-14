@@ -144,7 +144,7 @@ export const mineral2048: GameModule = {
         ctx.fillStyle = "#a3a6c8";
         ctx.fillText(`Best: ${LADDER[best].name} (${best})   ·   Goal: Corundum (512)`, W / 2, 100);
         A.rr(BX, BY, BS, BS, 22);
-        ctx.fillStyle = "#07061a";
+        ctx.fillStyle = "#0d0907";
         ctx.fill();
         ctx.strokeStyle = "rgba(56,189,248,.35)";
         ctx.lineWidth = 1.5;
