@@ -19,6 +19,7 @@ const LIVE_TABS: [LiveTab, string][] = [["ask", "Ask Mr. Dopp"], ["live", "Live 
 // ── end wave-live ──
 import { AliensTeacher } from "./pet-teacher"; // ── wave-pet ──
 import { BeReadyTeacher } from "./twinA-teacher"; // ── wave-twinA ──
+import { TWIN_TABS, TwinTeacher, type TwinTab } from "./twinB-teacher"; // ── wave-twinB ──
 
 type Q = { id: string; q: string; choices: string[] };
 const SKEY = "bedrock_teacher";
@@ -27,7 +28,7 @@ export default function Teacher() {
   const [hash, setHash] = useState<string | null>(null);
   const [pass, setPass] = useState("");
   const [err, setErr] = useState<string | null>(null);
-  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab | "aliens" | "ready" /* wave-twinA */>("roster");
+  const [tab, setTab] = useState<"roster" | "keys" | "quests" | LearnTab | LiveTab | "aliens" | "ready" | TwinTab /* wave-twinA, wave-twinB */>("roster");
 
   useEffect(() => { try { const h = sessionStorage.getItem(SKEY); if (h) setHash(h); } catch {} }, []);
 
@@ -68,6 +69,9 @@ export default function Teacher() {
           {/* ── wave-live ── */}
           {LIVE_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
           {/* ── end wave-live ── */}
+          {/* ── wave-twinB ── */}
+          {TWIN_TABS.map(([t, label]) => <button key={t} onClick={() => setTab(t)} className={`btn-block !text-sm ${tab === t ? "btn-grass" : ""}`}>{label}</button>)}
+          {/* ── end wave-twinB ── */}
           {/* ── wave-pet ── */}<button onClick={() => setTab("aliens")} className={`btn-block !text-sm ${tab === "aliens" ? "btn-grass" : ""}`}>Aliens</button>
           {/* ── wave-twinA ── */}<button onClick={() => setTab("ready")} className={`btn-block !text-sm ${tab === "ready" ? "btn-grass" : ""}`}>Be Ready</button>
           <button onClick={() => { try { sessionStorage.removeItem(SKEY); } catch {} setHash(null); }} className="btn-block !text-sm">Lock</button>
@@ -78,6 +82,7 @@ export default function Teacher() {
         {/* ── wave-live ── */ tab === "ask" ? <AskTeacher hash={hash} /> : tab === "live" ? <LiveTeacher /> : /* ── end wave-live ── */
         /* ── wave-pet ── */ tab === "aliens" ? <AliensTeacher hash={hash} /> :
         /* ── wave-twinA ── */ tab === "ready" ? <BeReadyTeacher hash={hash} /> :
+        /* ── wave-twinB ── */ TWIN_TABS.some(([t]) => t === tab) ? <TwinTeacher hash={hash} tab={tab as TwinTab} /> :
         tab === "classwork" ? <ClassworkTeacher hash={hash} /> : tab === "reflections" ? <ReflectionsTeacher hash={hash} /> :
         /* ── end wave-learnB ── */
         tab === "keys" ? <Keys hash={hash} /> : <Roster hash={hash} questsOnly={tab === "quests"} />}

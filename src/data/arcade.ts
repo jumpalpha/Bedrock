@@ -69,6 +69,9 @@ export const arcadeGames: ArcadeGame[] = [
   { slug: "live-games", title: "Live Class Games", subtitle: "Join with the code on the projector: votes, Showdown and Realm Raid.", emoji: "⚔️", color: "#a78bfa", goal: "6-digit code", section: "team", href: "/live/" },
   { slug: "gold-rush-live", title: "Gold Rush Live", subtitle: "The whole class digs gold at once. Answer, buy mining gear, top the board.", emoji: "⛏️", color: "#f6c453", goal: "Most gold wins", section: "team", href: "/live/" },
   // ── end wave-live ──
+  // ── wave-twinB ── twin of the Dopps Class Wellness Trail
+  { slug: "idaho-trail", title: "The Idaho Trail", subtitle: "Oregon Trail across Idaho's geology: Craters of the Moon, Borah Peak, Bruneau Dunes, Hells Canyon.", emoji: "🐂", color: "#D9A75A", goal: "Reach Hells Canyon", section: "classic" },
+  // ── end wave-twinB ──
 ];
 
 export const arcadeGame = (slug: string) => arcadeGames.find((g) => g.slug === slug);

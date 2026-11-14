@@ -12,6 +12,7 @@ import { ArcadeArt } from "@/components/arcade-art";
 import { ChampionsStrip } from "@/components/champions-strip"; // ── wave-pet ──
 import { Trophy } from "lucide-react"; // ── wave-pet ──
 import { Activity, Clapperboard, House } from "lucide-react"; // ── wave-twinA ──
+import { Footprints, Mountain, Lightbulb, Zap } from "lucide-react"; // ── wave-twinB ──
 
 const heroChips = [
   { n: String(chapters.length), label: "Chapters", color: "#84cc16", icon: BookOpen },
@@ -49,6 +50,12 @@ const quickLinks = [
   { label: "Family Disaster Plan", desc: "Map your home, make a plan", href: "/disaster-plan/", icon: House, color: "#34d399" },
   { label: "Hazard PSA", desc: "Film a hazard safety video", href: "/hazard-psa/", icon: Clapperboard, color: "#f25c45" },
   // ── end wave-twinA ──
+  // ── wave-twinB ──
+  { label: "Footprint Quest", desc: "Your water & carbon footprint", href: "/footprint/", icon: Footprints, color: "#34d399" },
+  { label: "Home Energy Budget", desc: "Bills, hydro, solar, payback", href: "/energy-budget/", icon: Zap, color: "#f6c453" },
+  { label: "The Idaho Trail", desc: "Wagon trek across Idaho geology", href: "/arcade/play/idaho-trail/", icon: Mountain, color: "#d9a75a" },
+  { label: "What If?", desc: "Earth science thought experiments", href: "/what-if/", icon: Lightbulb, color: "#38bdf8" },
+  // ── end wave-twinB ──
 ];
 
 export default function Home() {

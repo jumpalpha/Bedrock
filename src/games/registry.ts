@@ -55,6 +55,9 @@ import { Game15MythBusters } from "./classroom/game15_myth_busters";
 // ── wave-live ──
 import { liveArcadeComponents } from "./partner/arcade-entries";
 // ── end wave-live ──
+// ── wave-twinB ──
+import { IdahoTrail } from "./twinB/idaho-trail";
+// ── end wave-twinB ──
 
 // slug (see src/data/arcade.ts) -> canvas game
 export const arcadeRegistry: Record<string, GameModule> = {
@@ -118,4 +121,5 @@ export const arcadeComponents: Record<string, ComponentType> = {
   "myth-busters": Game15MythBusters,
   // ── end wave-classroom ──
   ...liveArcadeComponents, // ── wave-live ──
+  "idaho-trail": IdahoTrail, // ── wave-twinB ──
 };
