@@ -1,0 +1,3754 @@
+{
+ "1": [
+  {
+   "id": "r01-01",
+   "q": "Earth science is the study of:",
+   "a": "Our planet and its neighbors in space",
+   "wrong": [
+    "Only living things on land",
+    "Only rocks, gems, minerals, and the soil on top",
+    "Only weather and the climate"
+   ],
+   "why": "Earth science is the study of our planet and its neighbors in space."
+  },
+  {
+   "id": "r01-02",
+   "q": "What is the official name of the metric system?",
+   "a": "SI",
+   "wrong": [
+    "GPS",
+    "The Mohs system",
+    "The customary system"
+   ],
+   "why": "Scientists everywhere use the metric system, officially called SI."
+  },
+  {
+   "id": "r01-03",
+   "q": "Which is the right order for the first three steps of the scientific method?",
+   "a": "Observe, ask a question, make a hypothesis",
+   "wrong": [
+    "Make a hypothesis, then observe, then conclude",
+    "Ask a question, conclude, observe",
+    "Experiment, observe, analyze"
+   ],
+   "why": "The scientific method starts with observe, then ask a question, then make a hypothesis."
+  },
+  {
+   "id": "r01-04",
+   "q": "Which of these is a model?",
+   "a": "A computer weather forecast",
+   "wrong": [
+    "A thermometer reading",
+    "A rock sample from a creek",
+    "A rule to wear goggles"
+   ],
+   "why": "A weather forecast is a computer model, and models help us see things we can't see directly."
+  },
+  {
+   "id": "r01-05",
+   "q": "Which unit fits best for recording a rock's mass?",
+   "a": "Grams",
+   "wrong": [
+    "Liters",
+    "Meters",
+    "Degrees Celsius"
+   ],
+   "why": "In the metric system, mass is measured in grams and kilograms."
+  },
+  {
+   "id": "r01-06",
+   "q": "A friend says plate tectonics is \"just a theory.\" What is the best reply?",
+   "a": "In science, a theory is well tested and backed by evidence",
+   "wrong": [
+    "True, a theory is just a wild guess with no testing",
+    "Theories only describe what happens, never why it happens",
+    "A theory can never change, so it is a proven fact forever"
+   ],
+   "why": "A scientific theory explains why something happens and is backed by tons of evidence and testing."
+  },
+  {
+   "id": "r01-07",
+   "q": "Why are metric conversions so easy?",
+   "a": "Everything goes by tens, like 100 cm in a meter",
+   "wrong": [
+    "Every unit is split into 12 parts",
+    "There is only one unit for everything",
+    "The units change from one country to the next country"
+   ],
+   "why": "In the metric system everything goes by tens, such as 100 centimeters in a meter."
+  },
+  {
+   "id": "r01-08",
+   "q": "A student measures mountain snow depth and creek height every week. Which step is this?",
+   "a": "Experiment or gather data",
+   "wrong": [
+    "Ask a question",
+    "Make a hypothesis",
+    "Analyze the data and conclude"
+   ],
+   "why": "In the creek example, the experiment or gather-data step is to measure the snow and measure the creek."
+  },
+  {
+   "id": "r01-09",
+   "q": "You test whether slope angle changes how fast sand slides. What is the independent variable?",
+   "a": "The slope angle",
+   "wrong": [
+    "How fast the sand slides",
+    "The kind of sand you use each time",
+    "The stopwatch you time it with"
+   ],
+   "why": "The independent variable is the thing you change on purpose."
+  },
+  {
+   "id": "r01-10",
+   "q": "You test if water temperature changes how fast salt dissolves. Which should be a control?",
+   "a": "The amount of salt each time",
+   "wrong": [
+    "The water temperature",
+    "How fast the salt dissolves",
+    "The question you are asking"
+   ],
+   "why": "Everything besides the independent variable stays the same as a control, so it's a fair test."
+  },
+  {
+   "id": "r01-11",
+   "q": "A pot of water starts to boil. About what does a Celsius thermometer read?",
+   "a": "100 °C",
+   "wrong": [
+    "0 °C",
+    "212 °C",
+    "50 °C"
+   ],
+   "why": "Water boils at 100 °C."
+  },
+  {
+   "id": "r01-12",
+   "q": "Your lab partner wants to taste a white mineral to see if it is salt. You should:",
+   "a": "Stop them, because you never taste anything in lab",
+   "wrong": [
+    "Let them try just a very small lick to check",
+    "Tell them to wait and taste it after class",
+    "Have them smell it up close instead of tasting"
+   ],
+   "why": "Lab safety rules say never taste anything in the lab."
+  }
+ ],
+ "2": [
+  {
+   "id": "r02-01",
+   "q": "A spot's latitude and longitude together are called its:",
+   "a": "Coordinates",
+   "wrong": [
+    "Contour interval",
+    "Map projection",
+    "Compass rose"
+   ],
+   "why": "Put latitude and longitude together and you get coordinates, a spot's address."
+  },
+  {
+   "id": "r02-02",
+   "q": "What does a compass rose show on a map?",
+   "a": "North, south, east, and west",
+   "wrong": [
+    "Real distance on the ground",
+    "What each symbol means",
+    "Height above sea level"
+   ],
+   "why": "A compass rose shows north, south, east, and west."
+  },
+  {
+   "id": "r02-03",
+   "q": "Elevation is a place's:",
+   "a": "Height above sea level",
+   "wrong": [
+    "Distance from the equator",
+    "Distance from Greenwich",
+    "Time zone number"
+   ],
+   "why": "Contour lines connect points at the same elevation, or height above sea level."
+  },
+  {
+   "id": "r02-04",
+   "q": "Which lines measure how far east or west you are?",
+   "a": "Longitude lines",
+   "wrong": [
+    "Latitude lines",
+    "Contour lines",
+    "Lines of a map scale"
+   ],
+   "why": "Longitude lines measure how far east or west you are from the prime meridian."
+  },
+  {
+   "id": "r02-05",
+   "q": "The International Date Line sits near which longitude?",
+   "a": "180°",
+   "wrong": [
+    "0°",
+    "90°",
+    "45°"
+   ],
+   "why": "The International Date Line is out in the Pacific, near 180°."
+  },
+  {
+   "id": "r02-06",
+   "q": "Why is the Mercator projection still used, even though it distorts sizes?",
+   "a": "It is great for navigation",
+   "wrong": [
+    "It shows sizes perfectly",
+    "It is the only round map",
+    "It keeps every shape and size"
+   ],
+   "why": "The Mercator projection is great for navigation but makes places near the poles look huge."
+  },
+  {
+   "id": "r02-07",
+   "q": "What does an equal-area projection give up to keep sizes correct?",
+   "a": "It bends shapes",
+   "wrong": [
+    "It loses its compass rose",
+    "It leaves out the oceans",
+    "It makes Greenland huge"
+   ],
+   "why": "Equal-area projections keep sizes correct but bend shapes."
+  },
+  {
+   "id": "r02-08",
+   "q": "Why do firefighters and search-and-rescue teams use topographic maps?",
+   "a": "They show the land's shape, like cliffs and valleys",
+   "wrong": [
+    "They show every street name and road number",
+    "They list the weather forecast for each day of the week",
+    "They show the time zones and the Date Line"
+   ],
+   "why": "A topographic map shows the shape of the land, its hills, valleys and cliffs, on a flat page."
+  },
+  {
+   "id": "r02-09",
+   "q": "About how many satellites make up the GPS system?",
+   "a": "About 30",
+   "wrong": [
+    "About 4",
+    "About 300",
+    "About 3,000"
+   ],
+   "why": "For GPS, about 30 satellites orbit Earth."
+  },
+  {
+   "id": "r02-10",
+   "q": "Trail A crosses widely spaced contour lines. Trail B crosses tightly packed ones. Which is the easier walk?",
+   "a": "Trail A, since spread-out lines mean a gentle slope",
+   "wrong": [
+    "Trail B, since tightly packed lines mean flatter ground",
+    "Both are the same steepness",
+    "You can't tell from contour lines"
+   ],
+   "why": "Contour lines far apart mean a gentle slope, and close together means steep."
+  },
+  {
+   "id": "r02-11",
+   "q": "Earth turns 360° in 24 hours. How many degrees does it turn each hour?",
+   "a": "15°",
+   "wrong": [
+    "24°",
+    "30°",
+    "10°"
+   ],
+   "why": "Split 360° by 24 hours and you get 15° per hour."
+  },
+  {
+   "id": "r02-12",
+   "q": "Scientists want to watch a wildfire spread across central Idaho from above. Which tool fits best?",
+   "a": "Remote sensing",
+   "wrong": [
+    "A compass rose",
+    "A map legend",
+    "A contour interval"
+   ],
+   "why": "Remote sensing uses satellites and planes to photograph and scan Earth, which is how we track wildfires."
+  }
+ ],
+ "3": [
+  {
+   "id": "r03-01",
+   "q": "Where are protons and neutrons found in an atom?",
+   "a": "In the nucleus",
+   "wrong": [
+    "Zipping around the outside",
+    "Only inside compounds",
+    "In the space between atoms"
+   ],
+   "why": "Protons and neutrons are both in the center of the atom, the nucleus."
+  },
+  {
+   "id": "r03-02",
+   "q": "A chemical bond is:",
+   "a": "The force holding atoms together in a compound",
+   "wrong": [
+    "A layer of rock deep in Earth's crust",
+    "A super-hot, electrically charged gas, like in lightning",
+    "A mix of a solid and a liquid together"
+   ],
+   "why": "The force that holds atoms together in a compound is called a chemical bond."
+  },
+  {
+   "id": "r03-03",
+   "q": "Condensation happens when:",
+   "a": "Water vapor cools into liquid droplets",
+   "wrong": [
+    "Ice warms up and melts into liquid",
+    "Liquid water heats up into vapor",
+    "Lava cools down into solid rock"
+   ],
+   "why": "When water vapor cools and turns back into liquid droplets, that's condensation."
+  },
+  {
+   "id": "r03-04",
+   "q": "A compound is made when:",
+   "a": "Atoms of different elements bond together",
+   "wrong": [
+    "Atoms of one element sit by themselves",
+    "A solid melts and becomes a liquid",
+    "A gas spreads out to fill its container"
+   ],
+   "why": "When atoms of different elements bond together, they make a compound."
+  },
+  {
+   "id": "r03-05",
+   "q": "Table salt is a compound of:",
+   "a": "Sodium and chlorine",
+   "wrong": [
+    "Hydrogen and oxygen",
+    "Silicon and oxygen",
+    "Iron and oxygen"
+   ],
+   "why": "Table salt is sodium plus chlorine."
+  },
+  {
+   "id": "r03-06",
+   "q": "What usually changes matter from one state to another?",
+   "a": "Adding or removing energy, usually heat",
+   "wrong": [
+    "Adding more atoms of the same element",
+    "Painting it or changing its color",
+    "Moving it to a new place on Earth"
+   ],
+   "why": "Adding or removing energy, usually heat, changes the state of matter."
+  },
+  {
+   "id": "r03-07",
+   "q": "Where does Earth's internal heat come from?",
+   "a": "Heat left from Earth's formation plus radioactive decay",
+   "wrong": [
+    "Sunlight soaking deep down into the ground every single day",
+    "Friction from ocean waves rubbing the crust",
+    "Lightning strikes that heat up the crust"
+   ],
+   "why": "Earth's internal heat is left over from when the planet formed, plus heat from radioactive elements breaking down."
+  },
+  {
+   "id": "r03-08",
+   "q": "Why can the water you drink today be very old?",
+   "a": "Matter on Earth is recycled over and over in cycles",
+   "wrong": [
+    "New water is made fresh inside clouds every single day",
+    "Water stays in one place once it forms",
+    "Water is created by plants as they grow"
+   ],
+   "why": "Matter on Earth gets recycled over and over, so the water you drink may once have been dinosaur sweat."
+  },
+  {
+   "id": "r03-09",
+   "q": "Why do Earth scientists call Earth a system?",
+   "a": "Its parts are linked, so a change in one affects the rest",
+   "wrong": [
+    "Each of its spheres works completely alone, with no links",
+    "It is made of only one kind of matter",
+    "It has stayed exactly the same over time"
+   ],
+   "why": "Change one part of the system, and the rest feel it."
+  },
+  {
+   "id": "r03-10",
+   "q": "A bowling ball and a beach ball are the same size. Which has more mass?",
+   "a": "The bowling ball, because it has more matter",
+   "wrong": [
+    "The beach ball, because it's lighter",
+    "They're equal because they're the same size",
+    "Neither one, since balls have no mass"
+   ],
+   "why": "Mass is how much matter something has, and a bowling ball has more than a beach ball of the same size."
+  },
+  {
+   "id": "r03-11",
+   "q": "Lava flowing out of a volcano is in which state of matter?",
+   "a": "Liquid",
+   "wrong": [
+    "Solid",
+    "Gas",
+    "Plasma"
+   ],
+   "why": "Liquids take the shape of their container, and water and lava are liquids."
+  },
+  {
+   "id": "r03-12",
+   "q": "A puddle disappears on a sunny afternoon. What happened to the water?",
+   "a": "It evaporated into water vapor",
+   "wrong": [
+    "It condensed into droplets",
+    "It froze into a solid",
+    "It turned into plasma"
+   ],
+   "why": "Adding heat makes liquid water evaporate into vapor."
+  }
+ ],
+ "4": [
+  {
+   "id": "r04-01",
+   "q": "In the mineral tests, \"inorganic\" means:",
+   "a": "Not made by living things",
+   "wrong": [
+    "Not made of any atoms",
+    "Not found in Earth's crust",
+    "Not able to form crystals"
+   ],
+   "why": "Inorganic means not made by living things."
+  },
+  {
+   "id": "r04-02",
+   "q": "A mineral's crystal structure means its atoms:",
+   "a": "Line up in a repeating pattern",
+   "wrong": [
+    "Are scattered around at random",
+    "Are always in a liquid state",
+    "Change their recipe each time"
+   ],
+   "why": "Crystal structure means the atoms line up in a repeating pattern, like perfectly stacked blocks."
+  },
+  {
+   "id": "r04-03",
+   "q": "Calcite belongs to which mineral family?",
+   "a": "Carbonates",
+   "wrong": [
+    "Silicates",
+    "Oxides",
+    "Native elements"
+   ],
+   "why": "Carbonates contain carbon and oxygen, and calcite is one."
+  },
+  {
+   "id": "r04-04",
+   "q": "Which mineral is number 9 on the Mohs scale and includes rubies and sapphires?",
+   "a": "Corundum",
+   "wrong": [
+    "Topaz",
+    "Quartz",
+    "Apatite"
+   ],
+   "why": "Corundum is number 9 on the Mohs scale and includes rubies and sapphires."
+  },
+  {
+   "id": "r04-05",
+   "q": "What does a gem have to be?",
+   "a": "Rare, hard, and beautiful enough to cut",
+   "wrong": [
+    "Soft enough to scratch with a fingernail",
+    "Mined only for its metal",
+    "Made by living things"
+   ],
+   "why": "A gem is a mineral that's rare, hard, and beautiful enough to be cut and polished."
+  },
+  {
+   "id": "r04-06",
+   "q": "Why is diamond counted as a native element?",
+   "a": "It is made of pure carbon",
+   "wrong": [
+    "It is made of silicon and oxygen",
+    "It forms from living things",
+    "It is a liquid deep underground"
+   ],
+   "why": "Native elements are pure elements found on their own, including diamond, which is pure carbon."
+  },
+  {
+   "id": "r04-07",
+   "q": "Why are seashells and pearls not true minerals?",
+   "a": "Living things make them, so they aren't inorganic",
+   "wrong": [
+    "They are much too soft and crumbly to count as minerals",
+    "They are made of liquid, not solid",
+    "They don't have any color or luster"
+   ],
+   "why": "A mineral must be inorganic, not made by living things, so seashells and pearls are close calls."
+  },
+  {
+   "id": "r04-08",
+   "q": "Why is quartz the same mineral no matter where it's found?",
+   "a": "It has a definite recipe: silicon and oxygen",
+   "wrong": [
+    "It always has exactly the same color",
+    "It only ever forms in Idaho's granite mountains",
+    "It is made by living things in the sea"
+   ],
+   "why": "A mineral has a definite chemical makeup, and quartz is always silicon and oxygen."
+  },
+  {
+   "id": "r04-09",
+   "q": "How does the Mohs scale rank its 10 minerals?",
+   "a": "Each one scratches the minerals below it",
+   "wrong": [
+    "By how shiny and bright each one looks",
+    "By how much each one costs to buy",
+    "By the color of the streak each leaves"
+   ],
+   "why": "On the Mohs scale, each mineral scratches the ones below it."
+  },
+  {
+   "id": "r04-10",
+   "q": "Which mineral is found in toothpaste?",
+   "a": "Fluorite",
+   "wrong": [
+    "Graphite",
+    "Gypsum",
+    "Halite"
+   ],
+   "why": "Toothpaste has fluorite."
+  },
+  {
+   "id": "r04-11",
+   "q": "A shiny gray mineral leaves a reddish-brown streak on a white tile. It is most likely:",
+   "a": "Hematite",
+   "wrong": [
+    "Gold",
+    "Talc",
+    "Quartz"
+   ],
+   "why": "Hematite can look silver or black, but its streak is always reddish-brown."
+  },
+  {
+   "id": "r04-12",
+   "q": "About how many minerals are known?",
+   "a": "Over 5,000",
+   "wrong": [
+    "About 20",
+    "About 118",
+    "About 70"
+   ],
+   "why": "There are over 5,000 known minerals, but only about 20 or so are common."
+  }
+ ],
+ "5": [
+  {
+   "id": "r05-01",
+   "q": "The word \"igneous\" comes from the Latin word for:",
+   "a": "Fire",
+   "wrong": [
+    "Stone",
+    "Layer",
+    "Change"
+   ],
+   "why": "The word igneous comes from the Latin word for fire."
+  },
+  {
+   "id": "r05-02",
+   "q": "In igneous rocks, texture means:",
+   "a": "The size, shape, and arrangement of crystals",
+   "wrong": [
+    "How much silica and iron the rock holds inside it",
+    "How hot the magma once was",
+    "What color the rock looks in sunlight"
+   ],
+   "why": "Texture is the size, shape, and arrangement of the crystals."
+  },
+  {
+   "id": "r05-03",
+   "q": "Which of these is an intermediate igneous rock?",
+   "a": "Andesite",
+   "wrong": [
+    "Granite",
+    "Basalt",
+    "Pumice"
+   ],
+   "why": "Intermediate igneous rocks are in between felsic and mafic, like andesite and diorite."
+  },
+  {
+   "id": "r05-04",
+   "q": "What is the Idaho Batholith?",
+   "a": "A giant chunk of granite in central Idaho",
+   "wrong": [
+    "A lava tube at Craters of the Moon",
+    "Basalt layers under the Snake River Plain",
+    "A cinder cone near Yellowstone"
+   ],
+   "why": "The Idaho Batholith is a giant chunk of granite in central Idaho, including the Sawtooth Mountains."
+  },
+  {
+   "id": "r05-05",
+   "q": "Gabbro is which kind of igneous rock?",
+   "a": "Mafic",
+   "wrong": [
+    "Felsic",
+    "Intermediate",
+    "Glassy"
+   ],
+   "why": "Mafic rocks are dark and rich in iron and magnesium, like basalt and gabbro."
+  },
+  {
+   "id": "r05-06",
+   "q": "Why does magma rise toward the surface?",
+   "a": "It is lighter than the solid rock around it",
+   "wrong": [
+    "It is heavier and denser than the rock around it",
+    "Wind on the surface pulls it upward",
+    "It freezes and expands like ice"
+   ],
+   "why": "Since magma is lighter than the solid rock around it, it rises like a blob in a lava lamp."
+  },
+  {
+   "id": "r05-07",
+   "q": "How does mafic lava behave compared with felsic magma?",
+   "a": "It is runny and flows easily",
+   "wrong": [
+    "It is thicker and stickier",
+    "It always erupts explosively",
+    "It never reaches the surface"
+   ],
+   "why": "Mafic lava is runny and flows easily, while felsic magma is thick and sticky."
+  },
+  {
+   "id": "r05-08",
+   "q": "Why did Native Americans make arrowheads from obsidian?",
+   "a": "It is volcanic glass that chips to razor-sharp edges",
+   "wrong": [
+    "It is soft enough to carve easily with just a fingernail",
+    "It floats, so arrows fly farther",
+    "It is full of big, strong crystals"
+   ],
+   "why": "Obsidian is natural volcanic glass, and Native Americans chipped it into razor-sharp arrowheads."
+  },
+  {
+   "id": "r05-09",
+   "q": "About how hot does it get where rock melts into magma?",
+   "a": "About 700 °C to 1,300 °C",
+   "wrong": [
+    "About 50 °C to 100 °C",
+    "About 200 °C to 300 °C",
+    "About 5,000 °C to 6,000 °C"
+   ],
+   "why": "Magma forms deep in the Earth where it's hot enough, roughly 700 °C to 1,300 °C, to melt rock."
+  },
+  {
+   "id": "r05-10",
+   "q": "A geologist finds a light-colored rock with big, easy-to-see crystals in the Sawtooths. It is most likely:",
+   "a": "Granite",
+   "wrong": [
+    "Basalt",
+    "Obsidian",
+    "Pumice"
+   ],
+   "why": "Granite is light-colored and coarse-grained, and the Sawtooth Mountains are part of the granite Idaho Batholith."
+  },
+  {
+   "id": "r05-11",
+   "q": "A dark rock with tiny crystals comes from a lava flow at Craters of the Moon. It is most likely:",
+   "a": "Basalt",
+   "wrong": [
+    "Granite",
+    "Rhyolite",
+    "Diorite"
+   ],
+   "why": "Basalt is dark and fine-grained, and Craters of the Moon has fresh-looking basalt lava fields."
+  },
+  {
+   "id": "r05-12",
+   "q": "Which igneous rock is used in scrubs and stones for rough feet?",
+   "a": "Pumice",
+   "wrong": [
+    "Granite",
+    "Obsidian",
+    "Gabbro"
+   ],
+   "why": "Pumice is used in exfoliating scrubs and pumice stones for rough feet."
+  }
+ ],
+ "6": [
+  {
+   "id": "r06-01",
+   "q": "The word \"metamorphic\" means:",
+   "a": "Change of form",
+   "wrong": [
+    "Born from fire",
+    "Made in layers",
+    "Glued together"
+   ],
+   "why": "Metamorphic means change of form."
+  },
+  {
+   "id": "r06-02",
+   "q": "Clastic sedimentary rocks are made from:",
+   "a": "Broken pieces of other rocks",
+   "wrong": [
+    "Minerals left behind as water evaporates",
+    "Remains of plants and shells",
+    "Lava that cooled quickly"
+   ],
+   "why": "Clastic rocks are made from broken pieces of other rocks."
+  },
+  {
+   "id": "r06-03",
+   "q": "Shale is made of:",
+   "a": "Super-fine mud",
+   "wrong": [
+    "Big rounded pebbles",
+    "Sand grains",
+    "Squished swamp plants"
+   ],
+   "why": "Clastic rocks are sorted by size, and shale is made of super-fine mud."
+  },
+  {
+   "id": "r06-04",
+   "q": "A non-foliated metamorphic rock has:",
+   "a": "No layers or bands",
+   "wrong": [
+    "Flat, stacked layers",
+    "Striped bands of minerals",
+    "Holes from gas bubbles"
+   ],
+   "why": "Non-foliated metamorphic rocks have no layers."
+  },
+  {
+   "id": "r06-05",
+   "q": "Old chalkboards and some roofs are made of which metamorphic rock?",
+   "a": "Slate",
+   "wrong": [
+    "Marble",
+    "Quartzite",
+    "Gneiss"
+   ],
+   "why": "Shale becomes slate, which was used for old chalkboards and roofs."
+  },
+  {
+   "id": "r06-06",
+   "q": "Why is metamorphism compared to baking cookie dough?",
+   "a": "The rock changes but never melts",
+   "wrong": [
+    "The rock melts and then hardens",
+    "The rock is glued by minerals",
+    "The rock crumbles into sediment"
+   ],
+   "why": "Metamorphism is like baking cookie dough: the rock changes but doesn't turn back into liquid."
+  },
+  {
+   "id": "r06-07",
+   "q": "Why are sedimentary rocks called history books?",
+   "a": "Their layers hold clues like fossils",
+   "wrong": [
+    "They are always the oldest rocks on Earth",
+    "They form when lava cools at the surface",
+    "They never change once they have formed"
+   ],
+   "why": "Sedimentary rocks form in layers that hold clues like ripple marks, mud cracks, and fossils."
+  },
+  {
+   "id": "r06-08",
+   "q": "Why can you see so much history in the Grand Canyon?",
+   "a": "It's a stack of nearly 2 billion years of rock layers",
+   "wrong": [
+    "It's one giant block of very old granite",
+    "It was carved out of one single, enormous ancient lava flow",
+    "It's made of metamorphic marble and gneiss"
+   ],
+   "why": "The Grand Canyon is a giant stack of sedimentary layers, nearly 2 billion years of history."
+  },
+  {
+   "id": "r06-09",
+   "q": "How long can it take for sediment to become rock?",
+   "a": "Thousands to millions of years",
+   "wrong": [
+    "A few hours to a few days",
+    "About one week to one month",
+    "Exactly one year, every time"
+   ],
+   "why": "Compaction and cementation can take thousands to millions of years."
+  },
+  {
+   "id": "r06-10",
+   "q": "A rock layer shows cracks shaped like a dried-up puddle. What does that suggest?",
+   "a": "The area was once a lake that dried up",
+   "wrong": [
+    "A volcano once erupted right there",
+    "It formed deep underground under pressure",
+    "A glacier once covered the whole area"
+   ],
+   "why": "Sedimentary rocks can hold clues like mud cracks from dried-up lakes."
+  },
+  {
+   "id": "r06-11",
+   "q": "Granite is squeezed deep in a mountain range until its minerals form striped bands. It becomes:",
+   "a": "Gneiss",
+   "wrong": [
+    "Marble",
+    "Slate",
+    "Quartzite"
+   ],
+   "why": "Granite turns into gneiss, a foliated rock with striped bands."
+  },
+  {
+   "id": "r06-12",
+   "q": "Some limestone is made of billions of tiny shells. What kind of sedimentary rock is that?",
+   "a": "Organic",
+   "wrong": [
+    "Clastic",
+    "Chemical",
+    "Foliated"
+   ],
+   "why": "Organic sedimentary rock is made from the remains of living things, like limestone made of tiny shells."
+  }
+ ],
+ "7": [
+  {
+   "id": "r07-01",
+   "q": "About how long has Earth been running the rock cycle?",
+   "a": "About 4 billion years",
+   "wrong": [
+    "About 4,000 years",
+    "About 4 million years",
+    "About 400 years"
+   ],
+   "why": "Earth has been running the rock cycle for about 4 billion years."
+  },
+  {
+   "id": "r07-02",
+   "q": "Which agents break rock into sediment?",
+   "a": "Wind, water, ice, and plant roots",
+   "wrong": [
+    "Heat, pressure, and hot fluids",
+    "Magma and lava",
+    "Compaction and cementation"
+   ],
+   "why": "In weathering and erosion, wind, water, ice, and plant roots break rock into sediment and carry it away."
+  },
+  {
+   "id": "r07-03",
+   "q": "In the chapter's rock journey, which rock is metamorphic?",
+   "a": "Quartzite",
+   "wrong": [
+    "Granite",
+    "Sandstone",
+    "Magma"
+   ],
+   "why": "Heat and pressure turned buried sandstone into quartzite, a metamorphic rock."
+  },
+  {
+   "id": "r07-04",
+   "q": "Melting in the rock cycle needs:",
+   "a": "Heat deep underground",
+   "wrong": [
+    "Sunlight at the surface",
+    "Wind and rain",
+    "Very cold temperatures"
+   ],
+   "why": "In the rock cycle, heat deep underground turns rock into magma."
+  },
+  {
+   "id": "r07-05",
+   "q": "Why is the rock cycle more like a choose-your-own-adventure than a circle?",
+   "a": "Rocks can skip steps, go backward, or take shortcuts",
+   "wrong": [
+    "Every rock follows the exact same set path, step by step",
+    "Rocks can only move in one direction",
+    "Only igneous rocks are able to change"
+   ],
+   "why": "There's no set path: a rock can skip steps, go backward, or take shortcuts."
+  },
+  {
+   "id": "r07-06",
+   "q": "In the chapter's rock journey, how does granite become sand?",
+   "a": "Rain, ice, and wind break it apart",
+   "wrong": [
+    "It melts and then cools very quickly",
+    "Heat and pressure squeeze it deep down",
+    "It gets glued together on a lake bottom"
+   ],
+   "why": "The granite gets pushed up into mountains, and rain, ice, and wind break it into sand."
+  },
+  {
+   "id": "r07-07",
+   "q": "How does the biosphere play a part in the rock cycle?",
+   "a": "Roots and living things help break rock down",
+   "wrong": [
+    "Living things melt solid rock down into fresh magma",
+    "Animals push rock upward into mountains",
+    "Plants turn buried sand into quartzite"
+   ],
+   "why": "Roots and living things play a part, since plant roots help break rock into sediment."
+  },
+  {
+   "id": "r07-08",
+   "q": "A landslide moves tons of sediment in seconds. What does this show?",
+   "a": "Some parts of the rock cycle can be fast",
+   "wrong": [
+    "The whole rock cycle only ever takes a few seconds",
+    "Landslides make new magma",
+    "Gravity has no role in the cycle"
+   ],
+   "why": "Most of the rock cycle is slow, but a landslide can move tons of sediment in seconds."
+  },
+  {
+   "id": "r07-09",
+   "q": "If weathering and erosion stopped, which rock type would stop forming?",
+   "a": "Sedimentary rock",
+   "wrong": [
+    "Igneous rock",
+    "Metamorphic rock",
+    "Magma"
+   ],
+   "why": "Weathering and erosion make sediment, which is pressed and glued into sedimentary rock."
+  },
+  {
+   "id": "r07-10",
+   "q": "Broken basalt settles in layers on the bottom of an Idaho reservoir. What step turns it into rock?",
+   "a": "Compaction and cementation",
+   "wrong": [
+    "Melting and cooling",
+    "Uplift and weathering at the surface",
+    "Heat and pressure"
+   ],
+   "why": "Sediment gets pressed and glued into sedimentary rock by compaction and cementation."
+  },
+  {
+   "id": "r07-11",
+   "q": "Rivers and glacier ice wearing down rock show which sphere at work in the rock cycle?",
+   "a": "Hydrosphere",
+   "wrong": [
+    "Biosphere",
+    "Atmosphere",
+    "No sphere at all"
+   ],
+   "why": "In the rock cycle, water and ice are part of the hydrosphere."
+  },
+  {
+   "id": "r07-12",
+   "q": "Metamorphic rock is pushed up into a mountain and weathers into sediment. Can that happen?",
+   "a": "Yes, it can weather into sediment",
+   "wrong": [
+    "No, metamorphic rock must melt first",
+    "No, only igneous rock can weather",
+    "Only after it turns into igneous rock"
+   ],
+   "why": "There's no set path, and metamorphic rock can weather into sediment."
+  }
+ ],
+ "8": [
+  {
+   "id": "r08-01",
+   "q": "Mechanical weathering:",
+   "a": "Breaks rock without changing what it's made of",
+   "wrong": [
+    "Changes minerals in the rock into brand-new substances",
+    "Carries rock pieces to new places",
+    "Melts rock deep underground into magma"
+   ],
+   "why": "Mechanical weathering breaks rock into smaller pieces without changing what it's made of."
+  },
+  {
+   "id": "r08-02",
+   "q": "Over time, water turns the mineral feldspar into:",
+   "a": "Clay",
+   "wrong": [
+    "Quartz",
+    "Granite",
+    "Humus"
+   ],
+   "why": "Water slowly dissolves some minerals and turns feldspar into clay."
+  },
+  {
+   "id": "r08-03",
+   "q": "The B horizon, or subsoil, is:",
+   "a": "Lighter, with clay and minerals washed down",
+   "wrong": [
+    "Dark and rich in humus from rotting plants",
+    "Fallen leaves and other decaying stuff",
+    "Solid rock at the very bottom of the hole"
+   ],
+   "why": "The B horizon is lighter, with clay and minerals washed down from above."
+  },
+  {
+   "id": "r08-04",
+   "q": "The O horizon is:",
+   "a": "The top layer of fallen leaves and decay",
+   "wrong": [
+    "Chunks of partly weathered rock",
+    "Lighter soil full of washed-down clay",
+    "Solid rock at the very bottom"
+   ],
+   "why": "The O horizon is the top layer of fallen leaves and decaying stuff."
+  },
+  {
+   "id": "r08-05",
+   "q": "Soil is a mix of:",
+   "a": "Weathered rock, humus, water, air, and life",
+   "wrong": [
+    "Only sand, gravel, and small pebbles",
+    "Only rotting plants and dead animals",
+    "Cooled lava, volcanic ash, and pieces of obsidian glass"
+   ],
+   "why": "Soil is a mix of weathered rock, humus, water, air, and billions of living things."
+  },
+  {
+   "id": "r08-06",
+   "q": "What can deposition build?",
+   "a": "Deltas, sand dunes, and beaches",
+   "wrong": [
+    "Caves, sinkholes, and arches",
+    "Potholes and cracks",
+    "Volcanoes and lava tubes"
+   ],
+   "why": "Deposition builds deltas, sand dunes, and beaches."
+  },
+  {
+   "id": "r08-07",
+   "q": "Why is ordinary rainwater slightly acidic?",
+   "a": "It picks up carbon dioxide",
+   "wrong": [
+    "It picks up salt from the sea",
+    "It touches iron in rocks",
+    "It freezes inside cracks"
+   ],
+   "why": "Rainwater picks up carbon dioxide and becomes slightly acidic."
+  },
+  {
+   "id": "r08-08",
+   "q": "Why does frost wedging work so well in Idaho?",
+   "a": "Temperatures swing above and below freezing",
+   "wrong": [
+    "The climate there is always warm and wet",
+    "There are no plants there to block the ice",
+    "The rocks there have already rusted away"
+   ],
+   "why": "Frost wedging works best where temperatures swing above and below freezing, like here."
+  },
+  {
+   "id": "r08-09",
+   "q": "A handful of healthy soil has more living things in it than:",
+   "a": "There are people on Earth",
+   "wrong": [
+    "There are stars in the sky",
+    "There are grains of sand on a beach",
+    "There are drops in the ocean"
+   ],
+   "why": "A single handful of healthy soil has more living organisms in it than there are people on Earth."
+  },
+  {
+   "id": "r08-10",
+   "q": "If weathering is smashing a cookie, erosion is like:",
+   "a": "Ants carrying the crumbs away",
+   "wrong": [
+    "Smashing the cookie again",
+    "Baking a new cookie",
+    "Gluing the crumbs together"
+   ],
+   "why": "Think of weathering as smashing a cookie and erosion as the ants carrying the crumbs away."
+  },
+  {
+   "id": "r08-11",
+   "q": "A huge rock dome has curved slabs peeling off like an onion. What process is this?",
+   "a": "Unloading",
+   "wrong": [
+    "Oxidation",
+    "Abrasion",
+    "Deposition"
+   ],
+   "why": "In unloading, rock on top erodes away and the rock below expands and peels off in sheets, like an onion."
+  },
+  {
+   "id": "r08-12",
+   "q": "Loose rocks lie in a pile at the bottom of a cliff after a rockfall. Which agent moved them?",
+   "a": "Gravity",
+   "wrong": [
+    "Wind",
+    "Waves",
+    "Glaciers"
+   ],
+   "why": "Gravity pulls everything downhill, causing landslides and rockfalls."
+  }
+ ],
+ "9": [
+  {
+   "id": "r09-01",
+   "q": "About how fast does creep move?",
+   "a": "A few centimeters a year",
+   "wrong": [
+    "A few meters a second",
+    "A few kilometers a day",
+    "A few meters an hour"
+   ],
+   "why": "Creep is super slow, maybe a few centimeters a year."
+  },
+  {
+   "id": "r09-02",
+   "q": "A mudflow is:",
+   "a": "Water-soaked soil flowing like a thick milkshake",
+   "wrong": [
+    "Rocks breaking off a high cliff and free-falling down",
+    "Sand slowly walking downwind in a desert",
+    "A huge mass of ice moving slowly over land"
+   ],
+   "why": "In a mudflow, soil soaked with water flows like a thick milkshake."
+  },
+  {
+   "id": "r09-03",
+   "q": "A valley (alpine) glacier:",
+   "a": "Forms in mountains and flows down valleys",
+   "wrong": [
+    "Covers most of a continent like a sheet",
+    "Forms in hot, dry deserts near the equator",
+    "Is a giant pile of windblown sand"
+   ],
+   "why": "Valley glaciers form in mountains and flow down valleys, like slow-motion rivers."
+  },
+  {
+   "id": "r09-04",
+   "q": "Wind abrasion is:",
+   "a": "Wind-blown sand blasting and polishing rock",
+   "wrong": [
+    "Wind piling up fine dust into thick, fertile layers",
+    "Wind lifting big boulders",
+    "Wind freezing water in cracks"
+   ],
+   "why": "Wind-blown sand blasts and polishes rocks, like nature's sandpaper."
+  },
+  {
+   "id": "r09-05",
+   "q": "Rocks break off a cliff and free-fall onto the road below. This is a:",
+   "a": "Rockfall",
+   "wrong": [
+    "Creep",
+    "Slump",
+    "Deflation"
+   ],
+   "why": "In a rockfall, rocks break off a cliff and free-fall."
+  },
+  {
+   "id": "r09-06",
+   "q": "About how long ago did glaciers cover much of North America?",
+   "a": "About 20,000 years ago",
+   "wrong": [
+    "About 2,000 years ago",
+    "About 2 million years ago",
+    "About 200 million years ago"
+   ],
+   "why": "About 20,000 years ago, during the last ice age, glaciers covered much of North America."
+  },
+  {
+   "id": "r09-07",
+   "q": "Why does water help trigger mass movement?",
+   "a": "It adds weight and makes soil slippery",
+   "wrong": [
+    "It freezes the soil solid and locks it in place",
+    "It removes weight from the slope",
+    "It makes plant roots grow faster"
+   ],
+   "why": "Water adds weight and makes soil slippery."
+  },
+  {
+   "id": "r09-08",
+   "q": "How do glaciers carve the land?",
+   "a": "They pluck up rocks and grind them along the bottom",
+   "wrong": [
+    "They melt the rock beneath them into magma",
+    "They blow sand against cliffs to polish them",
+    "They dissolve limestone with weak acid as they move along"
+   ],
+   "why": "As glaciers move, they pluck up rocks and grind them along the bottom, scratching and carving the land."
+  },
+  {
+   "id": "r09-09",
+   "q": "If all of Antarctica's ice melted, sea level would rise about:",
+   "a": "58 meters (190 feet)",
+   "wrong": [
+    "58 centimeters (2 feet)",
+    "5 meters (16 feet)",
+    "580 meters (1,900 feet)"
+   ],
+   "why": "If Antarctica's ice all melted, sea level would rise about 58 meters (190 feet)."
+  },
+  {
+   "id": "r09-10",
+   "q": "A road crew cuts into a steep hillside to widen a highway. What risk goes up?",
+   "a": "Mass movement, like a landslide",
+   "wrong": [
+    "Deflation of the loose sand",
+    "New layers of fertile loess",
+    "A new valley glacier forming"
+   ],
+   "why": "Cutting into hillsides for roads and houses can trigger mass movement."
+  },
+  {
+   "id": "r09-11",
+   "q": "Wind can't lift big rocks. What is it best at moving?",
+   "a": "Sand and dust",
+   "wrong": [
+    "Large boulders",
+    "Whole glaciers",
+    "Solid bedrock"
+   ],
+   "why": "Wind can't lift big rocks, but it's great at moving sand and dust."
+  },
+  {
+   "id": "r09-12",
+   "q": "During an earthquake, a big mass of rock and soil suddenly breaks loose and races downhill. This is a:",
+   "a": "Landslide",
+   "wrong": [
+    "Creep",
+    "Deflation",
+    "Moraine"
+   ],
+   "why": "A landslide is a big mass of rock and soil that suddenly breaks loose and races downhill; earthquakes can trigger it."
+  }
+ ],
+ "10": [
+  {
+   "id": "r10-01",
+   "q": "Precipitation includes:",
+   "a": "Rain, snow, sleet, or hail",
+   "wrong": [
+    "Only water vapor rising",
+    "Water soaking into soil",
+    "Plants releasing vapor"
+   ],
+   "why": "Precipitation is water falling as rain, snow, sleet, or hail."
+  },
+  {
+   "id": "r10-02",
+   "q": "Runoff is water that:",
+   "a": "Flows over the ground into streams",
+   "wrong": [
+    "Soaks deep down into the soil",
+    "Rises into the air as water vapor",
+    "Comes out through plant leaves"
+   ],
+   "why": "In runoff, water flows over the ground into streams."
+  },
+  {
+   "id": "r10-03",
+   "q": "A mature river is:",
+   "a": "Slower, wider, and starting to curve",
+   "wrong": [
+    "Fast, steep, and cutting down hard",
+    "Full of rapids and waterfalls",
+    "Cut off into a curved pond"
+   ],
+   "why": "Mature rivers are slower, wider, and start to curve."
+  },
+  {
+   "id": "r10-04",
+   "q": "In Idaho, the Continental Divide runs along:",
+   "a": "The Idaho-Montana border",
+   "wrong": [
+    "The Idaho-Utah border",
+    "The Snake River",
+    "The Idaho-Oregon border"
+   ],
+   "why": "The Continental Divide runs along the Idaho-Montana border."
+  },
+  {
+   "id": "r10-05",
+   "q": "Why was nearly every town in history built next to a river?",
+   "a": "People survive only about three days without water",
+   "wrong": [
+    "Rivers keep towns much cooler during the hot summer months",
+    "River water never floods its banks",
+    "Rivers block wind, dust, and storms"
+   ],
+   "why": "You can last weeks without food but only about three days without water, so towns grew next to rivers."
+  },
+  {
+   "id": "r10-06",
+   "q": "About how much water poured out when the Teton Dam failed?",
+   "a": "About 80 billion gallons",
+   "wrong": [
+    "About 80 thousand gallons",
+    "About 80 million gallons",
+    "About 80 trillion gallons"
+   ],
+   "why": "When the Teton Dam failed, about 80 billion gallons of water poured out."
+  },
+  {
+   "id": "r10-07",
+   "q": "Why is Bear Lake, on the Idaho-Utah border, turquoise?",
+   "a": "Tiny bits of limestone float in the water",
+   "wrong": [
+    "Copper ore lines the whole lake floor",
+    "Algae paint the water a bright blue",
+    "Glacier ice still floats on its surface"
+   ],
+   "why": "Bear Lake's turquoise color comes from tiny bits of limestone floating in the water."
+  },
+  {
+   "id": "r10-08",
+   "q": "About how much of Earth's water is frozen in ice?",
+   "a": "About 2%",
+   "wrong": [
+    "About 97%",
+    "About 30%",
+    "About 50%"
+   ],
+   "why": "About 97% of Earth's water is salty ocean water and about 2% is frozen in ice."
+  },
+  {
+   "id": "r10-09",
+   "q": "A town wants flood control that also filters pollution and helps wildlife. What is its best choice?",
+   "a": "Protect its wetlands",
+   "wrong": [
+    "Build homes on the floodplain",
+    "Drain all the marshes",
+    "Pave the riverbanks"
+   ],
+   "why": "Wetlands filter pollution, prevent floods, and provide homes for wildlife."
+  },
+  {
+   "id": "r10-10",
+   "q": "Near its source, a river has rapids, waterfalls, and a deep V-shaped canyon. This part of the river is:",
+   "a": "Young",
+   "wrong": [
+    "Mature",
+    "Old",
+    "An oxbow lake"
+   ],
+   "why": "Young rivers near the source are fast and steep and carve deep V-shaped valleys, rapids, and waterfalls."
+  },
+  {
+   "id": "r10-11",
+   "q": "Which Idaho town was flooded when the Teton Dam failed?",
+   "a": "Rexburg",
+   "wrong": [
+    "Boise",
+    "Coeur d'Alene",
+    "Pocatello"
+   ],
+   "why": "When the Teton Dam failed in 1976, water flooded Rexburg, Sugar City, and other towns."
+  },
+  {
+   "id": "r10-12",
+   "q": "A family wants to build a new house. Why should they avoid the floodplain?",
+   "a": "The river spills onto it when it overflows",
+   "wrong": [
+    "It is too far from any source of drinking water",
+    "The soil there is too poor for a yard",
+    "It stays frozen solid every winter"
+   ],
+   "why": "When more water enters a river than its channel can hold, it spills onto the floodplain, so it's a dangerous place to build."
+  }
+ ],
+ "11": [
+  {
+   "id": "r11-01",
+   "q": "A spring is:",
+   "a": "Where groundwater flows out on its own",
+   "wrong": [
+    "A hole that is drilled to pump water up",
+    "A layer of clay that blocks groundwater",
+    "The very top of the zone of saturation"
+   ],
+   "why": "A spring is where groundwater naturally flows out at the surface."
+  },
+  {
+   "id": "r11-02",
+   "q": "A well is:",
+   "a": "A hole drilled below the water table",
+   "wrong": [
+    "Where groundwater flows out naturally",
+    "A cave formed by acidic water",
+    "A hot spring that erupts"
+   ],
+   "why": "A well is a hole drilled below the water table so water can be pumped up."
+  },
+  {
+   "id": "r11-03",
+   "q": "The zone of aeration is:",
+   "a": "The upper layer where spaces hold air and some water",
+   "wrong": [
+    "The lower layer where every single space is full of water",
+    "A layer of clay that blocks water",
+    "The very top of an aquifer"
+   ],
+   "why": "The zone of aeration is the upper layer, where spaces hold both air and some water."
+  },
+  {
+   "id": "r11-04",
+   "q": "Stalagmites are formations that:",
+   "a": "Build up from the floor toward the ceiling",
+   "wrong": [
+    "Hang down tight from the ceiling like icicles",
+    "Form when the roof of a cave falls in",
+    "Shoot out hot water and steam"
+   ],
+   "why": "Stalactites hang tight to the ceiling, and stalagmites might reach the ceiling someday."
+  },
+  {
+   "id": "r11-05",
+   "q": "Old Faithful in Yellowstone erupts about every:",
+   "a": "90 minutes on average",
+   "wrong": [
+    "9 minutes on average",
+    "9 days on average",
+    "90 days on average"
+   ],
+   "why": "Old Faithful erupts about every 90 minutes on average."
+  },
+  {
+   "id": "r11-06",
+   "q": "Why does the water table's depth change?",
+   "a": "It rises in wet times and drops in droughts",
+   "wrong": [
+    "It moves up and down with the ocean tides",
+    "It follows the phases of the Moon each month",
+    "It stays at the same depth all year"
+   ],
+   "why": "The water table's depth changes with the seasons, rising in wet times and dropping in droughts."
+  },
+  {
+   "id": "r11-07",
+   "q": "What does Idaho have more of than almost any other state?",
+   "a": "Soakable hot springs",
+   "wrong": [
+    "Erupting geysers",
+    "Limestone caves",
+    "Large sinkholes"
+   ],
+   "why": "Idaho has more soakable hot springs than almost any other state."
+  },
+  {
+   "id": "r11-08",
+   "q": "Compared with all rivers and lakes, how much fresh liquid water is underground?",
+   "a": "About 30 times more",
+   "wrong": [
+    "About half as much",
+    "About the same amount",
+    "About 2 times more"
+   ],
+   "why": "There's about 30 times more fresh liquid water underground than in all the rivers and lakes on Earth."
+  },
+  {
+   "id": "r11-09",
+   "q": "Why is an aquifer more like a soaked sponge than an underground lake?",
+   "a": "Water fills spaces in permeable rock",
+   "wrong": [
+    "It is one huge open cave full of water",
+    "It is a frozen block of underground ice",
+    "It only holds water on its top surface"
+   ],
+   "why": "An aquifer is a layer of permeable rock or sediment that holds and moves groundwater, like a soaked sponge."
+  },
+  {
+   "id": "r11-10",
+   "q": "A septic tank leaks near a family's well. Why is that a worry?",
+   "a": "Pollution can soak down into the groundwater",
+   "wrong": [
+    "It will change the well into a gushing artesian well",
+    "It will raise the water table safely",
+    "It will turn the well into a geyser"
+   ],
+   "why": "Pollution from leaky septic tanks can soak down into aquifers."
+  },
+  {
+   "id": "r11-11",
+   "q": "You drill a hole but stop above the water table. What will you likely get?",
+   "a": "Little water, since spaces there hold air too",
+   "wrong": [
+    "A strong gush of water rising up with no pump at all",
+    "Hot water heated by nearby magma",
+    "More water than any deeper well"
+   ],
+   "why": "Above the water table is the zone of aeration, where spaces hold both air and some water."
+  },
+  {
+   "id": "r11-12",
+   "q": "Water entering the Eastern Snake River Plain Aquifer may take how long to travel through it?",
+   "a": "Decades or even centuries",
+   "wrong": [
+    "Just a few hours",
+    "Only a few days",
+    "About one month or a little more"
+   ],
+   "why": "Some of the water takes decades or even centuries to travel through the aquifer."
+  }
+ ],
+ "12": [
+  {
+   "id": "r12-01",
+   "q": "A seismograph is:",
+   "a": "An instrument that records seismic waves",
+   "wrong": [
+    "A map that shows all of Earth's layers",
+    "A drill used to dig very deep holes",
+    "A compass that tracks magnetic fields"
+   ],
+   "why": "Scientists record seismic waves with instruments called seismographs."
+  },
+  {
+   "id": "r12-02",
+   "q": "About how much of Earth's volume is the mantle?",
+   "a": "About 84%",
+   "wrong": [
+    "About 7%",
+    "About 25%",
+    "About 50%"
+   ],
+   "why": "The mantle makes up about 84% of Earth's volume."
+  },
+  {
+   "id": "r12-03",
+   "q": "How do P waves move rock?",
+   "a": "They squeeze and stretch it, like a pushed Slinky",
+   "wrong": [
+    "They shake it side to side, like a flicked rope",
+    "They melt it as they pass",
+    "They spin it in circles"
+   ],
+   "why": "P waves squeeze and stretch rock, like a Slinky pushed from one end."
+  },
+  {
+   "id": "r12-04",
+   "q": "About how thick is oceanic crust?",
+   "a": "About 7 km",
+   "wrong": [
+    "About 70 km",
+    "About 700 km",
+    "About 2,900 km"
+   ],
+   "why": "Oceanic crust is thin, about 7 km."
+  },
+  {
+   "id": "r12-05",
+   "q": "Earth's inner core is about as hot as:",
+   "a": "The surface of the Sun",
+   "wrong": [
+    "Boiling water",
+    "A summer day in Idaho",
+    "Fresh lava at the surface"
+   ],
+   "why": "The inner core is about as hot as the surface of the Sun, around 5,200 °C."
+  },
+  {
+   "id": "r12-06",
+   "q": "Why did drillers stop the Kola Superdeep Borehole?",
+   "a": "The rock was so hot it acted like putty",
+   "wrong": [
+    "They broke through into the liquid outer core",
+    "They drilled all the way into the ocean",
+    "They reached the solid inner core"
+   ],
+   "why": "They stopped because the rock was so hot it behaved like putty."
+  },
+  {
+   "id": "r12-07",
+   "q": "Why does hot material in the mantle rise?",
+   "a": "It is less dense than cooler material",
+   "wrong": [
+    "It is denser and heavier than cooler material",
+    "The Moon's gravity pulls it up",
+    "Ocean water pushes it up"
+   ],
+   "why": "In convection, hot material rises because it's less dense."
+  },
+  {
+   "id": "r12-08",
+   "q": "How did Earth's flipping magnetic poles help science?",
+   "a": "Their rock record was key evidence for plate tectonics",
+   "wrong": [
+    "They proved the inner core is liquid and slowly spinning",
+    "They showed the crust is made of granite",
+    "They explained where meteorites come from"
+   ],
+   "why": "The record of flipped magnetic poles is frozen in rocks and turned out to be key evidence for plate tectonics."
+  },
+  {
+   "id": "r12-09",
+   "q": "How do seismic waves show where Earth's layers are?",
+   "a": "They bend and change speed in new materials",
+   "wrong": [
+    "They light up each layer like a lamp",
+    "They leave scratch marks on each layer as they pass",
+    "They carry rock samples to the surface"
+   ],
+   "why": "Waves bend and change speed when they hit different materials, which shows us where the layers are."
+  },
+  {
+   "id": "r12-10",
+   "q": "If Earth were an apple, how thick would the crust be?",
+   "a": "Thinner than the peel",
+   "wrong": [
+    "About as thick as the core",
+    "Thicker than the apple's flesh",
+    "Half the apple's width"
+   ],
+   "why": "If Earth were an apple, the crust would be thinner than the peel."
+  },
+  {
+   "id": "r12-11",
+   "q": "After an earthquake, which wave reaches a faraway seismograph first?",
+   "a": "The P wave, because it is fastest",
+   "wrong": [
+    "The S wave, because it is fastest",
+    "The S wave, because it moves through liquid",
+    "Both waves arrive at the same time"
+   ],
+   "why": "P waves are the fastest seismic waves, and S waves are slower."
+  },
+  {
+   "id": "r12-12",
+   "q": "Charged particles from the Sun hit Earth's magnetic field near the poles. What might someone in northern Idaho see?",
+   "a": "The northern lights",
+   "wrong": [
+    "A lunar eclipse",
+    "A meteor shower",
+    "A rainbow at night"
+   ],
+   "why": "When charged particles hit the magnetic field near the poles, they make the northern lights, and northern Idaho sometimes gets a glimpse."
+  }
+ ],
+ "13": [
+  {
+   "id": "r13-01",
+   "q": "The name \"Pangaea\" means:",
+   "a": "All land",
+   "wrong": [
+    "All water",
+    "Broken land",
+    "New land"
+   ],
+   "why": "Wegener called the supercontinent Pangaea, which means \"all land.\""
+  },
+  {
+   "id": "r13-02",
+   "q": "Ridge push is:",
+   "a": "The push on plates from mid-ocean ridges",
+   "wrong": [
+    "The pull of a plate sinking at a trench",
+    "Wind pushing hard on the continents",
+    "Glaciers pushing the crust down into the mantle"
+   ],
+   "why": "Plates are moved by mantle convection, slab pull, and the push from ridges, called ridge push."
+  },
+  {
+   "id": "r13-03",
+   "q": "A deep ocean trench forms where:",
+   "a": "One ocean plate subducts under another",
+   "wrong": [
+    "Two continents crumple together into tall mountains",
+    "Plates pull apart on land",
+    "A hotspot rises under a plate"
+   ],
+   "why": "When ocean meets ocean, one subducts, forming deep trenches and chains of volcanic islands."
+  },
+  {
+   "id": "r13-04",
+   "q": "A rift valley forms where:",
+   "a": "Plates pull apart on land",
+   "wrong": [
+    "An ocean plate dives under a continent",
+    "Plates slide sideways past each other",
+    "Two continents collide head-on"
+   ],
+   "why": "At divergent boundaries on land, plates pull apart to form rift valleys."
+  },
+  {
+   "id": "r13-05",
+   "q": "What new technology in the 1950s and '60s helped prove the plates move?",
+   "a": "Mapping the ocean floor",
+   "wrong": [
+    "Drilling to the inner core",
+    "Weather satellites",
+    "Carbon-14 dating"
+   ],
+   "why": "In the 1950s and '60s, new technology let scientists map the ocean floor, which led to sea-floor spreading."
+  },
+  {
+   "id": "r13-06",
+   "q": "Why does coal found in Antarctica support continental drift?",
+   "a": "Coal forms in tropical swamps, so it was once warmer",
+   "wrong": [
+    "Coal only forms under thick sheets of ice",
+    "Coal was carried there long ago by moving glaciers and rivers",
+    "Coal forms only at mid-ocean ridges"
+   ],
+   "why": "Ancient climate clues include coal, which comes from tropical swamps, found in Antarctica."
+  },
+  {
+   "id": "r13-07",
+   "q": "How does sea-floor sediment support sea-floor spreading?",
+   "a": "It is thin near the ridge and thicker farther away",
+   "wrong": [
+    "It is the same thickness everywhere on the sea floor",
+    "It is thickest right on top of the ridge",
+    "There is no sediment at all on the sea floor"
+   ],
+   "why": "Thin sediment near the ridge and thicker sediment farther away is evidence of spreading."
+  },
+  {
+   "id": "r13-08",
+   "q": "When two continents collide, why don't they form a trench?",
+   "a": "Neither plate sinks, so the crust crumples up",
+   "wrong": [
+    "Both plates melt into magma right away and sink",
+    "The plates slide sideways past each other",
+    "The plates start pulling apart instead"
+   ],
+   "why": "In a continent-continent collision, neither sinks, so the crust crumples into giant mountains."
+  },
+  {
+   "id": "r13-09",
+   "q": "Mount Rainier is part of the Cascades. What process formed it?",
+   "a": "An ocean plate subducting under a continent",
+   "wrong": [
+    "Two continents crashing together head-on",
+    "Plates sliding sideways past each other",
+    "Plates pulling apart at a ridge"
+   ],
+   "why": "When an ocean plate dives under a continent it melts, forming volcanoes like the Cascades."
+  },
+  {
+   "id": "r13-10",
+   "q": "Mount Everest is still growing. About how fast?",
+   "a": "A few millimeters a year",
+   "wrong": [
+    "A few meters a year",
+    "A few kilometers a year",
+    "It stopped growing long ago"
+   ],
+   "why": "India smashing into Asia built the Himalayas, and Mount Everest is still growing a few millimeters a year."
+  },
+  {
+   "id": "r13-11",
+   "q": "Idaho isn't on a plate boundary. Why does it still have active faults?",
+   "a": "The Basin and Range region is being stretched apart",
+   "wrong": [
+    "An ocean plate is sinking deep under the city of Boise",
+    "Idaho sits right on the San Andreas Fault",
+    "The Snake River is pushing the crust apart"
+   ],
+   "why": "The Basin and Range region is being stretched apart, which is why Idaho still has active faults and earthquakes."
+  },
+  {
+   "id": "r13-12",
+   "q": "North America drifts about 2.5 cm a year. About how far will it move in 100 years?",
+   "a": "2.5 meters",
+   "wrong": [
+    "25 centimeters",
+    "25 meters",
+    "2.5 kilometers"
+   ],
+   "why": "North America drifts about 2.5 cm a year, so in 100 years that adds up to about 250 cm, or 2.5 m."
+  }
+ ],
+ "14": [
+  {
+   "id": "r14-01",
+   "q": "A fault is:",
+   "a": "A break in the crust where rocks have moved",
+   "wrong": [
+    "A wave that rolls along the ground",
+    "The spot on the surface right above an earthquake",
+    "A scale for measuring shaking"
+   ],
+   "why": "A fault is a break in Earth's crust where rocks have moved."
+  },
+  {
+   "id": "r14-02",
+   "q": "Which scale do scientists use today to measure earthquake magnitude?",
+   "a": "The moment magnitude scale",
+   "wrong": [
+    "The Mohs scale",
+    "The Modified Mercalli scale",
+    "The SI scale"
+   ],
+   "why": "Scientists today use the moment magnitude scale to measure the energy released."
+  },
+  {
+   "id": "r14-03",
+   "q": "A fault scarp is:",
+   "a": "A step in the ground left by a fault",
+   "wrong": [
+    "A long crack in the ground filled with lava",
+    "A wave that crosses the ocean",
+    "A pile of soil after a landslide"
+   ],
+   "why": "The Borah Peak quake left a fault scarp, a step in the ground several feet high."
+  },
+  {
+   "id": "r14-04",
+   "q": "Base isolators are:",
+   "a": "Parts that let a building sway instead of crack",
+   "wrong": [
+    "Tools that predict the exact time of a quake",
+    "Walls along the coast that stop tsunamis",
+    "Instruments that record P and S waves"
+   ],
+   "why": "Safer buildings use flexible frames and base isolators that let buildings sway instead of crack."
+  },
+  {
+   "id": "r14-05",
+   "q": "Can scientists predict exactly when an earthquake will strike?",
+   "a": "No, but they can map faults and estimate risk",
+   "wrong": [
+    "Yes, down to the exact minute",
+    "Yes, by watching the weather",
+    "No, and scientists can't map or study faults at all"
+   ],
+   "why": "Scientists can't predict exactly when an earthquake will strike, but they can map faults, estimate risk, and design safer buildings."
+  },
+  {
+   "id": "r14-06",
+   "q": "Why can one earthquake cause different intensities in different places?",
+   "a": "Shaking fades with distance from the epicenter",
+   "wrong": [
+    "Each place feels a different magnitude for the same quake",
+    "The focus moves around during the quake",
+    "Intensity only depends on the time of day"
+   ],
+   "why": "One earthquake has one magnitude, but shaking is strongest near the epicenter and fades with distance."
+  },
+  {
+   "id": "r14-07",
+   "q": "Why can't one seismograph station find an epicenter alone?",
+   "a": "It shows how far away, not which direction",
+   "wrong": [
+    "It can only record S waves, not P waves",
+    "It only works during the daytime hours",
+    "It can't tell P waves and S waves apart"
+   ],
+   "why": "One station tells you how far away the quake was, but not which direction."
+  },
+  {
+   "id": "r14-08",
+   "q": "How did the 1959 Hebgen Lake earthquake create Quake Lake?",
+   "a": "A huge landslide dammed a river",
+   "wrong": [
+    "A tsunami rushed in and flooded a valley",
+    "Liquefaction sank a town",
+    "A volcano filled a crater"
+   ],
+   "why": "The Hebgen Lake quake caused a massive landslide that dammed a river to create Quake Lake."
+  },
+  {
+   "id": "r14-09",
+   "q": "What was the magnitude of the 2020 Stanley earthquake?",
+   "a": "6.5",
+   "wrong": [
+    "6.9",
+    "7.3",
+    "4.0"
+   ],
+   "why": "The 2020 Stanley earthquake was magnitude 6.5 and was felt across several states."
+  },
+  {
+   "id": "r14-10",
+   "q": "The 1983 Borah Peak earthquake hit near which Idaho towns?",
+   "a": "Challis and Mackay",
+   "wrong": [
+    "Boise and Nampa",
+    "Rexburg and Sugar City",
+    "Kellogg and Wallace"
+   ],
+   "why": "The 1983 Borah Peak earthquake hit near Challis and Mackay."
+  },
+  {
+   "id": "r14-11",
+   "q": "About how many people died in the 2004 Indian Ocean tsunami?",
+   "a": "Over 200,000",
+   "wrong": [
+    "About 200",
+    "About 2,000",
+    "About 20,000"
+   ],
+   "why": "In 2004, a tsunami in the Indian Ocean killed over 200,000 people."
+  },
+  {
+   "id": "r14-12",
+   "q": "After a quake, a broken gas line sparks in a neighborhood. Which hazard is this?",
+   "a": "Fire",
+   "wrong": [
+    "Tsunami",
+    "Liquefaction",
+    "Landslide"
+   ],
+   "why": "Broken gas lines and electrical wires can spark fires after an earthquake."
+  }
+ ],
+ "15": [
+  {
+   "id": "r15-01",
+   "q": "A volcano's vent is:",
+   "a": "The opening where magma escapes",
+   "wrong": [
+    "The underground pool of magma",
+    "A huge collapsed crater",
+    "A layer of cooled ash"
+   ],
+   "why": "The vent is the opening where magma escapes."
+  },
+  {
+   "id": "r15-02",
+   "q": "A volcano's conduit is:",
+   "a": "The passage from the magma chamber to the vent",
+   "wrong": [
+    "The bowl-shaped pit at the very top of the cone",
+    "A river of hot ash and gas racing downhill",
+    "A ring of volcanoes around an ocean"
+   ],
+   "why": "The conduit, or pipe, is the passage from the chamber to the vent."
+  },
+  {
+   "id": "r15-03",
+   "q": "Lapilli are:",
+   "a": "Golf-ball-sized bits of tephra",
+   "wrong": [
+    "Huge blocks of rock called volcanic bombs",
+    "Smooth, ropey lava",
+    "Fine volcanic gases"
+   ],
+   "why": "Tephra ranges from fine ash to golf-ball-sized lapilli to huge volcanic bombs."
+  },
+  {
+   "id": "r15-04",
+   "q": "An effusive eruption is:",
+   "a": "A calm eruption with flowing lava",
+   "wrong": [
+    "A blast that flattens miles of forest",
+    "An eruption of only gas",
+    "A collapse into a caldera"
+   ],
+   "why": "When gas escapes easily, eruptions are calm with flowing lava, called an effusive eruption."
+  },
+  {
+   "id": "r15-05",
+   "q": "Volcanic gases are mostly:",
+   "a": "Water vapor",
+   "wrong": [
+    "Carbon dioxide",
+    "Sulfur dioxide",
+    "Oxygen"
+   ],
+   "why": "Volcanic gases are mostly water vapor, plus carbon dioxide and sulfur dioxide."
+  },
+  {
+   "id": "r15-06",
+   "q": "How can a large eruption affect Earth's climate?",
+   "a": "Its gases can block sunlight and cool the planet",
+   "wrong": [
+    "Its lava can flow far enough to warm the oceans",
+    "Its ash can melt glaciers all over the world",
+    "Its blast can slow down Earth's spin"
+   ],
+   "why": "Large eruptions can even cool the global climate by blocking sunlight."
+  },
+  {
+   "id": "r15-07",
+   "q": "What powers Yellowstone's hot springs and geysers?",
+   "a": "The magma below",
+   "wrong": [
+    "Sunlight on the ground",
+    "Melting glaciers",
+    "Ocean tides"
+   ],
+   "why": "Yellowstone's hot springs and geysers are powered by the magma below."
+  },
+  {
+   "id": "r15-08",
+   "q": "Why do scientists track the ground near volcanoes with GPS and satellites?",
+   "a": "To spot the ground bulging, a warning of eruption",
+   "wrong": [
+    "To search for valuable new gems in the cooled rock",
+    "To measure how many years old the volcano is",
+    "To map the outer edges of the Ring of Fire"
+   ],
+   "why": "Scientists watch for the ground bulging upward, measured by GPS and satellites, as an eruption warning."
+  },
+  {
+   "id": "r15-09",
+   "q": "Why do so many volcanoes circle the Pacific Ocean?",
+   "a": "Sinking ocean plates melt and feed them",
+   "wrong": [
+    "Hotspots sit underneath every coastline on the Pacific",
+    "Ocean water turns into magma",
+    "The plates there are pulling apart"
+   ],
+   "why": "At subduction zones a sinking ocean plate melts and feeds volcanoes, forming the Ring of Fire."
+  },
+  {
+   "id": "r15-10",
+   "q": "Mauna Loa in Hawaii is famous for being:",
+   "a": "The largest volcano on Earth",
+   "wrong": [
+    "The deadliest volcano ever",
+    "A cinder cone that erupted once",
+    "A volcano made of granite"
+   ],
+   "why": "Mauna Loa in Hawaii is the largest volcano on Earth."
+  },
+  {
+   "id": "r15-11",
+   "q": "A town far downwind gets a thick gray layer that collapses roofs and ruins crops. What hit it?",
+   "a": "Ash fall",
+   "wrong": [
+    "A lahar",
+    "A lava flow",
+    "A tsunami"
+   ],
+   "why": "Ash fall collapses roofs, ruins crops, damages lungs, and wrecks jet engines."
+  },
+  {
+   "id": "r15-12",
+   "q": "A slow lava flow is heading toward a farm. What is the best advice?",
+   "a": "Walk away; it's slow but destroys what it reaches",
+   "wrong": [
+    "Stand on the roof of the house until the lava passes",
+    "Build a snow wall to cool it",
+    "Stay inside, since lava never harms buildings"
+   ],
+   "why": "Lava flows are usually slow enough to walk away from, but they destroy anything in their path."
+  }
+ ],
+ "16": [
+  {
+   "id": "r16-01",
+   "q": "Shear stress is:",
+   "a": "Rock pushed opposite ways, side by side",
+   "wrong": [
+    "Rock squeezed together head-on",
+    "Rock pulled apart and thinned out",
+    "Rock melted by magma right next to it"
+   ],
+   "why": "Shear is pushing in opposite directions, side by side."
+  },
+  {
+   "id": "r16-02",
+   "q": "A monocline is:",
+   "a": "A simple step-like bend in flat layers",
+   "wrong": [
+    "An upward fold shaped like an A",
+    "A downward fold shaped like a U",
+    "A block dropped down between faults"
+   ],
+   "why": "A monocline is a simple step-like bend in flat layers."
+  },
+  {
+   "id": "r16-03",
+   "q": "How do folded mountains get their folds?",
+   "a": "Continents collide and crumple rock",
+   "wrong": [
+    "Magma pushes up layers like a blister",
+    "Crust stretches and cracks into blocks",
+    "Lava and ash pile up"
+   ],
+   "why": "Folded mountains form when continents collide and crumple rock into giant folds."
+  },
+  {
+   "id": "r16-04",
+   "q": "Compression stress happens mostly at which boundaries?",
+   "a": "Convergent boundaries",
+   "wrong": [
+    "Divergent boundaries",
+    "Transform boundaries",
+    "Hotspots"
+   ],
+   "why": "Compression, squeezing together, happens at convergent boundaries."
+  },
+  {
+   "id": "r16-05",
+   "q": "A dome mountain's granite core is called a:",
+   "a": "Batholith",
+   "wrong": [
+    "Graben",
+    "Monocline",
+    "Caldera"
+   ],
+   "why": "In a dome mountain, magma cools into a huge mass of granite called a batholith."
+  },
+  {
+   "id": "r16-06",
+   "q": "The Appalachians were once as tall as the Himalayas. Why are they low now?",
+   "a": "Erosion wore them down over hundreds of millions of years",
+   "wrong": [
+    "They slowly sank down into the ocean over millions of years",
+    "They were blown apart by giant volcanoes",
+    "They were only ever small, rounded hills"
+   ],
+   "why": "The Appalachians were once as tall as the Himalayas before hundreds of millions of years of erosion wore them down."
+  },
+  {
+   "id": "r16-07",
+   "q": "Why are parts of Canada still rising today?",
+   "a": "The land is rebounding after glaciers melted",
+   "wrong": [
+    "New volcanoes there are piling up lots of fresh lava",
+    "Two plates are colliding right under it",
+    "The mantle beneath it is shrinking"
+   ],
+   "why": "When glaciers melt, the land underneath rebounds, and parts of Canada are still rising today."
+  },
+  {
+   "id": "r16-08",
+   "q": "How are mountains like icebergs?",
+   "a": "They have deep roots pushing into the mantle",
+   "wrong": [
+    "They are mostly made of ice inside",
+    "They float on top of the ocean like giant ships",
+    "They melt down a little every summer"
+   ],
+   "why": "Mountains have deep roots that push down into the mantle, like an iceberg with most of its mass hidden below."
+  },
+  {
+   "id": "r16-09",
+   "q": "Why can Mauna Kea be called taller than Everest?",
+   "a": "It is over 10,000 m tall from its sea-floor base",
+   "wrong": [
+    "It is the tallest peak measured from sea level",
+    "It erupts more lava every single year",
+    "It sits on top of the Himalayan range"
+   ],
+   "why": "Mauna Kea in Hawaii is over 10,000 meters tall from its base on the sea floor, taller than Everest."
+  },
+  {
+   "id": "r16-10",
+   "q": "Which kind of mountains are the Cascades and Mount Fuji?",
+   "a": "Volcanic mountains",
+   "wrong": [
+    "Folded mountains",
+    "Fault-block mountains",
+    "Dome mountains"
+   ],
+   "why": "Volcanic mountains are built by eruptions piling up lava and ash, like the Cascades and Mount Fuji."
+  },
+  {
+   "id": "r16-11",
+   "q": "The Tetons are tall, sharp, and jagged. What does that suggest about them?",
+   "a": "They are young mountains",
+   "wrong": [
+    "They are very old mountains",
+    "They are volcanic mountains",
+    "They are dome mountains"
+   ],
+   "why": "Young mountains, like the Tetons and Himalayas, are tall, sharp, and jagged."
+  },
+  {
+   "id": "r16-12",
+   "q": "Why are the Sawtooth peaks so jagged?",
+   "a": "Glaciers sharpened the uncovered granite",
+   "wrong": [
+    "Lava flows built up sharp cones",
+    "Wind piled the granite into sharp dunes",
+    "Ocean waves carved them long ago"
+   ],
+   "why": "The Sawtooths are carved from the Idaho Batholith, then sharpened by glaciers into jagged peaks."
+  }
+ ],
+ "17": [
+  {
+   "id": "r17-01",
+   "q": "Which ocean surrounds Antarctica?",
+   "a": "The Southern Ocean",
+   "wrong": [
+    "The Arctic Ocean",
+    "The Indian Ocean",
+    "The Atlantic Ocean"
+   ],
+   "why": "The five oceans include the Southern Ocean, around Antarctica."
+  },
+  {
+   "id": "r17-02",
+   "q": "The ocean's surface (mixed) layer is:",
+   "a": "Sunlit, wind-stirred, and full of life",
+   "wrong": [
+    "Cold, dark, and under crushing pressure",
+    "A zone where temperature drops very fast",
+    "Frozen solid for most of the year"
+   ],
+   "why": "The surface layer is warmed by the Sun and stirred by wind, and it's where most sea life lives."
+  },
+  {
+   "id": "r17-03",
+   "q": "La Niña is a pattern that:",
+   "a": "Brings cooler water to the eastern Pacific",
+   "wrong": [
+    "Spreads warm water toward South America",
+    "Stops all ocean currents for a year",
+    "Melts sea ice near Greenland"
+   ],
+   "why": "La Niña, the opposite of El Niño, brings cooler water to the eastern Pacific."
+  },
+  {
+   "id": "r17-04",
+   "q": "The ocean's deep zone is:",
+   "a": "Cold, dark, and under crushing pressure",
+   "wrong": [
+    "Warm, sunlit, and stirred by the wind",
+    "Where most sea life lives",
+    "The saltiest part, near the surface"
+   ],
+   "why": "The deep zone is cold (near 2 to 4 °C), dark, and under crushing pressure."
+  },
+  {
+   "id": "r17-05",
+   "q": "About how deep is the ocean on average?",
+   "a": "About 3,700 meters",
+   "wrong": [
+    "About 37 meters",
+    "About 370 meters",
+    "About 37,000 meters"
+   ],
+   "why": "The ocean's average depth is about 3,700 meters, over 2 miles."
+  },
+  {
+   "id": "r17-06",
+   "q": "Why is the ocean salty?",
+   "a": "Rivers add minerals, and evaporation leaves salt",
+   "wrong": [
+    "Fish give off salt as they swim and eat",
+    "Rain falling on the sea is already very salty",
+    "Melting ice at the poles adds lots of salt"
+   ],
+   "why": "Rivers carry dissolved minerals to the sea, and when water evaporates the salt stays behind."
+  },
+  {
+   "id": "r17-07",
+   "q": "Why could melting polar ice slow the global conveyor belt?",
+   "a": "It adds fresh water, making surface water less dense",
+   "wrong": [
+    "It adds extra salt, making ocean water far too heavy",
+    "It blocks the wind from blowing over the sea",
+    "It heats the deep zone until it boils"
+   ],
+   "why": "Melting ice adds fresh water, which could slow the conveyor belt, which runs on cold, salty, dense water sinking."
+  },
+  {
+   "id": "r17-08",
+   "q": "Why does the ocean matter to Idaho, far from any coast?",
+   "a": "It drives weather that brings snow to the mountains",
+   "wrong": [
+    "Ocean tides travel inland and raise the Snake River",
+    "Ocean salt blows in and makes Idaho's soil rich",
+    "Ocean currents flow up into Idaho's lakes"
+   ],
+   "why": "The ocean drives the weather that brings snow to the mountains and makes about half the oxygen you breathe."
+  },
+  {
+   "id": "r17-09",
+   "q": "Why might an Idaho ski resort care about El Niño?",
+   "a": "It can change how much snow the mountains get",
+   "wrong": [
+    "It causes earthquakes along faults in the Rocky Mountains",
+    "It moves the Continental Divide",
+    "It only affects fish in Peru"
+   ],
+   "why": "El Niño and La Niña can affect how much snow Idaho's mountains get."
+  },
+  {
+   "id": "r17-10",
+   "q": "Sea ice forms near Antarctica. What happens to the water left behind?",
+   "a": "It gets colder and saltier, so it sinks",
+   "wrong": [
+    "It gets warmer and lighter, so it floats up",
+    "It turns fresh and rises",
+    "It evaporates into the air above"
+   ],
+   "why": "As sea ice forms, ocean water gets very cold and salty, becomes dense, and sinks to the bottom."
+  },
+  {
+   "id": "r17-11",
+   "q": "Ocean water is about 3.5% salt. About how much salt is in a cup of it?",
+   "a": "About a teaspoon",
+   "wrong": [
+    "About a cup",
+    "About a pinch too small to taste",
+    "About half a cup"
+   ],
+   "why": "Ocean salinity is about 3.5%, roughly a teaspoon of salt in every cup."
+  },
+  {
+   "id": "r17-12",
+   "q": "Wind pushes surface water away from a coast. What happens next?",
+   "a": "Cold, deep water rises to replace it",
+   "wrong": [
+    "Warm water rushes in from the equator",
+    "The sea level there rises sharply",
+    "The ocean floor rises up"
+   ],
+   "why": "In upwelling, wind pushes surface water away from the coast and cold, deep water rises to replace it."
+  }
+ ],
+ "18": [
+  {
+   "id": "r18-01",
+   "q": "Bathymetry is:",
+   "a": "The science of measuring ocean depth",
+   "wrong": [
+    "The study of ocean salt",
+    "The study of tides and how the Moon pulls the sea",
+    "The science of sea life"
+   ],
+   "why": "The science of measuring ocean depth is called bathymetry."
+  },
+  {
+   "id": "r18-02",
+   "q": "The continental rise is:",
+   "a": "A gentle pile of sediment at the bottom of the slope",
+   "wrong": [
+    "The shallow, gently sloping edge of the continent",
+    "The steep drop-off toward the deep ocean",
+    "A flat-topped underwater volcano"
+   ],
+   "why": "The continental rise is a gentle pile of sediment at the bottom of the slope."
+  },
+  {
+   "id": "r18-03",
+   "q": "A wave's trough is:",
+   "a": "The bottom of the wave",
+   "wrong": [
+    "The top of the wave",
+    "The distance between crests",
+    "The spot where it breaks"
+   ],
+   "why": "The crest is the top of a wave and the trough is the bottom."
+  },
+  {
+   "id": "r18-04",
+   "q": "Wave height is the distance from:",
+   "a": "Trough to crest",
+   "wrong": [
+    "One crest to the next",
+    "Shore to the breaker",
+    "The surface to the sea floor"
+   ],
+   "why": "Wave height is the distance from trough to crest."
+  },
+  {
+   "id": "r18-05",
+   "q": "A spit is:",
+   "a": "A sandbar sticking out from shore like a finger",
+   "wrong": [
+    "A tall pillar of rock standing offshore",
+    "A long, narrow island lying parallel to the coast",
+    "A wall built out from shore to trap sand"
+   ],
+   "why": "Spits are sandbars that stick out from the shore like a finger."
+  },
+  {
+   "id": "r18-06",
+   "q": "Why are our maps of Mars better than our maps of the ocean floor?",
+   "a": "Light can't reach the deep sea to photograph it",
+   "wrong": [
+    "The ocean floor is always moving and shifting too fast",
+    "Mars is closer to us than the deep ocean",
+    "The sea floor is too flat to map well"
+   ],
+   "why": "Light can't reach the deep sea, so we can't just take pictures."
+  },
+  {
+   "id": "r18-07",
+   "q": "Alvin is a:",
+   "a": "Deep-diving submersible",
+   "wrong": [
+    "Sonar-mapping research ship",
+    "Weather satellite",
+    "Floating ocean buoy"
+   ],
+   "why": "Scientists use satellites, robot subs, and deep-diving submersibles like Alvin."
+  },
+  {
+   "id": "r18-08",
+   "q": "Why are neap tides smaller than other tides?",
+   "a": "The Sun and Moon pull at right angles",
+   "wrong": [
+    "The Sun, Moon, and Earth line up",
+    "The Moon is on the far side of the Sun",
+    "The oceans are colder in winter"
+   ],
+   "why": "Neap tides are smaller tides, when the Sun and Moon are at right angles."
+  },
+  {
+   "id": "r18-09",
+   "q": "About how long is the mid-ocean ridge system?",
+   "a": "About 65,000 km",
+   "wrong": [
+    "About 650 km",
+    "About 6,500 km",
+    "About 650,000 km"
+   ],
+   "why": "Mid-ocean ridges are the longest mountain chain on Earth, about 65,000 km (40,000 miles)."
+  },
+  {
+   "id": "r18-10",
+   "q": "If Mount Everest were dropped into the Mariana Trench, its peak would be:",
+   "a": "More than 2 km underwater",
+   "wrong": [
+    "Sticking 2 km above the waves",
+    "Exactly at sea level",
+    "Only a few meters underwater"
+   ],
+   "why": "If you dropped Mount Everest into the Mariana Trench, its peak would still be more than 2 km underwater."
+  },
+  {
+   "id": "r18-11",
+   "q": "A hurricane heads for a coast with barrier islands. How do the islands help?",
+   "a": "They protect the mainland from the storm",
+   "wrong": [
+    "They pull the storm back out to sea",
+    "They make the storm's waves even taller",
+    "They stop the tides from rising"
+   ],
+   "why": "Barrier islands are long, narrow sandy islands parallel to the coast that protect the mainland from storms."
+  },
+  {
+   "id": "r18-12",
+   "q": "How hot can the water from hydrothermal vents get?",
+   "a": "About 400 °C",
+   "wrong": [
+    "About 4 °C",
+    "About 40 °C",
+    "About 4,000 °C"
+   ],
+   "why": "Hydrothermal vents blast out mineral-rich water as hot as 400 °C."
+  }
+ ],
+ "19": [
+  {
+   "id": "r19-01",
+   "q": "The tropopause is:",
+   "a": "The boundary between troposphere and stratosphere",
+   "wrong": [
+    "The coldest layer of the whole atmosphere, at the top",
+    "The very top edge of the ozone layer",
+    "The outer edge where air fades into space"
+   ],
+   "why": "The boundary between the troposphere and stratosphere is called the tropopause."
+  },
+  {
+   "id": "r19-02",
+   "q": "The thermosphere is where:",
+   "a": "Air is thin and the Space Station orbits",
+   "wrong": [
+    "All of Earth's weather and clouds happen",
+    "Most of the ozone layer is found",
+    "Air is thickest and warmest"
+   ],
+   "why": "In the thermosphere the air is super thin, the northern lights happen, and the Space Station orbits."
+  },
+  {
+   "id": "r19-03",
+   "q": "The exosphere is:",
+   "a": "The outer edge where the atmosphere fades into space",
+   "wrong": [
+    "The lowest layer, where we live, breathe, and have weather",
+    "The middle layer that holds the ozone layer",
+    "The cold layer where meteors burn up"
+   ],
+   "why": "The exosphere is the outer edge, where the atmosphere fades into space."
+  },
+  {
+   "id": "r19-04",
+   "q": "Ozone is:",
+   "a": "A form of oxygen with three atoms",
+   "wrong": [
+    "A form of nitrogen with two atoms",
+    "A type of carbon dioxide",
+    "A spray-can chemical"
+   ],
+   "why": "Ozone is a form of oxygen with three atoms (O₃) instead of two."
+  },
+  {
+   "id": "r19-05",
+   "q": "Jet streams are:",
+   "a": "Fast rivers of wind high in the troposphere",
+   "wrong": [
+    "Warm ocean currents flowing near the equator",
+    "Breezes that blow up mountains",
+    "Streams of jets in the stratosphere"
+   ],
+   "why": "Jet streams are fast rivers of wind high in the troposphere, which steer storms."
+  },
+  {
+   "id": "r19-06",
+   "q": "Air presses on you with about 14.7 pounds per square inch. Why don't you get crushed?",
+   "a": "Air inside your body pushes back",
+   "wrong": [
+    "Air has no real weight at all",
+    "Gravity cancels the push out",
+    "Your skin blocks the air out"
+   ],
+   "why": "You don't get crushed because the air inside your body pushes back."
+  },
+  {
+   "id": "r19-07",
+   "q": "About how much sunlight bounces right back to space?",
+   "a": "About 30%",
+   "wrong": [
+    "About 3%",
+    "About 70%",
+    "About 100%"
+   ],
+   "why": "About 30% of sunlight bounces right back to space off clouds, ice, and snow."
+  },
+  {
+   "id": "r19-08",
+   "q": "Why does air pressure drop as you go higher?",
+   "a": "There is less air above you",
+   "wrong": [
+    "The Sun pulls the air upward",
+    "The air gets hotter and heavier",
+    "Gravity gets stronger with height"
+   ],
+   "why": "As you go higher, there's less air above you, so pressure drops."
+  },
+  {
+   "id": "r19-09",
+   "q": "Why are the trade winds and westerlies bent instead of blowing straight?",
+   "a": "The Coriolis effect",
+   "wrong": [
+    "The ozone layer",
+    "The greenhouse effect",
+    "Albedo"
+   ],
+   "why": "Global winds like the trade winds and prevailing westerlies are bent by the Coriolis effect."
+  },
+  {
+   "id": "r19-10",
+   "q": "Idaho Falls is at about 4,700 feet. How much thinner is its air than at sea level?",
+   "a": "About 15%",
+   "wrong": [
+    "About 1%",
+    "About 50%",
+    "About 85%"
+   ],
+   "why": "Idaho Falls sits at about 4,700 feet, where the air is already about 15% thinner than at sea level."
+  },
+  {
+   "id": "r19-11",
+   "q": "Temperature in the troposphere drops about 6.5 °C per km. If a valley is 15 °C, about how cold is a peak 2 km higher?",
+   "a": "About 2 °C",
+   "wrong": [
+    "About 28 °C",
+    "About 8.5 °C",
+    "About 15 °C"
+   ],
+   "why": "In the troposphere, temperature drops about 6.5 °C per kilometer, so 2 km higher is about 13 °C colder."
+  },
+  {
+   "id": "r19-12",
+   "q": "On a sunny day in an Idaho mountain valley, which way does the air usually flow?",
+   "a": "Up the mountains",
+   "wrong": [
+    "Down the mountains",
+    "Straight down from the sky",
+    "It doesn't move at all"
+   ],
+   "why": "In Idaho's valleys, warm air flows up the mountains during the day and cool air drains down at night."
+  }
+ ],
+ "20": [
+  {
+   "id": "r20-01",
+   "q": "Humidity is:",
+   "a": "The amount of water vapor in the air",
+   "wrong": [
+    "How hot or cold the air feels on your skin",
+    "How hard the wind is blowing",
+    "How much rain fell in a day"
+   ],
+   "why": "Humidity is the amount of water vapor in the air."
+  },
+  {
+   "id": "r20-02",
+   "q": "Condensation nuclei are:",
+   "a": "Tiny specks that water vapor condenses on",
+   "wrong": [
+    "The spinning centers of thunderstorms",
+    "Small ice pellets in the middle of hail",
+    "The cores of low-pressure storm systems"
+   ],
+   "why": "Water vapor condenses onto tiny specks of dust, smoke, or salt called condensation nuclei."
+  },
+  {
+   "id": "r20-03",
+   "q": "Stratus clouds are:",
+   "a": "Flat, gray sheets that cover the sky",
+   "wrong": [
+    "Thin, wispy ice clouds",
+    "Puffy clouds with flat bottoms",
+    "Towering storm clouds with anvil tops"
+   ],
+   "why": "Stratus clouds are flat, gray sheets that cover the sky like a blanket."
+  },
+  {
+   "id": "r20-04",
+   "q": "Nimbostratus clouds usually bring:",
+   "a": "Long, steady rain or snow",
+   "wrong": [
+    "Fair, sunny weather",
+    "Hail and tornadoes",
+    "Only fog at ground level"
+   ],
+   "why": "A nimbostratus is a thick gray layer that brings long, steady rain or snow."
+  },
+  {
+   "id": "r20-05",
+   "q": "An anemometer measures:",
+   "a": "Wind speed",
+   "wrong": [
+    "Wind direction",
+    "Humidity",
+    "Air pressure"
+   ],
+   "why": "An anemometer measures wind speed."
+  },
+  {
+   "id": "r20-06",
+   "q": "Why does Idaho have so many cracked lips and static shocks in winter?",
+   "a": "Its air is usually dry",
+   "wrong": [
+    "Its air is usually very humid",
+    "Its winters are very warm",
+    "It gets constant freezing rain"
+   ],
+   "why": "Idaho's air is usually dry, which is why lips crack and static shocks are everywhere in winter."
+  },
+  {
+   "id": "r20-07",
+   "q": "A hygrometer measures:",
+   "a": "Humidity",
+   "wrong": [
+    "Wind speed",
+    "Air pressure",
+    "Rainfall"
+   ],
+   "why": "A hygrometer measures humidity."
+  },
+  {
+   "id": "r20-08",
+   "q": "Why can't forecasts beyond about 10 days be trusted?",
+   "a": "The atmosphere is too chaotic to predict that far",
+   "wrong": [
+    "Weather balloons can only stay up in the air for a week",
+    "Satellites can't see more than 10 days out",
+    "The weather only changes once a month"
+   ],
+   "why": "Beyond about 10 days, the atmosphere is too chaotic to predict reliably."
+  },
+  {
+   "id": "r20-09",
+   "q": "How many sides does every snowflake have?",
+   "a": "Six",
+   "wrong": [
+    "Four",
+    "Five",
+    "Eight"
+   ],
+   "why": "Snow is ice crystals, and every flake has six sides."
+  },
+  {
+   "id": "r20-10",
+   "q": "A maritime polar air mass moves in from the Pacific. What might Idaho's mountains get?",
+   "a": "Snow",
+   "wrong": [
+    "Hot, dry weather",
+    "A long drought",
+    "Dust storms"
+   ],
+   "why": "A maritime polar (mP) air mass from the Pacific brings the mountains their snow."
+  },
+  {
+   "id": "r20-11",
+   "q": "What can Doppler radar show meteorologists?",
+   "a": "Rain and the wind inside storms",
+   "wrong": [
+    "Earthquakes under the ground",
+    "The ozone layer's thickness",
+    "Ocean salinity"
+   ],
+   "why": "Doppler radar can see rain and the wind inside storms."
+  },
+  {
+   "id": "r20-12",
+   "q": "A warm front is heading your way. What should you expect?",
+   "a": "Long, steady rain or snow, then warmer temps",
+   "wrong": [
+    "A quick, intense storm, then cooler, clearer air",
+    "Days of clear, cold, dry weather",
+    "A sudden heat wave with no clouds"
+   ],
+   "why": "A warm front brings long, steady rain or snow and warmer temperatures afterward."
+  }
+ ],
+ "21": [
+  {
+   "id": "r21-01",
+   "q": "A downdraft is:",
+   "a": "Cold air dragged down by falling rain and hail",
+   "wrong": [
+    "Warm, moist air rising up into the base of a cloud",
+    "A spinning column of air on the ground",
+    "A wall of seawater pushed onshore"
+   ],
+   "why": "In the mature stage, rain and hail fall, dragging cold air down in a downdraft."
+  },
+  {
+   "id": "r21-02",
+   "q": "A mesocyclone is:",
+   "a": "A rotating column of air made by a tilted updraft",
+   "wrong": [
+    "The calm, clear center at the middle of a big hurricane",
+    "A cold front catching up to a warm front",
+    "A ring of heavy rain around a hurricane's eye"
+   ],
+   "why": "A strong updraft tilts a spinning tube of air upright, forming a rotating mesocyclone."
+  },
+  {
+   "id": "r21-03",
+   "q": "A hurricane's eye wall is:",
+   "a": "The ring of strongest winds and rain",
+   "wrong": [
+    "The calm, sunny center of the storm",
+    "The spiral arms swirling outward",
+    "The wall of seawater pushed onshore"
+   ],
+   "why": "The eye wall is the ring of the strongest winds and heaviest rain around the eye."
+  },
+  {
+   "id": "r21-04",
+   "q": "The Saffir-Simpson scale rates:",
+   "a": "Hurricanes, from Category 1 to 5",
+   "wrong": [
+    "Tornadoes, from EF0 up to EF5",
+    "Earthquakes, from I to XII",
+    "Blizzards, by snow depth"
+   ],
+   "why": "Hurricanes are rated on the Saffir-Simpson scale from Category 1 to Category 5."
+  },
+  {
+   "id": "r21-05",
+   "q": "A drought is:",
+   "a": "A long period with much less precipitation than normal",
+   "wrong": [
+    "A flood that hits within minutes of very heavy rain",
+    "A storm with strong winds and blowing snow",
+    "A long stretch of days with no wind at all"
+   ],
+   "why": "A drought is a long period with much less precipitation than normal."
+  },
+  {
+   "id": "r21-06",
+   "q": "Why does a thunderstorm fizzle out in its last stage?",
+   "a": "Downdrafts cut off its warm air supply",
+   "wrong": [
+    "The storm drifts out over the ocean",
+    "Lightning uses up all of the rain",
+    "The whole cloud freezes solid"
+   ],
+   "why": "In the dissipating stage, downdrafts take over, cutting off the warm air supply, and the storm fizzles out."
+  },
+  {
+   "id": "r21-07",
+   "q": "About how hot does a lightning bolt heat the air?",
+   "a": "About 30,000 °C",
+   "wrong": [
+    "About 300 °C",
+    "About 3,000 °C",
+    "About 3 million °C"
+   ],
+   "why": "A lightning bolt heats the air to about 30,000 °C, five times hotter than the surface of the Sun."
+  },
+  {
+   "id": "r21-08",
+   "q": "What gets a hurricane spinning?",
+   "a": "The Coriolis effect",
+   "wrong": [
+    "Wind shear near the ground",
+    "The eye wall",
+    "The storm surge"
+   ],
+   "why": "The Coriolis effect gets a hurricane spinning."
+  },
+  {
+   "id": "r21-09",
+   "q": "About how many tornadoes does the U.S. get each year?",
+   "a": "Over 1,000",
+   "wrong": [
+    "About 10",
+    "About 100",
+    "Over 100,000"
+   ],
+   "why": "The U.S. gets more tornadoes than any other country, over 1,000 a year."
+  },
+  {
+   "id": "r21-10",
+   "q": "You drive up to a road covered by moving floodwater. What should you do?",
+   "a": "Turn around; moving water can float a car",
+   "wrong": [
+    "Drive through fast before the water rises more",
+    "Drive slowly straight through the middle",
+    "Stay in the car and wait in the water"
+   ],
+   "why": "Never drive through floodwater: just 12 inches of moving water can float a car."
+  },
+  {
+   "id": "r21-11",
+   "q": "A storm is just a growing cumulus cloud fed by strong updrafts. Which stage is it in?",
+   "a": "Cumulus stage",
+   "wrong": [
+    "Mature stage",
+    "Dissipating stage",
+    "Supercell stage"
+   ],
+   "why": "In the cumulus stage, warm, moist air rises in an updraft, building a tall cumulus cloud."
+  },
+  {
+   "id": "r21-12",
+   "q": "You plan a backcountry ski trip after heavy new snow. What should you check first?",
+   "a": "The avalanche forecast",
+   "wrong": [
+    "The tide tables",
+    "The Saffir-Simpson scale",
+    "The EF scale"
+   ],
+   "why": "Heavy new snow on weak layers can break loose, so check the avalanche forecast before heading out."
+  }
+ ],
+ "22": [
+  {
+   "id": "r22-01",
+   "q": "A microclimate is:",
+   "a": "The climate of a small area, like a slope",
+   "wrong": [
+    "The climate of a whole continent",
+    "Weather that only lasts for one day in a single town",
+    "A climate zone found near the poles"
+   ],
+   "why": "Small areas can have their own microclimates, like a sunny south-facing slope."
+  },
+  {
+   "id": "r22-02",
+   "q": "The Köppen system groups climates using:",
+   "a": "Temperature and precipitation",
+   "wrong": [
+    "Latitude and longitude",
+    "Rock types and soil",
+    "Wind speed and air pressure"
+   ],
+   "why": "The Köppen system groups climates using temperature and precipitation."
+  },
+  {
+   "id": "r22-03",
+   "q": "A temperate climate is:",
+   "a": "Mild, with distinct seasons",
+   "wrong": [
+    "Hot and wet all year",
+    "Cold all year with ice caps",
+    "Drier than it is rainy"
+   ],
+   "why": "Temperate climates are mild, with distinct seasons."
+  },
+  {
+   "id": "r22-04",
+   "q": "A polar climate is:",
+   "a": "Cold all year, with ice caps and tundra",
+   "wrong": [
+    "Hot and usually wet all year",
+    "Mild, with four distinct seasons",
+    "Warm, with dry deserts and grassy steppes"
+   ],
+   "why": "Polar climates are cold all year, with ice caps and tundra."
+  },
+  {
+   "id": "r22-05",
+   "q": "Why is Idaho Falls colder than Boise?",
+   "a": "It sits at a higher elevation",
+   "wrong": [
+    "It is closer to the equator",
+    "It is closer to the ocean",
+    "It gets more direct sunlight"
+   ],
+   "why": "Higher is colder, and Idaho Falls at 4,700 feet is colder than Boise at about 2,700 feet."
+  },
+  {
+   "id": "r22-06",
+   "q": "Why do coastal places have mild climates?",
+   "a": "Oceans heat and cool slowly",
+   "wrong": [
+    "Coasts are always at the equator",
+    "Oceans block all sunlight",
+    "Sea air has no water vapor"
+   ],
+   "why": "Oceans heat and cool slowly, so coastal places have mild climates."
+  },
+  {
+   "id": "r22-07",
+   "q": "Why is it summer in Australia at Christmas?",
+   "a": "The Southern Hemisphere tilts toward the Sun then",
+   "wrong": [
+    "Australia is at its closest point to the Sun in December",
+    "The Sun gives off extra heat in December",
+    "Australia sits right on the equator"
+   ],
+   "why": "In December the Northern Hemisphere tilts away from the Sun, which is why Australia has summer at Christmas."
+  },
+  {
+   "id": "r22-08",
+   "q": "How can scientists tell extra CO₂ comes from fossil fuels?",
+   "a": "By its chemical fingerprint of carbon isotopes",
+   "wrong": [
+    "By its color in the sky over cities",
+    "By the smell of the air near big factories",
+    "By counting the rings in old trees"
+   ],
+   "why": "Scientists can tell the extra carbon comes from fossil fuels by its chemical fingerprint, a special mix of carbon isotopes."
+  },
+  {
+   "id": "r22-09",
+   "q": "Why does water vapor feedback speed up warming?",
+   "a": "Warmer air holds more water vapor, which traps heat",
+   "wrong": [
+    "Water vapor reflects nearly all sunlight back out to space",
+    "Clouds always cool the planet down",
+    "Water vapor pulls CO₂ out of the air"
+   ],
+   "why": "Warmer air holds more water vapor, which is itself a greenhouse gas."
+  },
+  {
+   "id": "r22-10",
+   "q": "Idaho gets most of its water from mountain snowpack. Earlier spring snowmelt could affect:",
+   "a": "Farmers, fish, and city water supplies",
+   "wrong": [
+    "Only ski resorts, and only in July",
+    "The tilt of Earth's axis each year",
+    "The number of earthquakes on faults"
+   ],
+   "why": "Changes in snowmelt and river flow affect farmers, ski resorts, fish like salmon and trout, and city water supplies."
+  },
+  {
+   "id": "r22-11",
+   "q": "A town builds more water storage and plants drought-resistant crops. Which approach is this?",
+   "a": "Adaptation",
+   "wrong": [
+    "Mitigation",
+    "Acidification",
+    "Feedback"
+   ],
+   "why": "Adaptation means preparing for changes, like water storage and drought-resistant crops."
+  },
+  {
+   "id": "r22-12",
+   "q": "CO₂ went from about 280 ppm before industry to about 427 ppm. About how much higher is that?",
+   "a": "About 50% higher",
+   "wrong": [
+    "About 5% higher",
+    "About 2 times higher",
+    "About 10 times higher"
+   ],
+   "why": "CO₂ is now about 50% higher than before industry began."
+  }
+ ],
+ "23": [
+  {
+   "id": "r23-01",
+   "q": "A carbon film fossil is:",
+   "a": "A thin carbon layer showing an outline",
+   "wrong": [
+    "An empty print left in the rock",
+    "A whole animal frozen in ice",
+    "Minerals slowly filling in an old piece of bone"
+   ],
+   "why": "A carbon film is a thin layer of carbon left behind, showing outlines of leaves or insects."
+  },
+  {
+   "id": "r23-02",
+   "q": "A cast fossil is:",
+   "a": "A copy made when minerals fill a mold",
+   "wrong": [
+    "The empty print an organism leaves",
+    "A footprint or burrow",
+    "An animal trapped in amber"
+   ],
+   "why": "If minerals fill a mold, they make a copy called a cast."
+  },
+  {
+   "id": "r23-03",
+   "q": "Coprolites are:",
+   "a": "Fossilized poop",
+   "wrong": [
+    "Fossilized eggs",
+    "Fossilized leaves",
+    "Fossilized teeth"
+   ],
+   "why": "Trace fossils include fossilized poop, called coprolites."
+  },
+  {
+   "id": "r23-04",
+   "q": "In geology, correlation means:",
+   "a": "Matching rock layers in different places",
+   "wrong": [
+    "Finding a rock's exact age in years with isotopes",
+    "Measuring the size of a fossil",
+    "Counting how many half-lives passed"
+   ],
+   "why": "Matching layers in different places using index fossils is called correlation."
+  },
+  {
+   "id": "r23-05",
+   "q": "Helicoprion, found in Idaho's phosphate mines, was:",
+   "a": "An ancient shark with a spiral buzz saw of teeth",
+   "wrong": [
+    "A zebra-like horse that lived near Hagerman, Idaho",
+    "A small dinosaur that dug burrows",
+    "A giant plant from ancient swamps"
+   ],
+   "why": "Helicoprion was a bizarre ancient shark with a spiral buzz saw of teeth, and some of the best specimens came from Idaho's phosphate mines."
+  },
+  {
+   "id": "r23-06",
+   "q": "Why are bones, shells, and teeth fossilized more often than skin?",
+   "a": "Soft parts rot, but hard parts can last",
+   "wrong": [
+    "Soft parts always turn into amber over time",
+    "Hard parts float up to the surface",
+    "Skin is too heavy to get buried"
+   ],
+   "why": "Soft parts rot away, but hard parts like bones, shells, and teeth can be preserved."
+  },
+  {
+   "id": "r23-07",
+   "q": "You see rock layers tilted on a hillside. What does original horizontality tell you?",
+   "a": "Something tilted them after they formed flat",
+   "wrong": [
+    "The layers were all laid down already tilted",
+    "They are the youngest rocks in the area",
+    "They can't contain any fossils at all"
+   ],
+   "why": "Sediment is laid down in flat layers, so tilted layers mean something happened to them later."
+  },
+  {
+   "id": "r23-08",
+   "q": "Why does half-life work as a natural clock?",
+   "a": "It never changes",
+   "wrong": [
+    "It speeds up over time",
+    "It depends on the weather",
+    "It changes with each rock"
+   ],
+   "why": "The half-life never changes, so it works like a natural clock."
+  },
+  {
+   "id": "r23-09",
+   "q": "Which isotope, with a half-life of about 4.5 billion years, dates very old rocks?",
+   "a": "Uranium-238",
+   "wrong": [
+    "Carbon-14",
+    "Potassium-40",
+    "Oxygen-16"
+   ],
+   "why": "Uranium-238 has a half-life of about 4.5 billion years and is used to date very old rocks."
+  },
+  {
+   "id": "r23-10",
+   "q": "About how old are the oldest Earth minerals ever found?",
+   "a": "About 4.4 billion years",
+   "wrong": [
+    "About 4.4 million years",
+    "About 440 million years",
+    "About 13.8 billion years"
+   ],
+   "why": "The oldest Earth minerals found, tiny zircon crystals from Australia, are about 4.4 billion years old."
+  },
+  {
+   "id": "r23-11",
+   "q": "If Earth's history were one 24-hour day, when would humans show up?",
+   "a": "In the last 4 seconds before midnight",
+   "wrong": [
+    "Right after breakfast",
+    "Around noon",
+    "Sometime in the last hour or so before midnight"
+   ],
+   "why": "If Earth's whole history were squeezed into one 24-hour day, humans would show up in the last 4 seconds before midnight."
+  },
+  {
+   "id": "r23-12",
+   "q": "Which isotope would work best to date a volcanic rock?",
+   "a": "Potassium-40",
+   "wrong": [
+    "Carbon-14",
+    "Iron-56",
+    "Oxygen-16"
+   ],
+   "why": "Potassium-40, with a half-life of about 1.3 billion years, is great for dating volcanic rocks."
+  }
+ ],
+ "24": [
+  {
+   "id": "r24-01",
+   "q": "Planetesimals were:",
+   "a": "Chunks that clumped together into planets",
+   "wrong": [
+    "Early forms of single-celled life",
+    "Layered mounds built by bacteria",
+    "Giant clouds of glowing gas drifting in space"
+   ],
+   "why": "Leftover bits crashed together, clumping into bigger chunks called planetesimals, until they formed planets."
+  },
+  {
+   "id": "r24-02",
+   "q": "\"Snowball Earth\" refers to:",
+   "a": "A time Earth may have frozen over",
+   "wrong": [
+    "The most recent ice age in Idaho",
+    "Comets bringing ice to early Earth",
+    "Snow that fell on the early Moon"
+   ],
+   "why": "Earth may have frozen over almost completely, at least once, in what scientists call Snowball Earth."
+  },
+  {
+   "id": "r24-03",
+   "q": "The Permian extinction wiped out about:",
+   "a": "90% of ocean species",
+   "wrong": [
+    "10% of ocean species",
+    "50% of land plants",
+    "All of the dinosaurs"
+   ],
+   "why": "In the Permian extinction about 90% of ocean species died out."
+  },
+  {
+   "id": "r24-04",
+   "q": "Oryctodromeus is:",
+   "a": "A burrowing dinosaur, Idaho's state dinosaur",
+   "wrong": [
+    "A giant swamp plant from the Paleozoic",
+    "A zebra-like horse dug up near Hagerman, Idaho",
+    "An ancient shark with spiral teeth"
+   ],
+   "why": "Oryctodromeus, a small burrowing dinosaur found in eastern Idaho, became Idaho's state dinosaur in 2023."
+  },
+  {
+   "id": "r24-05",
+   "q": "Which animals first appeared during the Cambrian Explosion?",
+   "a": "Trilobites",
+   "wrong": [
+    "Dinosaurs",
+    "Mammals",
+    "Birds"
+   ],
+   "why": "In the Cambrian Explosion, ocean life exploded into new forms, including animals with hard shells and the first trilobites."
+  },
+  {
+   "id": "r24-06",
+   "q": "How do Apollo Moon rocks support the idea that the Moon formed from a giant impact?",
+   "a": "They are very similar to Earth's mantle",
+   "wrong": [
+    "They are full of fossils of early dinosaurs and fish",
+    "They are made of pure ice",
+    "They are much younger than Earth"
+   ],
+   "why": "Moon rocks brought back by Apollo astronauts are very similar to Earth's mantle."
+  },
+  {
+   "id": "r24-07",
+   "q": "How did Earth's first oceans form?",
+   "a": "Water vapor condensed and fell as rain for ages",
+   "wrong": [
+    "Glaciers slid down from the poles and melted",
+    "Rivers flowed in from other planets",
+    "The Moon pulled water up out of the mantle"
+   ],
+   "why": "As Earth cooled, water vapor condensed and fell as rain for millions of years, filling the first oceans."
+  },
+  {
+   "id": "r24-08",
+   "q": "Besides rain from early volcanic gases, what may have delivered some of Earth's water?",
+   "a": "Comets and asteroids",
+   "wrong": [
+    "The Sun's solar wind",
+    "Lightning strikes",
+    "The Moon's tides"
+   ],
+   "why": "Comets and asteroids may have delivered some of Earth's water too."
+  },
+  {
+   "id": "r24-09",
+   "q": "Why do some scientists warn about a sixth mass extinction?",
+   "a": "Species are vanishing fast due to human impacts",
+   "wrong": [
+    "Another asteroid is about to hit Mexico's Yucatán",
+    "Earth is about to freeze into a snowball",
+    "Volcanoes in Siberia are erupting right now"
+   ],
+   "why": "Some scientists warn that today's fast species loss, from habitat destruction and other human impacts, could become a sixth."
+  },
+  {
+   "id": "r24-10",
+   "q": "A robin in your yard is, in a sense:",
+   "a": "A living dinosaur",
+   "wrong": [
+    "A living trilobite",
+    "A living stromatolite",
+    "A living amphibian"
+   ],
+   "why": "The first birds evolved in the Mesozoic, and birds are actually living dinosaurs."
+  },
+  {
+   "id": "r24-11",
+   "q": "Woolly mammoth bones are found in Idaho. Which era did they come from?",
+   "a": "Cenozoic",
+   "wrong": [
+    "Mesozoic",
+    "Paleozoic",
+    "Precambrian"
+   ],
+   "why": "In the Cenozoic, during the ice ages, woolly mammoths roamed Idaho."
+  },
+  {
+   "id": "r24-12",
+   "q": "A paleontologist finds fossils of some of the earliest fish. Which era are the rocks from?",
+   "a": "Paleozoic",
+   "wrong": [
+    "Mesozoic",
+    "Cenozoic",
+    "Precambrian"
+   ],
+   "why": "During the Paleozoic Era, fish appeared, then the first plants on land, then insects."
+  }
+ ],
+ "25": [
+  {
+   "id": "r25-01",
+   "q": "Peat, lignite, bituminous, and anthracite are stages of:",
+   "a": "Coal",
+   "wrong": [
+    "Petroleum",
+    "Natural gas",
+    "Uranium"
+   ],
+   "why": "Coal goes from peat, to lignite, to bituminous, to anthracite, getting harder and richer in carbon at each step."
+  },
+  {
+   "id": "r25-02",
+   "q": "Petroleum (crude oil) formed mainly from:",
+   "a": "Tiny ocean organisms",
+   "wrong": [
+    "Ancient swamp plants",
+    "Cooled lava flows",
+    "Uranium in rocks"
+   ],
+   "why": "Petroleum formed mainly from tiny ocean organisms."
+  },
+  {
+   "id": "r25-03",
+   "q": "Biomass energy comes from:",
+   "a": "Burning plants or making fuels like ethanol",
+   "wrong": [
+    "Splitting uranium atoms in a reactor",
+    "Flowing water spinning big turbines at dams",
+    "Using Earth's internal heat from below"
+   ],
+   "why": "Biomass means burning plant material, wood, or turning crops into fuels like ethanol."
+  },
+  {
+   "id": "r25-04",
+   "q": "Underground mining:",
+   "a": "Digs tunnels to reach deep deposits",
+   "wrong": [
+    "Scrapes away soil over shallow deposits",
+    "Pumps water to crack rock",
+    "Restores land after mining"
+   ],
+   "why": "Underground mining digs tunnels to reach deep deposits."
+  },
+  {
+   "id": "r25-05",
+   "q": "Natural gas compared with coal is:",
+   "a": "Cleaner burning",
+   "wrong": [
+    "A renewable resource",
+    "Made from ocean shells",
+    "Solid at room temperature"
+   ],
+   "why": "Natural gas is mostly methane and is cleaner burning than coal."
+  },
+  {
+   "id": "r25-06",
+   "q": "Why are fossil fuels called nonrenewable?",
+   "a": "They take millions of years to form",
+   "wrong": [
+    "They can never be burned",
+    "They form again naturally every single year",
+    "They come from sunlight today"
+   ],
+   "why": "Nonrenewable resources take millions of years to form, so once used up they're gone for any human timescale."
+  },
+  {
+   "id": "r25-07",
+   "q": "Copper is mainly used for:",
+   "a": "Wires",
+   "wrong": [
+    "Cans",
+    "Fertilizer",
+    "Drywall"
+   ],
+   "why": "Metals are essential: iron for steel, copper for wires, and aluminum for cans and planes."
+  },
+  {
+   "id": "r25-08",
+   "q": "Why do oil and gas collect in certain spots underground?",
+   "a": "They rise until trapped under nonporous rock",
+   "wrong": [
+    "They sink down toward the bottom of the mantle",
+    "They freeze into solid layers",
+    "They are pulled down by gravity"
+   ],
+   "why": "Oil and gas move up through rock until they're trapped under a layer of nonporous rock."
+  },
+  {
+   "id": "r25-09",
+   "q": "Why is the EBR-I reactor near Idaho Falls famous?",
+   "a": "It first made usable nuclear electricity",
+   "wrong": [
+    "It was the first solar power plant",
+    "It was the first oil well in Idaho",
+    "It was the first wind farm in the West"
+   ],
+   "why": "In 1951, EBR-I became the first reactor to make usable electricity from nuclear power, lighting four light bulbs."
+  },
+  {
+   "id": "r25-10",
+   "q": "Your family switches to LED bulbs and insulates the attic. This is an example of:",
+   "a": "Energy efficiency",
+   "wrong": [
+    "Reclamation",
+    "Fracking",
+    "Nuclear fission"
+   ],
+   "why": "Energy efficiency means getting the same result with less energy, like LED bulbs and insulated homes."
+  },
+  {
+   "id": "r25-11",
+   "q": "Phosphate mined in southeast Idaho is mainly used for:",
+   "a": "Fertilizer",
+   "wrong": [
+    "Drywall",
+    "Electric wires",
+    "Jet fuel"
+   ],
+   "why": "Phosphate for fertilizer is mined in southeast Idaho."
+  },
+  {
+   "id": "r25-12",
+   "q": "Idaho is home to one of the only U.S. sources of which critical mineral?",
+   "a": "Cobalt",
+   "wrong": [
+    "Gold",
+    "Gypsum",
+    "Halite"
+   ],
+   "why": "Idaho is home to one of the only U.S. sources of cobalt."
+  }
+ ],
+ "26": [
+  {
+   "id": "r26-01",
+   "q": "Particulate matter is:",
+   "a": "Tiny particles of soot, dust, and smoke",
+   "wrong": [
+    "Ozone found high in the stratosphere",
+    "Fertilizer washing into rivers",
+    "Plastic piling up in landfills"
+   ],
+   "why": "Particulate matter is tiny particles of soot, dust, and smoke that get deep into lungs."
+  },
+  {
+   "id": "r26-02",
+   "q": "Urbanization is:",
+   "a": "Cities spreading into farmland and wild land",
+   "wrong": [
+    "Dry land slowly turning into a sandy desert",
+    "Forests being cut down for lumber",
+    "Rivers being cleaned up and restored"
+   ],
+   "why": "Urbanization is cities spreading into farmland and wild land."
+  },
+  {
+   "id": "r26-03",
+   "q": "Restoration means:",
+   "a": "Repairing damage, like replanting forests",
+   "wrong": [
+    "Building new cities on old farmland",
+    "Burning more fossil fuels for power",
+    "Digging new landfills to hold all the extra trash"
+   ],
+   "why": "Restoration means replanting forests, restoring wetlands, cleaning rivers, and reintroducing species."
+  },
+  {
+   "id": "r26-04",
+   "q": "Acid rain forms when:",
+   "a": "Sulfur and nitrogen gases mix with water",
+   "wrong": [
+    "Fertilizer washes off farms into lakes",
+    "Ozone forms high in the stratosphere",
+    "Plastic breaks down into tiny bits"
+   ],
+   "why": "Sulfur dioxide and nitrogen oxides from burning coal mix with water to form acid rain."
+  },
+  {
+   "id": "r26-05",
+   "q": "In what year was the Clean Water Act passed?",
+   "a": "1972",
+   "wrong": [
+    "1872",
+    "1952",
+    "2002"
+   ],
+   "why": "The Clean Water Act (1972) helped clean up many rivers."
+  },
+  {
+   "id": "r26-06",
+   "q": "Why is ozone good high up but bad at ground level?",
+   "a": "Up high it blocks UV; near the ground it hurts lungs",
+   "wrong": [
+    "It is helpful during the daytime but harmful only at night",
+    "Up high it causes smog; down low it's safe",
+    "Near the ground it blocks UV rays"
+   ],
+   "why": "Ozone way up in the stratosphere is good, but ground-level ozone in smog hurts your lungs."
+  },
+  {
+   "id": "r26-07",
+   "q": "Why is nonpoint-source pollution harder to control?",
+   "a": "It comes from many spread-out places",
+   "wrong": [
+    "It comes from one big factory pipe in a city",
+    "It only happens in the ocean",
+    "It is always invisible"
+   ],
+   "why": "Nonpoint-source pollution comes from lots of spread-out places, so it's harder to control."
+  },
+  {
+   "id": "r26-08",
+   "q": "Why does cutting down forests lead to erosion?",
+   "a": "Trees hold soil in place",
+   "wrong": [
+    "Trees make soil wash away",
+    "Trees cause acid rain",
+    "Trees add sand to rivers"
+   ],
+   "why": "Trees hold soil in place, so losing them causes erosion."
+  },
+  {
+   "id": "r26-09",
+   "q": "Why do ecosystems with many species matter to people?",
+   "a": "They are stable and give food, medicine, and water",
+   "wrong": [
+    "They need no water, soil, or sunlight",
+    "They stop all natural hazards like floods from happening",
+    "They turn plants into fossil fuels quickly"
+   ],
+   "why": "Healthy ecosystems with lots of species are more stable and give us food, medicine, clean water, and pollination."
+  },
+  {
+   "id": "r26-10",
+   "q": "The Coeur d'Alene River has lead and other heavy metals in it. Where did they come from?",
+   "a": "A century of mining in the Silver Valley",
+   "wrong": [
+    "Range fires fueled by cheatgrass",
+    "Smog drifting in from heavy traffic around Boise",
+    "Salt spread by winter road crews"
+   ],
+   "why": "A century of mining left heavy metals like lead in the Coeur d'Alene River."
+  },
+  {
+   "id": "r26-11",
+   "q": "Humans now move more rock and soil each year than:",
+   "a": "All the rivers on Earth combined",
+   "wrong": [
+    "One small mountain creek in summer",
+    "A single valley glacier",
+    "One erupting volcano"
+   ],
+   "why": "Humans move more rock and soil each year than all the world's rivers combined."
+  },
+  {
+   "id": "r26-12",
+   "q": "About how much trash does the average American make each day?",
+   "a": "About 4.9 pounds",
+   "wrong": [
+    "About 0.5 pounds",
+    "About 49 pounds",
+    "About 490 pounds"
+   ],
+   "why": "The average American makes about 4.9 pounds of trash a day."
+  }
+ ],
+ "27": [
+  {
+   "id": "r27-01",
+   "q": "Inertia is:",
+   "a": "A moving object's tendency to keep going straight",
+   "wrong": [
+    "The pull of gravity between any two objects with mass",
+    "The 23.5° tilt of Earth's axis",
+    "The oval shape of a planet's orbit"
+   ],
+   "why": "Inertia means a moving object wants to keep moving in a straight line."
+  },
+  {
+   "id": "r27-02",
+   "q": "The bright areas on the Moon are:",
+   "a": "Mountainous highlands",
+   "wrong": [
+    "Ancient lava plains",
+    "Frozen seas of water",
+    "Shadows from Earth"
+   ],
+   "why": "The bright areas on the Moon are mountainous highlands."
+  },
+  {
+   "id": "r27-03",
+   "q": "Sunspots are:",
+   "a": "Cooler, darker areas made by magnetic fields",
+   "wrong": [
+    "Deep holes punched through the Sun's glowing surface",
+    "The very hottest spots on the Sun",
+    "Planets passing in front of the Sun"
+   ],
+   "why": "Sunspots are cooler, darker areas caused by strong magnetic fields."
+  },
+  {
+   "id": "r27-04",
+   "q": "What does the Sun's solar wind consist of?",
+   "a": "A stream of charged particles",
+   "wrong": [
+    "Air moving on the Sun's surface",
+    "Light that reaches us in 8 minutes",
+    "Clouds of water vapor"
+   ],
+   "why": "Solar wind is a stream of charged particles flowing from the Sun."
+  },
+  {
+   "id": "r27-05",
+   "q": "Why do we add a leap day every four years?",
+   "a": "A year is about 365¼ days long",
+   "wrong": [
+    "Earth's spin slows each year",
+    "The Moon's orbit takes four years",
+    "The Sun moves every four years"
+   ],
+   "why": "One trip around the Sun takes about 365¼ days, so we add a leap day every four years."
+  },
+  {
+   "id": "r27-06",
+   "q": "Why does the Moon turn coppery red in a lunar eclipse?",
+   "a": "Earth's air bends red sunlight onto it",
+   "wrong": [
+    "The Moon heats up from sunlight and glows red",
+    "Mars reflects red light onto it",
+    "Dust on the Moon catches fire"
+   ],
+   "why": "In a lunar eclipse, Earth's atmosphere bends red sunlight onto the Moon, making a blood moon."
+  },
+  {
+   "id": "r27-07",
+   "q": "Why don't we get eclipses every month?",
+   "a": "The Moon's orbit is tilted about 5°",
+   "wrong": [
+    "The Moon stops orbiting some months",
+    "The Sun is too small most months",
+    "Earth's orbit is a perfect circle"
+   ],
+   "why": "The Moon's orbit is tilted about 5°, so usually its shadow passes above or below Earth."
+  },
+  {
+   "id": "r27-08",
+   "q": "About how far away is the Moon?",
+   "a": "About 384,000 km",
+   "wrong": [
+    "About 3,840 km",
+    "About 38 million km",
+    "About 150 million km"
+   ],
+   "why": "The Moon is about one-quarter Earth's width and 384,000 km away."
+  },
+  {
+   "id": "r27-09",
+   "q": "Each night after the full moon, less of the Moon is lit. The Moon is:",
+   "a": "Waning",
+   "wrong": [
+    "Waxing",
+    "In synchronous rotation",
+    "At an equinox"
+   ],
+   "why": "Waning means shrinking."
+  },
+  {
+   "id": "r27-10",
+   "q": "You see a thin sliver of Moon lit on the right side. Which phase is it?",
+   "a": "Waxing crescent",
+   "wrong": [
+    "Waning crescent",
+    "Third quarter",
+    "Full moon"
+   ],
+   "why": "A waxing crescent is a thin sliver on the right; if it's lit on the right, it's getting bright."
+  },
+  {
+   "id": "r27-11",
+   "q": "Is the far side of the Moon always dark?",
+   "a": "No, it gets sunlight too; we just never see it",
+   "wrong": [
+    "Yes, sunlight never reaches any part of the far side",
+    "Yes, Earth's shadow always covers it",
+    "No, it glows with its own light"
+   ],
+   "why": "There's a far side we never see from Earth, but it's not always dark."
+  },
+  {
+   "id": "r27-12",
+   "q": "Watching a total solar eclipse in Idaho Falls, what must you never do?",
+   "a": "Look at the Sun without eclipse glasses",
+   "wrong": [
+    "Look at the Moon later that night",
+    "Take pictures of the shadows on the ground",
+    "Watch the sky go dark around you"
+   ],
+   "why": "Never look at the Sun without proper eclipse glasses."
+  }
+ ],
+ "28": [
+  {
+   "id": "r28-01",
+   "q": "A comet's coma is:",
+   "a": "Its glowing head",
+   "wrong": [
+    "Its rocky core only",
+    "Its long tail",
+    "Its path around the Sun"
+   ],
+   "why": "As a comet nears the Sun, its ice vaporizes, forming a glowing head called the coma and a long tail."
+  },
+  {
+   "id": "r28-02",
+   "q": "The Kuiper Belt is:",
+   "a": "A region beyond Neptune with icy bodies and dwarf planets",
+   "wrong": [
+    "The ring of rocky asteroids found between Mars and Jupiter",
+    "The hazy band of the Milky Way in our sky",
+    "The rings of ice and rock around Saturn"
+   ],
+   "why": "Beyond Neptune is the Kuiper Belt, home to icy bodies and dwarf planets like Pluto."
+  },
+  {
+   "id": "r28-03",
+   "q": "A star's apparent magnitude is:",
+   "a": "How bright it looks from Earth",
+   "wrong": [
+    "How bright it really is up close",
+    "How hot its surface is",
+    "How old the star is"
+   ],
+   "why": "The brightness of a star as seen from Earth is its apparent magnitude."
+  },
+  {
+   "id": "r28-04",
+   "q": "A protostar is:",
+   "a": "A collapsing clump of gas that heats up",
+   "wrong": [
+    "A huge, old star that has blown up in a supernova",
+    "A small, cooling leftover star core",
+    "An old star swelling up huge"
+   ],
+   "why": "In the protostar stage, the clump heats up as it collapses."
+  },
+  {
+   "id": "r28-05",
+   "q": "A spiral galaxy has:",
+   "a": "Pinwheel arms",
+   "wrong": [
+    "An oval blob shape",
+    "No clear shape",
+    "Only one star"
+   ],
+   "why": "Spiral galaxies have pinwheel arms, elliptical ones are oval blobs, and irregular ones have no clear shape."
+  },
+  {
+   "id": "r28-06",
+   "q": "Why is Venus the hottest planet even though Mercury is closer to the Sun?",
+   "a": "Its thick CO₂ air traps heat in a runaway greenhouse",
+   "wrong": [
+    "It spins backward very fast",
+    "It is the largest inner planet, with no air at all",
+    "It has erupting volcanoes everywhere"
+   ],
+   "why": "Venus is the hottest planet thanks to a thick CO₂ atmosphere and a runaway greenhouse effect."
+  },
+  {
+   "id": "r28-07",
+   "q": "Why was Pluto reclassified in 2006?",
+   "a": "It hasn't cleared its orbit of other objects",
+   "wrong": [
+    "It was found to be made mostly of gas, like Jupiter",
+    "It drifted out of the solar system",
+    "It turned out to be a comet"
+   ],
+   "why": "Pluto was reclassified as a dwarf planet because it hasn't cleared other objects out of its orbit."
+  },
+  {
+   "id": "r28-08",
+   "q": "Why is looking far into space like looking back in time?",
+   "a": "The light we see left those stars years ago",
+   "wrong": [
+    "Stars are actually moving backward in time toward us",
+    "Telescopes can show us the future",
+    "Light gets there the instant it leaves"
+   ],
+   "why": "When you look at a star, you're seeing light that left it years, even thousands of years, ago."
+  },
+  {
+   "id": "r28-09",
+   "q": "About how far through its main-sequence life is our Sun?",
+   "a": "About halfway",
+   "wrong": [
+    "Just beginning",
+    "Almost finished",
+    "Already a red giant"
+   ],
+   "why": "Our Sun is about halfway through its 10-billion-year main-sequence life."
+  },
+  {
+   "id": "r28-10",
+   "q": "Who found in the 1920s that almost all galaxies are moving away from us?",
+   "a": "Edwin Hubble",
+   "wrong": [
+    "Isaac Newton",
+    "Johannes Kepler",
+    "Alfred Wegener"
+   ],
+   "why": "In the 1920s, Edwin Hubble found that almost all galaxies are redshifted, moving away from us."
+  },
+  {
+   "id": "r28-11",
+   "q": "A star looks dim from Earth but has a very bright absolute magnitude. What explains this?",
+   "a": "It is very bright but very far away",
+   "wrong": [
+    "It is very dim, but it is very close to Earth",
+    "It is a planet, not a star",
+    "It has run out of fuel"
+   ],
+   "why": "A dim-looking star might actually be super bright, just very far away."
+  },
+  {
+   "id": "r28-12",
+   "q": "You want to see the Milky Way as a hazy band. Where in Idaho is a great spot?",
+   "a": "Craters of the Moon, a Dark Sky Park",
+   "wrong": [
+    "Downtown Boise at night",
+    "Inside a bright city stadium",
+    "Under streetlights in Idaho Falls"
+   ],
+   "why": "On a dark night away from city lights, like at Craters of the Moon (an International Dark Sky Park), you can see the Milky Way."
+  }
+ ]
+}
