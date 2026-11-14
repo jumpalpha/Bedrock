@@ -13,7 +13,6 @@ const SKEY = "bedrock_teacher";
 export default function Teacher() {
   const [hash, setHash] = useState<string | null>(null);
   const [pass, setPass] = useState("");
-  const [shownHash, setShownHash] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [tab, setTab] = useState<"roster" | "keys" | "quests">("roster");
 
@@ -24,7 +23,7 @@ export default function Teacher() {
     const h = await teacherHash(pass);
     try {
       if (await teacherCheck(h)) { setHash(h); try { sessionStorage.setItem(SKEY, h); } catch {} }
-      else { setErr("That passcode isn't set up."); setShownHash(h); }
+      else setErr("That isn't the Dopps Class teacher code.");
     } catch (x) { setErr((x as Error).message); }
   };
 
@@ -34,11 +33,10 @@ export default function Teacher() {
         <PageHead eyebrow="Teacher" title="Teacher dashboard" sub="Answer keys, roster, scores and side quest approvals. Teacher only." />
         <form onSubmit={enter} className="block-panel mx-auto mt-10 max-w-sm p-6">
           {!dbReady && <p className="mb-3 text-sm font-bold text-amber">Preview: the class database isn&apos;t connected yet.</p>}
-          <label className="block text-sm font-extrabold">Teacher passcode
+          <label className="block text-sm font-extrabold">Dopps Class teacher code
             <input type="password" value={pass} onChange={(e) => setPass(e.target.value)} className="mt-1 w-full border-[3px] border-black bg-[var(--bg-2)] px-3 py-2" />
           </label>
           {err && <p className="mt-2 text-sm font-bold text-crimson">{err}</p>}
-          {shownHash && <p className="mt-2 break-all text-xs text-muted">First time? Have Claude (or the Supabase SQL editor) save this code as your passcode: <code>{shownHash}</code></p>}
           <button disabled={!dbReady} className="btn-block btn-grass mt-4 w-full justify-center disabled:opacity-50">Enter</button>
         </form>
       </>

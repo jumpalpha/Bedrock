@@ -95,9 +95,10 @@ create or replace function public._b_ok(p_id uuid, p_pin_hash text) returns bool
 language sql stable security definer set search_path = public as $$
   select exists (select 1 from public.b_students where id = p_id and pin_hash = p_pin_hash) $$;
 
+-- Teacher check = the Dopps Class teacher code (same database). p_pass_hash carries the typed code.
 create or replace function public._b_teacher(p_pass_hash text) returns boolean
 language sql stable security definer set search_path = public as $$
-  select exists (select 1 from public.b_settings where k = 'teacher_pass_hash' and v = p_pass_hash) $$;
+  select public._teacher_ok(p_pass_hash) $$;
 
 create or replace function public._b_today() returns date language sql stable set search_path = public as $$
   select (now() at time zone 'America/Denver')::date $$;
@@ -211,9 +212,7 @@ begin
     on conflict (student_id, quest_id) do update set note = excluded.note, submitted_at = now();
 end $$;
 
--- ── Teacher: one passcode, set ONLY in SQL (never from the website), e.g.
---   insert into public.b_settings values ('teacher_pass_hash', '<hash shown on the Teacher page>')
---   on conflict (k) do update set v = excluded.v;
+-- ── Teacher functions: unlocked by the Dopps Class teacher code (see _b_teacher above).
 
 create or replace function public.b_teacher_check(p_pass_hash text) returns boolean
 language sql stable security definer set search_path = public as $$ select public._b_teacher(p_pass_hash) $$;

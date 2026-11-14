@@ -80,8 +80,8 @@ export const vote = (kind: "survey" | "debate", item: string, choice: string, re
 export const results = (kind: "survey" | "debate", item: string) => rpc<Record<string, number>>("b_results", { p_kind: kind, p_item: item });
 export const submitSideQuest = (quest: string, note: string) => rpc<void>("b_side_quest_submit", { ...me(), p_quest: quest, p_note: note });
 
-// Teacher (passcode is hashed in the browser; the hash is checked in the database)
-export const teacherHash = (pass: string) => hashSecret(pass, "bedrock-teacher");
+// Teacher: the Dopps Class teacher code, sent over HTTPS and checked in the database by Dopps Class's _teacher_ok
+export const teacherHash = async (pass: string) => pass;
 export const teacherCheck = (h: string) => rpc<boolean>("b_teacher_check", { p_pass_hash: h });
 export const teacherKeys = (h: string) => rpc<Record<string, string>>("b_teacher_keys", { p_pass_hash: h });
 export const teacherRoster = (h: string) => rpc<RosterRow[]>("b_teacher_roster", { p_pass_hash: h });
