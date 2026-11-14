@@ -1,0 +1,24 @@
+{
+  "id": "/?app=bedrock",
+  "name": "Bedrock: Earth Science",
+  "short_name": "Bedrock",
+  "description": "Mr. Dopp's Earth science class as a survival planet: 28 chapters, 9 realms, the Sprite Arcade and your quest from Dirt Digger to Diamond.",
+  "start_url": "/welcome/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090d0b",
+  "theme_color": "#090d0b",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/app/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Arcade", "url": "/arcade/", "icons": [{ "src": "/app/shortcut-arcade.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Chapters", "url": "/chapters/", "icons": [{ "src": "/app/shortcut-chapters.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "My Quest", "url": "/quest/", "icons": [{ "src": "/app/shortcut-quest.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Welcome Back", "url": "/welcome/", "icons": [{ "src": "/app/shortcut-welcome.png", "sizes": "96x96", "type": "image/png" }] }
+  ]
+}

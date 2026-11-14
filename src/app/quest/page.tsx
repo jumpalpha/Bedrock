@@ -10,6 +10,7 @@ import { PlayerCard } from "@/components/player-card";
 import { TaskList } from "@/components/task-list";
 import { AlienCard } from "@/components/alien-card"; // ── wave-pet ──
 import { BeReadyCard } from "@/components/twinA/ready-card"; // ── wave-twinA ──
+import { QuestUpNext } from "@/components/x7b/up-next"; // ── wave-x7b ──
 
 export default function Quest() {
   const { stats, state } = useProgress();
@@ -84,6 +85,7 @@ export default function Quest() {
           {/* ── wave-twinA ── */}<BeReadyCard />
         </section>
 
+        {/* ── wave-x7b ── "Do these next" + Print my progress (from Dopps Class checklist.html) */}<QuestUpNext />
         <section>
           <Eyebrow>Checklist</Eyebrow>
           <h2 className="pixel-title mb-5 text-3xl">Every task, every realm</h2>

@@ -1,12 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { PwaRegister } from "@/components/x7b/pwa"; // ── wave-x7b ──
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: "Bedrock — Earth Science", template: "%s · Bedrock" },
   description: "Mr. Dopp's Earth science class as a survival planet: 28 chapters, 9 realms, mining ranks from Dirt Digger to Diamond.",
-  icons: { icon: "/art/realm-1.png" },
+  // ── wave-x7b ── installable app: manifest, app icons, iPhone home-screen settings
+  manifest: "/manifest.webmanifest",
+  icons: { icon: [{ url: "/app/icon-32.png", sizes: "32x32", type: "image/png" }, { url: "/app/icon-192.png", sizes: "192x192", type: "image/png" }], apple: "/app/icon-180.png" },
+  appleWebApp: { capable: true, title: "Bedrock", statusBarStyle: "black-translucent" },
+  // ── end wave-x7b ──
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#090d0b" };
 
@@ -24,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Nav />
         <main className="relative z-10 flex-1">{children}</main>
         <Footer />
+        <PwaRegister />{/* ── wave-x7b ── */}
       </body>
     </html>
   );
