@@ -1,0 +1,111 @@
+{
+  "intro": "Students pick from this menu, and each side quest earns the Field Geologist badge plus bonus XP. Each one ends with a short write-up or slideshow explaining the science, with photos as evidence. Set the number required per term and the XP values to match Dopps Class.",
+  "safetyNotes": "**Safety notes for students:** take an adult on any field trip, stay off cliffs and unstable slopes, don't collect in national parks or monuments (photos only), and never look directly at the Sun.",
+  "quests": [
+    {
+      "n": 1,
+      "title": "Rock Collector",
+      "realm": "The Mine",
+      "task": "Collect 10 rocks or minerals, then identify and label each as igneous, sedimentary, or metamorphic, with one ID test each (streak, hardness, luster, fizz).",
+      "proof": "Photo of a labeled collection plus an ID chart"
+    },
+    {
+      "n": 2,
+      "title": "Weather Watcher",
+      "realm": "The Sky",
+      "task": "Keep a 14-day weather journal (temperature, pressure, clouds, wind, precipitation), then predict the next day's weather 5 times and score your accuracy.",
+      "proof": "Journal plus a graph of temperature and pressure"
+    },
+    {
+      "n": 3,
+      "title": "Idaho Field Trip Guide",
+      "realm": "Any",
+      "task": "Visit a geology site with family, like Craters of the Moon, Menan Buttes, Hell's Half Acre, Bruneau Dunes, or Idaho Falls' basalt riverbank, and make a mini tour guide.",
+      "proof": "5 photos with explanations of how each feature formed"
+    },
+    {
+      "n": 4,
+      "title": "Watershed Detective",
+      "realm": "The Surface",
+      "task": "Map where rain falling on your house ends up, step by step, all the way to the ocean.",
+      "proof": "Labeled map"
+    },
+    {
+      "n": 5,
+      "title": "Soil Scientist",
+      "realm": "The Surface",
+      "task": "Dig a small soil pit or take a core, sketch and label the horizons, and do a jar test for sand, silt, and clay.",
+      "proof": "Photos plus a horizon sketch"
+    },
+    {
+      "n": 6,
+      "title": "Quake Ready",
+      "realm": "The Deep",
+      "task": "Build a family earthquake plan and kit checklist, find two hazards in your home, and fix one.",
+      "proof": "Plan plus a before-and-after photo"
+    },
+    {
+      "n": 7,
+      "title": "Shake Table Engineer",
+      "realm": "The Deep",
+      "task": "Build a model building from toothpicks, marshmallows, or similar and test it on a homemade shake table. Redesign it once to make it stronger.",
+      "proof": "Video of both tests"
+    },
+    {
+      "n": 8,
+      "title": "Volcano Model",
+      "realm": "The Deep",
+      "task": "Build a cross-section model of one volcano type (shield, cinder cone, or composite) with all its parts labeled.",
+      "proof": "Photo plus a one-paragraph explanation"
+    },
+    {
+      "n": 9,
+      "title": "Fossil Hunter",
+      "realm": "Ancient Layers",
+      "task": "Make a cast-and-mold fossil with plaster or clay, or visit Hagerman Fossil Beds or a museum and report on three fossils.",
+      "proof": "Photos plus write-up"
+    },
+    {
+      "n": 10,
+      "title": "Geologic Time Walk",
+      "realm": "Ancient Layers",
+      "task": "Make a scale timeline of Earth's 4.6 billion years on a roll of paper or down a hallway, marking 10 major events.",
+      "proof": "Photo plus the scale you used"
+    },
+    {
+      "n": 11,
+      "title": "Energy Auditor",
+      "realm": "Resources",
+      "task": "Track your home's electricity for one week from the meter or bill, find where Idaho's power comes from, and propose three ways to save energy.",
+      "proof": "Data table plus a proposal"
+    },
+    {
+      "n": 12,
+      "title": "Water Saver",
+      "realm": "Resources",
+      "task": "Measure your family's water use for 3 days by timing showers and counting flushes, then try a reduction plan for 3 more days.",
+      "proof": "Before-and-after data"
+    },
+    {
+      "n": 13,
+      "title": "Moon Tracker",
+      "realm": "Beyond Bedrock",
+      "task": "Sketch the Moon at the same time every night for 2 to 4 weeks and label each phase.",
+      "proof": "Moon log"
+    },
+    {
+      "n": 14,
+      "title": "Night Sky Navigator",
+      "realm": "Beyond Bedrock",
+      "task": "Find and photograph or sketch 3 constellations, one planet, and the North Star from a dark spot.",
+      "proof": "Sky map plus photos"
+    },
+    {
+      "n": 15,
+      "title": "Science Communicator",
+      "realm": "Any",
+      "task": "Make a 60-second video teaching one Key Word or concept from any chapter, aimed at a 5th grader.",
+      "proof": "Video"
+    }
+  ]
+}

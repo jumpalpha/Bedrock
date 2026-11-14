@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "@fontsource/pixelify-sans/500.css";
+@import "@fontsource/pixelify-sans/700.css";
+@import "@fontsource/press-start-2p/400.css";
+@import "@fontsource/nunito/400.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/800.css";
+
+/* Dark mode is html.dark (set before paint by the inline script in layout.tsx). Light is the default. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink: var(--bg);
+  --color-ink-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-gold: #fcd34d;
+  --color-amber: #f59e0b;
+  --color-emerald: #22c55e;
+  --color-sky: #38bdf8;
+  --color-crimson: #ef4444;
+  --color-violet: #a78bfa;
+  --color-diamond: #4aedd9;
+  --color-grass: #5fa83a;
+  --color-dirt: #8b5a2b;
+  --color-stone: #8a8a8a;
+
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-display: "Pixelify Sans", "Nunito", system-ui, sans-serif;
+  --font-pixel: "Press Start 2P", "Pixelify Sans", monospace;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --animate-rise: rise 0.5s steps(6) both;
+  --animate-bob: bob 2.4s steps(4) infinite;
+
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+}
+
+:root {
+  --bg: #e9f5fd;
+  --bg-2: #ffffff;
+  --surface: #ffffff;
+  --panel: #fbf7ee;
+  --line: rgb(40 30 20 / 0.18);
+  --fg: #1d1a16;
+  --muted: #5b5248;
+  --block-edge: #3b2a1a;
+  --sky-top: #7ec8f0;
+  --sky-bottom: #d8f0fd;
+  color-scheme: light;
+}
+html.dark {
+  --bg: #15141b;
+  --bg-2: #1d1c24;
+  --surface: #24232c;
+  --panel: #2a2932;
+  --line: rgb(255 255 255 / 0.12);
+  --fg: #f1efe9;
+  --muted: #b7b1a6;
+  --block-edge: #000000;
+  --sky-top: #0b0a1e;
+  --sky-bottom: #1d1c2e;
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: rgb(95 168 58 / 0.4); }
+
+/* Pixel textures (public/tex, made by scripts/gen-textures.mjs) */
+.tex { image-rendering: pixelated; background-size: 48px 48px; }
+.tex-grass-top { background-image: url("/tex/grass_top.svg"); }
+.tex-grass-side { background-image: url("/tex/grass_side.svg"); }
+.tex-dirt { background-image: url("/tex/dirt.svg"); }
+.tex-stone { background-image: url("/tex/stone.svg"); }
+.tex-cobble { background-image: url("/tex/cobble.svg"); }
+.tex-bedrock { background-image: url("/tex/bedrock.svg"); }
+
+/* Sky behind the page: day in light mode, starry night in dark mode */
+.sky {
+  background: linear-gradient(var(--sky-top), var(--sky-bottom) 70%, var(--bg));
+}
+html.dark .sky::before {
+  content: ""; position: absolute; inset: 0; opacity: 0.8;
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 32% 8%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 58% 22%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 78% 12%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 90% 30%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 45% 35%, #fff 50%, transparent 51%);
+}
+
+/* A strip of grass-on-dirt blocks: the ground line under the hero and above the footer */
+.ground {
+  height: 48px;
+  background: url("/tex/grass_side.svg") repeat-x;
+  background-size: 48px 48px;
+  image-rendering: pixelated;
+  box-shadow: inset 0 -4px 0 rgb(0 0 0 / 0.25);
+}
+
+/* Panels look like a block with a dark pixel edge and a hard drop shadow */
+.block-panel {
+  background: var(--panel);
+  border: 3px solid var(--block-edge);
+  box-shadow: inset -4px -4px 0 rgb(0 0 0 / 0.12), inset 4px 4px 0 rgb(255 255 255 / 0.35), 4px 4px 0 rgb(0 0 0 / 0.35);
+}
+html.dark .block-panel { box-shadow: inset -4px -4px 0 rgb(0 0 0 / 0.35), inset 4px 4px 0 rgb(255 255 255 / 0.06), 4px 4px 0 rgb(0 0 0 / 0.6); }
+
+.accent-card {
+  position: relative;
+  background: var(--panel);
+  border: 3px solid var(--block-edge);
+  box-shadow: inset 0 6px 0 var(--accent, var(--color-grass)), 4px 4px 0 rgb(0 0 0 / 0.35);
+  transition: transform 0.12s steps(2), box-shadow 0.12s steps(2);
+}
+.accent-card:hover { transform: translate(-2px, -2px); box-shadow: inset 0 6px 0 var(--accent, var(--color-grass)), 6px 6px 0 rgb(0 0 0 / 0.35); }
+.accent-card:active { transform: translate(2px, 2px); box-shadow: inset 0 6px 0 var(--accent, var(--color-grass)), 1px 1px 0 rgb(0 0 0 / 0.35); }
+
+/* Chunky game-menu buttons */
+.btn-block {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  padding: 0.7rem 1.3rem; color: #fff;
+  border: 3px solid #000;
+  background: #6b6b6b url("/tex/stone.svg"); background-size: 48px 48px; image-rendering: pixelated;
+  text-shadow: 2px 2px 0 #2b2b2b;
+  box-shadow: inset 0 -5px 0 rgb(0 0 0 / 0.35), inset 0 3px 0 rgb(255 255 255 / 0.3);
+}
+.btn-block:hover { filter: brightness(1.12); outline: 3px solid #fff; outline-offset: -6px; }
+.btn-grass { background-image: url("/tex/grass_top.svg"); }
+.btn-diamond { background: #2bb5a4; }
+
+.pixel-title { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.01em; }
+.pixel-shadow { text-shadow: 3px 3px 0 rgb(0 0 0 / 0.35); }
+html.dark .pixel-shadow { text-shadow: 3px 3px 0 #000; }
+
+/* XP bar: segmented like a game HUD */
+.xp-bar { height: 14px; border: 3px solid #000; background: #2b2b2b; }
+.xp-fill { height: 100%; background: repeating-linear-gradient(90deg, #80ff20 0 14px, #5fd400 14px 16px); }
+
+/* Chapter reading */
+.prose-block p { margin: 0.9rem 0; line-height: 1.75; }
+.prose-block ul { list-style: square; padding-left: 1.4rem; margin: 0.8rem 0; }
+.prose-block ol { list-style: decimal; padding-left: 1.6rem; margin: 0.8rem 0; }
+.prose-block li { margin: 0.35rem 0; line-height: 1.65; }
+.prose-block strong { color: var(--fg); font-weight: 800; background: linear-gradient(transparent 62%, rgb(95 168 58 / 0.3) 62%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

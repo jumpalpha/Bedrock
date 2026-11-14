@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+.env*
+# Answer keys never go in this public repo
+*PRIVATE*
+keys*.json
+keys*.sql

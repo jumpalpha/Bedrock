@@ -1,0 +1,128 @@
+[
+  {
+    "n": 1,
+    "name": "Spawn Point",
+    "tagline": "You just landed on a raw planet. Before you can survive it, you need to learn how to think, find your way, and figure out what this place is made of.",
+    "unitIntro": "Unit 1: Spawn Point. You just landed on a raw planet. Before you can survive it, you need to learn how to think, find your way, and figure out what this place is made of.",
+    "chapters": [
+      1,
+      3
+    ],
+    "description": "You just woke up on a strange planet. Grab a map, switch on your science brain, and figure out what this world is made of.",
+    "badge": "Compass Badge",
+    "badgeEarnedBy": "Clearing Chapters 1 to 3",
+    "testTitle": "Realm 1 Test: Spawn Point"
+  },
+  {
+    "n": 2,
+    "name": "The Mine",
+    "tagline": "Time to grab a pickaxe. Every tool, every building, every phone starts with something dug out of the ground. Let's find out what's down there.",
+    "unitIntro": "Unit 2: The Mine. Time to grab a pickaxe. Every tool, every building, every phone starts with something dug out of the ground. Let's find out what's down there.",
+    "chapters": [
+      4,
+      7
+    ],
+    "description": "Grab a pickaxe. Every phone, every building, every tool starts with something dug out of the ground. Learn what's down there and how it got there.",
+    "badge": "Pickaxe Badge",
+    "badgeEarnedBy": "Clearing Chapters 4 to 7",
+    "testTitle": "Realm 2 Test: The Mine"
+  },
+  {
+    "n": 3,
+    "name": "The Surface",
+    "tagline": "You've survived underground. Now step outside, where wind, water, ice, and gravity are slowly tearing the whole place apart.",
+    "unitIntro": "Unit 3: The Surface. You've survived underground. Now step outside, where wind, water, ice, and gravity are slowly tearing the whole place apart.",
+    "chapters": [
+      8,
+      11
+    ],
+    "description": "Step outside. Wind, water, ice, and gravity are slowly tearing the whole place apart. Find water, read the land, and don't stand under that hill.",
+    "badge": "Shovel Badge",
+    "badgeEarnedBy": "Clearing Chapters 8 to 11",
+    "testTitle": "Realm 3 Test: The Surface"
+  },
+  {
+    "n": 4,
+    "name": "The Deep",
+    "tagline": "Below the surface is a whole world of heat, pressure, and moving rock. This is where earthquakes, volcanoes, and mountains come from.",
+    "unitIntro": "Unit 4: The Deep. Below the surface is a whole world of heat, pressure, and moving rock. This is where earthquakes, volcanoes, and mountains come from.",
+    "chapters": [
+      12,
+      16
+    ],
+    "description": "Dig past the crust into heat, pressure, and moving rock. This is where earthquakes, volcanoes, and mountains are born, and eastern Idaho sits right on top of the action.",
+    "badge": "Magma Badge",
+    "badgeEarnedBy": "Clearing Chapters 12 to 16",
+    "testTitle": "Realm 4 Test: The Deep"
+  },
+  {
+    "n": 5,
+    "name": "The Ocean",
+    "tagline": "Over 70% of the planet is covered in water, and we've explored less of the deep sea than the surface of Mars. Time to dive in.",
+    "unitIntro": "Unit 5: The Ocean. Over 70% of the planet is covered in water, and we've explored less of the deep sea than the surface of Mars. Time to dive in.",
+    "chapters": [
+      17,
+      18
+    ],
+    "description": "Over 70% of the planet is water, and most of it is unexplored. Ride the currents, map the sea floor, and find life that never sees the Sun.",
+    "badge": "Trident Badge",
+    "badgeEarnedBy": "Clearing Chapters 17 and 18",
+    "testTitle": "Realm 5 Test: The Ocean"
+  },
+  {
+    "n": 6,
+    "name": "The Sky",
+    "tagline": "Look up. That thin blue layer is the only thing standing between you and the cold, deadly vacuum of space. Let's see how it works.",
+    "unitIntro": "Unit 6: The Sky. Look up. That thin blue layer is the only thing standing between you and the cold, deadly vacuum of space. Let's see how it works.",
+    "chapters": [
+      19,
+      22
+    ],
+    "description": "That thin blue layer is all that stands between you and space. Learn to read the clouds, survive the storms, and understand a changing climate.",
+    "badge": "Lightning Badge",
+    "badgeEarnedBy": "Clearing Chapters 19 to 22",
+    "testTitle": "Realm 6 Test: The Sky"
+  },
+  {
+    "n": 7,
+    "name": "Ancient Layers",
+    "tagline": "The rocks under your feet are a history book billions of years long. Time to learn how to read it.",
+    "unitIntro": "Unit 7: Ancient Layers. The rocks under your feet are a history book billions of years long. Time to learn how to read it.",
+    "chapters": [
+      23,
+      24
+    ],
+    "description": "The rocks under your feet are a history book 4.6 billion years long. Dig up fossils, crack the code of time, and meet Idaho's ancient horses and dinosaurs.",
+    "badge": "Fossil Badge",
+    "badgeEarnedBy": "Clearing Chapters 23 and 24",
+    "testTitle": "Realm 7 Test: Ancient Layers"
+  },
+  {
+    "n": 8,
+    "name": "Resources",
+    "tagline": "Every survival game is about gathering resources. So is real life. Here's where our stuff comes from, and what it costs.",
+    "unitIntro": "Unit 8: Resources. Every survival game is about gathering resources. So is real life. Here's where our stuff comes from, and what it costs.",
+    "chapters": [
+      25,
+      26
+    ],
+    "description": "Every survivor needs supplies. Find the planet's energy, water, and minerals, and figure out how to use them without wrecking the base.",
+    "badge": "Ore Badge",
+    "badgeEarnedBy": "Clearing Chapters 25 and 26",
+    "testTitle": "Realm 8 Test: Resources"
+  },
+  {
+    "n": 9,
+    "name": "Beyond Bedrock",
+    "tagline": "You've dug to the core and survived the surface. Now look up. The final frontier starts with our nearest neighbors.",
+    "unitIntro": "Unit 9: Beyond Bedrock. You've dug to the core and survived the surface. Now look up. The final frontier starts with our nearest neighbors.",
+    "chapters": [
+      27,
+      28
+    ],
+    "description": "You've explored the whole planet. Now look up. The Moon, the Sun, the planets, and 2 trillion galaxies are waiting.",
+    "badge": "Star Badge",
+    "badgeEarnedBy": "Clearing Chapters 27 and 28",
+    "testTitle": "Realm 9 Test: Beyond Bedrock"
+  }
+]

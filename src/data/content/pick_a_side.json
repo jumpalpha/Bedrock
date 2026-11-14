@@ -1,0 +1,458 @@
+{
+  "intro": "Two per chapter. Students pick a side and back it with evidence from the chapter. Rating key:",
+  "ratingKey": {
+    "Green": "evidence can settle it, so there's a best answer.",
+    "Yellow": "evidence matters, but values decide it.",
+    "Red": "mostly values or opinion, so argue respectfully."
+  },
+  "debates": [
+    {
+      "id": "d01-1",
+      "chapter": 1,
+      "question": "Is a scientific theory \"just a guess\"?",
+      "sideA": "Yes, it's unproven",
+      "sideB": "No, it's backed by lots of evidence",
+      "rating": "Green"
+    },
+    {
+      "id": "d01-2",
+      "chapter": 1,
+      "question": "Should science class spend more time on experiments than reading?",
+      "sideA": "More experiments",
+      "sideB": "Balance as is",
+      "rating": "Red"
+    },
+    {
+      "id": "d02-1",
+      "chapter": 2,
+      "question": "Should schools still teach paper map reading now that phones have GPS?",
+      "sideA": "Yes, keep it",
+      "sideB": "No, GPS is enough",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d02-2",
+      "chapter": 2,
+      "question": "Is the Mercator map unfair to Africa and South America?",
+      "sideA": "Yes, it shrinks them",
+      "sideB": "No, it's a navigation tool",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d03-1",
+      "chapter": 3,
+      "question": "Which sphere matters most for survival?",
+      "sideA": "Hydrosphere",
+      "sideB": "Atmosphere",
+      "rating": "Red"
+    },
+    {
+      "id": "d03-2",
+      "chapter": 3,
+      "question": "Could Earth still support life if one sphere disappeared?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d04-1",
+      "chapter": 4,
+      "question": "Should Idaho open more mines for jobs?",
+      "sideA": "Yes, jobs and minerals",
+      "sideB": "No, protect rivers and land",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d04-2",
+      "chapter": 4,
+      "question": "Are lab-grown diamonds \"real\" diamonds?",
+      "sideA": "Yes, same carbon crystal",
+      "sideB": "No, not natural",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d05-1",
+      "chapter": 5,
+      "question": "Is granite or basalt more useful to people?",
+      "sideA": "Granite",
+      "sideB": "Basalt",
+      "rating": "Red"
+    },
+    {
+      "id": "d05-2",
+      "chapter": 5,
+      "question": "Should people be allowed to take obsidian or lava rocks from public land?",
+      "sideA": "Yes, small amounts",
+      "sideB": "No, leave it for everyone",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d06-1",
+      "chapter": 6,
+      "question": "Should fossil hunters be allowed to sell dinosaur fossils?",
+      "sideA": "Yes, private property",
+      "sideB": "No, museums only",
+      "rating": "Red"
+    },
+    {
+      "id": "d06-2",
+      "chapter": 6,
+      "question": "Is marble a \"better\" rock than limestone?",
+      "sideA": "Yes, harder and prettier",
+      "sideB": "No, just different",
+      "rating": "Red"
+    },
+    {
+      "id": "d07-1",
+      "chapter": 7,
+      "question": "Could a rock skip steps in the rock cycle?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d07-2",
+      "chapter": 7,
+      "question": "Is the rock cycle still running today?",
+      "sideA": "Yes",
+      "sideB": "No, it stopped",
+      "rating": "Green"
+    },
+    {
+      "id": "d08-1",
+      "chapter": 8,
+      "question": "Should farmers be required to use soil-saving methods?",
+      "sideA": "Yes, require it",
+      "sideB": "No, their choice",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d08-2",
+      "chapter": 8,
+      "question": "Is frost wedging or acid rain worse for Idaho's buildings and roads?",
+      "sideA": "Frost wedging",
+      "sideB": "Acid rain",
+      "rating": "Green"
+    },
+    {
+      "id": "d09-1",
+      "chapter": 9,
+      "question": "Should people be allowed to build homes on burned hillsides?",
+      "sideA": "Yes, it's their land",
+      "sideB": "No, mudflow risk",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d09-2",
+      "chapter": 9,
+      "question": "Should Bruneau Dunes allow sandboarding?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Red"
+    },
+    {
+      "id": "d10-1",
+      "chapter": 10,
+      "question": "Should the Teton Dam be rebuilt for water storage?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d10-2",
+      "chapter": 10,
+      "question": "Should towns ban building on floodplains?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d11-1",
+      "chapter": 11,
+      "question": "Should Idaho limit how much farmers pump from the aquifer?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d11-2",
+      "chapter": 11,
+      "question": "Is groundwater a renewable resource?",
+      "sideA": "Yes",
+      "sideB": "Only if recharged",
+      "rating": "Green"
+    },
+    {
+      "id": "d12-1",
+      "chapter": 12,
+      "question": "Should scientists try to drill all the way to the mantle?",
+      "sideA": "Yes, worth it",
+      "sideB": "No, too costly",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d12-2",
+      "chapter": 12,
+      "question": "Is the inner core liquid or solid?",
+      "sideA": "Liquid",
+      "sideB": "Solid",
+      "rating": "Green"
+    },
+    {
+      "id": "d13-1",
+      "chapter": 13,
+      "question": "Was it fair that scientists rejected Wegener?",
+      "sideA": "Yes, he lacked a mechanism",
+      "sideB": "No, his evidence was strong",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d13-2",
+      "chapter": 13,
+      "question": "Will the continents form a new supercontinent someday?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d14-1",
+      "chapter": 14,
+      "question": "Should Idaho require earthquake-proof building codes for schools?",
+      "sideA": "Yes",
+      "sideB": "No, too expensive",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d14-2",
+      "chapter": 14,
+      "question": "Can scientists predict exactly when an earthquake will hit?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d15-1",
+      "chapter": 15,
+      "question": "Should people be allowed to live near active volcanoes?",
+      "sideA": "Yes, fertile soil and their choice",
+      "sideB": "No, too dangerous",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d15-2",
+      "chapter": 15,
+      "question": "Will Yellowstone have a super-eruption in our lifetime?",
+      "sideA": "Likely",
+      "sideB": "Very unlikely",
+      "rating": "Green"
+    },
+    {
+      "id": "d16-1",
+      "chapter": 16,
+      "question": "Are the Tetons or the Sawtooths the better mountains?",
+      "sideA": "Tetons",
+      "sideB": "Sawtooths",
+      "rating": "Red"
+    },
+    {
+      "id": "d16-2",
+      "chapter": 16,
+      "question": "Is Mount Everest still growing?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d17-1",
+      "chapter": 17,
+      "question": "Should ships be fined for losing cargo and plastic at sea?",
+      "sideA": "Yes",
+      "sideB": "No, accidents happen",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d17-2",
+      "chapter": 17,
+      "question": "Is the ocean more important to Idaho than people think?",
+      "sideA": "Yes",
+      "sideB": "No, we're too far inland",
+      "rating": "Green"
+    },
+    {
+      "id": "d18-1",
+      "chapter": 18,
+      "question": "Should we spend more money exploring the ocean or space?",
+      "sideA": "Ocean",
+      "sideB": "Space",
+      "rating": "Red"
+    },
+    {
+      "id": "d18-2",
+      "chapter": 18,
+      "question": "Do seawalls protect beaches?",
+      "sideA": "Yes",
+      "sideB": "No, they move erosion elsewhere",
+      "rating": "Green"
+    },
+    {
+      "id": "d19-1",
+      "chapter": 19,
+      "question": "Was the ban on CFCs worth it?",
+      "sideA": "Yes, the ozone is healing",
+      "sideB": "No, too costly",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d19-2",
+      "chapter": 19,
+      "question": "Is the greenhouse effect good or bad?",
+      "sideA": "Good, it keeps Earth livable",
+      "sideB": "Bad, it causes warming",
+      "rating": "Green"
+    },
+    {
+      "id": "d20-1",
+      "chapter": 20,
+      "question": "Should weather forecasters be blamed when they're wrong?",
+      "sideA": "Yes",
+      "sideB": "No, the atmosphere is chaotic",
+      "rating": "Red"
+    },
+    {
+      "id": "d20-2",
+      "chapter": 20,
+      "question": "Is a 10-day forecast reliable?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d21-1",
+      "chapter": 21,
+      "question": "Should Idaho schools have tornado drills?",
+      "sideA": "Yes",
+      "sideB": "No, tornadoes are rare here",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d21-2",
+      "chapter": 21,
+      "question": "Is it safe to stand under a tree in a lightning storm?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d22-1",
+      "chapter": 22,
+      "question": "Is current climate change mostly caused by humans?",
+      "sideA": "Yes",
+      "sideB": "No, mostly natural",
+      "rating": "Green"
+    },
+    {
+      "id": "d22-2",
+      "chapter": 22,
+      "question": "Should Idaho pay to cut carbon emissions now?",
+      "sideA": "Yes, act now",
+      "sideB": "No, adapt instead",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d23-1",
+      "chapter": 23,
+      "question": "Should the Hagerman fossil beds allow public digging?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Red"
+    },
+    {
+      "id": "d23-2",
+      "chapter": 23,
+      "question": "Is carbon-14 good for dating dinosaur bones?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d24-1",
+      "chapter": 24,
+      "question": "Should scientists try to bring back extinct animals like the woolly mammoth?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Red"
+    },
+    {
+      "id": "d24-2",
+      "chapter": 24,
+      "question": "Did an asteroid wipe out the dinosaurs?",
+      "sideA": "Yes, mainly",
+      "sideB": "No, it was something else",
+      "rating": "Green"
+    },
+    {
+      "id": "d25-1",
+      "chapter": 25,
+      "question": "Should Idaho build more nuclear power plants?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d25-2",
+      "chapter": 25,
+      "question": "Should Idaho build more solar or wind farms on open land?",
+      "sideA": "Yes",
+      "sideB": "No, protect the land",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d26-1",
+      "chapter": 26,
+      "question": "Should single-use plastic bags be banned?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d26-2",
+      "chapter": 26,
+      "question": "Should the dams on the Snake River be removed to help salmon?",
+      "sideA": "Yes",
+      "sideB": "No, keep the power and irrigation",
+      "rating": "Yellow"
+    },
+    {
+      "id": "d27-1",
+      "chapter": 27,
+      "question": "Should the U.S. go back to the Moon or go to Mars first?",
+      "sideA": "Moon",
+      "sideB": "Mars",
+      "rating": "Red"
+    },
+    {
+      "id": "d27-2",
+      "chapter": 27,
+      "question": "Do seasons happen because Earth gets closer to the Sun?",
+      "sideA": "Yes",
+      "sideB": "No",
+      "rating": "Green"
+    },
+    {
+      "id": "d28-1",
+      "chapter": 28,
+      "question": "Is there life somewhere else in the universe?",
+      "sideA": "Yes, probably",
+      "sideB": "No, Earth is unique",
+      "rating": "Red"
+    },
+    {
+      "id": "d28-2",
+      "chapter": 28,
+      "question": "Is Pluto a planet?",
+      "sideA": "Yes",
+      "sideB": "No, a dwarf planet",
+      "rating": "Yellow"
+    }
+  ]
+}

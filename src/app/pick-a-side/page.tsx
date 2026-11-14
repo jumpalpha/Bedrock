@@ -1,0 +1,42 @@
+"use client";
+
+import { useState } from "react";
+import data from "@/data/content/pick_a_side.json";
+import { chapters, realmForChapter } from "@/data/site";
+import { Eyebrow, PageHead } from "@/components/ui";
+import { VoteBox } from "@/components/vote-box";
+
+type D = { id: string; chapter: number; question: string; sideA: string; sideB: string; rating: "Green" | "Yellow" | "Red" };
+const debates = data.debates as D[];
+const ratingColor = { Green: "#22c55e", Yellow: "#eab308", Red: "#ef4444" };
+
+export default function PickASide() {
+  const [ch, setCh] = useState<number | null>(null);
+  const list = ch ? debates.filter((d) => d.chapter === ch) : debates;
+  return (
+    <>
+      <PageHead eyebrow="Pick a Side" title="Two sides. Back yours up." sub={data.intro.replace(/ Rating key:$/, "")}>
+        <div className="mt-5 flex flex-wrap gap-3 text-sm font-bold">
+          {Object.entries(data.ratingKey).map(([k, v]) => (
+            <span key={k} className="border-2 border-black bg-[var(--panel)] px-2.5 py-1"><span style={{ color: ratingColor[k as D["rating"]] }}>■</span> {k}: {v}</span>
+          ))}
+        </div>
+      </PageHead>
+      <div className="mx-auto max-w-4xl px-6 pt-10">
+        <select value={ch ?? ""} onChange={(e) => setCh(e.target.value ? Number(e.target.value) : null)} className="mb-6 w-full border-[3px] border-black bg-[var(--bg-2)] px-3 py-2 font-bold">
+          <option value="">All chapters ({debates.length} debates)</option>
+          {chapters.map((c) => <option key={c.n} value={c.n}>Chapter {c.n}: {c.title}</option>)}
+        </select>
+        <div className="space-y-5">
+          {list.map((d) => (
+            <div key={d.id} className="block-panel p-5" style={{ borderLeftWidth: 10, borderLeftColor: ratingColor[d.rating] }}>
+              <Eyebrow color={realmForChapter(d.chapter).color}>Chapter {d.chapter} · {d.rating}</Eyebrow>
+              <h2 className="pixel-title mb-4 text-xl sm:text-2xl">{d.question}</h2>
+              <VoteBox kind="debate" item={d.id} options={[d.sideA, d.sideB]} reasonLabel="Your evidence from the chapter…" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}

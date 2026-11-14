@@ -1,0 +1,340 @@
+{
+  "intro": "Quick, fun polls for the home page button. There's no right answer. They get students thinking and give the class results to talk about. Rotate one per day.",
+  "questions": [
+    {
+      "n": 1,
+      "question": "Would you rather live near a volcano or a fault line?",
+      "options": [
+        "near a volcano",
+        "near a fault line"
+      ]
+    },
+    {
+      "n": 2,
+      "question": "Would you rather explore the deepest ocean trench or walk on Mars?",
+      "options": [
+        "explore the deepest ocean trench",
+        "walk on Mars"
+      ]
+    },
+    {
+      "n": 3,
+      "question": "Which would you rather find while digging: a diamond, a dinosaur bone, or gold?",
+      "options": [
+        "a diamond",
+        "a dinosaur bone",
+        "gold"
+      ]
+    },
+    {
+      "n": 4,
+      "question": "What's the scariest natural hazard: earthquake, tornado, hurricane, or avalanche?",
+      "options": [
+        "earthquake",
+        "tornado",
+        "hurricane",
+        "avalanche"
+      ]
+    },
+    {
+      "n": 5,
+      "question": "Which Idaho place would you rather visit: Craters of the Moon, Bruneau Dunes, or Thousand Springs?",
+      "options": [
+        "Craters of the Moon",
+        "Bruneau Dunes",
+        "Thousand Springs"
+      ]
+    },
+    {
+      "n": 6,
+      "question": "Would you rather survive a week in the desert or a week in the Arctic?",
+      "options": [
+        "a week in the desert",
+        "a week in the Arctic"
+      ]
+    },
+    {
+      "n": 7,
+      "question": "If you could have one survival tool, would it be a compass, a water filter, or a fire starter?",
+      "options": [
+        "a compass",
+        "a water filter",
+        "a fire starter"
+      ]
+    },
+    {
+      "n": 8,
+      "question": "Which season has the best weather in Idaho?",
+      "options": null,
+      "openEnded": true,
+      "note": "No options given in the doc"
+    },
+    {
+      "n": 9,
+      "question": "Would you rather watch a geyser erupt or the northern lights?",
+      "options": [
+        "watch a geyser erupt",
+        "the northern lights"
+      ]
+    },
+    {
+      "n": 10,
+      "question": "Have you ever felt an earthquake? Yes, no, or not sure.",
+      "options": [
+        "Yes",
+        "No",
+        "Not sure"
+      ]
+    },
+    {
+      "n": 11,
+      "question": "Would you rather be a geologist, a meteorologist, an oceanographer, or an astronomer?",
+      "options": [
+        "a geologist",
+        "a meteorologist",
+        "an oceanographer",
+        "an astronomer"
+      ]
+    },
+    {
+      "n": 12,
+      "question": "What's the coolest rock: obsidian, pumice, geodes, or granite?",
+      "options": [
+        "obsidian",
+        "pumice",
+        "geodes",
+        "granite"
+      ]
+    },
+    {
+      "n": 13,
+      "question": "Would you rather have a pet rock or a pet trilobite (if it were alive)?",
+      "options": [
+        "have a pet rock",
+        "a pet trilobite (if it were alive)"
+      ]
+    },
+    {
+      "n": 14,
+      "question": "Snow day or sunny day?",
+      "options": [
+        "Snow day",
+        "sunny day"
+      ]
+    },
+    {
+      "n": 15,
+      "question": "Would you rather hike the Tetons or float the Snake River?",
+      "options": [
+        "hike the Tetons",
+        "float the Snake River"
+      ]
+    },
+    {
+      "n": 16,
+      "question": "Which would you rather see in person: a tornado (safely), a lava flow, or a solar eclipse?",
+      "options": [
+        "a tornado (safely)",
+        "a lava flow",
+        "a solar eclipse"
+      ]
+    },
+    {
+      "n": 17,
+      "question": "Do you think humans will live on Mars in your lifetime?",
+      "options": null,
+      "openEnded": true,
+      "note": "No options given in the doc"
+    },
+    {
+      "n": 18,
+      "question": "Would you rather know the exact day of the next big earthquake or never know?",
+      "options": [
+        "know the exact day of the next big earthquake",
+        "never know"
+      ]
+    },
+    {
+      "n": 19,
+      "question": "Which is more amazing: the Grand Canyon or Mount Everest?",
+      "options": [
+        "the Grand Canyon",
+        "Mount Everest"
+      ]
+    },
+    {
+      "n": 20,
+      "question": "How many hours do you spend outside on a normal day: 0 to 1, 1 to 3, or 3 or more?",
+      "options": [
+        "0 to 1",
+        "1 to 3",
+        "3 or more"
+      ]
+    },
+    {
+      "n": 21,
+      "question": "Would you rather travel back to see the dinosaurs or forward 1,000 years?",
+      "options": [
+        "travel back to see the dinosaurs",
+        "forward 1,000 years"
+      ]
+    },
+    {
+      "n": 22,
+      "question": "Which Earth sphere would you rather study: rocks, water, air, or living things?",
+      "options": [
+        "rocks",
+        "water",
+        "air",
+        "living things"
+      ]
+    },
+    {
+      "n": 23,
+      "question": "Have you ever been to Yellowstone? Yes or no.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "n": 24,
+      "question": "Would you rather have a house powered by solar, wind, hydro, or nuclear?",
+      "options": [
+        "solar",
+        "wind",
+        "hydro",
+        "nuclear"
+      ]
+    },
+    {
+      "n": 25,
+      "question": "Thunderstorms: love them or hate them?",
+      "options": [
+        "love them",
+        "hate them"
+      ]
+    },
+    {
+      "n": 26,
+      "question": "Would you rather swim with sharks or explore a cave full of bats?",
+      "options": [
+        "swim with sharks",
+        "explore a cave full of bats"
+      ]
+    },
+    {
+      "n": 27,
+      "question": "Which Idaho rock or mineral would you rather find: a star garnet, opal, or agate?",
+      "options": [
+        "a star garnet",
+        "opal",
+        "agate"
+      ]
+    },
+    {
+      "n": 28,
+      "question": "Do you check the weather forecast before school?",
+      "options": null,
+      "openEnded": true,
+      "note": "No options given in the doc"
+    },
+    {
+      "n": 29,
+      "question": "Would you rather live on the coast or in the mountains?",
+      "options": [
+        "on the coast",
+        "in the mountains"
+      ]
+    },
+    {
+      "n": 30,
+      "question": "Is Pluto a planet? Yes or no.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "n": 31,
+      "question": "Would you rather lose your phone's GPS or its camera?",
+      "options": [
+        "lose your phone's GPS",
+        "its camera"
+      ]
+    },
+    {
+      "n": 32,
+      "question": "Which would you rather name: a new mineral, a new dinosaur, or a new star?",
+      "options": [
+        "a new mineral",
+        "a new dinosaur",
+        "a new star"
+      ]
+    },
+    {
+      "n": 33,
+      "question": "Do you think there's life on other planets?",
+      "options": null,
+      "openEnded": true,
+      "note": "No options given in the doc"
+    },
+    {
+      "n": 34,
+      "question": "Would you rather ride out a blizzard at home or a heat wave at home?",
+      "options": [
+        "a blizzard at home",
+        "a heat wave at home"
+      ]
+    },
+    {
+      "n": 35,
+      "question": "What's the best snack for a geology field trip?",
+      "options": null,
+      "openEnded": true,
+      "note": "No options given in the doc"
+    },
+    {
+      "n": 36,
+      "question": "Would you rather ski at Grand Targhee or soak in Lava Hot Springs?",
+      "options": [
+        "ski at Grand Targhee",
+        "soak in Lava Hot Springs"
+      ]
+    },
+    {
+      "n": 37,
+      "question": "Would you rather be the first person on Mars or the first to reach the bottom of every ocean trench?",
+      "options": [
+        "be the first person on Mars",
+        "the first to reach the bottom of every ocean trench"
+      ]
+    },
+    {
+      "n": 38,
+      "question": "If Earth's magnetic poles flipped tomorrow, would you notice?",
+      "options": null,
+      "openEnded": true,
+      "note": "No options given in the doc"
+    },
+    {
+      "n": 39,
+      "question": "Which is the biggest threat to Idaho's water: drought, pollution, or overuse?",
+      "options": [
+        "drought",
+        "pollution",
+        "overuse"
+      ]
+    },
+    {
+      "n": 40,
+      "question": "After this class, will you look at rocks differently? Yes, no, or I already did.",
+      "options": [
+        "Yes",
+        "No",
+        "I already did"
+      ]
+    }
+  ],
+  "optionsNote": "options were derived from each question's wording; question text is verbatim"
+}

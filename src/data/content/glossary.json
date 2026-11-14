@@ -1,0 +1,3307 @@
+[
+  {
+    "term": "Earth science",
+    "definition": "the study of Earth and its neighbors in space.",
+    "chapter": 1
+  },
+  {
+    "term": "Geology",
+    "definition": "the study of rocks, minerals, and the solid Earth.",
+    "chapter": 1
+  },
+  {
+    "term": "Oceanography",
+    "definition": "the study of the oceans.",
+    "chapter": 1
+  },
+  {
+    "term": "Meteorology",
+    "definition": "the study of weather and the atmosphere.",
+    "chapter": 1
+  },
+  {
+    "term": "Astronomy",
+    "definition": "the study of the Moon, Sun, stars, and space.",
+    "chapter": 1
+  },
+  {
+    "term": "Scientific method",
+    "definition": "a step-by-step way scientists answer questions.",
+    "chapter": 1
+  },
+  {
+    "term": "Observation",
+    "definition": "noticing something using your senses or tools.",
+    "chapter": 1
+  },
+  {
+    "term": "Question",
+    "definition": "what you want to find out about an observation.",
+    "chapter": 1
+  },
+  {
+    "term": "Hypothesis",
+    "definition": "a smart guess that can be tested.",
+    "chapter": 1
+  },
+  {
+    "term": "Experiment",
+    "definition": "a fair test of a hypothesis.",
+    "chapter": 1
+  },
+  {
+    "term": "Data",
+    "definition": "the facts and measurements you collect.",
+    "chapter": 1
+  },
+  {
+    "term": "Analyze",
+    "definition": "to study data to find patterns.",
+    "chapter": 1
+  },
+  {
+    "term": "Conclusion",
+    "definition": "what the data tells you about your hypothesis.",
+    "chapter": 1
+  },
+  {
+    "term": "Independent variable",
+    "definition": "the thing you change on purpose in an experiment.",
+    "chapter": 1
+  },
+  {
+    "term": "Dependent variable",
+    "definition": "the thing you measure in an experiment.",
+    "chapter": 1
+  },
+  {
+    "term": "Control",
+    "definition": "what you keep the same so the test is fair.",
+    "chapter": 1
+  },
+  {
+    "term": "Scientific theory",
+    "definition": "a well-tested explanation of why something happens, backed by lots of evidence.",
+    "chapter": 1
+  },
+  {
+    "term": "Scientific law",
+    "definition": "a statement of what always happens, often written as math.",
+    "chapter": 1
+  },
+  {
+    "term": "Evidence",
+    "definition": "facts and data that support or reject an idea.",
+    "chapter": 1
+  },
+  {
+    "term": "Metric system (SI)",
+    "definition": "the measuring system scientists use, based on tens.",
+    "chapter": 1
+  },
+  {
+    "term": "Meter",
+    "definition": "the basic metric unit of length.",
+    "chapter": 1
+  },
+  {
+    "term": "Gram",
+    "definition": "a metric unit of mass.",
+    "chapter": 1
+  },
+  {
+    "term": "Kilogram",
+    "definition": "1,000 grams.",
+    "chapter": 1
+  },
+  {
+    "term": "Liter",
+    "definition": "the basic metric unit of volume.",
+    "chapter": 1
+  },
+  {
+    "term": "Degrees Celsius",
+    "definition": "the metric temperature scale; water freezes at 0 and boils at 100.",
+    "chapter": 1
+  },
+  {
+    "term": "Model",
+    "definition": "a map, diagram, globe, or computer program that represents something real.",
+    "chapter": 1
+  },
+  {
+    "term": "Lab safety",
+    "definition": "rules that keep you from getting hurt during experiments.",
+    "chapter": 1
+  },
+  {
+    "term": "Latitude",
+    "definition": "distance north or south of the equator, in degrees.",
+    "chapter": 2
+  },
+  {
+    "term": "Longitude",
+    "definition": "distance east or west of the prime meridian, in degrees.",
+    "chapter": 2
+  },
+  {
+    "term": "Equator",
+    "definition": "the 0° latitude line around Earth's middle.",
+    "chapter": 2
+  },
+  {
+    "term": "Prime meridian",
+    "definition": "the 0° longitude line through Greenwich, England.",
+    "chapter": 2
+  },
+  {
+    "term": "Degree",
+    "definition": "the unit for measuring latitude and longitude.",
+    "chapter": 2
+  },
+  {
+    "term": "Minute",
+    "definition": "one-sixtieth of a degree.",
+    "chapter": 2
+  },
+  {
+    "term": "Coordinates",
+    "definition": "the latitude and longitude that give a place's exact address.",
+    "chapter": 2
+  },
+  {
+    "term": "Time zone",
+    "definition": "a region that uses the same clock time, about 15° wide.",
+    "chapter": 2
+  },
+  {
+    "term": "International Date Line",
+    "definition": "the line near 180° where the calendar date changes.",
+    "chapter": 2
+  },
+  {
+    "term": "Map",
+    "definition": "a flat drawing of an area.",
+    "chapter": 2
+  },
+  {
+    "term": "Globe",
+    "definition": "a round model of Earth; the only fully accurate map.",
+    "chapter": 2
+  },
+  {
+    "term": "Map projection",
+    "definition": "a way to show round Earth on flat paper; always distorts something.",
+    "chapter": 2
+  },
+  {
+    "term": "Mercator projection",
+    "definition": "a map good for navigation that makes land near the poles look too big.",
+    "chapter": 2
+  },
+  {
+    "term": "Equal-area projection",
+    "definition": "a map that keeps sizes correct but bends shapes.",
+    "chapter": 2
+  },
+  {
+    "term": "Legend (key)",
+    "definition": "the box that explains a map's symbols.",
+    "chapter": 2
+  },
+  {
+    "term": "Scale",
+    "definition": "shows how distance on a map compares to real distance.",
+    "chapter": 2
+  },
+  {
+    "term": "Compass rose",
+    "definition": "the symbol showing north, south, east, and west.",
+    "chapter": 2
+  },
+  {
+    "term": "Topographic map",
+    "definition": "a map that shows the shape and height of the land.",
+    "chapter": 2
+  },
+  {
+    "term": "Contour line",
+    "definition": "a line on a topo map connecting points of equal elevation.",
+    "chapter": 2
+  },
+  {
+    "term": "Elevation",
+    "definition": "height above sea level.",
+    "chapter": 2
+  },
+  {
+    "term": "Contour interval",
+    "definition": "the height difference between contour lines.",
+    "chapter": 2
+  },
+  {
+    "term": "GPS",
+    "definition": "Global Positioning System; uses satellites to find your exact location.",
+    "chapter": 2
+  },
+  {
+    "term": "Satellite",
+    "definition": "an object that orbits a planet.",
+    "chapter": 2
+  },
+  {
+    "term": "Remote sensing",
+    "definition": "studying Earth from a distance using satellites or planes.",
+    "chapter": 2
+  },
+  {
+    "term": "GIS",
+    "definition": "Geographic Information Systems; computer maps that stack layers of data.",
+    "chapter": 2
+  },
+  {
+    "term": "Matter",
+    "definition": "anything that has mass and takes up space.",
+    "chapter": 3
+  },
+  {
+    "term": "Mass",
+    "definition": "the amount of matter in an object.",
+    "chapter": 3
+  },
+  {
+    "term": "Atom",
+    "definition": "the tiny basic building block of matter.",
+    "chapter": 3
+  },
+  {
+    "term": "Proton",
+    "definition": "a positive particle in an atom's nucleus.",
+    "chapter": 3
+  },
+  {
+    "term": "Neutron",
+    "definition": "a particle with no charge in an atom's nucleus.",
+    "chapter": 3
+  },
+  {
+    "term": "Electron",
+    "definition": "a negative particle that moves around an atom's nucleus.",
+    "chapter": 3
+  },
+  {
+    "term": "Nucleus",
+    "definition": "the center of an atom.",
+    "chapter": 3
+  },
+  {
+    "term": "Element",
+    "definition": "a substance made of only one kind of atom.",
+    "chapter": 3
+  },
+  {
+    "term": "Periodic table",
+    "definition": "the chart that organizes all the elements.",
+    "chapter": 3
+  },
+  {
+    "term": "Compound",
+    "definition": "a substance made of two or more elements bonded together.",
+    "chapter": 3
+  },
+  {
+    "term": "Chemical bond",
+    "definition": "the force that holds atoms together in a compound.",
+    "chapter": 3
+  },
+  {
+    "term": "Silicon",
+    "definition": "the second most common element in Earth's crust.",
+    "chapter": 3
+  },
+  {
+    "term": "Oxygen",
+    "definition": "the most common element in Earth's crust.",
+    "chapter": 3
+  },
+  {
+    "term": "States of matter",
+    "definition": "the forms matter takes: solid, liquid, gas, plasma.",
+    "chapter": 3
+  },
+  {
+    "term": "Solid",
+    "definition": "matter with a fixed shape.",
+    "chapter": 3
+  },
+  {
+    "term": "Liquid",
+    "definition": "matter that takes the shape of its container.",
+    "chapter": 3
+  },
+  {
+    "term": "Gas",
+    "definition": "matter that spreads out to fill any space.",
+    "chapter": 3
+  },
+  {
+    "term": "Plasma",
+    "definition": "super-hot, electrically charged gas, like lightning and the Sun.",
+    "chapter": 3
+  },
+  {
+    "term": "Melting",
+    "definition": "a solid turning into a liquid.",
+    "chapter": 3
+  },
+  {
+    "term": "Evaporation",
+    "definition": "a liquid turning into a gas.",
+    "chapter": 3
+  },
+  {
+    "term": "Condensation",
+    "definition": "a gas turning into a liquid.",
+    "chapter": 3
+  },
+  {
+    "term": "Geosphere",
+    "definition": "the solid Earth: rocks, mountains, and the core.",
+    "chapter": 3
+  },
+  {
+    "term": "Hydrosphere",
+    "definition": "all of Earth's water.",
+    "chapter": 3
+  },
+  {
+    "term": "Atmosphere",
+    "definition": "the layer of air around Earth.",
+    "chapter": 3
+  },
+  {
+    "term": "Biosphere",
+    "definition": "all living things on Earth.",
+    "chapter": 3
+  },
+  {
+    "term": "System",
+    "definition": "a group of parts that work together and affect each other.",
+    "chapter": 3
+  },
+  {
+    "term": "Feedback",
+    "definition": "when one change causes other changes in a system.",
+    "chapter": 3
+  },
+  {
+    "term": "Energy",
+    "definition": "the ability to cause change or do work.",
+    "chapter": 3
+  },
+  {
+    "term": "Solar energy",
+    "definition": "energy from the Sun.",
+    "chapter": 3
+  },
+  {
+    "term": "Internal heat",
+    "definition": "heat inside Earth left over from its formation and from radioactive elements.",
+    "chapter": 3
+  },
+  {
+    "term": "Cycle",
+    "definition": "a process that repeats over and over.",
+    "chapter": 3
+  },
+  {
+    "term": "Mineral",
+    "definition": "a natural, inorganic solid with a set chemical makeup and a crystal structure.",
+    "chapter": 4
+  },
+  {
+    "term": "Inorganic",
+    "definition": "not made by living things.",
+    "chapter": 4
+  },
+  {
+    "term": "Crystal",
+    "definition": "a solid whose atoms line up in a repeating pattern.",
+    "chapter": 4
+  },
+  {
+    "term": "Silicate",
+    "definition": "a mineral containing silicon and oxygen; makes up most of the crust.",
+    "chapter": 4
+  },
+  {
+    "term": "Carbonate",
+    "definition": "a mineral containing carbon and oxygen, like calcite.",
+    "chapter": 4
+  },
+  {
+    "term": "Oxide",
+    "definition": "a mineral made of a metal bonded to oxygen, like hematite.",
+    "chapter": 4
+  },
+  {
+    "term": "Native element",
+    "definition": "a mineral made of one pure element, like gold or copper.",
+    "chapter": 4
+  },
+  {
+    "term": "Streak",
+    "definition": "the color of a mineral's powder.",
+    "chapter": 4
+  },
+  {
+    "term": "Luster",
+    "definition": "how a mineral shines: metallic or nonmetallic.",
+    "chapter": 4
+  },
+  {
+    "term": "Hardness",
+    "definition": "how easily a mineral can be scratched.",
+    "chapter": 4
+  },
+  {
+    "term": "Mohs scale",
+    "definition": "ranks mineral hardness from 1 (talc) to 10 (diamond).",
+    "chapter": 4
+  },
+  {
+    "term": "Cleavage",
+    "definition": "when a mineral breaks along flat, smooth surfaces.",
+    "chapter": 4
+  },
+  {
+    "term": "Fracture",
+    "definition": "when a mineral breaks unevenly or in curves.",
+    "chapter": 4
+  },
+  {
+    "term": "Density",
+    "definition": "how much mass is packed into a certain space.",
+    "chapter": 4
+  },
+  {
+    "term": "Gem",
+    "definition": "a rare, hard, beautiful mineral cut and polished for jewelry.",
+    "chapter": 4
+  },
+  {
+    "term": "Ore",
+    "definition": "a mineral mined for profit, usually for a metal.",
+    "chapter": 4
+  },
+  {
+    "term": "Igneous rock",
+    "definition": "rock formed when melted rock cools and hardens.",
+    "chapter": 5
+  },
+  {
+    "term": "Magma",
+    "definition": "melted rock underground.",
+    "chapter": 5
+  },
+  {
+    "term": "Lava",
+    "definition": "melted rock at the surface.",
+    "chapter": 5
+  },
+  {
+    "term": "Intrusive",
+    "definition": "igneous rock that cooled slowly underground; big crystals.",
+    "chapter": 5
+  },
+  {
+    "term": "Extrusive",
+    "definition": "igneous rock that cooled quickly at the surface; small or no crystals.",
+    "chapter": 5
+  },
+  {
+    "term": "Texture",
+    "definition": "the size, shape, and arrangement of a rock's grains.",
+    "chapter": 5
+  },
+  {
+    "term": "Coarse-grained",
+    "definition": "having crystals big enough to see.",
+    "chapter": 5
+  },
+  {
+    "term": "Fine-grained",
+    "definition": "having crystals too small to see easily.",
+    "chapter": 5
+  },
+  {
+    "term": "Glassy",
+    "definition": "having no crystals because it cooled extremely fast.",
+    "chapter": 5
+  },
+  {
+    "term": "Vesicular",
+    "definition": "full of holes from gas bubbles.",
+    "chapter": 5
+  },
+  {
+    "term": "Porphyritic",
+    "definition": "big crystals in a fine-grained background.",
+    "chapter": 5
+  },
+  {
+    "term": "Felsic",
+    "definition": "light-colored igneous rock rich in silica.",
+    "chapter": 5
+  },
+  {
+    "term": "Mafic",
+    "definition": "dark-colored igneous rock rich in iron and magnesium.",
+    "chapter": 5
+  },
+  {
+    "term": "Granite",
+    "definition": "a light, coarse-grained intrusive rock.",
+    "chapter": 5
+  },
+  {
+    "term": "Basalt",
+    "definition": "a dark, fine-grained extrusive rock; covers the Snake River Plain.",
+    "chapter": 5
+  },
+  {
+    "term": "Obsidian",
+    "definition": "natural volcanic glass.",
+    "chapter": 5
+  },
+  {
+    "term": "Pumice",
+    "definition": "a light, holey volcanic rock that can float.",
+    "chapter": 5
+  },
+  {
+    "term": "Sediment",
+    "definition": "loose bits of rock, sand, mud, and shells.",
+    "chapter": 6
+  },
+  {
+    "term": "Sedimentary rock",
+    "definition": "rock formed from sediment pressed and glued together.",
+    "chapter": 6
+  },
+  {
+    "term": "Compaction",
+    "definition": "squeezing sediment together under weight.",
+    "chapter": 6
+  },
+  {
+    "term": "Cementation",
+    "definition": "minerals gluing sediment together.",
+    "chapter": 6
+  },
+  {
+    "term": "Clastic rock",
+    "definition": "sedimentary rock made of broken rock pieces.",
+    "chapter": 6
+  },
+  {
+    "term": "Chemical rock",
+    "definition": "sedimentary rock formed from minerals coming out of water.",
+    "chapter": 6
+  },
+  {
+    "term": "Organic rock",
+    "definition": "sedimentary rock made from the remains of living things.",
+    "chapter": 6
+  },
+  {
+    "term": "Conglomerate",
+    "definition": "sedimentary rock of rounded pebbles cemented together.",
+    "chapter": 6
+  },
+  {
+    "term": "Sandstone",
+    "definition": "sedimentary rock made of sand grains.",
+    "chapter": 6
+  },
+  {
+    "term": "Shale",
+    "definition": "sedimentary rock made of fine mud.",
+    "chapter": 6
+  },
+  {
+    "term": "Limestone",
+    "definition": "sedimentary rock made mostly of calcite, often from shells.",
+    "chapter": 6
+  },
+  {
+    "term": "Coal",
+    "definition": "organic rock made from ancient swamp plants.",
+    "chapter": 6
+  },
+  {
+    "term": "Strata",
+    "definition": "layers of rock.",
+    "chapter": 6
+  },
+  {
+    "term": "Fossil",
+    "definition": "preserved remains or traces of ancient life.",
+    "chapter": 6
+  },
+  {
+    "term": "Metamorphic rock",
+    "definition": "rock changed by heat, pressure, or fluids without melting.",
+    "chapter": 6
+  },
+  {
+    "term": "Contact metamorphism",
+    "definition": "rock baked by nearby magma.",
+    "chapter": 6
+  },
+  {
+    "term": "Regional metamorphism",
+    "definition": "large areas of rock changed by heat and pressure during mountain building.",
+    "chapter": 6
+  },
+  {
+    "term": "Foliated",
+    "definition": "metamorphic rock with flat layers or bands.",
+    "chapter": 6
+  },
+  {
+    "term": "Non-foliated",
+    "definition": "metamorphic rock without layers.",
+    "chapter": 6
+  },
+  {
+    "term": "Slate",
+    "definition": "a foliated rock formed from shale.",
+    "chapter": 6
+  },
+  {
+    "term": "Schist",
+    "definition": "a sparkly foliated rock.",
+    "chapter": 6
+  },
+  {
+    "term": "Gneiss",
+    "definition": "a foliated rock with striped bands.",
+    "chapter": 6
+  },
+  {
+    "term": "Marble",
+    "definition": "a non-foliated rock formed from limestone.",
+    "chapter": 6
+  },
+  {
+    "term": "Quartzite",
+    "definition": "a hard non-foliated rock formed from sandstone.",
+    "chapter": 6
+  },
+  {
+    "term": "Rock cycle",
+    "definition": "the endless process of rocks changing from one type to another.",
+    "chapter": 7
+  },
+  {
+    "term": "Melting",
+    "definition": "heat turning rock into magma.",
+    "chapter": 7
+  },
+  {
+    "term": "Crystallization",
+    "definition": "magma or lava cooling into crystals.",
+    "chapter": 7
+  },
+  {
+    "term": "Weathering",
+    "definition": "breaking rock into smaller pieces.",
+    "chapter": 7
+  },
+  {
+    "term": "Erosion",
+    "definition": "moving weathered rock away.",
+    "chapter": 7
+  },
+  {
+    "term": "Deposition",
+    "definition": "dropping sediment in a new place.",
+    "chapter": 7
+  },
+  {
+    "term": "Compaction",
+    "definition": "pressing sediment together.",
+    "chapter": 7
+  },
+  {
+    "term": "Cementation",
+    "definition": "gluing sediment into rock.",
+    "chapter": 7
+  },
+  {
+    "term": "Uplift",
+    "definition": "forces pushing buried rock up to the surface.",
+    "chapter": 7
+  },
+  {
+    "term": "Weathering",
+    "definition": "breaking rock into smaller pieces where it sits.",
+    "chapter": 8
+  },
+  {
+    "term": "Erosion",
+    "definition": "moving weathered material to a new place.",
+    "chapter": 8
+  },
+  {
+    "term": "Deposition",
+    "definition": "dropping sediment when the mover slows down.",
+    "chapter": 8
+  },
+  {
+    "term": "Mechanical weathering",
+    "definition": "breaking rock without changing what it's made of.",
+    "chapter": 8
+  },
+  {
+    "term": "Frost wedging",
+    "definition": "water freezing and expanding in cracks, splitting rock.",
+    "chapter": 8
+  },
+  {
+    "term": "Abrasion",
+    "definition": "rock being scraped and worn down by other particles.",
+    "chapter": 8
+  },
+  {
+    "term": "Chemical weathering",
+    "definition": "changing the minerals in a rock into new substances.",
+    "chapter": 8
+  },
+  {
+    "term": "Oxidation",
+    "definition": "oxygen reacting with iron in rock; rusting.",
+    "chapter": 8
+  },
+  {
+    "term": "Acid rain",
+    "definition": "rain made more acidic by pollution.",
+    "chapter": 8
+  },
+  {
+    "term": "Soil",
+    "definition": "a mix of weathered rock, humus, water, air, and living things.",
+    "chapter": 8
+  },
+  {
+    "term": "Humus",
+    "definition": "dark, rotting plant and animal material in soil.",
+    "chapter": 8
+  },
+  {
+    "term": "Horizon",
+    "definition": "a layer of soil.",
+    "chapter": 8
+  },
+  {
+    "term": "Topsoil",
+    "definition": "the dark, rich A horizon where plants grow.",
+    "chapter": 8
+  },
+  {
+    "term": "Subsoil",
+    "definition": "the lighter B horizon below topsoil.",
+    "chapter": 8
+  },
+  {
+    "term": "Bedrock",
+    "definition": "the solid rock beneath soil.",
+    "chapter": 8
+  },
+  {
+    "term": "Dust Bowl",
+    "definition": "1930s disaster when drought and poor farming blew away Great Plains topsoil.",
+    "chapter": 8
+  },
+  {
+    "term": "Mass movement",
+    "definition": "rock and soil moving downhill because of gravity.",
+    "chapter": 9
+  },
+  {
+    "term": "Creep",
+    "definition": "very slow downhill movement of soil.",
+    "chapter": 9
+  },
+  {
+    "term": "Slump",
+    "definition": "a block of ground sliding down along a curved surface.",
+    "chapter": 9
+  },
+  {
+    "term": "Mudflow",
+    "definition": "a fast flow of water-soaked soil.",
+    "chapter": 9
+  },
+  {
+    "term": "Landslide",
+    "definition": "a large mass of rock and soil suddenly sliding downhill.",
+    "chapter": 9
+  },
+  {
+    "term": "Rockfall",
+    "definition": "rocks falling freely from a cliff.",
+    "chapter": 9
+  },
+  {
+    "term": "Deflation",
+    "definition": "wind blowing away loose sand and dust.",
+    "chapter": 9
+  },
+  {
+    "term": "Sand dune",
+    "definition": "a hill of wind-blown sand.",
+    "chapter": 9
+  },
+  {
+    "term": "Loess",
+    "definition": "fine, fertile, wind-blown dust deposits.",
+    "chapter": 9
+  },
+  {
+    "term": "Glacier",
+    "definition": "a large mass of moving ice on land.",
+    "chapter": 9
+  },
+  {
+    "term": "Valley glacier",
+    "definition": "a glacier that flows down a mountain valley.",
+    "chapter": 9
+  },
+  {
+    "term": "Continental glacier",
+    "definition": "a huge ice sheet covering a large area of land.",
+    "chapter": 9
+  },
+  {
+    "term": "U-shaped valley",
+    "definition": "a valley widened and carved by a glacier.",
+    "chapter": 9
+  },
+  {
+    "term": "Cirque",
+    "definition": "a bowl-shaped hollow carved at the head of a glacier.",
+    "chapter": 9
+  },
+  {
+    "term": "Horn",
+    "definition": "a sharp peak carved by glaciers on several sides.",
+    "chapter": 9
+  },
+  {
+    "term": "Moraine",
+    "definition": "a ridge of rock and dirt dumped by a glacier.",
+    "chapter": 9
+  },
+  {
+    "term": "Ice age",
+    "definition": "a long cold period when glaciers covered large areas.",
+    "chapter": 9
+  },
+  {
+    "term": "Water cycle",
+    "definition": "the continuous movement of water between Earth's surface and the air.",
+    "chapter": 10
+  },
+  {
+    "term": "Evaporation",
+    "definition": "liquid water turning into water vapor.",
+    "chapter": 10
+  },
+  {
+    "term": "Transpiration",
+    "definition": "plants releasing water vapor through their leaves.",
+    "chapter": 10
+  },
+  {
+    "term": "Condensation",
+    "definition": "water vapor cooling into liquid droplets.",
+    "chapter": 10
+  },
+  {
+    "term": "Precipitation",
+    "definition": "water falling from clouds as rain, snow, sleet, or hail.",
+    "chapter": 10
+  },
+  {
+    "term": "Runoff",
+    "definition": "water flowing over the ground into streams.",
+    "chapter": 10
+  },
+  {
+    "term": "Infiltration",
+    "definition": "water soaking into the ground.",
+    "chapter": 10
+  },
+  {
+    "term": "Tributary",
+    "definition": "a smaller stream that flows into a larger river.",
+    "chapter": 10
+  },
+  {
+    "term": "Watershed",
+    "definition": "all the land that drains into one river.",
+    "chapter": 10
+  },
+  {
+    "term": "Divide",
+    "definition": "high ground that separates watersheds.",
+    "chapter": 10
+  },
+  {
+    "term": "Continental Divide",
+    "definition": "the divide separating water flowing to the Pacific from water flowing to the Atlantic.",
+    "chapter": 10
+  },
+  {
+    "term": "Meander",
+    "definition": "a loop or bend in a slow river.",
+    "chapter": 10
+  },
+  {
+    "term": "Oxbow lake",
+    "definition": "a curved lake formed when a meander is cut off.",
+    "chapter": 10
+  },
+  {
+    "term": "Delta",
+    "definition": "a fan of sediment where a river enters a lake or ocean.",
+    "chapter": 10
+  },
+  {
+    "term": "Floodplain",
+    "definition": "flat land beside a river that floods.",
+    "chapter": 10
+  },
+  {
+    "term": "Levee",
+    "definition": "a raised wall along a river to prevent flooding.",
+    "chapter": 10
+  },
+  {
+    "term": "Wetland",
+    "definition": "land soaked with water, like a marsh or swamp.",
+    "chapter": 10
+  },
+  {
+    "term": "Groundwater",
+    "definition": "water stored underground in spaces in soil and rock.",
+    "chapter": 11
+  },
+  {
+    "term": "Porosity",
+    "definition": "how much open space a rock or soil has.",
+    "chapter": 11
+  },
+  {
+    "term": "Permeability",
+    "definition": "how easily water flows through rock or soil.",
+    "chapter": 11
+  },
+  {
+    "term": "Zone of aeration",
+    "definition": "the upper underground zone where spaces hold air and some water.",
+    "chapter": 11
+  },
+  {
+    "term": "Water table",
+    "definition": "the top of the zone of saturation.",
+    "chapter": 11
+  },
+  {
+    "term": "Zone of saturation",
+    "definition": "the underground zone where all spaces are filled with water.",
+    "chapter": 11
+  },
+  {
+    "term": "Aquifer",
+    "definition": "an underground layer of rock or sediment that holds and moves water.",
+    "chapter": 11
+  },
+  {
+    "term": "Aquitard",
+    "definition": "a layer that blocks the flow of groundwater.",
+    "chapter": 11
+  },
+  {
+    "term": "Recharge",
+    "definition": "water refilling an aquifer.",
+    "chapter": 11
+  },
+  {
+    "term": "Well",
+    "definition": "a hole dug or drilled to reach groundwater.",
+    "chapter": 11
+  },
+  {
+    "term": "Spring",
+    "definition": "a place where groundwater flows out naturally.",
+    "chapter": 11
+  },
+  {
+    "term": "Artesian well",
+    "definition": "a well where pressure pushes water up on its own.",
+    "chapter": 11
+  },
+  {
+    "term": "Cave",
+    "definition": "an underground hollow, often dissolved in limestone.",
+    "chapter": 11
+  },
+  {
+    "term": "Stalactite",
+    "definition": "a mineral formation hanging from a cave ceiling.",
+    "chapter": 11
+  },
+  {
+    "term": "Stalagmite",
+    "definition": "a mineral formation growing up from a cave floor.",
+    "chapter": 11
+  },
+  {
+    "term": "Sinkhole",
+    "definition": "a hole formed when ground collapses into an empty space below.",
+    "chapter": 11
+  },
+  {
+    "term": "Hot spring",
+    "definition": "a spring of groundwater heated by hot rock.",
+    "chapter": 11
+  },
+  {
+    "term": "Geyser",
+    "definition": "a hot spring that erupts water and steam.",
+    "chapter": 11
+  },
+  {
+    "term": "Seismic wave",
+    "definition": "energy from an earthquake traveling through Earth.",
+    "chapter": 12
+  },
+  {
+    "term": "Seismograph",
+    "definition": "an instrument that records seismic waves.",
+    "chapter": 12
+  },
+  {
+    "term": "P wave",
+    "definition": "the fastest seismic wave; travels through solids and liquids.",
+    "chapter": 12
+  },
+  {
+    "term": "S wave",
+    "definition": "a slower seismic wave; travels only through solids.",
+    "chapter": 12
+  },
+  {
+    "term": "Shadow zone",
+    "definition": "the area on Earth where no S waves are detected, showing the outer core is liquid.",
+    "chapter": 12
+  },
+  {
+    "term": "Crust",
+    "definition": "Earth's thin, rocky outer layer.",
+    "chapter": 12
+  },
+  {
+    "term": "Oceanic crust",
+    "definition": "thin, dense crust made of basalt under the oceans.",
+    "chapter": 12
+  },
+  {
+    "term": "Continental crust",
+    "definition": "thicker, lighter crust made mostly of granite.",
+    "chapter": 12
+  },
+  {
+    "term": "Mantle",
+    "definition": "the thick, hot, slowly flowing layer under the crust.",
+    "chapter": 12
+  },
+  {
+    "term": "Outer core",
+    "definition": "the liquid iron and nickel layer around the inner core.",
+    "chapter": 12
+  },
+  {
+    "term": "Inner core",
+    "definition": "the solid iron and nickel center of Earth.",
+    "chapter": 12
+  },
+  {
+    "term": "Lithosphere",
+    "definition": "the rigid outer layer made of crust and upper mantle.",
+    "chapter": 12
+  },
+  {
+    "term": "Asthenosphere",
+    "definition": "the soft, flowing layer of mantle under the lithosphere.",
+    "chapter": 12
+  },
+  {
+    "term": "Convection",
+    "definition": "heat transfer by hot material rising and cool material sinking.",
+    "chapter": 12
+  },
+  {
+    "term": "Convection current",
+    "definition": "a circular flow caused by convection, like in the mantle.",
+    "chapter": 12
+  },
+  {
+    "term": "Magnetic field",
+    "definition": "the invisible force field around Earth created by its outer core.",
+    "chapter": 12
+  },
+  {
+    "term": "Aurora",
+    "definition": "glowing lights in the sky near the poles caused by solar particles.",
+    "chapter": 12
+  },
+  {
+    "term": "Continental drift",
+    "definition": "Wegener's idea that continents slowly move.",
+    "chapter": 13
+  },
+  {
+    "term": "Pangaea",
+    "definition": "the supercontinent that broke apart about 200 million years ago.",
+    "chapter": 13
+  },
+  {
+    "term": "Alfred Wegener",
+    "definition": "the scientist who proposed continental drift in 1912.",
+    "chapter": 13
+  },
+  {
+    "term": "Mid-ocean ridge",
+    "definition": "an underwater mountain chain where new ocean crust forms.",
+    "chapter": 13
+  },
+  {
+    "term": "Sea-floor spreading",
+    "definition": "new crust forming at ridges and pushing older crust away.",
+    "chapter": 13
+  },
+  {
+    "term": "Magnetic reversal",
+    "definition": "a flip of Earth's magnetic poles, recorded in rock.",
+    "chapter": 13
+  },
+  {
+    "term": "Plate tectonics",
+    "definition": "the theory that Earth's lithosphere is broken into moving plates.",
+    "chapter": 13
+  },
+  {
+    "term": "Plate boundary",
+    "definition": "where two plates meet.",
+    "chapter": 13
+  },
+  {
+    "term": "Divergent boundary",
+    "definition": "where plates move apart.",
+    "chapter": 13
+  },
+  {
+    "term": "Rift valley",
+    "definition": "a valley formed where land is pulling apart.",
+    "chapter": 13
+  },
+  {
+    "term": "Convergent boundary",
+    "definition": "where plates move toward each other.",
+    "chapter": 13
+  },
+  {
+    "term": "Subduction",
+    "definition": "one plate sinking beneath another.",
+    "chapter": 13
+  },
+  {
+    "term": "Trench",
+    "definition": "a deep ocean valley formed at a subduction zone.",
+    "chapter": 13
+  },
+  {
+    "term": "Transform boundary",
+    "definition": "where plates slide past each other.",
+    "chapter": 13
+  },
+  {
+    "term": "Slab pull",
+    "definition": "a sinking plate pulling the rest of the plate along.",
+    "chapter": 13
+  },
+  {
+    "term": "Ridge push",
+    "definition": "new crust at a ridge pushing plates apart.",
+    "chapter": 13
+  },
+  {
+    "term": "Hotspot",
+    "definition": "a plume of hot mantle that melts through a plate, like Yellowstone.",
+    "chapter": 13
+  },
+  {
+    "term": "Earthquake",
+    "definition": "shaking caused by rocks suddenly slipping along a fault.",
+    "chapter": 14
+  },
+  {
+    "term": "Fault",
+    "definition": "a break in the crust where rocks have moved.",
+    "chapter": 14
+  },
+  {
+    "term": "Elastic rebound",
+    "definition": "rocks bending under stress, then snapping back.",
+    "chapter": 14
+  },
+  {
+    "term": "Normal fault",
+    "definition": "a fault where rocks pull apart and one side drops down.",
+    "chapter": 14
+  },
+  {
+    "term": "Reverse fault",
+    "definition": "a fault where rocks push together and one side moves up.",
+    "chapter": 14
+  },
+  {
+    "term": "Strike-slip fault",
+    "definition": "a fault where rocks slide sideways past each other.",
+    "chapter": 14
+  },
+  {
+    "term": "Focus",
+    "definition": "the point underground where an earthquake starts.",
+    "chapter": 14
+  },
+  {
+    "term": "Epicenter",
+    "definition": "the point on the surface directly above the focus.",
+    "chapter": 14
+  },
+  {
+    "term": "Surface wave",
+    "definition": "the slowest, most damaging seismic wave.",
+    "chapter": 14
+  },
+  {
+    "term": "Triangulation",
+    "definition": "using three stations to locate an epicenter.",
+    "chapter": 14
+  },
+  {
+    "term": "Magnitude",
+    "definition": "a measure of the energy an earthquake releases.",
+    "chapter": 14
+  },
+  {
+    "term": "Moment magnitude scale",
+    "definition": "the modern scale for earthquake magnitude.",
+    "chapter": 14
+  },
+  {
+    "term": "Richter scale",
+    "definition": "an older scale for earthquake magnitude.",
+    "chapter": 14
+  },
+  {
+    "term": "Intensity",
+    "definition": "how strongly shaking is felt in a certain place.",
+    "chapter": 14
+  },
+  {
+    "term": "Modified Mercalli scale",
+    "definition": "a scale rating earthquake intensity by damage.",
+    "chapter": 14
+  },
+  {
+    "term": "Fault scarp",
+    "definition": "a step in the ground formed by fault movement.",
+    "chapter": 14
+  },
+  {
+    "term": "Liquefaction",
+    "definition": "wet soil acting like liquid during shaking.",
+    "chapter": 14
+  },
+  {
+    "term": "Tsunami",
+    "definition": "a giant ocean wave caused by an undersea earthquake.",
+    "chapter": 14
+  },
+  {
+    "term": "Volcano",
+    "definition": "an opening in the crust where magma, gas, and ash escape.",
+    "chapter": 15
+  },
+  {
+    "term": "Magma chamber",
+    "definition": "an underground pool of magma.",
+    "chapter": 15
+  },
+  {
+    "term": "Vent",
+    "definition": "the opening where magma comes out.",
+    "chapter": 15
+  },
+  {
+    "term": "Conduit",
+    "definition": "the pipe from the magma chamber to the vent.",
+    "chapter": 15
+  },
+  {
+    "term": "Crater",
+    "definition": "the bowl-shaped pit at a volcano's top.",
+    "chapter": 15
+  },
+  {
+    "term": "Caldera",
+    "definition": "a huge crater formed when a volcano collapses.",
+    "chapter": 15
+  },
+  {
+    "term": "Ring of Fire",
+    "definition": "the ring of volcanoes around the Pacific Ocean.",
+    "chapter": 15
+  },
+  {
+    "term": "Viscosity",
+    "definition": "how thick and sticky a liquid is.",
+    "chapter": 15
+  },
+  {
+    "term": "Silica",
+    "definition": "a compound of silicon and oxygen that makes magma thicker.",
+    "chapter": 15
+  },
+  {
+    "term": "Effusive eruption",
+    "definition": "a gentle eruption with flowing lava.",
+    "chapter": 15
+  },
+  {
+    "term": "Explosive eruption",
+    "definition": "a violent eruption caused by trapped gas.",
+    "chapter": 15
+  },
+  {
+    "term": "Shield volcano",
+    "definition": "a wide, gently sloping volcano built by runny lava.",
+    "chapter": 15
+  },
+  {
+    "term": "Cinder cone",
+    "definition": "a small, steep volcano made of lava chunks.",
+    "chapter": 15
+  },
+  {
+    "term": "Composite volcano (stratovolcano)",
+    "definition": "a tall volcano built of lava and ash layers.",
+    "chapter": 15
+  },
+  {
+    "term": "Pahoehoe",
+    "definition": "smooth, ropey lava.",
+    "chapter": 15
+  },
+  {
+    "term": "A'a",
+    "definition": "rough, jagged lava.",
+    "chapter": 15
+  },
+  {
+    "term": "Tephra",
+    "definition": "rock fragments blasted from a volcano.",
+    "chapter": 15
+  },
+  {
+    "term": "Volcanic ash",
+    "definition": "tiny bits of rock and glass from an eruption.",
+    "chapter": 15
+  },
+  {
+    "term": "Lapilli",
+    "definition": "pebble-sized tephra.",
+    "chapter": 15
+  },
+  {
+    "term": "Volcanic bomb",
+    "definition": "a large blob of lava thrown from a volcano.",
+    "chapter": 15
+  },
+  {
+    "term": "Pyroclastic flow",
+    "definition": "a fast, deadly avalanche of hot gas, ash, and rock.",
+    "chapter": 15
+  },
+  {
+    "term": "Lahar",
+    "definition": "a volcanic mudflow.",
+    "chapter": 15
+  },
+  {
+    "term": "Supervolcano",
+    "definition": "a volcano capable of an enormous eruption, like Yellowstone.",
+    "chapter": 15
+  },
+  {
+    "term": "Geothermal energy",
+    "definition": "energy from Earth's internal heat.",
+    "chapter": 15
+  },
+  {
+    "term": "Orogeny",
+    "definition": "the process of mountain building.",
+    "chapter": 16
+  },
+  {
+    "term": "Stress",
+    "definition": "force acting on rock.",
+    "chapter": 16
+  },
+  {
+    "term": "Compression",
+    "definition": "stress that squeezes rock together.",
+    "chapter": 16
+  },
+  {
+    "term": "Tension",
+    "definition": "stress that pulls rock apart.",
+    "chapter": 16
+  },
+  {
+    "term": "Shear",
+    "definition": "stress that pushes rock in opposite directions side by side.",
+    "chapter": 16
+  },
+  {
+    "term": "Deformation",
+    "definition": "a change in rock's shape caused by stress.",
+    "chapter": 16
+  },
+  {
+    "term": "Fold",
+    "definition": "a bend in rock layers.",
+    "chapter": 16
+  },
+  {
+    "term": "Anticline",
+    "definition": "an upward, arch-shaped fold.",
+    "chapter": 16
+  },
+  {
+    "term": "Syncline",
+    "definition": "a downward, U-shaped fold.",
+    "chapter": 16
+  },
+  {
+    "term": "Monocline",
+    "definition": "a step-like bend in flat rock layers.",
+    "chapter": 16
+  },
+  {
+    "term": "Folded mountain",
+    "definition": "a mountain formed by rock crumpled into folds.",
+    "chapter": 16
+  },
+  {
+    "term": "Fault-block mountain",
+    "definition": "a mountain formed when blocks of crust are lifted along faults.",
+    "chapter": 16
+  },
+  {
+    "term": "Horst",
+    "definition": "a raised block between faults.",
+    "chapter": 16
+  },
+  {
+    "term": "Graben",
+    "definition": "a dropped-down block between faults.",
+    "chapter": 16
+  },
+  {
+    "term": "Basin and Range",
+    "definition": "a region of alternating mountains and valleys formed by stretching crust.",
+    "chapter": 16
+  },
+  {
+    "term": "Volcanic mountain",
+    "definition": "a mountain built by eruptions.",
+    "chapter": 16
+  },
+  {
+    "term": "Dome mountain",
+    "definition": "a mountain formed when magma pushes rock layers up.",
+    "chapter": 16
+  },
+  {
+    "term": "Batholith",
+    "definition": "a huge mass of intrusive igneous rock, like the Idaho Batholith.",
+    "chapter": 16
+  },
+  {
+    "term": "Isostasy",
+    "definition": "the balance of crust floating on the mantle.",
+    "chapter": 16
+  },
+  {
+    "term": "Uplift",
+    "definition": "the raising of Earth's crust.",
+    "chapter": 16
+  },
+  {
+    "term": "World ocean",
+    "definition": "the single connected body of salt water covering about 71% of Earth.",
+    "chapter": 17
+  },
+  {
+    "term": "Oceanographer",
+    "definition": "a scientist who studies the ocean.",
+    "chapter": 17
+  },
+  {
+    "term": "Salinity",
+    "definition": "the amount of dissolved salt in water.",
+    "chapter": 17
+  },
+  {
+    "term": "Density",
+    "definition": "how much mass is packed into a space; cold, salty water is denser.",
+    "chapter": 17
+  },
+  {
+    "term": "Thermocline",
+    "definition": "an ocean layer where temperature drops quickly with depth.",
+    "chapter": 17
+  },
+  {
+    "term": "Pressure",
+    "definition": "the force of water pressing down; increases with depth.",
+    "chapter": 17
+  },
+  {
+    "term": "Surface current",
+    "definition": "a wind-driven current in the ocean's top layer.",
+    "chapter": 17
+  },
+  {
+    "term": "Coriolis effect",
+    "definition": "Earth's spin bending moving air and water to the side.",
+    "chapter": 17
+  },
+  {
+    "term": "Gyre",
+    "definition": "a huge circular system of ocean currents.",
+    "chapter": 17
+  },
+  {
+    "term": "Gulf Stream",
+    "definition": "a warm current flowing up the U.S. East Coast to Europe.",
+    "chapter": 17
+  },
+  {
+    "term": "California Current",
+    "definition": "a cold current flowing down the U.S. West Coast.",
+    "chapter": 17
+  },
+  {
+    "term": "Deep current",
+    "definition": "a slow current along the ocean floor driven by density.",
+    "chapter": 17
+  },
+  {
+    "term": "Thermohaline circulation",
+    "definition": "deep ocean circulation driven by temperature and salinity.",
+    "chapter": 17
+  },
+  {
+    "term": "Global conveyor belt",
+    "definition": "the worldwide loop of deep and surface currents.",
+    "chapter": 17
+  },
+  {
+    "term": "Upwelling",
+    "definition": "cold, nutrient-rich deep water rising to the surface.",
+    "chapter": 17
+  },
+  {
+    "term": "El Niño",
+    "definition": "a periodic warming of the eastern Pacific that changes world weather.",
+    "chapter": 17
+  },
+  {
+    "term": "La Niña",
+    "definition": "a periodic cooling of the eastern Pacific.",
+    "chapter": 17
+  },
+  {
+    "term": "Plankton",
+    "definition": "tiny drifting organisms at the base of ocean food webs.",
+    "chapter": 17
+  },
+  {
+    "term": "Sonar",
+    "definition": "using sound echoes to measure distance underwater.",
+    "chapter": 18
+  },
+  {
+    "term": "Bathymetry",
+    "definition": "the measurement of ocean depth.",
+    "chapter": 18
+  },
+  {
+    "term": "Submersible",
+    "definition": "a small underwater vehicle for deep-sea exploring.",
+    "chapter": 18
+  },
+  {
+    "term": "Continental margin",
+    "definition": "the underwater edge of a continent.",
+    "chapter": 18
+  },
+  {
+    "term": "Continental shelf",
+    "definition": "the shallow, gently sloping edge of a continent underwater.",
+    "chapter": 18
+  },
+  {
+    "term": "Continental slope",
+    "definition": "the steep drop from the shelf to the deep ocean.",
+    "chapter": 18
+  },
+  {
+    "term": "Continental rise",
+    "definition": "the gentle pile of sediment at the base of the slope.",
+    "chapter": 18
+  },
+  {
+    "term": "Submarine canyon",
+    "definition": "a deep canyon cut into the shelf and slope.",
+    "chapter": 18
+  },
+  {
+    "term": "Abyssal plain",
+    "definition": "a flat, sediment-covered area of the deep sea floor.",
+    "chapter": 18
+  },
+  {
+    "term": "Trench",
+    "definition": "a deep, narrow valley where one plate subducts.",
+    "chapter": 18
+  },
+  {
+    "term": "Seamount",
+    "definition": "an underwater volcano that doesn't reach the surface.",
+    "chapter": 18
+  },
+  {
+    "term": "Guyot",
+    "definition": "a flat-topped seamount.",
+    "chapter": 18
+  },
+  {
+    "term": "Hydrothermal vent",
+    "definition": "a hot spring on the sea floor.",
+    "chapter": 18
+  },
+  {
+    "term": "Ooze",
+    "definition": "sea-floor sediment made of tiny shells.",
+    "chapter": 18
+  },
+  {
+    "term": "Wave",
+    "definition": "energy moving through water.",
+    "chapter": 18
+  },
+  {
+    "term": "Crest",
+    "definition": "the top of a wave.",
+    "chapter": 18
+  },
+  {
+    "term": "Trough",
+    "definition": "the bottom of a wave.",
+    "chapter": 18
+  },
+  {
+    "term": "Wavelength",
+    "definition": "the distance from one crest to the next.",
+    "chapter": 18
+  },
+  {
+    "term": "Wave height",
+    "definition": "the distance from trough to crest.",
+    "chapter": 18
+  },
+  {
+    "term": "Breaker",
+    "definition": "a wave that tips over in shallow water.",
+    "chapter": 18
+  },
+  {
+    "term": "Tide",
+    "definition": "the daily rise and fall of sea level, caused mostly by the Moon.",
+    "chapter": 18
+  },
+  {
+    "term": "Spring tide",
+    "definition": "an extra-large tide at new and full moon.",
+    "chapter": 18
+  },
+  {
+    "term": "Neap tide",
+    "definition": "a smaller tide at quarter moons.",
+    "chapter": 18
+  },
+  {
+    "term": "Sea stack",
+    "definition": "a pillar of rock left standing offshore by erosion.",
+    "chapter": 18
+  },
+  {
+    "term": "Longshore current",
+    "definition": "a current moving sand along the shore.",
+    "chapter": 18
+  },
+  {
+    "term": "Spit",
+    "definition": "a sandbar sticking out from shore.",
+    "chapter": 18
+  },
+  {
+    "term": "Barrier island",
+    "definition": "a long sandy island parallel to the coast.",
+    "chapter": 18
+  },
+  {
+    "term": "Jetty",
+    "definition": "a wall built into the sea to protect a harbor or trap sand.",
+    "chapter": 18
+  },
+  {
+    "term": "Atmosphere",
+    "definition": "the layer of gases surrounding Earth.",
+    "chapter": 19
+  },
+  {
+    "term": "Nitrogen",
+    "definition": "the most common gas in air, about 78%.",
+    "chapter": 19
+  },
+  {
+    "term": "Oxygen",
+    "definition": "the gas we breathe, about 21% of air.",
+    "chapter": 19
+  },
+  {
+    "term": "Carbon dioxide",
+    "definition": "a greenhouse gas, about 0.04% of air.",
+    "chapter": 19
+  },
+  {
+    "term": "Water vapor",
+    "definition": "water in gas form in the air.",
+    "chapter": 19
+  },
+  {
+    "term": "Aerosol",
+    "definition": "tiny solid or liquid particles in air, like dust or smoke.",
+    "chapter": 19
+  },
+  {
+    "term": "Air pressure",
+    "definition": "the weight of air pressing down.",
+    "chapter": 19
+  },
+  {
+    "term": "Barometer",
+    "definition": "an instrument that measures air pressure.",
+    "chapter": 19
+  },
+  {
+    "term": "Altitude",
+    "definition": "height above sea level.",
+    "chapter": 19
+  },
+  {
+    "term": "Troposphere",
+    "definition": "the lowest layer, where weather happens.",
+    "chapter": 19
+  },
+  {
+    "term": "Tropopause",
+    "definition": "the boundary between the troposphere and stratosphere.",
+    "chapter": 19
+  },
+  {
+    "term": "Stratosphere",
+    "definition": "the layer containing the ozone layer.",
+    "chapter": 19
+  },
+  {
+    "term": "Ozone layer",
+    "definition": "ozone in the stratosphere that absorbs UV radiation.",
+    "chapter": 19
+  },
+  {
+    "term": "Ultraviolet (UV) radiation",
+    "definition": "harmful high-energy sunlight.",
+    "chapter": 19
+  },
+  {
+    "term": "Mesosphere",
+    "definition": "the coldest layer, where meteors burn up.",
+    "chapter": 19
+  },
+  {
+    "term": "Thermosphere",
+    "definition": "a very thin, hot layer where auroras occur.",
+    "chapter": 19
+  },
+  {
+    "term": "Exosphere",
+    "definition": "the outermost layer, fading into space.",
+    "chapter": 19
+  },
+  {
+    "term": "CFCs",
+    "definition": "chemicals that destroyed ozone, now banned.",
+    "chapter": 19
+  },
+  {
+    "term": "Radiation",
+    "definition": "energy traveling as waves through space.",
+    "chapter": 19
+  },
+  {
+    "term": "Conduction",
+    "definition": "heat moving by direct contact.",
+    "chapter": 19
+  },
+  {
+    "term": "Convection",
+    "definition": "heat moving by rising and sinking currents.",
+    "chapter": 19
+  },
+  {
+    "term": "Albedo",
+    "definition": "how much light a surface reflects.",
+    "chapter": 19
+  },
+  {
+    "term": "Greenhouse effect",
+    "definition": "gases trapping heat and keeping Earth warm.",
+    "chapter": 19
+  },
+  {
+    "term": "Greenhouse gas",
+    "definition": "a gas that absorbs heat, like CO₂, methane, or water vapor.",
+    "chapter": 19
+  },
+  {
+    "term": "Wind",
+    "definition": "air moving from high to low pressure.",
+    "chapter": 19
+  },
+  {
+    "term": "High pressure",
+    "definition": "an area of sinking air and usually clear weather.",
+    "chapter": 19
+  },
+  {
+    "term": "Low pressure",
+    "definition": "an area of rising air and usually stormy weather.",
+    "chapter": 19
+  },
+  {
+    "term": "Sea breeze",
+    "definition": "a cool wind blowing from sea to land during the day.",
+    "chapter": 19
+  },
+  {
+    "term": "Trade winds",
+    "definition": "steady global winds near the equator.",
+    "chapter": 19
+  },
+  {
+    "term": "Prevailing westerlies",
+    "definition": "global winds that blow west to east over the U.S.",
+    "chapter": 19
+  },
+  {
+    "term": "Jet stream",
+    "definition": "a fast, high-altitude river of wind that steers storms.",
+    "chapter": 19
+  },
+  {
+    "term": "Weather",
+    "definition": "the condition of the atmosphere at a certain time and place.",
+    "chapter": 20
+  },
+  {
+    "term": "Humidity",
+    "definition": "the amount of water vapor in the air.",
+    "chapter": 20
+  },
+  {
+    "term": "Relative humidity",
+    "definition": "how full the air is with water vapor compared to its maximum.",
+    "chapter": 20
+  },
+  {
+    "term": "Saturated",
+    "definition": "air holding as much water vapor as it can.",
+    "chapter": 20
+  },
+  {
+    "term": "Dew point",
+    "definition": "the temperature at which air becomes saturated.",
+    "chapter": 20
+  },
+  {
+    "term": "Condensation",
+    "definition": "water vapor turning into liquid.",
+    "chapter": 20
+  },
+  {
+    "term": "Condensation nuclei",
+    "definition": "tiny particles water condenses onto.",
+    "chapter": 20
+  },
+  {
+    "term": "Orographic lifting",
+    "definition": "air forced upward over mountains.",
+    "chapter": 20
+  },
+  {
+    "term": "Cirrus",
+    "definition": "thin, wispy, high clouds of ice crystals.",
+    "chapter": 20
+  },
+  {
+    "term": "Cumulus",
+    "definition": "puffy clouds with flat bottoms.",
+    "chapter": 20
+  },
+  {
+    "term": "Stratus",
+    "definition": "flat, gray, sheet-like clouds.",
+    "chapter": 20
+  },
+  {
+    "term": "Cumulonimbus",
+    "definition": "a towering thunderstorm cloud.",
+    "chapter": 20
+  },
+  {
+    "term": "Nimbostratus",
+    "definition": "a thick gray cloud bringing steady rain or snow.",
+    "chapter": 20
+  },
+  {
+    "term": "Fog",
+    "definition": "a cloud at ground level.",
+    "chapter": 20
+  },
+  {
+    "term": "Temperature inversion",
+    "definition": "warm air trapping cold air near the ground.",
+    "chapter": 20
+  },
+  {
+    "term": "Precipitation",
+    "definition": "water falling from clouds.",
+    "chapter": 20
+  },
+  {
+    "term": "Sleet",
+    "definition": "rain that freezes into ice pellets before landing.",
+    "chapter": 20
+  },
+  {
+    "term": "Freezing rain",
+    "definition": "rain that freezes when it hits cold surfaces.",
+    "chapter": 20
+  },
+  {
+    "term": "Hail",
+    "definition": "balls of ice formed in thunderstorms.",
+    "chapter": 20
+  },
+  {
+    "term": "Rain shadow",
+    "definition": "a dry area on the far side of mountains.",
+    "chapter": 20
+  },
+  {
+    "term": "Air mass",
+    "definition": "a huge body of air with similar temperature and humidity.",
+    "chapter": 20
+  },
+  {
+    "term": "Continental",
+    "definition": "an air mass formed over land; dry.",
+    "chapter": 20
+  },
+  {
+    "term": "Maritime",
+    "definition": "an air mass formed over water; humid.",
+    "chapter": 20
+  },
+  {
+    "term": "Polar",
+    "definition": "an air mass formed near the poles; cold.",
+    "chapter": 20
+  },
+  {
+    "term": "Tropical",
+    "definition": "an air mass formed near the equator; warm.",
+    "chapter": 20
+  },
+  {
+    "term": "Front",
+    "definition": "the boundary between two air masses.",
+    "chapter": 20
+  },
+  {
+    "term": "Cold front",
+    "definition": "cold air pushing under warm air; quick storms.",
+    "chapter": 20
+  },
+  {
+    "term": "Warm front",
+    "definition": "warm air sliding over cold air; steady rain.",
+    "chapter": 20
+  },
+  {
+    "term": "Stationary front",
+    "definition": "a front that stalls.",
+    "chapter": 20
+  },
+  {
+    "term": "Occluded front",
+    "definition": "a cold front catching up to a warm front.",
+    "chapter": 20
+  },
+  {
+    "term": "Cyclone",
+    "definition": "a low-pressure system with rising air.",
+    "chapter": 20
+  },
+  {
+    "term": "Anticyclone",
+    "definition": "a high-pressure system with sinking air.",
+    "chapter": 20
+  },
+  {
+    "term": "Meteorologist",
+    "definition": "a scientist who studies and forecasts weather.",
+    "chapter": 20
+  },
+  {
+    "term": "Doppler radar",
+    "definition": "radar that detects precipitation and wind in storms.",
+    "chapter": 20
+  },
+  {
+    "term": "Anemometer",
+    "definition": "an instrument that measures wind speed.",
+    "chapter": 20
+  },
+  {
+    "term": "Hygrometer",
+    "definition": "an instrument that measures humidity.",
+    "chapter": 20
+  },
+  {
+    "term": "Isobar",
+    "definition": "a line on a map connecting places with equal air pressure.",
+    "chapter": 20
+  },
+  {
+    "term": "Thunderstorm",
+    "definition": "a storm with lightning and thunder.",
+    "chapter": 21
+  },
+  {
+    "term": "Unstable air",
+    "definition": "warm air near the ground with cold air above, which rises easily.",
+    "chapter": 21
+  },
+  {
+    "term": "Updraft",
+    "definition": "rising air in a storm.",
+    "chapter": 21
+  },
+  {
+    "term": "Downdraft",
+    "definition": "sinking air in a storm.",
+    "chapter": 21
+  },
+  {
+    "term": "Supercell",
+    "definition": "a powerful, long-lasting rotating thunderstorm.",
+    "chapter": 21
+  },
+  {
+    "term": "Lightning",
+    "definition": "a giant electrical spark in a storm.",
+    "chapter": 21
+  },
+  {
+    "term": "Thunder",
+    "definition": "the sound of air expanding from lightning's heat.",
+    "chapter": 21
+  },
+  {
+    "term": "Dry lightning",
+    "definition": "lightning with little or no rain reaching the ground.",
+    "chapter": 21
+  },
+  {
+    "term": "Tornado",
+    "definition": "a violently spinning column of air touching the ground.",
+    "chapter": 21
+  },
+  {
+    "term": "Wind shear",
+    "definition": "winds changing speed or direction with height.",
+    "chapter": 21
+  },
+  {
+    "term": "Mesocyclone",
+    "definition": "a rotating updraft in a supercell.",
+    "chapter": 21
+  },
+  {
+    "term": "Funnel cloud",
+    "definition": "a rotating cloud that hasn't touched the ground.",
+    "chapter": 21
+  },
+  {
+    "term": "Enhanced Fujita scale",
+    "definition": "rates tornadoes from EF0 to EF5 by damage.",
+    "chapter": 21
+  },
+  {
+    "term": "Tornado Alley",
+    "definition": "the region of the Great Plains with the most tornadoes.",
+    "chapter": 21
+  },
+  {
+    "term": "Hurricane",
+    "definition": "a huge rotating tropical storm with winds of 74 mph or more.",
+    "chapter": 21
+  },
+  {
+    "term": "Typhoon",
+    "definition": "a hurricane in the western Pacific.",
+    "chapter": 21
+  },
+  {
+    "term": "Cyclone (tropical)",
+    "definition": "a hurricane in the Indian Ocean.",
+    "chapter": 21
+  },
+  {
+    "term": "Eye",
+    "definition": "the calm center of a hurricane.",
+    "chapter": 21
+  },
+  {
+    "term": "Eye wall",
+    "definition": "the ring of strongest winds around the eye.",
+    "chapter": 21
+  },
+  {
+    "term": "Rain band",
+    "definition": "a spiral arm of storms in a hurricane.",
+    "chapter": 21
+  },
+  {
+    "term": "Saffir-Simpson scale",
+    "definition": "rates hurricanes from Category 1 to 5.",
+    "chapter": 21
+  },
+  {
+    "term": "Storm surge",
+    "definition": "a wall of seawater pushed ashore by a hurricane.",
+    "chapter": 21
+  },
+  {
+    "term": "Blizzard",
+    "definition": "a storm with heavy blowing snow and strong winds.",
+    "chapter": 21
+  },
+  {
+    "term": "Ice storm",
+    "definition": "freezing rain that coats everything in ice.",
+    "chapter": 21
+  },
+  {
+    "term": "Avalanche",
+    "definition": "a mass of snow sliding down a mountain.",
+    "chapter": 21
+  },
+  {
+    "term": "Flash flood",
+    "definition": "a sudden flood within hours of heavy rain.",
+    "chapter": 21
+  },
+  {
+    "term": "Drought",
+    "definition": "a long period of below-normal precipitation.",
+    "chapter": 21
+  },
+  {
+    "term": "Watch",
+    "definition": "conditions are right for a hazard; be ready.",
+    "chapter": 21
+  },
+  {
+    "term": "Warning",
+    "definition": "a hazard is happening or about to; take action.",
+    "chapter": 21
+  },
+  {
+    "term": "Climate",
+    "definition": "the average weather of a place over 30 years or more.",
+    "chapter": 22
+  },
+  {
+    "term": "Continental climate",
+    "definition": "an inland climate with big temperature swings.",
+    "chapter": 22
+  },
+  {
+    "term": "Köppen system",
+    "definition": "a way of classifying climates by temperature and precipitation.",
+    "chapter": 22
+  },
+  {
+    "term": "Arid",
+    "definition": "very dry; a desert climate.",
+    "chapter": 22
+  },
+  {
+    "term": "Semi-arid",
+    "definition": "fairly dry, like southern Idaho's high desert.",
+    "chapter": 22
+  },
+  {
+    "term": "Temperate",
+    "definition": "mild, with distinct seasons.",
+    "chapter": 22
+  },
+  {
+    "term": "Tundra",
+    "definition": "a cold, treeless polar region.",
+    "chapter": 22
+  },
+  {
+    "term": "Microclimate",
+    "definition": "the climate of a small area that differs from its surroundings.",
+    "chapter": 22
+  },
+  {
+    "term": "Urban heat island",
+    "definition": "a city that stays warmer than the countryside around it.",
+    "chapter": 22
+  },
+  {
+    "term": "Axis tilt",
+    "definition": "Earth's 23.5° tilt, which causes seasons.",
+    "chapter": 22
+  },
+  {
+    "term": "Ice age",
+    "definition": "a long cold period with widespread glaciers.",
+    "chapter": 22
+  },
+  {
+    "term": "Milankovitch cycles",
+    "definition": "long-term changes in Earth's orbit and tilt that affect climate.",
+    "chapter": 22
+  },
+  {
+    "term": "Proxy data",
+    "definition": "natural clues like ice cores and tree rings that record past climate.",
+    "chapter": 22
+  },
+  {
+    "term": "Ice core",
+    "definition": "a long tube of ice drilled to study ancient air and climate.",
+    "chapter": 22
+  },
+  {
+    "term": "Tree rings",
+    "definition": "yearly growth rings that record growing conditions.",
+    "chapter": 22
+  },
+  {
+    "term": "Keeling Curve",
+    "definition": "the graph of CO₂ measured at Mauna Loa since 1958.",
+    "chapter": 22
+  },
+  {
+    "term": "Parts per million (ppm)",
+    "definition": "a unit for measuring small amounts of a gas in air.",
+    "chapter": 22
+  },
+  {
+    "term": "Fossil fuel",
+    "definition": "coal, oil, or natural gas formed from ancient life.",
+    "chapter": 22
+  },
+  {
+    "term": "Carbon isotope",
+    "definition": "a form of carbon whose mix reveals where carbon came from.",
+    "chapter": 22
+  },
+  {
+    "term": "Global warming",
+    "definition": "the rise in Earth's average surface temperature.",
+    "chapter": 22
+  },
+  {
+    "term": "Climate change",
+    "definition": "long-term changes in climate patterns.",
+    "chapter": 22
+  },
+  {
+    "term": "Anthropogenic",
+    "definition": "caused by humans.",
+    "chapter": 22
+  },
+  {
+    "term": "Sea-level rise",
+    "definition": "the ocean's surface rising as water warms and ice melts.",
+    "chapter": 22
+  },
+  {
+    "term": "Ocean acidification",
+    "definition": "the ocean becoming more acidic as it absorbs CO₂.",
+    "chapter": 22
+  },
+  {
+    "term": "Feedback loop",
+    "definition": "a process where a change causes effects that speed up or slow down the change.",
+    "chapter": 22
+  },
+  {
+    "term": "Ice-albedo feedback",
+    "definition": "melting ice exposing darker surfaces that absorb more heat.",
+    "chapter": 22
+  },
+  {
+    "term": "Mitigation",
+    "definition": "reducing greenhouse gas emissions.",
+    "chapter": 22
+  },
+  {
+    "term": "Adaptation",
+    "definition": "preparing for and adjusting to climate changes.",
+    "chapter": 22
+  },
+  {
+    "term": "Fossil",
+    "definition": "preserved remains or traces of ancient life.",
+    "chapter": 23
+  },
+  {
+    "term": "Paleontologist",
+    "definition": "a scientist who studies fossils.",
+    "chapter": 23
+  },
+  {
+    "term": "Petrified fossil",
+    "definition": "a fossil where minerals replaced the original material.",
+    "chapter": 23
+  },
+  {
+    "term": "Mold",
+    "definition": "an empty print of an organism left in rock.",
+    "chapter": 23
+  },
+  {
+    "term": "Cast",
+    "definition": "a copy formed when minerals fill a mold.",
+    "chapter": 23
+  },
+  {
+    "term": "Carbon film",
+    "definition": "a thin carbon outline of an organism.",
+    "chapter": 23
+  },
+  {
+    "term": "Trace fossil",
+    "definition": "evidence of activity, like footprints or burrows.",
+    "chapter": 23
+  },
+  {
+    "term": "Coprolite",
+    "definition": "fossilized poop.",
+    "chapter": 23
+  },
+  {
+    "term": "Amber",
+    "definition": "hardened tree sap that can trap organisms.",
+    "chapter": 23
+  },
+  {
+    "term": "Relative dating",
+    "definition": "putting events in order without exact ages.",
+    "chapter": 23
+  },
+  {
+    "term": "Law of superposition",
+    "definition": "in undisturbed layers, the oldest is on the bottom.",
+    "chapter": 23
+  },
+  {
+    "term": "Original horizontality",
+    "definition": "sediment is first laid down in flat layers.",
+    "chapter": 23
+  },
+  {
+    "term": "Crosscutting relationships",
+    "definition": "anything cutting across rock is younger than the rock.",
+    "chapter": 23
+  },
+  {
+    "term": "Inclusion",
+    "definition": "a piece of rock inside another rock; it's older than the rock around it.",
+    "chapter": 23
+  },
+  {
+    "term": "Unconformity",
+    "definition": "a gap in the rock record.",
+    "chapter": 23
+  },
+  {
+    "term": "Index fossil",
+    "definition": "a widespread, short-lived species used to date rock layers.",
+    "chapter": 23
+  },
+  {
+    "term": "Correlation",
+    "definition": "matching rock layers from different places.",
+    "chapter": 23
+  },
+  {
+    "term": "Absolute dating",
+    "definition": "finding the actual age of a rock in years.",
+    "chapter": 23
+  },
+  {
+    "term": "Radiometric dating",
+    "definition": "using radioactive decay to find a rock's age.",
+    "chapter": 23
+  },
+  {
+    "term": "Radioactive decay",
+    "definition": "unstable atoms breaking down into other elements.",
+    "chapter": 23
+  },
+  {
+    "term": "Isotope",
+    "definition": "a form of an element with a different number of neutrons.",
+    "chapter": 23
+  },
+  {
+    "term": "Parent isotope",
+    "definition": "the original radioactive isotope.",
+    "chapter": 23
+  },
+  {
+    "term": "Daughter isotope",
+    "definition": "what a parent isotope decays into.",
+    "chapter": 23
+  },
+  {
+    "term": "Half-life",
+    "definition": "the time for half of a radioactive sample to decay.",
+    "chapter": 23
+  },
+  {
+    "term": "Carbon-14",
+    "definition": "an isotope used to date once-living things up to about 50,000 years old.",
+    "chapter": 23
+  },
+  {
+    "term": "Geologic time scale",
+    "definition": "the calendar of Earth's history.",
+    "chapter": 23
+  },
+  {
+    "term": "Eon",
+    "definition": "the largest division of geologic time.",
+    "chapter": 23
+  },
+  {
+    "term": "Era",
+    "definition": "a division of an eon.",
+    "chapter": 23
+  },
+  {
+    "term": "Period",
+    "definition": "a division of an era.",
+    "chapter": 23
+  },
+  {
+    "term": "Epoch",
+    "definition": "a division of a period.",
+    "chapter": 23
+  },
+  {
+    "term": "Precambrian",
+    "definition": "Earth's earliest and longest time span, about 88% of its history.",
+    "chapter": 23
+  },
+  {
+    "term": "Paleozoic",
+    "definition": "the era of \"ancient life,\" 541–252 million years ago.",
+    "chapter": 23
+  },
+  {
+    "term": "Mesozoic",
+    "definition": "the era of reptiles and dinosaurs, 252–66 million years ago.",
+    "chapter": 23
+  },
+  {
+    "term": "Cenozoic",
+    "definition": "the era of mammals, 66 million years ago to now.",
+    "chapter": 23
+  },
+  {
+    "term": "Mass extinction",
+    "definition": "the dying out of a huge share of species in a short time.",
+    "chapter": 23
+  },
+  {
+    "term": "Nebula",
+    "definition": "a giant cloud of gas and dust in space.",
+    "chapter": 24
+  },
+  {
+    "term": "Planetesimal",
+    "definition": "a small early chunk of rock that grew into planets.",
+    "chapter": 24
+  },
+  {
+    "term": "Accretion",
+    "definition": "small objects clumping together to form larger ones.",
+    "chapter": 24
+  },
+  {
+    "term": "Differentiation",
+    "definition": "Earth separating into layers by density.",
+    "chapter": 24
+  },
+  {
+    "term": "Giant impact hypothesis",
+    "definition": "the idea that a collision with a Mars-sized object formed the Moon.",
+    "chapter": 24
+  },
+  {
+    "term": "Meteorite",
+    "definition": "a space rock that lands on Earth.",
+    "chapter": 24
+  },
+  {
+    "term": "Early atmosphere",
+    "definition": "Earth's first air, made of volcanic gases with almost no oxygen.",
+    "chapter": 24
+  },
+  {
+    "term": "Stromatolite",
+    "definition": "a layered mound built by bacteria; among the oldest fossils.",
+    "chapter": 24
+  },
+  {
+    "term": "Cyanobacteria",
+    "definition": "bacteria that make food and oxygen by photosynthesis.",
+    "chapter": 24
+  },
+  {
+    "term": "Photosynthesis",
+    "definition": "the process plants and some bacteria use to make food, releasing oxygen.",
+    "chapter": 24
+  },
+  {
+    "term": "Great Oxygenation Event",
+    "definition": "oxygen building up in the air about 2.4 billion years ago.",
+    "chapter": 24
+  },
+  {
+    "term": "Banded iron formation",
+    "definition": "striped rock formed as oxygen rusted iron in the oceans.",
+    "chapter": 24
+  },
+  {
+    "term": "Snowball Earth",
+    "definition": "a time when Earth may have frozen nearly completely.",
+    "chapter": 24
+  },
+  {
+    "term": "Coevolution",
+    "definition": "life and Earth's systems changing each other over time.",
+    "chapter": 24
+  },
+  {
+    "term": "Cambrian Explosion",
+    "definition": "the rapid appearance of many new life forms about 541 million years ago.",
+    "chapter": 24
+  },
+  {
+    "term": "Trilobite",
+    "definition": "an extinct ocean animal common in the Paleozoic.",
+    "chapter": 24
+  },
+  {
+    "term": "Pangaea",
+    "definition": "the supercontinent that formed in the Paleozoic.",
+    "chapter": 24
+  },
+  {
+    "term": "Permian extinction",
+    "definition": "the largest mass extinction, about 252 million years ago.",
+    "chapter": 24
+  },
+  {
+    "term": "K-Pg extinction",
+    "definition": "the asteroid-caused extinction of the dinosaurs, 66 million years ago.",
+    "chapter": 24
+  },
+  {
+    "term": "Chicxulub crater",
+    "definition": "the impact crater in Mexico linked to the K-Pg extinction.",
+    "chapter": 24
+  },
+  {
+    "term": "Iridium",
+    "definition": "an element rare on Earth but common in asteroids.",
+    "chapter": 24
+  },
+  {
+    "term": "Natural resource",
+    "definition": "anything from nature that people use.",
+    "chapter": 25
+  },
+  {
+    "term": "Renewable resource",
+    "definition": "a resource replaced naturally as fast as it's used.",
+    "chapter": 25
+  },
+  {
+    "term": "Nonrenewable resource",
+    "definition": "a resource that takes millions of years to form.",
+    "chapter": 25
+  },
+  {
+    "term": "Coal",
+    "definition": "a fossil fuel from ancient swamp plants.",
+    "chapter": 25
+  },
+  {
+    "term": "Peat",
+    "definition": "partly decayed plant material, the first stage of coal.",
+    "chapter": 25
+  },
+  {
+    "term": "Petroleum",
+    "definition": "crude oil, a liquid fossil fuel.",
+    "chapter": 25
+  },
+  {
+    "term": "Natural gas",
+    "definition": "a gas fossil fuel, mostly methane.",
+    "chapter": 25
+  },
+  {
+    "term": "Hydraulic fracturing (fracking)",
+    "definition": "cracking rock with high-pressure fluid to release oil and gas.",
+    "chapter": 25
+  },
+  {
+    "term": "Nuclear energy",
+    "definition": "energy released from atoms.",
+    "chapter": 25
+  },
+  {
+    "term": "Nuclear fission",
+    "definition": "splitting atoms to release energy.",
+    "chapter": 25
+  },
+  {
+    "term": "Radioactive waste",
+    "definition": "dangerous leftover material from nuclear reactors.",
+    "chapter": 25
+  },
+  {
+    "term": "Hydroelectric power",
+    "definition": "electricity from flowing water; Idaho's biggest source.",
+    "chapter": 25
+  },
+  {
+    "term": "Solar energy",
+    "definition": "energy from sunlight.",
+    "chapter": 25
+  },
+  {
+    "term": "Photovoltaic cell",
+    "definition": "a solar cell that turns sunlight into electricity.",
+    "chapter": 25
+  },
+  {
+    "term": "Wind energy",
+    "definition": "energy from moving air.",
+    "chapter": 25
+  },
+  {
+    "term": "Biomass",
+    "definition": "energy from plant and animal material.",
+    "chapter": 25
+  },
+  {
+    "term": "Critical minerals",
+    "definition": "minerals needed for modern tech, like lithium and cobalt.",
+    "chapter": 25
+  },
+  {
+    "term": "Surface mining",
+    "definition": "removing soil and rock to reach shallow deposits.",
+    "chapter": 25
+  },
+  {
+    "term": "Underground mining",
+    "definition": "digging tunnels to reach deep deposits.",
+    "chapter": 25
+  },
+  {
+    "term": "Reclamation",
+    "definition": "restoring land after mining.",
+    "chapter": 25
+  },
+  {
+    "term": "Conservation",
+    "definition": "using resources carefully so they last.",
+    "chapter": 25
+  },
+  {
+    "term": "Energy efficiency",
+    "definition": "using less energy to get the same result.",
+    "chapter": 25
+  },
+  {
+    "term": "Sustainability",
+    "definition": "meeting today's needs without harming future generations.",
+    "chapter": 25
+  },
+  {
+    "term": "Anthropocene",
+    "definition": "a proposed name for the age when humans strongly shape Earth.",
+    "chapter": 26
+  },
+  {
+    "term": "Ecological footprint",
+    "definition": "the land and resources needed to support a person's lifestyle.",
+    "chapter": 26
+  },
+  {
+    "term": "Air pollution",
+    "definition": "harmful substances in the air.",
+    "chapter": 26
+  },
+  {
+    "term": "Smog",
+    "definition": "a brownish haze formed from car exhaust and sunlight.",
+    "chapter": 26
+  },
+  {
+    "term": "Ground-level ozone",
+    "definition": "ozone near the ground that harms lungs.",
+    "chapter": 26
+  },
+  {
+    "term": "Particulate matter",
+    "definition": "tiny particles of soot, dust, and smoke in air.",
+    "chapter": 26
+  },
+  {
+    "term": "Air Quality Index (AQI)",
+    "definition": "a daily rating of how clean the air is.",
+    "chapter": 26
+  },
+  {
+    "term": "Clean Air Act",
+    "definition": "a 1970 U.S. law limiting air pollution.",
+    "chapter": 26
+  },
+  {
+    "term": "Point-source pollution",
+    "definition": "pollution from one clear source, like a pipe.",
+    "chapter": 26
+  },
+  {
+    "term": "Nonpoint-source pollution",
+    "definition": "pollution from many spread-out sources, like farm runoff.",
+    "chapter": 26
+  },
+  {
+    "term": "Eutrophication",
+    "definition": "excess nutrients causing algae blooms that use up oxygen in water.",
+    "chapter": 26
+  },
+  {
+    "term": "Clean Water Act",
+    "definition": "a 1972 U.S. law protecting water quality.",
+    "chapter": 26
+  },
+  {
+    "term": "Deforestation",
+    "definition": "clearing forests.",
+    "chapter": 26
+  },
+  {
+    "term": "Urbanization",
+    "definition": "the growth of cities.",
+    "chapter": 26
+  },
+  {
+    "term": "Desertification",
+    "definition": "dry land turning into desert.",
+    "chapter": 26
+  },
+  {
+    "term": "Landfill",
+    "definition": "a place where trash is buried.",
+    "chapter": 26
+  },
+  {
+    "term": "Microplastics",
+    "definition": "tiny pieces of broken-down plastic.",
+    "chapter": 26
+  },
+  {
+    "term": "Biodiversity",
+    "definition": "the variety of life in an area.",
+    "chapter": 26
+  },
+  {
+    "term": "Invasive species",
+    "definition": "a species introduced to a new place where it spreads and causes harm.",
+    "chapter": 26
+  },
+  {
+    "term": "Habitat loss",
+    "definition": "the destruction of places where organisms live.",
+    "chapter": 26
+  },
+  {
+    "term": "Endangered species",
+    "definition": "a species at risk of going extinct.",
+    "chapter": 26
+  },
+  {
+    "term": "Wildland-urban interface",
+    "definition": "where homes meet forests or wild land; high wildfire risk.",
+    "chapter": 26
+  },
+  {
+    "term": "Hazard map",
+    "definition": "a map showing areas at risk from natural hazards.",
+    "chapter": 26
+  },
+  {
+    "term": "Restoration",
+    "definition": "returning damaged ecosystems to health.",
+    "chapter": 26
+  },
+  {
+    "term": "Rotation",
+    "definition": "Earth spinning on its axis; causes day and night.",
+    "chapter": 27
+  },
+  {
+    "term": "Axis",
+    "definition": "the imaginary line Earth spins around.",
+    "chapter": 27
+  },
+  {
+    "term": "Revolution",
+    "definition": "Earth's trip around the Sun; one year.",
+    "chapter": 27
+  },
+  {
+    "term": "Orbit",
+    "definition": "the path of one object around another.",
+    "chapter": 27
+  },
+  {
+    "term": "Ellipse",
+    "definition": "an oval shape; the shape of planetary orbits.",
+    "chapter": 27
+  },
+  {
+    "term": "Leap year",
+    "definition": "a year with an extra day, every four years.",
+    "chapter": 27
+  },
+  {
+    "term": "Gravity",
+    "definition": "the force of attraction between objects with mass.",
+    "chapter": 27
+  },
+  {
+    "term": "Inertia",
+    "definition": "an object's tendency to keep moving in a straight line.",
+    "chapter": 27
+  },
+  {
+    "term": "Law of universal gravitation",
+    "definition": "Newton's law explaining gravity between all objects.",
+    "chapter": 27
+  },
+  {
+    "term": "Kepler's laws",
+    "definition": "three rules describing how planets orbit the Sun.",
+    "chapter": 27
+  },
+  {
+    "term": "Astronomical unit (AU)",
+    "definition": "Earth's average distance from the Sun, about 150 million km.",
+    "chapter": 27
+  },
+  {
+    "term": "Solstice",
+    "definition": "the longest or shortest day of the year.",
+    "chapter": 27
+  },
+  {
+    "term": "Equinox",
+    "definition": "a day when day and night are about equal.",
+    "chapter": 27
+  },
+  {
+    "term": "Satellite",
+    "definition": "an object that orbits a planet.",
+    "chapter": 27
+  },
+  {
+    "term": "Maria",
+    "definition": "dark, flat lava plains on the Moon.",
+    "chapter": 27
+  },
+  {
+    "term": "Highlands",
+    "definition": "bright, mountainous areas of the Moon.",
+    "chapter": 27
+  },
+  {
+    "term": "Crater",
+    "definition": "a bowl-shaped pit made by an impact.",
+    "chapter": 27
+  },
+  {
+    "term": "Synchronous rotation",
+    "definition": "when an object rotates and orbits in the same time, always showing one side.",
+    "chapter": 27
+  },
+  {
+    "term": "Phase",
+    "definition": "the shape of the Moon's lit part as seen from Earth.",
+    "chapter": 27
+  },
+  {
+    "term": "New moon",
+    "definition": "the phase when the Moon's lit side faces away from Earth.",
+    "chapter": 27
+  },
+  {
+    "term": "Crescent",
+    "definition": "a phase showing a thin sliver of the Moon.",
+    "chapter": 27
+  },
+  {
+    "term": "Quarter moon",
+    "definition": "a phase showing half of the Moon's face lit.",
+    "chapter": 27
+  },
+  {
+    "term": "Gibbous",
+    "definition": "a phase showing more than half lit.",
+    "chapter": 27
+  },
+  {
+    "term": "Full moon",
+    "definition": "the phase showing the whole face lit.",
+    "chapter": 27
+  },
+  {
+    "term": "Waxing",
+    "definition": "the lit part growing.",
+    "chapter": 27
+  },
+  {
+    "term": "Waning",
+    "definition": "the lit part shrinking.",
+    "chapter": 27
+  },
+  {
+    "term": "Solar eclipse",
+    "definition": "the Moon blocking the Sun's light from Earth.",
+    "chapter": 27
+  },
+  {
+    "term": "Lunar eclipse",
+    "definition": "Earth's shadow falling on the Moon.",
+    "chapter": 27
+  },
+  {
+    "term": "Umbra",
+    "definition": "the darkest part of a shadow.",
+    "chapter": 27
+  },
+  {
+    "term": "Penumbra",
+    "definition": "the lighter outer part of a shadow.",
+    "chapter": 27
+  },
+  {
+    "term": "Nuclear fusion",
+    "definition": "combining atoms to release energy; powers the Sun.",
+    "chapter": 27
+  },
+  {
+    "term": "Sunspot",
+    "definition": "a cooler, darker area on the Sun.",
+    "chapter": 27
+  },
+  {
+    "term": "Solar flare",
+    "definition": "a sudden burst of energy from the Sun.",
+    "chapter": 27
+  },
+  {
+    "term": "Solar wind",
+    "definition": "a stream of charged particles from the Sun.",
+    "chapter": 27
+  },
+  {
+    "term": "Solar system",
+    "definition": "the Sun and everything held by its gravity.",
+    "chapter": 28
+  },
+  {
+    "term": "Terrestrial planet",
+    "definition": "a small, rocky inner planet.",
+    "chapter": 28
+  },
+  {
+    "term": "Gas giant",
+    "definition": "a huge planet made mostly of gas, like Jupiter and Saturn.",
+    "chapter": 28
+  },
+  {
+    "term": "Ice giant",
+    "definition": "a giant planet with lots of ices, like Uranus and Neptune.",
+    "chapter": 28
+  },
+  {
+    "term": "Asteroid belt",
+    "definition": "the region of asteroids between Mars and Jupiter.",
+    "chapter": 28
+  },
+  {
+    "term": "Kuiper Belt",
+    "definition": "a region of icy bodies beyond Neptune.",
+    "chapter": 28
+  },
+  {
+    "term": "Dwarf planet",
+    "definition": "a round body orbiting the Sun that hasn't cleared its orbit, like Pluto.",
+    "chapter": 28
+  },
+  {
+    "term": "Asteroid",
+    "definition": "a rocky or metal chunk orbiting the Sun.",
+    "chapter": 28
+  },
+  {
+    "term": "Comet",
+    "definition": "an icy body that grows a glowing tail near the Sun.",
+    "chapter": 28
+  },
+  {
+    "term": "Coma",
+    "definition": "the glowing cloud around a comet's head.",
+    "chapter": 28
+  },
+  {
+    "term": "Meteoroid",
+    "definition": "a small piece of space rock.",
+    "chapter": 28
+  },
+  {
+    "term": "Meteor",
+    "definition": "a meteoroid burning up in the atmosphere; a shooting star.",
+    "chapter": 28
+  },
+  {
+    "term": "Star",
+    "definition": "a huge ball of hot gas powered by nuclear fusion.",
+    "chapter": 28
+  },
+  {
+    "term": "Spectroscope",
+    "definition": "a tool that splits light into a spectrum.",
+    "chapter": 28
+  },
+  {
+    "term": "Spectrum",
+    "definition": "the band of colors made when light is split.",
+    "chapter": 28
+  },
+  {
+    "term": "Apparent magnitude",
+    "definition": "how bright a star looks from Earth.",
+    "chapter": 28
+  },
+  {
+    "term": "Absolute magnitude",
+    "definition": "how bright a star actually is.",
+    "chapter": 28
+  },
+  {
+    "term": "H-R diagram",
+    "definition": "a graph of stars' brightness vs. temperature.",
+    "chapter": 28
+  },
+  {
+    "term": "Main sequence",
+    "definition": "the band on the H-R diagram where most stars spend their lives.",
+    "chapter": 28
+  },
+  {
+    "term": "Light-year",
+    "definition": "the distance light travels in one year, about 9.5 trillion km.",
+    "chapter": 28
+  },
+  {
+    "term": "Protostar",
+    "definition": "a young star still forming.",
+    "chapter": 28
+  },
+  {
+    "term": "Red giant",
+    "definition": "a large, cool star near the end of its life.",
+    "chapter": 28
+  },
+  {
+    "term": "Planetary nebula",
+    "definition": "the glowing shell of gas shed by a dying Sun-like star.",
+    "chapter": 28
+  },
+  {
+    "term": "White dwarf",
+    "definition": "the small, hot core left after a Sun-like star dies.",
+    "chapter": 28
+  },
+  {
+    "term": "Supergiant",
+    "definition": "an extremely large, bright star.",
+    "chapter": 28
+  },
+  {
+    "term": "Supernova",
+    "definition": "the explosion of a massive star.",
+    "chapter": 28
+  },
+  {
+    "term": "Neutron star",
+    "definition": "a super-dense remnant of a supernova.",
+    "chapter": 28
+  },
+  {
+    "term": "Black hole",
+    "definition": "an object with gravity so strong not even light escapes.",
+    "chapter": 28
+  },
+  {
+    "term": "Stellar nucleosynthesis",
+    "definition": "stars making new elements by fusion.",
+    "chapter": 28
+  },
+  {
+    "term": "Galaxy",
+    "definition": "a huge system of stars, gas, and dust held by gravity.",
+    "chapter": 28
+  },
+  {
+    "term": "Milky Way",
+    "definition": "our home galaxy, a spiral.",
+    "chapter": 28
+  },
+  {
+    "term": "Spiral galaxy",
+    "definition": "a galaxy with pinwheel arms.",
+    "chapter": 28
+  },
+  {
+    "term": "Elliptical galaxy",
+    "definition": "an oval-shaped galaxy.",
+    "chapter": 28
+  },
+  {
+    "term": "Irregular galaxy",
+    "definition": "a galaxy with no clear shape.",
+    "chapter": 28
+  },
+  {
+    "term": "Big Bang theory",
+    "definition": "the theory that the universe began hot and dense about 13.8 billion years ago and has expanded since.",
+    "chapter": 28
+  },
+  {
+    "term": "Redshift",
+    "definition": "light from a receding object stretching toward red.",
+    "chapter": 28
+  },
+  {
+    "term": "Doppler effect",
+    "definition": "the change in wave frequency when a source moves toward or away from you.",
+    "chapter": 28
+  },
+  {
+    "term": "Cosmic microwave background (CMB)",
+    "definition": "leftover radiation from the early universe.",
+    "chapter": 28
+  },
+  {
+    "term": "Dark matter",
+    "definition": "unseen matter detected by its gravity.",
+    "chapter": 28
+  },
+  {
+    "term": "Dark energy",
+    "definition": "a mysterious force speeding up the universe's expansion.",
+    "chapter": 28
+  }
+]

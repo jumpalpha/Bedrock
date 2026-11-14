@@ -1,0 +1,2094 @@
+[
+  {
+    "n": 1,
+    "realm": 1,
+    "title": "Thinking Like an Earth Scientist",
+    "sections": [
+      {
+        "heading": "You Just Spawned. Now What?",
+        "markdown": "Picture this. You wake up on a strange planet. No instructions. No tutorial. Just rocks, water, sky, and a weird rumble under your feet.\nYou could panic. Or you could do what Earth scientists do: look around, ask questions, and figure it out.\nGood news: you live on a planet like that right now. It's called Earth. And people have spent thousands of years figuring it out, one question at a time."
+      },
+      {
+        "heading": "What Is Earth Science?",
+        "markdown": "Earth science is the study of our planet and its neighbors in space. It's basically the survival guide to Earth. It breaks into four big areas:\n- **Geology**: rocks, minerals, earthquakes, volcanoes. The solid stuff.\n- **Oceanography**: oceans, waves, currents, and the sea floor. The wet stuff.\n- **Meteorology**: weather and the atmosphere. The windy stuff.\n- **Astronomy**: the Moon, Sun, stars, and space. The *way out there* stuff.\nEarth scientists also study climate, soil, water underground, and how humans change the planet. If it's part of Earth, somebody studies it."
+      },
+      {
+        "heading": "The Scientific Method: Your Survival Strategy",
+        "markdown": "Scientists don't just guess. They follow a pattern called the **scientific method**. Think of it like figuring out a new game without reading the rules.\n1. **Observe.** Notice something. *\"Hey, the creek by my house floods every spring.\"*\n2. **Ask a question.** *\"Why does it flood in spring and not fall?\"*\n3. **Make a hypothesis.** A hypothesis is a smart guess you can test. *\"Snow melting in the mountains fills the creek.\"*\n4. **Experiment or gather data.** Measure snow, measure the creek, and compare.\n5. **Analyze.** Look at what the numbers tell you.\n6. **Conclude.** Was your guess right? If not, no shame. Make a new guess and try again.\nIn an experiment, the thing you change on purpose is the **independent variable**. The thing you measure is the **dependent variable**. Everything else stays the same. Those are your **controls**, so it's a fair test.\nHere's the thing about Earth science, though. You can't exactly make a volcano erupt on command. So a lot of Earth science is careful observing, measuring, and collecting data over a long time."
+      },
+      {
+        "heading": "Theory vs. Law (They're Not the Same)",
+        "markdown": "People say \"it's just a theory\" like it means a wild guess. In science, it's the opposite.\n- A **scientific theory** explains *why* something happens. It's backed by tons of evidence and testing. Plate tectonics is a theory, and it's about as solid as science gets.\n- A **scientific law** describes *what* happens, often with math, but doesn't explain why. Gravity pulling things down is a law.\nBoth can change if new evidence shows up. That's not a weakness. That's science doing its job."
+      },
+      {
+        "heading": "Measuring Like a Pro",
+        "markdown": "Scientists everywhere use the **metric system** (officially called SI). That way a scientist in Idaho and one in Japan mean the same thing.\n- **Length:** meters (m)\n- **Mass:** grams (g) and kilograms (kg)\n- **Volume:** liters (L)\n- **Temperature:** degrees Celsius (°C). Water freezes at 0 °C and boils at 100 °C.\nThe best part: everything goes by tens. 100 centimeters in a meter. 1,000 meters in a kilometer. No 12 inches, 3 feet, 5,280 feet nonsense."
+      },
+      {
+        "heading": "Models: Practice Planets",
+        "markdown": "Earth is way too big to fit in a classroom. So scientists use **models**: globes, maps, diagrams, and computer simulations. A weather forecast is a computer model. A globe is a model you can spin. Models aren't perfect, but they help us see things we can't see directly, like the inside of the Earth."
+      },
+      {
+        "heading": "Staying Safe in the Lab",
+        "markdown": "Survival rule number one: don't get hurt. Wear goggles when told, follow directions, never taste anything, and tell your teacher about spills or broken glass right away. Rocks may be millions of years old. Your eyes are not replaceable."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Your hypothesis: \"The creek floods because of spring snowmelt.\" A friend says, \"No, it's because it rains more in spring.\" What two measurements would you collect for a few years to settle it? What result would prove you wrong?",
+      "standards": "Science and engineering practices used in every chapter: asking questions, planning investigations, analyzing data, and arguing from evidence."
+    },
+    "checklist": [
+      "Earth science = geology, oceanography, meteorology, astronomy.",
+      "The scientific method: observe, question, hypothesize, test, analyze, conclude.",
+      "A theory explains *why* and is backed by lots of evidence. A law describes *what*.",
+      "Scientists use metric units that go by tens.",
+      "Models help us study things too big, too small, or too far away."
+    ],
+    "keyWords": [
+      "Earth science",
+      "geology",
+      "oceanography",
+      "meteorology",
+      "astronomy",
+      "scientific method",
+      "observation",
+      "question",
+      "hypothesis",
+      "experiment",
+      "data",
+      "analyze",
+      "conclusion",
+      "independent variable",
+      "dependent variable",
+      "control",
+      "scientific theory",
+      "scientific law",
+      "evidence",
+      "metric system (SI)",
+      "meter",
+      "gram",
+      "kilogram",
+      "liter",
+      "degrees Celsius",
+      "model",
+      "lab safety"
+    ]
+  },
+  {
+    "n": 2,
+    "realm": 1,
+    "title": "Maps and Navigation",
+    "sections": [
+      {
+        "heading": "Don't Get Lost on Day One",
+        "markdown": "Every survival game has a map. Without one, you wander in circles, walk off a cliff, or never find your way back to base. Real life is the same. Maps are how humans have kept from getting lost for thousands of years."
+      },
+      {
+        "heading": "Latitude and Longitude: Earth's Grid",
+        "markdown": "Scientists put an invisible grid over the whole planet so any spot can have an address.\n- **Latitude** lines run side to side, like the rungs of a ladder (\"lat\" sounds like \"ladder\"). They measure how far north or south you are from the **equator**, which is 0°. The North Pole is 90° N. The South Pole is 90° S.\n- **Longitude** lines run top to bottom, from pole to pole. They measure how far east or west you are from the **prime meridian**, which is 0° and runs through Greenwich, England. They go up to 180° east or west.\nPut the two together and you get coordinates. Idaho Falls sits at roughly 43° N, 112° W. That's your spawn point's address.\nEach degree breaks into 60 **minutes**, and each minute into 60 **seconds**. Yes, like a clock. No, nobody knows why they did that to us."
+      },
+      {
+        "heading": "Time Zones",
+        "markdown": "Earth spins once every 24 hours. Split 360° by 24 hours and you get 15° per hour. That's why the world is divided into time zones about 15° wide. Idaho Falls is on Mountain Time. When it's noon here, it's 2:00 pm in New York.\nOut in the Pacific is the **International Date Line**, near 180°. Cross it going west and you skip ahead a whole day. Instant time travel. Kind of."
+      },
+      {
+        "heading": "The Problem With Flat Maps",
+        "markdown": "Earth is round. Paper is flat. Try flattening an orange peel without tearing it. You can't. Every flat map stretches or squishes something. These are called **map projections**.\n- **Mercator projection:** Great for navigation, but it makes places near the poles look huge. Greenland looks as big as Africa. In real life, Africa is about 14 times bigger.\n- **Equal-area projections:** Keep sizes correct but bend shapes.\n- **Globes:** The only truly accurate map. Also impossible to fold into your pocket."
+      },
+      {
+        "heading": "Reading a Map",
+        "markdown": "Every good map has a few survival tools built in:\n- **Legend (key):** explains the symbols. Blue lines = rivers, little tents = campgrounds.\n- **Scale:** tells you real distance. \"1 inch = 1 mile\" means an inch on paper is a mile on the ground.\n- **Compass rose:** shows north, south, east, west."
+      },
+      {
+        "heading": "Topographic Maps: Seeing in 3D",
+        "markdown": "A **topographic map** shows the shape of the land, its hills, valleys and cliffs, on a flat page. It does this with **contour lines**. Each line connects points at the same **elevation**, or height above sea level.\nHere's how to read them:\n- Lines close together = steep. Think cliff.\n- Lines far apart = gentle slope. Think easy walk.\n- Circles inside circles = a hill or mountain.\n- Lines that make a V pointing uphill = a stream valley.\n- The **contour interval** is the height difference between lines, like 20 feet each.\nHikers, firefighters, and search-and-rescue teams use topo maps all the time. If you've ever hiked in the Tetons, someone planned that trail with one."
+      },
+      {
+        "heading": "Modern Mapping Tech",
+        "markdown": "- **GPS (Global Positioning System):** about 30 satellites orbit Earth. Your phone listens to at least four of them and figures out exactly where you are.\n- **Remote sensing:** satellites and planes photograph and scan Earth from above. That's how we track wildfires, floods, and melting glaciers.\n- **GIS (Geographic Information Systems):** computer maps that stack layers, like roads plus rivers plus population, so you can spot patterns.\nYour phone's map app uses all three. You're basically carrying a mapping lab in your pocket."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A topo map shows two trails up the same 600-foot hill. On Trail A the contour lines are packed tight. On Trail B they're spread far apart. Which trail is steeper? Which would you pick to carry a heavy pack, and which would a flash flood rush down faster? Use the map evidence to explain.",
+      "standards": "HS-ESS-3.1 (how natural hazards influence human activity; hazard maps), plus data and modeling practices."
+    },
+    "checklist": [
+      "Latitude = north/south from the equator. Longitude = east/west from the prime meridian.",
+      "Time zones are about 15° wide because Earth spins 15° an hour.",
+      "Every flat map distorts something. Only a globe is fully accurate.",
+      "Topographic maps use contour lines: close = steep, far apart = flat.",
+      "GPS, remote sensing, and GIS are modern mapping tools."
+    ],
+    "keyWords": [
+      "latitude",
+      "longitude",
+      "equator",
+      "prime meridian",
+      "degree",
+      "minute",
+      "coordinates",
+      "time zone",
+      "International Date Line",
+      "map",
+      "globe",
+      "map projection",
+      "Mercator projection",
+      "equal-area projection",
+      "legend (key)",
+      "scale",
+      "compass rose",
+      "topographic map",
+      "contour line",
+      "elevation",
+      "contour interval",
+      "GPS",
+      "satellite",
+      "remote sensing",
+      "GIS"
+    ]
+  },
+  {
+    "n": 3,
+    "realm": 1,
+    "title": "Earth's Systems and Matter",
+    "sections": [
+      {
+        "heading": "What Is This Planet Made Of?",
+        "markdown": "You've got your brain switched on and a map in hand. Now it's time to check your inventory. What's this planet actually made of, and how do all the parts work together?"
+      },
+      {
+        "heading": "Matter: The Stuff of Everything",
+        "markdown": "**Matter** is anything that has mass and takes up space. Rocks, water, air, you. All matter.\n**Mass** is how much matter something has. A bowling ball has more mass than a beach ball, even though they're about the same size.\nMatter is built from tiny pieces called **atoms**. An atom has three parts:\n- **Protons:** positive charge, in the center (the **nucleus**).\n- **Neutrons:** no charge, also in the nucleus.\n- **Electrons:** negative charge, zipping around the outside.\nAn **element** is a substance made of only one kind of atom, like oxygen, iron or gold. There are 118 known elements, all organized on the **periodic table**. Think of it as the ultimate crafting chart.\nWhen atoms of different elements bond together, they make a **compound**. Water (H₂O) is two hydrogen atoms stuck to one oxygen. Table salt is sodium plus chlorine. Fun fact: sodium explodes in water and chlorine is a poison gas. Together they go on your fries.\nThe force that holds atoms together in a compound is called a **chemical bond**. Think of it like the glue between blocks. Break the bonds and the compound comes apart into its elements."
+      },
+      {
+        "heading": "Earth's Top Ingredients",
+        "markdown": "Just eight elements make up about 98% of Earth's crust. The top two are a surprise:\n1. **Oxygen:** about 46%. Yes, the crust is mostly oxygen, locked inside rocks.\n2. **Silicon:** about 28%. Oxygen and silicon together form the building blocks of most rocks.\n3. Then aluminum, iron, calcium, sodium, potassium and magnesium.\nSo when you pick up a rock, you're basically holding oxygen in a solid costume."
+      },
+      {
+        "heading": "States of Matter",
+        "markdown": "Matter shows up in different forms, called **states**:\n- **Solid:** fixed shape. Rocks, ice.\n- **Liquid:** takes the shape of its container. Water, lava.\n- **Gas:** spreads out to fill any space. Air, steam.\n- **Plasma:** super-hot, charged gas. Lightning and the Sun.\nAdding or removing energy (usually heat) changes the state. Ice melts into water, water evaporates into vapor. Lava cools into solid rock. Earth does this all day, every day.\nGoing the other way, when water vapor cools and turns back into liquid droplets, that's **condensation**. It's why a cold soda can \"sweats\" on a hot day, and it's how clouds form. Matter and energy keep moving around and around in loops called **cycles**, like the water cycle and the rock cycle."
+      },
+      {
+        "heading": "The Four Spheres: Earth's Big Systems",
+        "markdown": "Scientists split Earth into four connected systems, called **spheres**:\n- **Geosphere:** the solid Earth. Rocks, mountains, and everything down to the core.\n- **Hydrosphere:** all the water. Oceans, rivers, lakes, groundwater, ice. About 97% of it is salty ocean water.\n- **Atmosphere:** the blanket of air around Earth. Mostly nitrogen (78%) and oxygen (21%).\n- **Biosphere:** all living things. Plants, animals, bacteria, and you."
+      },
+      {
+        "heading": "Everything Is Connected",
+        "markdown": "The spheres don't work alone. They're constantly trading matter and energy. Here's one example:\nA volcano erupts (geosphere). It blasts ash and gas into the sky (atmosphere). Rain washes the ash into rivers (hydrosphere). Years later, that ash turns into rich soil, and plants grow like crazy (biosphere).\nOne event, all four spheres. That's why Earth scientists call it a **system**. Change one part, and the rest feel it."
+      },
+      {
+        "heading": "Energy: What Keeps It All Moving",
+        "markdown": "Earth runs on two main power sources:\n- **The Sun:** drives weather, wind, ocean currents, and the water cycle, and feeds almost all life.\n- **Earth's internal heat:** left over from when the planet formed, plus heat from radioactive elements breaking down. It moves plates, builds mountains, and powers volcanoes.\nMatter on Earth gets recycled over and over. The water you drink today may have once been dinosaur sweat. Seriously. Same water, new cup."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "In 1980, Mount St. Helens erupted. Ash fell on fields hundreds of miles away, rivers filled with mud, and forests were flattened. Within a few years, plants were sprouting through the ash. Trace that one event through all four spheres. That's a **feedback**: one change triggers changes in other systems.",
+      "standards": "HS-ESS-2.2* (one change causes feedbacks in other Earth systems), HS-ESS-2.6* (cycling of carbon among the four spheres).\n\n\\* = Idaho Essential Standard"
+    },
+    "checklist": [
+      "Matter is anything with mass that takes up space, built from atoms.",
+      "Elements are one kind of atom; compounds are elements bonded together.",
+      "Oxygen and silicon make up most of Earth's crust.",
+      "Earth has four spheres: geosphere, hydrosphere, atmosphere, biosphere.",
+      "The spheres constantly swap matter and energy, powered by the Sun and Earth's internal heat."
+    ],
+    "keyWords": [
+      "matter",
+      "mass",
+      "atom",
+      "proton",
+      "neutron",
+      "electron",
+      "nucleus",
+      "element",
+      "periodic table",
+      "compound",
+      "chemical bond",
+      "silicon",
+      "oxygen",
+      "states of matter",
+      "solid",
+      "liquid",
+      "gas",
+      "plasma",
+      "melting",
+      "evaporation",
+      "condensation",
+      "geosphere",
+      "hydrosphere",
+      "atmosphere",
+      "biosphere",
+      "system",
+      "feedback",
+      "energy",
+      "solar energy",
+      "internal heat",
+      "cycle"
+    ]
+  },
+  {
+    "n": 4,
+    "realm": 2,
+    "title": "Minerals",
+    "sections": [
+      {
+        "heading": "Your First Mining Trip",
+        "markdown": "In every survival game, the first thing you do is start mining. Stone, coal, iron, and if you're lucky, diamonds. Guess what? Real Earth works the same way. Those things are all minerals (well, coal is a rock, but we'll get to that)."
+      },
+      {
+        "heading": "What Counts as a Mineral?",
+        "markdown": "Not everything you dig up is a mineral. To make the list, it has to pass five tests:\n1. **Naturally occurring.** Made by nature, not in a factory.\n2. **Inorganic.** Not made by living things. (Sorry, seashells and pearls are close calls.)\n3. **Solid.** No liquids or gases allowed.\n4. **Definite chemical makeup.** Same recipe every time. Quartz is always silicon and oxygen.\n5. **Crystal structure.** Its atoms line up in a repeating pattern, like perfectly stacked blocks.\nThere are over 5,000 known minerals. But only about 20 or so are common, and those make up most of the rocks on Earth."
+      },
+      {
+        "heading": "The Big Mineral Families",
+        "markdown": "- **Silicates:** contain silicon and oxygen. These make up over 90% of Earth's crust. Quartz and feldspar are the superstars.\n- **Carbonates:** contain carbon and oxygen. Calcite is one, and it fizzes when you drop acid on it.\n- **Oxides:** metals bonded to oxygen. Hematite is an iron ore, and it's where a lot of our iron comes from.\n- **Native elements:** pure elements found on their own. Gold, silver, copper, and diamond (pure carbon)."
+      },
+      {
+        "heading": "How to Identify a Mineral",
+        "markdown": "Geologists ID minerals like detectives, using clues called **properties**:\n- **Color:** the easiest clue, but also the sneakiest. One mineral can come in many colors.\n- **Streak:** the color of its powder when you scrape it on a white tile. Hematite can look silver or black, but its streak is always reddish-brown. Busted.\n- **Luster:** how it shines. **Metallic** (like a shiny coin) or **nonmetallic** (glassy, pearly, dull, greasy).\n- **Hardness:** how easily it scratches.\n- **Cleavage and fracture:** how it breaks. **Cleavage** means it splits along flat, smooth surfaces. **Fracture** means it breaks rough or curvy, like broken glass.\n- **Density:** how heavy it feels for its size. Gold is crazy heavy.\n- **Special properties:** magnetite sticks to magnets, calcite fizzes in acid, and halite (rock salt) tastes salty. Don't lick rocks in class, though."
+      },
+      {
+        "heading": "The Mohs Hardness Scale",
+        "markdown": "In 1812, a German scientist named Friedrich Mohs ranked 10 minerals from softest to hardest. Each one scratches the ones below it.\n1. Talc (so soft your fingernail scratches it)\n2. Gypsum\n3. Calcite\n4. Fluorite\n5. Apatite\n6. Feldspar\n7. Quartz\n8. Topaz\n9. Corundum (rubies and sapphires)\n10. Diamond (the boss level)\nHandy tools for testing: your fingernail is about 2.5, a copper penny about 3.5, a steel nail or glass about 5.5."
+      },
+      {
+        "heading": "Gems and Ores",
+        "markdown": "- A **gem** is a mineral that's rare, hard, and beautiful enough to be cut and polished. Diamonds, rubies, emeralds.\n- An **ore** is a mineral we can mine for a profit, usually for a metal. Iron from hematite, aluminum from bauxite, copper from chalcopyrite.\nIdaho is nicknamed the **Gem State** for a reason. It has over 70 kinds of gems, and it's one of the only places on Earth where you'll find star garnets."
+      },
+      {
+        "heading": "Minerals in Your Life",
+        "markdown": "You use minerals all day. Your phone has over 30 different elements from minerals in it. Toothpaste has fluorite. Pencil \"lead\" is actually graphite. Drywall is gypsum. Even the salt on your food is the mineral halite."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "You find a shiny gold-colored mineral. Is it real gold or pyrite (\"fool's gold\")? Gold's streak is gold-yellow and it's soft (about 2.5). Pyrite's streak is greenish-black and it's hard (about 6). Describe the two tests you'd run and what each result would tell you.\n\nBonus: A town wants a new mine. It brings jobs but could pollute a river. What evidence would you want before voting yes or no?",
+      "standards": "HS-ESS-3.2* (weighing costs and benefits of mineral resources)."
+    },
+    "checklist": [
+      "A mineral is natural, inorganic, solid, has a set chemical recipe, and has a crystal structure.",
+      "Silicates make up most of Earth's crust.",
+      "Identify minerals using color, streak, luster, hardness, cleavage, density, and special properties.",
+      "The Mohs scale ranks hardness from 1 (talc) to 10 (diamond).",
+      "Gems are pretty and rare; ores are mined for profit."
+    ],
+    "keyWords": [
+      "mineral",
+      "inorganic",
+      "crystal",
+      "silicate",
+      "carbonate",
+      "oxide",
+      "native element",
+      "streak",
+      "luster",
+      "hardness",
+      "Mohs scale",
+      "cleavage",
+      "fracture",
+      "density",
+      "gem",
+      "ore"
+    ]
+  },
+  {
+    "n": 5,
+    "realm": 2,
+    "title": "Igneous Rocks",
+    "sections": [
+      {
+        "heading": "Born From Fire",
+        "markdown": "The word **igneous** comes from the Latin word for fire. These rocks start as melted rock and then cool down into solid stone. Basically, they're the planet's lava leftovers.\nAnd here's the cool part: if you live in eastern Idaho, you're standing on them. The Snake River Plain is covered in igneous rock from ancient lava flows and the Yellowstone hotspot."
+      },
+      {
+        "heading": "Magma vs. Lava",
+        "markdown": "Same stuff, different address:\n- **Magma** is melted rock *underground*.\n- **Lava** is melted rock that has reached the *surface*.\nMagma forms deep in the Earth where it's hot enough, roughly 700 °C to 1,300 °C, to melt rock. Since it's lighter than the solid rock around it, magma rises, kind of like a blob in a lava lamp."
+      },
+      {
+        "heading": "Two Ways to Cool Off",
+        "markdown": "Where the rock cools decides what it looks like:\n- **Intrusive (plutonic) rocks** cool slowly, *inside* the Earth. Slow cooling gives crystals time to grow big. You can see them with your bare eyes. **Granite** is the classic example. Check out a kitchen countertop.\n- **Extrusive (volcanic) rocks** cool fast, *on the surface*. Fast cooling means tiny crystals, or none at all. **Basalt** is the classic example, and it's the dark rock all over the Snake River Plain.\nEasy way to remember it: **slow = big crystals, fast = small crystals.** Like rock candy. Give it time and the crystals get huge."
+      },
+      {
+        "heading": "Texture: Reading the Clues",
+        "markdown": "**Texture** is the size, shape, and arrangement of the crystals. It tells you the rock's backstory.\n- **Coarse-grained:** big crystals. Cooled slowly underground. (Granite)\n- **Fine-grained:** tiny crystals. Cooled quickly at the surface. (Basalt)\n- **Glassy:** no crystals at all. Cooled so fast the atoms couldn't line up. **Obsidian** is natural volcanic glass, and Native Americans chipped it into razor-sharp arrowheads.\n- **Vesicular:** full of holes from gas bubbles, like a sponge. **Pumice** has so many holes it can float on water. A floating rock!\n- **Porphyritic:** big crystals mixed in a fine background. That means it started cooling slowly underground, then got blasted up and finished fast."
+      },
+      {
+        "heading": "Composition: Light vs. Dark",
+        "markdown": "Igneous rocks are also sorted by what they're made of:\n- **Felsic:** light-colored, lots of silica. Granite and rhyolite. Felsic magma is thick and sticky, which can cause explosive eruptions. (Yellowstone, we're looking at you.)\n- **Mafic:** dark-colored, rich in iron and magnesium. Basalt and gabbro. Mafic lava is runny and flows easily.\n- **Intermediate:** in between. Andesite and diorite."
+      },
+      {
+        "heading": "Where to See Them in Idaho",
+        "markdown": "- **Craters of the Moon National Monument:** fresh-looking basalt lava fields, lava tubes, and cinder cones. NASA astronauts trained there in 1969 before going to the Moon.\n- **The Snake River Plain:** basalt layers stacked hundreds of feet deep.\n- **The Idaho Batholith:** a giant chunk of granite in central Idaho, including the Sawtooth Mountains."
+      },
+      {
+        "heading": "Igneous Rocks in Your Life",
+        "markdown": "Granite countertops and gravestones. Basalt for road gravel. Pumice in exfoliating scrubs and pumice stones for rough feet. Obsidian blades are so sharp that some surgeons have used them."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Two rocks sit on your desk. Rock A has crystals as big as your fingernail. Rock B is dark with crystals too small to see. Which one cooled underground, and which cooled on the surface? Which could you find at Craters of the Moon? Back up your answer with the crystal evidence.",
+      "standards": "HS-ESS-2.3* (Earth's interior and the cycling of matter), HS-ESS-1.5* (plate movements and the ages of crustal rocks)."
+    },
+    "checklist": [
+      "Igneous rocks form when magma or lava cools and hardens.",
+      "Magma is underground; lava is on the surface.",
+      "Intrusive = cooled slowly inside Earth, big crystals. Extrusive = cooled fast on the surface, small or no crystals.",
+      "Texture (coarse, fine, glassy, vesicular) tells how fast a rock cooled.",
+      "Felsic rocks are light and silica-rich; mafic rocks are dark and iron-rich."
+    ],
+    "keyWords": [
+      "igneous rock",
+      "magma",
+      "lava",
+      "intrusive",
+      "extrusive",
+      "texture",
+      "coarse-grained",
+      "fine-grained",
+      "glassy",
+      "vesicular",
+      "porphyritic",
+      "felsic",
+      "mafic",
+      "granite",
+      "basalt",
+      "obsidian",
+      "pumice"
+    ]
+  },
+  {
+    "n": 6,
+    "realm": 2,
+    "title": "Sedimentary and Metamorphic Rocks",
+    "sections": [
+      {
+        "heading": "Two More Rock Types to Collect",
+        "markdown": "Igneous rocks are born from fire. The other two types have different origin stories. **Sedimentary** rocks are made from bits and pieces glued together. **Metamorphic** rocks are rocks that got squeezed and cooked into something new. Think of it as a rock makeover show."
+      },
+      {
+        "heading": "Built Layer by Layer",
+        "markdown": "**Sediment** is loose material like sand, mud, pebbles, and bits of shells. Over time, sediment piles up, usually at the bottom of lakes, rivers, and oceans. Then two things happen:\n1. **Compaction:** layers on top press down and squeeze out water and air.\n2. **Cementation:** minerals dissolved in water act like natural glue and stick the pieces together.\nPress plus glue equals rock. It can take thousands to millions of years. Patience is not optional.",
+        "part": "Part 1: Sedimentary Rocks"
+      },
+      {
+        "heading": "Three Kinds of Sedimentary Rock",
+        "markdown": "- **Clastic:** made from broken pieces of other rocks. Sorted by size: **conglomerate** (big rounded pebbles), **sandstone** (sand), and **shale** (super-fine mud).\n- **Chemical:** forms when minerals come out of water, usually as it evaporates. **Rock salt** and some **limestone** form this way. The Great Salt Lake is making it right now.\n- **Organic:** made from the remains of living things. **Coal** is squished ancient swamp plants. Some limestone is made of billions of tiny shells.",
+        "part": "Part 1: Sedimentary Rocks"
+      },
+      {
+        "heading": "Reading the Layers",
+        "markdown": "Sedimentary rocks are history books. They form in layers called **strata**, and the oldest layer is usually on the bottom. They can hold clues like ripple marks from ancient beaches, mud cracks from dried-up lakes, and, best of all, **fossils**. Almost every fossil ever found came from sedimentary rock. Want dinosaurs? Dig here.\nThe Grand Canyon is basically a giant stack of sedimentary layers, nearly 2 billion years of history you can see from the rim.",
+        "part": "Part 1: Sedimentary Rocks"
+      },
+      {
+        "heading": "The Rock Makeover",
+        "markdown": "**Metamorphic** means \"change of form.\" These rocks start as igneous, sedimentary, or even other metamorphic rocks, then get transformed by:\n- **Heat:** from nearby magma or from being buried deep.\n- **Pressure:** from tons of rock on top or from crashing tectonic plates.\n- **Hot fluids:** that carry new chemicals in and out.\nHere's the key: the rock **doesn't melt**. If it melts, it becomes magma and starts over as igneous. Metamorphism is more like baking cookie dough. It changes, but it doesn't turn back into liquid.",
+        "part": "Part 2: Metamorphic Rocks"
+      },
+      {
+        "heading": "Two Ways It Happens",
+        "markdown": "- **Contact metamorphism:** magma bakes the rock right next to it. Small area, lots of heat.\n- **Regional metamorphism:** huge areas get squeezed and heated when plates collide and mountains form. This is the big one.",
+        "part": "Part 2: Metamorphic Rocks"
+      },
+      {
+        "heading": "Foliated vs. Non-Foliated",
+        "markdown": "- **Foliated:** minerals get squished into flat layers or bands, like a stack of pancakes. Shale becomes **slate** (used for old chalkboards and roofs), then **schist** (sparkly), then **gneiss** (pronounced \"nice,\" with striped bands). Yes, the rock is literally named nice.\n- **Non-foliated:** no layers. **Marble** comes from limestone and is used for statues and fancy floors. **Quartzite** comes from sandstone and is super tough.",
+        "part": "Part 2: Metamorphic Rocks"
+      },
+      {
+        "heading": "Parent Rock Cheat Sheet",
+        "markdown": "- Shale → slate → schist → gneiss\n- Limestone → marble\n- Sandstone → quartzite\n- Granite → gneiss",
+        "part": "Part 2: Metamorphic Rocks"
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A cliff shows three layers. The bottom is shale with fish fossils. The middle is sandstone with ripple marks. The top is limestone full of seashells. Tell the story: what was this place like long ago, and how did it change? Which layer is oldest, and how do you know?",
+      "standards": "HS-ESS-1.6* (using ancient Earth materials as evidence of Earth's history), HS-ESS-2.5 (water's role in Earth materials and surface processes)."
+    },
+    "checklist": [
+      "Sedimentary rocks form from sediment through compaction and cementation.",
+      "They come in three kinds: clastic, chemical, and organic.",
+      "Sedimentary rocks form in layers and hold nearly all fossils.",
+      "Metamorphic rocks form when heat, pressure, or hot fluids change a rock without melting it.",
+      "Foliated rocks have layers (slate, schist, gneiss); non-foliated don't (marble, quartzite)."
+    ],
+    "keyWords": [
+      "sediment",
+      "sedimentary rock",
+      "compaction",
+      "cementation",
+      "clastic",
+      "chemical rock",
+      "organic rock",
+      "conglomerate",
+      "sandstone",
+      "shale",
+      "limestone",
+      "coal",
+      "strata",
+      "fossil",
+      "metamorphic rock",
+      "contact metamorphism",
+      "regional metamorphism",
+      "foliated",
+      "non-foliated",
+      "slate",
+      "schist",
+      "gneiss",
+      "marble",
+      "quartzite"
+    ]
+  },
+  {
+    "n": 7,
+    "realm": 2,
+    "title": "The Rock Cycle",
+    "sections": [
+      {
+        "heading": "The Ultimate Recycling Program",
+        "markdown": "You've collected all three rock types: igneous, sedimentary, and metamorphic. Now here's the plot twist. They're not stuck that way. Any rock can turn into any other rock, given enough time. It's called the **rock cycle**, and Earth has been running it for about 4 billion years.\nNo rock is ever really new. The granite on a countertop might once have been sand on an ancient beach, or lava, or deep inside a mountain. Rocks are the planet's oldest recyclers."
+      },
+      {
+        "heading": "The Processes That Drive It",
+        "markdown": "Think of these as the moves in the game:\n- **Melting:** heat deep underground turns rock into magma.\n- **Cooling and crystallizing:** magma or lava hardens into igneous rock.\n- **Weathering and erosion:** wind, water, ice, and even plant roots break rock into sediment and carry it away.\n- **Deposition:** sediment settles and piles up, usually in water.\n- **Compaction and cementation:** sediment gets pressed and glued into sedimentary rock.\n- **Heat and pressure:** rock gets squeezed and baked into metamorphic rock.\n- **Uplift:** forces inside Earth push buried rock back up to the surface, where the cycle can start again."
+      },
+      {
+        "heading": "Following One Rock's Journey",
+        "markdown": "Let's follow a single rock around the cycle:\n1. Magma rises under Idaho and cools into **granite** (igneous).\n2. Millions of years later, the granite gets pushed up into mountains. Rain, ice, and wind break it into sand.\n3. A river carries the sand to a lake, where it settles in layers and hardens into **sandstone** (sedimentary).\n4. Plates collide, burying the sandstone deep. Heat and pressure turn it into **quartzite** (metamorphic).\n5. It gets pushed deeper still and melts back into **magma**. Then it's back to step 1.\nHere's the catch: there's no set path. A rock can skip steps, go backward, or take shortcuts. Igneous rock can go straight to metamorphic. Metamorphic rock can weather into sediment. It's less of a circle and more of a choose-your-own-adventure."
+      },
+      {
+        "heading": "What Powers the Cycle",
+        "markdown": "Two engines keep it running:\n- **Earth's internal heat:** melts rock, drives metamorphism, and pushes rock upward through plate movement.\n- **The Sun:** powers the weather and water cycle that wear rocks down at the surface. Gravity helps by pulling sediment downhill.\nWhen you think about it, the rock cycle ties all four spheres together. Rocks (geosphere), water and ice (hydrosphere), wind and weather (atmosphere), and roots and living things (biosphere) all play a part."
+      },
+      {
+        "heading": "How Fast Is It?",
+        "markdown": "Mostly, painfully slow. A full trip around the cycle can take hundreds of millions of years. But some parts are fast. A lava flow can become solid rock in hours. A landslide can move tons of sediment in seconds."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Draw the rock cycle as a map, then mark which arrows are powered by Earth's internal heat and which are powered by the Sun. Now pick one: if Earth's interior cooled off completely, which parts of the cycle would stop? What would happen to mountains over time?",
+      "standards": "HS-ESS-2.3* (cycling of matter by Earth's internal heat), HS-ESS-2.2* (feedbacks between systems), HS-ESS-2.5 (water and the rock cycle)."
+    },
+    "checklist": [
+      "The rock cycle is how rocks change from one type to another over time.",
+      "Key processes: melting, cooling, weathering, erosion, deposition, compaction, cementation, heat and pressure, uplift.",
+      "Rocks can take many different paths through the cycle. There's no set order.",
+      "Earth's internal heat and the Sun power the cycle.",
+      "Most of the rock cycle is very slow, but some steps happen fast."
+    ],
+    "keyWords": [
+      "rock cycle",
+      "melting",
+      "crystallization",
+      "weathering",
+      "erosion",
+      "deposition",
+      "compaction",
+      "cementation",
+      "uplift"
+    ]
+  },
+  {
+    "n": 8,
+    "realm": 3,
+    "title": "Weathering, Erosion, and Soil",
+    "sections": [
+      {
+        "heading": "The Planet Is Falling Apart (Slowly)",
+        "markdown": "Mountains look like they'll last forever. They won't. Every day, rain, ice, wind, and plants chip away at them. Give it enough time and the Rocky Mountains will be sand on a beach somewhere. Don't worry, you've got a few million years."
+      },
+      {
+        "heading": "Weathering vs. Erosion",
+        "markdown": "These two get mixed up a lot:\n- **Weathering** = breaking rock down into smaller pieces. It stays in place.\n- **Erosion** = moving those pieces somewhere else.\nWeathering breaks it. Erosion takes it. Think of weathering as smashing a cookie and erosion as the ants carrying the crumbs away."
+      },
+      {
+        "heading": "Mechanical Weathering: Breaking Without Changing",
+        "markdown": "**Mechanical weathering** breaks rock into smaller pieces without changing what it's made of. A small granite chunk is still granite.\n- **Frost wedging (ice wedging):** water seeps into cracks, freezes, and expands by about 9%. It pries the crack wider, like a tiny ice crowbar. Freeze, thaw, repeat. This is huge in Idaho winters and is why potholes appear every spring.\n- **Plant roots:** roots grow into cracks and split rocks apart. Ever seen a sidewalk buckled by a tree? Same idea.\n- **Abrasion:** rocks get scraped and smoothed by sand blown in wind or tumbling in rivers. That's why river rocks are round.\n- **Unloading:** when rock on top erodes away, the rock below expands and peels off in sheets, like an onion."
+      },
+      {
+        "heading": "Chemical Weathering: Changing the Recipe",
+        "markdown": "**Chemical weathering** changes the minerals in a rock into new substances.\n- **Water:** slowly dissolves some minerals and turns feldspar into clay.\n- **Oxidation:** oxygen reacts with iron in rocks, which basically means rocks rust. That's why many desert rocks are red.\n- **Acids:** rainwater picks up carbon dioxide and becomes slightly acidic. It dissolves limestone and can carve out entire caves. Acid rain from pollution speeds this up and eats away at statues and buildings.\nChemical weathering works fastest where it's **warm and wet**. Mechanical weathering from frost works best where temperatures swing above and below freezing, like here."
+      },
+      {
+        "heading": "The Movers: Agents of Erosion",
+        "markdown": "Five forces carry broken rock away:\n1. **Water:** the biggest mover on Earth. Rivers, rain, waves.\n2. **Wind:** especially in deserts.\n3. **Glaciers:** giant rivers of ice that bulldoze everything.\n4. **Gravity:** pulls everything downhill. Landslides, rockfalls.\n5. **Waves:** pound coastlines day and night.\nWhen the movers slow down and drop their load, that's **deposition**. Deposition builds deltas, sand dunes, and beaches."
+      },
+      {
+        "heading": "Soil: More Than Dirt",
+        "markdown": "**Soil** is a mix of weathered rock, **humus** (rotting plants and animals), water, air, and billions of living things. A single handful of healthy soil has more living organisms in it than there are people on Earth.\nSoil takes a long time to form. It can take hundreds of years to make just an inch of it."
+      },
+      {
+        "heading": "Soil Layers (Horizons)",
+        "markdown": "Dig a deep hole and you'll see layers called **horizons**:\n- **O horizon:** the top layer of fallen leaves and decaying stuff.\n- **A horizon (topsoil):** dark, rich in humus. This is where most plants grow and where the worms party.\n- **B horizon (subsoil):** lighter, with clay and minerals washed down from above.\n- **C horizon:** chunks of partly weathered rock.\n- **Bedrock:** solid rock at the bottom. Yes, the class is named after it.\nIdaho's famous potatoes grow in volcanic soil on the Snake River Plain. That soil came from the weathering of basalt and volcanic ash. You can thank ancient eruptions for your french fries."
+      },
+      {
+        "heading": "Protecting Soil",
+        "markdown": "In the 1930s, bad farming plus drought blew away tons of topsoil across the Great Plains in the **Dust Bowl**. Today farmers prevent erosion with contour plowing, windbreaks (rows of trees), cover crops, and terraces."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Two identical marble statues were carved in 1900. One stands in a dry desert town. The other stands in a rainy, polluted city. In 2026, one has lost its face details and the other looks almost new. Which is which? Explain using chemical weathering.\n\nBonus: How did the Dust Bowl change where people lived and how farmers farm today?",
+      "standards": "HS-ESS-2.5 (water's effect on Earth materials), HS-ESS-2.2* (feedbacks), HS-ESS-3.1* (how natural changes and hazards influence human activity)."
+    },
+    "checklist": [
+      "Weathering breaks rock down. Erosion moves it away. Deposition drops it off.",
+      "Mechanical weathering breaks rock without changing it (frost wedging, roots, abrasion).",
+      "Chemical weathering changes rock's minerals (water, oxidation, acids).",
+      "Water, wind, ice, gravity, and waves are the agents of erosion.",
+      "Soil forms in layers called horizons and takes hundreds of years to build."
+    ],
+    "keyWords": [
+      "weathering",
+      "erosion",
+      "deposition",
+      "mechanical weathering",
+      "frost wedging",
+      "abrasion",
+      "chemical weathering",
+      "oxidation",
+      "acid rain",
+      "soil",
+      "humus",
+      "horizon",
+      "topsoil",
+      "subsoil",
+      "bedrock",
+      "Dust Bowl"
+    ]
+  },
+  {
+    "n": 9,
+    "realm": 3,
+    "title": "Mass Movement, Wind, and Glaciers",
+    "sections": [
+      {
+        "heading": "Gravity Always Wins",
+        "markdown": "In survival games, if you dig out the block under sand, the whole stack comes crashing down. Real Earth isn't that dramatic every day, but gravity is always pulling everything downhill. Sometimes slowly. Sometimes all at once."
+      },
+      {
+        "heading": "Mass Movement: When the Hill Lets Go",
+        "markdown": "**Mass movement** is when rock and soil slide downhill because of gravity. Here's the lineup, from slowest to scariest:\n- **Creep:** super slow, maybe a few centimeters a year. You can spot it by tilted fence posts, bent tree trunks, and cracked walls on hillsides.\n- **Slump:** a chunk of ground slides down along a curved surface, leaving a crescent-shaped scar. Like a scoop taken out of ice cream.\n- **Mudflow:** soil soaked with water flows like a thick milkshake. Common after heavy rain on hills burned by wildfire, because there are no roots left to hold the soil.\n- **Landslide:** a big mass of rock and soil suddenly breaks loose and races downhill.\n- **Rockfall:** rocks break off a cliff and free-fall. That's why mountain roads have \"Watch for Falling Rock\" signs.\nWhat triggers them? **Water** (it adds weight and makes soil slippery), **steep slopes**, **earthquakes**, and **removing plants** or cutting into hillsides for roads and houses."
+      },
+      {
+        "heading": "Wind: The Sandblaster",
+        "markdown": "Wind can't lift big rocks, but it's great at moving sand and dust, especially in dry places with few plants.\n- **Deflation:** wind blows away loose sand and dust, leaving pebbles behind. It can scoop out shallow hollows.\n- **Abrasion:** wind-blown sand blasts and polishes rocks, like nature's sandpaper.\n- **Sand dunes:** piles of wind-blown sand. They slowly \"walk\" downwind as sand blows up one side and slides down the other.\n- **Loess:** (say \"luss\") fine, windblown dust that settles into thick, fertile layers.\nIdaho connection: **Bruneau Dunes State Park** in southern Idaho has the tallest single-structured sand dune in North America, about 470 feet high. And the fertile **Palouse** hills in northern Idaho are made of loess, which is why it's some of the best wheat country on Earth."
+      },
+      {
+        "heading": "Glaciers: Rivers of Ice",
+        "markdown": "A **glacier** is a huge mass of ice that moves slowly over land. It forms where more snow falls each winter than melts each summer. Year after year, the snow piles up and gets squeezed into solid ice.\nTwo main types:\n- **Valley (alpine) glaciers:** form in mountains and flow down valleys, like slow-motion rivers.\n- **Continental glaciers (ice sheets):** cover huge areas of land. Today, only Greenland and Antarctica have them. If Antarctica's ice all melted, sea level would rise about 58 meters (190 feet)."
+      },
+      {
+        "heading": "How Glaciers Carve the Land",
+        "markdown": "Glaciers are the ultimate bulldozers. As they move, they pluck up rocks and grind them along the bottom, scratching and carving the land.\n- **U-shaped valleys:** rivers carve V-shaped valleys. Glaciers widen them into U shapes.\n- **Cirques:** bowl-shaped hollows at the top of a mountain where a glacier started.\n- **Horns:** sharp, pointy peaks carved by glaciers on several sides. The Grand Teton is a great example.\n- **Moraines:** ridges of rock and dirt dumped by a glacier, like a pile of junk shoved by a plow.\n- **Glacial lakes:** many lakes formed when glaciers carved basins or moraines blocked valleys. Redfish Lake in the Sawtooths is one.\nAbout 20,000 years ago, during the last **ice age**, glaciers covered much of North America. Huge floods from an ice-dammed lake in Montana, called Glacial Lake Missoula, roared across northern Idaho and Washington again and again, carving the land as they went."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A hillside neighborhood has tilted fence posts and cracks in some driveways. A wildfire burned the hill above it last summer, and a wet spring is forecast. Using what you know about mass movement, what's the risk? What evidence would you gather, and what would you tell the city to do?",
+      "standards": "HS-ESS-2.1 (how Earth's surface processes create landforms), HS-ESS-2.2* (feedbacks: wildfire leads to erosion), HS-ESS-3.1* (natural hazards and human activity)."
+    },
+    "checklist": [
+      "Mass movement is rock and soil moving downhill due to gravity: creep, slump, mudflow, landslide, rockfall.",
+      "Water, steep slopes, earthquakes, and removing plants trigger mass movement.",
+      "Wind moves sand and dust by deflation and abrasion, building dunes and loess.",
+      "Glaciers are moving ice that carve U-shaped valleys, cirques, horns, and moraines.",
+      "Ice ages and glacial floods shaped much of Idaho's landscape."
+    ],
+    "keyWords": [
+      "mass movement",
+      "creep",
+      "slump",
+      "mudflow",
+      "landslide",
+      "rockfall",
+      "deflation",
+      "abrasion",
+      "sand dune",
+      "loess",
+      "glacier",
+      "valley glacier",
+      "continental glacier",
+      "U-shaped valley",
+      "cirque",
+      "horn",
+      "moraine",
+      "ice age"
+    ]
+  },
+  {
+    "n": 10,
+    "realm": 3,
+    "title": "Rivers and Surface Water",
+    "sections": [
+      {
+        "heading": "Find Water or Game Over",
+        "markdown": "Rule one of survival: find water. You can last weeks without food, but only about three days without water. That's why nearly every town in history was built next to a river. Idaho Falls exists because of the Snake River. It's literally in the name."
+      },
+      {
+        "heading": "The Water Cycle",
+        "markdown": "Earth has had basically the same water for billions of years. It just keeps moving around in the **water cycle**:\n1. **Evaporation:** the Sun heats water, turning it into vapor that rises into the air.\n2. **Transpiration:** plants \"sweat\" water vapor out through their leaves.\n3. **Condensation:** vapor cools and turns into tiny droplets, forming clouds.\n4. **Precipitation:** water falls as rain, snow, sleet, or hail.\n5. **Runoff and infiltration:** water flows over the ground into streams, or soaks into the soil.\nHere's a reality check: about 97% of Earth's water is salty ocean water. About 2% is frozen in ice. That leaves less than 1% as fresh liquid water we can actually use. Don't waste it."
+      },
+      {
+        "heading": "How Rivers Work",
+        "markdown": "A river starts small. Rain and snowmelt trickle into tiny streams, which join into bigger ones. Smaller streams that feed a bigger river are called **tributaries**.\nAll the land that drains into one river is its **watershed** (or drainage basin). Imagine pouring water on a giant tilted table. Everywhere the water ends up in the same spot is one watershed. The high ground that separates watersheds is a **divide**. The **Continental Divide** runs along the Idaho-Montana border. Rain on the west side eventually heads to the Pacific; rain on the east side heads to the Atlantic.\nThe Snake River's watershed covers most of southern Idaho, and the Snake eventually flows into the Columbia River and out to the Pacific."
+      },
+      {
+        "heading": "A River's Life Story",
+        "markdown": "- **Young rivers** (near the source): fast, steep, and cut down hard. They carve deep **V-shaped valleys**, rapids, and waterfalls.\n- **Mature rivers:** slower, wider, and start to curve.\n- **Old rivers:** slow and lazy. They wander in big loops called **meanders**. Sometimes a meander gets cut off and becomes a curved pond called an **oxbow lake**.\nWhere a river finally slows down and drops its sediment at a lake or ocean, it builds a **delta**, a fan-shaped pile of mud and sand.\nThe faster water moves, the more sediment it can carry. A slow river drops mud. A fast, flooding river can roll boulders the size of cars."
+      },
+      {
+        "heading": "Floods",
+        "markdown": "When more water enters a river than its channel can hold, it spills over onto the flat land beside it, called the **floodplain**. Floods drop rich soil, which is why floodplains make great farmland. They're also dangerous places to build houses.\nIn 1976, the **Teton Dam** in eastern Idaho failed while filling for the first time. About 80 billion gallons of water poured out, flooding Rexburg, Sugar City, and other towns. Eleven people died and thousands of homes were damaged. Ask your grandparents. Some of them remember.\nPeople manage floods with dams, levees (raised walls along rivers), and by keeping wetlands, which soak up water like sponges."
+      },
+      {
+        "heading": "Lakes and Wetlands",
+        "markdown": "- **Lakes** form wherever water fills a low spot: glacier-carved basins, volcanic craters, or behind dams. Bear Lake, on the Idaho-Utah border, is famous for its turquoise color, which comes from tiny bits of limestone floating in the water.\n- **Wetlands** (marshes, swamps, bogs) are soggy land that filters pollution, prevents floods, and provides homes for tons of wildlife."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A stream gauge measures how much water flows down the Snake River each day. The data shows the flow peaks every year in late May and early June, even though it rains more in April. Explain why, using the water cycle and what you know about Idaho's mountains. What would happen to that peak in a year with very little snow?",
+      "standards": "HS-ESS-2.5 (water's role in shaping Earth's surface), HS-ESS-3.1* (water availability and natural hazards influence human activity), HS-ESS-2.2* (feedbacks)."
+    },
+    "checklist": [
+      "The water cycle: evaporation, transpiration, condensation, precipitation, runoff, infiltration.",
+      "Less than 1% of Earth's water is usable fresh liquid water.",
+      "A watershed is all the land draining into one river. Divides separate watersheds.",
+      "Young rivers carve V-shaped valleys; old rivers meander and form oxbow lakes and deltas.",
+      "Floods spill onto floodplains. The 1976 Teton Dam failure was one of Idaho's worst disasters."
+    ],
+    "keyWords": [
+      "water cycle",
+      "evaporation",
+      "transpiration",
+      "condensation",
+      "precipitation",
+      "runoff",
+      "infiltration",
+      "tributary",
+      "watershed",
+      "divide",
+      "Continental Divide",
+      "meander",
+      "oxbow lake",
+      "delta",
+      "floodplain",
+      "levee",
+      "wetland"
+    ]
+  },
+  {
+    "n": 11,
+    "realm": 3,
+    "title": "Groundwater",
+    "sections": [
+      {
+        "heading": "The Hidden Water Supply",
+        "markdown": "Here's something wild. There's way more fresh liquid water hiding *underground* than in all the rivers and lakes on Earth combined, about 30 times more. It's called **groundwater**, and if you live in eastern Idaho, there's a good chance it's what comes out of your faucet."
+      },
+      {
+        "heading": "How Water Gets Underground",
+        "markdown": "When rain or snowmelt soaks into the ground (**infiltration**), it trickles down through tiny spaces between grains of soil and rock.\nTwo properties decide how well this works:\n- **Porosity:** how much open space a rock or soil has. A sponge has high porosity.\n- **Permeability:** how easily water can flow *through* those spaces. Gravel is very permeable. Clay is not; its spaces are too tiny and not connected.\nA rock can have lots of space but still not let water move. Clay is like a parking garage with no exits."
+      },
+      {
+        "heading": "Zones Underground",
+        "markdown": "Dig straight down and you'll pass through:\n- **Zone of aeration:** the upper layer, where spaces hold both air and some water.\n- **Water table:** the top of the soaked zone. Its depth changes with the seasons, rising in wet times and dropping in droughts.\n- **Zone of saturation:** below the water table, where every space is filled with water."
+      },
+      {
+        "heading": "Aquifers: Underground Water Tanks",
+        "markdown": "An **aquifer** is a layer of permeable rock or sediment that holds and moves groundwater. Think of it less like an underground lake and more like a giant soaked sponge made of rock.\nA layer that blocks water, like clay or solid granite, is called an **aquitard** (or confining layer).\n**The Eastern Snake River Plain Aquifer** is one of the most productive aquifers in the world. It stretches under about 10,800 square miles of southern Idaho. Water moves through cracks and gaps in layers of basalt lava. It supplies drinking water for hundreds of thousands of people and irrigates a huge share of Idaho's farms. Some of the water takes decades or even centuries to travel through it.\nAt **Thousand Springs** near Hagerman, that aquifer water bursts right out of the canyon walls of the Snake River in spectacular waterfalls."
+      },
+      {
+        "heading": "Wells and Springs",
+        "markdown": "- A **well** is a hole drilled below the water table so water can be pumped up.\n- A **spring** is where groundwater naturally flows out at the surface.\n- An **artesian well** taps an aquifer under pressure, so water rises on its own, sometimes even gushing out without a pump.\nIf people pump water out faster than nature refills it, the water table drops. Wells can run dry, and in some places the ground actually sinks. Refilling an aquifer is called **recharge**."
+      },
+      {
+        "heading": "Caves and Sinkholes",
+        "markdown": "Groundwater is slightly acidic, so over thousands of years it can dissolve limestone. That creates:\n- **Caves and caverns:** underground hollows, sometimes huge.\n- **Stalactites and stalagmites:** icicle-shaped mineral formations. Stalac*tites* hang *tight* to the ceiling. Stalag*mites* *might* reach the ceiling someday.\n- **Sinkholes:** when the roof of a cave collapses, the ground above suddenly drops. Florida is famous for these."
+      },
+      {
+        "heading": "Hot Springs and Geysers",
+        "markdown": "When groundwater sinks near hot rock or magma, it heats up and rises again as a **hot spring**. Idaho has more soakable hot springs than almost any other state.\nA **geyser** is a hot spring that erupts. Water deep in a narrow tube gets super-heated, flashes to steam, and blasts out. Old Faithful in Yellowstone, just next door, erupts about every 90 minutes on average."
+      },
+      {
+        "heading": "Protecting Groundwater",
+        "markdown": "Pollution from fertilizer, pesticides, leaky septic tanks, and spilled chemicals can soak down into aquifers. Cleaning an aquifer is extremely hard, so preventing pollution in the first place is key."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Farmers near your town have pumped more and more water from the aquifer for 30 years. Records show the water table has dropped about 10 feet, and springs in the Snake River canyon are flowing less. What's causing it? Suggest two solutions, and explain the trade-off for farmers and for the river.",
+      "standards": "HS-ESS-3.1* (availability of natural resources influences human activity), HS-ESS-3.4* (evaluating solutions that reduce human impact), HS-ESS-2.5 (water's role in Earth processes)."
+    },
+    "checklist": [
+      "Groundwater is water stored underground in spaces between soil and rock.",
+      "Porosity = how much space; permeability = how easily water flows.",
+      "The water table is the top of the zone of saturation.",
+      "Aquifers hold and move groundwater. The Eastern Snake River Plain Aquifer is one of the world's most productive.",
+      "Groundwater forms caves, sinkholes, hot springs, and geysers, and it can be polluted or overused."
+    ],
+    "keyWords": [
+      "groundwater",
+      "infiltration",
+      "porosity",
+      "permeability",
+      "zone of aeration",
+      "water table",
+      "zone of saturation",
+      "aquifer",
+      "aquitard",
+      "recharge",
+      "well",
+      "spring",
+      "artesian well",
+      "cave",
+      "stalactite",
+      "stalagmite",
+      "sinkhole",
+      "hot spring",
+      "geyser"
+    ]
+  },
+  {
+    "n": 12,
+    "realm": 4,
+    "title": "Earth's Interior",
+    "sections": [
+      {
+        "heading": "Dig to the Core? Not Happening",
+        "markdown": "In survival games, you can dig straight down to bedrock in a few minutes. In real life, the deepest hole humans ever drilled, the Kola Superdeep Borehole in Russia, reached about 12 km (7.5 miles). Sounds deep, right? That's only about 0.2% of the way to Earth's center. They stopped because the rock was so hot it behaved like putty.\nSo how do we know what's down there? Clever detective work."
+      },
+      {
+        "heading": "Earthquake Waves: Earth's X-Ray",
+        "markdown": "When an earthquake hits, it sends **seismic waves** through the whole planet. Scientists record them with instruments called **seismographs** all over the world.\n- **P waves (primary):** the fastest. They squeeze and stretch rock, like a Slinky pushed from one end. They travel through solids AND liquids.\n- **S waves (secondary):** slower. They shake rock side to side, like flicking a rope. They travel ONLY through solids.\nHere's the big clue: S waves never make it through the center of the Earth. They disappear on the far side of the planet in an area called the **shadow zone**. Since S waves can't pass through liquid, that tells us part of the core must be liquid. Waves also bend and change speed when they hit different materials, which shows us where the layers are.\nOther clues: meteorites (leftover pieces from when planets formed), volcanoes that bring up deep rock, and Earth's magnetic field."
+      },
+      {
+        "heading": "The Layers: Like a Peach",
+        "markdown": "Earth is built like a peach: thin skin, thick fleshy middle, hard pit in the center.\n1. **Crust:** the thin rocky outer shell we live on. **Oceanic crust** is thin (about 7 km), dense, and made of basalt. **Continental crust** is thicker (30 to 70 km), lighter, and mostly granite. If Earth were an apple, the crust would be thinner than the peel.\n2. **Mantle:** the thickest layer, about 2,900 km deep. It's solid rock, but so hot that it slowly flows over millions of years, like super-thick silly putty. Makes up about 84% of Earth's volume.\n3. **Outer core:** liquid iron and nickel, about 4,000 to 5,000 °C.\n4. **Inner core:** solid iron and nickel ball, about as hot as the surface of the Sun (around 5,200 °C). It stays solid because the pressure is so crushing that the atoms can't spread out to melt."
+      },
+      {
+        "heading": "Another Way to Slice It",
+        "markdown": "Scientists also divide the outer layers by how they behave:\n- **Lithosphere:** the rigid outer layer, made of the crust plus the very top of the mantle. It's broken into giant pieces called plates.\n- **Asthenosphere:** the soft, slowly flowing layer of mantle right below. The plates float and slide on top of it, like crackers on warm pudding."
+      },
+      {
+        "heading": "Convection: The Engine Inside",
+        "markdown": "Why does the mantle move? **Convection**. Hot material rises because it's less dense. As it nears the top, it cools, gets denser, and sinks again. This creates huge circular currents, like a pot of boiling soup or a lava lamp.\nThese **convection currents** in the mantle are a major force that drags the plates around on the surface. They're the engine behind earthquakes, volcanoes, and mountain building. You'll see a lot more of that in the next chapter."
+      },
+      {
+        "heading": "Earth's Magnetic Shield",
+        "markdown": "As Earth spins, the liquid iron in the outer core swirls and creates a giant **magnetic field**. It's why compasses point north. It also protects us by deflecting deadly charged particles from the Sun. When those particles hit the magnetic field near the poles, they make the **northern lights** (aurora). Every so often, northern Idaho gets a glimpse.\nFun fact: Earth's magnetic poles have flipped hundreds of times in its history. North becomes south. That record is frozen in rocks, and it turned out to be key evidence for plate tectonics."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Seismographs around the world record an earthquake in Japan. Stations on the far side of the planet pick up P waves but no S waves at all. Using what you know about how each wave travels, explain what this tells scientists about the inside of the Earth. Then sketch a model showing the waves passing through the layers.",
+      "standards": "HS-ESS-2.3* (model of Earth's interior based on evidence; cycling of matter by convection), HS-ESS-1.6* (evidence from meteorites and ancient materials about Earth's formation)."
+    },
+    "checklist": [
+      "Scientists study Earth's interior mainly through seismic waves.",
+      "P waves travel through solids and liquids; S waves only through solids. The S-wave shadow zone shows the outer core is liquid.",
+      "Layers: crust, mantle, outer core (liquid), inner core (solid).",
+      "The rigid lithosphere floats on the soft, flowing asthenosphere.",
+      "Mantle convection drives plate movement. The swirling outer core creates Earth's magnetic field."
+    ],
+    "keyWords": [
+      "seismic wave",
+      "seismograph",
+      "P wave",
+      "S wave",
+      "shadow zone",
+      "crust",
+      "oceanic crust",
+      "continental crust",
+      "mantle",
+      "outer core",
+      "inner core",
+      "lithosphere",
+      "asthenosphere",
+      "convection",
+      "convection current",
+      "magnetic field",
+      "aurora"
+    ]
+  },
+  {
+    "n": 13,
+    "realm": 4,
+    "title": "Plate Tectonics",
+    "sections": [
+      {
+        "heading": "The Ground Is Moving Right Now",
+        "markdown": "You can't feel it, but the ground under you is moving. North America drifts about 2.5 cm (1 inch) a year, roughly as fast as your fingernails grow. That doesn't sound like much, but give it 100 million years and you've moved an entire ocean's width."
+      },
+      {
+        "heading": "Wegener's Wild Idea",
+        "markdown": "In 1912, a German scientist named **Alfred Wegener** noticed something odd: the coastlines of South America and Africa fit together like puzzle pieces. He proposed that all the continents were once joined in one supercontinent he called **Pangaea** (\"all land\"), which broke apart about 200 million years ago. He called it **continental drift**.\nHis evidence:\n- **Puzzle-piece coastlines.**\n- **Matching fossils** on continents now separated by oceans, like the reptile *Mesosaurus*, which couldn't have swum across the Atlantic.\n- **Matching rock layers and mountain chains** that line up across oceans.\n- **Ancient climate clues:** coal (from tropical swamps) in Antarctica, and glacier scratches in hot places like India and Africa.\nMost scientists laughed at him. His problem? He couldn't explain *what force* could push whole continents around. He died in 1930 before he was proven right. Science lesson: good evidence matters, but so does a mechanism."
+      },
+      {
+        "heading": "The Missing Piece: The Sea Floor",
+        "markdown": "In the 1950s and '60s, new technology let scientists map the ocean floor. They found a giant underwater mountain chain, the **mid-ocean ridge**, running around the globe like the seam on a baseball.\nThen came **sea-floor spreading**: at the ridges, magma rises, cools, and makes new ocean crust, pushing older crust away on both sides. The proof:\n- **Rock ages:** crust is youngest at the ridge and gets older the farther away you go.\n- **Magnetic stripes:** remember how Earth's magnetic field flips? As new rock cools, it locks in the field's direction. The sea floor shows matching stripes of normal and reversed magnetism on both sides of the ridge, like a barcode. That's a perfect recording of the sea floor spreading apart.\n- **Thin sediment** near the ridge, thicker sediment farther away.\nThe oldest ocean crust is only about 180 million years old, while continents have rocks over 4 billion years old. So where does old ocean crust go? It sinks back into the mantle. More on that below."
+      },
+      {
+        "heading": "The Theory of Plate Tectonics",
+        "markdown": "Put it all together and you get **plate tectonics**: Earth's lithosphere is broken into about a dozen large plates and many smaller ones. They float on the asthenosphere and are moved by mantle convection, plus the pull of sinking plates (**slab pull**) and the push from ridges (**ridge push**).\nMost of the action, earthquakes, volcanoes, and mountains, happens where plates meet, at **plate boundaries**."
+      },
+      {
+        "heading": "Three Kinds of Boundaries",
+        "markdown": "**1. Divergent (pulling apart)**\nPlates move away from each other. Magma rises to fill the gap.\n- In the ocean: mid-ocean ridges. Iceland sits right on top of one, and it's splitting in half.\n- On land: **rift valleys**. The East African Rift is slowly tearing Africa apart.\n**2. Convergent (crashing together)**\nPlates collide. What happens depends on who's crashing:\n- **Ocean vs. continent:** the denser ocean plate dives under in a process called **subduction**. It melts, forming volcanoes. The Cascades (Mount St. Helens, Mount Rainier) formed this way.\n- **Ocean vs. ocean:** one subducts, forming deep **trenches** and chains of volcanic islands like Japan. The Mariana Trench is the deepest spot on Earth, about 11 km down.\n- **Continent vs. continent:** neither sinks, so the crust crumples up into giant mountains. India smashing into Asia built the Himalayas, and Mount Everest is still growing a few millimeters a year.\n**3. Transform (sliding past)**\nPlates grind sideways past each other. Crust isn't made or destroyed, but they get stuck, build up stress, then suddenly slip. **Earthquakes!** The San Andreas Fault in California is the famous one."
+      },
+      {
+        "heading": "What About Idaho?",
+        "markdown": "Idaho isn't on a plate boundary, but it's been shaped by them:\n- Long ago, subduction along the West Coast created the magma that formed the **Idaho Batholith** granite.\n- The **Yellowstone hotspot** is a plume of hot mantle rising under the plate. As North America drifts southwest over it, the hotspot has burned a trail of old volcanic craters across southern Idaho, creating the **Snake River Plain**. It's like moving a piece of paper over a candle.\n- The Basin and Range region is being stretched apart, which is why Idaho still has active faults and earthquakes."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Scientists drill ocean-floor samples at increasing distances from the Mid-Atlantic Ridge. Rocks at 0 km are about 0 million years old; at 500 km, about 25 million; at 1,000 km, about 50 million. Calculate how fast the sea floor is spreading in kilometers per million years, then in centimeters per year. (Hint: 1 km = 100,000 cm.) What does the pattern tell you about how ocean crust forms?",
+      "standards": "HS-ESS-1.5* (evaluate evidence of plate movement to explain the ages of crustal rocks), HS-ESS-2.3* (mantle convection), HS-ESS-2.1 (plate interactions build landforms)."
+    },
+    "checklist": [
+      "Wegener proposed continental drift and Pangaea using fossils, rocks, coastlines, and climate clues.",
+      "Sea-floor spreading: new crust forms at mid-ocean ridges. Rock ages and magnetic stripes prove it.",
+      "Plate tectonics: lithosphere plates move on the asthenosphere, driven by convection, slab pull, and ridge push.",
+      "Boundaries: divergent (apart), convergent (together, including subduction), transform (sliding).",
+      "The Yellowstone hotspot created the Snake River Plain as North America moved over it."
+    ],
+    "keyWords": [
+      "continental drift",
+      "Pangaea",
+      "Alfred Wegener",
+      "mid-ocean ridge",
+      "sea-floor spreading",
+      "magnetic reversal",
+      "plate tectonics",
+      "plate boundary",
+      "divergent boundary",
+      "rift valley",
+      "convergent boundary",
+      "subduction",
+      "trench",
+      "transform boundary",
+      "slab pull",
+      "ridge push",
+      "hotspot"
+    ]
+  },
+  {
+    "n": 14,
+    "realm": 4,
+    "title": "Earthquakes",
+    "sections": [
+      {
+        "heading": "When the Ground Snaps",
+        "markdown": "Bend a stick slowly. It flexes... flexes... then SNAP. That's basically an earthquake. Rocks along a crack get stuck, stress builds up for years, and then they suddenly slip, releasing a burst of energy that shakes the ground."
+      },
+      {
+        "heading": "Faults: Earth's Cracks",
+        "markdown": "A **fault** is a break in Earth's crust where rocks have moved. The energy release follows the **elastic rebound theory**: rocks bend like a stretched rubber band, then snap back when they break.\nThree kinds of faults:\n- **Normal fault:** rocks are pulled apart, and one side drops down. Happens where crust is stretching, like most of Idaho.\n- **Reverse (thrust) fault:** rocks are squeezed together, and one side gets pushed up and over the other. Builds mountains.\n- **Strike-slip fault:** rocks slide sideways past each other. The San Andreas Fault is the classic example."
+      },
+      {
+        "heading": "Focus and Epicenter",
+        "markdown": "- The **focus** is the spot *underground* where the rock actually breaks.\n- The **epicenter** is the spot on the *surface* directly above the focus. That's what you hear on the news.\nShaking is usually strongest near the epicenter and fades with distance."
+      },
+      {
+        "heading": "Seismic Waves (A Quick Rewind)",
+        "markdown": "You met P and S waves in Chapter 12. There's a third type:\n- **P waves** arrive first.\n- **S waves** arrive second.\n- **Surface waves** arrive last, rolling along the ground like ocean waves. These cause most of the damage."
+      },
+      {
+        "heading": "Finding the Epicenter",
+        "markdown": "Since P waves are faster than S waves, the farther away a station is, the bigger the gap between their arrival times. It's like seeing lightning and then hearing thunder: the longer the gap, the farther away the storm.\nOne station tells you *how far* away the quake was, but not which direction. So scientists draw a circle around each station with that distance as the radius. With **three stations**, the circles cross at one point: the epicenter. This is called **triangulation**."
+      },
+      {
+        "heading": "Measuring Earthquakes",
+        "markdown": "- **Magnitude** measures the energy released. Scientists today use the **moment magnitude scale**. Each whole number up means about 32 times more energy. So a magnitude 7 releases about 1,000 times more energy than a magnitude 5. The Richter scale is the older, more famous version.\n- **Intensity** measures how much shaking and damage people actually experience in a certain place, using the **Modified Mercalli scale** (I to XII). One earthquake has one magnitude but different intensities in different places."
+      },
+      {
+        "heading": "Idaho's Biggest Shakes",
+        "markdown": "- **1983 Borah Peak earthquake (magnitude 6.9):** Idaho's largest recorded quake. It hit near Challis and Mackay, killed two children in Challis, and lifted Borah Peak, Idaho's tallest mountain, about a foot higher. It also left a fault scarp you can still visit, a step in the ground several feet high.\n- **2020 Stanley earthquake (magnitude 6.5):** shook central Idaho and was felt across several states. Thankfully, no one was killed.\n- **1959 Hebgen Lake earthquake (magnitude 7.3):** just across the border in Montana near Yellowstone. It caused a massive landslide that buried a campground, killed 28 people, and dammed a river to create Quake Lake."
+      },
+      {
+        "heading": "Earthquake Hazards",
+        "markdown": "Shaking isn't the only danger:\n- **Building collapse:** the main cause of deaths. Poorly built structures are the biggest risk.\n- **Liquefaction:** shaking makes wet, loose soil act like quicksand. Buildings can sink or tip over.\n- **Landslides:** shaking knocks loose slopes, like at Hebgen Lake.\n- **Tsunamis:** undersea quakes can shove the ocean up into giant waves. In 2004, a tsunami in the Indian Ocean killed over 200,000 people. In 2011, one hit Japan.\n- **Fires:** broken gas lines and electrical wires can spark fires."
+      },
+      {
+        "heading": "Staying Safe",
+        "markdown": "Scientists can't predict exactly when an earthquake will strike. But they can map faults, estimate risk, and design safer buildings with flexible frames and base isolators that let buildings sway instead of crack.\nIf you feel shaking: **Drop, Cover, and Hold On.** Get under a sturdy desk or table, cover your head and neck, and hold on until the shaking stops. Don't run outside during the shaking."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Three seismograph stations record the same earthquake. The gap between P- and S-wave arrivals tells you it was 100 km from Boise, 200 km from Idaho Falls, and 150 km from Missoula. Explain how you'd use these numbers on a map to find the epicenter. Then: why might two towns the same distance from the epicenter have very different damage?",
+      "standards": "HS-ESS-3.1* (natural hazards influence human activity), HS-ESS-1.5* (plate and crust movement), HS-ESS-2.3* (Earth's interior and seismic evidence)."
+    },
+    "checklist": [
+      "Earthquakes happen when stressed rocks suddenly slip along faults (elastic rebound).",
+      "Normal, reverse, and strike-slip are the three fault types.",
+      "The focus is underground; the epicenter is directly above on the surface.",
+      "Three stations are needed to find an epicenter by triangulation.",
+      "Magnitude measures energy; intensity measures local shaking and damage. Idaho's biggest was the 1983 Borah Peak quake."
+    ],
+    "keyWords": [
+      "earthquake",
+      "fault",
+      "elastic rebound",
+      "normal fault",
+      "reverse fault",
+      "strike-slip fault",
+      "focus",
+      "epicenter",
+      "surface wave",
+      "triangulation",
+      "magnitude",
+      "moment magnitude scale",
+      "Richter scale",
+      "intensity",
+      "Modified Mercalli scale",
+      "fault scarp",
+      "liquefaction",
+      "tsunami"
+    ]
+  },
+  {
+    "n": 15,
+    "realm": 4,
+    "title": "Volcanoes",
+    "sections": [
+      {
+        "heading": "The Planet's Pressure Valves",
+        "markdown": "A **volcano** is an opening in Earth's crust where magma, gas, and ash escape to the surface. Think of shaking a soda and popping the cap. That fizz rushing out is a lot like an eruption, just way hotter.\nAnd eastern Idaho is volcano country. You live between Craters of the Moon and Yellowstone. That's not a coincidence."
+      },
+      {
+        "heading": "Where Volcanoes Form",
+        "markdown": "Most volcanoes form in three places:\n- **Subduction zones:** a sinking ocean plate melts and feeds volcanoes. Most of the volcanoes around the Pacific Ocean form this way, a ring called the **Ring of Fire**. About 75% of Earth's active volcanoes are on it.\n- **Divergent boundaries:** plates pull apart and magma rises, like at mid-ocean ridges and in Iceland.\n- **Hotspots:** a plume of hot mantle rises under the middle of a plate. Hawaii and Yellowstone are hotspot volcanoes."
+      },
+      {
+        "heading": "Parts of a Volcano",
+        "markdown": "- **Magma chamber:** the underground pool of magma.\n- **Vent:** the opening where magma escapes.\n- **Conduit (pipe):** the passage from the chamber to the vent.\n- **Crater:** the bowl-shaped pit at the top.\n- **Caldera:** a huge crater that forms when a volcano collapses into its emptied magma chamber. Crater Lake in Oregon is one. Yellowstone is a giant one, about 30 by 45 miles."
+      },
+      {
+        "heading": "Why Some Explode and Some Ooze",
+        "markdown": "It comes down to two things: **viscosity** (how thick and sticky the magma is) and **gas**.\n- **Low-silica (mafic) magma** is runny, like syrup. Gas escapes easily, so eruptions are calm, with flowing lava. This is called an **effusive eruption**. Hawaii's volcanoes work this way.\n- **High-silica (felsic) magma** is thick, like peanut butter. Gas gets trapped, pressure builds, and then BOOM, an **explosive eruption**."
+      },
+      {
+        "heading": "Three Main Types of Volcanoes",
+        "markdown": "- **Shield volcanoes:** wide, gently sloping, built by layer after layer of runny lava. Mauna Loa in Hawaii is the largest volcano on Earth. Many low shield volcanoes dot the Snake River Plain.\n- **Cinder cones:** small, steep, cone-shaped hills made of chunks of lava blasted into the air. They usually erupt just once. Craters of the Moon has lots of them.\n- **Composite volcanoes (stratovolcanoes):** tall, steep, and built from alternating layers of lava and ash. They're the most dangerous. Mount St. Helens, Mount Rainier, and Mount Fuji are examples."
+      },
+      {
+        "heading": "What Comes Out",
+        "markdown": "- **Lava:** **Pahoehoe** (say \"pah-HOY-hoy\") is smooth and ropey. **A'a** (say \"AH-ah\") is jagged and sharp. You'll see both at Craters of the Moon. Here's a tip: a'a is what you'd say if you walked on it barefoot.\n- **Tephra:** all the bits blasted into the air, from fine **ash** to golf-ball-sized **lapilli** to huge **volcanic bombs**.\n- **Gases:** mostly water vapor, plus carbon dioxide and sulfur dioxide."
+      },
+      {
+        "heading": "Volcanic Hazards",
+        "markdown": "- **Pyroclastic flows:** a racing avalanche of hot gas, ash, and rock that can go over 100 mph and reach 700 °C. The deadliest hazard. In AD 79, one buried the Roman city of Pompeii.\n- **Lahars:** volcanic mudflows of ash mixed with water or melted snow. They flow like wet concrete down river valleys.\n- **Ash fall:** collapses roofs, ruins crops, damages lungs, and wrecks jet engines.\n- **Lava flows:** usually slow enough to walk away from, but they destroy anything in their path.\n- **Volcanic gases:** large eruptions can even cool the global climate by blocking sunlight."
+      },
+      {
+        "heading": "Idaho's Volcanic Neighbors",
+        "markdown": "- **Mount St. Helens, 1980:** the blast flattened about 230 square miles of forest and killed 57 people. Ash fell on parts of northern Idaho.\n- **Craters of the Moon:** its last eruptions were only about 2,000 years ago. Geologists say it could erupt again in the future.\n- **Yellowstone supervolcano:** its last huge eruption was about 631,000 years ago. Its hot springs and geysers are powered by the magma below. Scientists watch it constantly, and a giant eruption is very unlikely in our lifetimes."
+      },
+      {
+        "heading": "Monitoring Volcanoes",
+        "markdown": "Volcanoes usually give warnings before erupting. Scientists watch for small earthquakes, the ground bulging upward (measured by GPS and satellites), and changes in gas coming out. The USGS Yellowstone Volcano Observatory monitors Yellowstone 24/7.\nVolcanoes aren't all bad: volcanic soil is some of the most fertile on Earth, and volcanic heat provides **geothermal energy**."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Scientists monitoring a volcano see three changes in one month: small earthquakes increase from 5 a day to 80 a day, GPS shows the summit bulging up 10 cm, and sulfur dioxide gas doubles. What do these clues suggest is happening inside? Should nearby towns be evacuated? Explain your evidence, and what the risk would be of acting too early or too late.",
+      "standards": "HS-ESS-3.1* (natural hazards influence human activity), HS-ESS-2.3* (Earth's interior and the cycling of matter), HS-ESS-1.5* (plate tectonics and hotspots)."
+    },
+    "checklist": [
+      "Volcanoes form at subduction zones, divergent boundaries, and hotspots.",
+      "Runny, low-silica magma makes gentle eruptions; thick, high-silica magma makes explosive ones.",
+      "Three types: shield, cinder cone, and composite (stratovolcano).",
+      "Hazards include pyroclastic flows, lahars, ash fall, lava, and gases.",
+      "Scientists monitor earthquakes, ground swelling, and gas to warn of eruptions."
+    ],
+    "keyWords": [
+      "volcano",
+      "magma chamber",
+      "vent",
+      "conduit",
+      "crater",
+      "caldera",
+      "Ring of Fire",
+      "hotspot",
+      "viscosity",
+      "silica",
+      "effusive eruption",
+      "explosive eruption",
+      "shield volcano",
+      "cinder cone",
+      "composite volcano (stratovolcano)",
+      "pahoehoe",
+      "a'a",
+      "tephra",
+      "volcanic ash",
+      "lapilli",
+      "volcanic bomb",
+      "pyroclastic flow",
+      "lahar",
+      "supervolcano",
+      "geothermal energy"
+    ]
+  },
+  {
+    "n": 16,
+    "realm": 4,
+    "title": "Mountain Building",
+    "sections": [
+      {
+        "heading": "How Do You Build a Mountain?",
+        "markdown": "In survival games, you build a mountain block by block. Earth uses a different method: squeezing, stretching, lifting, and crumpling the crust over millions of years. The process of mountain building is called **orogeny** (say \"or-AH-juh-nee\").\nThe Sawtooths, the Tetons, the Lost River Range, the Rockies. Every mountain you can see from Idaho has an origin story. Let's crack it."
+      },
+      {
+        "heading": "Stress: Pushing Rocks Around",
+        "markdown": "**Stress** is force acting on rock. There are three kinds:\n- **Compression:** squeezing together. Shortens and thickens the crust. Happens at convergent boundaries.\n- **Tension:** pulling apart. Stretches and thins the crust. Happens at divergent boundaries and in places like Idaho.\n- **Shear:** pushing in opposite directions, side by side. Happens at transform boundaries.\nThe change in shape caused by stress is called **deformation**."
+      },
+      {
+        "heading": "Folding: Bending Without Breaking",
+        "markdown": "Under slow, steady pressure, especially deep underground where it's hot, rock can bend instead of break. Push on the end of a rug and it wrinkles. Rock layers do the same.\n- **Anticline:** an upward fold, shaped like an A. (A for Anticline, and A for \"arch up\".)\n- **Syncline:** a downward fold, shaped like a U or a sink. (S for Syncline, S for \"sink\".)\n- **Monocline:** a simple step-like bend in flat layers."
+      },
+      {
+        "heading": "Faulting: When Rock Breaks",
+        "markdown": "Near the surface, rock is cold and brittle, so it breaks instead of bending. You met the three types of faults in Chapter 14: normal, reverse, and strike-slip. When faults lift huge blocks, they build mountains too."
+      },
+      {
+        "heading": "Four Kinds of Mountains",
+        "markdown": "**1. Folded mountains**\nFormed when continents collide and crumple rock into giant folds. Examples: the Himalayas (still rising), the Alps, and the Appalachians, which were once as tall as the Himalayas before hundreds of millions of years of erosion wore them down.\n**2. Fault-block mountains**\nFormed by tension. As crust stretches, it cracks into blocks. Some blocks rise and tilt, forming mountains (called **horsts**), and others drop down, forming valleys (called **grabens**). This is Idaho's specialty. The **Basin and Range** region stretches across Nevada, Utah, and southern Idaho: mountain, valley, mountain, valley, over and over like a corrugated roof. The **Lost River Range**, home of Borah Peak, and the **Teton Range** are fault-block mountains.\n**3. Volcanic mountains**\nBuilt by eruptions piling up lava and ash, like the Cascades and Mount Fuji. Undersea volcanoes can build mountains too: Mauna Kea in Hawaii is over 10,000 meters tall from its base on the sea floor, which is taller than Everest.\n**4. Dome mountains**\nFormed when magma pushes up rock layers from below without breaking through, like a blister. The magma cools into a huge mass of granite called a **batholith**. Erosion later strips off the top layers and reveals the granite. The **Sawtooth Mountains** are carved from the Idaho Batholith, then sharpened by glaciers into jagged peaks."
+      },
+      {
+        "heading": "Floating Mountains: Isostasy",
+        "markdown": "Here's a weird fact. Mountains have deep \"roots\" that push down into the mantle, like an iceberg with most of its mass hidden below. The crust floats on the mantle, and thicker crust floats higher. This balance is called **isostasy**.\nWhen a mountain erodes and gets lighter, the crust slowly rises back up, like a boat rising when you unload it. When glaciers melt, the land underneath rebounds too. Parts of Canada are still rising today after the ice age glaciers melted."
+      },
+      {
+        "heading": "Mountains Don't Last Forever",
+        "markdown": "While plates push mountains up, weathering and erosion tear them down. Young mountains, like the Tetons and Himalayas, are tall, sharp, and jagged. Old mountains, like the Appalachians, are low and rounded. Mountain building versus erosion is a battle that never ends."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A geologist finds seashell fossils near the top of Mount Everest, nearly 9 km above sea level, in layers of folded limestone. Explain, step by step, how ocean-floor rock could end up on top of the world's tallest mountain. What type of plate boundary and what kind of stress caused it?",
+      "standards": "HS-ESS-2.1 (internal and surface processes build and wear down landforms), HS-ESS-1.5* (evidence of plate movement), HS-ESS-2.2* (feedbacks between uplift and erosion)."
+    },
+    "checklist": [
+      "Orogeny is mountain building. Stress (compression, tension, shear) deforms rock.",
+      "Deep, hot rock folds into anticlines and synclines. Cold, brittle rock breaks along faults.",
+      "Four kinds of mountains: folded, fault-block, volcanic, and dome.",
+      "Idaho's Basin and Range, Lost River Range, and Tetons are fault-block mountains; the Sawtooths come from the Idaho Batholith.",
+      "Isostasy: crust floats on the mantle and rises as mountains erode."
+    ],
+    "keyWords": [
+      "orogeny",
+      "stress",
+      "compression",
+      "tension",
+      "shear",
+      "deformation",
+      "fold",
+      "anticline",
+      "syncline",
+      "monocline",
+      "folded mountain",
+      "fault-block mountain",
+      "horst",
+      "graben",
+      "Basin and Range",
+      "volcanic mountain",
+      "dome mountain",
+      "batholith",
+      "isostasy",
+      "uplift"
+    ]
+  },
+  {
+    "n": 17,
+    "realm": 5,
+    "title": "Oceans and Currents",
+    "sections": [
+      {
+        "heading": "The Biggest Biome on the Map",
+        "markdown": "Idaho is about as far from an ocean as you can get in the Northwest. But the ocean still runs your life. It makes about half the oxygen you breathe, drives the weather that brings snow to the mountains, and stores huge amounts of heat that keep the planet livable."
+      },
+      {
+        "heading": "One World Ocean",
+        "markdown": "There's really just one connected **world ocean**, but we divide it into five: the **Pacific** (biggest and deepest), **Atlantic**, **Indian**, **Southern** (around Antarctica), and **Arctic** (smallest). Together they cover about 71% of Earth's surface and hold about 97% of its water. The average depth is about 3,700 meters (over 2 miles).\nScientists who study the ocean are called **oceanographers**."
+      },
+      {
+        "heading": "Why Is the Ocean Salty?",
+        "markdown": "Rivers slowly dissolve minerals from rocks and carry them to the sea. When ocean water evaporates, the water leaves but the salt stays behind. Undersea volcanoes and vents add more. Over millions of years, the salt built up.\n**Salinity** is the amount of dissolved salt in water. The ocean averages about 35 parts per thousand, or about 3.5% salt. That's roughly a teaspoon of salt in every cup. Salinity is higher where lots of water evaporates (warm, dry places) and lower where rivers, rain, or melting ice add fresh water.\nFun fact: if you could remove all the salt from the ocean and spread it on land, it would make a layer over 150 meters (500 feet) thick."
+      },
+      {
+        "heading": "Layers of the Ocean",
+        "markdown": "The ocean is layered by temperature, like a cold drink with ice sinking to the bottom:\n- **Surface (mixed) layer:** warmed by the Sun and stirred by wind. Where most sea life lives.\n- **Thermocline:** a zone where temperature drops quickly with depth.\n- **Deep zone:** cold (near 2 to 4 °C), dark, and under crushing **pressure**. Below about 1,000 meters, there's no sunlight at all.\nCold, salty water is **denser** (heavier) than warm, fresh water, so it sinks."
+      },
+      {
+        "heading": "Surface Currents: Rivers in the Sea",
+        "markdown": "**Surface currents** are like huge rivers flowing through the top layer of the ocean. They're driven mostly by **wind**.\nBecause Earth spins, moving water and air get pushed to the side. This is called the **Coriolis effect**. In the Northern Hemisphere, currents curve to the right; in the Southern Hemisphere, to the left. That's why big ocean currents form giant loops called **gyres**. They spin clockwise in the north and counterclockwise in the south.\nCurrents move heat around the planet:\n- **Warm currents** flow from the equator toward the poles. The **Gulf Stream** carries warm water up the U.S. East Coast and across to Europe. It's why England is much milder than Canada at the same latitude.\n- **Cold currents** flow from the poles toward the equator. The **California Current** brings cold water down the West Coast, which is why the beach in California is chilly even in summer.\nGyres also collect floating trash. The **Great Pacific Garbage Patch** is a huge area of plastic gathered by a Pacific gyre."
+      },
+      {
+        "heading": "Deep Currents: The Global Conveyor Belt",
+        "markdown": "Deep currents are driven by differences in **density**, caused by temperature and salinity. This is called **thermohaline circulation** (thermo = heat, haline = salt).\nNear Greenland and Antarctica, ocean water gets very cold and salty as sea ice forms. It becomes dense, sinks to the bottom, and slowly flows along the ocean floor around the world. Eventually it rises back up and warms. This loop is called the **global conveyor belt**, and one trip can take about 1,000 years.\nThe conveyor belt spreads heat, nutrients, and oxygen through the whole ocean. Scientists watch it closely because melting ice adds fresh water, which could slow it down."
+      },
+      {
+        "heading": "Upwelling",
+        "markdown": "In some places, wind pushes surface water away from the coast, and cold, deep water rises to replace it. This **upwelling** brings up nutrients from the bottom, feeding huge amounts of plankton and fish. Some of the best fishing spots on Earth, like off Peru and California, are upwelling zones."
+      },
+      {
+        "heading": "El Niño and La Niña",
+        "markdown": "Every few years, winds over the Pacific weaken and warm water spreads east toward South America. This is **El Niño**. It changes weather worldwide. Its opposite, **La Niña**, brings cooler water to the eastern Pacific. These patterns can affect how much snow Idaho's mountains get, which means they affect our rivers, farms, and ski season."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "In 1992, a cargo ship lost a container of 28,000 rubber ducks and bath toys in the North Pacific. Over the next years, ducks washed up in Alaska, Hawaii, and even the Atlantic. Scientists used their landing spots to map currents. Using what you know about gyres and the Coriolis effect, explain how the ducks traveled. What does this tell you about where ocean plastic ends up?",
+      "standards": "HS-ESS-2.4* (energy flow in Earth's systems affects climate), HS-ESS-2.2* (feedbacks between ocean, ice, and atmosphere), HS-ESS-2.5 (properties of water)."
+    },
+    "checklist": [
+      "The world ocean covers about 71% of Earth and holds about 97% of its water.",
+      "Salinity averages about 35 parts per thousand; cold, salty water is denser and sinks.",
+      "Surface currents are driven by wind and bent by the Coriolis effect into gyres.",
+      "Deep currents are driven by density differences (thermohaline circulation), forming the global conveyor belt.",
+      "Upwelling brings nutrients up; El Niño and La Niña change weather worldwide."
+    ],
+    "keyWords": [
+      "world ocean",
+      "oceanographer",
+      "salinity",
+      "density",
+      "thermocline",
+      "pressure",
+      "surface current",
+      "Coriolis effect",
+      "gyre",
+      "Gulf Stream",
+      "California Current",
+      "deep current",
+      "thermohaline circulation",
+      "global conveyor belt",
+      "upwelling",
+      "El Niño",
+      "La Niña",
+      "plankton"
+    ]
+  },
+  {
+    "n": 18,
+    "realm": 5,
+    "title": "The Ocean Floor and Coastlines",
+    "sections": [
+      {
+        "heading": "Mapping the Unknown",
+        "markdown": "We have better maps of Mars and the Moon than of our own ocean floor. Light can't reach the deep sea, so we can't just take pictures. Instead, scientists use **sonar**: a ship sends a sound pulse down, it bounces off the bottom, and the time it takes to return tells the depth. Sound travels about 1,500 meters per second in water. If an echo takes 4 seconds to return, the sound went down and back, so the depth is about 3,000 meters.\nThe science of measuring ocean depth is called **bathymetry**. Today, scientists also use satellites, robot subs, and deep-diving submersibles like *Alvin*."
+      },
+      {
+        "heading": "Leaving the Beach: The Continental Margin",
+        "markdown": "Walk off a beach and keep going, and here's what you'd find:\n- **Continental shelf:** the shallow, gently sloping edge of the continent, underwater. Usually less than 200 meters deep. It's packed with sea life and is where most fishing and offshore oil drilling happens.\n- **Continental slope:** where the shelf drops off steeply toward the deep ocean. Think of it as the real edge of the continent.\n- **Continental rise:** a gentle pile of sediment at the bottom of the slope.\nCutting through the shelf and slope are **submarine canyons**, some as big as the Grand Canyon."
+      },
+      {
+        "heading": "The Deep-Ocean Floor",
+        "markdown": "- **Abyssal plains:** huge, flat areas of the deep sea floor covered in thick, fine sediment. Some of the flattest places on Earth.\n- **Mid-ocean ridges:** the longest mountain chain on Earth, about 65,000 km (40,000 miles), running through every ocean. New crust forms here (remember sea-floor spreading?).\n- **Trenches:** deep, narrow valleys where one plate subducts under another. The **Mariana Trench** reaches almost 11,000 meters. If you dropped Mount Everest in it, its peak would still be more than 2 km underwater.\n- **Seamounts:** underwater volcanoes that don't reach the surface. Flat-topped ones, worn down by waves long ago and then sunk, are called **guyots**.\n- **Hydrothermal vents:** hot springs on the sea floor near ridges, blasting out mineral-rich water as hot as 400 °C. Amazingly, they support whole ecosystems of giant tube worms, crabs, and bacteria that live without sunlight, getting energy from chemicals instead."
+      },
+      {
+        "heading": "Sea-Floor Sediments",
+        "markdown": "The ocean floor is covered in sediment, from sand and mud washed off the land to the shells of tiny dead sea creatures. These shells pile up into thick layers of **ooze**. Over millions of years, some become rocks like limestone and chalk. The famous White Cliffs of Dover in England are made of ancient chalk ooze."
+      },
+      {
+        "heading": "Waves",
+        "markdown": "Most ocean **waves** are made by wind blowing across the water. Here's the surprising part: the water itself doesn't travel with the wave. Energy moves forward, but the water mostly moves in circles, like a crowd doing \"the wave\" at a football game.\nWave words:\n- **Crest:** the top. **Trough:** the bottom.\n- **Wavelength:** distance from one crest to the next.\n- **Wave height:** distance from trough to crest.\nAs a wave reaches shallow water, the bottom drags, the wave slows and gets taller, and it tips over as a **breaker**. That's where surfers want to be."
+      },
+      {
+        "heading": "Tides",
+        "markdown": "**Tides** are the daily rise and fall of sea level, caused mainly by the **Moon's gravity** pulling on Earth's oceans (the Sun helps a little). Most coasts get two high tides and two low tides each day.\n- **Spring tides:** extra-high highs and extra-low lows, when the Sun, Moon, and Earth line up (at new and full moon). Nothing to do with the season spring.\n- **Neap tides:** smaller tides, when the Sun and Moon are at right angles (at quarter moons)."
+      },
+      {
+        "heading": "Shaping the Shoreline",
+        "markdown": "Waves are constantly carving and building coastlines.\n**Erosion features:** pounding waves cut **sea cliffs**, carve **sea caves**, punch through to make **sea arches**, and leave behind tall pillars of rock called **sea stacks** when arches collapse. The Oregon coast has amazing examples.\n**Deposition features:** waves usually hit the beach at an angle, which moves sand along the shore in a zigzag. This **longshore current** builds:\n- **Beaches:** strips of sand and pebbles. Beach sand is constantly on the move.\n- **Spits:** sandbars that stick out from the shore like a finger.\n- **Barrier islands:** long, narrow sandy islands parallel to the coast that protect the mainland from storms.\nPeople try to protect beaches with **jetties**, **groins**, and seawalls. But blocking sand in one spot often causes erosion somewhere else down the coast."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A research ship uses sonar along a straight line across the ocean. Echo times: 0.2 s near shore, 2 s, then 6 s, then 3 s in the middle, then 6 s again, then 14 s at one spot, then 2 s near the far coast. Using 1,500 m/s, calculate each depth (remember to halve the round trip). Sketch the profile and label the continental shelf, abyssal plain, mid-ocean ridge, and trench.",
+      "standards": "HS-ESS-1.5* (evidence of plate movement in sea-floor features), HS-ESS-2.1 (processes that build and wear down landforms), HS-ESS-3.1* (coastal hazards and human activity)."
+    },
+    "checklist": [
+      "Sonar and bathymetry map the ocean floor using sound echoes.",
+      "The continental margin: shelf, slope, and rise.",
+      "The deep sea floor has abyssal plains, mid-ocean ridges, trenches, seamounts, and hydrothermal vents.",
+      "Waves move energy, not water. Tides are caused mostly by the Moon's gravity.",
+      "Waves erode cliffs, caves, arches, and stacks, and longshore currents build beaches, spits, and barrier islands."
+    ],
+    "keyWords": [
+      "sonar",
+      "bathymetry",
+      "submersible",
+      "continental margin",
+      "continental shelf",
+      "continental slope",
+      "continental rise",
+      "submarine canyon",
+      "abyssal plain",
+      "trench",
+      "seamount",
+      "guyot",
+      "hydrothermal vent",
+      "ooze",
+      "wave",
+      "crest",
+      "trough",
+      "wavelength",
+      "wave height",
+      "breaker",
+      "tide",
+      "spring tide",
+      "neap tide",
+      "sea stack",
+      "longshore current",
+      "spit",
+      "barrier island",
+      "jetty"
+    ]
+  },
+  {
+    "n": 19,
+    "realm": 6,
+    "title": "The Atmosphere",
+    "sections": [
+      {
+        "heading": "Your Invisible Armor",
+        "markdown": "The **atmosphere** is the blanket of gases wrapped around Earth, held in place by gravity. It gives you air to breathe, blocks harmful radiation, burns up meteors, and keeps the planet warm enough to live on. Without it, daytime would hit over 100 °C and nights would drop below -150 °C. Basically, game over.\nIt's also surprisingly thin. If Earth were an apple, the breathable part of the atmosphere would be thinner than the skin."
+      },
+      {
+        "heading": "What's in the Air?",
+        "markdown": "Dry air is a mix of gases:\n- **Nitrogen:** about 78%\n- **Oxygen:** about 21%\n- **Argon:** almost 1%\n- **Carbon dioxide:** about 0.04%. Tiny amount, huge impact on climate.\nAir also holds **water vapor** (from 0 to 4%, depending on where you are) and tiny solid bits called **aerosols**: dust, smoke, salt, and pollen. Wildfire smoke that fills Idaho skies in late summer is made of aerosols."
+      },
+      {
+        "heading": "Air Pressure",
+        "markdown": "Air has weight. The whole column of air above you presses down with about 14.7 pounds on every square inch. That's **air pressure** (also called atmospheric pressure). You don't get crushed because the air inside your body pushes back.\nAir pressure is measured with a **barometer**. As you go higher, there's less air above you, so pressure drops. That's why your ears pop driving up to a ski resort and why a sealed bag of chips puffs up in the mountains.\nIdaho Falls sits at about 4,700 feet. The air here is already about 15% thinner than at sea level. Athletes from the coast notice."
+      },
+      {
+        "heading": "The Layers of the Atmosphere",
+        "markdown": "Scientists divide the atmosphere into layers based on how temperature changes with height:\n1. **Troposphere** (0 to about 12 km): where we live and where all weather happens. It holds about 75% of the air's mass. Temperature *drops* as you go up, about 6.5 °C per kilometer. That's why mountaintops have snow.\n2. **Stratosphere** (12 to 50 km): home of the **ozone layer**, which absorbs harmful **ultraviolet (UV) radiation** from the Sun. Because ozone absorbs that energy, temperature *rises* with height here. Jets often fly in the lower stratosphere to avoid weather.\n3. **Mesosphere** (50 to 85 km): the coldest layer, down to about -90 °C. Meteors burn up here as shooting stars.\n4. **Thermosphere** (85 to about 600 km): the air is super thin, but the few particles are blazing hot. The **northern lights** happen here, and so does the International Space Station's orbit.\n5. **Exosphere:** the outer edge, where the atmosphere fades into space.\nThe boundary between the troposphere and stratosphere is called the **tropopause**."
+      },
+      {
+        "heading": "The Ozone Layer",
+        "markdown": "**Ozone** is a form of oxygen with three atoms (O₃) instead of two. In the stratosphere it acts like sunscreen for the whole planet. In the 1980s, scientists discovered a growing \"ozone hole\" over Antarctica, caused by chemicals called **CFCs** used in spray cans and refrigerators. In 1987, almost every country signed the Montreal Protocol to ban them. The ozone layer is slowly healing, one of science's big success stories."
+      },
+      {
+        "heading": "How Energy Moves Through the Air",
+        "markdown": "The Sun heats Earth, and that heat moves in three ways:\n- **Radiation:** energy traveling as waves, like sunlight warming your face. No contact needed.\n- **Conduction:** heat moving by direct touch, like a hot sidewalk warming the air right above it.\n- **Convection:** warm air rises because it's less dense, and cool air sinks to replace it, forming currents. This builds clouds and drives wind.\nAbout 30% of sunlight bounces right back to space off clouds, ice, and snow. How reflective a surface is, is called its **albedo**. Fresh snow has a high albedo; dark pavement has a low albedo."
+      },
+      {
+        "heading": "The Greenhouse Effect",
+        "markdown": "Earth's surface absorbs sunlight and gives off heat (infrared energy). **Greenhouse gases** like water vapor, carbon dioxide, and methane absorb some of that heat and send it back down, keeping Earth warm. This natural **greenhouse effect** keeps the planet's average around 15 °C. Without it, Earth would average about -18 °C, a frozen snowball. More greenhouse gases trap more heat, which you'll explore in Chapter 22."
+      },
+      {
+        "heading": "Wind",
+        "markdown": "**Wind** is air moving from areas of **high pressure** to areas of **low pressure**. Uneven heating causes the pressure differences. Warm air rises and creates low pressure; cool air sinks and creates high pressure.\n- **Local winds:** like **sea breezes** and **mountain and valley breezes**. In Idaho's valleys, warm air flows up the mountains during the day and cool air drains down at night.\n- **Global winds:** huge belts like the **trade winds** near the equator and the **prevailing westerlies** over the U.S., bent by the Coriolis effect. The westerlies are why most of Idaho's weather arrives from the west.\n- **Jet streams:** fast rivers of wind high in the troposphere, which steer storms across the country."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A weather balloon rises from Idaho Falls and records: ground 10 °C, 2 km up -3 °C, 6 km up -29 °C, 12 km up -56 °C, 25 km up -50 °C, 45 km up -5 °C. Graph temperature against height. Where does the temperature trend flip? Which layers do you see, and what causes the warming higher up?",
+      "standards": "HS-ESS-2.4* (energy flow into and out of Earth's systems), HS-ESS-2.2* (feedbacks such as ice albedo), HS-ESS-3.4* (evaluating solutions like the Montreal Protocol that reduce human impact)."
+    },
+    "checklist": [
+      "The atmosphere is about 78% nitrogen and 21% oxygen, plus small amounts of argon, CO₂, and water vapor.",
+      "Air pressure drops as altitude increases.",
+      "Layers: troposphere (weather), stratosphere (ozone), mesosphere (meteors), thermosphere (auroras), exosphere.",
+      "Heat moves by radiation, conduction, and convection. The greenhouse effect keeps Earth warm.",
+      "Wind flows from high to low pressure, at local and global scales."
+    ],
+    "keyWords": [
+      "atmosphere",
+      "nitrogen",
+      "oxygen",
+      "carbon dioxide",
+      "water vapor",
+      "aerosol",
+      "air pressure",
+      "barometer",
+      "altitude",
+      "troposphere",
+      "tropopause",
+      "stratosphere",
+      "ozone layer",
+      "ultraviolet (UV) radiation",
+      "mesosphere",
+      "thermosphere",
+      "exosphere",
+      "CFCs",
+      "radiation",
+      "conduction",
+      "convection",
+      "albedo",
+      "greenhouse effect",
+      "greenhouse gas",
+      "wind",
+      "high pressure",
+      "low pressure",
+      "sea breeze",
+      "trade winds",
+      "prevailing westerlies",
+      "jet stream"
+    ]
+  },
+  {
+    "n": 20,
+    "realm": 6,
+    "title": "Weather",
+    "sections": [
+      {
+        "heading": "Check the Forecast Before You Leave Base",
+        "markdown": "**Weather** is what the atmosphere is doing right now, in one place: temperature, wind, clouds, rain, snow. It can change in minutes. Anybody who's watched a sunny Idaho spring morning turn into a snow squall by lunch knows exactly what that means.\nWeather is NOT the same as climate. Weather is your mood today. Climate is your personality over years. (More on climate in Chapter 22.)"
+      },
+      {
+        "heading": "Humidity: Water in the Air",
+        "markdown": "**Humidity** is the amount of water vapor in the air. Warm air can hold more water vapor than cold air.\n- **Relative humidity** compares how much water vapor the air has to the most it *could* hold at that temperature. 100% means the air is full, or **saturated**.\n- The **dew point** is the temperature air has to cool to before it becomes saturated and water starts condensing. When the grass is wet on a clear morning, it cooled to the dew point overnight.\nIdaho's air is usually dry, which is why your lips crack and static shocks are everywhere in winter."
+      },
+      {
+        "heading": "How Clouds Form",
+        "markdown": "Clouds form when air rises and cools to its dew point. The water vapor **condenses** onto tiny specks of dust, smoke, or salt called **condensation nuclei**, forming billions of tiny droplets or ice crystals.\nAir rises for a few reasons: warm air rising by convection, air pushed up over mountains (called **orographic lifting**), and air shoved up along weather fronts."
+      },
+      {
+        "heading": "Cloud Types",
+        "markdown": "Clouds are named by shape and height:\n- **Cirrus:** thin, wispy, and high, made of ice crystals. They often mean a change in weather is coming.\n- **Cumulus:** puffy, cotton-ball clouds with flat bottoms. Usually fair weather.\n- **Stratus:** flat, gray sheets that cover the sky like a blanket. Can bring drizzle.\n- **Nimbus** means rain. A **cumulonimbus** is a towering thunderstorm cloud that can reach 12 km high with a flat \"anvil\" top. A **nimbostratus** is a thick gray layer that brings long, steady rain or snow.\n**Fog** is just a cloud at ground level. Idaho valleys often get winter fog when cold air gets trapped under warmer air above, called an **inversion**. Inversions also trap smoke and pollution."
+      },
+      {
+        "heading": "Precipitation",
+        "markdown": "**Precipitation** is any water that falls from clouds. Droplets bump together and grow until they're too heavy to stay up.\n- **Rain:** liquid drops.\n- **Snow:** ice crystals that form when it's below freezing all the way down. Every flake has six sides.\n- **Sleet:** raindrops that freeze into ice pellets as they fall through a cold layer.\n- **Freezing rain:** rain that freezes the instant it hits cold surfaces, coating roads and power lines in ice. Dangerous.\n- **Hail:** balls of ice built up in layers as they get tossed up and down inside a thunderstorm. The bigger the storm, the bigger the hail.\nThe Rocky Mountains catch a lot of precipitation as air is lifted over them. On the far side, sinking air dries out, creating a **rain shadow**. It's one reason southern Idaho is high desert."
+      },
+      {
+        "heading": "Air Masses",
+        "markdown": "An **air mass** is a huge body of air with about the same temperature and humidity throughout. It takes on the traits of where it forms:\n- **Continental (c):** dry, formed over land.\n- **Maritime (m):** humid, formed over oceans.\n- **Polar (P):** cold. **Tropical (T):** warm.\nSo a **continental polar (cP)** air mass from Canada brings Idaho its frigid, dry winter cold snaps. A **maritime polar (mP)** air mass from the Pacific brings the mountains their snow."
+      },
+      {
+        "heading": "Fronts: Where Air Masses Battle",
+        "markdown": "A **front** is the boundary where two different air masses meet. That's where weather gets interesting.\n- **Cold front:** cold air plows under warm air and shoves it up fast. Brings quick, intense storms, then cooler, clearer weather.\n- **Warm front:** warm air slides gently up over cold air. Brings long, steady rain or snow and warmer temps afterward.\n- **Stationary front:** neither air mass wins, so the front stalls. Can mean days of gloomy weather.\n- **Occluded front:** a fast cold front catches up to a warm front."
+      },
+      {
+        "heading": "Highs and Lows",
+        "markdown": "- **Low-pressure systems** (cyclones) have rising air, which makes clouds and storms. On a map, a red **L**.\n- **High-pressure systems** (anticyclones) have sinking air, which brings clear, calm weather. On a map, a blue **H**.\nIn the Northern Hemisphere, winds spin counterclockwise around a low and clockwise around a high."
+      },
+      {
+        "heading": "Forecasting the Weather",
+        "markdown": "**Meteorologists** collect data from weather stations, balloons, satellites, and **Doppler radar**, which can see rain and the wind inside storms. They feed it into powerful computer models to predict what's next. A 3-day forecast is right most of the time. Beyond about 10 days, the atmosphere is too chaotic to predict reliably.\nWeather tools: **thermometer** (temperature), **barometer** (pressure), **anemometer** (wind speed), **wind vane** (direction), **rain gauge** (precipitation), **hygrometer** (humidity).\nOn a **weather map**, lines connecting equal pressure are called **isobars**. Isobars packed close together mean strong winds."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "It's 15 °C and sunny in Idaho Falls. The barometer has dropped steadily all morning, the wind just shifted to come from the northwest, and towering clouds are building to the west. Predict what's about to happen over the next few hours and what the weather will be like tomorrow. Explain what kind of front is coming and how you know.",
+      "standards": "HS-ESS-2.4* (energy flow drives weather and climate), HS-ESS-2.5 (water's role in Earth's systems), HS-ESS-3.1* (weather hazards and human activity)."
+    },
+    "checklist": [
+      "Weather is short-term conditions; climate is the long-term average.",
+      "Relative humidity and dew point describe water vapor in the air.",
+      "Clouds form when rising air cools to its dew point. Main types: cirrus, cumulus, stratus, plus nimbus for rain clouds.",
+      "Air masses (cP, mP, cT, mT) meet at fronts: cold, warm, stationary, occluded.",
+      "Low pressure means stormy weather; high pressure means clear weather."
+    ],
+    "keyWords": [
+      "weather",
+      "humidity",
+      "relative humidity",
+      "saturated",
+      "dew point",
+      "condensation",
+      "condensation nuclei",
+      "orographic lifting",
+      "cirrus",
+      "cumulus",
+      "stratus",
+      "cumulonimbus",
+      "nimbostratus",
+      "fog",
+      "temperature inversion",
+      "precipitation",
+      "sleet",
+      "freezing rain",
+      "hail",
+      "rain shadow",
+      "air mass",
+      "continental",
+      "maritime",
+      "polar",
+      "tropical",
+      "front",
+      "cold front",
+      "warm front",
+      "stationary front",
+      "occluded front",
+      "cyclone",
+      "anticyclone",
+      "meteorologist",
+      "Doppler radar",
+      "anemometer",
+      "hygrometer",
+      "isobar"
+    ]
+  },
+  {
+    "n": 21,
+    "realm": 6,
+    "title": "Storms",
+    "sections": [
+      {
+        "heading": "When the Sky Turns Hostile",
+        "markdown": "Every survival game has its hazards: lightning, wild storms, nights you'd better be indoors for. Real Earth has those too, and some pack more energy than an atomic bomb. Understanding storms is how people stay alive through them."
+      },
+      {
+        "heading": "Thunderstorms",
+        "markdown": "A **thunderstorm** is a storm with lightning and thunder. At any moment, about 2,000 thunderstorms are happening around the world.\nThey need three ingredients: **moisture**, **unstable air** (warm air near the ground with cold air above), and something to **lift** the air, like a cold front, mountains, or a hot afternoon.\nThunderstorms go through three stages:\n1. **Cumulus (developing) stage:** warm, moist air rises in an **updraft**, building a tall cumulus cloud.\n2. **Mature stage:** the cloud becomes a towering cumulonimbus. Rain and hail fall, dragging cold air down in a **downdraft**. Updrafts and downdrafts side by side: this is the most intense stage, with heavy rain, lightning, and sometimes hail.\n3. **Dissipating stage:** downdrafts take over, cutting off the warm air supply, and the storm fizzles out.\nThe whole life cycle of a single storm cell is usually less than an hour. The strongest, longest-lasting thunderstorms are rotating giants called **supercells**."
+      },
+      {
+        "heading": "Lightning and Thunder",
+        "markdown": "Inside a storm cloud, ice and water bump around and build up electrical charges, negative at the bottom and positive at the top. **Lightning** is a giant spark that releases that charge, between clouds or between a cloud and the ground.\nA lightning bolt heats the air to about 30,000 °C, five times hotter than the surface of the Sun. The air expands so violently it makes a sonic boom: **thunder**.\nLight travels almost instantly, but sound travels about 1 km every 3 seconds (or 1 mile every 5 seconds). Count the seconds between the flash and the boom, divide by 3, and you know about how many kilometers away the strike was.\nSafety rule: **\"When thunder roars, go indoors.\"** If you can hear thunder, you're close enough to be struck. Lightning also starts many of Idaho's wildfires, especially from \"dry lightning\" in summer storms where the rain evaporates before reaching the ground."
+      },
+      {
+        "heading": "Tornadoes",
+        "markdown": "A **tornado** is a violently spinning column of air reaching from a thunderstorm down to the ground. It's the most violent storm on Earth for its size, with winds that can top 300 mph.\nMost strong tornadoes come from supercells. Winds at different heights blowing at different speeds and directions (called **wind shear**) create a horizontal spinning tube of air. A strong updraft tilts it upright, forming a rotating **mesocyclone**. A **funnel cloud** may then drop down; once it touches ground, it's a tornado.\nTornadoes are rated on the **Enhanced Fujita (EF) scale** from EF0 (minor damage) to EF5 (total destruction), based on the damage they cause.\nThe U.S. gets more tornadoes than any other country, over 1,000 a year, mostly in **Tornado Alley** in the Great Plains. Idaho gets only a few small ones a year."
+      },
+      {
+        "heading": "Hurricanes",
+        "markdown": "A **hurricane** is a huge, spinning tropical storm with winds of at least 74 mph. In the western Pacific it's called a **typhoon**, and in the Indian Ocean a **cyclone**. Same storm, different names.\nHurricanes form over warm ocean water (at least about 27 °C). Warm, moist air rises, condenses, and releases heat, which powers the storm like an engine. The Coriolis effect gets it spinning.\nParts of a hurricane:\n- **Eye:** the calm, clear center. It can be eerily sunny.\n- **Eye wall:** the ring of the strongest winds and heaviest rain around the eye.\n- **Rain bands:** spiral arms of storms swirling outward.\nHurricanes are rated on the **Saffir-Simpson scale** from Category 1 (74 mph) to Category 5 (157+ mph). The deadliest danger usually isn't the wind. It's the **storm surge**, a wall of seawater pushed onshore by the storm. Hurricanes weaken once they move over land or cold water because they lose their fuel."
+      },
+      {
+        "heading": "Winter Storms",
+        "markdown": "- **Blizzards:** heavy blowing snow with winds of at least 35 mph and visibility under a quarter mile for 3 hours or more. Idaho's open plains are famous for whiteout ground blizzards that close I-15.\n- **Ice storms:** freezing rain coats everything in ice, snapping branches and power lines.\n- **Avalanches:** in the mountains, heavy new snow on top of weak layers can break loose and slide downhill at high speed. Avalanches kill about 23 people across the U.S. in an average winter, and Idaho's backcountry is part of that risk. Check the avalanche forecast before heading out."
+      },
+      {
+        "heading": "Floods and Droughts",
+        "markdown": "Storms can cause **flash floods**, fast floods that hit within minutes or hours of heavy rain, especially in canyons and burn scars. Never drive through floodwater: just 12 inches of moving water can float a car.\nThe opposite problem is **drought**, a long period with much less precipitation than normal. Droughts dry out farms, lower rivers and reservoirs, and set up dangerous wildfire seasons."
+      },
+      {
+        "heading": "Storm Safety",
+        "markdown": "The **National Weather Service** issues two kinds of alerts:\n- **Watch:** conditions are right for the hazard to form. Be ready.\n- **Warning:** the hazard is happening or about to happen. Take action now."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "You're hiking in the Tetons on a July afternoon. At 1:00 pm, puffy cumulus clouds are building. By 2:30, one has grown into a tall tower with a flat top, and you see a flash, then count 9 seconds to the thunder. How far away is the strike? What stage is the storm in? Explain your plan using evidence, and why mountain storms often build in the afternoon.",
+      "standards": "HS-ESS-3.1* (natural hazards influence human activity), HS-ESS-2.4* (energy flow powers storms), HS-ESS-2.2* (feedbacks: drought, lightning, and wildfire)."
+    },
+    "checklist": [
+      "Thunderstorms need moisture, unstable air, and lift; they go through cumulus, mature, and dissipating stages.",
+      "Lightning heats air so fast it causes thunder. Count seconds and divide by 3 for kilometers.",
+      "Tornadoes form from rotating supercells and are rated on the EF scale.",
+      "Hurricanes form over warm oceans and are rated on the Saffir-Simpson scale; storm surge is the deadliest part.",
+      "A watch means be ready; a warning means take action now."
+    ],
+    "keyWords": [
+      "thunderstorm",
+      "unstable air",
+      "updraft",
+      "downdraft",
+      "supercell",
+      "lightning",
+      "thunder",
+      "dry lightning",
+      "tornado",
+      "wind shear",
+      "mesocyclone",
+      "funnel cloud",
+      "Enhanced Fujita scale",
+      "Tornado Alley",
+      "hurricane",
+      "typhoon",
+      "cyclone",
+      "eye",
+      "eye wall",
+      "rain band",
+      "Saffir-Simpson scale",
+      "storm surge",
+      "blizzard",
+      "ice storm",
+      "avalanche",
+      "flash flood",
+      "drought",
+      "watch",
+      "warning"
+    ]
+  },
+  {
+    "n": 22,
+    "realm": 6,
+    "title": "Climate and Climate Change",
+    "sections": [
+      {
+        "heading": "Weather vs. Climate (Round Two)",
+        "markdown": "Remember: **weather** is what's happening today. **Climate** is the average weather of a place over a long time, usually 30 years or more. One freezing week in June doesn't change Idaho's climate, just like one bad test doesn't change your whole GPA."
+      },
+      {
+        "heading": "What Controls a Place's Climate?",
+        "markdown": "- **Latitude:** places near the equator get direct sunlight all year and stay warm. Places near the poles get slanted, weaker sunlight and stay cold.\n- **Elevation:** higher = colder. Idaho Falls at 4,700 feet is colder than Boise at about 2,700 feet.\n- **Distance from water:** oceans heat and cool slowly, so coastal places have mild climates. Inland places like Idaho have bigger temperature swings, hot summers and cold winters. That's called a **continental climate**.\n- **Mountains:** they block moisture, creating wet sides and dry **rain shadows**.\n- **Ocean currents and winds:** warm currents warm nearby land; cold currents cool it."
+      },
+      {
+        "heading": "Climate Zones",
+        "markdown": "Scientists group the world's climates into zones. The most common system, the **Köppen system**, uses temperature and precipitation:\n- **Tropical:** hot and usually wet all year. Rain forests.\n- **Dry (arid and semi-arid):** less rain than evaporation. Deserts and steppes. Much of southern Idaho is semi-arid high desert.\n- **Temperate:** mild, with distinct seasons.\n- **Continental:** big seasonal swings, cold snowy winters. Much of Idaho's mountains.\n- **Polar:** cold all year. Ice caps and tundra.\nSmall areas can have their own **microclimates**, like a sunny south-facing slope or a city that stays warmer than the countryside (an **urban heat island**)."
+      },
+      {
+        "heading": "Why We Have Seasons",
+        "markdown": "Here's a common myth: seasons happen because Earth gets closer to the Sun. Nope. Earth is actually closest to the Sun in early January.\nSeasons happen because Earth's axis is **tilted about 23.5°**. In June, the Northern Hemisphere tilts toward the Sun. Sunlight hits more directly and days are longer, so it's summer. In December, we tilt away, and it's winter. That's why Australia has summer at Christmas."
+      },
+      {
+        "heading": "Climate Has Always Changed",
+        "markdown": "Earth's climate has changed many times over its 4.6-billion-year history. There have been **ice ages**, when glaciers covered huge areas, and warm periods when there was no ice at the poles at all.\nNatural causes of climate change include:\n- **Changes in Earth's orbit and tilt** over tens of thousands of years, called **Milankovitch cycles**. These are the pacemakers of the ice ages.\n- **Volcanic eruptions:** big ones blast particles into the stratosphere that block sunlight and cool the planet for a year or two.\n- **Changes in the Sun's energy output.**\n- **Plate tectonics:** moving continents change ocean currents over millions of years."
+      },
+      {
+        "heading": "How Do We Know About Past Climates?",
+        "markdown": "Scientists use clues called **proxy data**:\n- **Ice cores:** long tubes of ice drilled from Antarctica and Greenland. Tiny air bubbles trapped in the ice are samples of ancient atmosphere, going back about 800,000 years.\n- **Tree rings:** wide rings mean good growing years; thin rings mean dry or cold years.\n- **Ocean sediments, fossils, and coral** that record temperatures of long ago."
+      },
+      {
+        "heading": "What the Measurements Show Today",
+        "markdown": "Since 1958, scientists have measured carbon dioxide at the Mauna Loa Observatory in Hawaii. The graph of those measurements is called the **Keeling Curve**. According to NOAA data, CO₂ has risen every single year since 1959, from about 316 ppm (parts per million) to about 427 ppm in 2025. Before the Industrial Revolution, it was about 280 ppm. That means CO₂ is now about 50% higher than before industry began.\nThe main source of the extra CO₂ is burning **fossil fuels** (coal, oil, and natural gas) for electricity, heat, and transportation, along with cutting down forests. Scientists can tell the extra carbon comes from fossil fuels by its chemical fingerprint, a special mix of carbon types called isotopes.\nAt the same time, measurements show:\n- Global average temperature has risen about 1.2 to 1.5 °C since the late 1800s, with the last ten years among the warmest on record.\n- Most mountain glaciers are shrinking, and Arctic sea ice has decreased.\n- Sea level is rising, as warming water expands and land ice melts.\n- The ocean is absorbing much of the extra CO₂, which makes it more acidic. This is called **ocean acidification**, and it makes it harder for corals and shellfish to build shells.\nThe large majority of climate scientists and major science organizations, including NASA and NOAA, conclude that human activities are the main cause of recent warming. This is called **anthropogenic** (human-caused) **climate change**."
+      },
+      {
+        "heading": "Feedback Loops",
+        "markdown": "Climate has **feedback loops** that can speed up or slow down change:\n- **Ice-albedo feedback (speeds up):** warming melts bright, reflective ice, exposing dark ocean or land that absorbs more heat, causing more warming.\n- **Water vapor feedback (speeds up):** warmer air holds more water vapor, which is itself a greenhouse gas.\n- **Plant growth (can slow down):** more CO₂ can help some plants grow faster and absorb more carbon."
+      },
+      {
+        "heading": "What It Means for Idaho",
+        "markdown": "Idaho depends on mountain snowpack for most of its water. Scientists track changes like earlier spring snowmelt, longer wildfire seasons, and shifts in river flow. These affect farmers, ski resorts, fish like salmon and trout, and city water supplies."
+      },
+      {
+        "heading": "What People Are Doing",
+        "markdown": "There are two main approaches:\n- **Mitigation:** reducing greenhouse gas emissions, through things like renewable energy, nuclear power, more efficient cars and buildings, and planting forests.\n- **Adaptation:** preparing for changes, like better wildfire management, water storage, and drought-resistant crops.\nPeople disagree about the best policies: how fast to change, what it should cost, and who should pay. Those are questions of economics, values, and politics, and you'll be part of deciding them. Science's job is to give you the most accurate evidence possible."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "The Keeling Curve shows CO₂ at Mauna Loa: 1960, 317 ppm; 1980, 339 ppm; 2000, 370 ppm; 2025, 427 ppm. Calculate the average increase per year for each period. Is the rise speeding up, slowing down, or steady? The curve also zigzags up and down every year. Using what you know about plants and seasons, propose an explanation for the yearly zigzag.",
+      "standards": "HS-ESS-2.4* (energy flow and climate variation), HS-ESS-3.5* (analyze geoscience data and climate models), HS-ESS-2.6* (carbon cycling), HS-ESS-3.4* (evaluating solutions), HS-ESS-2.2* (feedbacks)."
+    },
+    "checklist": [
+      "Climate is the long-term average of weather, controlled by latitude, elevation, water, mountains, and currents.",
+      "Seasons are caused by Earth's 23.5° tilt, not its distance from the Sun.",
+      "Climate has changed naturally in the past (Milankovitch cycles, volcanoes, the Sun), shown by proxy data like ice cores and tree rings.",
+      "CO₂ has risen from about 280 ppm before industry to about 427 ppm in 2025, mainly from burning fossil fuels; global temperatures have risen alongside it.",
+      "Feedback loops can speed up or slow climate change. Responses include mitigation and adaptation."
+    ],
+    "keyWords": [
+      "climate",
+      "continental climate",
+      "Köppen system",
+      "arid",
+      "semi-arid",
+      "temperate",
+      "tundra",
+      "microclimate",
+      "urban heat island",
+      "axis tilt",
+      "ice age",
+      "Milankovitch cycles",
+      "proxy data",
+      "ice core",
+      "tree rings",
+      "Keeling Curve",
+      "parts per million (ppm)",
+      "fossil fuel",
+      "carbon isotope",
+      "global warming",
+      "climate change",
+      "anthropogenic",
+      "sea-level rise",
+      "ocean acidification",
+      "feedback loop",
+      "ice-albedo feedback",
+      "mitigation",
+      "adaptation Sources for current data: NOAA Climate.gov",
+      "NOAA Global Monitoring Laboratory",
+      "Scripps Keeling Curve. Check for updated figures each year."
+    ]
+  },
+  {
+    "n": 23,
+    "realm": 7,
+    "title": "Fossils and Geologic Time",
+    "sections": [
+      {
+        "heading": "Rocks Are Time Machines",
+        "markdown": "You can't travel back in time. But rocks can tell you what happened millions of years ago, if you know how to read them. Geologists are basically detectives working a case where the evidence is buried in layers and the witnesses have been dead for 100 million years."
+      },
+      {
+        "heading": "Fossils: Clues From the Past",
+        "markdown": "A **fossil** is any preserved remains or trace of an ancient living thing. Most fossils form when a plant or animal is buried quickly in sediment, like mud at the bottom of a lake. Soft parts rot away, but hard parts like bones, shells, and teeth can be preserved. Fossils are almost always found in sedimentary rock.\nTypes of fossils:\n- **Petrified (permineralized) fossils:** minerals fill in the tiny spaces of bone or wood, turning it to stone. Petrified forests are made this way.\n- **Molds and casts:** an organism leaves an empty print in the rock (a **mold**). If minerals later fill it, they make a copy (a **cast**). Like making a cookie cutter, then a cookie.\n- **Carbon films:** a thin layer of carbon left behind, showing outlines of leaves or insects.\n- **Trace fossils:** evidence of activity, not the body itself. Footprints, burrows, nests, and even fossilized poop (called **coprolites**). Yes, really.\n- **Preserved remains:** whole organisms trapped in amber (tree sap), ice, or tar. Woolly mammoths have been found frozen in Siberia."
+      },
+      {
+        "heading": "Idaho's Famous Fossils",
+        "markdown": "- **The Hagerman Horse:** near Hagerman, Idaho, scientists dug up five nearly complete skeletons, more than 100 skulls, and dozens of jaws of a zebra-like horse that lived about 3.5 million years ago. It's Idaho's official state fossil. The site is now **Hagerman Fossil Beds National Monument**.\n- **Clarkia fossil beds:** in northern Idaho, leaves about 15 million years old are so well preserved that some are still green when first split open, and scientists have even pulled ancient DNA from them.\n- **Helicoprion:** a bizarre ancient shark with a spiral \"buzz saw\" of teeth. Some of the best specimens were found in Idaho's phosphate mines."
+      },
+      {
+        "heading": "Relative Dating: Which Came First?",
+        "markdown": "**Relative dating** puts events in order without giving exact ages. It answers \"older or younger?\" using a few simple rules:\n- **Law of superposition:** in undisturbed layers, the oldest is on the bottom and the youngest is on top. Like a pile of dirty laundry: the stuff on the bottom has been there longest.\n- **Principle of original horizontality:** sediment is laid down in flat layers. If layers are tilted or folded, something happened to them later.\n- **Law of crosscutting relationships:** anything that cuts across a rock, like a fault or a squirt of magma, is younger than the rock it cuts. You can't cut a cake before it's baked.\n- **Inclusions:** rock pieces inside another rock are older than the rock around them.\n- **Unconformities:** gaps in the rock record where layers were eroded away or never deposited. Missing pages from the history book."
+      },
+      {
+        "heading": "Index Fossils",
+        "markdown": "**Index fossils** are fossils of organisms that lived for only a short time but were found all over the world. If you find the same index fossil in rock layers in Idaho and in England, those layers are about the same age. **Trilobites** and **ammonites** are famous index fossils. Matching layers in different places this way is called **correlation**."
+      },
+      {
+        "heading": "Absolute Dating: How Old, Exactly?",
+        "markdown": "**Absolute dating** gives an actual age in years. The main method is **radiometric dating**.\nSome elements are **radioactive**: their atoms are unstable and slowly break down, or **decay**, into other elements at a steady rate. The original element is the **parent isotope**, and what it turns into is the **daughter isotope**.\nThe time it takes for half of the parent atoms to decay is called the **half-life**. It never changes, so it works like a natural clock.\nExample: imagine a rock starts with 100 parent atoms. After one half-life, 50 are left. After two half-lives, 25. After three, 12.5. By measuring the ratio of parent to daughter atoms, scientists can calculate how many half-lives have passed.\n- **Carbon-14:** half-life about 5,730 years. Used to date things that were once alive (bones, wood, cloth) up to about 50,000 years old.\n- **Uranium-238:** half-life about 4.5 billion years. Used to date very old rocks.\n- **Potassium-40:** half-life about 1.3 billion years. Great for dating volcanic rocks.\nThe oldest Earth minerals found, tiny zircon crystals from Australia, are about 4.4 billion years old. Meteorites and Moon rocks show Earth formed about **4.6 billion years ago**."
+      },
+      {
+        "heading": "The Geologic Time Scale",
+        "markdown": "Scientists divided Earth's history into a calendar called the **geologic time scale**. It's split into **eons**, then **eras**, **periods**, and **epochs**. Big boundaries are often marked by major changes in life, like **mass extinctions**.\n- **Precambrian Time:** from Earth's formation 4.6 billion years ago to 541 million years ago. About 88% of Earth's history! Mostly single-celled life.\n- **Paleozoic Era** (\"ancient life,\" 541–252 million years ago): an explosion of life in the oceans, then fish, plants, insects, and amphibians on land. Ended with the biggest mass extinction ever.\n- **Mesozoic Era** (\"middle life,\" 252–66 million years ago): the Age of Reptiles. Dinosaurs ruled. Ended with an asteroid impact.\n- **Cenozoic Era** (\"recent life,\" 66 million years ago to now): the Age of Mammals. Humans showed up only about 300,000 years ago.\nIf Earth's whole history were squeezed into one 24-hour day, humans would show up in the last 4 seconds before midnight."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A canyon wall shows (from bottom to top): sandstone layer A, shale layer B, a layer of volcanic ash C, limestone D. A basalt dike E cuts through A, B, and C but stops at D. The ash C is radiometrically dated to 40 million years old. Put events A to E in order from oldest to youngest. What can you say about the age of layers B and D? Explain which rules you used.",
+      "standards": "HS-ESS-1.6* (evidence from ancient Earth materials and meteorites to explain Earth's formation and early history), HS-ESS-1.5* (ages of crustal rocks), HS-ESS-2.7* (coevolution of Earth's systems and life)."
+    },
+    "checklist": [
+      "Fossils form mostly in sedimentary rock: petrified, molds and casts, carbon films, trace fossils, preserved remains.",
+      "Relative dating puts events in order using superposition, original horizontality, crosscutting relationships, and inclusions.",
+      "Index fossils help correlate rock layers around the world.",
+      "Absolute (radiometric) dating uses the steady decay of radioactive isotopes and their half-lives.",
+      "Earth is about 4.6 billion years old. The geologic time scale divides its history into eons, eras, periods, and epochs."
+    ],
+    "keyWords": [
+      "fossil",
+      "paleontologist",
+      "petrified fossil",
+      "mold",
+      "cast",
+      "carbon film",
+      "trace fossil",
+      "coprolite",
+      "amber",
+      "relative dating",
+      "law of superposition",
+      "original horizontality",
+      "crosscutting relationships",
+      "inclusion",
+      "unconformity",
+      "index fossil",
+      "correlation",
+      "absolute dating",
+      "radiometric dating",
+      "radioactive decay",
+      "isotope",
+      "parent isotope",
+      "daughter isotope",
+      "half-life",
+      "carbon-14",
+      "geologic time scale",
+      "eon",
+      "era",
+      "period",
+      "epoch",
+      "Precambrian",
+      "Paleozoic",
+      "Mesozoic",
+      "Cenozoic",
+      "mass extinction"
+    ]
+  },
+  {
+    "n": 24,
+    "realm": 7,
+    "title": "Earth's History",
+    "sections": [
+      {
+        "heading": "The Longest Story Ever Told",
+        "markdown": "You now know how to read the rock record. Let's use it to walk through Earth's story, from a ball of molten rock to the planet you live on. Buckle up. We're covering 4.6 billion years in about ten minutes."
+      },
+      {
+        "heading": "Earth Is Born (4.6 Billion Years Ago)",
+        "markdown": "Our solar system started as a giant spinning cloud of gas and dust called a **nebula**. Gravity pulled most of it into the center to form the Sun. The leftover bits crashed together, clumping into bigger and bigger chunks called **planetesimals**, until they formed planets. This process is called **accretion**.\nEarly Earth was a nightmare: a glowing ball of molten rock pounded constantly by asteroids. As it melted, heavy iron sank to the center to form the core, and lighter rock floated up to form the crust. This sorting by density is called **differentiation**.\nScientists think a Mars-sized object slammed into early Earth, blasting out debris that came together to form the **Moon**. Evidence: Moon rocks brought back by Apollo astronauts are very similar to Earth's mantle.\nHow do we know all this? Meteorites (leftover building blocks of the solar system), the oldest Earth crystals, and craters on the Moon and other planets that preserve the early pounding."
+      },
+      {
+        "heading": "Air and Oceans Appear",
+        "markdown": "Volcanoes released gases like water vapor, carbon dioxide, and nitrogen, forming Earth's first atmosphere, but there was almost no oxygen. As Earth cooled, water vapor condensed and fell as rain for millions of years, filling the first **oceans**. Comets and asteroids may have delivered some water too."
+      },
+      {
+        "heading": "Precambrian Time: The Slow Start (4.6 Billion to 541 Million Years Ago)",
+        "markdown": "- The earliest evidence of life is about 3.5 billion years old or more: simple single-celled organisms.\n- Some of the oldest fossils are **stromatolites**, layered mounds built by mats of **cyanobacteria** in shallow water. You can still see living ones in Australia today.\n- **The Great Oxygenation Event (about 2.4 billion years ago):** cyanobacteria used **photosynthesis**, releasing oxygen. Over hundreds of millions of years, oxygen built up in the oceans and air. It rusted iron in the sea floor, leaving bright red-striped rocks called **banded iron formations**. It also formed the ozone layer, which shielded life from UV rays.\n- Complex cells appeared, then the first multicellular life.\n- Earth may have frozen over almost completely, at least once, in what scientists call **Snowball Earth**.\nThis is a great example of **coevolution**: life changed the atmosphere, and the atmosphere changed life."
+      },
+      {
+        "heading": "Paleozoic Era: Life Goes Big (541 to 252 Million Years Ago)",
+        "markdown": "- **The Cambrian Explosion:** in a geologic blink, life in the oceans exploded into tons of new forms, including animals with hard shells and the first trilobites.\n- Fish appeared, then the first plants on land, then insects.\n- Amphibians crawled out of the water, and later reptiles.\n- Giant swamp forests grew. Their buried remains became most of the world's **coal**.\n- The continents gradually joined into the supercontinent **Pangaea**.\n- The era ended with the **Permian extinction**, the worst mass extinction ever. About 90% of ocean species died out, likely caused by massive volcanic eruptions in Siberia that changed the climate."
+      },
+      {
+        "heading": "Mesozoic Era: Age of Reptiles (252 to 66 Million Years Ago)",
+        "markdown": "- Dinosaurs appeared and dominated for over 150 million years.\n- The first mammals (small, mouse-like) and the first birds evolved. Birds are actually living dinosaurs.\n- Flowering plants appeared.\n- Pangaea broke apart, and the Atlantic Ocean opened up.\n- Idaho had dinosaurs too! *Oryctodromeus*, a small burrowing dinosaur, was discovered in eastern Idaho. In 2023 it became Idaho's official state dinosaur.\n- **The K-Pg extinction (66 million years ago):** an asteroid about 10 km wide slammed into what's now Mexico's Yucatán Peninsula, leaving the Chicxulub crater. The impact and the climate chaos after it wiped out about 75% of species, including all non-bird dinosaurs. The evidence? A thin layer of clay found worldwide, rich in iridium, an element rare on Earth but common in asteroids."
+      },
+      {
+        "heading": "Cenozoic Era: Age of Mammals (66 Million Years Ago to Now)",
+        "markdown": "- With the dinosaurs gone, mammals spread out and grew huge.\n- The continents moved toward their current positions. India crashed into Asia, building the Himalayas.\n- The Rocky Mountains rose, and the Yellowstone hotspot began burning its path across Idaho.\n- Over the last 2.6 million years, ice ages came and went. Woolly mammoths, saber-toothed cats, and giant ground sloths roamed Idaho.\n- Modern humans appeared about 300,000 years ago in Africa."
+      },
+      {
+        "heading": "Mass Extinctions",
+        "markdown": "Earth has had **five major mass extinctions**, events where a huge share of species died out in a short time. Each one cleared the way for new kinds of life. Causes include asteroid impacts, huge volcanic eruptions, and rapid climate change. Some scientists warn that today's fast species loss, from habitat destruction and other human impacts, could become a sixth."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "In rocks older than about 2.4 billion years, scientists find grains of minerals like pyrite that break down quickly in oxygen. In younger rocks, those grains disappear and red, rusty rock layers show up instead. What does this evidence suggest about Earth's atmosphere? What living things caused the change, and how did that change affect what life could evolve next?",
+      "standards": "HS-ESS-1.6* (evidence from ancient materials, meteorites, and planetary surfaces for Earth's formation and early history), HS-ESS-2.7* (coevolution of Earth's systems and life), HS-ESS-1.5* (plate movement over time)."
+    },
+    "checklist": [
+      "Earth formed about 4.6 billion years ago by accretion from a nebula, then separated into layers by differentiation.",
+      "A giant impact likely formed the Moon. Volcanic gases and rain created the early atmosphere and oceans.",
+      "Cyanobacteria caused the Great Oxygenation Event, a key example of life and Earth coevolving.",
+      "Paleozoic (ancient life), Mesozoic (reptiles and dinosaurs), Cenozoic (mammals).",
+      "Five mass extinctions, including the Permian and the asteroid-caused K-Pg, reshaped life on Earth."
+    ],
+    "keyWords": [
+      "nebula",
+      "planetesimal",
+      "accretion",
+      "differentiation",
+      "giant impact hypothesis",
+      "meteorite",
+      "early atmosphere",
+      "stromatolite",
+      "cyanobacteria",
+      "photosynthesis",
+      "Great Oxygenation Event",
+      "banded iron formation",
+      "Snowball Earth",
+      "coevolution",
+      "Cambrian Explosion",
+      "trilobite",
+      "Pangaea",
+      "Permian extinction",
+      "K-Pg extinction",
+      "Chicxulub crater",
+      "iridium",
+      "ice age",
+      "mass extinction"
+    ]
+  },
+  {
+    "n": 25,
+    "realm": 8,
+    "title": "Earth's Resources and Energy",
+    "sections": [
+      {
+        "heading": "Gather, Craft, Survive",
+        "markdown": "In survival games, you gather wood, stone, coal, and iron to craft everything. Real life works the same way. Your phone, your house, your car, the electricity in your outlet, and the food on your plate all come from Earth's resources. The question is: how much is there, and how do we use it wisely?"
+      },
+      {
+        "heading": "Renewable vs. Nonrenewable",
+        "markdown": "A **natural resource** is anything from nature that people use.\n- **Renewable resources** are replaced naturally as fast as we use them, or faster: sunlight, wind, flowing water, trees and crops (if managed well).\n- **Nonrenewable resources** take millions of years to form, so once they're used up, they're gone for any human timescale: fossil fuels, metals, and minerals.\nSome resources sit in between. Soil and groundwater are technically renewable, but if we use them faster than they're replaced, they can run out."
+      },
+      {
+        "heading": "Fossil Fuels",
+        "markdown": "**Fossil fuels** formed from the remains of ancient living things, buried and cooked by heat and pressure over millions of years. They store ancient sunlight as chemical energy.\n- **Coal:** formed from ancient swamp plants. It goes from peat, to lignite, to bituminous, to anthracite, getting harder and richer in carbon at each step. Mostly burned to make electricity.\n- **Petroleum (crude oil):** formed mainly from tiny ocean organisms. It's refined into gasoline, diesel, jet fuel, and plastics.\n- **Natural gas:** mostly methane. Often found with oil. Used for heating, cooking, and electricity. Cleaner burning than coal.\nOil and gas move up through rock until they're trapped under a layer of nonporous rock. Companies drill wells to reach them. **Hydraulic fracturing (fracking)** pumps high-pressure water, sand, and chemicals into rock to crack it open and release trapped gas and oil.\n**Pros:** fossil fuels pack a lot of energy, are reliable 24/7, and supply about 80% of the world's energy. **Cons:** they're nonrenewable, and burning them releases carbon dioxide and air pollution. Mining and drilling can damage land and water."
+      },
+      {
+        "heading": "Nuclear Energy",
+        "markdown": "**Nuclear power plants** use **nuclear fission**: splitting atoms of uranium releases massive heat, which boils water into steam to spin turbines.\n- **Pros:** no carbon dioxide while running, tons of energy from tiny amounts of fuel, works 24/7.\n- **Cons:** radioactive waste stays dangerous for thousands of years, and accidents, though rare, can be serious.\nIdaho connection: **Idaho National Laboratory**, just west of Idaho Falls, is the nation's leading nuclear energy research lab. In 1951, its EBR-I reactor became the first to make usable electricity from nuclear power, lighting four light bulbs. In 1955, the town of **Arco** became the first city in the world lit by nuclear power, using a nearby test reactor called BORAX-III."
+      },
+      {
+        "heading": "Renewable Energy",
+        "markdown": "- **Hydroelectric:** flowing water spins turbines at dams. It's the biggest source of electricity made in Idaho. Big producers include dams on the Snake River.\n- **Solar:** **solar panels** (photovoltaic cells) turn sunlight directly into electricity. Southern Idaho gets plenty of sunshine.\n- **Wind:** wind turbines spin generators. Idaho has wind farms on its open plains.\n- **Geothermal:** uses Earth's internal heat. Boise has heated buildings with geothermal water since the 1890s, one of the oldest systems in the country.\n- **Biomass:** burning plant material, wood, or turning crops into fuels like ethanol.\n**The catch:** solar and wind only work when the Sun shines or the wind blows, so they need storage like batteries or backup power. Dams can harm fish like salmon by blocking their migration. Every energy source has trade-offs."
+      },
+      {
+        "heading": "Mineral Resources",
+        "markdown": "Remember **ores** from Chapter 4? Minerals and metals are essential:\n- **Metals:** iron for steel, copper for wires, aluminum for cans and planes, gold and silver for electronics.\n- **Critical minerals:** lithium, cobalt, and rare earth elements for batteries, phones, and electric motors. Idaho is home to one of the only U.S. sources of **cobalt**.\n- **Nonmetals:** gravel, sand, and limestone for concrete and roads; phosphate for fertilizer (mined in southeast Idaho); salt; gypsum for drywall.\nIdaho's mining history is huge. The **Silver Valley** around Kellogg and Wallace has produced over a billion ounces of silver, one of the richest silver mining districts in the world.\nMining methods: **surface mining** (open pits and strip mines) scrapes away soil and rock to reach shallow deposits. **Underground mining** digs tunnels to reach deep ones. Afterward, laws require **reclamation**: restoring the land."
+      },
+      {
+        "heading": "Water and Soil",
+        "markdown": "Water and soil are resources too, and you can't survive without either. In Idaho, water rights and irrigation from the Snake River and its aquifer make farming possible in a semi-arid climate."
+      },
+      {
+        "heading": "Using Resources Wisely",
+        "markdown": "**Conservation** means using resources carefully so they last. The classic three R's: **reduce, reuse, recycle**. Recycling one aluminum can saves enough energy to run a TV for about two hours, according to the EPA.\n**Energy efficiency** means getting the same result with less energy: LED bulbs, insulated homes, fuel-efficient cars.\n**Sustainability** means meeting our needs today without wrecking the ability of future generations to meet theirs."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Your town needs a new power source. Option A: a natural gas plant (cheap, reliable, emits CO₂). Option B: a solar farm with batteries (no emissions, takes lots of land, more expensive upfront). Option C: a small nuclear reactor (no emissions, reliable, expensive, makes radioactive waste). Make a table comparing cost, reliability, environmental impact, and land use. Which would you choose for an Idaho town, and why? What evidence would change your mind?",
+      "standards": "HS-ESS-3.2* (evaluate competing design solutions for energy and mineral resources based on cost-benefit ratios), HS-ESS-3.1* (resource availability influences human activity), HS-ESS-3.3 (resource management and sustainability)."
+    },
+    "checklist": [
+      "Renewable resources replace themselves; nonrenewable resources take millions of years to form.",
+      "Fossil fuels (coal, oil, natural gas) supply most of the world's energy but release CO₂.",
+      "Nuclear fission makes carbon-free power but creates radioactive waste. Idaho National Laboratory pioneered nuclear power.",
+      "Renewables include hydroelectric (Idaho's biggest), solar, wind, geothermal, and biomass.",
+      "Every energy source has trade-offs. Conservation, efficiency, and sustainability help resources last."
+    ],
+    "keyWords": [
+      "natural resource",
+      "renewable resource",
+      "nonrenewable resource",
+      "fossil fuel",
+      "coal",
+      "peat",
+      "petroleum",
+      "natural gas",
+      "hydraulic fracturing (fracking)",
+      "nuclear energy",
+      "nuclear fission",
+      "radioactive waste",
+      "hydroelectric power",
+      "solar energy",
+      "photovoltaic cell",
+      "wind energy",
+      "geothermal energy",
+      "biomass",
+      "ore",
+      "critical minerals",
+      "surface mining",
+      "underground mining",
+      "reclamation",
+      "conservation",
+      "energy efficiency",
+      "sustainability"
+    ]
+  },
+  {
+    "n": 26,
+    "realm": 8,
+    "title": "Human Impact",
+    "sections": [
+      {
+        "heading": "You Are a Geologic Force",
+        "markdown": "For most of Earth's history, rivers, glaciers, and volcanoes did the reshaping. Now there's a new force: people. With over 8 billion of us, humans move more rock and soil each year than all the world's rivers combined. Some scientists have even proposed naming a new time period after us, the **Anthropocene** (\"age of humans\").\nThat's not all bad news. Humans also clean up rivers, protect wildlife, and invent smarter ways to live. This chapter is about both sides."
+      },
+      {
+        "heading": "Population and Resources",
+        "markdown": "It took all of human history until about 1804 to reach 1 billion people. Now we're over 8 billion. More people means more demand for food, water, energy, and land. The total impact depends on three things: how many people there are, how much each person uses, and the technology used to make it.\nYour **ecological footprint** is the amount of land and resources needed to support your lifestyle: food, energy, housing, travel, and stuff you buy."
+      },
+      {
+        "heading": "Air Pollution",
+        "markdown": "**Air pollution** comes from burning fuels in cars, factories, and power plants, plus natural sources like wildfires and volcanoes.\n- **Smog:** a brownish haze formed when sunlight cooks car exhaust and other pollutants. It contains **ground-level ozone**, which hurts your lungs. (Ozone way up in the stratosphere is good. Down here, it's bad.)\n- **Particulate matter:** tiny particles of soot, dust, and smoke that get deep into lungs. Wildfire smoke can make Idaho's air some of the worst in the country on bad days.\n- **Acid rain:** sulfur dioxide and nitrogen oxides from burning coal mix with water to form acids, which damage forests, lakes, and buildings.\n- **Temperature inversions** in Idaho's valleys can trap pollution near the ground for days in winter.\nThe **Air Quality Index (AQI)** tells you how safe the air is each day. The **Clean Air Act** (1970) has cut many major air pollutants in the U.S. dramatically."
+      },
+      {
+        "heading": "Water Pollution",
+        "markdown": "- **Point-source pollution** comes from one clear spot, like a factory pipe or sewage plant. Easy to find and regulate.\n- **Nonpoint-source pollution** comes from lots of spread-out places, like fertilizer washing off farms, oil from parking lots, and pet waste. It's harder to control and is now the biggest cause of water pollution in the U.S.\nExtra fertilizer in water causes **eutrophication**: algae grow out of control, then die and rot, using up the oxygen and suffocating fish. Some of Idaho's reservoirs get toxic algae blooms in hot summers.\nThe **Clean Water Act** (1972) helped clean up many rivers. Idaho's Silver Valley shows how long cleanup can take: a century of mining left heavy metals like lead in the Coeur d'Alene River, and cleanup has been going on for decades."
+      },
+      {
+        "heading": "Land Use",
+        "markdown": "- **Deforestation:** clearing forests for farms, cities, or lumber. Trees absorb CO₂, hold soil in place, and provide habitat, so losing them causes erosion and habitat loss.\n- **Urbanization:** cities spreading into farmland and wild land. Idaho is one of the fastest-growing states, and the Boise area keeps expanding.\n- **Desertification:** when overgrazing, drought, and poor farming turn dry land into desert.\n- **Soil erosion:** remember the Dust Bowl from Chapter 8?\n- **Solid waste:** the average American makes about 4.9 pounds of trash a day. Most goes to **landfills**. Plastic can last hundreds of years and breaks into tiny **microplastics**, now found everywhere from mountaintops to inside fish."
+      },
+      {
+        "heading": "Biodiversity Loss",
+        "markdown": "**Biodiversity** is the variety of life in an area. Healthy ecosystems with lots of species are more stable and give us food, medicine, clean water, and pollination.\nThreats include habitat loss, pollution, overhunting and overfishing, climate change, and **invasive species**, plants or animals brought to a new place where they spread out of control. In Idaho, **cheatgrass** is an invasive grass that dries out early and fuels huge, fast-spreading range fires.\nIdaho example: wild **salmon** used to return to Idaho by the millions, swimming over 900 miles from the Pacific. Dams, habitat changes, and ocean conditions have reduced their numbers, and people disagree about the best solutions, from fish ladders to hatcheries to removing dams."
+      },
+      {
+        "heading": "Natural Hazards and People",
+        "markdown": "As more people build in risky places, natural hazards cause more damage. Building homes in forests increases wildfire risk (the **wildland-urban interface**). Building on floodplains increases flood damage. Smart planning, such as **hazard maps**, building codes, and zoning, can save lives."
+      },
+      {
+        "heading": "Solutions: Reducing Our Impact",
+        "markdown": "People are working on problems from many angles:\n- **Technology:** cleaner engines, scrubbers on smokestacks, renewable energy, better batteries.\n- **Laws and policy:** the Clean Air Act, Clean Water Act, Endangered Species Act, and the Montreal Protocol, which is healing the ozone layer.\n- **Conservation:** national parks, wildlife refuges, and protected areas like Idaho's Frank Church Wilderness, the largest contiguous wilderness in the lower 48 states.\n- **Restoration:** replanting forests, restoring wetlands, cleaning rivers, reintroducing species. Wolves were reintroduced to central Idaho in 1995.\n- **Individual choices:** reducing waste, conserving water and energy, and learning the science so you can vote and decide wisely.\nEvery solution has costs and benefits, and reasonable people often disagree about which trade-offs are worth it. Good decisions come from good evidence."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "A lake below a farming area turns green with algae every August, and fish die-offs are increasing. Water tests show high nitrogen and phosphorus. Explain what's happening, step by step, using the word eutrophication. Then propose two solutions, and describe how you'd measure whether they worked, and what each would cost farmers.",
+      "standards": "HS-ESS-3.4* (evaluate or refine solutions that reduce human impacts on natural systems), HS-ESS-3.6 (relationships between Earth systems and human activity), HS-ESS-3.3 (resource management and biodiversity), HS-ESS-3.1* (natural hazards and human activity)."
+    },
+    "checklist": [
+      "Humans are now a major force shaping Earth. Our impact depends on population, consumption, and technology.",
+      "Air pollution includes smog, particulates, and acid rain; the Clean Air Act cut major pollutants.",
+      "Water pollution can be point-source or nonpoint-source; extra nutrients cause eutrophication.",
+      "Land use changes, waste, invasive species, and habitat loss threaten biodiversity.",
+      "Technology, laws, conservation, restoration, and individual choices can reduce impact, each with trade-offs."
+    ],
+    "keyWords": [
+      "Anthropocene",
+      "ecological footprint",
+      "air pollution",
+      "smog",
+      "ground-level ozone",
+      "particulate matter",
+      "acid rain",
+      "Air Quality Index (AQI)",
+      "Clean Air Act",
+      "point-source pollution",
+      "nonpoint-source pollution",
+      "eutrophication",
+      "Clean Water Act",
+      "deforestation",
+      "urbanization",
+      "desertification",
+      "landfill",
+      "microplastics",
+      "biodiversity",
+      "invasive species",
+      "habitat loss",
+      "endangered species",
+      "wildland-urban interface",
+      "hazard map",
+      "conservation",
+      "restoration",
+      "sustainability"
+    ]
+  },
+  {
+    "n": 27,
+    "realm": 9,
+    "title": "Earth, Moon, and Sun",
+    "sections": [
+      {
+        "heading": "The Day-Night Cycle Is Real",
+        "markdown": "In survival games, night means monsters, so you'd better know when the Sun goes down. In real life, the day-night cycle, the seasons, the Moon's phases, eclipses, and tides all come from how three objects move: Earth, the Moon, and the Sun."
+      },
+      {
+        "heading": "Rotation and Revolution",
+        "markdown": "Earth moves in two ways at once:\n- **Rotation:** Earth spins on its **axis**, an imaginary line through the North and South Poles. One spin takes about 24 hours and gives us day and night. At the equator, you're spinning at about 1,600 km/h (1,000 mph). You just don't feel it.\n- **Revolution:** Earth travels around the Sun in a path called an **orbit**. One trip takes about 365¼ days, which is one year. That extra quarter day is why we add a **leap day** every four years.\nEarth's orbit isn't a perfect circle. It's a slightly stretched oval called an **ellipse**."
+      },
+      {
+        "heading": "Why Things Stay in Orbit",
+        "markdown": "Why doesn't the Moon fly off into space or crash into Earth? Two things balance out:\n- **Inertia:** a moving object wants to keep moving in a straight line (Newton's first law).\n- **Gravity:** the pull between objects with mass. The more mass, the stronger the pull. The closer the objects, the stronger the pull.\nThe Moon is constantly \"falling\" toward Earth, but it's moving sideways so fast that it keeps missing. That curved path is an orbit. **Isaac Newton** figured this out, and his **law of universal gravitation** explains every orbit in the solar system."
+      },
+      {
+        "heading": "Kepler's Laws",
+        "markdown": "In the early 1600s, astronomer **Johannes Kepler** discovered three rules of planetary motion:\n1. **Planets orbit the Sun in ellipses**, with the Sun at one focus (slightly off-center).\n2. **Planets move faster when closer to the Sun** and slower when farther away. A line from the Sun to a planet sweeps out equal areas in equal times.\n3. **Planets farther from the Sun take longer to orbit.** The math: the square of the orbit time (in years) equals the cube of the average distance (in AU). Mercury zips around in 88 days. Neptune takes 165 years.\nScientists use these laws to predict where planets, comets, and satellites will be, years in advance. That's how NASA lands rovers on Mars."
+      },
+      {
+        "heading": "Seasons (Quick Review)",
+        "markdown": "As you learned in Chapter 22, seasons happen because Earth's axis is tilted about **23.5°**, not because of distance from the Sun.\n- **Summer solstice** (around June 21): longest day of the year in the Northern Hemisphere. The Sun is at its highest.\n- **Winter solstice** (around December 21): shortest day.\n- **Equinoxes** (around March 20 and September 22): day and night are about equal everywhere."
+      },
+      {
+        "heading": "The Moon",
+        "markdown": "The **Moon** is Earth's only natural satellite, about one-quarter Earth's width and 384,000 km away. It has no air, no liquid water, and a surface covered in craters from impacts. The dark patches, called **maria** (Latin for \"seas\"), are actually ancient lava plains. The bright areas are mountainous **highlands**.\nThe Moon takes about 27 days to rotate once and about 27 days to orbit Earth. Because those match, the same side always faces us. This is called **synchronous rotation**. There's a far side we never see from Earth (but it's not always dark)."
+      },
+      {
+        "heading": "Moon Phases",
+        "markdown": "The Moon doesn't make its own light. It reflects sunlight. Half of the Moon is always lit by the Sun. As the Moon orbits Earth, we see different amounts of that lit half. These are its **phases**:\n1. **New moon:** the lit side faces away from us. We can't see it.\n2. **Waxing crescent:** a thin sliver on the right. (**Waxing** means growing.)\n3. **First quarter:** right half lit.\n4. **Waxing gibbous:** more than half lit.\n5. **Full moon:** the whole face is lit.\n6. **Waning gibbous:** shrinking. (**Waning** means shrinking.)\n7. **Third (last) quarter:** left half lit.\n8. **Waning crescent:** a thin sliver on the left.\nThe full cycle takes about 29.5 days, which is where the idea of a \"month\" comes from. Memory trick for the Northern Hemisphere: if it's lit on the right, it's getting bright. If it's lit on the left, it's leaving."
+      },
+      {
+        "heading": "Eclipses",
+        "markdown": "An eclipse happens when one object blocks sunlight from reaching another.\n- **Solar eclipse:** the Moon passes between the Sun and Earth, and its shadow falls on Earth. It can only happen at new moon. In a **total solar eclipse**, the sky goes dark in the middle of the day. In 2017, the path of totality crossed right over eastern Idaho, including Idaho Falls and Rexburg. Never look at the Sun without proper eclipse glasses.\n- **Lunar eclipse:** Earth passes between the Sun and Moon, and Earth's shadow falls on the Moon. It can only happen at full moon. The Moon often turns a coppery red, called a \"blood moon,\" because Earth's atmosphere bends red sunlight onto it.\nThe darkest part of a shadow is the **umbra**; the lighter outer part is the **penumbra**.\nWhy don't we get eclipses every month? The Moon's orbit is tilted about 5°, so usually its shadow passes above or below Earth."
+      },
+      {
+        "heading": "Tides (Quick Review)",
+        "markdown": "As you learned in Chapter 18, the Moon's gravity pulls on Earth's oceans, creating two bulges of water, and Earth rotates through them, causing two high tides and two low tides a day. Spring tides happen at new and full moon; neap tides at the quarter moons."
+      },
+      {
+        "heading": "The Sun",
+        "markdown": "The **Sun** is a star, a giant ball of hot gas (mostly hydrogen and helium), about 109 times wider than Earth. It holds 99.8% of the solar system's mass.\nIn its core, at about 15 million °C, the Sun fuses hydrogen into helium. This process, **nuclear fusion**, releases enormous energy. (Compare that to fission in nuclear power plants, which splits atoms.) That energy takes thousands of years to work its way out of the Sun, then just 8 minutes and 20 seconds to reach Earth as light.\nSun features:\n- **Sunspots:** cooler, darker areas caused by strong magnetic fields. They come and go in about an 11-year cycle.\n- **Solar flares:** sudden bursts of energy near sunspots.\n- **Solar wind:** a stream of charged particles flowing from the Sun. When it hits Earth's magnetic field, it creates auroras, and big storms can knock out satellites and power grids."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Use Kepler's third law: the square of the orbit time (years) equals the cube of the distance (in AU, where 1 AU = Earth's distance from the Sun). Mars is about 1.5 AU from the Sun. Calculate how long a Mars year is in Earth years. Then: a new asteroid is found at 4 AU. Predict its orbit time. Why do you think NASA times Mars launches carefully, only about every 26 months?",
+      "standards": "HS-ESS-1.4* (use mathematical representations to predict the motion of orbiting objects), HS-ESS-1.1 (nuclear fusion in the Sun's core releases energy that reaches Earth as radiation), HS-ESS-2.4* (energy from the Sun and Earth's tilt drive seasons and climate)."
+    },
+    "checklist": [
+      "Rotation (24 hours) causes day and night; revolution (365¼ days) is one year.",
+      "Gravity and inertia keep objects in orbit. Kepler's laws describe elliptical orbits and predict planet motion.",
+      "The Moon's phases come from seeing different amounts of its sunlit half over 29.5 days.",
+      "Solar eclipses happen at new moon; lunar eclipses at full moon.",
+      "The Sun is a star powered by nuclear fusion of hydrogen into helium."
+    ],
+    "keyWords": [
+      "rotation",
+      "axis",
+      "revolution",
+      "orbit",
+      "ellipse",
+      "leap year",
+      "gravity",
+      "inertia",
+      "law of universal gravitation",
+      "Kepler's laws",
+      "astronomical unit (AU)",
+      "solstice",
+      "equinox",
+      "satellite",
+      "maria",
+      "highlands",
+      "crater",
+      "synchronous rotation",
+      "phase",
+      "new moon",
+      "crescent",
+      "quarter moon",
+      "gibbous",
+      "full moon",
+      "waxing",
+      "waning",
+      "solar eclipse",
+      "lunar eclipse",
+      "umbra",
+      "penumbra",
+      "nuclear fusion",
+      "sunspot",
+      "solar flare",
+      "solar wind"
+    ]
+  },
+  {
+    "n": 28,
+    "realm": 9,
+    "title": "The Solar System, Stars, and the Universe",
+    "sections": [
+      {
+        "heading": "The Final Level",
+        "markdown": "You spawned on a raw planet, dug through the mine, survived the surface, explored the deep, and studied the sky. Now for the biggest map of all. Fair warning: the universe is so big that the numbers stop making sense. That's okay. Scientists struggle with it too."
+      },
+      {
+        "heading": "Our Solar System",
+        "markdown": "The **solar system** is the Sun plus everything held by its gravity: eight planets, their moons, dwarf planets, asteroids, and comets. It formed about 4.6 billion years ago from a spinning cloud of gas and dust (Chapter 24).\nDistances are measured in **astronomical units (AU)**. One AU is Earth's average distance from the Sun, about 150 million km.\n**The inner (terrestrial) planets** are small, rocky, and dense:\n- **Mercury:** closest to the Sun, smallest planet, no real atmosphere. Scorching days, freezing nights.\n- **Venus:** the hottest planet (about 465 °C), thanks to a thick CO₂ atmosphere and a runaway greenhouse effect. It also spins backward.\n- **Earth:** the only planet known to have liquid water on the surface and life.\n- **Mars:** the red planet, colored by iron oxide (rust). It has the tallest volcano in the solar system, Olympus Mons, and evidence of ancient rivers.\n**The asteroid belt**, between Mars and Jupiter, holds millions of rocky leftovers.\n**The outer planets** are giant and mostly gas or ice, with rings and many moons:\n- **Jupiter:** the biggest planet. You could fit over 1,300 Earths inside. Its Great Red Spot is a storm bigger than Earth that has lasted for centuries.\n- **Saturn:** famous for its rings of ice and rock. It's so low in density it would float in a big enough bathtub.\n- **Uranus:** an ice giant tipped on its side, so it basically rolls around the Sun.\n- **Neptune:** the windiest planet, with winds over 2,000 km/h.\nBeyond Neptune is the **Kuiper Belt**, home to icy bodies and **dwarf planets** like **Pluto**. In 2006, Pluto was reclassified as a dwarf planet because it hasn't cleared other objects out of its orbit."
+      },
+      {
+        "heading": "Small Bodies",
+        "markdown": "- **Asteroids:** rocky or metal chunks, mostly in the asteroid belt.\n- **Comets:** \"dirty snowballs\" of ice and dust. As they near the Sun, the ice vaporizes, forming a glowing head (**coma**) and a long **tail** that always points away from the Sun.\n- **Meteoroids:** small bits of space rock. One that burns up in our atmosphere is a **meteor** (a shooting star). One that hits the ground is a **meteorite**."
+      },
+      {
+        "heading": "Stars: What Are They?",
+        "markdown": "A **star** is a massive ball of hot gas that makes energy through **nuclear fusion**. Every star you see at night is a sun, many much bigger than ours.\nScientists learn about stars by studying their light. A **spectroscope** splits starlight into a rainbow called a **spectrum**. Dark lines in the spectrum act like fingerprints, revealing which elements are in the star. That's how we know stars are mostly hydrogen and helium.\nA star's **color** shows its temperature: **blue** stars are hottest, then white, yellow (like our Sun), orange, and **red** stars are coolest. Yes, the opposite of what faucets taught you.\nThe brightness of a star as seen from Earth is its **apparent magnitude**. Its actual brightness is its **absolute magnitude**. A dim-looking star might actually be super bright, just very far away.\nScientists plot stars on the **Hertzsprung-Russell (H-R) diagram**, a graph of brightness vs. temperature. Most stars, including the Sun, fall in a band called the **main sequence**."
+      },
+      {
+        "heading": "Light-Years",
+        "markdown": "Space is so huge that we measure it in **light-years**, the distance light travels in one year: about 9.5 trillion km. The nearest star after the Sun, Proxima Centauri, is about 4.2 light-years away. When you look at a star, you're seeing light that left it years, even thousands of years, ago. Looking out into space is literally looking back in time."
+      },
+      {
+        "heading": "The Life of a Star",
+        "markdown": "Stars are born, live, and die. Their mass decides their fate.\n1. **Nebula:** a star begins in a giant cloud of gas and dust. Gravity pulls a clump together.\n2. **Protostar:** the clump heats up as it collapses.\n3. **Main-sequence star:** when the core gets hot enough, hydrogen fusion begins. A star spends most of its life here. Our Sun is about halfway through its 10-billion-year main-sequence life.\n4. **Red giant:** when hydrogen in the core runs low, the star swells up huge and cools.\nThen the paths split:\n- **Low- to medium-mass stars (like the Sun):** shed their outer layers as a glowing **planetary nebula**, leaving a small, hot core called a **white dwarf**, which slowly cools.\n- **High-mass stars:** become **supergiants**, then explode in a **supernova**, one of the brightest events in the universe. What's left becomes a super-dense **neutron star**, or, for the biggest stars, a **black hole**, where gravity is so strong not even light can escape."
+      },
+      {
+        "heading": "We Are Made of Star Stuff",
+        "markdown": "The Big Bang made mostly hydrogen and helium. Every heavier element, including the carbon in your body, the oxygen you breathe, the calcium in your bones, and the iron in your blood, was forged inside stars by fusion and scattered by supernovas. Making new elements in stars is called **stellar nucleosynthesis**. You are literally made of recycled stars."
+      },
+      {
+        "heading": "Galaxies",
+        "markdown": "A **galaxy** is a huge system of stars, gas, and dust held together by gravity. Our galaxy is the **Milky Way**, a spiral galaxy with 100 to 400 billion stars, about 100,000 light-years across. On a dark night away from city lights, like at Craters of the Moon (an International Dark Sky Park), you can see it as a hazy band across the sky.\nGalaxy types: **spiral** (pinwheel arms), **elliptical** (oval blobs), and **irregular** (no clear shape). There are an estimated 2 trillion galaxies in the observable universe."
+      },
+      {
+        "heading": "The Big Bang Theory",
+        "markdown": "The **Big Bang theory** is the scientific explanation for how the universe began. It says that about **13.8 billion years ago**, the universe was incredibly hot and dense, and it has been expanding and cooling ever since. It wasn't an explosion in space. It was the expansion of space itself.\nThree big pieces of evidence:\n1. **Redshift and the expanding universe:** when a light source moves away from you, its light waves stretch toward the red end of the spectrum (like a siren's pitch dropping as it drives away, called the **Doppler effect**). In the 1920s, **Edwin Hubble** found that almost all galaxies are redshifted, moving away from us, and the farther they are, the faster they're moving. The universe is expanding.\n2. **Cosmic microwave background (CMB) radiation:** a faint glow of leftover heat from the early universe, detected in every direction in space. It was discovered by accident in 1965.\n3. **The composition of the universe:** the Big Bang predicts the universe should be about 75% hydrogen and 25% helium by mass. That's exactly what we observe.\nIt's important to know what the theory does and doesn't do. It explains how the universe developed from a hot, dense early state using evidence. Questions like *why* there is a universe at all go beyond what science can test, and people find answers to those in many places, including faith and philosophy.\nAnd there's still mystery: scientists think most of the universe is made of **dark matter** and **dark energy**, things we can detect by their effects but don't yet understand. Maybe you'll be the one to figure it out."
+      }
+    ],
+    "thinkLikeAScientist": {
+      "prompt": "Astronomers measure four galaxies: Galaxy A is 50 million light-years away and moving away at 1,100 km/s. Galaxy B: 100 million light-years, 2,200 km/s. Galaxy C: 200 million light-years, 4,400 km/s. Galaxy D: 400 million light-years, about 8,800 km/s. Graph speed vs. distance. What pattern do you see? Explain how this evidence supports the Big Bang theory, and name one other piece of evidence that does too.",
+      "standards": "HS-ESS-1.2* (construct an explanation of the origin of the universe based on light spectra, motion of distant galaxies, and composition of matter), HS-ESS-1.3 (how stars produce elements over their life cycles), HS-ESS-1.1 (nuclear fusion in stars), HS-ESS-1.4* (orbits in the solar system)."
+    },
+    "checklist": [
+      "The solar system has 4 rocky inner planets, 4 giant outer planets, plus dwarf planets, asteroids, and comets.",
+      "Stars are powered by nuclear fusion. Color shows temperature; the H-R diagram sorts stars by brightness and temperature.",
+      "Stars are born in nebulae; low-mass stars end as white dwarfs, high-mass stars explode as supernovas and leave neutron stars or black holes.",
+      "Heavier elements are made inside stars (stellar nucleosynthesis). We are made of star stuff.",
+      "The Big Bang theory says the universe began about 13.8 billion years ago and is expanding, supported by redshift, the CMB, and the universe's composition."
+    ],
+    "keyWords": [
+      "solar system",
+      "astronomical unit (AU)",
+      "terrestrial planet",
+      "gas giant",
+      "ice giant",
+      "asteroid belt",
+      "Kuiper Belt",
+      "dwarf planet",
+      "asteroid",
+      "comet",
+      "coma",
+      "meteoroid",
+      "meteor",
+      "meteorite",
+      "star",
+      "spectroscope",
+      "spectrum",
+      "apparent magnitude",
+      "absolute magnitude",
+      "H-R diagram",
+      "main sequence",
+      "light-year",
+      "nebula",
+      "protostar",
+      "red giant",
+      "planetary nebula",
+      "white dwarf",
+      "supergiant",
+      "supernova",
+      "neutron star",
+      "black hole",
+      "stellar nucleosynthesis",
+      "galaxy",
+      "Milky Way",
+      "spiral galaxy",
+      "elliptical galaxy",
+      "irregular galaxy",
+      "Big Bang theory",
+      "redshift",
+      "Doppler effect",
+      "cosmic microwave background (CMB)",
+      "dark matter",
+      "dark energy"
+    ]
+  }
+]

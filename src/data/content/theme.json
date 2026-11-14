@@ -1,0 +1,175 @@
+{
+  "intro": "Ranks follow a mining path, from soft dirt to the hardest mineral on the Mohs scale. Students climb ranks with XP, the same way Dopps Class works. The XP thresholds are placeholders, so match them to the Dopps Class numbers when you build.",
+  "ranks": {
+    "note": "",
+    "list": [
+      {
+        "order": 1,
+        "name": "Dirt Digger",
+        "xpPlaceholder": 0,
+        "flavor": "Everybody spawns in the dirt."
+      },
+      {
+        "order": 2,
+        "name": "Gravel Grabber",
+        "xpPlaceholder": 100,
+        "flavor": "You've found your first loose rocks."
+      },
+      {
+        "order": 3,
+        "name": "Sandstone Scout",
+        "xpPlaceholder": 250,
+        "flavor": "Layer by layer, you're building up."
+      },
+      {
+        "order": 4,
+        "name": "Granite Grinder",
+        "xpPlaceholder": 500,
+        "flavor": "Tough, slow-cooled, and hard to crack."
+      },
+      {
+        "order": 5,
+        "name": "Basalt Breaker",
+        "xpPlaceholder": 800,
+        "flavor": "Forged in Snake River Plain lava."
+      },
+      {
+        "order": 6,
+        "name": "Obsidian Edge",
+        "xpPlaceholder": 1200,
+        "flavor": "Sharp as volcanic glass."
+      },
+      {
+        "order": 7,
+        "name": "Quartz Keeper",
+        "xpPlaceholder": 1700,
+        "flavor": "Hardness 7. Now you scratch glass."
+      },
+      {
+        "order": 8,
+        "name": "Star Garnet",
+        "xpPlaceholder": 2300,
+        "flavor": "Rare, Idaho-born, and found almost nowhere else."
+      },
+      {
+        "order": 9,
+        "name": "Topaz Titan",
+        "xpPlaceholder": 3000,
+        "flavor": "Hardness 8 and still climbing."
+      },
+      {
+        "order": 10,
+        "name": "Diamond",
+        "xpPlaceholder": 4000,
+        "flavor": "Hardness 10. The boss level."
+      }
+    ]
+  },
+  "realmBadges": {
+    "note": "Students earn one badge for clearing each realm, by finishing all its chapters and passing the unit quiz.",
+    "list": [
+      {
+        "realm": 1,
+        "realmName": "Spawn Point",
+        "badge": "Compass Badge",
+        "earnedBy": "Clearing Chapters 1 to 3"
+      },
+      {
+        "realm": 2,
+        "realmName": "The Mine",
+        "badge": "Pickaxe Badge",
+        "earnedBy": "Clearing Chapters 4 to 7"
+      },
+      {
+        "realm": 3,
+        "realmName": "The Surface",
+        "badge": "Shovel Badge",
+        "earnedBy": "Clearing Chapters 8 to 11"
+      },
+      {
+        "realm": 4,
+        "realmName": "The Deep",
+        "badge": "Magma Badge",
+        "earnedBy": "Clearing Chapters 12 to 16"
+      },
+      {
+        "realm": 5,
+        "realmName": "The Ocean",
+        "badge": "Trident Badge",
+        "earnedBy": "Clearing Chapters 17 and 18"
+      },
+      {
+        "realm": 6,
+        "realmName": "The Sky",
+        "badge": "Lightning Badge",
+        "earnedBy": "Clearing Chapters 19 to 22"
+      },
+      {
+        "realm": 7,
+        "realmName": "Ancient Layers",
+        "badge": "Fossil Badge",
+        "earnedBy": "Clearing Chapters 23 and 24"
+      },
+      {
+        "realm": 8,
+        "realmName": "Resources",
+        "badge": "Ore Badge",
+        "earnedBy": "Clearing Chapters 25 and 26"
+      },
+      {
+        "realm": 9,
+        "realmName": "Beyond Bedrock",
+        "badge": "Star Badge",
+        "earnedBy": "Clearing Chapters 27 and 28"
+      }
+    ]
+  },
+  "bonusBadges": {
+    "note": "",
+    "list": [
+      {
+        "badge": "Scientist's Eye",
+        "earnedBy": "Full credit on 10 Think Like a Scientist challenges"
+      },
+      {
+        "badge": "Word Miner",
+        "earnedBy": "Mastering every Key Word in one realm"
+      },
+      {
+        "badge": "Perfect Strike",
+        "earnedBy": "100% on any chapter quiz on the first try"
+      },
+      {
+        "badge": "Gem State Native",
+        "earnedBy": "Finishing every Idaho tie-in activity"
+      },
+      {
+        "badge": "Field Geologist",
+        "earnedBy": "Completing a side quest"
+      },
+      {
+        "badge": "Bedrock Legend",
+        "earnedBy": "Clearing all nine realms"
+      }
+    ]
+  },
+  "realmDescriptions": {
+    "note": "These show on the world map when a student hovers over or taps a realm.",
+    "byRealm": {
+      "Spawn Point": "You just woke up on a strange planet. Grab a map, switch on your science brain, and figure out what this world is made of.",
+      "The Mine": "Grab a pickaxe. Every phone, every building, every tool starts with something dug out of the ground. Learn what's down there and how it got there.",
+      "The Surface": "Step outside. Wind, water, ice, and gravity are slowly tearing the whole place apart. Find water, read the land, and don't stand under that hill.",
+      "The Deep": "Dig past the crust into heat, pressure, and moving rock. This is where earthquakes, volcanoes, and mountains are born, and eastern Idaho sits right on top of the action.",
+      "The Ocean": "Over 70% of the planet is water, and most of it is unexplored. Ride the currents, map the sea floor, and find life that never sees the Sun.",
+      "The Sky": "That thin blue layer is all that stands between you and space. Learn to read the clouds, survive the storms, and understand a changing climate.",
+      "Ancient Layers": "The rocks under your feet are a history book 4.6 billion years long. Dig up fossils, crack the code of time, and meet Idaho's ancient horses and dinosaurs.",
+      "Resources": "Every survivor needs supplies. Find the planet's energy, water, and minerals, and figure out how to use them without wrecking the base.",
+      "Beyond Bedrock": "You've explored the whole planet. Now look up. The Moon, the Sun, the planets, and 2 trillion galaxies are waiting."
+    }
+  },
+  "lookNotes": {
+    "fromBuildHandoff": "same layout, navigation, XP system, badges, and light/dark modes as Dopps Class, reskinned with stone, dirt, and grass block textures and a pixel-style heading font. Use a 3x3 biome world map (one tile per realm) instead of the quest map.",
+    "fromSiteLook": "Same bones as doppsclass.com (top nav, welcome-back briefing, XP, quick buttons, light/dark toggle), reskinned blocky: pixel logo font, earth tones, square tiles. Cleared units glow green, the current unit is highlighted, and locked units are dashed until reached.",
+    "siteLookFile": "site_look.md"
+  }
+}
