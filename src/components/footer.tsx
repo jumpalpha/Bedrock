@@ -1,16 +1,20 @@
 import Link from "next/link";
 import { chapters, realms } from "@/data/site";
 
+// ── wave-learnA ── learning tools column
+const learn = { title: "Learn", links: [["Vocab Games", "/vocab/"], ["Review Deck", "/review/"], ["Mastery Checks", "/mastery/"], ["Search", "/search/"]] };
+// ── end wave-learnA ──
 const cols = [
   { title: "Explore", links: [["World Map", "/"], ["All Chapters", "/chapters/"], ["Sprite Arcade", "/arcade/"], ["Glossary", "/glossary/"], ["Side Quests", "/side-quests/"]] },
   { title: "Students", links: [["My Quest", "/quest/"], ["Unit Tests", "/tests/"], ["Pick a Side", "/pick-a-side/"], ["Survey of the Day", "/survey/"]] },
+  learn, // wave-learnA
   { title: "Adults", links: [["Teacher Dashboard", "/teacher/"], ["Dopps Class (Health)", "https://doppsclass.com"]] },
 ];
 
 export function Footer() {
   return (
     <footer className="relative z-10 mt-24 border-t border-line bg-ink-2/60 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_repeat(4,1fr)]">
         <div>
           <div className="font-display text-2xl font-extrabold"><span className="text-gradient">Bedrock</span></div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">

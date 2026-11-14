@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, FlaskConical, Pickaxe } from "lucide-react";
+import { ArrowLeft, ArrowRight, FlaskConical, Gamepad2, Pickaxe } from "lucide-react";
 import { chapterById, chapters, realmForChapter, sectionAnchors } from "@/data/site";
 import { Eyebrow, Md, PageHead } from "@/components/ui";
 import { TaskCheck } from "@/components/task-check";
+// ── wave-learnA: chapter tools ──
+import { ChapterPath, QcNudge, QuickCheck, ReadingIntro, ReadingTracker, VocabGameLinks } from "@/components/chapter-tools";
+import { quickChecksFor } from "@/data/learn";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return chapters.map((c) => ({ n: c.id })); }
@@ -22,6 +25,7 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
   const at = chapters.indexOf(c);
   const prev = chapters[at - 1], next = chapters[at + 1];
   const anchors = sectionAnchors(c);
+  const qcs = quickChecksFor(c); // wave-learnA
   let part = "";
 
   return (
@@ -30,18 +34,27 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
         <div className="mt-6 flex flex-wrap gap-3">
           <a href="#think" className="btn-block"><FlaskConical className="size-5" /> Think Like a Scientist</a>
           <Link href={`/chapters/${n}/quiz/`} className="btn-block btn-grass"><Pickaxe className="size-5" /> Chapter quiz</Link>
+          {/* ── wave-learnA ── */}
+          <a href="#vocab" className="btn-block"><Gamepad2 className="size-5" /> Vocab games</a>
+          <a href="#path" className="btn-block lg:!hidden">Chapter Path</a>
         </div>
       </PageHead>
 
-      <article className="mx-auto max-w-3xl px-6 pt-10">
+      {/* ── wave-learnA: reading + Chapter Path sidebar ── */}
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+      <article id="reading" className="min-w-0 max-w-3xl scroll-mt-28">
+        <ReadingTracker chId={n} anchors={anchors} />
+        <ReadingIntro count={c.sections.length} qcCount={qcs.filter((l) => l.length).length} />
         {c.sections.map((s, i) => {
           const showPart = s.part && s.part !== part;
           if (s.part) part = s.part;
           return (
             <section key={i} id={anchors[i]} className="mb-8 scroll-mt-24">
+              {i > 0 && <QcNudge n={i - 1} qs={qcs[i - 1]} />}
               {showPart && <div className="mb-6 border-y border-line py-2 text-center font-pixel text-xs uppercase">{s.part}</div>}
               <h2 className="pixel-title text-2xl sm:text-3xl">{s.heading}</h2>
               <Md text={s.markdown} />
+              <QuickCheck chId={n} n={i} heading={s.heading} qs={qcs[i]} last={i === c.sections.length - 1} />
             </section>
           );
         })}
@@ -67,12 +80,20 @@ export default async function ChapterPage({ params }: PageProps<"/chapters/[n]">
           </div>
         </section>
 
+        {/* ── wave-learnA: vocab games ── */}
+        <section id="vocab" className="mb-8 scroll-mt-24">
+          <Eyebrow>Vocabulary games</Eyebrow>
+          <VocabGameLinks chId={n} />
+        </section>
+
         <div className="flex justify-between gap-3 border-t border-line pt-6">
           {prev ? <Link href={`/chapters/${prev.id}/`} className="btn-block !text-sm"><ArrowLeft className="size-4" /> Ch {prev.label}</Link> : <span />}
           <Link href={`/chapters/${n}/quiz/`} className="btn-block btn-grass !text-sm">Take the quiz</Link>
           {next ? <Link href={`/chapters/${next.id}/`} className="btn-block !text-sm">Ch {next.label} <ArrowRight className="size-4" /></Link> : <span />}
         </div>
       </article>
+      <aside className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:self-start lg:overflow-y-auto"><ChapterPath chId={n} /></aside>
+      </div>
     </>
   );
 }

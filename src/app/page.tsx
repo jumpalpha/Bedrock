@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { ArrowRight, BarChart3, BookOpen, ClipboardCheck, Gamepad2, Gem, Map as MapIcon, Medal, Pickaxe, Sparkles, Star, Swords, Telescope } from "lucide-react";
+import { GraduationCap, Layers, Search, SpellCheck } from "lucide-react"; // wave-learnA
 import { chapters, realms } from "@/data/site";
 import { arcadeGames } from "@/data/arcade";
 import { Btn, ChapterCard, Eyebrow, SectionHeading } from "@/components/ui";
@@ -30,6 +31,12 @@ const quickLinks = [
   { label: "Glossary", desc: "661 key words", href: "/glossary/", icon: BookOpen, color: "#60a5fa" },
   { label: "Side Quests", desc: "Real science, outside", href: "/side-quests/", icon: Telescope, color: "#34d399" },
   { label: "Badges", desc: "9 realm + 6 bonus", href: "/quest/#badges", icon: Gem, color: "#c084fc" },
+  // ── wave-learnA ──
+  { label: "Vocab Games", desc: "Flashcards, speed quiz, concept maps", href: "/vocab/", icon: SpellCheck, color: "#38bdf8" },
+  { label: "Review Deck", desc: "Practice what you missed", href: "/review/", icon: Layers, color: "#f28c28" },
+  { label: "Mastery Checks", desc: "Warm up before the quiz", href: "/mastery/", icon: GraduationCap, color: "#34d399" },
+  { label: "Search", desc: "Chapters, words, games", href: "/search/", icon: Search, color: "#a78bfa" },
+  // ── end wave-learnA ──
 ];
 
 export default function Home() {
