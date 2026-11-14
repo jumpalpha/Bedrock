@@ -10,6 +10,7 @@ import { DISC, GemToken } from "./boards";
 import { LocalCoreSample, LocalDuel, cpuStats, type LocalMode } from "./local";
 import { partnerBySlug, partnerGames } from "./meta";
 import { OnlineDuel } from "./online";
+import { DuelBoard } from "@/components/live/duel-board";
 
 type Mode = LocalMode | "online";
 const SUBS: Record<string, { easy: string; hard: string }> = {
@@ -90,7 +91,7 @@ export function PartnerLobby() {
           </Link>
         ))}
       </div>
-      <OnlineDuel />
+      <div className="space-y-6"><OnlineDuel /><DuelBoard limit={5} /></div>
     </div>
   );
 }

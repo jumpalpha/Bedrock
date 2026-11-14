@@ -71,6 +71,8 @@ export type ServerState = {
   sideQuests: { id: string; term: string; approved: boolean }[]; votes: number; term: string; unitAttempts: number;
   /** Realms recorded as cleared on the server (b_cleared). Missing until supabase/migrations/002 is applied. */
   cleared?: number[];
+  /** wave-live: XP the server logged from live games (b_xp_log). Missing until 006 is applied. */
+  gameXp?: number;
 };
 export const loadState = () => rpc<ServerState>("b_state", me());
 export const completeTask = (key: string) => rpc<void>("b_complete_task", { ...me(), p_task_key: key });
@@ -98,6 +100,7 @@ export const teacherResetPin = async (h: string, student: string, pin: string) =
   rpc<void>("b_teacher_reset_pin", { p_pass_hash: h, p_student: student, p_pin_hash: await hashSecret(pin) });
 export type RosterRow = {
   id: string; name: string; period: string; tasks: string[]; days: number; best: Record<string, number>; cleared?: number[];
+  gameXp?: number; // wave-live
   sideQuests: { id: string; term: string; note: string; approved: boolean }[];
 };
 
@@ -184,7 +187,7 @@ export type Pet = PetPublic & {
 export type PetItem = { key: string; slot: string; name: string; cost: number; unlock: number };
 export type PetQuestion = { ref: number; def: string; opts: string[] };
 export type PetFallen = { name: string | null; color: string; owner: string; died_at: string; revived: boolean };
-export type Champion = { id: string; name: string; period: string; xp: number; verified_xp: number; tasks: number; days: number; cleared: number; units: number; streak: number };
+export type Champion = { id: string; name: string; period: string; xp: number; verified_xp: number; game_xp?: number /* wave-live */; tasks: number; days: number; cleared: number; units: number; streak: number };
 export type PetTeacherRow = {
   student: string; student_name: string; period: string; name: string; approved_name: string | null; name_ok: boolean; color: string;
   alive: boolean; stage: PetStage; health: number; care_points: number; deaths: number; upgrades: number; born: string; last_care: string;

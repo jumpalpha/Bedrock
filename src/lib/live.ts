@@ -47,7 +47,7 @@ export type LiveState = {
 };
 export type LivePlayerRow = { id: string; nickname: string; team: number | null; signed_in: boolean; score: number; correct: number; answered_current: boolean };
 export type LiveResults = { players: LivePlayerRow[]; tally: Record<string, number>; teams: Record<string, number> };
-export type HostSession = { session_id: string; join_code: string; host_token: string; role: "teacher" | "sub" };
+export type HostSession = { session_id: string; join_code: string; host_token: string };
 export type JoinResult = { session_id: string; player_id: string; player_token: string; game_type: LiveGameType; team: number | null };
 
 export const liveCreate = (pass: string, game: LiveGameType, settings: Record<string, string>) =>
@@ -64,12 +64,6 @@ export const liveAnswer = (pid: string, tok: string, qi: number, letter: string)
   rpc<boolean>("b_live_answer", { p_player_id: pid, p_player_token: tok, p_q_index: qi, p_answer: letter });
 export const liveState = (sid: string, pid?: string, tok?: string) =>
   rpc<LiveState | null>("b_live_state", { p_session_id: sid, p_player_id: pid ?? null, p_player_token: tok ?? null });
-
-// Teacher: sub codes (start live games only)
-export type SubCode = { id: number; label: string; expires_at: string; created_at: string; active: boolean; revoked: boolean };
-export const subCreate = (h: string, until: string, label: string) => rpc<{ code: string; expires_at: string }>("b_live_sub_create", { p_pass_hash: h, p_until: until, p_label: label });
-export const subList = (h: string) => rpc<SubCode[]>("b_live_sub_list", { p_pass_hash: h });
-export const subRevoke = (h: string, id: number) => rpc<boolean>("b_live_sub_revoke", { p_pass_hash: h, p_sub: id });
 
 // ---------- Gold Rush Live ----------
 export type GearKey = "mpq" | "mult" | "streak" | "ins";
@@ -118,6 +112,9 @@ export const duelState = (id: string, token: string) => rpc<DuelView>("b_duel_st
 export const duelMove = (id: string, token: string, cell: number) => rpc<DuelView>("b_duel_move", { p_game_id: id, p_token: token, p_cell: cell });
 export const duelSetup = (id: string, token: string, action: "shuffle" | "ready") => rpc<DuelView>("b_duel_setup", { p_game_id: id, p_token: token, p_action: action });
 export const duelLeave = (id: string, token: string) => rpc<DuelView | null>("b_duel_leave", { p_game_id: id, p_token: token });
+export type DuelBoardRow = { id: string; name: string; period: string; wins: number; plays: number; games: Record<string, { wins: number; plays: number }> };
+/** Partner leaderboard (this term): rounds where both players were logged in. */
+export const duelBoard = () => rpc<DuelBoardRow[]>("b_duel_board", {});
 export const duelRematch = (id: string, token: string) => rpc<DuelView>("b_duel_rematch", { p_game_id: id, p_token: token });
 
 // ---------- Ask Mr. Dopp ----------

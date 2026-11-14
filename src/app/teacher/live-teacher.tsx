@@ -1,10 +1,10 @@
 "use client";
 
-// ── wave-live ── teacher views: Ask Mr. Dopp inbox and Live games (hosting links + sub codes).
+// ── wave-live ── teacher views: Ask Mr. Dopp inbox and Live games (hosting links).
 // Every call is checked against the Dopps Class teacher code in the database (supabase/migrations/006_live.sql).
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { askTeacherDelete, askTeacherList, askTeacherSet, subCreate, subList, subRevoke, type AskRow, type AskStatus, type SubCode } from "@/lib/live";
+import { askTeacherDelete, askTeacherList, askTeacherSet, type AskRow, type AskStatus } from "@/lib/live";
 
 const btn = "btn-block !px-3 !py-1.5 !text-xs";
 const LABEL: Record<AskStatus, string> = { new: "🆕 New", posted: "📌 Posted to class", in_class: "🗣 Answered in class", skipped: "⏭ Skipped" };
@@ -76,23 +76,7 @@ export function AskTeacher({ hash }: { hash: string }) {
   );
 }
 
-export function LiveTeacher({ hash }: { hash: string }) {
-  const [subs, setSubs] = useState<SubCode[] | null>(null);
-  const [until, setUntil] = useState("");
-  const [labelText, setLabelText] = useState("");
-  const [made, setMade] = useState<{ code: string; expires_at: string } | null>(null);
-  const [err, setErr] = useState("");
-  const load = useCallback(async () => {
-    try { setSubs(await subList(hash)); setErr(""); }
-    catch (e) { setErr(`${(e as Error).message}. Has supabase/migrations/006_live.sql been run?`); }
-  }, [hash]);
-  useEffect(() => {
-    /* eslint-disable react-hooks/set-state-in-effect -- async load; today's date is only known in the browser */
-    load();
-    setUntil(new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10));
-    /* eslint-enable react-hooks/set-state-in-effect */
-  }, [load]);
-
+export function LiveTeacher() {
   const links: [string, string, string][] = [
     ["/live/host/", "⚔️ Host a live game", "Pick a Side Live, Showdown, Realm Raid or Gold Rush Live. Put it on the projector."],
     ["/live/", "📱 Student join page", "Students type the 6-digit code from the projector."],
@@ -106,30 +90,7 @@ export function LiveTeacher({ hash }: { hash: string }) {
           <Link key={href} href={href} className="accent-card rounded-2xl p-4"><b className="block font-display text-lg">{t}</b><span className="mt-1 block text-sm text-muted">{s}</span></Link>
         ))}
       </div>
-      <div className="block-panel p-5">
-        <h3 className="font-display text-xl font-extrabold">Sub codes</h3>
-        <p className="mt-1 text-sm text-muted">A day-pass code a substitute can type on the host screen to start live games. It can&apos;t open this dashboard, and it stops working after its last day (14 days at most).</p>
-        <div className="mt-3 flex flex-wrap items-end gap-2">
-          <label className="text-sm font-bold">Good through<input type="date" className="mt-1 block rounded-xl border border-line bg-ink px-3 py-2" value={until} onChange={(e) => setUntil(e.target.value)} /></label>
-          <label className="text-sm font-bold">Label (optional)<input className="mt-1 block rounded-xl border border-line bg-ink px-3 py-2" maxLength={60} placeholder="Sub for 3rd period" value={labelText} onChange={(e) => setLabelText(e.target.value)} /></label>
-          <button className="btn-block btn-grass !py-2" onClick={async () => {
-            setErr(""); setMade(null);
-            try { setMade(await subCreate(hash, until, labelText)); setLabelText(""); load(); } catch (e) { setErr((e as Error).message); }
-          }}>Make a sub code</button>
-        </div>
-        {made && <p className="mt-3 rounded-xl border border-emerald/45 bg-emerald/10 p-3 font-bold">New code: <span className="font-mono text-xl text-emerald" data-testid="sub-code">{made.code}</span> · works until {new Date(made.expires_at).toLocaleString()}. Write it down now: it won&apos;t be shown again.</p>}
-        {err && <p className="mt-2 font-bold text-crimson">{err}</p>}
-        <div className="mt-3 space-y-1.5">
-          {subs?.map((s) => (
-            <div key={s.id} className="flex flex-wrap items-center gap-2 rounded-xl border border-line bg-[var(--panel)] px-3 py-2 text-sm">
-              <b>{s.label || "Sub code"}</b><span className="text-muted">until {new Date(s.expires_at).toLocaleString()}</span>
-              <span className={`ml-auto font-bold ${s.active ? "text-emerald" : "text-muted"}`}>{s.active ? "Active" : s.revoked ? "Cancelled" : "Expired"}</span>
-              {s.active && <button className={btn} onClick={async () => { await subRevoke(hash, s.id); load(); }}>Cancel</button>}
-            </div>
-          ))}
-          {subs && !subs.length && <p className="text-sm text-muted">No sub codes yet.</p>}
-        </div>
-      </div>
+      <p className="block-panel p-4 text-sm leading-relaxed text-muted">Hosting a live game needs the Dopps Class teacher code. Logged-in students earn +5 XP per right answer (Gold Rush Live: the first 15 per game) and +25 for end-of-game wins, paid when you press <b className="text-fg">End game</b>. Partner wins count on the Partner leaderboard (Hall of Champions) when both players are logged in.</p>
     </div>
   );
 }

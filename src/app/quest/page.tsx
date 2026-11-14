@@ -16,13 +16,23 @@ export default function Quest() {
   return (
     <>
       <PageHead eyebrow="My Quest" title="Mine your way to Diamond"
-        sub={`${XP_PER_TASK} XP per task, ${XP_PER_DAY} XP for every day you log in, ${XP_PER_SIDE_QUEST} XP per approved side quest. Clear a realm to rank up.`}>
+        sub={`${XP_PER_TASK} XP per task, ${XP_PER_DAY} XP for every day you log in, ${XP_PER_SIDE_QUEST} XP per approved side quest, plus XP from live class games. Clear a realm to rank up.`}>
         <div className="mt-8"><PlayerCard /></div>
         {/* ── wave-pet ── */}<div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]"><AlienCard cleared={stats.cleared.length} /><Link href="/champions/" className="accent-card flex items-center justify-center gap-2 rounded-2xl p-4 font-extrabold" style={{ "--accent": "#f6c453" } as React.CSSProperties}>🏆 Hall of Champions</Link></div>
       </PageHead>
       <div className="mx-auto max-w-7xl space-y-14 px-6 pt-12">
         {!dbReady && <p className="block-panel p-4 font-bold">Preview: saving progress turns on once the class database is connected.</p>}
 
+        {/* ── wave-live ── */}
+        {stats.gameXp > 0 && (
+          <section className="block-panel grid items-center gap-3 p-5 sm:grid-cols-[auto_1fr_auto] sm:gap-4" data-testid="game-xp">
+            <span className="text-4xl">⚔️</span>
+            <div className="min-w-0"><div className="font-display text-2xl font-extrabold">{stats.gameXp.toLocaleString()} XP from live games</div>
+              <div className="text-sm text-muted">+5 for each right answer in Showdown, Realm Raid and Gold Rush Live, +25 for end-of-game wins. Already counted in your total.</div></div>
+            <Link href="/live/" className="btn-block justify-self-start !text-sm">Join a live game</Link>
+          </section>
+        )}
+        {/* ── end wave-live ── */}
         <section>
           <Eyebrow>Mining ranks</Eyebrow>
           <h2 className="pixel-title mb-5 text-3xl">Dirt Digger to Diamond</h2>

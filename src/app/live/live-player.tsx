@@ -175,6 +175,8 @@ export function LivePlayerView() {
         const c = s.me.my_correct, ki = s.answer_key ? LETTERS.indexOf(s.answer_key as (typeof LETTERS)[number]) : -1, right = ki >= 0 ? q.choices[ki] : null;
         screen = (
           <Center emoji={c ? "🎉" : mine ? "💥" : "⏰"} big={c ? "Correct!" : mine ? "Not this time" : "Time's up"}>
+            {c && s.me.signed_in && <div><span className="mt-2 inline-block rounded-full border-2 border-emerald px-3 py-1 text-sm font-extrabold text-emerald">+5 XP</span></div>}
+            {c && !s.me.signed_in && <p className="mt-2 text-xs text-muted">Join with your Bedrock login to earn XP.</p>}
             {!c && right && <><p className="mt-2 text-muted">The answer was</p><Pill>{right}</Pill></>}
             <div><Pill>Score: {s.me.score.toLocaleString()}</Pill></div>
             {s.game_type === "raid" && s.me.team && s.teams && (
