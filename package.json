@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/gen-textures.mjs && node scripts/gen-classic-bank.mjs && next build",
+    "build": "node scripts/check-review.mjs && node scripts/gen-textures.mjs && node scripts/gen-classic-bank.mjs && next build",
     "lint": "eslint"
   },
   "dependencies": {
