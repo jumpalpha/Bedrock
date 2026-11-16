@@ -181,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* WORLD MAP */}
-      <section className="mx-auto max-w-7xl px-6 pt-28">
+      <section className="mx-auto max-w-7xl px-6 pt-28" data-tour="map">
         <SectionHeading eyebrow="The world map" title={<>Dig down, then <span className="text-gradient">look up</span></>}
           sub="Each realm is a biome to survive. Clear every task in a realm to earn its badge and mine your way up one rank." />
         <WorldMap />

@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { LoginChip } from "@/components/login";
 import { ArtIcon } from "@/components/art-icon";
 import { SiteLink, x7aLinks } from "@/components/x7a-link"; // ── wave-x7a ──
+import { TeacherTour, TeacherTourButton } from "@/components/teacher-tour"; // ── wave-tour ──
 
 export const navLinks = [
   { label: "Chapters", href: "/chapters/" },
@@ -85,7 +86,7 @@ export function Nav() {
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5" data-tour="nav-right">
           {/* ── wave-learnA ── */}
           <Link href="/search/" aria-label="Search" title="Search" className={`hidden size-9 place-items-center rounded-xl transition hover:bg-white/5 sm:grid ${isActive("/search/") ? "text-fg" : "text-muted hover:text-fg"}`}><Search className="size-[18px]" /></Link>
           <ThemeToggle />
@@ -93,6 +94,8 @@ export function Nav() {
           <Link href="/quest/" className="hidden items-center gap-1.5 rounded-xl bg-gold px-3.5 py-2 text-sm font-bold text-[#10140e] shadow-[0_6px_24px_-8px_rgba(246,196,83,0.9)] transition hover:brightness-110 sm:flex">
             <ClipboardList className="size-4" /> My Quest
           </Link>
+          {/* ── wave-tour ── */}
+          <TeacherTourButton compact className="hidden items-center gap-1.5 whitespace-nowrap rounded-xl border border-line px-3 py-2 xl:px-2 min-[1380px]:px-2.5 text-sm font-bold text-muted transition hover:bg-white/5 hover:text-fg sm:flex" />
           <button onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open} className="grid size-9 place-items-center rounded-xl text-fg transition hover:bg-white/5 xl:hidden">
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -103,8 +106,11 @@ export function Nav() {
           {[{ label: "World Map", href: "/" }, ...navLinks, ...learnLinks /* wave-learnA */, ...petLinks /* wave-pet */, ...twinLinks /* wave-twinB */, ...x7aLinks /* ── wave-x7a ── */, ...x7bLinks /* wave-x7b */, { label: "My Quest", href: "/quest/" }].map((l) => (
             <SiteLink key={l.href} href={l.href} className={`block rounded-xl px-4 py-3 font-semibold hover:bg-white/5 ${isActive(l.href) ? "text-fg" : "text-muted"}`}>{l.label}</SiteLink>
           ))}
+          {/* ── wave-tour ── */}
+          <TeacherTourButton onStart={() => setOpen(false)} className="flex w-full items-center gap-2 rounded-xl px-4 py-3 font-semibold text-muted hover:bg-white/5" />
         </div>
       )}
+      <TeacherTour />{/* ── wave-tour ── */}
     </header>
   );
 }
